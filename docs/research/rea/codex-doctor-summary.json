@@ -1,0 +1,51 @@
+{
+  "healthy": true,
+  "environment_healthy": false,
+  "scope": {
+    "mode": "explicit",
+    "clients": [
+      "codex"
+    ],
+    "providers": [],
+    "skill": false,
+    "target": null
+  },
+  "scope_checks": [
+    {
+      "name": "node",
+      "ok": true,
+      "classification": "healthy",
+      "detail": "24.18.0",
+      "details": {
+        "runtime": "node",
+        "version": "24.18.0"
+      }
+    },
+    {
+      "name": "registration:codex",
+      "ok": true,
+      "classification": "healthy",
+      "detail": "/Users/waleedmostafa/.codex/config.toml"
+    }
+  ],
+  "registration": {
+    "client": "codex",
+    "config_path": "/Users/waleedmostafa/.codex/config.toml",
+    "command": [
+      "/Users/waleedmostafa/.codex/tools/find-our-child-rea-6.7.0/node_modules/.bin/rea",
+      "mcp"
+    ],
+    "state": "aligned",
+    "remediation": null
+  },
+  "cli_package_version": "6.7.0",
+  "live_server": {
+    "state": "unknown",
+    "remediation": "Call binary_session in the active client to inspect the running server identity."
+  },
+  "limitations": [
+    "Optional native providers and skill not installed",
+    "Restart Codex for new MCP discovery",
+    "Static evidence collected on byte-identical temporary snapshots"
+  ]
+}

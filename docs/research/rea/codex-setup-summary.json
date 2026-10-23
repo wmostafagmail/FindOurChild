@@ -1,0 +1,12 @@
+{
+  "status": "ready",
+  "appliedActions": [
+    "configured_codex"
+  ],
+  "clients": {
+    "codex": {
+      "status": "configured",
+      "backupPath": "/Users/waleedmostafa/.codex/config.toml.rea.backup.1e2943aedf6a5a1e70fe521e1c3eac0d7c195efc04f1adabe933178e8ba5f1f6.recovery"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": 271,
+  "required_documents": 16,
+  "repositories": 14,
+  "source_files": 65,
+  "limitations": [
+    "Artifact checks only; no application tests",
+    "OpenAPI checks are structural, not full standards validation",
+    "Source hash checks do not verify upstream licensing entitlement",
+    "REA coverage limitations remain; no runtime or accuracy claim"
+  ]
+}

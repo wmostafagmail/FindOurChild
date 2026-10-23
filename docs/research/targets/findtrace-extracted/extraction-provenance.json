@@ -1,0 +1,13 @@
+{
+  "repository": "raigaurav26/FindTrace",
+  "commit": "f30bbf5e1d13670d42b7fa7ebaf8c6d4e6fd2295",
+  "method": "Exact script-body extraction; original HTML retained separately; no script executed",
+  "original_sha256": "2f7b231719eb34e39de497ffc02836fe6d677bb8edf780345eb0a89950acaad3",
+  "scripts": [
+    {
+      "derived_file": "inline-1.js",
+      "original_start_line": 2797,
+      "sha256": "ae07f3928362eeb3319a33b3605c34acd82248df64b9246cc1bc2ec81c1d30c4"
+    }
+  ]
+}

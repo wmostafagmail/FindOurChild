@@ -1,0 +1,3 @@
+Status: disabled (E2E_TELEMETRY_DISABLED is set)
+No usage data is sent from this machine.
+Details: https://e2e.tester.army/docs/telemetry

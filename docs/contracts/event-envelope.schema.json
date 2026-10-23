@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Find Our Child internal event envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "organization_id",
+    "aggregate_type",
+    "aggregate_id",
+    "aggregate_revision",
+    "occurred_at",
+    "correlation_id",
+    "policy_version",
+    "deletion_generation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1"
+    },
+    "event_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "event_type": {
+      "enum": [
+        "report.submitted",
+        "media.uploaded",
+        "media.ready",
+        "media.quarantined",
+        "subject.selected",
+        "embedding.ready",
+        "matching.requested",
+        "matching.completed",
+        "lead.reviewed",
+        "disclosure.approved",
+        "approval.revoked",
+        "reunification.recorded",
+        "deletion.requested",
+        "deletion.completed",
+        "notification.requested"
+      ]
+    },
+    "organization_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregate_type": {
+      "enum": [
+        "case",
+        "photograph",
+        "face_region",
+        "embedding",
+        "matching_run",
+        "lead",
+        "disclosure",
+        "approval",
+        "reunification_plan",
+        "deletion_request",
+        "notification"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregate_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correlation_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "deletion_generation": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "description": "Opaque identifiers and versions only. No media, names, contacts, embeddings, URLs or exact locations. Cross-tenant broker uses a separately approved internal contract."
+}

@@ -1,0 +1,10 @@
+# Research tooling only; no application has been implemented.
+**/node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+# Future raw testing output can contain cookies, secrets and screenshots.
+**/.e2e/
+**/test-results/
+**/coverage/

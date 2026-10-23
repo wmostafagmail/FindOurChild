@@ -1,0 +1,14 @@
+{
+  "name": "find-our-child-e2e-plan-checks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Phase 0 framework/configuration verification only; no application tests",
+  "engines": {"node": "24.18.0", "npm": "11.16.0"},
+  "devDependencies": {
+    "@e2e-dev/web": "0.15.3",
+    "@types/node": "26.6.2",
+    "e2e": "0.21.3",
+    "typescript": "7.0.2"
+  }
+}

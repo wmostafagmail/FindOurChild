@@ -1,0 +1,612 @@
+{
+  "retrieved_on": "2026-10-23",
+  "pin_type": "reviewed source commit, not deployment release",
+  "scope": "selected files; no upstream test execution; fetched text hashes do not by themselves authenticate upstream Git blobs",
+  "repositories": [
+    {
+      "repository": "morluto/rea",
+      "sha": "9fd78a74f84a8e924bd58e7deaf5934bfb24f53c",
+      "date": "2026-10-23T19:14:34Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/morluto/rea/blob/9fd78a74f84a8e924bd58e7deaf5934bfb24f53c/README.md",
+          "utf8_sha256": "f557c0abe69fa3992bd42fe2dcba05f6aee73961dbedbe5ffd4dc51e455a09e1",
+          "utf8_bytes": 26069,
+          "git_blob_sha1_of_fetched_text": "e6e718e3abfa8a2e8017a6892ab207b62a7dad11"
+        },
+        {
+          "path": "docs/ci-analysis.md",
+          "url": "https://github.com/morluto/rea/blob/9fd78a74f84a8e924bd58e7deaf5934bfb24f53c/docs/ci-analysis.md",
+          "utf8_sha256": "8a9267102415666ad308b81830ca979e16bf80abf588a08818a4ffc27715026a",
+          "utf8_bytes": 5791,
+          "git_blob_sha1_of_fetched_text": "153f2d0db87453a3851bea223e85ae7dc7b947a0"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/morluto/rea/blob/9fd78a74f84a8e924bd58e7deaf5934bfb24f53c/LICENSE",
+          "utf8_sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+          "utf8_bytes": 1064,
+          "git_blob_sha1_of_fetched_text": "2d476d24fa5a9ae2ab35e5fd121494049eb2ee5d"
+        }
+      ]
+    },
+    {
+      "repository": "exadel-inc/CompreFace",
+      "sha": "ddf32da8245e2e6688c3ab6f60587fd3e31538c2",
+      "date": "2023-11-14T08:13:44Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/README.md",
+          "utf8_sha256": "910b5fccac5ac948f6217f6f01d0d9b74f8530e00c8180399c979ac578544dab",
+          "utf8_bytes": 10826,
+          "git_blob_sha1_of_fetched_text": "2e402007256277cc63aeb765995c54ba6dca868b"
+        },
+        {
+          "path": "docs/Architecture-and-scalability.md",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/docs/Architecture-and-scalability.md",
+          "utf8_sha256": "9d67c3c57688eee3316b09b7f2218284e74b942062e596ea627faf8af8960b02",
+          "utf8_bytes": 3575,
+          "git_blob_sha1_of_fetched_text": "59f1e61f6e767de601ad9ec58d9e1a7deffca8a8"
+        },
+        {
+          "path": "docs/Rest-API-description.md",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/docs/Rest-API-description.md",
+          "utf8_sha256": "b24cd89d60afd56eb2628d3e5960fba4021b7fbe18be9fe2f234b8843a4846ab",
+          "utf8_bytes": 54253,
+          "git_blob_sha1_of_fetched_text": "1aefe283776718dd200e0b0d4d1d4afa531f3577"
+        },
+        {
+          "path": "embedding-calculator/src/services/facescan/plugins/insightface/insightface.py",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/embedding-calculator/src/services/facescan/plugins/insightface/insightface.py",
+          "utf8_sha256": "62fc4732ff15f49660f4e1e320601d3cfcd88664e0ef58f097631f2b1ae0ded9",
+          "utf8_bytes": 10025,
+          "git_blob_sha1_of_fetched_text": "b3f99ad61e6a296e917565e63675efa5bd9745d6"
+        },
+        {
+          "path": "embedding-calculator/src/services/facescan/scanner/test/test_embedder.py",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/embedding-calculator/src/services/facescan/scanner/test/test_embedder.py",
+          "utf8_sha256": "00855f4a1449f9acb7587ce40708763a8e9d7b2e937f1c40cb16c1985b31902b",
+          "utf8_bytes": 2689,
+          "git_blob_sha1_of_fetched_text": "648978b36480e64a4871a583f5b541b79fa85361"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/exadel-inc/CompreFace/blob/ddf32da8245e2e6688c3ab6f60587fd3e31538c2/LICENSE",
+          "utf8_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "utf8_bytes": 11358,
+          "git_blob_sha1_of_fetched_text": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        }
+      ]
+    },
+    {
+      "repository": "deepinsight/insightface",
+      "sha": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "date": "2026-10-19T07:54:01Z",
+      "tree_scope": "recursive",
+      "license_candidates": [],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/README.md",
+          "utf8_sha256": "1846967d19f2b19845b967e14715c162881e7598360e23ab6646a47c88667758",
+          "utf8_bytes": 16825,
+          "git_blob_sha1_of_fetched_text": "151d03ac969eaad431ab540a05772ffa99b4f01e"
+        },
+        {
+          "path": "python-package/insightface/app/face_analysis.py",
+          "url": "https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/app/face_analysis.py",
+          "utf8_sha256": "38751912e3e49583af62a8823da3b688b41779be101333be8a066cf490e11c3a",
+          "utf8_bytes": 11676,
+          "git_blob_sha1_of_fetched_text": "aeb09887ef73dcab53452ec5bc31ebb448e9358a"
+        },
+        {
+          "path": "python-package/README.md",
+          "url": "https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/README.md",
+          "utf8_sha256": "941d176f93855e6c684797632bb8c8bda1fba78d6379ac4c1f178516f136b5e5",
+          "utf8_bytes": 13363,
+          "git_blob_sha1_of_fetched_text": "dc3c8e87772e6ba7e0aba4a0af35020c2f3a88ee"
+        }
+      ]
+    },
+    {
+      "repository": "serengil/deepface",
+      "sha": "9749010f9950daf2cec20a1c5f054e2c0e312983",
+      "date": "2026-10-23T16:22:17Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/README.md",
+          "utf8_sha256": "71c7ec0abe4d4fdc07d1cd6dc80378a1b56a04a0be44bba475eac3678134ad8d",
+          "utf8_bytes": 27620,
+          "git_blob_sha1_of_fetched_text": "15d2eeb746bb43381cf2d154142153c8e32a1a46"
+        },
+        {
+          "path": "deepface/DeepFace.py",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/deepface/DeepFace.py",
+          "utf8_sha256": "60d417a2aac3f215bb3a43b7cfcf23a7726483c9aea214337f4d4c49784acfcb",
+          "utf8_bytes": 54026,
+          "git_blob_sha1_of_fetched_text": "ac96794a4d352fc17f3688fb17091b49176723c2"
+        },
+        {
+          "path": "setup.py",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/setup.py",
+          "utf8_sha256": "760a471ed9e868dcb679e2061cb0ed417872cfc16b9940735a8b4435bbf5d637",
+          "utf8_bytes": 3151,
+          "git_blob_sha1_of_fetched_text": "74830d44bc31585fcc2e8640a38d336e28bf777b"
+        },
+        {
+          "path": "deepface/__init__.py",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/deepface/__init__.py",
+          "utf8_sha256": "e90c3d851aba72ca9d8f9b271744f2b1966dce61c404f601fd10b4870119456d",
+          "utf8_bytes": 24,
+          "git_blob_sha1_of_fetched_text": "90d621e47429ea19d9491400abc52ced208513fc"
+        },
+        {
+          "path": "tests/integration/test_find_color_model.py",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/tests/integration/test_find_color_model.py",
+          "utf8_sha256": "bcc1a4e65093795543ab875bce87d0d46ea9b293f719c4538a76aaa419da2871",
+          "utf8_bytes": 1150,
+          "git_blob_sha1_of_fetched_text": "3e75fa296f6c33832550d65a49ff593250fb3adc"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/serengil/deepface/blob/9749010f9950daf2cec20a1c5f054e2c0e312983/LICENSE",
+          "utf8_sha256": "7359d8df037688e9f4373aedd9dd297a467703072a3c9b001b169ec8ce395477",
+          "utf8_bytes": 1077,
+          "git_blob_sha1_of_fetched_text": "2b0f9fbb7d024c081d12ea0418b02a0969c5d35a"
+        }
+      ]
+    },
+    {
+      "repository": "mk-minchul/adaface",
+      "sha": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "date": "2024-06-10T14:47:39Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/mk-minchul/adaface/blob/c60eaa786a42c03444f3df7096dbaf9d57ae010d/README.md",
+          "utf8_sha256": "c3e65e47bb06a6387287bb76efe0fcf835ffbec466c305eb0a9744cc362ff18a",
+          "utf8_bytes": 17214,
+          "git_blob_sha1_of_fetched_text": "f092947829b6b5c5200f7f0fc99e32cb368402ca"
+        },
+        {
+          "path": "inference.py",
+          "url": "https://github.com/mk-minchul/adaface/blob/c60eaa786a42c03444f3df7096dbaf9d57ae010d/inference.py",
+          "utf8_sha256": "5c0758cb3218ccf8c5ebfcaea71aca59da7332e94c0c2a57dbe87bc21b4f8cfa",
+          "utf8_bytes": 1380,
+          "git_blob_sha1_of_fetched_text": "20f90f1ad527d9b5c97dc2a0ae934acc5ada176b"
+        },
+        {
+          "path": "requirements.txt",
+          "url": "https://github.com/mk-minchul/adaface/blob/c60eaa786a42c03444f3df7096dbaf9d57ae010d/requirements.txt",
+          "utf8_sha256": "dbac1216a30d0924961461d8e9ecf729f070ae23d1ca8cda0fe3a2c0429ba191",
+          "utf8_bytes": 98,
+          "git_blob_sha1_of_fetched_text": "9d15561f4266b41a010a659bec51c3c43452ed2c"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/mk-minchul/adaface/blob/c60eaa786a42c03444f3df7096dbaf9d57ae010d/LICENSE",
+          "utf8_sha256": "95b6e493eb9dba27f2150304e790ae254bab18d1611f4d6e2ade28fa3a271583",
+          "utf8_bytes": 1067,
+          "git_blob_sha1_of_fetched_text": "dfd76e6d20d5e3a39572e2a4c17d7bd25a64cc69"
+        }
+      ]
+    },
+    {
+      "repository": "immich-app/immich",
+      "sha": "9666eadc5bbf81b91d2f5c10fb2630685dea8be7",
+      "date": "2026-10-23T12:27:22Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/README.md",
+          "utf8_sha256": "27b511ae6ee3be2295c4c1e0674dd0ac5b0c6023d9fdd9187869b1605ff56fad",
+          "utf8_bytes": 5543,
+          "git_blob_sha1_of_fetched_text": "ba774d44cdd7b9e9baed4cc4166d4c317e3ebae8"
+        },
+        {
+          "path": "machine-learning/pyproject.toml",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/machine-learning/pyproject.toml",
+          "utf8_sha256": "e49e441e0c8f0f33bf4deb8349c904fc75d25c671a9ad12f23d3ce8b3d633a75",
+          "utf8_bytes": 3949,
+          "git_blob_sha1_of_fetched_text": "6cc0c27d1d1f66d828ffdd97f85f93d8816e0b98"
+        },
+        {
+          "path": "docs/docs/developer/architecture.mdx",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/docs/docs/developer/architecture.mdx",
+          "utf8_sha256": "e8e7197b68c57afc44e45c68de675c8f70a6bd19fb93e86d9032a05cb18e230e",
+          "utf8_bytes": 7161,
+          "git_blob_sha1_of_fetched_text": "954d264d55a160cc9e675b5cae9b8c4a3edc4fca"
+        },
+        {
+          "path": "server/src/controllers/face.controller.ts",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/server/src/controllers/face.controller.ts",
+          "utf8_sha256": "4fa19ab38e4500e13f80cfdb272a42ebc84450b7887831feada6c9c15d1740b9",
+          "utf8_bytes": 2655,
+          "git_blob_sha1_of_fetched_text": "a5f8076f1a1523aeeac75d1a8947d59364a88dc2"
+        },
+        {
+          "path": "machine-learning/immich_ml/models/facial_recognition/recognition.py",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/machine-learning/immich_ml/models/facial_recognition/recognition.py",
+          "utf8_sha256": "3991a35211cf252a749e9a89e0774179a91e603af0aa919952b2320ac64cc712",
+          "utf8_bytes": 2946,
+          "git_blob_sha1_of_fetched_text": "b957bbd5eb8b52bcf6e846711b28d6ccdc958a34"
+        },
+        {
+          "path": "server/src/repositories/machine-learning.repository.ts",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/server/src/repositories/machine-learning.repository.ts",
+          "utf8_sha256": "72995dfe303a62d08beaec2eec2a9a462168f7d54162da83f7abfe1eed13f5dc",
+          "utf8_bytes": 7512,
+          "git_blob_sha1_of_fetched_text": "7c52778eb9faf5eeb0e1eced9c1df2bbbff62538"
+        },
+        {
+          "path": "e2e/src/ui/specs/asset-viewer/face-editor.e2e-spec.ts",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/e2e/src/ui/specs/asset-viewer/face-editor.e2e-spec.ts",
+          "utf8_sha256": "47f60aaec2f8ae692a6ed49c1de876817893b8682d2c1535b96aea602f9212dc",
+          "utf8_bytes": 10669,
+          "git_blob_sha1_of_fetched_text": "452fd070d26d99f109ab7a791c08585f1016901d"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/immich-app/immich/blob/9666eadc5bbf81b91d2f5c10fb2630685dea8be7/LICENSE",
+          "utf8_sha256": "a3bad629f67f442b23b5224419e49edafc32e6b9c876b89464f7aafe6091ccde",
+          "utf8_bytes": 32388,
+          "git_blob_sha1_of_fetched_text": "94ae15a0fcbd45872c6d01efe11b6ed2a5746b37"
+        }
+      ]
+    },
+    {
+      "repository": "photoprism/photoprism",
+      "sha": "f0a4f41e5585aab070f3f688b8d4c0d6b5a10481",
+      "date": "2026-10-23T18:19:21Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/README.md",
+          "utf8_sha256": "e97ed79e2fa7797160ad6bb29eeb487b79eb0e39be65b7049040d9042d99c228",
+          "utf8_bytes": 14305,
+          "git_blob_sha1_of_fetched_text": "8f39569d3869d13d9834f1a70c0cf202d17d0317"
+        },
+        {
+          "path": "internal/ai/face/README.md",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/internal/ai/face/README.md",
+          "utf8_sha256": "dcf7d63ab3e05c7bc5c742be7e2a039efcaa6aea1dffc3b5c1d5e73d5310565c",
+          "utf8_bytes": 143988,
+          "git_blob_sha1_of_fetched_text": "c56ab4b8e6f967c9eacfd334dae69af17d96ff76"
+        },
+        {
+          "path": "internal/ai/face/license.go",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/internal/ai/face/license.go",
+          "utf8_sha256": "a2a7260e6e9e8967602b6642694309d003bbdbbe54a99c28d1e69ca8b772adb3",
+          "utf8_bytes": 3041,
+          "git_blob_sha1_of_fetched_text": "105987b2cdc377c055c7680a23428e70255c5787"
+        },
+        {
+          "path": "internal/entity/face.go",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/internal/entity/face.go",
+          "utf8_sha256": "99742c17f1959f86f0f9cc00174475476216549479d9767588a07dfafe4bb8bb",
+          "utf8_bytes": 31112,
+          "git_blob_sha1_of_fetched_text": "284619aac064c597b160d23d140df7386012fc4b"
+        },
+        {
+          "path": "internal/ai/face/license_test.go",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/internal/ai/face/license_test.go",
+          "utf8_sha256": "4c139b7ab699d68b07186f3b2ea1d7a49c537c353c04a127a7f34846f40ad64a",
+          "utf8_bytes": 3795,
+          "git_blob_sha1_of_fetched_text": "d233c8cc9f6339b9f5adda0949ecc07a48b1212e"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/photoprism/photoprism/blob/f0a4f41e5585aab070f3f688b8d4c0d6b5a10481/LICENSE",
+          "utf8_sha256": "f703a5ce3a8b0f68d3b19327bac8e881d537b80732f7deebb8f0ba2fb63bc982",
+          "utf8_bytes": 33824,
+          "git_blob_sha1_of_fetched_text": "aec49a5f5893be510eb31f1b31cd831988f66223"
+        }
+      ]
+    },
+    {
+      "repository": "raigaurav26/FindTrace",
+      "sha": "f30bbf5e1d13670d42b7fa7ebaf8c6d4e6fd2295",
+      "date": "2026-07-16T14:44:12Z",
+      "tree_scope": "recursive",
+      "license_candidates": [],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/raigaurav26/FindTrace/blob/f30bbf5e1d13670d42b7fa7ebaf8c6d4e6fd2295/README.md",
+          "utf8_sha256": "47c50f71966709b414afe60892f4967a35e8dd5440af9a558241c2ad8d55a6cd",
+          "utf8_bytes": 6161,
+          "git_blob_sha1_of_fetched_text": "cdcc78fb1c072f50c848dcd5c3faf4ee62b639bb"
+        },
+        {
+          "path": "index.html",
+          "url": "https://github.com/raigaurav26/FindTrace/blob/f30bbf5e1d13670d42b7fa7ebaf8c6d4e6fd2295/index.html",
+          "utf8_sha256": "2f7b231719eb34e39de497ffc02836fe6d677bb8edf780345eb0a89950acaad3",
+          "utf8_bytes": 158893,
+          "git_blob_sha1_of_fetched_text": "5ad58f3b80de7fe14f6bea0b0228803d3be46326"
+        }
+      ]
+    },
+    {
+      "repository": "pgvector/pgvector",
+      "sha": "c82c81e22e48d32698e8d637442628f90ed84b8a",
+      "date": "2026-10-23T10:09:23Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/pgvector/pgvector/blob/c82c81e22e48d32698e8d637442628f90ed84b8a/README.md",
+          "utf8_sha256": "19cebadeeb8d3181d01ef00399674ec41bd2f0363850cdccc7685d4260c5a1c6",
+          "utf8_bytes": 42305,
+          "git_blob_sha1_of_fetched_text": "f5fde78f3a110cc3fcbc000046c13ca21a90f3fa"
+        },
+        {
+          "path": "vector.control",
+          "url": "https://github.com/pgvector/pgvector/blob/c82c81e22e48d32698e8d637442628f90ed84b8a/vector.control",
+          "utf8_sha256": "9f7d0fcada5e68aa41adf9d5b3ab3fd43c83f2edd462c391a0f715d72a9941ec",
+          "utf8_bytes": 145,
+          "git_blob_sha1_of_fetched_text": "c9c4b6a0ae87c61ef8092d6c5163da9b7ef05fab"
+        },
+        {
+          "path": "sql/vector.sql",
+          "url": "https://github.com/pgvector/pgvector/blob/c82c81e22e48d32698e8d637442628f90ed84b8a/sql/vector.sql",
+          "utf8_sha256": "d30fae09182afdbe3c6c8326e1c1eb04c5e0754255cca384971244ecd34e8746",
+          "utf8_bytes": 43067,
+          "git_blob_sha1_of_fetched_text": "fece8beb68263ab637a0cd8a148e98f9e816f919"
+        },
+        {
+          "path": "test/sql/hnsw_vector.sql",
+          "url": "https://github.com/pgvector/pgvector/blob/c82c81e22e48d32698e8d637442628f90ed84b8a/test/sql/hnsw_vector.sql",
+          "utf8_sha256": "9b7da7a7598d2c4b0274d9f3177c3cdbd3b7645b3951140e5b56ec5fa465810b",
+          "utf8_bytes": 3545,
+          "git_blob_sha1_of_fetched_text": "7ccfb34e85b0e17e4ae770756da32220035a9323"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/pgvector/pgvector/blob/c82c81e22e48d32698e8d637442628f90ed84b8a/LICENSE",
+          "utf8_sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+          "utf8_bytes": 1104,
+          "git_blob_sha1_of_fetched_text": "fc5f177fa5d9c0d20a949f4b4faa028999977008"
+        }
+      ]
+    },
+    {
+      "repository": "qdrant/qdrant",
+      "sha": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+      "date": "2026-10-21T17:45:09Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/README.md",
+          "utf8_sha256": "f1455d12252bf40235ad0128d8e98b2cd6d42583e441ac832b01f4daf08df2e4",
+          "utf8_bytes": 11560,
+          "git_blob_sha1_of_fetched_text": "cf4c1c5213148ed9d6388654f9d3e75b06504bc9"
+        },
+        {
+          "path": "Cargo.toml",
+          "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/Cargo.toml",
+          "utf8_sha256": "eca4fec96021092a63af6e1a143959579190348f585b4f2940efa03ac720f7d7",
+          "utf8_bytes": 13963,
+          "git_blob_sha1_of_fetched_text": "27378cb2f286f54154290873b12bd1e902c158ed"
+        },
+        {
+          "path": "src/main.rs",
+          "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/src/main.rs",
+          "utf8_sha256": "861833be6261488dc0b954b782210c214cbab85222c4194cf1eb22eb54f3324b",
+          "utf8_bytes": 29825,
+          "git_blob_sha1_of_fetched_text": "43d4d3d94091831c14126e9b82eab03af8373b90"
+        },
+        {
+          "path": "lib/collection/src/collection_manager/tests/test_search_aggregation.rs",
+          "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/lib/collection/src/collection_manager/tests/test_search_aggregation.rs",
+          "utf8_sha256": "d8aab76e55c8c52be157d0aa5eb3d750bca1b98dabb824fe0224389099a4ea8b",
+          "utf8_bytes": 4186,
+          "git_blob_sha1_of_fetched_text": "7b5073406b70cdd9d6ff155b77b76babdec10862"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/LICENSE",
+          "utf8_sha256": "210b508429e913d9de5301f90508bc2cbf5b2281de5b45e607c04d58f0f3bd8f",
+          "utf8_bytes": 11351,
+          "git_blob_sha1_of_fetched_text": "456fb05e0e936f439cf42c517b19797dafd53ff9"
+        }
+      ]
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "sha": "7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4",
+      "date": "2026-10-23T18:45:33Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/README.md",
+          "utf8_sha256": "9b44160901909b924c7520227f5cdb44f7785560957b73987ff12379b3f82faa",
+          "utf8_bytes": 22228,
+          "git_blob_sha1_of_fetched_text": "71b3d092463d648a0e941c105fc1b776db109e45"
+        },
+        {
+          "path": "pyproject.toml",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/pyproject.toml",
+          "utf8_sha256": "5e89c5c8f8882328483ac99ff3c40e3b9f6b2b33c55b55027e4e987488597105",
+          "utf8_bytes": 12441,
+          "git_blob_sha1_of_fetched_text": "847a55fece496d6e2887ca8b0515de4140db36fb"
+        },
+        {
+          "path": "fastapi/applications.py",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/fastapi/applications.py",
+          "utf8_sha256": "a87379cc9eee7164b450471278060a9a9745ac52d08e54844069afe7f94d0cca",
+          "utf8_bytes": 185155,
+          "git_blob_sha1_of_fetched_text": "07790d591f1d458e31963820d0ce2d2d94263e52"
+        },
+        {
+          "path": "fastapi/__init__.py",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/fastapi/__init__.py",
+          "utf8_sha256": "ad493fab8e6c20d3f468e5ed918b9107bfd5278f1f5dcc430bf72cf9402ce6b0",
+          "utf8_bytes": 1081,
+          "git_blob_sha1_of_fetched_text": "0796611f0de72123bc552991d36bb7e08ea8d6c4"
+        },
+        {
+          "path": "docs_src/app_testing/app_b_an_py310/test_main.py",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/docs_src/app_testing/app_b_an_py310/test_main.py",
+          "utf8_sha256": "0983f6ade01f3eee326f77e6c160deb437a67f3907880ee35c68eee5348aa08c",
+          "utf8_bytes": 1866,
+          "git_blob_sha1_of_fetched_text": "4e1c51ecc861d1d6a59c54fb9221272d8e13ee5f"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/fastapi/fastapi/blob/7a0a3f0b286c6c865cf4398ea0e957a87b8bffa4/LICENSE",
+          "utf8_sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+          "utf8_bytes": 1086,
+          "git_blob_sha1_of_fetched_text": "3e92463e6bd522a2a21e5f0a80d8089d6c4be20d"
+        }
+      ]
+    },
+    {
+      "repository": "keycloak/keycloak",
+      "sha": "ebaf01d2d794294a369416587e7afc490e1d7bbe",
+      "date": "2026-10-23T19:12:43Z",
+      "tree_scope": "top-level",
+      "license_candidates": [
+        "LICENSE.txt"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/keycloak/keycloak/blob/ebaf01d2d794294a369416587e7afc490e1d7bbe/README.md",
+          "utf8_sha256": "5a5b61cb4caa1e113cc53fd07794fc8b78cafce254761ab6c690dcfb7355879c",
+          "utf8_bytes": 4414,
+          "git_blob_sha1_of_fetched_text": "7fb6e8054e969370aec2e0518be50d2cf06c3947"
+        },
+        {
+          "path": "LICENSE.txt",
+          "url": "https://github.com/keycloak/keycloak/blob/ebaf01d2d794294a369416587e7afc490e1d7bbe/LICENSE.txt",
+          "utf8_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "utf8_bytes": 11358,
+          "git_blob_sha1_of_fetched_text": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "pom.xml",
+          "url": "https://github.com/keycloak/keycloak/blob/ebaf01d2d794294a369416587e7afc490e1d7bbe/pom.xml",
+          "utf8_sha256": "2403b30d1e3f6d9307df8f5bd569bdd6eb30d8b502d38664c496ea4ad2938e5a",
+          "utf8_bytes": 83860,
+          "git_blob_sha1_of_fetched_text": "aa47a6a6a294ed17bee9e56a361dd33fcbb2553b"
+        }
+      ]
+    },
+    {
+      "repository": "temporalio/temporal",
+      "sha": "7a98c28e70ec062b1a7f68c7bdebe07ca89ac32a",
+      "date": "2026-10-23T19:37:29Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/temporalio/temporal/blob/7a98c28e70ec062b1a7f68c7bdebe07ca89ac32a/README.md",
+          "utf8_sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+          "utf8_bytes": 3888,
+          "git_blob_sha1_of_fetched_text": "d89e30ebb9863ea82c9203e1e696170ea9484af9"
+        },
+        {
+          "path": "docs/architecture/README.md",
+          "url": "https://github.com/temporalio/temporal/blob/7a98c28e70ec062b1a7f68c7bdebe07ca89ac32a/docs/architecture/README.md",
+          "utf8_sha256": "ad9495fc887f302b50f289966f55266e6cab6883afd7d0e10081b2d6d0405f55",
+          "utf8_bytes": 5098,
+          "git_blob_sha1_of_fetched_text": "fe736fd49b7f9386601b0f9d3f61e49432473782"
+        },
+        {
+          "path": "go.mod",
+          "url": "https://github.com/temporalio/temporal/blob/7a98c28e70ec062b1a7f68c7bdebe07ca89ac32a/go.mod",
+          "utf8_sha256": "d2fdbcbe0183626af474a95dd3485fe1883ddc8f5f44c4998828b4e64cb590d7",
+          "utf8_bytes": 10774,
+          "git_blob_sha1_of_fetched_text": "b58f656dc5fb62f7e1c9fc6d9d8aa2b871af4a23"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/temporalio/temporal/blob/7a98c28e70ec062b1a7f68c7bdebe07ca89ac32a/LICENSE",
+          "utf8_sha256": "6aab9afd99ceb1dcaf6a0d91386b46baef9bce17ae4006044e0f231e31430b69",
+          "utf8_bytes": 1152,
+          "git_blob_sha1_of_fetched_text": "3349f76795f4409cba6ae18ea56adf9fbd8346f3"
+        }
+      ]
+    },
+    {
+      "repository": "minio/minio",
+      "sha": "7aac2a2c5b7c882e68c1ce017d8256be2feea27f",
+      "date": "2026-02-12T20:18:48Z",
+      "tree_scope": "recursive",
+      "license_candidates": [
+        "LICENSE"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/minio/minio/blob/7aac2a2c5b7c882e68c1ce017d8256be2feea27f/README.md",
+          "utf8_sha256": "aae99b6e35489bb26bfba4290ac567861d123230d1831562b6aee8c1363aead3",
+          "utf8_bytes": 8960,
+          "git_blob_sha1_of_fetched_text": "84e49277432b54d5e84de2a5be59c75950746d37"
+        },
+        {
+          "path": "go.mod",
+          "url": "https://github.com/minio/minio/blob/7aac2a2c5b7c882e68c1ce017d8256be2feea27f/go.mod",
+          "utf8_sha256": "673f06144e90bc045f0a20050d2874c52e551be5bfbd70dff6e76b66da0db702",
+          "utf8_bytes": 12539,
+          "git_blob_sha1_of_fetched_text": "a957085237fdcff2cebd3640703dfa237a146d7f"
+        },
+        {
+          "path": "cmd/object-api-interface.go",
+          "url": "https://github.com/minio/minio/blob/7aac2a2c5b7c882e68c1ce017d8256be2feea27f/cmd/object-api-interface.go",
+          "utf8_sha256": "b3eb78eab0d2d3c6a4de3865b18f8be1d9397faa5d95edcaf2a1691320c6e9b6",
+          "utf8_bytes": 17893,
+          "git_blob_sha1_of_fetched_text": "06c73741078d3659927960b9afd34512b3a1e963"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/minio/minio/blob/7aac2a2c5b7c882e68c1ce017d8256be2feea27f/LICENSE",
+          "utf8_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+          "utf8_bytes": 34523,
+          "git_blob_sha1_of_fetched_text": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e"
+        }
+      ]
+    }
+  ]
+}

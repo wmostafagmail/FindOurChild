@@ -1,0 +1,1 @@
+CONFIG_LOAD_FAILED: failed to load config /private/tmp/foc-e2e-plan/e2e.config.example.ts: Testing requires both telemetry opt-out flags

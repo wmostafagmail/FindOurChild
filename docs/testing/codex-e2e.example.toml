@@ -1,0 +1,12 @@
+# Inert Phase 1 example; not installed into the active Codex configuration.
+# Resolve this executable to the lockfile-installed local binary before use.
+[mcp_servers.e2e]
+command = "/ABSOLUTE/TEST-PROJECT/node_modules/.bin/e2e"
+args = ["mcp", "--config", "/ABSOLUTE/TEST-PROJECT/e2e.config.ts"]
+
+[mcp_servers.e2e.env]
+E2E_TELEMETRY_DISABLED = "1"
+DO_NOT_TRACK = "1"
+FOC_E2E_DATA_CLASS = "synthetic"
+FOC_E2E_ISOLATED = "1"
+FOC_E2E_BASE_URL = "http://127.0.0.1:3000"

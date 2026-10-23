@@ -1,0 +1,69 @@
+{
+  "scope": "Original research and substantive product/database/API/model/security/safeguarding/privacy decisions preserved byte-for-byte by this correction",
+  "files": [
+    {
+      "path": "docs/PRODUCT_REQUIREMENTS.md",
+      "sha256": "653b0271b86df3debb12b47fd15cd4ad3b2417364dcd8a9c87258f1344ba5264"
+    },
+    {
+      "path": "docs/API_CONTRACTS.md",
+      "sha256": "c932eac5f226fd6d239972a5969856f9637b137e8ec905de7ed75ffbc4e51b2b"
+    },
+    {
+      "path": "docs/DATABASE_SCHEMA.md",
+      "sha256": "2ea9925c1d78e90aa4b8c5d861eae7326d2fb1ae67fdaeea58ae7c9fd6413e4a"
+    },
+    {
+      "path": "docs/AI_MATCHING_SPEC.md",
+      "sha256": "abe91ee178cbb6bc7838a6c3cd37b88cde88ff31304cf4d7184ae29b0a260bd2"
+    },
+    {
+      "path": "docs/AGE_GAP_RECOGNITION_RESEARCH.md",
+      "sha256": "9e6100933a64f9ba1f718c5a6f452e4259711021f654019cb89f1ac712a8b2f0"
+    },
+    {
+      "path": "docs/MODEL_EVALUATION_PLAN.md",
+      "sha256": "81f37e50f63ec015ad487d1f92f0274180f9c335a7964ae8f31bb3f4c52e17c0"
+    },
+    {
+      "path": "docs/SECURITY_THREAT_MODEL.md",
+      "sha256": "18ebe7dc339643250b3faa2e573839167dce464668275d327f056bd8dab23147"
+    },
+    {
+      "path": "docs/CHILD_SAFEGUARDING_POLICY.md",
+      "sha256": "339679eca2cef009e349b94efd0e12b5f2adebacce6efd08458bae1383ddf79e"
+    },
+    {
+      "path": "docs/PRIVACY_AND_RETENTION.md",
+      "sha256": "f364ed158f2e7d8a63ac55f1497b0cee1ea85429279d674a42099606e13024dd"
+    },
+    {
+      "path": "docs/UI_UX_SPECIFICATION.md",
+      "sha256": "265b987fd3f8b7b9d245c876c9b4f1935d8daf0377a45582501e1cf593f376fe"
+    },
+    {
+      "path": "docs/REA_RESEARCH_REPORT.md",
+      "sha256": "3362a7e4736e7c67f35eae7ba39f659fbbf9a01f0da88d07363d8032c9446f05"
+    },
+    {
+      "path": "docs/OPEN_SOURCE_CAPABILITY_MATRIX.md",
+      "sha256": "0fc75e652a3da66bb9d71ba2bf7b463bb7dfa506ea0de4d671c236b42e06dc3e"
+    },
+    {
+      "path": "docs/research/repository-lock.json",
+      "sha256": "f757fb3d312af5992aeee68fb08afc29b79b81cf1854938478ca8afc38136b8c"
+    },
+    {
+      "path": "docs/research/source-evidence.json",
+      "sha256": "88792e463b6836f174fcb008d431362aea68e0fcbb4fab03a06bf388af592d88"
+    },
+    {
+      "path": "tools/rea/package.json",
+      "sha256": "a0cd1890b0af265e7eff030750d9e97828ef74069e24d6971bbe790c7d682cb7"
+    },
+    {
+      "path": "tools/rea/package-lock.json",
+      "sha256": "1294546c54e18f7914f29363c5d058eb425565539d28051eac17b3f0ee097816"
+    }
+  ]
+}

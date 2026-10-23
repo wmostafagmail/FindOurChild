@@ -1,0 +1,262 @@
+{
+  "repository": "tester-army/e2e",
+  "reviewed_commit": "69e123b17e04ed624df16d32f3b1ef95ce22c083",
+  "reviewed_on": "2026-10-23",
+  "license": "Apache-2.0; transitive licenses separate",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "packages": {
+    "e2e": {
+      "version": "0.21.3",
+      "integrity": "sha512-XFnnpJnZVnUqZdxvAsf4fj620hFIYkGRP0klAR1dsPsIfQSwr3/RIUzYWfrkKFX6pXnjdqafd7ROsDauWceTaw==",
+      "license": "Apache-2.0"
+    },
+    "@e2e-dev/web": {
+      "version": "0.15.3",
+      "integrity": "sha512-S15TxVQsSTvjEd00r/fZs0tX/gvq53EhWMtSCYhydnMA9QdfE83GpgiXeRqrBDzNhfbm6f1TwJeANw+qW/4T4A==",
+      "license": "Apache-2.0"
+    },
+    "playwright-core": {
+      "version": "1.64.1",
+      "integrity": "sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==",
+      "license": "Apache-2.0"
+    },
+    "typescript": {
+      "version": "7.0.2",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "license": "Apache-2.0"
+    },
+    "@types/node": {
+      "version": "26.6.2",
+      "integrity": "sha512-X1P21scMv4zGKLYqjdGjaKa7COa0RKVYYZZN/NfvLQ1JegxFhdhpZG/Lyn8AXx6CDUavKAd11v6BvfpkDByK8g==",
+      "license": "MIT"
+    }
+  },
+  "source_files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/README.md",
+      "utf8_sha256": "c19fe7cee1c5155333682216ee94a3b55a65dd446dae0ec0b65359b8ed3bfe82",
+      "git_blob_sha": "b7026e5dc3c631e79dd1b610aa1774f25e7518c5"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/package.json",
+      "utf8_sha256": "ada2454fa118a25227df253f755e76b0f6eab9d630c7ae8c4f1c91f99d5efd34",
+      "git_blob_sha": "433332b407e0db07966e503cf8ec782f82e4ebda"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/LICENSE",
+      "utf8_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "git_blob_sha": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    {
+      "path": "docs/quickstart.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/quickstart.mdx",
+      "utf8_sha256": "e30f6bcdca6c63d3d37f0a8398a8eb19c74abd9c77491b29817b5f026cef1ba6",
+      "git_blob_sha": "bbc507e684061dba9bf030c9730ab9d6ee402e4d"
+    },
+    {
+      "path": "docs/coding-agents.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/coding-agents.mdx",
+      "utf8_sha256": "48bb876718366655ba02d8094510e063597aa3897792c8f4c733960ecb015ace",
+      "git_blob_sha": "f4dd19f38ee1000c4a9b0c6a35b7fcafcf14bbdc"
+    },
+    {
+      "path": "docs/mcp-server.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/mcp-server.mdx",
+      "utf8_sha256": "3ad28b91bff9ee1dd381c64419f6e442519a447356219bbf556799411fe07a28",
+      "git_blob_sha": "cb9f3fd10ab0c1223917ac0e7e0e082dff33e00a"
+    },
+    {
+      "path": "docs/ci.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/ci.mdx",
+      "utf8_sha256": "44cb7255f08081c1445014e395a19ac20a82611d9b25efeff55c2543ed77c3e8",
+      "git_blob_sha": "0d07a2d6a021edd53f53419180656176b045ac84"
+    },
+    {
+      "path": "docs/ci/github-actions.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/ci/github-actions.mdx",
+      "utf8_sha256": "508821e380d88ea89b731d3103112327b0a125684b6047a97c95303e483a734f",
+      "git_blob_sha": "5d9c54f2686085d0c3bb6c10e28e13014ef3049f"
+    },
+    {
+      "path": "docs/telemetry.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/telemetry.mdx",
+      "utf8_sha256": "f916c0c927301d03df807b51fb55b5304f9cc791beaf4175e63ffaa561dca7d7",
+      "git_blob_sha": "4ad3c38d86a6673818d6d2912af184a7185a66c4"
+    },
+    {
+      "path": "docs/security.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/security.mdx",
+      "utf8_sha256": "7c6f6e28c74ad55ab5761ad45c54f4ac755afb433e685979a164f8220e10cfac",
+      "git_blob_sha": "860a114a0bbfffa3353db4299497121e79e4ab65"
+    },
+    {
+      "path": "docs/reference/config.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/reference/config.mdx",
+      "utf8_sha256": "fe46536adbfc9c301b74fe2d2c1fa9adeeb5bfede70cdba15f56aa5eaac79829",
+      "git_blob_sha": "e5c53846e5a30631647a996847a0d02844d57de3"
+    },
+    {
+      "path": "docs/reference/expect.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/reference/expect.mdx",
+      "utf8_sha256": "89d9d6db024940dc283c668d788802082faf33d1f7de89bca61abc103b7b1742",
+      "git_blob_sha": "148df68f175ca972285af674a69faa48930723d1"
+    },
+    {
+      "path": "docs/examples/quickstart/e2e.config.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/examples/quickstart/e2e.config.ts",
+      "utf8_sha256": "91a9fc3018d97129b99e62a515220a7de67bd274ff8115de583f1e7850e19dd5",
+      "git_blob_sha": "e93f0da0135bbba200fc8b22c53f13e46d1aa313"
+    },
+    {
+      "path": "docs/examples/quickstart/tests/example.e2e.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/examples/quickstart/tests/example.e2e.ts",
+      "utf8_sha256": "0be60c3087269a77a027bed046687ec363b3afab057fa2161526c0522b68c371",
+      "git_blob_sha": "e2fe2315b46a8875209bce8653240eb24a01be51"
+    },
+    {
+      "path": ".github/workflows/examples.yml",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/.github/workflows/examples.yml",
+      "utf8_sha256": "5aa98eab2e2e7d7436a71d83463d07b7da88c0efe62ca601284e28c9374f2543",
+      "git_blob_sha": "59a9b095b0fcdb69c27e9b572863de6320a9a96e"
+    },
+    {
+      "path": "packages/web/package.json",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/web/package.json",
+      "utf8_sha256": "bbfae34c93ec3b3c76381d957498a1daff12656c5c9660adb37f54b941b4ac91",
+      "git_blob_sha": "33999294f14daeb59b64509a41d0be25fc593aa6"
+    },
+    {
+      "path": "packages/e2e/src/telemetry/environment.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/e2e/src/telemetry/environment.ts",
+      "utf8_sha256": "710a070de4d7a3c2f85cfc2b10265764ff6084693da509e94f09b070f3a9efee",
+      "git_blob_sha": "d2a8e7d94fa35139d08b856949d4592714e402fc"
+    },
+    {
+      "path": "examples/with-next/package.json",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/examples/with-next/package.json",
+      "utf8_sha256": "d1ec17c3db45de42377b2cf1d509c4766c46bd93d8a697628fd80f1aeab51c98",
+      "git_blob_sha": "d1f85f3e6a5a254691eeb857558ec870e8cf1c01"
+    },
+    {
+      "path": "packages/e2e/src/telemetry/telemetry.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/e2e/src/telemetry/telemetry.ts",
+      "utf8_sha256": "96eab82ebb32a7c43a80fa9ff9c2dc4b2289942c1baaaa05aaaabcb99452d049",
+      "git_blob_sha": "d2eb92138b6f726b2bf73c7b0cbbbca5ed6c32ee"
+    },
+    {
+      "path": "plugins/e2e/.codex-plugin/plugin.json",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/plugins/e2e/.codex-plugin/plugin.json",
+      "utf8_sha256": "e647a576df4642921e0240b0ecdc2920ad220f15cbdd82fa92345065734efd31",
+      "git_blob_sha": "de776faa973908636a4d807d6a7b7c779ce4bf98"
+    },
+    {
+      "path": "docs/reference/reporters.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/reference/reporters.mdx",
+      "utf8_sha256": "96174184fe3475c265adeb2759d68b3ce148eb871447f6b669e995083d469455",
+      "git_blob_sha": "bb6bdb2465e2dcf010c85c0b977394ecd6870d74"
+    },
+    {
+      "path": "examples/with-next/e2e.config.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/examples/with-next/e2e.config.ts",
+      "utf8_sha256": "bfc34b9eeaee5b780e5761a5866941780d85c7d454357f0edca744931aa37e2f",
+      "git_blob_sha": "4e13e0eeb43e30b45944841cb29d77fc6b517f33"
+    },
+    {
+      "path": "packages/e2e/tests/unit/telemetry.test.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/e2e/tests/unit/telemetry.test.ts",
+      "utf8_sha256": "5c184da256c4fa6792d779eb897f80847f7acb6a11bf1d8f533e747170f862dd",
+      "git_blob_sha": "ae7c026220f64f0119ee19a3790207f23988208a"
+    },
+    {
+      "path": "packages/e2e/package.json",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/e2e/package.json",
+      "utf8_sha256": "ed1888cc26197de62e9ce9278072de66f640f877856c979e6a98dc00ff7afcae",
+      "git_blob_sha": "6c27b577d12886937487088e218ddd4b84a47e42"
+    },
+    {
+      "path": "examples/with-next/tests/deterministic.e2e.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/examples/with-next/tests/deterministic.e2e.ts",
+      "utf8_sha256": "9291d5717515fa464d953e6955c3fd3135fe7a9be92bbc4439b178ab38c05a90",
+      "git_blob_sha": "5b9f5c07d9f3a75e510a84f63ffad91c5160c212"
+    },
+    {
+      "path": "docs/reference/cli.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/reference/cli.mdx",
+      "utf8_sha256": "37b1b7dba805681caa9d2a52d46a49f0db3dcb7e37fddfa83a58543796a5aa1b",
+      "git_blob_sha": "495afc0a1d85a962ae240bfa9b4739591cccdffb"
+    },
+    {
+      "path": "docs/reference/web.mdx",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/docs/reference/web.mdx",
+      "utf8_sha256": "0e7af69267668a75f8d07e888ff5ac828deb392699ea3110f62ce9cffeb408b0",
+      "git_blob_sha": "f4db38c0337880bb2ac86054013505d3c83852aa"
+    },
+    {
+      "path": "packages/web/src/index.ts",
+      "url": "https://github.com/tester-army/e2e/blob/69e123b17e04ed624df16d32f3b1ef95ce22c083/packages/web/src/index.ts",
+      "utf8_sha256": "30b4434fdd581ae4b6b7fbf604476b8daa72bf2e7c278dfb1394418d377e0bab",
+      "git_blob_sha": "620a109b119ee2fe291a56c65f451c1ec3e97e9c"
+    }
+  ],
+  "browser_revisions": [
+    {
+      "name": "chromium",
+      "revision": "1248",
+      "installByDefault": true,
+      "browserVersion": "156.0.8078.4",
+      "title": "Chrome for Testing"
+    },
+    {
+      "name": "chromium-headless-shell",
+      "revision": "1248",
+      "installByDefault": true,
+      "browserVersion": "156.0.8078.4",
+      "title": "Chrome Headless Shell"
+    },
+    {
+      "name": "firefox",
+      "revision": "1555",
+      "installByDefault": true,
+      "browserVersion": "157.0",
+      "title": "Firefox"
+    },
+    {
+      "name": "webkit",
+      "revision": "2370",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "27.2",
+      "title": "WebKit"
+    },
+    {
+      "name": "ffmpeg",
+      "revision": "1013",
+      "installByDefault": true
+    },
+    {
+      "name": "winldd",
+      "revision": "1007",
+      "installByDefault": false
+    },
+    {
+      "name": "android",
+      "revision": "1001",
+      "installByDefault": false
+    }
+  ],
+  "browser_binaries_installed_or_launched": false,
+  "limits": [
+    "Selected peer versions/install/config checked, not app or cross-browser runtime compatibility",
+    "Published package and reviewed source are separately identified; no source-to-package equivalence attestation performed",
+    "Other testing suite versions/images/actions remain Phase 1 lock/compatibility work"
+  ]
+}

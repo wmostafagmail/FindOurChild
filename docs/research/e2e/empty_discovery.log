@@ -1,0 +1,1 @@
+NO_TESTS: no test file matched "tests/browser/**/*.e2e.ts" under /private/tmp/foc-e2e-plan; create tests/example.e2e.ts (e2e init writes one), or set tests in the config; pass --pass-with-no-tests to allow this

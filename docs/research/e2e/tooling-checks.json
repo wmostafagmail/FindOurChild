@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "check": "cli_version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "cli_version.log"
+    },
+    {
+      "check": "telemetry_off",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "telemetry_off.log"
+    },
+    {
+      "check": "configuration_typecheck",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "configuration_typecheck.log"
+    },
+    {
+      "check": "empty_discovery",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "empty_discovery.log"
+    },
+    {
+      "check": "missing_opt_out_guard",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "missing_opt_out_guard.log"
+    },
+    {
+      "check": "nonlocal_target_guard",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "nonlocal_target_guard.log"
+    },
+    {
+      "check": "nonsynthetic_guard",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "matched_expected_behavior": true,
+      "scope": "tooling/configuration only",
+      "application_tests_executed": 0,
+      "log": "nonsynthetic_guard.log"
+    }
+  ],
+  "all_tooling_expectations_met": true,
+  "clean_install_exit_code": 0,
+  "application_tests_executed": 0,
+  "application_validation": "pending",
+  "no_test_discovery_is_application_success": false,
+  "telemetry_packet_level_capture_performed": false,
+  "checked_file_sha256": {
+    "tools/e2e-plan/package.json": "42f6229d158d2be4c147420793fb1fc0ab62cb8adb5fc74ca3f8eccb0d07d410",
+    "tools/e2e-plan/package-lock.json": "3f4c8e0d1500aa2fb4e137b96ad4a02269b699eb7fe364d7a2a614a10cc80032",
+    "tools/e2e-plan/e2e.config.example.ts": "42732157311296322efbd500bacedd833ff4bb262219a9e1b028f5bc375bacf8",
+    "tools/e2e-plan/tsconfig.json": "e7d5068b86fb7b7e78761bb4d3a442e2da38b99370c6e619f86c4c49457a8c02"
+  }
+}
