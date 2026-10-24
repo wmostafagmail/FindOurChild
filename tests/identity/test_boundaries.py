@@ -33,7 +33,7 @@ def test_real_keycloak_mfa_session_case_and_tenant_boundary():
         assert (
             client.post(
                 base + ORG_A + "/memberships",
-                headers=headers,
+                headers={**headers, "Idempotency-Key": str(uuid4())},
                 json={
                     "principal_id": STAFF_B,
                     "role": "reviewer",
@@ -78,23 +78,30 @@ def test_real_admin_membership_enforcement_and_audit():
             assert (
                 client.post(
                     base + "/memberships",
-                    headers=headers,
+                    headers={**headers, "Idempotency-Key": str(uuid4())},
                     json={"principal_id": pid, "role": role, "expires_at": expiry},
                 ).status_code
                 == 403
             )
+        command_headers = {**headers, "Idempotency-Key": str(uuid4())}
+        command_body = {"principal_id": STAFF_B, "role": "reviewer", "expires_at": expiry}
+        assert client.post(base + "/memberships", headers=headers, json=command_body).status_code == 422
+        assert (
+            client.post(base + "/memberships", headers=command_headers, json=command_body).status_code == 200
+        )
+        assert (
+            client.post(base + "/memberships", headers=command_headers, json=command_body).status_code == 200
+        )
         assert (
             client.post(
-                base + "/memberships",
-                headers=headers,
-                json={"principal_id": STAFF_B, "role": "reviewer", "expires_at": expiry},
+                base + "/memberships", headers=command_headers, json={**command_body, "role": "supervisor"}
             ).status_code
-            == 200
+            == 409
         )
         assert (
             client.post(
                 base + "/memberships",
-                headers=headers,
+                headers={**headers, "Idempotency-Key": str(uuid4())},
                 json={"principal_id": STAFF_B, "role": "reviewer", "expires_at": expiry, "revoke": True},
             ).status_code
             == 200

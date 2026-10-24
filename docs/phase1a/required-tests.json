@@ -157,7 +157,8 @@
     "tests/security/test_saf_08.py::test_tc_saf_08_disabled_p1",
     "tests/security/test_saf_09.py::test_tc_saf_09_disabled_p1",
     "tests/integration/test_contracts.py::test_fnd_migration_replay_and_checksum",
-    "tests/integration/test_contracts.py::test_fnd_event_envelope_rejects_child_payload"
+    "tests/integration/test_contracts.py::test_fnd_event_envelope_rejects_child_payload",
+    "tests/database/test_identity.py::test_membership_idempotency_scope_conflict_and_revoked_actor"
   ],
   "browser_titles": [
     "TC_FND_BROWSER_AR_READY",

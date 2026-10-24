@@ -9,7 +9,7 @@ import secrets
 import time
 from contextlib import contextmanager
 from datetime import UTC, datetime
-from typing import Literal
+from typing import Annotated, Literal
 from urllib.parse import urlencode
 from uuid import UUID
 
@@ -17,9 +17,9 @@ import httpx
 import jwt
 import psycopg
 from cryptography.fernet import Fernet, InvalidToken
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Header, HTTPException, Request
 from fastapi.responses import JSONResponse, RedirectResponse
-from pydantic import BaseModel, ConfigDict
+from pydantic import AwareDatetime, BaseModel, ConfigDict
 
 COOKIE = "__Host-foc-session"
 FLOW = "__Host-foc-flow"
@@ -317,22 +317,29 @@ class MembershipChange(BaseModel):
     model_config = ConfigDict(extra="forbid")
     principal_id: UUID
     role: str
-    expires_at: datetime
+    expires_at: AwareDatetime
     revoke: bool = False
 
 
 @router.post("/identity/organizations/{org}/memberships", response_model=MembershipDTO)
-def membership(org: UUID, body: MembershipChange, request: Request):
+def membership(
+    org: UUID,
+    body: MembershipChange,
+    request: Request,
+    idempotency_key: Annotated[UUID, Header(alias="Idempotency-Key")],
+):
     principal, _ = authenticate(request, mutation=True)
     try:
         with connection(request, principal, org) as conn:
             member(conn, org, "org_admin")
             conn.execute(
-                "SELECT platform.membership_change(%s,%s,%s,%s,%s)",
-                (org, body.principal_id, body.role, body.expires_at, body.revoke),
+                "SELECT platform.membership_command(%s,%s,%s,%s,%s,%s)",
+                (org, body.principal_id, body.role, body.expires_at, body.revoke, idempotency_key),
             )
     except psycopg.errors.InsufficientPrivilege:
         raise HTTPException(403, "PERMISSION_DENIED") from None
+    except psycopg.errors.UniqueViolation:
+        raise HTTPException(409, "IDEMPOTENCY_CONFLICT") from None
     return {"status": "revoked" if body.revoke else "granted"}
 
 

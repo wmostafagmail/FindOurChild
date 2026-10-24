@@ -92,6 +92,14 @@ def main():
         ):
             raise RuntimeError("Restored session RLS disabled")
         report["all_migrations"] = restored_migrations
+        if (
+            query(
+                name,
+                "SELECT relrowsecurity AND relforcerowsecurity FROM pg_class WHERE oid='platform.identity_commands'::regclass",
+            )
+            != "t"
+        ):
+            raise RuntimeError("Restored command RLS disabled")
         report["identity_session_rls"] = "passed"
         report["hardening_sha256"] = hardening
         output = ROOT / "artifacts/raw"

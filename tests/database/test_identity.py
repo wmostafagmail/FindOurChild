@@ -2,6 +2,7 @@
 
 import hashlib
 from datetime import UTC, datetime, timedelta
+from uuid import uuid4
 
 import psycopg
 import pytest
@@ -34,8 +35,8 @@ def test_membership_admin_cannot_grant_sensitive_or_self_roles(db):
     ]:
         with pytest.raises(psycopg.errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
-                "SELECT platform.membership_change(%s,%s,%s,%s,false)",
-                (db["org_b"], target, role, expiry),
+                "SELECT platform.membership_command(%s,%s,%s,%s,false,%s)",
+                (db["org_b"], target, role, expiry, uuid4()),
             )
     assert conn.execute("SELECT count(*) FROM app.cases").fetchone()[0] == 0
 
@@ -116,8 +117,8 @@ def test_membership_change_rolls_back_when_audit_unavailable(db):
     try:
         with pytest.raises(psycopg.errors.InsufficientPrivilege), conn.transaction():
             conn.execute(
-                "SELECT platform.membership_change(%s,%s,'reviewer',now()+interval '1 hour',false)",
-                (db["org_b"], db["principal_a"]),
+                "SELECT platform.membership_command(%s,%s,'reviewer',now()+interval '1 hour',false,%s)",
+                (db["org_b"], db["principal_a"], uuid4()),
             )
         assert (
             admin.execute(
@@ -129,3 +130,36 @@ def test_membership_change_rolls_back_when_audit_unavailable(db):
     finally:
         conn.rollback()
         admin.execute("GRANT INSERT ON app.audit_events TO foc_policy")
+
+
+@pytest.mark.database
+def test_membership_idempotency_scope_conflict_and_revoked_actor(db):
+    conn = context(db, db["org_b"], db["principal_b"])
+    command = uuid4()
+    expiry = datetime.now(UTC) + timedelta(hours=1)
+    args = (db["org_b"], db["principal_a"], "reviewer", expiry, False, command)
+    conn.execute("SELECT platform.membership_command(%s,%s,%s,%s,%s,%s)", args)
+    conn.execute("SELECT platform.membership_command(%s,%s,%s,%s,%s,%s)", args)
+    conn.commit()
+    assert (
+        db["admin"]
+        .execute("SELECT count(*) FROM app.audit_events WHERE organization_id=%s", (db["org_b"],))
+        .fetchone()[0]
+        == 1
+    )
+    conn = context(db, db["org_b"], db["principal_b"])
+    with pytest.raises(psycopg.errors.UniqueViolation), conn.transaction():
+        conn.execute(
+            "SELECT platform.membership_command(%s,%s,%s,%s,%s,%s)", (*args[:2], "supervisor", *args[3:])
+        )
+    conn.rollback()
+    db["admin"].execute(
+        "UPDATE app.memberships SET revoked_at=now() WHERE organization_id=%s AND principal_id=%s",
+        (db["org_b"], db["principal_b"]),
+    )
+    conn = context(db, db["org_b"], db["principal_b"])
+    with pytest.raises(psycopg.errors.InsufficientPrivilege), conn.transaction():
+        conn.execute("SELECT platform.membership_command(%s,%s,%s,%s,%s,%s)", args)
+    conn.rollback()
+    with pytest.raises(psycopg.errors.InsufficientPrivilege):
+        conn.execute("SELECT * FROM platform.identity_commands")

@@ -5370,6 +5370,15 @@
               "format": "uuid",
               "title": "Org"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "requestBody": {
@@ -5435,6 +5444,16 @@
           },
           "503": {
             "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Idempotency key reused with different body",
             "content": {
               "application/json": {
                 "schema": {
