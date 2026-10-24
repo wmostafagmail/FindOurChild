@@ -54,20 +54,26 @@ def test_identity_missing_context_and_revocation(db):
 @pytest.mark.database
 def test_audit_chain_and_runtime_append_only(db):
     conn = context(db)
-    for _ in range(2):
-        conn.execute(
-            "SELECT platform.audit_append(%s,'case.permission.allowed',%s,'allowed')",
-            (db["org_a"], db["case_a"]),
-        )
+    conn.execute(
+        "SELECT platform.audit_append(%s,'case.permission.allowed',%s,'allowed')", (db["org_a"], db["case_a"])
+    )
+    context(db, db["org_b"], db["principal_b"]).execute(
+        "SELECT platform.audit_append(%s,'identity.read',%s,'allowed')", (db["org_b"], db["org_b"])
+    )
+    conn = context(db)
+    conn.execute(
+        "SELECT platform.audit_append(%s,'case.permission.allowed',%s,'allowed')", (db["org_a"], db["case_a"])
+    )
     conn.commit()
     rows = (
         db["admin"]
         .execute(
-            "SELECT previous_hash,event_hash FROM app.audit_events WHERE organization_id=%s ORDER BY sequence",
+            "SELECT previous_hash,event_hash,sequence FROM app.audit_events WHERE organization_id=%s ORDER BY sequence",
             (db["org_a"],),
         )
         .fetchall()
     )
+    assert [row[2] for row in rows] == [1, 2]  # Other-tenant activity must create no sequence gaps.
     assert bytes(rows[0][0]) == bytes(32)
     assert bytes(rows[1][0]) == bytes(rows[0][1])
     verified = (

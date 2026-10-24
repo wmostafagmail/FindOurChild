@@ -76,6 +76,13 @@ def export(root=ROOT):
         try:
             if name == "python":
                 report = json.loads((root / "artifacts/raw/python-results.json").read_text())
+                summaries["python_observed"] = [
+                    {
+                        "id": t["id"] if t.get("id") in manifest["python"] else "unknown",
+                        "status": t.get("status") if t.get("status") in ["passed", "failed"] else "unknown",
+                    }
+                    for t in report.get("tests", [])
+                ]
                 summaries[name] = python_gate(report, manifest, digest)
             else:
                 report = json.loads((root / ".e2e/report.json").read_text())
@@ -103,6 +110,13 @@ def export(root=ROOT):
     try:
         identity = json.loads((root / "artifacts/raw/identity-results.json").read_text())
         required_identity = json.loads((root / "docs/phase1b/required-tests.json").read_text())
+        summaries["identity_observed"] = [
+            {
+                "id": t["id"] if t.get("id") in required_identity["python"] else "unknown",
+                "status": t.get("status") if t.get("status") in ["passed", "failed"] else "unknown",
+            }
+            for t in identity.get("tests", [])
+        ]
         if (
             identity["exit_code"] != 0
             or identity["source_digest"] != digest

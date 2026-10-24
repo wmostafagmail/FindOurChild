@@ -1,5 +1,6 @@
 """Append identity executables without changing the immutable Phase 0/1A evidence or future pending cases."""
 import json
+import sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -14,6 +15,11 @@ def main():
     groups=[('IDN-01','JWT issuer/audience/signature/MFA/time/nonce and IdP failure boundaries',[t for t in identity if '/test_tokens.py::' in t]),('IDN-02','Anonymous, forged, callback state and Secure-cookie boundaries',[t for t in identity if '/test_boundaries.py::' in t and 'test_real_' not in t and 'test_live_revocation' not in t]),('IDN-03','Real Keycloak MFA, BFF/API, organizations, case grants, CSRF, audit and live revocation',[t for t in identity if 'test_real_' in t or 'test_live_revocation' in t]),('IDN-04','Real PostgreSQL session ACLs, role elevation denial, context isolation and audit integrity',[t for t in baseline if '/test_identity.py::' in t]),('IDN-05','TesterArmy real TLS MFA/tenant/CSRF/logout, Arabic switch, every configured browser',['TC_ID_BROWSER_MFA_TENANT_LOGOUT'])]
     evidence_path=ROOT/'artifacts/phase1b-sanitized/results.json'
     evidence=json.loads(evidence_path.read_text()) if evidence_path.exists() else {}
+    if evidence.get("gate",{}).get("status")=="passed":
+        sys.path.insert(0,str(ROOT))
+        from scripts.fingerprint import fingerprint
+        if evidence["gate"]["source_digest"] != fingerprint():
+            raise SystemExit("Stale evidence cannot mark current identity cases passed")
     executed={t['id'] for key in ['python','identity','browser'] for t in evidence.get(key,[]) if t.get('status')=='passed'} if evidence.get('gate',{}).get('status')=='passed' else set()
     for fid,title,tests in groups:
         feature={'feature_id':fid,'category':'identity_security','source':'phase1b/ARCHITECTURE.md','title':title,'suite':'browser' if fid=='IDN-05' else 'coordinated_python_api_database_security','phase_introduced':'1B','positive_scenarios':'Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations','negative_scenarios':'Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely','security_authorization_scenarios':'Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit','edge_cases':'Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results','fixture_ids':['FX-IDP','FX-BASE'],'expected_outcomes':'Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute','test_cases':[]}

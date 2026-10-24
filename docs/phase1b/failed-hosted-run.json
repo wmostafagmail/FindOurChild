@@ -41,5 +41,23 @@
     "failure": "Python 3.13 SSL strict certificate verification: Missing Subject Key Identifier",
     "correction": "Add standard CA/leaf SKI and CA authority-key identifiers. Strict openssl preflight, no verification bypass.",
     "combined_coverage": "not executed after mandatory identity failure"
+  },
+  "bff_header_follow_up": {
+    "run_id": 40104947647,
+    "commit": "edf1fc782e5a5380371610cbd3862d50752da974",
+    "status": "failed",
+    "python_regression_passed": 158,
+    "browser_passed": 96,
+    "identity_passed": 56,
+    "identity_failed": 2,
+    "coverage_percent": 92,
+    "failure": "BFF dropped required Idempotency-Key; API correctly rejected membership requests with 422 before authorization",
+    "correction": "Forward the fixed idempotency header; retain strict API requirement and existing authorization expectations. Capture Python assertion diagnostics privately rather than emitting synthetic session values to hosted logs.",
+    "raw_log_retention": "Historical raw logs are private repository diagnostics; only expired, synthetic, loopback-bound test sessions were present. No real child information. Published artifacts remain allowlisted."
+  },
+  "audit_metadata_correction": {
+    "finding": "Global identity sequence could expose cross-organization audit activity through gaps",
+    "correction": "Migration 0006 allocates future sequence numbers per organization under transaction locks; retains original events and hashes. Interleaved tenant activity regression added to existing audit-chain test.",
+    "data_scope": "Synthetic candidate only; no production child data or deployment."
   }
 }

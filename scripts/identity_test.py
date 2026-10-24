@@ -1,7 +1,9 @@
 """Host runner for real IdP/BFF flows plus explicit cryptographic unit cases. No skipped cases accepted."""
 
+import io
 import json
 import os
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 
 import pytest
@@ -20,18 +22,24 @@ def main():
     os.environ["FOC_IDP_UPSTREAM"] = "http://127.0.0.1:8080/realms/foc-synthetic"
     result = Results()
     before = fingerprint()
-    code = pytest.main(
-        [
-            "tests/identity",
-            "--tb=short",
-            "--cov=services/api/foc_api",
-            "--cov=scripts.migrate",
-            "--cov-append",
-            "--cov-report=",
-            "--cov-fail-under=0",
-        ],
-        plugins=[result],
-    )
+    captured = io.StringIO()
+    with redirect_stdout(captured), redirect_stderr(captured):
+        code = pytest.main(
+            [
+                "tests/identity",
+                "--tb=short",
+                "--cov=services/api/foc_api",
+                "--cov=scripts.migrate",
+                "--cov-append",
+                "--cov-report=",
+                "--cov-fail-under=0",
+            ],
+            plugins=[result],
+        )
+    private_log = ROOT / "artifacts/raw/identity-pytest.log"
+    private_log.write_text(captured.getvalue())
+    private_log.chmod(0o600)
+
     entries = [
         {
             "id": node,
@@ -44,6 +52,14 @@ def main():
     ]
     output = {"exit_code": int(code), "source_digest": before, "tests": entries}
     (ROOT / "artifacts/raw/identity-results.json").write_text(json.dumps(output, indent=2) + "\n")
+    print(
+        "identity assertions: "
+        + str(sum(e["status"] == "passed" for e in entries))
+        + " passed / "
+        + str(len(entries))
+        + " executed; detailed diagnostics retained privately"
+    )
+
     required = json.loads((ROOT / "docs/phase1b/required-tests.json").read_text())["python"]
     if (
         before != fingerprint()

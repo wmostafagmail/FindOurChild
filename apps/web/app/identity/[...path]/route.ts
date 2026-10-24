@@ -4,7 +4,7 @@ async function proxy(request: Request, context: {params: Promise<{path:string[]}
   const path = (await context.params).path.join('/');
   if (!paths.test(path)) return Response.json({code:'NOT_FOUND'}, {status:404});
   const headers = new Headers();
-  for (const name of ['cookie','origin','content-type','x-csrf-token','sec-fetch-site']) {
+  for (const name of ['cookie','origin','content-type','x-csrf-token','idempotency-key','sec-fetch-site']) {
     const value = request.headers.get(name);
     if (value) headers.set(name,value);
   }
