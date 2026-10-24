@@ -28,5 +28,18 @@
     "root_cause": "Playwright Firefox overrides distribution policy loading. Custom certificate policy requires PLAYWRIGHT_FIREFOX_POLICIES_JSON; policy contents were present but not selected.",
     "official_reference": "https://playwright.dev/docs/api/class-browsertype",
     "correction": "Select the per-run workspace certificate policy via the documented environment variable; no TLS bypass or browser patch."
+  },
+  "strict_client_follow_up": {
+    "run_id": 40103892277,
+    "commit": "8bb6a993b2b89feb86f3ef3f3e930406d34e87bd",
+    "status": "failed",
+    "browser_passed": 96,
+    "browser_failed": 0,
+    "browser_skipped": 0,
+    "identity_passed": 46,
+    "identity_failed": 12,
+    "failure": "Python 3.13 SSL strict certificate verification: Missing Subject Key Identifier",
+    "correction": "Add standard CA/leaf SKI and CA authority-key identifiers. Strict openssl preflight, no verification bypass.",
+    "combined_coverage": "not executed after mandatory identity failure"
   }
 }

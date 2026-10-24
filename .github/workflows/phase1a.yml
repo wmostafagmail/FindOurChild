@@ -62,7 +62,7 @@ jobs:
       - name: Configure ephemeral runner TLS trust
         run: |
           .venv/bin/python -m scripts.tls_setup
-          openssl verify -CAfile .runtime/tls/cert.pem .runtime/tls/server.pem
+          openssl verify -x509_strict -CAfile .runtime/tls/cert.pem .runtime/tls/server.pem
           sudo cp .runtime/tls/cert.pem /usr/local/share/ca-certificates/foc-synthetic.crt
           sudo update-ca-certificates
           sudo apt-get update -qq
@@ -79,8 +79,10 @@ jobs:
       - name: TesterArmy browser regression
         run: .venv/bin/python -m scripts.dev browser
       - name: Real Keycloak identity and authorization regression
+        if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.identity_test
       - name: Collect API-process and combined regression coverage
+        if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.coverage_finish
       - name: Sanitize and enforce complete results
         if: always()
