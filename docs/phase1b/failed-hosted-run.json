@@ -17,5 +17,16 @@
   },
   "identity_and_combined_coverage": "not executed; blocked after browser failure",
   "correction": "Separate constrained CA/server leaf; retain certificate verification and all targets; rerun entire required pipeline",
-  "original_log": "GitHub Actions run 40102600554; preserved locally at /private/tmp/foc-phase1b-ad2-hosted.log"
+  "original_log": "GitHub Actions run 40102600554; preserved locally at /private/tmp/foc-phase1b-ad2-hosted.log",
+  "follow_up": {
+    "run_id": 40103228628,
+    "commit": "d807d28fa933bbc56d0287163f8684dcbeb09d5f",
+    "status": "failed",
+    "browser_passed": 64,
+    "browser_failed": 32,
+    "failure": "Firefox SEC_ERROR_UNKNOWN_ISSUER",
+    "root_cause": "Playwright Firefox overrides distribution policy loading. Custom certificate policy requires PLAYWRIGHT_FIREFOX_POLICIES_JSON; policy contents were present but not selected.",
+    "official_reference": "https://playwright.dev/docs/api/class-browsertype",
+    "correction": "Select the per-run workspace certificate policy via the documented environment variable; no TLS bypass or browser patch."
+  }
 }
