@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
   "scope": "Phase 0 baseline plus Phase 1A foundation; no Phase 1B/1C execution authorized",
-  "application_test_status": "phase1a_local_validated_external_gates_pending",
+  "application_test_status": "phase1a_required_validation_passed_awaiting_owner_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -14745,31 +14745,39 @@
         {
           "test_case_id": "TC_FND_CI_REMOTE_RUN",
           "kind": "security_authorization",
-          "scenario": "Private origin is configured; main protection is read back, but hosted execution, check App binding and the failing-test merge probe are pending.",
+          "scenario": "Observed hosted artifacts and App-bound protection, with actual HTTP 405 rejection of a failing test on an isolated protected base; main never receives the probe.",
           "planned_file": ".github/workflows/phase1a.yml",
           "planned_selector": "REMOTE_RUN",
           "planned_command": "Verify hosted CI and the required check on the private origin, including a failing-test merge probe",
           "expected_outcome": "Pinned-action pull-request/full-regression workflow enforces required results and publishes only sanitized artifacts; remote run/protection must be independently verified.",
           "required_from_phase": 1,
           "phase1a_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "path": "docs/phase1a/hosted-evidence.json",
+            "scope": "REMOTE_RUN",
+            "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d"
+          }
         },
         {
           "test_case_id": "TC_FND_CI_BRANCH_PROTECTION",
           "kind": "security_authorization",
-          "scenario": "Private origin is configured; main protection is read back, but hosted execution, check App binding and the failing-test merge probe are pending.",
+          "scenario": "Observed hosted artifacts and App-bound protection, with actual HTTP 405 rejection of a failing test on an isolated protected base; main never receives the probe.",
           "planned_file": ".github/workflows/phase1a.yml",
           "planned_selector": "BRANCH_PROTECTION",
           "planned_command": "Verify hosted CI and the required check on the private origin, including a failing-test merge probe",
           "expected_outcome": "Pinned-action pull-request/full-regression workflow enforces required results and publishes only sanitized artifacts; remote run/protection must be independently verified.",
           "required_from_phase": 1,
           "phase1a_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "path": "docs/phase1a/hosted-evidence.json",
+            "scope": "BRANCH_PROTECTION",
+            "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d"
+          }
         }
       ],
-      "current_validation_status": "partial",
+      "current_validation_status": "passed",
       "execution_evidence": {
         "path": "artifacts/sanitized/results.json",
         "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d"

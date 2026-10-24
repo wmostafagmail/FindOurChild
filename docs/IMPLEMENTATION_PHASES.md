@@ -1,6 +1,6 @@
 # Implementation phases and validation gates
 
-> Current authorization is **Phase 1A only**. Original Phase 0 stop statements below describe the historical run and are superseded solely by the explicit Phase 1A authorization. Phase 1A covers repository/locks/environment/contracts/schema/skeleton/tests. Stop for review after 1A; implement identity/security only after separate Phase 1B approval; stop again before Phase 1C reporting. No production facial matching or real child information is permitted. The [current review](phase1a/REVIEW.md) records a blocked acceptance gate; no approval for 1B is inferred.
+> Current authorization is **Phase 1A only**. Original Phase 0 stop statements below describe the historical run and are superseded solely by the explicit Phase 1A authorization. Phase 1A covers repository/locks/environment/contracts/schema/skeleton/tests. Stop for review after 1A; implement identity/security only after separate Phase 1B approval; stop again before Phase 1C reporting. No production facial matching or real child information is permitted. The [current review](phase1a/REVIEW.md) records passing technical gates and readiness for owner acceptance review; no approval for 1B is inferred.
 
 Status: **stop after Phase 0**. This file plans later work; it does not authorize it.
 

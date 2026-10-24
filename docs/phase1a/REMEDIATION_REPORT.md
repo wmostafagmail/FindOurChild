@@ -2,7 +2,7 @@
 
 Date: **2026-10-24 (Africa/Cairo)**. Project: **Find Our Child**. Starting revision: `add5cf75e80154567ee2188d00973bccbd18cd2e`, branch `codex/phase-1a-foundation`. Corrective runtime revision: **`ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d`**.
 
-**Local validation passes. Phase 1A acceptance remains blocked by hosted CI and branch-protection verification.** The private repository is https://github.com/wmostafagmail/FindOurChild. Main is published and protected after the owner upgraded the account. Engineering publication is blocked by the CLI token’s missing workflow scope; hosted execution and negative merge proof remain pending. No external-blocker waiver was given. No Phase 1B work was started.
+**All required Phase 1A technical validation passes locally and in hosted CI; ready for owner acceptance review.** The private repository is [wmostafagmail/FindOurChild](https://github.com/wmostafagmail/FindOurChild), with [draft implementation PR #1](https://github.com/wmostafagmail/FindOurChild/pull/1). Main protection is App-bound and read back; an actual failing-check merge request received HTTP 405 on a disposable protected base. No external-blocker waiver was needed. No Phase 1B work or implementation merge was performed. See [hosted validation](HOSTED_VALIDATION.md).
 
 ## Root cause and corrective actions
 
@@ -20,7 +20,8 @@ The actual command is `e2e run --config e2e.config.ts --retries 0 --no-cache`, t
 
 | Execution category | Chromium | Firefox | WebKit | Total |
 |---|---:|---:|---:|---:|
-| TesterArmy browser application tests, passed | 24 | 24 | 24 | **72** |
+| Local TesterArmy browser application tests, passed | 24 | 24 | 24 | **72** |
+| Hosted PR TesterArmy browser application tests, passed | 24 | 24 | 24 | **72** |
 | TesterArmy failed / skipped / retried | 0 | 0 | 0 | **0** |
 | Ordinary Playwright-only application acceptance tests | 0 | 0 | 0 | **0** |
 | Final separate low-level launch diagnostics | 0 | 2 | 0 | **2 probes** |
@@ -47,9 +48,11 @@ Three logical application cases expand across three engines, two browser locales
 | Clean npm lock install, TypeScript, production web build | Passed |
 | Source-bound required-results and sanitized export | **Passed** |
 | Documentation/configuration checks | See [configuration-checks.json](configuration-checks.json); historical validators test the preserved Phase 0 commit, not application behavior |
-| Hosted CI / protection / failing-check merge block | **Pending**: main protection read back; workflow authorization/hosted run/merge proof incomplete |
+| Hosted CI / protection / failing-check merge block | **Passed**: run 40079573659, App 15368 main readback and actual HTTP 405 rejection |
 
 Negative regression includes every disabled domain operation with anonymous and forged credentials, cross-organization case reads and foreign keys, same-organization/wrong-case object references, missing/expired/revoked grants and membership, disabled principals, suspended organizations, forbidden sensitive tables, role elevation, wrong purpose and connection-context reuse. Four original disabled-feature safeguarding guards pass; operational identity/reporting/release/biometric workflows remain unimplemented and pending.
+
+The accepted hosted PR run independently repeats the same 151 Python and 72 browser executions; all mandatory candidate results pass. The isolated negative probe instead has 150 passing Python tests and one intentional failure, with downstream browser/restore/audit steps unexecuted and never counted as passed. Its purpose is to demonstrate rejection.
 
 The current [matrix](../TEST_MATRIX.md) preserves the original 151-feature/630-case baseline and maps all delivered tests. Counts of baseline features and executed Python tests happen to match; they do not mean the full product baseline passed.
 
@@ -104,24 +107,26 @@ print('Source and sanitized artifact hashes verified')
 PY
 ```
 
-This verifies integrity and source binding, not third-party execution attestation. Independent reviewers can reproduce the full commands above with new synthetic data; the hosted attestation is still pending.
+This local check verifies integrity and source binding. The [hosted report](HOSTED_VALIDATION.md) separately verifies GitHub execution and its artifact archive. Independent reviewers can reproduce the full commands above with new synthetic data and query the recorded hosted run.
 
-## Hosted execution and protected-branch steps
+## Hosted execution and protected-branch evidence
 
-The owner provided [wmostafagmail/FindOurChild](https://github.com/wmostafagmail/FindOurChild), initially empty and private. Both the connector and CLI report owner/admin/push access. Origin is configured. Git’s previous credential helper failed; a command-scoped `gh auth git-credential` helper successfully authenticated without exposing credentials or changing global Git settings.
+The full [hosted validation report](HOSTED_VALIDATION.md), [hosted metadata](hosted-evidence.json), [artifact verification](hosted-artifact-verification.json), [job steps](hosted-job-steps.json) and [merge-block proof](negative-gate-proof.json) are reviewable evidence.
 
-The atomic two-branch push was rejected because the CLI OAuth token has `gist, read:org, repo` scopes and lacks **workflow**. GitHub explicitly refuses to publish `.github/workflows/phase1a.yml` without it. Both branches remained absent after that attempt. A separate push published only the approved main baseline `40231be73ab9a5eb577ccf5308c86f6b7282976b`; no implementation was substituted or history rewritten. A temporary, fsck-verified copy of Git metadata avoided Documents pack-read stalls while preserving exact object/commit identities.
+The owner supplied an empty private repository with admin/push access. Initial Git credentials failed; a command-scoped GitHub CLI helper authenticated without changing global Git settings. The initial atomic two-branch push was rejected because OAuth lacked workflow scope, leaving both branches absent. The owner completed GitHub device consent; scopes now include workflow. The owner also resolved the initial private-repository protection HTTP 403 by upgrading the account. No purchase, public-visibility change or credential publication was performed by the agent.
 
-Initial ruleset and classic-protection reads returned HTTP 403: private-repository protection required GitHub Pro. The owner upgraded; a later ruleset read succeeded. Main protection was then configured and independently read back with HTTP 200. [Requested settings](branch-protection.request.json), [observed response](branch-protection.observed.json) and [hosted metadata](hosted-evidence.json) preserve exact controls. The account’s plan blocker is resolved. No visibility change or purchase was performed by the agent.
+Main was published as the approved baseline. Engineering commit **dba2b79526b052ce3bd893998129f6c90932b30d** was then published and hosted PR workflow **40079573659** passed. PR checkout **de5371ab125c802ce5a282acd87712e170b395dd** and head dba2b79 have the same complete Git tree. The 54-file sanitized ZIP matches GitHub's SHA-256 digest; all 53 payload checksums, executed source hashes and 48 metadata-stripped PNGs were verified. A versioned copy is retained under `artifacts/hosted-sanitized/40079573659/`.
 
-Current protection requires phase1a-required, an up-to-date branch, administrator enforcement, one independent approval, stale-review dismissal, last-push approval and resolved conversations; force pushes/deletion are disabled. The required status is not yet bound to an observed Actions App. Once CI runs, bind its actual check/App identity and demonstrate failing-test merge rejection. Configuration readback alone is not that demonstration.
+Main protection requires phase1a-required from observed GitHub Actions App **15368**, strict current-branch checks, administrator enforcement, one independent approval, stale-review dismissal, latest-push approval and resolved conversations, with force pushes/deletion disabled. [Requested](branch-protection.request.json) and [read-back settings](branch-protection.observed.json) match the enforced controls.
 
-GitHub CLI authorization was initiated with `gh auth refresh --hostname github.com --scopes workflow`. The owner must finish GitHub’s device-consent flow; no token/device code is persisted in project files. Once complete, publish the unchanged engineering revision, execute the workflow and record run URL, full head SHA, conclusion and sanitized artifact checksums. Verify all 151 Python and 72 browser executions on the hosted runner. No hosted run or disposable negative-test PR has executed yet.
+A one-assertion negative probe targeted a separate protected base with the same check/App/admin settings and no unrelated review gate. The PR was non-draft, conflict-free and up to date. Exactly one existing assertion deliberately expected 418; the unchanged application returned its correct 200. The workflow failed and the required-results gate blocked. An actual merge request constrained to the exact probe head returned HTTP **405**, `Required status check "phase1a-required" is failing.` The probe was closed unmerged and both temporary branches/test-only protection were removed. Main source and protection were verified unchanged afterward. No failing test or weakened main rule entered the implementation PR.
 
-For the negative proof, use a disposable branch/PR with one deliberately failing existing assertion; preserve inventory and all mandatory gates. Observe the required check failing and GitHub rejecting merge eligibility for an actor with no bypass. Use a dedicated protected test base if needed to distinguish test blocking from unrelated review requirements, without weakening main. Restore/close the probe without merging the failing change. Required GitHub API permissions and behavior are documented in the [protection API](https://docs.github.com/en/rest/branches/branch-protection) and [protected-branch guide](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+Temporary Git-object copying encountered filesystem stalls and incomplete intermediate copies; hash/fsck checks rejected incomplete mirrors before any successful publication. The final mirror verified complete original objects and preserved all commit identities. These diagnostics are not application tests or successful CI runs.
 
-## Changed files and remaining gate
+Hosted commands included command-scoped `git ... push`, `gh auth refresh --hostname github.com --scopes workflow`, protection PUT/GET operations using the versioned JSON requests, artifact download/verification, and the explicitly scoped negative `PUT /repos/wmostafagmail/FindOurChild/pulls/2/merge`. No credential/device-code value is stored in project files. Exact request/response fields, commits, run/PR URLs and cleanup are recorded in the linked evidence. The separate negative source is not an accepted regression candidate.
 
-Runtime changes are limited to `scripts/run-browser.mjs` and new `scripts/firefox-diagnostic.mjs` (committed at `ec99ac0`). Review/docs, matrix generation/statuses, source inventory and sanitized execution artifacts are updated in the evidence commit; their exact inventory is recorded in [changed-files.json](changed-files.json) and is independently available through `git diff --name-status add5cf7..HEAD` after the evidence commit. Dependency manifests/locks, API behavior, migrations, RLS policies and browser assertions are unchanged.
+## Changed files and review gate
 
-Outstanding acceptance items are **hosted CI demonstration**, **verified branch protection and failing-check merge prevention**, or explicit project-owner acceptance of those external blockers. Such acceptance has not been given. All changes must be committed and the final tree clean before review. This remediation authorizes no Phase 1B entry; explicit approval remains required.
+Runtime changes are limited to `scripts/run-browser.mjs` and new `scripts/firefox-diagnostic.mjs` (committed at `ec99ac0`). Review/docs, matrix generation/statuses, source inventory and sanitized execution artifacts are updated in the evidence commit; their exact inventory is recorded in [changed-files.json](changed-files.json) and is independently available through `git diff --name-status add5cf7..HEAD` after the evidence commit. Dependency manifests/locks, API behavior, migrations, RLS policies and accepted browser assertions are unchanged. Additional engineering configuration records main/probe protection; additional evidence contains verified hosted artifacts and negative enforcement results.
+
+All Phase 1A technical validation blockers are resolved. The evidence changes are committed on the engineering branch and the final working tree is checked clean for review. Owner acceptance and independent PR review remain human gates. No Phase 1B entry is authorized; explicit approval remains required. Original legal, safeguarding, retention and model gates remain unchanged.

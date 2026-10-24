@@ -29,7 +29,7 @@
   },
   {
     "path": "CONTRIBUTING.md",
-    "sha256": "d615fd71bc4d7e32f8016821b05a40c4462456629b7d8bc79335b155a43bf96d"
+    "sha256": "584951ef8cf53df6a6771f5706fe99a2f49ed9cb4df4dab4cfddf7bd00f96ec7"
   },
   {
     "path": "Makefile",
@@ -81,7 +81,11 @@
   },
   {
     "path": "docs/phase1a/branch-protection.request.json",
-    "sha256": "e595a5753c63e4fc350025ba6526b37d811b3c938087c3080664ab91455ee1d7"
+    "sha256": "46e98bac3fea31671b1a645ad6b5f2c7b4eb8020e89cbc592778275ec21fff3d"
+  },
+  {
+    "path": "docs/phase1a/negative-probe-protection.request.json",
+    "sha256": "92b9eb91cfb87701df2b6d9378a1d1b89bfc84af4d75d26015c720946f1fd644"
   },
   {
     "path": "e2e.config.ts",
@@ -269,7 +273,7 @@
   },
   {
     "path": "tools/update_phase1a_matrix.py",
-    "sha256": "f5ef37affa2f61cea08059b2a3a6d449afe3a3fd33660b5171e3e9711b394d7d"
+    "sha256": "b6250bd124fdc1658bab425a7a83b3b78767dd47e2431774ca8cd0439e10cad8"
   },
   {
     "path": "tsconfig.e2e.json",

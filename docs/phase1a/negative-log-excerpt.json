@@ -1,0 +1,10 @@
+{
+  "job_id": 120830788468,
+  "source_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40079801282/job/120830788468",
+  "scope": "Allowlisted synthetic assertion/count lines only; raw logs are not published",
+  "lines": [
+    "2026-10-24T08:54:23.3222646Z E   assert 200 == 418",
+    "2026-10-24T08:54:23.3231271Z FAILED tests/api/test_foundation.py::test_fnd_live - assert 200 == 418",
+    "2026-10-24T08:54:23.3231686Z =================== 1 failed, 150 passed, 1 warning in 3.68s ==================="
+  ]
+}

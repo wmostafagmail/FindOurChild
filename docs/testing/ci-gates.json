@@ -93,14 +93,16 @@
     "proposed_sanitized_pr_days": 7,
     "proposed_failure_or_phase_review_days": 30
   },
-  "gate_implementation_status": "pending",
+  "gate_implementation_status": "phase1a_enforced_future_phase_suites_pending",
   "phase1a_execution": {
     "required_manifest": "docs/phase1a/required-tests.json",
     "workflow": ".github/workflows/phase1a.yml",
-    "acceptance": "blocked_external_ci_and_branch_protection",
-    "remote_enforcement": "pending",
+    "acceptance": "technical_validation_passed_awaiting_owner_review",
+    "remote_enforcement": "verified",
     "baseline_scope": "Whole-phase obligations unchanged; future unimplemented workflows are not claimed as delivered",
     "local_required_results": "passed",
-    "external_blockers_owner_accepted": false
+    "external_blockers_owner_accepted": false,
+    "hosted_run": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40079573659",
+    "merge_block_proof": "docs/phase1a/negative-gate-proof.json"
   }
 }

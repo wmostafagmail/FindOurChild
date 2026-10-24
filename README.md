@@ -1,6 +1,6 @@
 # Find Our Child
 
-Phase **1A foundation only**. All local required tests pass after Firefox remediation. Acceptance remains **blocked** pending hosted CI execution and branch-protection verification. Phase 1B and 1C have not started. All 32 domain operations return a fail-closed 503.
+Phase **1A foundation only**. Required local and hosted tests pass after Firefox remediation. Main protection and actual failing-check merge rejection are verified. Phase 1A is ready for owner acceptance review. Phase 1B and 1C have not started. All 32 domain operations return a fail-closed 503.
 
 Start with the [Phase 1A review](docs/phase1a/REVIEW.md), [executable environment](docs/phase1a/ENVIRONMENT.md), [locked manifest](docs/phase1a/LOCKED_DEPENDENCIES.md), [source inventory](docs/phase1a/SOURCE_INVENTORY.md) and [test matrix](docs/TEST_MATRIX.md).
 

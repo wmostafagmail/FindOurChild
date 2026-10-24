@@ -1,10 +1,10 @@
 # Find Our Child — test matrix
 
-Current traceability: **166 features, 787 logical test cases**. Statuses: passed=159, pending=628.
+Current traceability: **166 features, 787 logical test cases**. Statuses: passed=161, pending=626.
 
 The immutable starting point is 151 features / 630 planned cases at commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Four disabled-feature guards now have executed evidence; operational baseline scenarios remain pending. Foundation additions include idempotency storage, health contracts, result gates, and restore validation. Browser cases expand to 24 targets each; logical-case totals must not be confused with execution counts.
 
-Phase 1A local required-results gate: **passed**. Hosted CI and branch protection remain pending; owner acceptance of those external blockers has not been given. A passed foundation guard does not validate future authentication, reporting, approval, media or biometric workflows. The original whole-Phase-1 regression obligation remains unchanged.
+Phase 1A local required-results gate: **passed**. Hosted CI, App-bound main protection and actual failing-check merge rejection are verified; ready for owner review. A passed foundation guard does not validate future authentication, reporting, approval, media or biometric workflows. The original whole-Phase-1 regression obligation remains unchanged.
 
 Machine-readable source: [test-matrix.json](testing/test-matrix.json). Original baseline: [test-matrix-phase0.json](testing/test-matrix-phase0.json). Evidence: [sanitized results](../artifacts/sanitized/results.json). Required Phase 1A inventory: [required-tests.json](phase1a/required-tests.json).
 
@@ -3888,7 +3888,7 @@ Per-case scenarios, commands, expected outcomes, phase applicability and evidenc
 
 ## FND-13 — CI policy and remote enforcement
 
-Validation: **partial**. Suite: deployment. Fixtures: FX-FOUNDATION.
+Validation: **passed**. Suite: deployment. Fixtures: FX-FOUNDATION.
 
 Positive: Pinned-action pull-request/full-regression workflow enforces required results and publishes only sanitized artifacts; remote run/protection must be independently verified.
 
@@ -3903,8 +3903,8 @@ Expected: Pinned-action pull-request/full-regression workflow enforces required 
 | Test case | Kind | Status | Executable / selector | Evidence |
 |---|---|---|---|---|
 | TC_FND_CI_CONFIG | positive | passed | `.github/workflows/phase1a.yml` / `immutable-pins-and-required-gate` | docs/phase1a/configuration-checks.json |
-| TC_FND_CI_REMOTE_RUN | security_authorization | pending | `.github/workflows/phase1a.yml` / `REMOTE_RUN` | pending |
-| TC_FND_CI_BRANCH_PROTECTION | security_authorization | pending | `.github/workflows/phase1a.yml` / `BRANCH_PROTECTION` | pending |
+| TC_FND_CI_REMOTE_RUN | security_authorization | passed | `.github/workflows/phase1a.yml` / `REMOTE_RUN` | docs/phase1a/hosted-evidence.json |
+| TC_FND_CI_BRANCH_PROTECTION | security_authorization | passed | `.github/workflows/phase1a.yml` / `BRANCH_PROTECTION` | docs/phase1a/hosted-evidence.json |
 
 Per-case scenarios, commands, expected outcomes, phase applicability and evidence selectors are recorded in the machine-readable matrix above.
 
