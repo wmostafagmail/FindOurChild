@@ -44,7 +44,7 @@ def main():
             "--cov=scripts.migrate",
             "--cov-report=json:artifacts/raw/coverage.json",
             "--cov-report=xml:artifacts/raw/coverage.xml",
-            "--cov-fail-under=75",
+            "--cov-fail-under=0",
         ],
         plugins=[results],
     )
@@ -67,6 +67,7 @@ def main():
         "source_digest": digest,
     }
     (output / "python-results.json").write_text(json.dumps(data, indent=2) + "\n")
+    # Combined API-process + baseline + host identity coverage is enforced at 75% in the final CI gate.
     # No clean skips, empty discovery, uncollected mandatory cases or teardown failures count as success.
     expected = json.loads((ROOT / "docs/phase1a/required-tests.json").read_text())["python"]
     if (

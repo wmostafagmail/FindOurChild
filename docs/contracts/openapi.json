@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Find Our Child",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Frozen domain design contract. All 32 domain operations are disabled in Phase 1A. Only health and contract serving are implemented. Identity, reporting and biometric features require later phase approval."
   },
   "servers": [
@@ -5081,6 +5081,558 @@
           }
         }
       }
+    },
+    "/identity/login": {
+      "get": {
+        "summary": "Login",
+        "operationId": "login_identity_login_get",
+        "responses": {
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Fixed OIDC authorization or application redirect, opaque Secure cookies only"
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": []
+      }
+    },
+    "/identity/callback": {
+      "get": {
+        "summary": "Callback",
+        "operationId": "callback_identity_callback_get",
+        "responses": {
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "Fixed OIDC authorization or application redirect, opaque Secure cookies only"
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": []
+      }
+    },
+    "/identity/me": {
+      "get": {
+        "summary": "Me",
+        "operationId": "me_identity_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ]
+      }
+    },
+    "/identity/logout": {
+      "post": {
+        "summary": "Logout",
+        "operationId": "logout_identity_logout_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoutDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ]
+      }
+    },
+    "/identity/organizations/{org}/memberships": {
+      "post": {
+        "summary": "Membership",
+        "operationId": "membership_identity_organizations__org__memberships_post",
+        "parameters": [
+          {
+            "name": "org",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Org"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MembershipChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MembershipDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ]
+      }
+    },
+    "/identity/organizations/{org}/cases/{case}/permission": {
+      "get": {
+        "summary": "Permission",
+        "operationId": "permission_identity_organizations__org__cases__case__permission_get",
+        "parameters": [
+          {
+            "name": "org",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Org"
+            }
+          },
+          {
+            "name": "case",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Case"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermissionDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ]
+      }
+    },
+    "/identity/organizations/{org}/audit": {
+      "get": {
+        "summary": "Audit",
+        "operationId": "audit_identity_organizations__org__audit_get",
+        "parameters": [
+          {
+            "name": "org",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Org"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditDTO"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Closed, minimized identity error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-implemented-in": "1B",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -5099,6 +5651,11 @@
         "type": "apiKey",
         "in": "header",
         "name": "X-Intake-Challenge"
+      },
+      "StaffSession": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-foc-session"
       }
     },
     "schemas": {
@@ -6902,6 +7459,208 @@
             "const": "unavailable"
           }
         }
+      },
+      "AuditDTO": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AuditEventDTO"
+            },
+            "type": "array",
+            "title": "Events"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "events"
+        ],
+        "title": "AuditDTO"
+      },
+      "AuditEventDTO": {
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "title": "Sequence"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Event Id"
+          },
+          "action": {
+            "type": "string",
+            "title": "Action"
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "allowed",
+              "denied"
+            ],
+            "title": "Outcome"
+          },
+          "previous_hash": {
+            "type": "string",
+            "title": "Previous Hash"
+          },
+          "event_hash": {
+            "type": "string",
+            "title": "Event Hash"
+          },
+          "occurred_at": {
+            "type": "string",
+            "title": "Occurred At"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "sequence",
+          "event_id",
+          "action",
+          "outcome",
+          "previous_hash",
+          "event_hash",
+          "occurred_at"
+        ],
+        "title": "AuditEventDTO"
+      },
+      "IdentityDTO": {
+        "properties": {
+          "principal_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Principal Id"
+          },
+          "organizations": {
+            "items": {
+              "$ref": "#/components/schemas/OrganizationDTO"
+            },
+            "type": "array",
+            "title": "Organizations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "principal_id",
+          "organizations"
+        ],
+        "title": "IdentityDTO"
+      },
+      "LogoutDTO": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "signed_out",
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "LogoutDTO"
+      },
+      "MembershipChange": {
+        "properties": {
+          "principal_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Principal Id"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires At"
+          },
+          "revoke": {
+            "type": "boolean",
+            "title": "Revoke",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "principal_id",
+          "role",
+          "expires_at"
+        ],
+        "title": "MembershipChange"
+      },
+      "MembershipDTO": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "granted",
+              "revoked"
+            ],
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "MembershipDTO"
+      },
+      "OrganizationDTO": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "reviewer",
+              "supervisor",
+              "safeguarding",
+              "authority",
+              "privacy",
+              "org_admin"
+            ],
+            "title": "Role"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "role"
+        ],
+        "title": "OrganizationDTO"
+      },
+      "PermissionDTO": {
+        "properties": {
+          "permission": {
+            "type": "string",
+            "const": "case.read",
+            "title": "Permission"
+          },
+          "allowed": {
+            "type": "boolean",
+            "const": true,
+            "title": "Allowed"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "permission",
+          "allowed"
+        ],
+        "title": "PermissionDTO"
       }
     }
   }

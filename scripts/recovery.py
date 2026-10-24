@@ -74,6 +74,25 @@ def main():
             ).hexdigest()
         ):
             raise RuntimeError("Hardening migration not restored")
+        restored_migrations = json.loads(
+            query(name, "SELECT json_object_agg(version,sha256) FROM platform.migrations")
+        )
+        expected_migrations = {
+            p.stem: hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in (ROOT / "database/migrations").glob("*.sql")
+        }
+        if restored_migrations != expected_migrations:
+            raise RuntimeError("Restored migrations differ")
+        if (
+            query(
+                name,
+                "SELECT relrowsecurity AND relforcerowsecurity FROM pg_class WHERE oid='platform.identity_sessions'::regclass",
+            )
+            != "t"
+        ):
+            raise RuntimeError("Restored session RLS disabled")
+        report["all_migrations"] = restored_migrations
+        report["identity_session_rls"] = "passed"
         report["hardening_sha256"] = hardening
         output = ROOT / "artifacts/raw"
         output.mkdir(parents=True, exist_ok=True)

@@ -4,7 +4,8 @@ from pathlib import Path
 from uuid import uuid4
 
 import psycopg
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
 from .config import Settings
@@ -16,6 +17,44 @@ logger = logging.getLogger("foc")
 def create_app(settings: Settings | None = None):
     settings = settings or Settings.load()
     app = FastAPI(title="Find Our Child", docs_url=None, redoc_url=None, openapi_url=None)
+
+    app.state.settings = settings
+    from .identity import router
+
+    app.include_router(router)
+
+    @app.exception_handler(HTTPException)
+    async def identity_error(request: Request, exc: HTTPException):
+        return JSONResponse(
+            {
+                "code": str(exc.detail),
+                "message_key": "errors.identity_denied",
+                "request_id": request.state.request_id,
+            },
+            status_code=exc.status_code,
+        )
+
+    @app.exception_handler(RequestValidationError)
+    async def invalid_request(request: Request, exc: RequestValidationError):
+        return JSONResponse(
+            {
+                "code": "INVALID_REQUEST",
+                "message_key": "errors.invalid_request",
+                "request_id": request.state.request_id,
+            },
+            status_code=422,
+        )
+
+    @app.exception_handler(psycopg.Error)
+    async def database_error(request: Request, exc: psycopg.Error):
+        return JSONResponse(
+            {
+                "code": "SERVICE_UNAVAILABLE",
+                "message_key": "errors.service_unavailable",
+                "request_id": request.state.request_id,
+            },
+            status_code=503,
+        )
 
     @app.middleware("http")
     async def security_headers(request: Request, call_next):

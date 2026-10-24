@@ -1,5 +1,7 @@
 # Find Our Child — test matrix
 
+> Phase 1B extension: [executable traceability](phase1b/TEST_TRACEABILITY.md). IDN-01–IDN-05 append exact identity/API/database/browser selectors to `docs/testing/test-matrix.json`; final hosted evidence is pending. Prior passing rows retain their historical Phase 1A evidence. Future reporting/safeguarding/ML tests remain pending.
+
 Current traceability: **166 features, 787 logical test cases**. Statuses: passed=161, pending=626.
 
 The immutable starting point is 151 features / 630 planned cases at commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Four disabled-feature guards now have executed evidence; operational baseline scenarios remain pending. Foundation additions include idempotency storage, health contracts, result gates, and restore validation. Browser cases expand to 24 targets each; logical-case totals must not be confused with execution counts.

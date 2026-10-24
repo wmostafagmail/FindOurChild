@@ -18,6 +18,7 @@ class Inventory:
                         "TC_FND_BROWSER_AR_READY",
                         "TC_FND_BROWSER_EN_READY",
                         "TC_FND_BROWSER_LANGUAGE_SWITCH",
+                        "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
                     ],
                     "browser_targets": 24,
                 },
@@ -28,4 +29,4 @@ class Inventory:
 
 
 if __name__ == "__main__":
-    raise SystemExit(pytest.main(["--collect-only", "-q"], plugins=[Inventory()]))
+    raise SystemExit(pytest.main(["tests/unit", "tests/api", "tests/database", "tests/security", "tests/integration", "--collect-only", "-q"], plugins=[Inventory()]))

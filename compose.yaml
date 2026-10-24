@@ -30,16 +30,26 @@ services:
     networks: [private]
   api:
     <<: *python
-    command: ["python", "-m", "uvicorn", "foc_api.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+    command: ["python", "-m", "coverage", "run", "--parallel-mode", "-m", "uvicorn", "foc_api.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
     environment:
       FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
       FOC_DATA_CLASS: synthetic
+      FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
+      FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
+      COVERAGE_FILE: /workspace/artifacts/raw/.coverage.api
     ports: ["127.0.0.1:8000:8000"]
     read_only: true
     tmpfs: ["/tmp"]
     cap_drop: [ALL]
     security_opt: ["no-new-privileges:true"]
-    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro"]
+    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro", "./artifacts/raw:/workspace/artifacts/raw", "./.coveragerc:/workspace/.coveragerc:ro"]
+    networks: [private, edge]
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.0@sha256:0f198be292568439d700cdbfb893e69a6009bb43a94a06a945b1d3d506c76b13
+    command: ["start-dev", "--import-realm", "--hostname=https://127.0.0.1:8443", "--http-enabled=true", "--proxy-headers=xforwarded"]
+    mem_limit: 1g
+    ports: ["127.0.0.1:8080:8080"]
+    volumes: ["./.runtime/keycloak:/opt/keycloak/data/import:ro"]
     networks: [private, edge]
   tester:
     <<: *python
@@ -48,6 +58,8 @@ services:
       FOC_DATABASE_ADMIN_URL: ${FOC_CONTAINER_ADMIN_URL:?}
       FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
       FOC_DATA_CLASS: synthetic
+      FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
+      FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
     volumes: [".:/workspace", "./artifacts/raw:/workspace/artifacts/raw"]
     networks: [private]
 networks:

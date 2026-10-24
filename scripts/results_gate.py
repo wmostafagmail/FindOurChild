@@ -53,7 +53,7 @@ def browser_gate(report, manifest, meta, digest):
     )
     require(
         all(
-            t["engine"]["version"] == "0.15.3" and t["baseOrigin"] == "http://127.0.0.1:3000"
+            t["engine"]["version"] == "0.15.3" and t["baseOrigin"] == "https://127.0.0.1:3443"
             for t in run["targets"]
         ),
         "unexpected engine or origin",

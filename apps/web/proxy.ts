@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 export function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname.includes("identity") && request.headers.get("x-forwarded-proto") !== "https") {
+    return NextResponse.redirect(new URL(request.nextUrl.pathname+request.nextUrl.search,"https://127.0.0.1:3443"));
+  }
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const dev = process.env.NODE_ENV === 'development';
   const csp = `default-src 'self'; script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${dev ? " 'unsafe-eval'" : ''}; style-src 'self' 'nonce-${nonce}'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'`;

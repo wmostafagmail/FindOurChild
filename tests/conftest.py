@@ -59,6 +59,8 @@ def db():
                 "case_b": e,
             }
         # Roll back runtime transactions before deleting the fixture, to avoid locks.
+        admin.execute("DELETE FROM platform.identity_sessions WHERE principal_id IN (%s,%s)", (p, q))
+        admin.execute("DELETE FROM app.audit_events WHERE organization_id IN (%s,%s)", (a, b))
         admin.execute("DELETE FROM app.idempotency_records WHERE organization_id IN (%s,%s)", (a, b))
         admin.execute("DELETE FROM app.outbox_events WHERE organization_id IN (%s,%s)", (a, b))
         admin.execute("DELETE FROM app.objects WHERE organization_id IN (%s,%s)", (a, b))

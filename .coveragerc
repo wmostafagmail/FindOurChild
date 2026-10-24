@@ -1,0 +1,3 @@
+[run]
+relative_files = True
+source = services/api/foc_api,scripts/migrate

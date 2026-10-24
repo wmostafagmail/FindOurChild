@@ -1,4 +1,4 @@
-name: Phase 1A required validation
+name: Foundation and identity required validation
 on:
   pull_request:
   push:
@@ -59,12 +59,32 @@ jobs:
           npm run build
       - name: Install pinned browser engines
         run: ./node_modules/.bin/e2e-web install chromium firefox webkit --with-deps
+      - name: Configure ephemeral runner TLS trust
+        run: |
+          .venv/bin/python -m scripts.tls_setup
+          sudo cp .runtime/tls/cert.pem /usr/local/share/ca-certificates/foc-synthetic.crt
+          sudo update-ca-certificates
+          sudo apt-get update -qq
+          sudo apt-get install -y libnss3-tools
+          mkdir -p "$HOME/.pki/nssdb"
+          certutil -N --empty-password -d "sql:$HOME/.pki/nssdb"
+          certutil -A -d "sql:$HOME/.pki/nssdb" -n foc-synthetic -t 'C,,' -i .runtime/tls/cert.pem
       - name: Start actual web service
         run: |
           npm run start > artifacts/raw/web.log 2>&1 &
+          PATH="$PATH" node scripts/tls.mjs > artifacts/raw/tls.log 2>&1 &
           .venv/bin/python -m scripts.wait_services
       - name: TesterArmy browser regression
         run: .venv/bin/python -m scripts.dev browser
+      - name: Real Keycloak identity and authorization regression
+        run: .venv/bin/python -m scripts.identity_test
+      - name: Collect API-process and combined regression coverage
+        run: |
+          .venv/bin/python -c "from scripts.dev import compose; compose('stop','api')"
+          .venv/bin/coverage combine --append --keep artifacts/raw
+          .venv/bin/coverage report --fail-under=75
+          .venv/bin/coverage json -o artifacts/raw/coverage.json
+          .venv/bin/coverage xml -o artifacts/raw/coverage.xml
       - name: Sanitize and enforce complete results
         if: always()
         run: .venv/bin/python -m scripts.artifacts

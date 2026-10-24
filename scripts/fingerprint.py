@@ -7,18 +7,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def inventory():
     paths = []
-    for base in ["apps/web", "services/api", "scripts", "database", "tests"]:
+    for base in ["apps/web", "services/api", "scripts", "database", "tests", "config"]:
         paths.extend(
             p
             for p in (ROOT / base).rglob("*")
             if p.is_file()
             and p.name != "next-env.d.ts"
-            and p.suffix in {".ts", ".tsx", ".css", ".py", ".sql", ".mjs"}
+            and p.suffix in {".ts", ".tsx", ".css", ".py", ".sql", ".mjs", ".json"}
             and not any(x in p.parts for x in [".next", "__pycache__", "node_modules"])
         )
     paths += [
         ROOT / p
         for p in [
+            ".coveragerc",
+            "docs/phase1b/required-tests.json",
             "package.json",
             "package-lock.json",
             "pyproject.toml",
