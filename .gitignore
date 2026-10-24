@@ -1,10 +1,22 @@
-# Research tooling only; no application has been implemented.
 **/node_modules/
 .DS_Store
 .env
 .env.*
 !.env.example
-# Future raw testing output can contain cookies, secrets and screenshots.
+.venv/
+**/__pycache__/
+.pytest_cache/
+.ruff_cache/
+**/.next/
+**/next-env.d.ts
+*.tsbuildinfo
 **/.e2e/
 **/test-results/
 **/coverage/
+.coverage
+.runtime/
+artifacts/raw/
+
+# Ignore dependency symlinks used by local verification as well as directories.
+.venv
+**/node_modules

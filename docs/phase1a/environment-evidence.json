@@ -1,0 +1,80 @@
+{
+  "verified_on": "2026-10-24",
+  "phase": "1A only",
+  "baseline_commit": "40231be73ab9a5eb577ccf5308c86f6b7282976b",
+  "e2e_source_commit": "69e123b17e04ed624df16d32f3b1ef95ce22c083",
+  "source_digest": "1b92f68a030dc504fe9ea6296bc702e16ba7839043b571b8fae8fe006ad457f3",
+  "runtime_host": "macOS-27.0.1-arm64-arm-64bit",
+  "runtime_directory": "/private/tmp/foc-phase1a-runtime",
+  "workspace_dependency_symlinks": true,
+  "checks": {
+    "node": {
+      "exit_code": 0,
+      "stdout": "v24.18.0",
+      "stderr": ""
+    },
+    "npm": {
+      "exit_code": 0,
+      "stdout": "11.16.0",
+      "stderr": ""
+    },
+    "uv": {
+      "exit_code": 0,
+      "stdout": "uv 0.12.0 (b88d7c5c4 2026-07-28 aarch64-apple-darwin)",
+      "stderr": ""
+    },
+    "e2e": {
+      "exit_code": 0,
+      "stdout": "0.21.3",
+      "stderr": ""
+    },
+    "telemetry": {
+      "exit_code": 0,
+      "stdout": "Status: disabled (E2E_TELEMETRY_DISABLED is set)\nNo usage data is sent from this machine.\nDetails: https://e2e.tester.army/docs/telemetry",
+      "stderr": ""
+    },
+    "postgresql": {
+      "exit_code": 0,
+      "stdout": "17.11 (Debian 17.11-1.pgdg12+2)",
+      "stderr": ""
+    },
+    "application_image": {
+      "exit_code": 0,
+      "stdout": "sha256:dfb081c8c0a69d3e6e695a258a0aba8c8cd2317d5b306f4c5a2557c462d2f8dd",
+      "stderr": ""
+    }
+  },
+  "lock_sha256": {
+    "package-lock.json": "7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff",
+    "uv.lock": "9590f19043cd6c911db2ad265db4b6076d3e9f2b403d758d93f3bd789b82a8aa",
+    "requirements-bootstrap.txt": "524c21e2a1cf273b13001b30f117affa2718978f0586846d1fc731a5d826d66e"
+  },
+  "browser_summary": {
+    "discovered": 72,
+    "selected": 72,
+    "executed": 72,
+    "passed": 48,
+    "failed": 24,
+    "interrupted": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "browser_usage": {
+    "discoveredResults": 72,
+    "maxAgentContextBytes": 0,
+    "maxLedgerBytes": 0,
+    "maxObservationBytes": 0,
+    "artifactBytes": 1489202,
+    "downloads": 0,
+    "events": 520,
+    "modelTokens": 0,
+    "maxModelCallsInStep": 0,
+    "maxActionStepsInStep": 0
+  },
+  "scope_limits": [
+    "Local Linux-container database/API and macOS browser execution; GitHub CI not executed",
+    "No packet capture or network-firewall attestation",
+    "Only current application/test dependency sets audited; historical research tooling unchanged",
+    "No production child information or external testing model used"
+  ]
+}

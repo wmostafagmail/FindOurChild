@@ -1,0 +1,3354 @@
+[
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "chromium-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-ar-EG-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-ar-EG-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-ar-EG-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-ar-EG-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-en-GB-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-en-GB-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-en-GB-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "firefox-en-GB-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_AR_READY",
+    "target": "webkit-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "chromium-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-ar-EG-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-ar-EG-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-ar-EG-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-ar-EG-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-en-GB-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-en-GB-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-en-GB-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "firefox-en-GB-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_EN_READY",
+    "target": "webkit-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveText",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveCount",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveTitle",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "app.screenshot",
+        "status": "passed"
+      },
+      {
+        "api": "browser.evaluate",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      },
+      {
+        "api": "browser.keyboard.press",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeFocused",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "chromium-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-ar-EG-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-ar-EG-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-ar-EG-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-ar-EG-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-en-GB-320",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-en-GB-360",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-en-GB-390",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "firefox-en-GB-1280",
+    "steps": []
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-ar-EG-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-ar-EG-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-ar-EG-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-ar-EG-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-en-GB-320",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-en-GB-360",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-en-GB-390",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  },
+  {
+    "test": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+    "target": "webkit-en-GB-1280",
+    "steps": [
+      {
+        "api": "app.open",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toBeVisible",
+        "status": "passed"
+      },
+      {
+        "api": "other",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveURL",
+        "status": "passed"
+      },
+      {
+        "api": "expect.toHaveAttribute",
+        "status": "passed"
+      }
+    ]
+  }
+]

@@ -1,5 +1,7 @@
 # CI/CD test gates — Find Our Child
 
+> Phase 1A implementation update: the [workflow](../.github/workflows/phase1a.yml), explicit [required inventory](phase1a/required-tests.json), result validator and allowlist artifact exporter now exist. Current execution is recorded in the [review](phase1a/REVIEW.md). Mandatory clean skips, retries, missing/duplicate results, stale source evidence, wrong engine/origin and model usage fail the gate. The local browser gate is blocked by Firefox. GitHub execution/branch protection remain pending until a repository is selected and the required check is verified by its owner. The policy below remains the full-regression requirement as later features become implemented.
+
 Phase 0 specification only. No active CI workflows, required GitHub checks, deployment automation or application tests have been implemented/configured. Human phase approvals and all original safeguarding/legal/model gates remain required.
 
 ## Required lanes

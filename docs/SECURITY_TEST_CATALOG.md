@@ -1,5 +1,7 @@
 # Security and child safeguarding test catalogue
 
+> Phase 1A evidence update: database tenant/case/purpose/expiry/revocation boundaries, same-case object integrity, non-owner privilege denial, closed events, secret-free browser environments and disabled sensitive APIs have executed negative tests. Only the four explicit disabled-feature safeguards are promoted in the original baseline. Operational fraud, claimant/location disclosure, image access, biometric use, independent human approval, release/deletion/notification workflows remain pending and disabled. This is not penetration testing or ML evaluation. See [current matrix](TEST_MATRIX.md) and [review](phase1a/REVIEW.md).
+
 Phase 0 planned executable catalogue. Every case is **pending**, with no application execution evidence. Exact planned case IDs/files/selectors, positive/negative/security/edge scenarios and fixtures are in [TEST_MATRIX](TEST_MATRIX.md) and its [machine-readable registry](testing/test-matrix.json).
 
 ## Mandatory safeguarding controls

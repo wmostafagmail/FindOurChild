@@ -5,19 +5,51 @@
   "principal_browser_framework": "TesterArmy/e2e",
   "traceability_registry": "docs/testing/test-matrix.json",
   "required_suite_groups": [
-    "unit_component", "api_contract_integration", "database_schema_migration_rls_transaction",
-    "authentication_authorization", "security_adversarial", "browser_e2e",
-    "accessibility_responsive", "ml_evaluation_regression", "worker_events",
-    "performance_concurrency_recovery_resilience", "deployment_rollback"
+    "unit_component",
+    "api_contract_integration",
+    "database_schema_migration_rls_transaction",
+    "authentication_authorization",
+    "security_adversarial",
+    "browser_e2e",
+    "accessibility_responsive",
+    "ml_evaluation_regression",
+    "worker_events",
+    "performance_concurrency_recovery_resilience",
+    "deployment_rollback"
   ],
   "all_affected_and_transitive_tests_per_pr": true,
-  "always_required_critical_features": ["SAF-01", "SAF-02", "SAF-03", "SAF-04", "SAF-05", "SAF-06", "SAF-07", "SAF-08", "SAF-09", "SAF-10", "SAF-11"],
-  "full_accepted_regression_at": ["main", "merge_queue", "phase_exit", "release_candidate"],
+  "always_required_critical_features": [
+    "SAF-01",
+    "SAF-02",
+    "SAF-03",
+    "SAF-04",
+    "SAF-05",
+    "SAF-06",
+    "SAF-07",
+    "SAF-08",
+    "SAF-09",
+    "SAF-10",
+    "SAF-11"
+  ],
+  "full_accepted_regression_at": [
+    "main",
+    "merge_queue",
+    "phase_exit",
+    "release_candidate"
+  ],
   "phase_applicability": "Reviewed versioned applicability inventory; future positives remain pending; unavailable sensitive capabilities require denial tests from phase 1",
   "phase_applicability_field": "required_from_phase",
   "acceptance": {
     "required_status": "passed",
-    "reject_statuses": ["pending", "blocked", "failed", "skipped", "interrupted", "flaky", "missing"],
+    "reject_statuses": [
+      "pending",
+      "blocked",
+      "failed",
+      "skipped",
+      "interrupted",
+      "flaky",
+      "missing"
+    ],
     "reconcile_exact_expected_id_target_fixture_set": true,
     "reject_missing_shards_or_artifacts": true,
     "reject_zero_discovery": true,
@@ -39,9 +71,20 @@
     "mandatory_model_configured": false,
     "external_testing_model_may_receive_real_child_data": false
   },
-  "environment": {"E2E_TELEMETRY_DISABLED": "1", "DO_NOT_TRACK": "1"},
+  "environment": {
+    "E2E_TELEMETRY_DISABLED": "1",
+    "DO_NOT_TRACK": "1"
+  },
   "artifact_policy": {
-    "required": ["test_results", "logs", "sanitized_screenshots", "sanitized_traces", "migration_results", "coverage", "versioned_checksum_manifest"],
+    "required": [
+      "test_results",
+      "logs",
+      "sanitized_screenshots",
+      "sanitized_traces",
+      "migration_results",
+      "coverage",
+      "versioned_checksum_manifest"
+    ],
     "sanitize_before_publication": true,
     "raw_e2e_upload_allowed": false,
     "publication_and_acceptance_block_on_sanitizer_failure": true,
@@ -50,5 +93,12 @@
     "proposed_sanitized_pr_days": 7,
     "proposed_failure_or_phase_review_days": 30
   },
-  "gate_implementation_status": "pending"
+  "gate_implementation_status": "pending",
+  "phase1a_execution": {
+    "required_manifest": "docs/phase1a/required-tests.json",
+    "workflow": ".github/workflows/phase1a.yml",
+    "acceptance": "blocked_browser_launch",
+    "remote_enforcement": "pending",
+    "baseline_scope": "Whole-phase obligations unchanged; future unimplemented workflows are not claimed as delivered"
+  }
 }

@@ -1,5 +1,7 @@
 # Phase 0 review and decisions
 
+> Phase 1A update: the user explicitly authorized foundation implementation only after this Phase 0 review. The immutable preimplementation package is Git commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`; its original validators still run against that commit. Current findings/evidence are in [Phase 1A review](phase1a/REVIEW.md). Research, licensing, legal authority, safeguarding, retention and model-evaluation approvals have not been inferred from engineering progress. Phase 1B remains unapproved and the Phase 1A gate is blocked.
+
 Prepared 23 October 2026; corrected testing architecture 23 October 2026. **Research/specification package ready for review; human Phase 0 acceptance remains pending. No application built and no application tests passed.**
 
 ## Recommended architecture

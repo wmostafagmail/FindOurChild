@@ -1,0 +1,10 @@
+import {spawnSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+if(process.versions.node!=='24.18.0')throw new Error('Use pinned Node 24.18.0');
+const command=process.argv[2];
+if(!['dev','build','start'].includes(command))throw new Error('Invalid web command');
+const args=[createRequire(import.meta.url).resolve('next/dist/bin/next'),command,'apps/web'];
+if(command!=='build')args.push('--hostname','127.0.0.1');
+const result=spawnSync(process.execPath,args,{stdio:'inherit',env:{...process.env,NEXT_TELEMETRY_DISABLED:'1'}});
+if(result.error)throw result.error;
+process.exit(result.status??1);

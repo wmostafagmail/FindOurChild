@@ -1,0 +1,24 @@
+[project]
+name = "find-our-child"
+version = "0.1.0"
+requires-python = "==3.13.13"
+dependencies = ["fastapi==0.162.0", "uvicorn==0.54.0", "psycopg[binary]==3.3.6", "httpx==0.28.1", "jsonschema==4.26.0", "boto3==1.43.118"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "openapi-spec-validator==0.9.0",
+    "ruff==0.17.2",
+    "pip-audit==2.10.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["services/api", "."]
+addopts = "--strict-markers -ra"
+markers = ["database: requires an isolated migrated PostgreSQL", "integration: actual network service integration"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 110
