@@ -97,8 +97,10 @@
   "phase1a_execution": {
     "required_manifest": "docs/phase1a/required-tests.json",
     "workflow": ".github/workflows/phase1a.yml",
-    "acceptance": "blocked_browser_launch",
+    "acceptance": "blocked_external_ci_and_branch_protection",
     "remote_enforcement": "pending",
-    "baseline_scope": "Whole-phase obligations unchanged; future unimplemented workflows are not claimed as delivered"
+    "baseline_scope": "Whole-phase obligations unchanged; future unimplemented workflows are not claimed as delivered",
+    "local_required_results": "passed",
+    "external_blockers_owner_accepted": false
   }
 }

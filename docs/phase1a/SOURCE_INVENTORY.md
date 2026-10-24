@@ -1,8 +1,8 @@
 # Phase 1A source file inventory
 
-68 application, migration, runner, test and engineering configuration files are listed below. Full version/integrity trees are in the dependency locks. Research/specifications remain separately versioned; generated private credentials/dependencies/raw outputs are excluded.
+69 application, migration, runner, diagnostic, test and engineering configuration files are listed below. Full version/integrity trees are in the dependency locks. Research/specifications remain separately versioned; generated private credentials/dependencies/raw outputs are excluded.
 
-Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `codex/phase-1a-foundation`. [SHA-256 inventory](source-files.json) records each file; [executed source manifest](../../artifacts/sanitized/source-manifest.json) binds the execution-relevant subset to the results.
+Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `codex/phase-1a-foundation`. Firefox repair: `ec99ac0`. [SHA-256 inventory](source-files.json) records each file; [executed source manifest](../../artifacts/sanitized/source-manifest.json) binds the execution-relevant subset to the results.
 
 | File | SHA-256 |
 |---|---|
@@ -39,11 +39,12 @@ Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `c
 | `scripts/container_setup.py` | `23055d11613b8403a623b65722647fb7bc1ed7973b87911e425c321283db88a8` |
 | `scripts/dev.py` | `2287922b5c017c93d8835680468f4c42243edd3f851812677aa4e0520cd7f146` |
 | `scripts/fingerprint.py` | `c80c4d720279e61e2c2c03422cf5b5773c3fcf2c7664b0512fb628eec1b244ba` |
+| `scripts/firefox-diagnostic.mjs` | `1e4ae42012cea91594a0b56a81cbc6f0eb95ab5355beb6423e483d6c83b52947` |
 | `scripts/migrate.py` | `10a3a4e15d7c30e7fa48c851ea2ecb7869f59da2a42111bff61bf4cef29c2410` |
 | `scripts/preflight.py` | `f884c667c6d04dbe3361a6744c930b9baa6177f42c653f60f0678c7ca39b7fae` |
 | `scripts/recovery.py` | `2ee3965f55bf960a429df84b543f2e232233ed70d13b355512e01e5668d02e4a` |
 | `scripts/results_gate.py` | `9d36784de40237870f901e8a9f8d4724b8186df0ee469673eb3534e71bdeca05` |
-| `scripts/run-browser.mjs` | `d9e8fb1754856608f6596ef2d813494eb2a55945199a1534a5fdb9b2092e5d93` |
+| `scripts/run-browser.mjs` | `21cb133925cf8df1526b70a2b218ff316d9d90f0a7814c4dd3e76fd7678490a3` |
 | `scripts/test.py` | `0ee18133e85741c7234a7a7bcf74a15f37ba83b23ab270bb984e47b4bcaf621c` |
 | `scripts/wait_services.py` | `33a39b8957b0dde3075788bbfe322615a8f7ff3817079e3cd909efa39e157c4a` |
 | `scripts/web.mjs` | `c5600ac26b694107b9d1020420969809b1458897b1890e81fbcd28bf636d2806` |
@@ -71,6 +72,6 @@ Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `c
 | `tests/unit/__init__.py` | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `tests/unit/test_foundation.py` | `fd52705e615eb80345508be0dda51a7b88b4dd06e55db7cb5d880574b49fecc2` |
 | `tests/unit/test_results_gate.py` | `ed7b801ae2d53c0b10389ba443bf06c89f28a26e26a5c2c493376bd1ca2ae61e` |
-| `tools/update_phase1a_matrix.py` | `2281c1b2b7c3562019e4b38534d75ed572af0bebe0ab347f9acda1546c132ff8` |
+| `tools/update_phase1a_matrix.py` | `50bf72feea222c4c6bedaa9295ef75a3d1afabb07c6548bbb44841b606a6ca50` |
 | `tsconfig.e2e.json` | `a3456efb986030c4627ec800c510618d89a8aff280febb1d47bd85896217650f` |
 | `uv.lock` | `9590f19043cd6c911db2ad265db4b6076d3e9f2b403d758d93f3bd789b82a8aa` |

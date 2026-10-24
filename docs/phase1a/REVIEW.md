@@ -1,6 +1,6 @@
 # Find Our Child — Phase 1A review
 
-**Assessment: foundation implemented; Phase 1A acceptance is blocked. Stop before Phase 1B.** The pinned Firefox runtime fails to launch on this macOS host, and GitHub execution/required-check enforcement have not been established. Neither failure is counted as successful validation. This package authorizes no production data or later-phase implementation.
+**Assessment: all local Phase 1A validation passes; acceptance remains blocked by hosted CI and branch-protection verification. Stop before Phase 1B.** Firefox remediation and the complete regression are documented in [REMEDIATION_REPORT.md](REMEDIATION_REPORT.md). No GitHub remote is configured. The owner intends to provide a repository URL and has not accepted these external blockers. Hosted controls are not claimed as active. This package authorizes no production data or later-phase implementation.
 
 ## Delivered source and environment
 
@@ -24,18 +24,18 @@ The policy reader is NOLOGIN and is not granted to the runtime role. Missing tra
 |---|---|
 | Required Python unit/API/integration/database/security inventory | **151 passed**, no skips; real isolated PostgreSQL |
 | API and migration Python line coverage | **94.81%**; this is not whole-repository or frontend coverage |
-| Browser matrix | **48 passed / 24 failed**, 72 executed, zero skipped/flaky/retried |
+| Browser matrix | **72 passed / 0 failed**, 72 executed, zero skipped/flaky/retried |
 | Chromium | 24 passed |
 | WebKit | 24 passed |
-| Firefox | 24 launch failures; no successful application assertions claimed |
-| Arabic/English automated accessibility/layout/keyboard checks | Passed in Chromium/WebKit; Firefox coverage blocked; manual assistive-technology review pending |
+| Firefox | 24 passed after isolated macOS app-data repair; original launch failures preserved |
+| Arabic/English automated accessibility/layout/keyboard checks | Passed in Chromium/Firefox/WebKit; manual assistive-technology review pending |
 | Current npm/Python dependency audits | No known vulnerabilities at recorded execution time |
 | Clean final npm lock install / TypeScript / production web build | Completed; private logs retained |
 | Real backup/restore drill | Passed for both migration checksums, pgvector, 41 forced-RLS relations and default-denied runtime reads |
-| Source-bound required-results/export gate | **Blocked**, correctly, by browser nonpassing results |
+| Source-bound required-results/export gate | **Passed** for the remediated source; hosted acceptance is separate |
 | Hosted GitHub workflow / branch protection | **Pending**, not executed or enforced remotely |
 
-[Sanitized results](../../artifacts/sanitized/results.json), [coverage](../../artifacts/sanitized/coverage.json), [normalized traces](../../artifacts/sanitized/traces.json), [source manifest](../../artifacts/sanitized/source-manifest.json), [artifact checksums](../../artifacts/sanitized/checksums.json) and [configuration checks](configuration-checks.json) are reviewable artifacts. Thirty-two allowlisted synthetic-shell screenshots are retained under `artifacts/sanitized/screenshots`. Raw browser attempts/logs, JUnit, coverage and synthetic backup remain private under ignored local artifact paths. Prior browser failures were retained before later runs; no retry was used to turn a failing mandatory case green.
+[Sanitized results](../../artifacts/sanitized/results.json), [coverage](../../artifacts/sanitized/coverage.json), [normalized traces](../../artifacts/sanitized/traces.json), [source manifest](../../artifacts/sanitized/source-manifest.json), [artifact checksums](../../artifacts/sanitized/checksums.json) and [configuration checks](configuration-checks.json) are reviewable artifacts. Forty-eight allowlisted synthetic-shell screenshots are retained under `artifacts/sanitized/screenshots`. Raw browser attempts/logs, JUnit, coverage and synthetic backup remain private under ignored local artifact paths. Original evidence is preserved under `artifacts/raw/baseline-add5cf7/`; the byte-equivalent runtime archive has a full preservation checksum manifest. The final raw browser report is `.e2e/report.json`. [Remediation evidence](remediation-evidence.json) binds exact counts, raw report hashes and commands to committed source `ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d` and the exported source digest. Prior browser failures were retained before later runs; no retry was used to turn a failing mandatory case green.
 
 The original Phase 0 validators run against the preserved commit because their assertions intentionally require a preimplementation tree. Their success certifies that historical research/configuration package, not application functionality. The current checker additionally validates complete OpenAPI, exact package/lock agreement, private database topology and immutable action pins. Current documentation links and matrix references are checked separately.
 
@@ -57,7 +57,7 @@ No hosted run has been observed and no remote required check or branch rule is a
 
 ## Remaining blockers and limits
 
-1. The exact Firefox 157.0/revision 1555 binary fails with `Could not find profile folder` on macOS arm64, including independent default, canonical-temporary and explicit-profile diagnostics. Resolve the supported execution environment or obtain a compatible verified host while preserving the mandated framework pins, then rerun the entire required browser matrix. The failed cases cannot be waived as passed.
+1. **Resolved locally:** the unchanged Firefox 157.0/revision 1555 binary launches with disposable CoreFoundation app data on macOS 27. `scripts/run-browser.mjs` applies this automatically and cleans up the created directory. A/B launch diagnostics and all 72 TesterArmy executions are recorded in the remediation report. No engine, target, assertion or retry policy was removed.
 2. Select the GitHub repository, execute the workflow on its target runner and enforce/verify required checks and branch protection. Linux browser/OS compatibility and hosted artifact enforcement are pending.
 3. The local environment is synthetic foundation tooling, not a production deployment. Keycloak/MFA, S3 quarantine/scanner integrations, secure sessions/CSRF enforcement, staff actions and worker implementations belong to the separately gated next phases. SDK/version presence is not a completed service integration.
 4. Manual accessibility, independent penetration/adversarial testing, performance/concurrency/soak, operational recovery and tombstone replay, deletion/index cleanup, legal/retention/KMS/provider approvals and all model evaluation remain pending. The baseline B01–B11 decisions still govern their relevant scopes; explicit authorization cleared only entry to synthetic Phase 1A work.

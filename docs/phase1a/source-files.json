@@ -132,6 +132,10 @@
     "sha256": "c80c4d720279e61e2c2c03422cf5b5773c3fcf2c7664b0512fb628eec1b244ba"
   },
   {
+    "path": "scripts/firefox-diagnostic.mjs",
+    "sha256": "1e4ae42012cea91594a0b56a81cbc6f0eb95ab5355beb6423e483d6c83b52947"
+  },
+  {
     "path": "scripts/migrate.py",
     "sha256": "10a3a4e15d7c30e7fa48c851ea2ecb7869f59da2a42111bff61bf4cef29c2410"
   },
@@ -149,7 +153,7 @@
   },
   {
     "path": "scripts/run-browser.mjs",
-    "sha256": "d9e8fb1754856608f6596ef2d813494eb2a55945199a1534a5fdb9b2092e5d93"
+    "sha256": "21cb133925cf8df1526b70a2b218ff316d9d90f0a7814c4dd3e76fd7678490a3"
   },
   {
     "path": "scripts/test.py",
@@ -261,7 +265,7 @@
   },
   {
     "path": "tools/update_phase1a_matrix.py",
-    "sha256": "2281c1b2b7c3562019e4b38534d75ed572af0bebe0ab347f9acda1546c132ff8"
+    "sha256": "50bf72feea222c4c6bedaa9295ef75a3d1afabb07c6548bbb44841b606a6ca50"
   },
   {
     "path": "tsconfig.e2e.json",

@@ -4,14 +4,13 @@ import hashlib
 import json
 
 ROOT=Path(__file__).resolve().parents[1]
-RUNTIME=Path('/private/tmp/foc-phase1a-runtime')
 BASE=ROOT/'docs/testing/test-matrix-phase0.json'
 if not BASE.exists(): BASE.write_bytes((ROOT/'docs/testing/test-matrix.json').read_bytes())
 m=json.loads(BASE.read_text())
 report=json.loads((ROOT/'artifacts/sanitized/results.json').read_text())
 manifest=json.loads((ROOT/'docs/phase1a/required-tests.json').read_text())
 proof='artifacts/sanitized/results.json'
-passed={t['id'] for t in report.get('python',[])}
+passed={t['id'] for t in report.get('python',[]) if t['status']=='passed'}
 for f in m['features']:
     for c in f['test_cases']:
         c['phase1a_required']=c['test_case_id'].endswith('_DISABLED_P1')
@@ -68,7 +67,7 @@ append('FND-10','TC_FND_INSTALL','clean-lock-and-build','package-lock.json','mak
 for suite in ['npm','python']:
  append('FND-12','TC_FND_AUDIT_'+suite.upper(),suite+' current lock audit','scripts/audit.py','uv run python -m scripts.audit','passed' if report.get('dependency_audit',{}).get('status')=='passed' else 'pending',{'path':proof,'scope':suite+' current application/test lock only'})
 config=ROOT/'docs/phase1a/configuration-checks.json'
-append('FND-13','TC_FND_CI_CONFIG','immutable-pins-and-required-gate','.github/workflows/phase1a.yml','uv run python -m scripts.check_foundation','passed' if config.exists() else 'pending',{'path':'docs/phase1a/configuration-checks.json'} if config.exists() else None)
+append('FND-13','TC_FND_CI_CONFIG','immutable-pins-and-required-gate','.github/workflows/phase1a.yml','uv run python -m scripts.check_foundation','passed' if config.exists() and json.loads(config.read_text()).get('status')=='passed' else 'pending',{'path':'docs/phase1a/configuration-checks.json'} if config.exists() else None)
 for item in ['REMOTE_RUN','BRANCH_PROTECTION']:
  append('FND-13','TC_FND_CI_'+item,item,'.github/workflows/phase1a.yml','Owner verifies GitHub required check and protected branch after repository selection','pending',None,'security_authorization','No remote repository is configured; remote enforcement has not executed.')
 append('FND-14','TC_FND_RESTORE','synthetic-schema-and-rls-restore','scripts/recovery.py','uv run python -m scripts.recovery','passed' if report.get('migration_and_recovery',{}).get('status')=='passed' else 'pending',{'path':proof,'scope':'Foundation backup/restore only; operational erasure/tombstone replay pending'})
@@ -76,12 +75,12 @@ for f in features.values():
  states={c['status'] for c in f['test_cases']}
  f['current_validation_status']='passed' if states=={'passed'} else 'failed' if 'failed' in states else 'partial' if 'passed' in states else 'pending'
  f['execution_evidence']={'path':proof,'source_digest':report['gate']['source_digest']} if states-{'pending'} else None
-m['features'].extend(features.values());m['schema_version']='2';m['scope']='Phase 0 baseline plus Phase 1A foundation; no Phase 1B/1C execution authorized';m['application_test_status']='partially_validated_gate_blocked';m['baseline']={'commit':'40231be73ab9a5eb577ccf5308c86f6b7282976b','features':151,'planned_cases':630,'snapshot':'docs/testing/test-matrix-phase0.json'}
+m['features'].extend(features.values());m['schema_version']='2';m['scope']='Phase 0 baseline plus Phase 1A foundation; no Phase 1B/1C execution authorized';m['application_test_status']='phase1a_local_validated_external_gates_pending' if report['gate']['status']=='passed' else 'partially_validated_gate_blocked';m['baseline']={'commit':'40231be73ab9a5eb577ccf5308c86f6b7282976b','features':151,'planned_cases':630,'snapshot':'docs/testing/test-matrix-phase0.json'}
 (ROOT/'docs/testing/test-matrix.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n')
 all_cases=[c for f in m['features'] for c in f['test_cases']]
 from collections import Counter
 counts=Counter(c['status'] for c in all_cases)
-lines=['# Find Our Child — test matrix','',f'Current traceability: **{len(m["features"])} features, {len(all_cases)} logical test cases**. Statuses: '+', '.join(f'{k}={v}' for k,v in sorted(counts.items()))+'.','', 'The immutable starting point is 151 features / 630 planned cases at commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Four disabled-feature guards now have executed evidence; operational baseline scenarios remain pending. Foundation additions include idempotency storage, health contracts, result gates, and restore validation. Browser cases expand to 24 targets each; logical-case totals must not be confused with execution counts.','', 'Phase 1A gate is **blocked** by Firefox launch failures and remote CI/protection remains pending. A passed foundation guard does not validate a future authentication, reporting, approval, media or biometric workflow. The original whole-Phase-1 regression obligation remains unchanged.','', 'Machine-readable source: [test-matrix.json](testing/test-matrix.json). Original baseline: [test-matrix-phase0.json](testing/test-matrix-phase0.json). Evidence: [sanitized results](../artifacts/sanitized/results.json). Required Phase 1A inventory: [required-tests.json](phase1a/required-tests.json).','']
+lines=['# Find Our Child — test matrix','',f'Current traceability: **{len(m["features"])} features, {len(all_cases)} logical test cases**. Statuses: '+', '.join(f'{k}={v}' for k,v in sorted(counts.items()))+'.','', 'The immutable starting point is 151 features / 630 planned cases at commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Four disabled-feature guards now have executed evidence; operational baseline scenarios remain pending. Foundation additions include idempotency storage, health contracts, result gates, and restore validation. Browser cases expand to 24 targets each; logical-case totals must not be confused with execution counts.','', ('Phase 1A local required-results gate: **'+report['gate']['status']+'**. Hosted CI and branch protection remain pending; owner acceptance of those external blockers has not been given. A passed foundation guard does not validate future authentication, reporting, approval, media or biometric workflows. The original whole-Phase-1 regression obligation remains unchanged.'),'', 'Machine-readable source: [test-matrix.json](testing/test-matrix.json). Original baseline: [test-matrix-phase0.json](testing/test-matrix-phase0.json). Evidence: [sanitized results](../artifacts/sanitized/results.json). Required Phase 1A inventory: [required-tests.json](phase1a/required-tests.json).','']
 for f in m['features']:
  lines += [f'## {f["feature_id"]} — {f["title"]}','',f'Validation: **{f["current_validation_status"]}**. Suite: {f["suite"]}. Fixtures: '+', '.join(f['fixture_ids'])+'.','', 'Positive: '+f['positive_scenarios'],'','Negative: '+f['negative_scenarios'],'','Security/authorization: '+f['security_authorization_scenarios'],'','Edge cases: '+f['edge_cases'],'','Expected: '+f['expected_outcomes'],'','| Test case | Kind | Status | Executable / selector | Evidence |','|---|---|---|---|---|']
  for c in f['test_cases']:

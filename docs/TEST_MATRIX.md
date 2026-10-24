@@ -1,10 +1,10 @@
 # Find Our Child — test matrix
 
-Current traceability: **166 features, 787 logical test cases**. Statuses: failed=3, passed=156, pending=628.
+Current traceability: **166 features, 787 logical test cases**. Statuses: passed=159, pending=628.
 
 The immutable starting point is 151 features / 630 planned cases at commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Four disabled-feature guards now have executed evidence; operational baseline scenarios remain pending. Foundation additions include idempotency storage, health contracts, result gates, and restore validation. Browser cases expand to 24 targets each; logical-case totals must not be confused with execution counts.
 
-Phase 1A gate is **blocked** by Firefox launch failures and remote CI/protection remains pending. A passed foundation guard does not validate a future authentication, reporting, approval, media or biometric workflow. The original whole-Phase-1 regression obligation remains unchanged.
+Phase 1A local required-results gate: **passed**. Hosted CI and branch protection remain pending; owner acceptance of those external blockers has not been given. A passed foundation guard does not validate future authentication, reporting, approval, media or biometric workflows. The original whole-Phase-1 regression obligation remains unchanged.
 
 Machine-readable source: [test-matrix.json](testing/test-matrix.json). Original baseline: [test-matrix-phase0.json](testing/test-matrix-phase0.json). Evidence: [sanitized results](../artifacts/sanitized/results.json). Required Phase 1A inventory: [required-tests.json](phase1a/required-tests.json).
 
@@ -3763,7 +3763,7 @@ Per-case scenarios, commands, expected outcomes, phase applicability and evidenc
 
 ## FND-08 — Arabic/English foundation browser shell
 
-Validation: **failed**. Suite: browser. Fixtures: FX-FOUNDATION.
+Validation: **passed**. Suite: browser. Fixtures: FX-FOUNDATION.
 
 Positive: Real web/API/database render both locales without overflow, preserve HTML direction, support keyboard navigation, pass automated axe rules and expose no reporting inputs.
 
@@ -3777,9 +3777,9 @@ Expected: Real web/API/database render both locales without overflow, preserve H
 
 | Test case | Kind | Status | Executable / selector | Evidence |
 |---|---|---|---|---|
-| TC_FND_BROWSER_AR_READY | security_authorization | failed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_AR_READY` | artifacts/sanitized/results.json |
-| TC_FND_BROWSER_EN_READY | security_authorization | failed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_EN_READY` | artifacts/sanitized/results.json |
-| TC_FND_BROWSER_LANGUAGE_SWITCH | positive | failed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_LANGUAGE_SWITCH` | artifacts/sanitized/results.json |
+| TC_FND_BROWSER_AR_READY | security_authorization | passed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_AR_READY` | artifacts/sanitized/results.json |
+| TC_FND_BROWSER_EN_READY | security_authorization | passed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_EN_READY` | artifacts/sanitized/results.json |
+| TC_FND_BROWSER_LANGUAGE_SWITCH | positive | passed | `tests/browser/foundation.e2e.ts` / `TC_FND_BROWSER_LANGUAGE_SWITCH` | artifacts/sanitized/results.json |
 
 Per-case scenarios, commands, expected outcomes, phase applicability and evidence selectors are recorded in the machine-readable matrix above.
 

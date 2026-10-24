@@ -1,0 +1,178 @@
+{
+  "verified_on": "2026-10-24T11:17:01.455917+03:00",
+  "starting_revision": "add5cf75e80154567ee2188d00973bccbd18cd2e",
+  "tested_runtime_revision": "ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d",
+  "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d",
+  "scope": "Phase 1A synthetic-only; no Phase 1B implementation",
+  "local_required_gate": "passed",
+  "overall_acceptance": "blocked_external_ci_and_branch_protection",
+  "external_blockers_owner_accepted": false,
+  "git_remote_observed": [],
+  "hosted_run": null,
+  "branch_protection": null,
+  "merge_block_probe": null,
+  "python": {
+    "total": 151,
+    "status": "passed",
+    "skipped": 0,
+    "by_suite": {
+      "unit": 41,
+      "api": 6,
+      "database": 34,
+      "security": 68,
+      "integration": 2
+    },
+    "started_at_unix": 1792829369.5300333,
+    "finished_at_unix": 1792829372.4964652
+  },
+  "browser": {
+    "id": "01a16cf6-256c-7895-922c-4628092ad258",
+    "runner": {
+      "name": "e2e",
+      "version": "0.21.3"
+    },
+    "status": "passed",
+    "exitCode": 0,
+    "startedAt": "2026-10-24T08:10:33.961Z",
+    "finishedAt": "2026-10-24T08:11:15.545Z",
+    "summary": {
+      "discovered": 72,
+      "selected": 72,
+      "executed": 72,
+      "passed": 72,
+      "failed": 0,
+      "interrupted": 0,
+      "flaky": 0,
+      "skipped": 0
+    },
+    "usage": {
+      "discoveredResults": 72,
+      "maxAgentContextBytes": 0,
+      "maxLedgerBytes": 0,
+      "maxObservationBytes": 0,
+      "artifactBytes": 2241872,
+      "downloads": 0,
+      "events": 768,
+      "modelTokens": 0,
+      "maxModelCallsInStep": 0,
+      "maxActionStepsInStep": 0
+    }
+  },
+  "framework_pins": {
+    "e2e": "0.21.3",
+    "@e2e-dev/web": "0.15.3",
+    "playwright-core": "1.64.1",
+    "source_commit": "69e123b17e04ed624df16d32f3b1ef95ce22c083"
+  },
+  "browsers": {
+    "chromium": {
+      "version": "156.0.8078.4",
+      "revision": "1248",
+      "passed": 24
+    },
+    "firefox": {
+      "version": "157.0",
+      "revision": "1555",
+      "passed": 24
+    },
+    "webkit": {
+      "version": "27.2",
+      "revision": "2370",
+      "passed": 24
+    }
+  },
+  "playwright_only_application_tests": 0,
+  "final_low_level_launch_probes": 2,
+  "exploratory_launch_probes": 4,
+  "firefox_diagnostic": {
+    "platform": "darwin",
+    "release": "27.0.0",
+    "executable_sha256": "65f70a725a576763c36634d63407fad91d898d522f25a5ca9caf748b3e3be005",
+    "diagnostics_only": true,
+    "results": [
+      {
+        "mode": "default",
+        "status": "failed"
+      },
+      {
+        "mode": "isolated-app-data",
+        "status": "passed",
+        "version": "157.0"
+      }
+    ]
+  },
+  "coverage": {
+    "scope": "API and migration Python code only",
+    "totals": {
+      "covered_lines": 73,
+      "num_statements": 77,
+      "percent_covered": 94.8051948051948,
+      "missing_lines": 4
+    }
+  },
+  "migration_and_recovery": {
+    "status": "passed",
+    "scope": "synthetic foundation backup/restore only",
+    "tables": 41,
+    "forced_rls": 41,
+    "schema_version": "0001",
+    "vector_version": "0.8.7",
+    "migration_sha256": "ccc3ff7b2f376fa4d5784b6757d8051ca4817f1e47593c7c00649ce51cc10a84",
+    "hardening_sha256": "4c8122f8180061e0792c4d1ab1fe3035e4bed86b4fe2f1939be3ae9dff1cdfc7",
+    "operational_erasure": "pending"
+  },
+  "dependency_audit": {
+    "status": "passed",
+    "npm_known_vulnerabilities": 0,
+    "python_known_vulnerabilities": 0
+  },
+  "raw_local_evidence_sha256": {
+    "artifacts/raw/python-results.json": "da88ad19a72a6cb6337e1891d3b4718cea2916cb0e7619436b8ef7c2f26a2219",
+    "artifacts/raw/python.junit.xml": "1e1e0bcc08af63bfbc66c23ce0340973c2ff4eea18996717774004ee3041988b",
+    "artifacts/raw/coverage.json": "578a1dc0f3646783b0c723bc8c067d18727f8fbc518b4f9bcdc51552d4f30dc5",
+    "artifacts/raw/coverage.xml": "f62d93b97a8c2c2a493ec118e00a6bdc12149a6723a51305b2ebf15a25e4dddf",
+    "artifacts/raw/python-console.log": "95c3e418d1c777f8f2def2607c14d5d128e4afffead04e57d669709f40274235",
+    "artifacts/raw/provision.log": "59b6dd763f212058f9a03baa8d87f7f2f1d37298f09236db9e230a4577583fdb",
+    "artifacts/raw/recovery.json": "921eef461ac6f947be88c603deee703148f70d7a2fe4cc2f03aa47e04972ecb4",
+    "artifacts/raw/audit-meta.json": "6a24f719afb5e584c33a1b4fef2cf66f1aaa2e5eb13aed9ddd29b13dd4e92895",
+    "artifacts/raw/npm-audit.json": "cfdef119e2a54cb23eaf1d35924ef9de5faa49d192c2ab915623ac5ebe8955ba",
+    "artifacts/raw/python-audit.json": "8bd2dc5f8714775e19e727b6078ffded1e518d5f4df48ac01404134da967ede8",
+    "artifacts/raw/npm-ci.log": "825a451a5fd83f61a229e671a97a0648303818563b415e55ec5c7fa17eb081bf",
+    "artifacts/raw/typecheck.log": "a6060b9d1a6f530bbf3a764ef316cd85f773258e28bac0ba9bee93130257a633",
+    "artifacts/raw/web-build.log": "7fea7343bbfc82decc0474f70b4b92f76c58f53e0ef52fcacbf241b2a3b0cefd",
+    "artifacts/raw/web.log": "3cac97cd21cba34dff6ac011f0b77e20904db15534fdf9d00e5f1d413627f2e1",
+    "artifacts/raw/browser-console.log": "31139700d95d2a670b4bdf5283b532d06a4bdd12f25c83ef1c89ec4dc5527769",
+    "artifacts/raw/browser-run.json": "005a8986072d2d3433779f6b686b878b5a32739c8b9103c814d6b855715375cb",
+    "artifacts/raw/firefox-diagnostic.json": "58038bd516c0937f4545278452d728444d0a2b4b825a7e8f75aef4eba6e2b91c"
+  },
+  "raw_browser_report_sha256": "84398d7b6eba5e380c5f7621cc3fd75ba01e946275ac69df7df52135275d3803",
+  "raw_browser_junit_sha256": "cf6ec436f69509b8fb3714ff362e0448e1da68ea1d40c7470f0989d2bc6361a2",
+  "baseline_raw_preservation": {
+    "runtime_path": "/private/tmp/foc-phase1a-runtime/artifacts/raw/baseline-add5cf7",
+    "files": 472,
+    "manifest_sha256": "d39237dc75a8247d5b7d444a62443813eb32fcc95b641418280a7102afc0677b"
+  },
+  "sanitized_screenshots": 48,
+  "sanitized_checksums_sha256": "6b4756732d1a59d4a620321631baa800b157239f6ab111baa9abd04510389f7e",
+  "limitations": [
+    "No hosted execution, protection API response or merge-block proof exists without a repository URL.",
+    "No third-party execution attestation; hashes permit integrity and source verification, and commands permit reproduction.",
+    "Coverage is API/migration Python only.",
+    "Future operational safeguarding, identity, reporting and model scenarios remain pending."
+  ],
+  "original_firefox_failures": {
+    "count": 24,
+    "classification": "ENGINE_FAILURE during browser launch before application assertions",
+    "message": "Could not find profile folder",
+    "raw_log": "artifacts/raw/baseline-add5cf7/browser-console.log",
+    "sha256": "3e19129c060b08fe5603ae054240d2e05f758cb9d2263e68fcf1aaf3799e6384",
+    "missing_binary": false,
+    "revision_mismatch": false
+  },
+  "committed_source_verification": {
+    "status": "passed",
+    "method": "SHA-256 source manifest and Git blob-object identities from ls-tree at tested revision",
+    "files": 60,
+    "revision": "ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d"
+  }
+}

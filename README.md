@@ -1,6 +1,6 @@
 # Find Our Child
 
-Phase **1A foundation only**. The acceptance gate remains **blocked** by the pinned Firefox launch failure; remote CI execution and branch protection are pending. Phase 1B and 1C have not started. All 32 domain operations return a fail-closed 503.
+Phase **1A foundation only**. All local required tests pass after Firefox remediation. Acceptance remains **blocked** pending hosted CI execution and branch-protection verification. Phase 1B and 1C have not started. All 32 domain operations return a fail-closed 503.
 
 Start with the [Phase 1A review](docs/phase1a/REVIEW.md), [executable environment](docs/phase1a/ENVIRONMENT.md), [locked manifest](docs/phase1a/LOCKED_DEPENDENCIES.md), [source inventory](docs/phase1a/SOURCE_INVENTORY.md) and [test matrix](docs/TEST_MATRIX.md).
 

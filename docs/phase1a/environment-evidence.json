@@ -3,7 +3,6 @@
   "phase": "1A only",
   "baseline_commit": "40231be73ab9a5eb577ccf5308c86f6b7282976b",
   "e2e_source_commit": "69e123b17e04ed624df16d32f3b1ef95ce22c083",
-  "source_digest": "1b92f68a030dc504fe9ea6296bc702e16ba7839043b571b8fae8fe006ad457f3",
   "runtime_host": "macOS-27.0.1-arm64-arm-64bit",
   "runtime_directory": "/private/tmp/foc-phase1a-runtime",
   "workspace_dependency_symlinks": true,
@@ -53,8 +52,8 @@
     "discovered": 72,
     "selected": 72,
     "executed": 72,
-    "passed": 48,
-    "failed": 24,
+    "passed": 72,
+    "failed": 0,
     "interrupted": 0,
     "flaky": 0,
     "skipped": 0
@@ -64,17 +63,21 @@
     "maxAgentContextBytes": 0,
     "maxLedgerBytes": 0,
     "maxObservationBytes": 0,
-    "artifactBytes": 1489202,
+    "artifactBytes": 2241872,
     "downloads": 0,
-    "events": 520,
+    "events": 768,
     "modelTokens": 0,
     "maxModelCallsInStep": 0,
     "maxActionStepsInStep": 0
   },
   "scope_limits": [
-    "Local Linux-container database/API and macOS browser execution; GitHub CI not executed",
-    "No packet capture or network-firewall attestation",
-    "Only current application/test dependency sets audited; historical research tooling unchanged",
-    "No production child information or external testing model used"
-  ]
+    "Synthetic Phase 1A only",
+    "All configured local browsers passed; hosted Linux execution remains pending",
+    "Hosted CI and branch protection not verified; no remote configured",
+    "Operational erasure, identity, reporting, facial matching and broader production assurance remain pending"
+  ],
+  "initial_source_digest": "1b92f68a030dc504fe9ea6296bc702e16ba7839043b571b8fae8fe006ad457f3",
+  "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d",
+  "remediation_evidence": "docs/phase1a/remediation-evidence.json",
+  "current_runtime_revision": "ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d"
 }
