@@ -1,6 +1,6 @@
 # Phase 1B source inventory
 
-Compared with accepted main `683180e`; candidate `d807d28`. Final report/evidence additions follow this inventory. Original research evidence is retained.
+Validated implementation: `f2eb943485c4d2a9b6bbdf587212d2583d97e65b`, compared with accepted main `683180e`. Final evidence/documentation additions are recorded by Git; they preserve the 85-file execution source digest in hosted-artifact-verification.json. Original research evidence is retained.
 
 | Change | Path |
 |---|---|
@@ -15,6 +15,8 @@ Compared with accepted main `683180e`; candidate `d807d28`. Final report/evidenc
 | A | config/keycloak/realm-template.json |
 | A | database/migrations/0003_identity.sql |
 | A | database/migrations/0004_identity_audit.sql |
+| A | database/migrations/0005_identity_commands.sql |
+| A | database/migrations/0006_audit_sequence_scope.sql |
 | M | docs/ENGINEERING_ARCHITECTURE.md |
 | M | docs/IMPLEMENTATION_PHASES.md |
 | M | docs/PHASE_0_REVIEW.md |
@@ -26,6 +28,8 @@ Compared with accepted main `683180e`; candidate `d807d28`. Final report/evidenc
 | M | docs/phase1a/required-tests.json |
 | A | docs/phase1b/ARCHITECTURE.md |
 | A | docs/phase1b/ENVIRONMENT.md |
+| A | docs/phase1b/LOCKED_DEPENDENCIES.md |
+| A | docs/phase1b/SOURCE_INVENTORY.md |
 | A | docs/phase1b/TEST_TRACEABILITY.md |
 | A | docs/phase1b/VALIDATION_REPORT.md |
 | A | docs/phase1b/failed-hosted-run.json |

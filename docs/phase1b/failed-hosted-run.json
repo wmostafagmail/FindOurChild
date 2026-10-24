@@ -17,7 +17,7 @@
   },
   "identity_and_combined_coverage": "not executed; blocked after browser failure",
   "correction": "Separate constrained CA/server leaf; retain certificate verification and all targets; rerun entire required pipeline",
-  "original_log": "GitHub Actions run 40102600554; preserved locally at /private/tmp/foc-phase1b-ad2-hosted.log",
+  "original_log": "artifacts/raw/phase1b-hosted/40102600554.log (private, ignored; checksum manifest adjacent)",
   "follow_up": {
     "run_id": 40103228628,
     "commit": "d807d28fa933bbc56d0287163f8684dcbeb09d5f",

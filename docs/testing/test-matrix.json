@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
   "scope": "Preserved Phase 0/1A baseline plus explicitly scoped Phase 1B identity executables; no Phase 1C",
-  "application_test_status": "phase1b_hosted_validation_pending; prior passing evidence is historical Phase 1A",
+  "application_test_status": "phase1b_hosted_validation_passed_awaiting_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -14908,8 +14908,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_002",
@@ -14921,8 +14924,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_003",
@@ -14934,8 +14940,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_004",
@@ -14947,8 +14956,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_005",
@@ -14960,8 +14972,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_006",
@@ -14973,8 +14988,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_007",
@@ -14986,8 +15004,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_008",
@@ -14999,8 +15020,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_009",
@@ -15012,8 +15036,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_010",
@@ -15025,8 +15052,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_011",
@@ -15038,8 +15068,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_012",
@@ -15051,8 +15084,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_013",
@@ -15064,8 +15100,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_014",
@@ -15077,8 +15116,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_015",
@@ -15090,8 +15132,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_016",
@@ -15103,8 +15148,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_017",
@@ -15116,8 +15164,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_018",
@@ -15129,8 +15180,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_019",
@@ -15142,8 +15196,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_020",
@@ -15155,8 +15212,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_021",
@@ -15168,8 +15228,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_022",
@@ -15181,8 +15244,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_023",
@@ -15194,8 +15260,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_024",
@@ -15207,8 +15276,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_025",
@@ -15220,8 +15292,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_026",
@@ -15233,8 +15308,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_027",
@@ -15246,8 +15324,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_028",
@@ -15259,8 +15340,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_029",
@@ -15272,8 +15356,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_030",
@@ -15285,8 +15372,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_031",
@@ -15298,8 +15388,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_01_032",
@@ -15311,8 +15404,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         }
       ]
     },
@@ -15343,8 +15439,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_002",
@@ -15356,8 +15455,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_003",
@@ -15369,8 +15471,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_004",
@@ -15382,8 +15487,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_005",
@@ -15395,8 +15503,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_006",
@@ -15408,8 +15519,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_007",
@@ -15421,8 +15535,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_008",
@@ -15434,8 +15551,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_009",
@@ -15447,8 +15567,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_010",
@@ -15460,8 +15583,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_011",
@@ -15473,8 +15599,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_012",
@@ -15486,8 +15615,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_013",
@@ -15499,8 +15631,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_02_014",
@@ -15512,8 +15647,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         }
       ]
     },
@@ -15544,8 +15682,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_002",
@@ -15557,8 +15698,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_003",
@@ -15570,8 +15714,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_004",
@@ -15583,8 +15730,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_005",
@@ -15596,8 +15746,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_006",
@@ -15609,8 +15762,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_007",
@@ -15622,8 +15778,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_008",
@@ -15635,8 +15794,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_009",
@@ -15648,8 +15810,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_010",
@@ -15661,8 +15826,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_011",
@@ -15674,8 +15842,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_03_012",
@@ -15687,8 +15858,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         }
       ]
     },
@@ -15719,8 +15893,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_002",
@@ -15732,8 +15909,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_003",
@@ -15745,8 +15925,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_004",
@@ -15758,8 +15941,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_005",
@@ -15771,8 +15957,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_006",
@@ -15784,8 +15973,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         },
         {
           "test_case_id": "TC_IDN_04_007",
@@ -15797,8 +15989,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         }
       ]
     },
@@ -15829,8 +16024,11 @@
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",
           "phase1b_required": true,
-          "status": "pending",
-          "execution_evidence": null
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
         }
       ]
     }
