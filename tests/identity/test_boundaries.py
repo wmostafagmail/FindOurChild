@@ -32,6 +32,18 @@ def test_real_keycloak_mfa_session_case_and_tenant_boundary():
         assert client.get(base + ORG_A + "/audit", headers=headers).status_code == 404
         assert (
             client.post(
+                base + ORG_A + "/memberships",
+                headers=headers,
+                json={
+                    "principal_id": STAFF_B,
+                    "role": "reviewer",
+                    "expires_at": (datetime.now(UTC) + timedelta(hours=1)).isoformat(),
+                },
+            ).status_code
+            == 404
+        )
+        assert (
+            client.post(
                 "https://127.0.0.1:3443/identity/logout",
                 headers={**headers, "origin": "https://evil.invalid"},
             ).status_code
@@ -243,3 +255,17 @@ def test_session_cipher_and_cookie_flags():
         private = json.loads((Path(__file__).resolve().parents[2] / ".runtime/identity.json").read_text())
         assert private["FOC_IDP_SECRET"] not in response.text + cookie + response.headers["location"]
         assert COOKIE not in cookie
+
+
+@pytest.mark.integration
+def test_real_oidc_code_replay_cannot_create_another_session():
+    client, headers = real_login("synthetic-reviewer-b")
+    try:
+        callback_url, flow = client._synthetic_callback
+        replay = client.get(callback_url, headers={"cookie": "__Host-foc-flow=" + flow})
+        assert replay.status_code in [401, 503]
+        assert "__Host-foc-session" not in replay.cookies
+        assert "access_token" not in replay.text and "id_token" not in replay.text
+    finally:
+        client.post("https://127.0.0.1:3443/identity/logout", headers=headers)
+        client.close()

@@ -15663,6 +15663,19 @@
           "phase1b_required": true,
           "status": "pending",
           "execution_evidence": null
+        },
+        {
+          "test_case_id": "TC_IDN_03_012",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "pending",
+          "execution_evidence": null
         }
       ]
     },
@@ -15741,6 +15754,19 @@
           "scenario": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
           "planned_file": "tests/database/test_identity.py",
           "planned_selector": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "pending",
+          "execution_evidence": null
+        },
+        {
+          "test_case_id": "TC_IDN_04_006",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
           "planned_command": ".venv/bin/python -m scripts.dev test",
           "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
           "required_from_phase": "1B",

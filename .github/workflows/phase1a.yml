@@ -69,6 +69,7 @@ jobs:
           mkdir -p "$HOME/.pki/nssdb"
           certutil -N --empty-password -d "sql:$HOME/.pki/nssdb"
           certutil -A -d "sql:$HOME/.pki/nssdb" -n foc-synthetic -t 'C,,' -i .runtime/tls/cert.pem
+          node scripts/ci_tls_policy.mjs
       - name: Start actual web service
         run: |
           npm run start > artifacts/raw/web.log 2>&1 &

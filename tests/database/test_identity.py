@@ -106,3 +106,26 @@ def test_session_token_is_hashed_and_expiry_enforced(db):
     assert conn.execute("SELECT * FROM platform.session_get(%s)", (token,)).fetchone()[0] == db["principal_a"]
     conn.execute("SELECT platform.session_revoke(%s)", (token,))
     assert conn.execute("SELECT * FROM platform.session_get(%s)", (token,)).fetchall() == []
+
+
+@pytest.mark.database
+def test_membership_change_rolls_back_when_audit_unavailable(db):
+    conn = context(db, db["org_b"], db["principal_b"])
+    admin = db["admin"]
+    admin.execute("REVOKE INSERT ON app.audit_events FROM foc_policy")
+    try:
+        with pytest.raises(psycopg.errors.InsufficientPrivilege), conn.transaction():
+            conn.execute(
+                "SELECT platform.membership_change(%s,%s,'reviewer',now()+interval '1 hour',false)",
+                (db["org_b"], db["principal_a"]),
+            )
+        assert (
+            admin.execute(
+                "SELECT count(*) FROM app.memberships WHERE organization_id=%s AND principal_id=%s",
+                (db["org_b"], db["principal_a"]),
+            ).fetchone()[0]
+            == 0
+        )
+    finally:
+        conn.rollback()
+        admin.execute("GRANT INSERT ON app.audit_events TO foc_policy")

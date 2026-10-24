@@ -1,6 +1,8 @@
 import {test} from '@e2e-dev/web';
 import {expect,secrets} from 'e2e';
 import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+const {source:axeSource}=createRequire(import.meta.url)('axe-core') as {source:string};
 // Secrets are synthetic, generated privately; no screenshots or raw traces from this flow are published.
 test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   const fixture=JSON.parse(readFileSync('.runtime/identity.json','utf8')) as {password:string,otp:string,users:Record<string,string>};
@@ -18,6 +20,9 @@ test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   await expect(browser).toHaveURL('/en/identity');
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','authenticated');
   await expect(screen.getByTestId('principal')).toHaveText(fixture.users[username]);
+  expect(await browser.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await browser.evaluate('() => {\n'+axeSource+'\n; return true;\n}');
+  expect(await browser.evaluate(`async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>v.id)`)).toEqual([]);
   const cookies=await browser.cookies();
   const session=cookies.find(c=>c.name==='__Host-foc-session');
   expect(Boolean(session?.httpOnly && session.secure && session.path==='/')).toBe(true);
@@ -31,6 +36,9 @@ test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   await screen.getByRole('link','العربية').click();
   await expect(browser.locator('html')).toHaveAttribute('dir','rtl');
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','authenticated');
+  expect(await browser.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await browser.evaluate('() => {\n'+axeSource+'\n; return true;\n}');
+  expect(await browser.evaluate(`async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>v.id)`)).toEqual([]);
   await screen.getByRole('button','تسجيل الخروج').click();
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','signed_out');
   const denied=await browser.evaluate(async()=>(await fetch('/identity/me')).status);

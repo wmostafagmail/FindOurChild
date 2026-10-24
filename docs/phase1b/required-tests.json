@@ -25,6 +25,7 @@
     "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params1]",
     "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params2]",
     "tests/identity/test_boundaries.py::test_session_cipher_and_cookie_flags",
+    "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
     "tests/identity/test_tokens.py::test_valid_signed_mfa",
     "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change0]",
     "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change1]",

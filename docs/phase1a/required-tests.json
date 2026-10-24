@@ -1,5 +1,5 @@
 {
-  "scope": "phase1a-regression-plus-phase1b-browser",
+  "scope": "phase1a-only",
   "python": [
     "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[None]",
     "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[production]",
@@ -56,6 +56,7 @@
     "tests/database/test_identity.py::test_identity_missing_context_and_revocation",
     "tests/database/test_identity.py::test_audit_chain_and_runtime_append_only",
     "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+    "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
     "tests/database/test_rls.py::test_fnd_no_context_denied",
     "tests/database/test_rls.py::test_fnd_authorized_case_only",
     "tests/database/test_rls.py::test_fnd_cross_tenant_denied",

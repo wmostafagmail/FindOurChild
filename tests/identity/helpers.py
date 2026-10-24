@@ -49,6 +49,7 @@ def real_login(username="synthetic-reviewer-a"):
     assert urlparse(target).path == "/identity/callback"
     response = client.get(target, headers={"cookie": "__Host-foc-flow=" + flow})
     assert response.status_code == 302, "Synthetic OIDC callback did not complete"
+    client._synthetic_callback = (target, flow)
     session = response.cookies["__Host-foc-session"]
     csrf = response.cookies["__Host-foc-csrf"]
     headers = {

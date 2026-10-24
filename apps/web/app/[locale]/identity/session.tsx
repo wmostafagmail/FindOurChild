@@ -12,7 +12,7 @@ export default function Identity({ar}:{ar:boolean}) {
     const r=await fetch('/identity/logout',{method:'POST',headers:{'X-CSRF-Token':csrf}});
     if(r.ok){setSession(null);setState('signed_out');}else{setState('unavailable');}
   }
-  return <section aria-label={ar?'الجلسة':'Session'}><p role="status" data-testid="identity-state" data-state={state}>
+  return <section className="identity-panel" aria-label={ar?'الجلسة':'Session'}><p role="status" data-testid="identity-state" data-state={state}>
     {state==='authenticated'?(ar?'تم التحقق بخطوتين':'MFA verified'):state==='loading'?(ar?'جارٍ التحقق':'Checking session'):state==='unavailable'?(ar?'التحقق غير متاح. الوصول مرفوض.':'Verification unavailable. Access denied.'):(ar?'يلزم تسجيل الدخول':'Sign in required')}</p>
     {!session&&<a href="/identity/login">{ar?'تسجيل الدخول بخطوتين':'Sign in with MFA'}</a>}
     {session&&<><p data-testid="principal">{session.principal_id}</p><ul>{session.organizations.map((o)=><li key={o.id+o.role}>{o.id} · {o.role}</li>)}</ul><button onClick={logout}>{ar?'تسجيل الخروج':'Sign out'}</button></>}
