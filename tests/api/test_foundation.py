@@ -14,7 +14,8 @@ CONTRACT = json.loads((ROOT / "docs/contracts/openapi.json").read_text())
 
 def test_fnd_live(client):
     response = client.get("/health/live")
-    assert response.status_code == 200
+    # Deliberately failing isolated CI gate probe; never merge into main.
+    assert response.status_code == 418
     assert response.json() == {"status": "alive", "service": "find-our-child-api", "phase": "1A"}
 
 
