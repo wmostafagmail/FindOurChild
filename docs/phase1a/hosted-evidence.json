@@ -1,0 +1,89 @@
+{
+  "repository": "wmostafagmail/FindOurChild",
+  "url": "https://github.com/wmostafagmail/FindOurChild",
+  "visibility": "private",
+  "initial_remote_branches": [],
+  "authenticated_cli_user": "wmostafagmail",
+  "repository_permissions": {
+    "admin": true,
+    "maintain": true,
+    "push": true,
+    "pull": true
+  },
+  "actions_enabled": true,
+  "publication": {
+    "status": "published",
+    "attempted_revision": "c9fab88c69e84399a83448c0ad2bb30a4834c723",
+    "atomic_push": true,
+    "observed_oauth_scopes": [
+      "gist",
+      "read:org",
+      "repo",
+      "workflow"
+    ],
+    "missing_scope": null,
+    "credential_values_recorded": false,
+    "initial_missing_scope": "workflow",
+    "authorization_completed": true,
+    "initial_error": "refusing to allow an OAuth App to create or update workflow .github/workflows/phase1a.yml without workflow scope",
+    "initial_published_validation_refs": [
+      {
+        "name": "main",
+        "sha": "40231be73ab9a5eb577ccf5308c86f6b7282976b"
+      },
+      {
+        "name": "codex/phase-1a-foundation",
+        "sha": "dba2b79526b052ce3bd893998129f6c90932b30d"
+      }
+    ],
+    "validated_revision": "dba2b79526b052ce3bd893998129f6c90932b30d",
+    "subsequent_evidence_commits": "Documentation/evidence updates preserve the executed source digest and are published on the same protected-PR workflow."
+  },
+  "hosted_run": {
+    "id": 40079573659,
+    "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40079573659",
+    "event": "pull_request",
+    "head_sha": "dba2b79526b052ce3bd893998129f6c90932b30d",
+    "checkout_sha": "de5371ab125c802ce5a282acd87712e170b395dd",
+    "conclusion": "success",
+    "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d",
+    "artifact_verified": true,
+    "verification": "docs/phase1a/hosted-artifact-verification.json",
+    "sanitized_files": "artifacts/hosted-sanitized/40079573659/",
+    "job_steps": "docs/phase1a/hosted-job-steps.json",
+    "native_artifact_name": "phase1a-sanitized-de5371ab125c802ce5a282acd87712e170b395dd"
+  },
+  "branch_protection": {
+    "status": "verified",
+    "inspection_endpoints": [
+      "GET /repos/wmostafagmail/FindOurChild/rulesets",
+      "GET /repos/wmostafagmail/FindOurChild/branches/main/protection"
+    ],
+    "owner_response": "Owner upgraded; protection configured and read back. No blocker waiver given.",
+    "enabled": true,
+    "plan_block_resolved": true,
+    "post_upgrade_http_status": 200,
+    "observed_settings": "docs/phase1a/branch-protection.observed.json",
+    "initial_error_http_status": 403,
+    "initial_error_message": "Upgrade to GitHub Pro or make this repository public to enable this feature.",
+    "app_binding_verified": true,
+    "required_check": {
+      "context": "phase1a-required",
+      "app_id": 15368
+    },
+    "main_readback_verified": true,
+    "negative_probe_verified": true,
+    "verified_after_probe_cleanup": true
+  },
+  "failing_required_check_merge_block": {
+    "status": "verified",
+    "observed": true,
+    "proof": "docs/phase1a/negative-gate-proof.json",
+    "http_status": 405
+  },
+  "acceptance": "technical_validation_passed_awaiting_owner_review",
+  "phase1b_started": false,
+  "verified_on": "2026-10-24T12:00:25.485166+03:00",
+  "external_blockers_owner_accepted": false,
+  "pr_url": "https://github.com/wmostafagmail/FindOurChild/pull/1"
+}

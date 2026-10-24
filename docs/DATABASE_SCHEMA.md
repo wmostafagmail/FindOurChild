@@ -1,5 +1,7 @@
 # Database schema specification
 
+> Phase 1A executable contract update: [0001 foundation](../database/migrations/0001_foundation.sql) and [0002 hardening](../database/migrations/0002_contract_hardening.sql) implement schema release `0001`, recorded in the migration ledger. The original 37 relation-boundary groups below expand to 40 physical domain relations; added `idempotency_records` is boundary DB-38, making **41**. All force RLS. Hardening adds tenant/principal/operation idempotency scope, full closed-envelope outbox metadata and same-case child-object foreign keys. Runtime writes, sensitive reads, broker/model/approval/release operations remain denied pending their separately reviewed phases. No embedding-space partition is provisioned or production matching enabled. Cross-case original-object sharing requires a future explicit grant/link migration, never a permissive foreign-key exception.
+
 Design contract v0.1, not an executed migration. PostgreSQL with pgvector; UUID keys, UTC timestamptz for instants, original timezone/precision retained, optimistic integer revisions, explicit organization ownership. All case-owned foreign keys use composite `(organization_id, id)` references to prevent accidental tenant mixing.
 
 ## Relations

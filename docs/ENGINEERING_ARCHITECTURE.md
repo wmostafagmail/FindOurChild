@@ -1,5 +1,7 @@
 # Engineering architecture
 
+> Phase 1A implementation update: [review and limits](phase1a/REVIEW.md). The modular Next/FastAPI/PostgreSQL skeleton now exists. PostgreSQL stays on an internal-only network; only the non-owner API bridges to loopback access. All tenant/domain tables force RLS; only the narrowly scoped case-read policy is enabled, with other classifications/writes denied. Live identity/MFA and action policies require Phase 1B approval; reporting/media/workers require Phase 1C. A trusted transaction context is a server boundary, not protection against arbitrary SQL executed with stolen runtime credentials. The original four safeguarding sequence diagrams and architecture decisions below are unchanged.
+
 Status: proposed, pending Phase 0 review. Repository evidence and confidence are in [the capability matrix](OPEN_SOURCE_CAPABILITY_MATRIX.md).
 
 ## Decisions and alternatives

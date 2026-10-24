@@ -1,5 +1,7 @@
 # Test strategy and evidence
 
+> Phase 1A execution update (2026-10-24): the [review](phase1a/REVIEW.md) and [current matrix](TEST_MATRIX.md) supersede preimplementation status statements below. The checked-in required inventory selects foundation tests plus four disabled-feature guards; it does not drop the original whole-Phase-1 regression obligation. All unimplemented operational tests remain pending. Actual browser runs use the real web/API and private migrated database, deterministic assertions, no model, no retries, both telemetry flags and the root patched lock. Current API/migration coverage is 94.81%; no broader coverage claim is made. Artifact export is foundation-only and must be reviewed before any page can contain photos/contact data. Manual accessibility, penetration, ML, load and operational safeguarding validation remain separate pending suites.
+
 Phase 0 is documentation and research tooling only. No application unit, API, database, authorization, browser E2E, model-accuracy or load tests have run. Future requirements below are acceptance gates, not successful-test claims. This correction selects **TesterArmy/e2e as the principal browser functional runner**, using its Playwright-based web engine. Original product, model, security and safeguarding decisions remain unchanged.
 
 ## Phase 0 checks performed/retained

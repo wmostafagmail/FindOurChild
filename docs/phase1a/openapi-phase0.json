@@ -1,0 +1,788 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Find Our Child \u2014 Phase 0 contract outline",
+    "version": "0.1.0",
+    "description": "Design artifact only. Representative endpoints; not a running service or full implementation contract. Expand full route/DTO coverage before phase 1."
+  },
+  "servers": [
+    {
+      "url": "https://find-our-child.invalid"
+    }
+  ],
+  "security": [
+    {
+      "StaffOIDC": []
+    }
+  ],
+  "paths": {
+    "/v1/public/reports/missing": {
+      "post": {
+        "operationId": "submit_missing_report",
+        "security": [
+          {
+            "IntakeChallenge": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 128
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MissingReport"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Received for intake review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-safeguarding": "No search, claimant candidate disclosure or found-child identity/location response."
+      }
+    },
+    "/v1/public/reports/found": {
+      "post": {
+        "operationId": "submit_found_report",
+        "security": [
+          {
+            "IntakeChallenge": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 128
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FoundReport"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Received for intake review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Receipt"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-safeguarding": "No search, claimant candidate disclosure or found-child identity/location response."
+      }
+    },
+    "/v1/staff/cases/{id}": {
+      "get": {
+        "operationId": "read_case_outline",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authorized minimized case",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CaseSummary"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-required-permissions": [
+          "active_org_membership",
+          "case.read"
+        ],
+        "x-excluded-fields": [
+          "restricted_custody",
+          "exact_shelter_location",
+          "embedding_vectors"
+        ]
+      }
+    },
+    "/v1/staff/reunification-plans/{id}/approvals": {
+      "post": {
+        "operationId": "record_reunification_approval",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 128
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Expected current plan/case revision; stale returns 412."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApprovalRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Scoped decision recorded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApprovalReceipt"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Structured, redacted error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-required-permissions": [
+          "case.reunification.approve",
+          "recent_mfa",
+          "independent_actor"
+        ],
+        "x-safeguarding": "Recheck claimant/evidence/plan snapshot and current authority. No automatic handover."
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "StaffOIDC": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Validated staff token at backend/BFF boundary; live org/case grants and MFA required."
+      },
+      "IntakeChallenge": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Intake-Challenge",
+        "description": "Short-lived anti-automation intake challenge, not staff identity."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message_key",
+          "request_id"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message_key": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "field_errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "message_key"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "message_key": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "DateInterval": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "lower",
+          "upper",
+          "precision",
+          "knowledge"
+        ],
+        "properties": {
+          "lower": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "upper": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "precision": {
+            "enum": [
+              "day",
+              "month",
+              "year",
+              "interval",
+              "unknown"
+            ]
+          },
+          "knowledge": {
+            "enum": [
+              "reported",
+              "estimated",
+              "unknown",
+              "disputed"
+            ]
+          }
+        },
+        "description": "Server validates lower <= upper, precision consistency, and unknown endpoints. Reported dates do not become verified facts."
+      },
+      "AgeInterval": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "min_months",
+          "max_months",
+          "as_of"
+        ],
+        "properties": {
+          "min_months": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "max_months": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "as_of": {
+            "$ref": "#/components/schemas/DateInterval"
+          }
+        },
+        "description": "Server enforces min <= max and reference date; unknown does not mean zero."
+      },
+      "NameVariant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "original",
+          "language"
+        ],
+        "properties": {
+          "original": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "language": {
+            "enum": [
+              "ar",
+              "en",
+              "other",
+              "unknown"
+            ]
+          }
+        }
+      },
+      "Reporter": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "safe_contact",
+          "relationship"
+        ],
+        "properties": {
+          "safe_contact": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 320
+          },
+          "relationship": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      },
+      "GeneralLocation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "country": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$",
+            "default": "EG"
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 500
+          }
+        },
+        "description": "Approximate reported location only. Current shelter/custody location is never returned."
+      },
+      "MissingReport": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reporter",
+          "notice_version",
+          "processing_purposes"
+        ],
+        "properties": {
+          "names": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/components/schemas/NameVariant"
+            }
+          },
+          "birth_date": {
+            "$ref": "#/components/schemas/DateInterval"
+          },
+          "estimated_age": {
+            "$ref": "#/components/schemas/AgeInterval"
+          },
+          "missing_date": {
+            "$ref": "#/components/schemas/DateInterval"
+          },
+          "general_location": {
+            "$ref": "#/components/schemas/GeneralLocation"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 4000
+          },
+          "reporter": {
+            "$ref": "#/components/schemas/Reporter"
+          },
+          "notice_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "processing_purposes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "maxLength": 100
+            }
+          }
+        },
+        "description": "Representative design outline; full timestamp, sex, marks, clothing and authority DTOs must be added before implementation. Notice acknowledgment is not a legal-basis decision."
+      },
+      "FoundReport": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reporter",
+          "notice_version",
+          "processing_purposes"
+        ],
+        "properties": {
+          "names": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/components/schemas/NameVariant"
+            }
+          },
+          "estimated_age": {
+            "$ref": "#/components/schemas/AgeInterval"
+          },
+          "discovery_date": {
+            "$ref": "#/components/schemas/DateInterval"
+          },
+          "general_location": {
+            "$ref": "#/components/schemas/GeneralLocation"
+          },
+          "welfare_statement": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "reporter": {
+            "$ref": "#/components/schemas/Reporter"
+          },
+          "notice_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "processing_purposes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "maxLength": 100
+            }
+          }
+        }
+      },
+      "Receipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "receipt_id",
+          "status"
+        ],
+        "properties": {
+          "receipt_id": {
+            "type": "string",
+            "minLength": 20
+          },
+          "status": {
+            "const": "received_for_review"
+          }
+        },
+        "description": "Own submission receipt only; not a found-child status or bearer credential."
+      },
+      "CaseSummary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "registry",
+          "lifecycle",
+          "revision"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "registry": {
+            "enum": [
+              "missing",
+              "found"
+            ]
+          },
+          "lifecycle": {
+            "enum": [
+              "submitted",
+              "triage",
+              "active",
+              "investigation",
+              "identity_confirmed",
+              "reunification_pending",
+              "reunited",
+              "closed"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "description": "Minimized outline only. Full authorized claims and evidence DTOs are separate phase-1 contracts."
+      },
+      "ApprovalRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "snapshot_hash",
+          "evidence_ids",
+          "expires_at",
+          "decision"
+        ],
+        "properties": {
+          "action": {
+            "enum": [
+              "safeguarding",
+              "custody_authority"
+            ]
+          },
+          "snapshot_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "decision": {
+            "enum": [
+              "approve",
+              "reject",
+              "hold"
+            ]
+          }
+        },
+        "description": "Approver identity derived from current staff session. Distinct actors, recent MFA, authority and snapshot checked on server."
+      },
+      "ApprovalReceipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "approval_id",
+          "recorded"
+        ],
+        "properties": {
+          "approval_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "recorded": {
+            "const": true
+          }
+        },
+        "description": "Approval record only; never an automatic custody transfer."
+      }
+    }
+  }
+}

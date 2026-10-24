@@ -1,0 +1,84 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@e2e-dev/web": {
+      "name": "@e2e-dev/web",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "e2e"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@e2e-dev/web"
+      ],
+      "fixAvailable": false
+    },
+    "e2e": {
+      "name": "e2e",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "zod"
+      ],
+      "effects": [
+        "@e2e-dev/web"
+      ],
+      "range": ">=0.15.0-canary-20260914081513",
+      "nodes": [
+        "node_modules/e2e"
+      ],
+      "fixAvailable": false
+    },
+    "zod": {
+      "name": "zod",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1243066,
+          "name": "zod",
+          "dependency": "zod",
+          "title": "Zod can exhaust memory while validating oversized constrained collections",
+          "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+          "severity": "high",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.6.6"
+        }
+      ],
+      "effects": [
+        "e2e"
+      ],
+      "range": "<4.6.6",
+      "nodes": [
+        "node_modules/zod"
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 3,
+      "critical": 0,
+      "total": 3
+    },
+    "dependencies": {
+      "prod": 16,
+      "dev": 106,
+      "optional": 97,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 160
+    }
+  }
+}

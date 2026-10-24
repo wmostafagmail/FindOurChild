@@ -1,0 +1,58 @@
+name: foc-phase1a
+x-python: &python
+  image: foc-foundation:0.1.0
+  build:
+    context: .
+    dockerfile: services/api/Dockerfile
+services:
+  db:
+    image: pgvector/pgvector:0.8.7-pg17-bookworm@sha256:ac08538c6f8b9904c33c8224c5e5706dbe760aca29db1d096972b4052c22a75d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${FOC_DB_ADMIN_PASSWORD:?Run scripts/dev.py init}
+      POSTGRES_DB: foc_synthetic
+    volumes: ["synthetic_db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d foc_synthetic"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    networks: [private]
+  migrate:
+    <<: *python
+    command: ["python", "-m", "scripts.container_setup"]
+    environment:
+      FOC_DATABASE_ADMIN_URL: ${FOC_CONTAINER_ADMIN_URL:?}
+      FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
+      FOC_DB_API_PASSWORD: ${FOC_DB_API_PASSWORD:?}
+      FOC_DATA_CLASS: synthetic
+    volumes: ["./.runtime:/workspace/.runtime"]
+    networks: [private]
+  api:
+    <<: *python
+    command: ["python", "-m", "uvicorn", "foc_api.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+    environment:
+      FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
+      FOC_DATA_CLASS: synthetic
+    ports: ["127.0.0.1:8000:8000"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro"]
+    networks: [private, edge]
+  tester:
+    <<: *python
+    command: ["python", "scripts/test.py"]
+    environment:
+      FOC_DATABASE_ADMIN_URL: ${FOC_CONTAINER_ADMIN_URL:?}
+      FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
+      FOC_DATA_CLASS: synthetic
+    volumes: [".:/workspace", "./artifacts/raw:/workspace/artifacts/raw"]
+    networks: [private]
+networks:
+  private:
+    internal: true
+  edge: {}
+volumes:
+  synthetic_db:

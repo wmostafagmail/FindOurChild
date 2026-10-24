@@ -1,5 +1,7 @@
 # Deployment and operations specification
 
+> Phase 1A execution update: [local environment](phase1a/ENVIRONMENT.md) and [review](phase1a/REVIEW.md). Both migrations and a real synthetic database backup/restore drill executed. Restored migration checksums, pgvector and forced RLS were verified; production restoration, tombstone replay, data erasure, load/recovery SLOs, KMS and provider integrations are still pending. The local foundation/test image is not a production release image. GitHub workflow/action pins, a passing Ubuntu hosted regression and sanitized artifact publication are verified. Main protection is bound to GitHub Actions; a disposable failing-test PR received an actual HTTP 405 merge rejection. See [hosted validation](phase1a/HOSTED_VALIDATION.md). Local raw artifact expiry/CI retention policy must not be confused with an operational retention approval.
+
 Proposed deployment; no app containers, production services or infrastructure provisioned in Phase 0.
 
 ## Environments and topology

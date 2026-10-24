@@ -1,0 +1,81 @@
+name: Phase 1A required validation
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/**']
+  merge_group:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: phase1a-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  phase1a-required:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      E2E_TELEMETRY_DISABLED: '1'
+      DO_NOT_TRACK: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      FOC_E2E_DATA_CLASS: synthetic
+      FOC_E2E_ISOLATED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.18.0
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: 0.12.0
+          enable-cache: false
+      - name: Locked dependencies
+        run: |
+          test "$(npm --version)" = '11.16.0'
+          uv sync --locked
+          npm ci --ignore-scripts
+      - name: Contracts and preserved evidence
+        run: |
+          .venv/bin/ruff check services/api scripts tests
+          .venv/bin/python -m scripts.check_foundation
+      - name: Private database and migrations
+        run: |
+          mkdir -p artifacts/raw
+          .venv/bin/python -m scripts.dev init
+          .venv/bin/python -m scripts.dev db > artifacts/raw/provision.log 2>&1
+          .venv/bin/python -m scripts.dev api
+      - name: Python API database security regression
+        run: .venv/bin/python -m scripts.dev test
+      - name: Synthetic backup and restore
+        run: .venv/bin/python -m scripts.recovery
+      - name: Dependency security audit
+        run: .venv/bin/python -m scripts.audit
+      - name: Web types and build
+        run: |
+          npm run typecheck
+          npm run build
+      - name: Install pinned browser engines
+        run: ./node_modules/.bin/e2e-web install chromium firefox webkit --with-deps
+      - name: Start actual web service
+        run: |
+          npm run start > artifacts/raw/web.log 2>&1 &
+          .venv/bin/python -m scripts.wait_services
+      - name: TesterArmy browser regression
+        run: .venv/bin/python -m scripts.dev browser
+      - name: Sanitize and enforce complete results
+        if: always()
+        run: .venv/bin/python -m scripts.artifacts
+      - name: Publish only sanitized evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase1a-sanitized-${{ github.sha }}
+          path: artifacts/sanitized/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Stop disposable services
+        if: always()
+        run: .venv/bin/python -m scripts.dev stop

@@ -1,5 +1,7 @@
 # API and asynchronous contracts
 
+> Phase 1A contract update: [OpenAPI 0.2.0](contracts/openapi.json) now defines all 32 listed domain operations plus the three implemented foundation operations. Typed/closed request-response DTOs, idempotency/revision/CSRF headers, error responses and authentication declarations are machine-readable. All domain operations explicitly declare disabled-in-1A status and return 503; their success bodies are design contracts, not implemented features. Health/contract endpoints are implemented. Engineering bounds/enums still require NGO policy review before Phase 1C; no operational notice, age/retention or safeguarding approval is implied.
+
 Proposed API v1 / design revision 0.1. This is a preimplementation contract, not an available endpoint. The [OpenAPI outline](contracts/openapi.json) covers representative intake, staff case and approval operations; remaining routes below must be expanded into full machine-readable contracts before phase 1 implementation.
 
 ## Transport, authentication and errors

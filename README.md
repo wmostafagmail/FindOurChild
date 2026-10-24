@@ -1,42 +1,21 @@
-# Find Our Child — Phase 0 review package
+# Find Our Child
 
-Prepared 23 October 2026 (Africa/Cairo). **Phase 0 only. No application, inference service, database or production deployment has been built.**
+Phase **1A foundation only**. Required local and hosted tests pass after Firefox remediation. Main protection and actual failing-check merge rejection are verified. Phase 1A is ready for owner acceptance review. Phase 1B and 1C have not started. All 32 domain operations return a fail-closed 503.
 
-Start with [Phase 0 findings and decisions](docs/PHASE_0_REVIEW.md). All architecture, policies, targets and contracts are proposals awaiting the named owners' approval. Research observations are distinguished from design decisions; no child-identification accuracy has been measured here.
+Start with the [Phase 1A review](docs/phase1a/REVIEW.md), [executable environment](docs/phase1a/ENVIRONMENT.md), [locked manifest](docs/phase1a/LOCKED_DEPENDENCIES.md), [source inventory](docs/phase1a/SOURCE_INVENTORY.md) and [test matrix](docs/TEST_MATRIX.md).
 
-## Required documents
+```sh
+make bootstrap
+make db
+make api
+make web
+# Separate terminal
+make test
+make browser
+```
 
-- [Product requirements](docs/PRODUCT_REQUIREMENTS.md)
-- [REA research report](docs/REA_RESEARCH_REPORT.md)
-- [Open-source capability matrix](docs/OPEN_SOURCE_CAPABILITY_MATRIX.md)
-- [Engineering architecture and four sequence diagrams](docs/ENGINEERING_ARCHITECTURE.md)
-- [Database schema](docs/DATABASE_SCHEMA.md)
-- [API and event contracts](docs/API_CONTRACTS.md)
-- [AI matching specification](docs/AI_MATCHING_SPEC.md)
-- [Age-gap recognition research](docs/AGE_GAP_RECOGNITION_RESEARCH.md)
-- [Model evaluation plan](docs/MODEL_EVALUATION_PLAN.md)
-- [Security threat model](docs/SECURITY_THREAT_MODEL.md)
-- [Child safeguarding policy](docs/CHILD_SAFEGUARDING_POLICY.md)
-- [Privacy and retention](docs/PRIVACY_AND_RETENTION.md)
-- [UI/UX specification](docs/UI_UX_SPECIFICATION.md)
-- [Test strategy](docs/TEST_STRATEGY.md)
-- [Implementation phases](docs/IMPLEMENTATION_PHASES.md)
-- [Deployment operations](docs/DEPLOYMENT_OPERATIONS.md)
+The browser binaries must first be installed with the locked `e2e-web` command and both telemetry flags; see the environment guide. Only synthetic data is permitted. Private credentials/raw artifacts are ignored; CI publishes the allowlisted sanitized evidence. Database migration/test credentials are never passed to the web/browser or API runtime.
 
-Phase 0 testing corrections:
+The approved Phase 0 package is preserved at Git commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`. [Research](docs/REA_RESEARCH_REPORT.md), [architecture](docs/ENGINEERING_ARCHITECTURE.md), [safeguarding](docs/CHILD_SAFEGUARDING_POLICY.md), [privacy](docs/PRIVACY_AND_RETENTION.md), [test strategy](docs/TEST_STRATEGY.md) and [phase gates](docs/IMPLEMENTATION_PHASES.md) remain governing documents. Current machine-readable contracts are under `docs/contracts` and executable schema migrations under `database/migrations`.
 
-- [TesterArmy/e2e framework integration](docs/E2E_FRAMEWORK_INTEGRATION.md)
-- [Complete planned test matrix](docs/TEST_MATRIX.md)
-- [CI/CD test gates](docs/CI_CD_TEST_GATES.md)
-- [Security and safeguarding test catalogue](docs/SECURITY_TEST_CATALOG.md)
-- [Correction validation evidence and limitations](docs/research/e2e/VALIDATION_REPORT.md)
-
-TesterArmy/e2e is the principal planned browser functional runner. All application test cases are pending; documentation/configuration checks do not establish application behavior. Original research and child-protection decisions remain unchanged.
-
-The [research manifest](docs/research/repository-lock.json) pins reviewed commits. Source snapshots and REA outputs are research evidence, not approved dependencies or application assets. The FindTrace snapshot lacks an identified reuse license; do not incorporate it into product code or redistribute it as a licensed component.
-
-REA 6.7.0 is installed under `tools/rea`, with an exact npm lockfile. Its Codex registration uses the durable runtime under ~/.codex/tools/find-our-child-rea-6.7.0; the workspace retains reproducible package/lock files. Restart Codex to load newly registered tools. CLI analysis has already been performed independently of that restart.
-
-## Review boundary
-
-Phase 1 remains **not authorized by this package**. The original instruction requires stopping after Phase 0. NGO, legal, safeguarding and technical owners must review the decisions and phase gates before implementation begins.
+The original `tools/build_test_matrix.py` reproduces the Phase 0 pending baseline only. Current implementation traceability is updated by `tools/update_phase1a_matrix.py`; the original 151-feature/630-case baseline is retained separately. Never replace current execution evidence with generated pending/pass placeholders.

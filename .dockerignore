@@ -1,0 +1,15 @@
+*
+!pyproject.toml
+!uv.lock
+!requirements-bootstrap.txt
+!services/
+!services/api/
+!services/api/**
+!scripts/
+!scripts/**
+!database/
+!database/**
+!docs/
+!docs/contracts/
+!docs/contracts/**
+**/__pycache__/
