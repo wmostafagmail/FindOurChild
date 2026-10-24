@@ -2,7 +2,7 @@
 import https from 'node:https';
 import http from 'node:http';
 import {readFileSync} from 'node:fs';
-const options={key:readFileSync('.runtime/tls/key.pem'),cert:readFileSync('.runtime/tls/cert.pem'),minVersion:'TLSv1.2'};
+const options={key:readFileSync('.runtime/tls/key.pem'),cert:readFileSync('.runtime/tls/server.pem'),minVersion:'TLSv1.2'};
 for(const [port,upstream] of [[3443,3000],[8443,8080]]){
   https.createServer(options,(request,response)=>{
     const headers={...request.headers,'x-forwarded-proto':'https','x-forwarded-host':`127.0.0.1:${port}`};

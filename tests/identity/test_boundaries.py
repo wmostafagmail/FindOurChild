@@ -269,3 +269,21 @@ def test_real_oidc_code_replay_cannot_create_another_session():
     finally:
         client.post("https://127.0.0.1:3443/identity/logout", headers=headers)
         client.close()
+
+
+@pytest.mark.integration
+def test_api_cannot_modify_validation_reports():
+    result = subprocess.run(
+        [
+            "docker",
+            "exec",
+            "foc-phase1a-api-1",
+            "python",
+            "-c",
+            "import json,os; print(json.dumps({'coverage':os.access('/coverage',os.W_OK),'reports':os.access('/workspace/artifacts/raw',os.W_OK)}))",
+        ],
+        capture_output=True,
+        check=True,
+        text=True,
+    )
+    assert json.loads(result.stdout) == {"coverage": True, "reports": False}

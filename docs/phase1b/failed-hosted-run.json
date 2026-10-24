@@ -1,0 +1,21 @@
+{
+  "run_id": 40102600554,
+  "commit": "ad2dc3cdbb55ca21dd896bb443ee0b7c7dcb335d",
+  "status": "failed",
+  "python_regression": {
+    "passed": 157,
+    "skipped": 0
+  },
+  "testerarmy": {
+    "passed": 64,
+    "failed": 32,
+    "skipped": 0,
+    "chromium_passed": 32,
+    "webkit_passed": 32,
+    "firefox_failed": 32,
+    "failure": "TLS navigation SSL_ERROR_UNKNOWN; original server presented a CA certificate as end entity"
+  },
+  "identity_and_combined_coverage": "not executed; blocked after browser failure",
+  "correction": "Separate constrained CA/server leaf; retain certificate verification and all targets; rerun entire required pipeline",
+  "original_log": "GitHub Actions run 40102600554; preserved locally at /private/tmp/foc-phase1b-ad2-hosted.log"
+}

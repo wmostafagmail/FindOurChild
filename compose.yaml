@@ -36,13 +36,13 @@ services:
       FOC_DATA_CLASS: synthetic
       FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
       FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
-      COVERAGE_FILE: /workspace/artifacts/raw/.coverage.api
+      COVERAGE_FILE: /coverage/.coverage.api
     ports: ["127.0.0.1:8000:8000"]
     read_only: true
     tmpfs: ["/tmp"]
     cap_drop: [ALL]
     security_opt: ["no-new-privileges:true"]
-    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro", "./artifacts/raw:/workspace/artifacts/raw", "./.coveragerc:/workspace/.coveragerc:ro"]
+    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro", "api_coverage:/coverage", "./.coveragerc:/workspace/.coveragerc:ro"]
     networks: [private, edge]
   keycloak:
     image: quay.io/keycloak/keycloak:26.7.0@sha256:0f198be292568439d700cdbfb893e69a6009bb43a94a06a945b1d3d506c76b13
@@ -68,3 +68,4 @@ networks:
   edge: {}
 volumes:
   synthetic_db:
+  api_coverage:

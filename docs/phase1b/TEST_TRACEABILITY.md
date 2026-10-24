@@ -5,7 +5,7 @@ The immutable 151-feature/630-test Phase 0 baseline and existing 1A mappings rem
 | Feature | Executable cases | Current evidence |
 |---|---:|---|
 | IDN-01: JWT issuer/audience/signature/MFA/time/nonce and IdP failure boundaries | 32 | pending final hosted gate |
-| IDN-02: Anonymous, forged, callback state and Secure-cookie boundaries | 13 | pending final hosted gate |
+| IDN-02: Anonymous, forged, callback state and Secure-cookie boundaries | 14 | pending final hosted gate |
 | IDN-03: Real Keycloak MFA, BFF/API, organizations, case grants, CSRF, audit and live revocation | 12 | pending final hosted gate |
 | IDN-04: Real PostgreSQL session ACLs, role elevation denial, context isolation and audit integrity | 6 | pending final hosted gate |
 | IDN-05: TesterArmy real TLS MFA/tenant/CSRF/logout, Arabic switch, every configured browser | 1 | pending final hosted gate |

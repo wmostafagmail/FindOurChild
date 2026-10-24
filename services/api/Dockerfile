@@ -10,5 +10,5 @@ COPY services/api ./services/api
 COPY scripts ./scripts
 COPY database ./database
 COPY docs/contracts ./docs/contracts
-RUN useradd --uid 10001 --create-home foc
+RUN useradd --uid 10001 --create-home foc && mkdir /coverage && chown 10001:10001 /coverage
 USER foc
