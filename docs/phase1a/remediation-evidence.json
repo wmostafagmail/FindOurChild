@@ -7,7 +7,9 @@
   "local_required_gate": "passed",
   "overall_acceptance": "blocked_external_ci_and_branch_protection",
   "external_blockers_owner_accepted": false,
-  "git_remote_observed": [],
+  "git_remote_observed": [
+    "https://github.com/wmostafagmail/FindOurChild.git"
+  ],
   "hosted_run": null,
   "branch_protection": null,
   "merge_block_probe": null,
@@ -155,7 +157,7 @@
   "sanitized_screenshots": 48,
   "sanitized_checksums_sha256": "6b4756732d1a59d4a620321631baa800b157239f6ab111baa9abd04510389f7e",
   "limitations": [
-    "No hosted execution, protection API response or merge-block proof exists without a repository URL.",
+    "Private origin and main protection exist; workflow scope authorization, hosted execution, Actions App binding and negative merge proof remain pending.",
     "No third-party execution attestation; hashes permit integrity and source verification, and commands permit reproduction.",
     "Coverage is API/migration Python only.",
     "Future operational safeguarding, identity, reporting and model scenarios remain pending."
@@ -174,5 +176,7 @@
     "method": "SHA-256 source manifest and Git blob-object identities from ls-tree at tested revision",
     "files": 60,
     "revision": "ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d"
-  }
+  },
+  "initial_git_remote_observed": [],
+  "latest_hosted_evidence": "docs/phase1a/hosted-evidence.json"
 }

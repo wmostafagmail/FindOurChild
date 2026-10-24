@@ -1,0 +1,54 @@
+{
+  "repository": "wmostafagmail/FindOurChild",
+  "url": "https://github.com/wmostafagmail/FindOurChild",
+  "visibility": "private",
+  "initial_remote_branches": [],
+  "authenticated_cli_user": "wmostafagmail",
+  "repository_permissions": {
+    "admin": true,
+    "maintain": true,
+    "push": true,
+    "pull": true
+  },
+  "actions_enabled": true,
+  "publication": {
+    "status": "blocked_authentication_scope",
+    "attempted_revision": "c9fab88c69e84399a83448c0ad2bb30a4834c723",
+    "atomic_push": true,
+    "published_refs": [
+      {
+        "name": "main",
+        "sha": "40231be73ab9a5eb577ccf5308c86f6b7282976b"
+      }
+    ],
+    "error": "refusing to allow an OAuth App to create or update workflow .github/workflows/phase1a.yml without workflow scope",
+    "observed_oauth_scopes": [
+      "gist",
+      "read:org",
+      "repo"
+    ],
+    "missing_scope": "workflow",
+    "credential_values_recorded": false
+  },
+  "hosted_run": null,
+  "branch_protection": {
+    "status": "configured_readback_verified_app_binding_and_negative_probe_pending",
+    "inspection_endpoints": [
+      "GET /repos/wmostafagmail/FindOurChild/rulesets",
+      "GET /repos/wmostafagmail/FindOurChild/branches/main/protection"
+    ],
+    "owner_response": "Owner upgraded; protection configured and read back. No blocker waiver given.",
+    "enabled": true,
+    "plan_block_resolved": true,
+    "post_upgrade_http_status": 200,
+    "observed_settings": "docs/phase1a/branch-protection.observed.json",
+    "initial_error_http_status": 403,
+    "initial_error_message": "Upgrade to GitHub Pro or make this repository public to enable this feature."
+  },
+  "failing_required_check_merge_block": {
+    "status": "pending",
+    "observed": false
+  },
+  "acceptance": "blocked",
+  "phase1b_started": false
+}

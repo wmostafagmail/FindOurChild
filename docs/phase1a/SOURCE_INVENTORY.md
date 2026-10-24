@@ -1,8 +1,8 @@
 # Phase 1A source file inventory
 
-69 application, migration, runner, diagnostic, test and engineering configuration files are listed below. Full version/integrity trees are in the dependency locks. Research/specifications remain separately versioned; generated private credentials/dependencies/raw outputs are excluded.
+70 application, migration, runner, diagnostic, test and engineering configuration files are listed below. Full version/integrity trees are in the dependency locks. Research/specifications remain separately versioned; generated private credentials/dependencies/raw outputs are excluded.
 
-Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `codex/phase-1a-foundation`. Firefox repair: `ec99ac0`. [SHA-256 inventory](source-files.json) records each file; [executed source manifest](../../artifacts/sanitized/source-manifest.json) binds the execution-relevant subset to the results.
+Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `codex/phase-1a-foundation`. Firefox repair: `ec99ac0`. [SHA-256 inventory](source-files.json) records each file; [executed source manifest](../../artifacts/sanitized/source-manifest.json) binds the execution-relevant subset to the results. Branch-protection policy is engineering configuration; its observed enforcement/negative-probe status is recorded separately in [hosted evidence](hosted-evidence.json).
 
 | File | SHA-256 |
 |---|---|
@@ -13,7 +13,7 @@ Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `c
 | `.node-version` | `55075b5ec4e8b31936cbbc282b8829116d1fd48f2f2f1856dee592a6650700ce` |
 | `.npmrc` | `f0b8eb9b7ee5f0fc23bd99124a1fc9452ec38406baefb1a1f71143c544856fda` |
 | `.python-version` | `56c16a411e41fec3219e828087f312d9891641e3b29093c69d08a05ec1e5d693` |
-| `CONTRIBUTING.md` | `6295e5da24aa9eb4933a58f70efd3a6ca0c47311d237d59f538c6fef55d6469d` |
+| `CONTRIBUTING.md` | `d615fd71bc4d7e32f8016821b05a40c4462456629b7d8bc79335b155a43bf96d` |
 | `Makefile` | `857ba2c7c05553fd7f999717f30d2ee41a27eba61ba26965ecab0598286cb6b1` |
 | `apps/web/AGENTS.md` | `063098f6cb31bb44c6f8fbea25b3876de7ee1e5f7d00a50dbab506f6415eb7f0` |
 | `apps/web/app/[locale]/page.tsx` | `afc7f3ef5e4a51b4999cfcde1d1892d4b2ffdeaee3634589dad30934b35f00d2` |
@@ -26,6 +26,7 @@ Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `c
 | `compose.yaml` | `c7568af135aec5a91d63945e7c75a4442de1ae8c0fafc7dbae7347a8f75ea287` |
 | `database/migrations/0001_foundation.sql` | `ccc3ff7b2f376fa4d5784b6757d8051ca4817f1e47593c7c00649ce51cc10a84` |
 | `database/migrations/0002_contract_hardening.sql` | `4c8122f8180061e0792c4d1ab1fe3035e4bed86b4fe2f1939be3ae9dff1cdfc7` |
+| `docs/phase1a/branch-protection.request.json` | `e595a5753c63e4fc350025ba6526b37d811b3c938087c3080664ab91455ee1d7` |
 | `e2e.config.ts` | `9713d8c0422d9ebcc8cffc51221030af0753093ad1eeb627007579d440588ac9` |
 | `package-lock.json` | `7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff` |
 | `package.json` | `ab247effd48b47af2560056b1159291f45f7142a7d7792d64076fbae59b256ea` |
@@ -72,6 +73,6 @@ Git baseline: `40231be73ab9a5eb577ccf5308c86f6b7282976b`. Engineering branch: `c
 | `tests/unit/__init__.py` | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `tests/unit/test_foundation.py` | `fd52705e615eb80345508be0dda51a7b88b4dd06e55db7cb5d880574b49fecc2` |
 | `tests/unit/test_results_gate.py` | `ed7b801ae2d53c0b10389ba443bf06c89f28a26e26a5c2c493376bd1ca2ae61e` |
-| `tools/update_phase1a_matrix.py` | `50bf72feea222c4c6bedaa9295ef75a3d1afabb07c6548bbb44841b606a6ca50` |
+| `tools/update_phase1a_matrix.py` | `f5ef37affa2f61cea08059b2a3a6d449afe3a3fd33660b5171e3e9711b394d7d` |
 | `tsconfig.e2e.json` | `a3456efb986030c4627ec800c510618d89a8aff280febb1d47bd85896217650f` |
 | `uv.lock` | `9590f19043cd6c911db2ad265db4b6076d3e9f2b403d758d93f3bd789b82a8aa` |

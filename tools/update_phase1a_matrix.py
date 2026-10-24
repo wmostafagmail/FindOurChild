@@ -69,7 +69,7 @@ for suite in ['npm','python']:
 config=ROOT/'docs/phase1a/configuration-checks.json'
 append('FND-13','TC_FND_CI_CONFIG','immutable-pins-and-required-gate','.github/workflows/phase1a.yml','uv run python -m scripts.check_foundation','passed' if config.exists() and json.loads(config.read_text()).get('status')=='passed' else 'pending',{'path':'docs/phase1a/configuration-checks.json'} if config.exists() else None)
 for item in ['REMOTE_RUN','BRANCH_PROTECTION']:
- append('FND-13','TC_FND_CI_'+item,item,'.github/workflows/phase1a.yml','Owner verifies GitHub required check and protected branch after repository selection','pending',None,'security_authorization','No remote repository is configured; remote enforcement has not executed.')
+ append('FND-13','TC_FND_CI_'+item,item,'.github/workflows/phase1a.yml','Verify hosted CI and the required check on the private origin, including a failing-test merge probe','pending',None,'security_authorization','Private origin is configured; main protection is read back, but hosted execution, check App binding and the failing-test merge probe are pending.')
 append('FND-14','TC_FND_RESTORE','synthetic-schema-and-rls-restore','scripts/recovery.py','uv run python -m scripts.recovery','passed' if report.get('migration_and_recovery',{}).get('status')=='passed' else 'pending',{'path':proof,'scope':'Foundation backup/restore only; operational erasure/tombstone replay pending'})
 for f in features.values():
  states={c['status'] for c in f['test_cases']}

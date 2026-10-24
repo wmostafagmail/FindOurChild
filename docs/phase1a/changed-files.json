@@ -1,6 +1,7 @@
 {
   "baseline_revision": "add5cf75e80154567ee2188d00973bccbd18cd2e",
   "files": [
+    "CONTRIBUTING.md",
     "README.md",
     "artifacts/sanitized/checksums.json",
     "artifacts/sanitized/results.json",
@@ -30,8 +31,11 @@
     "docs/phase1a/REMEDIATION_REPORT.md",
     "docs/phase1a/REVIEW.md",
     "docs/phase1a/SOURCE_INVENTORY.md",
+    "docs/phase1a/branch-protection.observed.json",
+    "docs/phase1a/branch-protection.request.json",
     "docs/phase1a/changed-files.json",
     "docs/phase1a/environment-evidence.json",
+    "docs/phase1a/hosted-evidence.json",
     "docs/phase1a/remediation-evidence.json",
     "docs/phase1a/source-files.json",
     "docs/testing/ci-gates.json",

@@ -2,7 +2,7 @@
 
 Use `main` for reviewed work and `codex/<scope>` or `feature/<scope>` for small branches. Open a pull request; do not commit directly to main. Every change includes affected tests, contract/migration changes and the traceability update. Full accepted regression runs on pull requests, main, merge queue and phase review.
 
-The `Phase 1A required validation / phase1a-required` check must be required by repository rules, with stale approvals dismissed and direct pushes blocked. Local workflow files cannot establish remote branch protection. No remote is configured yet; an owner must apply and verify those settings when a GitHub repository is selected.
+The `Phase 1A required validation / phase1a-required` check must be required by repository rules, with stale approvals dismissed and direct pushes blocked. Local workflow files cannot establish remote branch protection. The private origin is wmostafagmail/FindOurChild. Main protection is configured and read back; hosted check execution, Actions App binding and negative merge-block verification remain pending. See docs/phase1a/hosted-evidence.json for current observed status.
 
 Use `make bootstrap`, `make db`, `make api`, then `make web` in another terminal. `make test` runs actual PostgreSQL tests inside the private network. Install browser binaries with the locked `e2e-web` executable and both telemetry flags, then `make browser`. Use synthetic records exclusively. See docs/phase1a/REVIEW.md for the exact review state and remaining approvals.
 

@@ -29,7 +29,7 @@
   },
   {
     "path": "CONTRIBUTING.md",
-    "sha256": "6295e5da24aa9eb4933a58f70efd3a6ca0c47311d237d59f538c6fef55d6469d"
+    "sha256": "d615fd71bc4d7e32f8016821b05a40c4462456629b7d8bc79335b155a43bf96d"
   },
   {
     "path": "Makefile",
@@ -78,6 +78,10 @@
   {
     "path": "database/migrations/0002_contract_hardening.sql",
     "sha256": "4c8122f8180061e0792c4d1ab1fe3035e4bed86b4fe2f1939be3ae9dff1cdfc7"
+  },
+  {
+    "path": "docs/phase1a/branch-protection.request.json",
+    "sha256": "e595a5753c63e4fc350025ba6526b37d811b3c938087c3080664ab91455ee1d7"
   },
   {
     "path": "e2e.config.ts",
@@ -265,7 +269,7 @@
   },
   {
     "path": "tools/update_phase1a_matrix.py",
-    "sha256": "50bf72feea222c4c6bedaa9295ef75a3d1afabb07c6548bbb44841b606a6ca50"
+    "sha256": "f5ef37affa2f61cea08059b2a3a6d449afe3a3fd33660b5171e3e9711b394d7d"
   },
   {
     "path": "tsconfig.e2e.json",

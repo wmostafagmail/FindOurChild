@@ -2,7 +2,7 @@
 
 Date: **2026-10-24 (Africa/Cairo)**. Project: **Find Our Child**. Starting revision: `add5cf75e80154567ee2188d00973bccbd18cd2e`, branch `codex/phase-1a-foundation`. Corrective runtime revision: **`ec99ac0c5200f83fffcb1bbbee9db1c8cfeaa89d`**.
 
-**Local validation passes. Phase 1A acceptance remains blocked by hosted CI and branch-protection verification.** No GitHub remote exists. The owner said a repository URL will be provided; this is not acceptance of the external blockers. No Phase 1B work was started.
+**Local validation passes. Phase 1A acceptance remains blocked by hosted CI and branch-protection verification.** The private repository is https://github.com/wmostafagmail/FindOurChild. Main is published and protected after the owner upgraded the account. Engineering publication is blocked by the CLI token’s missing workflow scope; hosted execution and negative merge proof remain pending. No external-blocker waiver was given. No Phase 1B work was started.
 
 ## Root cause and corrective actions
 
@@ -47,7 +47,7 @@ Three logical application cases expand across three engines, two browser locales
 | Clean npm lock install, TypeScript, production web build | Passed |
 | Source-bound required-results and sanitized export | **Passed** |
 | Documentation/configuration checks | See [configuration-checks.json](configuration-checks.json); historical validators test the preserved Phase 0 commit, not application behavior |
-| Hosted CI / protection / failing-check merge block | **Pending**, no remote or hosted execution |
+| Hosted CI / protection / failing-check merge block | **Pending**: main protection read back; workflow authorization/hosted run/merge proof incomplete |
 
 Negative regression includes every disabled domain operation with anonymous and forged credentials, cross-organization case reads and foreign keys, same-organization/wrong-case object references, missing/expired/revoked grants and membership, disabled principals, suspended organizations, forbidden sensitive tables, role elevation, wrong purpose and connection-context reuse. Four original disabled-feature safeguarding guards pass; operational identity/reporting/release/biometric workflows remain unimplemented and pending.
 
@@ -108,13 +108,17 @@ This verifies integrity and source binding, not third-party execution attestatio
 
 ## Hosted execution and protected-branch steps
 
-`git remote -v` returned no entries. Therefore no repository-specific access denial, administrative permission result, hosted run ID or merge-block test exists. **Missing prerequisite:** owner-provided repository URL and access to it. Account permissions cannot be determined without that target; they are not assumed unavailable or sufficient.
+The owner provided [wmostafagmail/FindOurChild](https://github.com/wmostafagmail/FindOurChild), initially empty and private. Both the connector and CLI report owner/admin/push access. Origin is configured. Git’s previous credential helper failed; a command-scoped `gh auth git-credential` helper successfully authenticated without exposing credentials or changing global Git settings.
 
-Once supplied, inspect its existing branches/history before any push; do not overwrite them. Push the committed engineering branch with its original baseline ancestry, run `.github/workflows/phase1a.yml` and record the run URL, full head SHA, successful conclusion and sanitized artifact hashes. Confirm the complete 151-Python/72-browser inventory ran on the hosted OS. A YAML file or local macOS pass is insufficient.
+The atomic two-branch push was rejected because the CLI OAuth token has `gist, read:org, repo` scopes and lacks **workflow**. GitHub explicitly refuses to publish `.github/workflows/phase1a.yml` without it. Both branches remained absent after that attempt. A separate push published only the approved main baseline `40231be73ab9a5eb577ccf5308c86f6b7282976b`; no implementation was substituted or history rewritten. A temporary, fsck-verified copy of Git metadata avoided Documents pack-read stalls while preserving exact object/commit identities.
 
-A repository administrator should protect `main`: require pull requests and the actual GitHub Actions check name emitted by job `phase1a-required`, require the branch up to date, apply protection to administrators, disallow bypass/force pushes/deletion and require review/conversation resolution. Record the GET branch-protection response and the check's GitHub App identity. GitHub documents [protected-branch behavior](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) and [protection API permissions](https://docs.github.com/en/rest/branches/branch-protection): Administration read is required to inspect protection, Administration write to update it. Hosted execution also needs repository Contents write to push, Actions read to inspect and Actions write for manual dispatch, subject to organization policy and workflow-file permissions.
+Initial ruleset and classic-protection reads returned HTTP 403: private-repository protection required GitHub Pro. The owner upgraded; a later ruleset read succeeded. Main protection was then configured and independently read back with HTTP 200. [Requested settings](branch-protection.request.json), [observed response](branch-protection.observed.json) and [hosted metadata](hosted-evidence.json) preserve exact controls. The account’s plan blocker is resolved. No visibility change or purchase was performed by the agent.
 
-Use a disposable PR with a deliberate failing existing assertion. Record its failed required check and blocked merge state for a non-bypass actor; verify the required-check/rule identity applies to its base and commit. Restore the assertion and close the probe without merging it. Do not mark this merge-block test passed until observed. No remote mutations or disposable PR were performed during this no-remote run.
+Current protection requires phase1a-required, an up-to-date branch, administrator enforcement, one independent approval, stale-review dismissal, last-push approval and resolved conversations; force pushes/deletion are disabled. The required status is not yet bound to an observed Actions App. Once CI runs, bind its actual check/App identity and demonstrate failing-test merge rejection. Configuration readback alone is not that demonstration.
+
+GitHub CLI authorization was initiated with `gh auth refresh --hostname github.com --scopes workflow`. The owner must finish GitHub’s device-consent flow; no token/device code is persisted in project files. Once complete, publish the unchanged engineering revision, execute the workflow and record run URL, full head SHA, conclusion and sanitized artifact checksums. Verify all 151 Python and 72 browser executions on the hosted runner. No hosted run or disposable negative-test PR has executed yet.
+
+For the negative proof, use a disposable branch/PR with one deliberately failing existing assertion; preserve inventory and all mandatory gates. Observe the required check failing and GitHub rejecting merge eligibility for an actor with no bypass. Use a dedicated protected test base if needed to distinguish test blocking from unrelated review requirements, without weakening main. Restore/close the probe without merging the failing change. Required GitHub API permissions and behavior are documented in the [protection API](https://docs.github.com/en/rest/branches/branch-protection) and [protected-branch guide](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
 ## Changed files and remaining gate
 
