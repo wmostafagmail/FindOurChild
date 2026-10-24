@@ -1,5 +1,7 @@
 # Phase 0 review and decisions
 
+> Current status (2026-10-24): Phase 1A is accepted after PR #1 merged and required hosted CI passed on merged main `683180e`. See [acceptance](phase1a/ACCEPTANCE.md). Phase 1B is explicitly authorized on `codex/phase-1b-identity-security`; Phase 1C remains unauthorized. Earlier observations below are historical.
+
 > Phase 1A update: the user explicitly authorized foundation implementation only after this Phase 0 review. The immutable preimplementation package is Git commit `40231be73ab9a5eb577ccf5308c86f6b7282976b`; its original validators still run against that commit. Current findings/evidence are in [Phase 1A review](phase1a/REVIEW.md). Research, licensing, legal authority, safeguarding, retention and model-evaluation approvals have not been inferred from engineering progress. Phase 1B remains unapproved; Phase 1A technical gates now pass and await owner acceptance review.
 
 Prepared 23 October 2026; corrected testing architecture 23 October 2026. **Research/specification package ready for review; human Phase 0 acceptance remains pending. No application built and no application tests passed.**

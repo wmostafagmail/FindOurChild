@@ -2,7 +2,16 @@
 name = "find-our-child"
 version = "0.1.0"
 requires-python = "==3.13.13"
-dependencies = ["fastapi==0.162.0", "uvicorn==0.54.0", "psycopg[binary]==3.3.6", "httpx==0.28.1", "jsonschema==4.26.0", "boto3==1.43.118"]
+dependencies = [
+    "fastapi==0.162.0",
+    "uvicorn==0.54.0",
+    "psycopg[binary]==3.3.6",
+    "httpx==0.28.1",
+    "jsonschema==4.26.0",
+    "boto3==1.43.118",
+    "pyjwt[crypto]==2.15.0",
+    "cryptography==50.0.0",
+]
 
 [dependency-groups]
 dev = [

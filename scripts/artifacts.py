@@ -76,6 +76,13 @@ def export(root=ROOT):
         try:
             if name == "python":
                 report = json.loads((root / "artifacts/raw/python-results.json").read_text())
+                summaries["python_observed"] = [
+                    {
+                        "id": t["id"] if t.get("id") in manifest["python"] else "unknown",
+                        "status": t.get("status") if t.get("status") in ["passed", "failed"] else "unknown",
+                    }
+                    for t in report.get("tests", [])
+                ]
                 summaries[name] = python_gate(report, manifest, digest)
             else:
                 report = json.loads((root / ".e2e/report.json").read_text())
@@ -100,6 +107,29 @@ def export(root=ROOT):
                 summaries[name] = browser_gate(report, manifest, meta, digest)
         except (ValueError, KeyError, OSError, TypeError):
             failures.append(name + " required evidence incomplete or nonpassing")
+    try:
+        identity = json.loads((root / "artifacts/raw/identity-results.json").read_text())
+        required_identity = json.loads((root / "docs/phase1b/required-tests.json").read_text())
+        summaries["identity_observed"] = [
+            {
+                "id": t["id"] if t.get("id") in required_identity["python"] else "unknown",
+                "status": t.get("status") if t.get("status") in ["passed", "failed"] else "unknown",
+            }
+            for t in identity.get("tests", [])
+        ]
+        if (
+            identity["exit_code"] != 0
+            or identity["source_digest"] != digest
+            or sorted(t["id"] for t in identity["tests"]) != sorted(required_identity["python"])
+            or any(
+                t["stages"] != {"setup": "passed", "call": "passed", "teardown": "passed"}
+                for t in identity["tests"]
+            )
+        ):
+            raise ValueError("Identity suite incomplete")
+        summaries["identity"] = [{"id": t["id"], "status": "passed"} for t in identity["tests"]]
+    except (ValueError, KeyError, OSError, TypeError):
+        failures.append("missing or nonpassing identity evidence")
     cov = {}
     # Coverage is exported as counts and repository-relative filenames only, with no source snippets or contexts.
     try:
@@ -133,6 +163,8 @@ def export(root=ROOT):
             "vector_version": "0.8.7",
             "migration_sha256": recovery["database"]["migration_sha"],
             "hardening_sha256": recovery["hardening_sha256"],
+            "all_migrations": recovery["all_migrations"],
+            "identity_session_rls": recovery["identity_session_rls"],
             "operational_erasure": "pending",
         }
     except (ValueError, KeyError, OSError, TypeError):

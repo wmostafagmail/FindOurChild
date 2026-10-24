@@ -1,0 +1,63 @@
+{
+  "run_id": 40102600554,
+  "commit": "ad2dc3cdbb55ca21dd896bb443ee0b7c7dcb335d",
+  "status": "failed",
+  "python_regression": {
+    "passed": 157,
+    "skipped": 0
+  },
+  "testerarmy": {
+    "passed": 64,
+    "failed": 32,
+    "skipped": 0,
+    "chromium_passed": 32,
+    "webkit_passed": 32,
+    "firefox_failed": 32,
+    "failure": "TLS navigation SSL_ERROR_UNKNOWN; original server presented a CA certificate as end entity"
+  },
+  "identity_and_combined_coverage": "not executed; blocked after browser failure",
+  "correction": "Separate constrained CA/server leaf; retain certificate verification and all targets; rerun entire required pipeline",
+  "original_log": "artifacts/raw/phase1b-hosted/40102600554.log (private, ignored; checksum manifest adjacent)",
+  "follow_up": {
+    "run_id": 40103228628,
+    "commit": "d807d28fa933bbc56d0287163f8684dcbeb09d5f",
+    "status": "failed",
+    "browser_passed": 64,
+    "browser_failed": 32,
+    "failure": "Firefox SEC_ERROR_UNKNOWN_ISSUER",
+    "root_cause": "Playwright Firefox overrides distribution policy loading. Custom certificate policy requires PLAYWRIGHT_FIREFOX_POLICIES_JSON; policy contents were present but not selected.",
+    "official_reference": "https://playwright.dev/docs/api/class-browsertype",
+    "correction": "Select the per-run workspace certificate policy via the documented environment variable; no TLS bypass or browser patch."
+  },
+  "strict_client_follow_up": {
+    "run_id": 40103892277,
+    "commit": "8bb6a993b2b89feb86f3ef3f3e930406d34e87bd",
+    "status": "failed",
+    "browser_passed": 96,
+    "browser_failed": 0,
+    "browser_skipped": 0,
+    "identity_passed": 46,
+    "identity_failed": 12,
+    "failure": "Python 3.13 SSL strict certificate verification: Missing Subject Key Identifier",
+    "correction": "Add standard CA/leaf SKI and CA authority-key identifiers. Strict openssl preflight, no verification bypass.",
+    "combined_coverage": "not executed after mandatory identity failure"
+  },
+  "bff_header_follow_up": {
+    "run_id": 40104947647,
+    "commit": "edf1fc782e5a5380371610cbd3862d50752da974",
+    "status": "failed",
+    "python_regression_passed": 158,
+    "browser_passed": 96,
+    "identity_passed": 56,
+    "identity_failed": 2,
+    "coverage_percent": 92,
+    "failure": "BFF dropped required Idempotency-Key; API correctly rejected membership requests with 422 before authorization",
+    "correction": "Forward the fixed idempotency header; retain strict API requirement and existing authorization expectations. Capture Python assertion diagnostics privately rather than emitting synthetic session values to hosted logs.",
+    "raw_log_retention": "Historical raw logs are private repository diagnostics; only expired, synthetic, loopback-bound test sessions were present. No real child information. Published artifacts remain allowlisted."
+  },
+  "audit_metadata_correction": {
+    "finding": "Global identity sequence could expose cross-organization audit activity through gaps",
+    "correction": "Migration 0006 allocates future sequence numbers per organization under transaction locks; retains original events and hashes. Interleaved tenant activity regression added to existing audit-chain test.",
+    "data_scope": "Synthetic candidate only; no production child data or deployment."
+  }
+}

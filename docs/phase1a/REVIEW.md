@@ -1,5 +1,7 @@
 # Find Our Child — Phase 1A review
 
+> Current status (2026-10-24): Phase 1A is accepted after PR #1 merged and required hosted CI passed on merged main `683180e`. See [acceptance](ACCEPTANCE.md). Phase 1B is explicitly authorized on `codex/phase-1b-identity-security`; Phase 1C remains unauthorized. Earlier observations below are historical.
+
 **Assessment: Phase 1A technical validation passes locally and in hosted CI; ready for owner acceptance review. Stop before Phase 1B.** All required candidate tests pass, all three browser engines execute, main protection is bound to GitHub Actions and an actual failing-check merge attempt was rejected. No external-blocker waiver is needed. See [hosted validation](HOSTED_VALIDATION.md), [verified artifacts](hosted-artifact-verification.json), [merge-block proof](negative-gate-proof.json) and the [remediation report](REMEDIATION_REPORT.md). This is no approval for production data, deployment or later phases.
 
 ## Delivered source and environment

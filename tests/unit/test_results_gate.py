@@ -52,7 +52,7 @@ def fixture_report():
             "errors": [],
             "usage": {"modelTokens": 0, "maxModelCallsInStep": 0},
             "targets": [
-                {"id": t, "engine": {"version": "0.15.3"}, "baseOrigin": "http://127.0.0.1:3000"}
+                {"id": t, "engine": {"version": "0.15.3"}, "baseOrigin": "https://127.0.0.1:3443"}
                 for t in TARGETS
             ],
             "results": results,

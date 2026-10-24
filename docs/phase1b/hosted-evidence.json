@@ -1,0 +1,51 @@
+{
+  "status": "verified",
+  "implementation_commit": "f2eb943485c4d2a9b6bbdf587212d2583d97e65b",
+  "archive_sha256": "e9f3fa00813acaa2146ed1d1a1b131d4bcc4991348dda407eb99374412aba103",
+  "artifact_id": 12565235547,
+  "artifact_name": "phase1a-sanitized-d501b5486d3f26e748d049f6a9294a5729b72831",
+  "files": 54,
+  "payload_checksums_verified": 53,
+  "source_files_verified": 85,
+  "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768",
+  "python_regression_passed": 158,
+  "identity_passed": 58,
+  "python_total_passed": 216,
+  "testerarmy_passed": 96,
+  "browser_counts": {
+    "chromium": 32,
+    "firefox": 32,
+    "webkit": 32
+  },
+  "mandatory_skips": 0,
+  "coverage": {
+    "scope": "API and migration Python code only",
+    "totals": {
+      "covered_lines": 298,
+      "num_statements": 311,
+      "percent_covered": 95.81993569131832,
+      "missing_lines": 13
+    }
+  },
+  "migration_count": 6,
+  "forced_rls_application_tables": 41,
+  "identity_metadata_rls": "verified",
+  "sanitized_screenshots": 48,
+  "dependency_audit": {
+    "status": "passed",
+    "npm_known_vulnerabilities": 0,
+    "python_known_vulnerabilities": 0
+  },
+  "run_id": 40105948297,
+  "job_id": 120907547192,
+  "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40105948297",
+  "pull_request": 3,
+  "draft": true,
+  "head_commit": "f2eb943485c4d2a9b6bbdf587212d2583d97e65b",
+  "pr_checkout_commit": "d501b5486d3f26e748d049f6a9294a5729b72831",
+  "check": "phase1a-required",
+  "conclusion": "success",
+  "phase1a_accepted_main_commit": "683180e298d1dc0a461aa152007999f79ee70c71",
+  "phase1b_assessment": "technical_validation_passed_awaiting_owner_review",
+  "phase1c": "not_started"
+}

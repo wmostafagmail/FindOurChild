@@ -19,6 +19,11 @@ def load():
 
 def environment():
     data = load()
+    from scripts.identity_setup import generate
+
+    generate()
+    identity = json.loads((STATE / "identity.json").read_text())
+    data.update({k: v for k, v in identity.items() if k.startswith("FOC_")})
     data["FOC_CONTAINER_ADMIN_URL"] = data["FOC_DATABASE_ADMIN_URL"].replace("127.0.0.1:55439", "db:5432")
     data["FOC_CONTAINER_DATABASE_URL"] = data["FOC_DATABASE_URL"].replace("127.0.0.1:55439", "db:5432")
     return {
@@ -78,14 +83,32 @@ def main():
         compose("build", "api")
         compose("run", "--rm", "--user", "0:0", "migrate")
     elif command == "api":
-        compose("up", "-d", "api")
+        compose("stop", "api")
+        compose(
+            "run",
+            "--rm",
+            "--no-deps",
+            "api",
+            "python",
+            "-c",
+            "from pathlib import Path; [p.unlink() for p in Path('/coverage').glob('.coverage.*') if p.is_file()]",
+        )
+        compose("up", "-d", "api", "keycloak")
     elif command == "web":
         env = sanitize_environment(environment())
         os.execvpe("npm", ["npm", "run", "dev"], env)
     elif command == "test":
-        compose("run", "--rm", "--user", "0:0", "tester")
+        compose("run", "--rm", "--user", f"{os.getuid()}:{os.getgid()}", "tester")
     elif command == "browser":
-        compose("run", "--rm", "--user", "0:0", "tester", "python", "scripts/preflight.py")
+        compose(
+            "run",
+            "--rm",
+            "--user",
+            f"{os.getuid()}:{os.getgid()}",
+            "tester",
+            "python",
+            "scripts/preflight.py",
+        )
         from scripts.preflight import verify_services
 
         verify_services()

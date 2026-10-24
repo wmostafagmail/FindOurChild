@@ -1,0 +1,27 @@
+{
+  "merged_commit": "683180e298d1dc0a461aa152007999f79ee70c71",
+  "pr": 1,
+  "merged_at": "2026-10-24T13:48:32Z",
+  "run_id": 40099733392,
+  "job_id": 120889230865,
+  "check": "phase1a-required",
+  "conclusion": "success",
+  "artifact_id": 12562343034,
+  "artifact_sha256": "0351ecfc1a096bbfb4273d3cd5624dafd280b99c287c665f28818c40b26a3606",
+  "payload_checksums_verified": 53,
+  "python_passed": 151,
+  "browser_passed": 72,
+  "browser_counts": {
+    "chromium": 24,
+    "firefox": 24,
+    "webkit": 24
+  },
+  "sanitized_gate": {
+    "status": "passed",
+    "reasons": [],
+    "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d"
+  },
+  "acceptance": "accepted_by_owner_conditional_authorization",
+  "independent_review_required": false,
+  "required_approvals": 0
+}

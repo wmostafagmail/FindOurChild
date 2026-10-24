@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
-  "scope": "Phase 0 baseline plus Phase 1A foundation; no Phase 1B/1C execution authorized",
-  "application_test_status": "phase1a_required_validation_passed_awaiting_owner_review",
+  "scope": "Preserved Phase 0/1A baseline plus explicitly scoped Phase 1B identity executables; no Phase 1C",
+  "application_test_status": "phase1b_hosted_validation_passed_awaiting_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -14880,6 +14880,1157 @@
         "path": "artifacts/sanitized/results.json",
         "source_digest": "cf3630cb45ee5115e8f02563661147a6fb658a272749d3f92cb1faf25152708d"
       }
+    },
+    {
+      "feature_id": "IDN-01",
+      "category": "identity_security",
+      "source": "phase1b/ARCHITECTURE.md",
+      "title": "JWT issuer/audience/signature/MFA/time/nonce and IdP failure boundaries",
+      "suite": "coordinated_python_api_database_security",
+      "phase_introduced": "1B",
+      "positive_scenarios": "Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations",
+      "negative_scenarios": "Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely",
+      "security_authorization_scenarios": "Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit",
+      "edge_cases": "Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results",
+      "fixture_ids": [
+        "FX-IDP",
+        "FX-BASE"
+      ],
+      "expected_outcomes": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+      "test_cases": [
+        {
+          "test_case_id": "TC_IDN_01_001",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[empty]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[empty]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_002",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[hmac-confusion]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[hmac-confusion]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_003",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[malformed]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[malformed]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_004",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[unsigned]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[unsigned]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_005",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[None]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[None]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_006",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_007",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[https://evil.invalid]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[https://evil.invalid]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_008",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[null]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[null]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_009",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_idp_failure_denies_access[error-status]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_idp_failure_denies_access[error-status]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_010",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_idp_failure_denies_access[invalid-json]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_idp_failure_denies_access[invalid-json]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_011",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_idp_failure_denies_access[unreachable]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_idp_failure_denies_access[unreachable]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_012",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change0]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change0]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_013",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change10]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change10]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_014",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change1]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change1]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_015",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change2]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change2]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_016",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change3]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change3]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_017",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change4]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change4]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_018",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change5]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change5]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_019",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change6]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change6]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_020",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change7]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change7]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_021",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change8]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change8]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_022",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change9]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change9]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_023",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[amr]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[amr]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_024",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[aud]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[aud]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_025",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[auth_time]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[auth_time]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_026",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[exp]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[exp]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_027",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[iat]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[iat]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_028",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[iss]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[iss]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_029",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_missing_required_claim[sub]",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_missing_required_claim[sub]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_030",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_nonce_bound_to_flow",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_nonce_bound_to_flow",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_031",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_valid_signed_mfa",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_valid_signed_mfa",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_01_032",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_tokens.py::test_wrong_signature_and_unknown_key",
+          "planned_file": "tests/identity/test_tokens.py",
+          "planned_selector": "tests/identity/test_tokens.py::test_wrong_signature_and_unknown_key",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        }
+      ]
+    },
+    {
+      "feature_id": "IDN-02",
+      "category": "identity_security",
+      "source": "phase1b/ARCHITECTURE.md",
+      "title": "Anonymous, forged, callback state and Secure-cookie boundaries",
+      "suite": "coordinated_python_api_database_security",
+      "phase_introduced": "1B",
+      "positive_scenarios": "Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations",
+      "negative_scenarios": "Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely",
+      "security_authorization_scenarios": "Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit",
+      "edge_cases": "Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results",
+      "fixture_ids": [
+        "FX-IDP",
+        "FX-BASE"
+      ],
+      "expected_outcomes": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+      "test_cases": [
+        {
+          "test_case_id": "TC_IDN_02_001",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_002",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_003",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_004",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_005",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_006",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_007",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_008",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_009",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_010",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_api_cannot_modify_validation_reports",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_api_cannot_modify_validation_reports",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_011",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params0]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params0]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_012",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params1]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params1]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_013",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params2]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params2]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_02_014",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_session_cipher_and_cookie_flags",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_session_cipher_and_cookie_flags",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        }
+      ]
+    },
+    {
+      "feature_id": "IDN-03",
+      "category": "identity_security",
+      "source": "phase1b/ARCHITECTURE.md",
+      "title": "Real Keycloak MFA, BFF/API, organizations, case grants, CSRF, audit and live revocation",
+      "suite": "coordinated_python_api_database_security",
+      "phase_introduced": "1B",
+      "positive_scenarios": "Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations",
+      "negative_scenarios": "Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely",
+      "security_authorization_scenarios": "Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit",
+      "edge_cases": "Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results",
+      "fixture_ids": [
+        "FX-IDP",
+        "FX-BASE"
+      ],
+      "expected_outcomes": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+      "test_cases": [
+        {
+          "test_case_id": "TC_IDN_03_001",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[grant_expired]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[grant_expired]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_002",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[grant_revoked]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[grant_revoked]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_003",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[membership_expired]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[membership_expired]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_004",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[membership_revoked]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[membership_revoked]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_005",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[org_suspended]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[org_suspended]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_006",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[principal_disabled]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[principal_disabled]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_007",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[session_expired]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[session_expired]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_008",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[session_idle]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[session_idle]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_009",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_live_revocation[session_revoked]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_live_revocation[session_revoked]",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_010",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_real_admin_membership_enforcement_and_audit",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_real_admin_membership_enforcement_and_audit",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_011",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_real_keycloak_mfa_session_case_and_tenant_boundary",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_real_keycloak_mfa_session_case_and_tenant_boundary",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_03_012",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+          "planned_command": ".venv/bin/python -m scripts.identity_test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        }
+      ]
+    },
+    {
+      "feature_id": "IDN-04",
+      "category": "identity_security",
+      "source": "phase1b/ARCHITECTURE.md",
+      "title": "Real PostgreSQL session ACLs, role elevation denial, context isolation and audit integrity",
+      "suite": "coordinated_python_api_database_security",
+      "phase_introduced": "1B",
+      "positive_scenarios": "Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations",
+      "negative_scenarios": "Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely",
+      "security_authorization_scenarios": "Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit",
+      "edge_cases": "Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results",
+      "fixture_ids": [
+        "FX-IDP",
+        "FX-BASE"
+      ],
+      "expected_outcomes": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+      "test_cases": [
+        {
+          "test_case_id": "TC_IDN_04_001",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_identity_sessions_direct_access_denied",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_identity_sessions_direct_access_denied",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_002",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_membership_admin_cannot_grant_sensitive_or_self_roles",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_membership_admin_cannot_grant_sensitive_or_self_roles",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_003",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_identity_missing_context_and_revocation",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_identity_missing_context_and_revocation",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_004",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_audit_chain_and_runtime_append_only",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_audit_chain_and_runtime_append_only",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_005",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_006",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        },
+        {
+          "test_case_id": "TC_IDN_04_007",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/database/test_identity.py::test_membership_idempotency_scope_conflict_and_revoked_actor",
+          "planned_file": "tests/database/test_identity.py",
+          "planned_selector": "tests/database/test_identity.py::test_membership_idempotency_scope_conflict_and_revoked_actor",
+          "planned_command": ".venv/bin/python -m scripts.dev test",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        }
+      ]
+    },
+    {
+      "feature_id": "IDN-05",
+      "category": "identity_security",
+      "source": "phase1b/ARCHITECTURE.md",
+      "title": "TesterArmy real TLS MFA/tenant/CSRF/logout, Arabic switch, every configured browser",
+      "suite": "browser",
+      "phase_introduced": "1B",
+      "positive_scenarios": "Explicitly provisioned active synthetic staff completes MFA and only its scoped permitted operations",
+      "negative_scenarios": "Malformed/expired/forged/revoked credentials, unavailable verifier, unknown IDs and invalid mutations deny safely",
+      "security_authorization_scenarios": "Cross-tenant and self-elevation denied; org role alone grants no case data; Secure cookies and exact Origin/CSRF; append-only minimized audit",
+      "edge_cases": "Expiry/idle/revocation, missing context, nonce mismatch, algorithm confusion, token audience and MFA evidence, missing mandatory test results",
+      "fixture_ids": [
+        "FX-IDP",
+        "FX-BASE"
+      ],
+      "expected_outcomes": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+      "test_cases": [
+        {
+          "test_case_id": "TC_IDN_05_001",
+          "kind": "positive_negative_security_edge",
+          "scenario": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+          "planned_file": "tests/browser/identity.e2e.ts",
+          "planned_selector": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+          "planned_command": ".venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "Allowed operations match exact DTO/status; denied operations reveal no child/location/token data or unauthorized state; all mandatory targets execute",
+          "required_from_phase": "1B",
+          "phase1b_required": true,
+          "status": "passed",
+          "execution_evidence": {
+            "artifact": "artifacts/phase1b-sanitized/results.json",
+            "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+          }
+        }
+      ]
     }
   ],
   "baseline": {
