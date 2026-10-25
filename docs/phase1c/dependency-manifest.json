@@ -1,0 +1,77 @@
+{
+  "node": "24.18.0",
+  "npm": "11.16.0",
+  "python": "3.13.13",
+  "uv": "0.12.0",
+  "framework_source_commit": "69e123b17e04ed624df16d32f3b1ef95ce22c083",
+  "e2e": "0.21.3",
+  "web_engine": "0.15.3",
+  "playwright_core": "1.64.1",
+  "python_direct": [
+    "fastapi==0.162.0",
+    "uvicorn==0.54.0",
+    "psycopg[binary]==3.3.6",
+    "httpx==0.28.1",
+    "jsonschema==4.26.0",
+    "boto3==1.43.118",
+    "pyjwt[crypto]==2.15.0",
+    "cryptography==50.0.0",
+    "pillow==13.0.0"
+  ],
+  "python_dev": [
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "openapi-spec-validator==0.9.0",
+    "ruff==0.17.2",
+    "pip-audit==2.10.1"
+  ],
+  "npm_direct": {
+    "name": "find-our-child",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+      "node": "24.18.0",
+      "npm": "11.16.0"
+    },
+    "packageManager": "npm@11.16.0",
+    "scripts": {
+      "dev": "node scripts/web.mjs dev",
+      "build": "node scripts/web.mjs build",
+      "start": "node scripts/web.mjs start",
+      "typecheck": "tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p tsconfig.e2e.json",
+      "test:browser": "node scripts/run-browser.mjs"
+    },
+    "dependencies": {
+      "next": "16.4.3",
+      "react": "19.3.1",
+      "react-dom": "19.3.1"
+    },
+    "devDependencies": {
+      "@e2e-dev/web": "0.15.3",
+      "@types/node": "26.6.2",
+      "@types/react": "19.3.0",
+      "@types/react-dom": "19.3.0",
+      "axe-core": "4.14.0",
+      "e2e": "0.21.3",
+      "typescript": "7.0.2"
+    },
+    "overrides": {
+      "zod": "4.6.6"
+    }
+  },
+  "sha256": {
+    "package.json": "ab247effd48b47af2560056b1159291f45f7142a7d7792d64076fbae59b256ea",
+    "package-lock.json": "7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff",
+    "pyproject.toml": "3fa40214077708a37a66209c3e7fb1c71a91922b7b15c3defbbcfb30043dffef",
+    "uv.lock": "b65e6540dc21a6d630addd9d20d47266c3d626bb0f64c576cc808dae42998004",
+    "requirements-bootstrap.txt": "524c21e2a1cf273b13001b30f117affa2718978f0586846d1fc731a5d826d66e",
+    "compose.yaml": "d5eafd66c77739333445dd2fd038f11e1f93cbbd7cea8e6637a92f20267db82e",
+    "e2e.config.ts": "e9fa4a6e443bf160d1765f3ac34081164bf86e19be383dd17070e05a002edef2"
+  },
+  "added_components": {
+    "pillow": "13.0.0",
+    "clamav": "clamav/clamav-debian:1.5.4@sha256:d7ede3cefeaf3b8a72ebcdee849d13f504bbca3f3b3cfade5bc7b6ee06a4f62c",
+    "private_s3": "chrislusf/seaweedfs:4.48@sha256:4e61d15fd35994cb1e43e1e553dff106794841fd9a99ade2fc8c8bfce4d7872d"
+  }
+}

@@ -1,0 +1,2877 @@
+{
+  "accepted_phase": "1B",
+  "merge_commit": "9fcb6ef52057a9b46826c8ad7e03e8cb13276431",
+  "pr": 3,
+  "merged_at": "2026-10-24T23:48:41Z",
+  "run_id": 40144238603,
+  "event": "push",
+  "job_id": 121022080138,
+  "required_check": "phase1a-required",
+  "conclusion": "success",
+  "artifact_id": 12579564368,
+  "archive_sha256": "28379b7d1c6e5baac28cf3d7c51a8088e600c55bd57c1f6ddfcb433d4e927b39",
+  "verified_payload_checksums": 53,
+  "results": {
+    "python_observed": [
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[None]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[production]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[real]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[Synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@remote.invalid/foc_synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@127.0.0.1/production]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[https://127.0.0.1/foc_synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@localhost/postgres]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_accepts_local_synthetic",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_CONTAINER_ADMIN_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_CONTAINER_DATABASE_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DATABASE_ADMIN_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DATABASE_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DB_API_PASSWORD]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[OPENAI_API_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[AWS_SECRET_ACCESS_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[E2E_API_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_missing_python_result",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-setup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-call]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-teardown]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-setup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-call]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_accepts_complete_validator_fixture",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[duplicate-result]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[retry]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[cleanup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[origin]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[model]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[stale]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_strips_metadata_canary",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[not-a-png]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[\\x89PNG\\r\\n\\x1a\\n]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_artifact_path_rejects_escape_and_symlink",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_live",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_real_database_readiness",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_unavailable_database_fails_safely",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_full_openapi",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_closed_report_schema",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_security_headers_and_request_id",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_idempotency_scoped_uniqueness_and_default_deny",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_same_tenant_wrong_case_object_rejected",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_outbox_reconstructs_closed_envelope",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_identity_sessions_direct_access_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_admin_cannot_grant_sensitive_or_self_roles",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_identity_missing_context_and_revocation",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_audit_chain_and_runtime_append_only",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_idempotency_scope_conflict_and_revoked_actor",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_no_context_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_authorized_case_only",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_cross_tenant_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_org_admin_without_case_grant_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[revoked-grant]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[expired-grant]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[revoked-member]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[expired-member]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[suspended-org]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[deleted-case]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_disabled_principal_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_wrong_purpose_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_context_does_not_survive_pool_reuse",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[restricted_custody]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[photographs]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[objects]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[embeddings]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[broker_candidate_edges]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[approvals]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[handovers]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[memberships]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[case_grants]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[audit_events]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[idempotency_records]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_runtime_cannot_write_or_elevate",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_all_domain_relations_force_rls",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_non_owner_runtime_role",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_composite_foreign_key_rejects_tenant_mix",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_invalid_age_interval_rejected",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_runtime_cannot_insert_handover",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_outbox_atomic_rollback",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_01]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_02]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_03]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_04]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_05]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_06]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_07]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_08]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_09]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_11]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_12]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_13]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_14]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_15]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_16]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_17]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_18]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_19]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_20]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_21]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_22]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_23]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_24]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_25]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_26]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_27]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_28]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_29]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_30]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_31]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_32]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_01]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_02]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_03]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_04]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_05]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_06]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_07]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_08]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_09]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_11]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_12]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_13]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_14]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_15]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_16]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_17]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_18]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_19]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_20]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_21]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_22]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_23]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_24]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_25]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_26]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_27]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_28]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_29]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_30]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_31]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_32]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_04.py::test_tc_saf_04_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_07.py::test_tc_saf_07_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_08.py::test_tc_saf_08_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_09.py::test_tc_saf_09_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/integration/test_contracts.py::test_fnd_migration_replay_and_checksum",
+        "status": "passed"
+      },
+      {
+        "id": "tests/integration/test_contracts.py::test_fnd_event_envelope_rejects_child_payload",
+        "status": "passed"
+      }
+    ],
+    "python": [
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[None]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[production]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[real]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[Synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@remote.invalid/foc_synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@127.0.0.1/production]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[https://127.0.0.1/foc_synthetic]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[postgresql://user@localhost/postgres]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_untrusted_database[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_config_accepts_local_synthetic",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_CONTAINER_ADMIN_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_CONTAINER_DATABASE_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DATABASE_ADMIN_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DATABASE_URL]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[FOC_DB_API_PASSWORD]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[OPENAI_API_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[AWS_SECRET_ACCESS_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_foundation.py::test_fnd_browser_environment_removes_privileged_credentials[E2E_API_KEY]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_missing_python_result",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-setup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-call]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-teardown]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-setup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-call]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_accepts_complete_validator_fixture",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[duplicate-result]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[retry]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[cleanup]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[origin]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[model]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[stale]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_strips_metadata_canary",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[not-a-png]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[\\x89PNG\\r\\n\\x1a\\n]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_rejects_invalid_input[\\x89PNG\\r\\n\\x1a\\n\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/unit/test_results_gate.py::test_fnd_artifact_path_rejects_escape_and_symlink",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_live",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_real_database_readiness",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_unavailable_database_fails_safely",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_full_openapi",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_closed_report_schema",
+        "status": "passed"
+      },
+      {
+        "id": "tests/api/test_foundation.py::test_fnd_security_headers_and_request_id",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_idempotency_scoped_uniqueness_and_default_deny",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_same_tenant_wrong_case_object_rejected",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_contract_hardening.py::test_fnd_outbox_reconstructs_closed_envelope",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_identity_sessions_direct_access_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_admin_cannot_grant_sensitive_or_self_roles",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_identity_missing_context_and_revocation",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_audit_chain_and_runtime_append_only",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_session_token_is_hashed_and_expiry_enforced",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_change_rolls_back_when_audit_unavailable",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_identity.py::test_membership_idempotency_scope_conflict_and_revoked_actor",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_no_context_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_authorized_case_only",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_cross_tenant_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_org_admin_without_case_grant_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[revoked-grant]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[expired-grant]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[revoked-member]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[expired-member]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[suspended-org]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_revocation_and_expiry[deleted-case]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_disabled_principal_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_wrong_purpose_denied",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_context_does_not_survive_pool_reuse",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[restricted_custody]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[photographs]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[objects]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[embeddings]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[broker_candidate_edges]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[approvals]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[handovers]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[memberships]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[case_grants]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[audit_events]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_sensitive_boundaries_deny_runtime[idempotency_records]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_runtime_cannot_write_or_elevate",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_all_domain_relations_force_rls",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_non_owner_runtime_role",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_composite_foreign_key_rejects_tenant_mix",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_invalid_age_interval_rejected",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_runtime_cannot_insert_handover",
+        "status": "passed"
+      },
+      {
+        "id": "tests/database/test_rls.py::test_fnd_outbox_atomic_rollback",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_01]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_02]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_03]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_04]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_05]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_06]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_07]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_08]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_09]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_11]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_12]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_13]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_14]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_15]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_16]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_17]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_18]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_19]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_20]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_21]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_22]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_23]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_24]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_25]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_26]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_27]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_28]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_29]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_30]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_31]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[anonymous-fnd_disabled_32]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_01]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_02]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_03]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_04]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_05]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_06]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_07]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_08]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_09]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_11]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_12]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_13]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_14]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_15]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_16]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_17]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_18]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_19]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_20]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_21]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_22]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_23]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_24]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_25]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_26]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_27]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_28]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_29]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_30]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_31]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_disabled_operations.py::test_fnd_domain_operations_fail_closed[forged-fnd_disabled_32]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_04.py::test_tc_saf_04_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_07.py::test_tc_saf_07_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_08.py::test_tc_saf_08_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/security/test_saf_09.py::test_tc_saf_09_disabled_p1",
+        "status": "passed"
+      },
+      {
+        "id": "tests/integration/test_contracts.py::test_fnd_migration_replay_and_checksum",
+        "status": "passed"
+      },
+      {
+        "id": "tests/integration/test_contracts.py::test_fnd_event_envelope_rejects_child_payload",
+        "status": "passed"
+      }
+    ],
+    "browser_observed": [
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      }
+    ],
+    "browser": [
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_AR_READY",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_EN_READY",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_FND_BROWSER_LANGUAGE_SWITCH",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "chromium-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "firefox-en-GB-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-ar-EG-1280",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-320",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-360",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-390",
+        "status": "passed"
+      },
+      {
+        "id": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+        "target": "webkit-en-GB-1280",
+        "status": "passed"
+      }
+    ],
+    "identity_observed": [
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_keycloak_mfa_session_case_and_tenant_boundary",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_admin_membership_enforcement_and_audit",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_idle]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[principal_disabled]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[membership_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[membership_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[org_suspended]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[grant_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[grant_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params0]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params1]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params2]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_session_cipher_and_cookie_flags",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_api_cannot_modify_validation_reports",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_valid_signed_mfa",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change0]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change1]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change2]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change3]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change4]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change5]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change6]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change7]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change8]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change9]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[exp]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[iat]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[sub]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[iss]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[aud]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[auth_time]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[amr]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_wrong_signature_and_unknown_key",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[malformed]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[empty]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[hmac-confusion]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[unsigned]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_nonce_bound_to_flow",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[https://evil.invalid]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[null]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[None]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[unreachable]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[invalid-json]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[error-status]",
+        "status": "passed"
+      }
+    ],
+    "identity": [
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_keycloak_mfa_session_case_and_tenant_boundary",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_admin_membership_enforcement_and_audit",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_idle]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[session_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[principal_disabled]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[membership_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[membership_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[org_suspended]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[grant_revoked]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_live_revocation[grant_expired]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params0]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params1]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_login_callback_fail_closed[params2]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_session_cipher_and_cookie_flags",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_real_oidc_code_replay_cannot_create_another_session",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_boundaries.py::test_api_cannot_modify_validation_reports",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_valid_signed_mfa",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change0]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change1]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change2]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change3]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change4]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change5]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change6]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change7]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change8]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change9]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_invalid_signed_claims_rejected[change10]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[exp]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[iat]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[sub]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[iss]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[aud]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[auth_time]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_missing_required_claim[amr]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_wrong_signature_and_unknown_key",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[malformed]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[empty]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[hmac-confusion]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_algorithm_confusion_and_malformed_tokens[unsigned]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_nonce_bound_to_flow",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[https://evil.invalid]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[null]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_csrf_origin_fail_closed[None]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[unreachable]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[invalid-json]",
+        "status": "passed"
+      },
+      {
+        "id": "tests/identity/test_tokens.py::test_idp_failure_denies_access[error-status]",
+        "status": "passed"
+      }
+    ],
+    "coverage": {
+      "scope": "API and migration Python code only",
+      "totals": {
+        "covered_lines": 298,
+        "num_statements": 311,
+        "percent_covered": 95.81993569131832,
+        "missing_lines": 13
+      }
+    },
+    "migration_and_recovery": {
+      "status": "passed",
+      "scope": "synthetic foundation backup/restore only",
+      "tables": 41,
+      "forced_rls": 41,
+      "schema_version": "0001",
+      "vector_version": "0.8.7",
+      "migration_sha256": "ccc3ff7b2f376fa4d5784b6757d8051ca4817f1e47593c7c00649ce51cc10a84",
+      "hardening_sha256": "4c8122f8180061e0792c4d1ab1fe3035e4bed86b4fe2f1939be3ae9dff1cdfc7",
+      "all_migrations": {
+        "0001_foundation": "ccc3ff7b2f376fa4d5784b6757d8051ca4817f1e47593c7c00649ce51cc10a84",
+        "0002_contract_hardening": "4c8122f8180061e0792c4d1ab1fe3035e4bed86b4fe2f1939be3ae9dff1cdfc7",
+        "0003_identity": "cd35ecdb910bd96fe1b1d4be447569f76cca15ac39568d81ba5dfd5c921bf355",
+        "0004_identity_audit": "37a2b986b9bb2cb5e2fe820ba2800eb353600de02a00ec68f67495758adadd86",
+        "0005_identity_commands": "977ff4413adff1e1f2cd7b8a71f51cd6a4ef324bfcb09acc733dfc9f6be31053",
+        "0006_audit_sequence_scope": "b8276cec9eb351ce0c604df7630ff92cf602fe56b80ef9d1e93a4ab9e5893588"
+      },
+      "identity_session_rls": "passed",
+      "operational_erasure": "pending"
+    },
+    "dependency_audit": {
+      "status": "passed",
+      "npm_known_vulnerabilities": 0,
+      "python_known_vulnerabilities": 0
+    },
+    "gate": {
+      "status": "passed",
+      "reasons": [],
+      "source_digest": "42ce28bce1ca47065f5f27487ed3101cae09ac384973f245b327008e55b9b768"
+    }
+  },
+  "job_steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Run astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Locked dependencies",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Contracts and preserved evidence",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Private database and migrations",
+      "conclusion": "success",
+      "number": 7
+    },
+    {
+      "name": "Python API database security regression",
+      "conclusion": "success",
+      "number": 8
+    },
+    {
+      "name": "Synthetic backup and restore",
+      "conclusion": "success",
+      "number": 9
+    },
+    {
+      "name": "Dependency security audit",
+      "conclusion": "success",
+      "number": 10
+    },
+    {
+      "name": "Web types and build",
+      "conclusion": "success",
+      "number": 11
+    },
+    {
+      "name": "Install pinned browser engines",
+      "conclusion": "success",
+      "number": 12
+    },
+    {
+      "name": "Configure ephemeral runner TLS trust",
+      "conclusion": "success",
+      "number": 13
+    },
+    {
+      "name": "Start actual web service",
+      "conclusion": "success",
+      "number": 14
+    },
+    {
+      "name": "TesterArmy browser regression",
+      "conclusion": "success",
+      "number": 15
+    },
+    {
+      "name": "Real Keycloak identity and authorization regression",
+      "conclusion": "success",
+      "number": 16
+    },
+    {
+      "name": "Collect API-process and combined regression coverage",
+      "conclusion": "success",
+      "number": 17
+    },
+    {
+      "name": "Sanitize and enforce complete results",
+      "conclusion": "success",
+      "number": 18
+    },
+    {
+      "name": "Publish only sanitized evidence",
+      "conclusion": "success",
+      "number": 19
+    },
+    {
+      "name": "Stop disposable services",
+      "conclusion": "success",
+      "number": 20
+    },
+    {
+      "name": "Post Run astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9",
+      "conclusion": "success",
+      "number": 38
+    },
+    {
+      "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+      "conclusion": "success",
+      "number": 39
+    },
+    {
+      "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+      "conclusion": "success",
+      "number": 40
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success",
+      "number": 41
+    }
+  ]
+}

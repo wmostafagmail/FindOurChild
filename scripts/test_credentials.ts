@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import {readFileSync} from 'node:fs';
 import {createHmac} from 'node:crypto';
 function totp(secret:string){
@@ -12,3 +13,8 @@ function totp(secret:string){
 export function privateFixture(){return JSON.parse(readFileSync('.runtime/identity.json','utf8')) as {password:string,otp:string};}
 export function password(){return privateFixture().password;}
 export function otp(){return totp(privateFixture().otp);}
+
+// Resolved by the official runner only at secret fill time. Never logged or sent to a model.
+export function reporterCode(){
+  return execFileSync('.venv/bin/python',['-m','scripts.reporting_code'],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+}

@@ -6,7 +6,10 @@ from tests.conftest import ROOT
 
 CONTRACT = json.loads((ROOT / "docs/contracts/openapi.json").read_text())
 OPERATIONS = [
-    (method, path) for path, item in CONTRACT["paths"].items() for method in item if path.startswith("/v1/")
+    (method, path)
+    for path, item in CONTRACT["paths"].items()
+    for method, operation in item.items()
+    if operation["operationId"].startswith("api_")
 ]
 
 
@@ -20,7 +23,14 @@ def test_fnd_domain_operations_fail_closed(client, method, path, credential):
         headers=headers,
         json={"secret": "SYNTHETIC_SECRET_CANARY"},
     )
-    assert response.status_code == 503
-    assert response.json()["code"] == "PHASE_DISABLED"
+    implemented = CONTRACT["paths"][path][method]["x-implementation-status"] == "implemented-phase-1c"
+    if path == "/v1/public/safety":
+        assert response.status_code == 200
+        assert set(response.json()) == {"locale", "policy_version", "text"}
+        assert "CANARY" not in response.text
+        return
+    assert response.status_code in ({401, 403, 404, 422} if implemented else {503})
+    if not implemented:
+        assert response.json()["code"] == "PHASE_DISABLED"
     assert set(response.json()) == {"code", "message_key", "request_id"}
     assert "CANARY" not in response.text

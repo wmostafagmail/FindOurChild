@@ -1,5 +1,7 @@
 # Find Our Child
 
+> Current status (2026-10-25): Phase 1B is accepted after PR #3 merged and required hosted CI passed on exact main `9fcb6ef`. See [acceptance](docs/phase1b/ACCEPTANCE.md). Phase 1C implementation is under validation on `codex/phase-1c-reporting-case-management`. No Phase 2 authorization is inferred. Earlier status descriptions below are historical.
+
 Phase 1A is accepted after PR #1 and hosted CI on merged main `683180e`. **Phase 1B identity/security is implemented and technically validated in [draft PR #3](https://github.com/wmostafagmail/FindOurChild/pull/3), awaiting owner review.** Phase 1C has not begun; all 32 reporting/media/matching/safeguarding domain operations remain fail-closed with 503.
 
 Start with the [Phase 1B validation report](docs/phase1b/VALIDATION_REPORT.md), [current environment](docs/phase1b/ENVIRONMENT.md), [locks](docs/phase1b/LOCKED_DEPENDENCIES.md), [architecture](docs/phase1b/ARCHITECTURE.md), [source inventory](docs/phase1b/SOURCE_INVENTORY.md) and [test matrix](docs/TEST_MATRIX.md). Full required hosted validation executes 216 Python and 96 TesterArmy browser cases. Existing foundation commands remain available; identity/browser testing also requires the TLS/IdP steps in the current environment guide.

@@ -1,5 +1,7 @@
 # Phase 1B validation report
 
+> Current status (2026-10-25): Phase 1B is accepted after PR #3 merged and required hosted CI passed on exact main `9fcb6ef`. See [acceptance](ACCEPTANCE.md). Phase 1C implementation is under validation on `codex/phase-1c-reporting-case-management`. No Phase 2 authorization is inferred. Earlier status descriptions below are historical.
+
 **Assessment: Phase 1B technical validation passed; ready for owner review in [draft PR #3](https://github.com/wmostafagmail/FindOurChild/pull/3). Stop before Phase 1C.** No production or operational safeguarding approval is implied.
 
 Phase 1A is accepted after PR #1 merged into main at `683180e298d1dc0a461aa152007999f79ee70c71` and required hosted CI passed on that exact commit. [Acceptance](../phase1a/ACCEPTANCE.md) and [independently verified main evidence](../phase1a/main-merge-validation.json) preserve the 151 Python/72 browser results.

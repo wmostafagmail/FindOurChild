@@ -1,7 +1,7 @@
 // Phase 1A: actual services, synthetic fixtures, deterministic assertions, no model.
 import type { E2EConfig } from 'e2e';
 import { web } from '@e2e-dev/web';
-import {password,otp} from './scripts/test_credentials';
+import {password,otp,reporterCode} from './scripts/test_credentials';
 
 if (process.env.E2E_TELEMETRY_DISABLED !== '1' || process.env.DO_NOT_TRACK !== '1') {
   throw new Error('Testing requires both telemetry opt-out flags');
@@ -19,7 +19,7 @@ const widths = [320, 360, 390, 1280] as const;
 
 export default {
   projectId: 'find-our-child',
-  secrets: {staff_password:password,staff_otp:otp},
+  secrets: {staff_password:password,staff_otp:otp,reporter_code:reporterCode},
   tests: ['tests/browser/**/*.e2e.ts'],
   targets: browsers.flatMap((browser) => locales.flatMap((locale) => widths.map((width) => ({
     name: `${browser}-${locale}-${width}`,

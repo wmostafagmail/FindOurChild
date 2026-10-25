@@ -1,5 +1,7 @@
 # Find Our Child — test matrix
 
+> Phase 1C: [current traceability and exact execution inventory](phase1c/TEST_TRACEABILITY.md). Phase 1B is accepted; new Phase 1C cases remain pending until full source-bound hosted evidence is verified. The immutable Phase 0 151/630 baseline is preserved.
+
 > Phase 1B extension: [executable traceability](phase1b/TEST_TRACEABILITY.md). IDN-01–IDN-05 append exact identity/API/database/browser selectors to `docs/testing/test-matrix.json`; final hosted evidence passed on implementation `f2eb943` (216 Python and 96 browser executions), with [verified artifacts](phase1b/hosted-artifact-verification.json). Prior passing rows retain their historical Phase 1A evidence. Future reporting/safeguarding/ML tests remain pending.
 
 Current traceability: **166 features, 787 logical test cases**. Statuses: passed=161, pending=626.

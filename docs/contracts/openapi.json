@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Find Our Child",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Frozen domain design contract. All 32 domain operations are disabled in Phase 1A. Only health and contract serving are implemented. Identity, reporting and biometric features require later phase approval."
   },
   "servers": [
@@ -22,13 +22,14 @@
         "operationId": "api_01",
         "summary": "POST /v1/public/reports/missing",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-01",
         "security": [
           {
-            "IntakeChallenge": []
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
           }
         ],
         "parameters": [
@@ -40,15 +41,25 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "X-Intake-Challenge",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43
+            }
           }
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Accepted"
+                  "$ref": "#/components/schemas/ReportAccepted"
                 }
               }
             }
@@ -171,13 +182,14 @@
         "operationId": "api_02",
         "summary": "POST /v1/public/reports/found",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-02",
         "security": [
           {
-            "IntakeChallenge": []
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
           }
         ],
         "parameters": [
@@ -189,15 +201,25 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "X-Intake-Challenge",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43
+            }
           }
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Accepted"
+                  "$ref": "#/components/schemas/ReportAccepted"
                 }
               }
             }
@@ -320,13 +342,14 @@
         "operationId": "api_03",
         "summary": "POST /v1/public/access-requests",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-03",
         "security": [
           {
-            "IntakeChallenge": []
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
           }
         ],
         "parameters": [
@@ -338,11 +361,21 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "X-Intake-Challenge",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43
+            }
           }
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -469,13 +502,14 @@
         "operationId": "api_04",
         "summary": "POST /v1/public/access-exchanges",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-04",
         "security": [
           {
-            "IntakeChallenge": []
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
           }
         ],
         "parameters": [
@@ -487,11 +521,21 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "X-Intake-Challenge",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -618,9 +662,9 @@
         "operationId": "api_05",
         "summary": "GET /v1/reporter/submission",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-05",
         "security": [
           {
@@ -630,7 +674,7 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -747,9 +791,9 @@
         "operationId": "api_06",
         "summary": "POST /v1/reporter/supplements",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-06",
         "security": [
           {
@@ -779,7 +823,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -906,9 +950,9 @@
         "operationId": "api_07",
         "summary": "POST /v1/reporter/contact",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-07",
         "security": [
           {
@@ -938,7 +982,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1065,13 +1109,14 @@
         "operationId": "api_08",
         "summary": "POST /v1/public/abuse-reports",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-08",
         "security": [
           {
-            "IntakeChallenge": []
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
           }
         ],
         "parameters": [
@@ -1083,11 +1128,21 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "X-Intake-Challenge",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 43,
+              "maxLength": 43
+            }
           }
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1214,9 +1269,9 @@
         "operationId": "api_09",
         "summary": "GET /v1/public/safety",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-09",
         "security": [],
         "parameters": [
@@ -1235,7 +1290,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1352,9 +1407,9 @@
         "operationId": "api_10",
         "summary": "POST /v1/reporter/upload-intents",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-10",
         "security": [
           {
@@ -1384,7 +1439,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1511,9 +1566,9 @@
         "operationId": "api_11",
         "summary": "POST /v1/reporter/upload-intents/{id}/complete",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-11",
         "security": [
           {
@@ -1552,7 +1607,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1679,11 +1734,14 @@
         "operationId": "api_12",
         "summary": "GET /v1/staff/cases",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-12",
         "security": [
+          {
+            "StaffSession": []
+          },
           {
             "StaffBearer": []
           }
@@ -1706,11 +1764,20 @@
               "maximum": 100,
               "default": 25
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1827,11 +1894,14 @@
         "operationId": "api_13",
         "summary": "GET /v1/staff/cases/{id}",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-13",
         "security": [
+          {
+            "StaffSession": []
+          },
           {
             "StaffBearer": []
           }
@@ -1845,11 +1915,20 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -1973,13 +2052,13 @@
         "operationId": "api_14",
         "summary": "POST /v1/staff/cases/{id}/transitions",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-14",
         "security": [
           {
-            "StaffBearer": []
+            "StaffSession": []
           }
         ],
         "parameters": [
@@ -2009,11 +2088,20 @@
               "type": "string",
               "pattern": "^\"[1-9][0-9]*\"$"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2140,13 +2228,13 @@
         "operationId": "api_15",
         "summary": "POST /v1/staff/cases/{id}/assignments",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-15",
         "security": [
           {
-            "StaffBearer": []
+            "StaffSession": []
           }
         ],
         "parameters": [
@@ -2176,11 +2264,20 @@
               "type": "string",
               "pattern": "^\"[1-9][0-9]*\"$"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2307,13 +2404,13 @@
         "operationId": "api_16",
         "summary": "POST /v1/staff/cases/{id}/assertions",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-16",
         "security": [
           {
-            "StaffBearer": []
+            "StaffSession": []
           }
         ],
         "parameters": [
@@ -2343,11 +2440,20 @@
               "type": "string",
               "pattern": "^\"[1-9][0-9]*\"$"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2476,7 +2582,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-17",
         "security": [
           {
@@ -2641,11 +2747,14 @@
         "operationId": "api_18",
         "summary": "GET /v1/staff/media/{id}/content",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-18",
         "security": [
+          {
+            "StaffSession": []
+          },
           {
             "StaffBearer": []
           }
@@ -2659,11 +2768,20 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "Reauthorized permitted media stream",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "image/jpeg": {
                 "schema": {
@@ -2796,7 +2914,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-19",
         "security": [
           {
@@ -2963,7 +3081,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-20",
         "security": [
           {
@@ -3120,7 +3238,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-21",
         "security": [
           {
@@ -3285,13 +3403,13 @@
         "operationId": "api_22",
         "summary": "POST /v1/staff/cases/{id}/notes",
         "tags": [
-          "planned-domain"
+          "reporting-case-management"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "implemented-phase-1c",
         "x-feature-id": "API-22",
         "security": [
           {
-            "StaffBearer": []
+            "StaffSession": []
           }
         ],
         "parameters": [
@@ -3321,11 +3439,20 @@
               "type": "string",
               "pattern": "^\"[1-9][0-9]*\"$"
             }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "Planned success contract; unavailable in Phase 1A",
+            "description": "Synthetic Phase 1C success",
             "content": {
               "application/json": {
                 "schema": {
@@ -3454,7 +3581,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-23",
         "security": [
           {
@@ -3603,7 +3730,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-24",
         "security": [
           {
@@ -3752,7 +3879,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-25",
         "security": [
           {
@@ -3919,7 +4046,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-26",
         "security": [
           {
@@ -4068,7 +4195,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-27",
         "security": [
           {
@@ -4235,7 +4362,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-28",
         "security": [
           {
@@ -4402,7 +4529,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-29",
         "security": [
           {
@@ -4569,7 +4696,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-30",
         "security": [
           {
@@ -4717,7 +4844,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-31",
         "security": [
           {
@@ -4846,7 +4973,7 @@
         "tags": [
           "planned-domain"
         ],
-        "x-implementation-status": "disabled-phase-1a",
+        "x-implementation-status": "disabled-pending-later-phase",
         "x-feature-id": "API-32",
         "security": [
           {
@@ -5025,7 +5152,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/health/ready": {
@@ -5057,7 +5185,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/openapi.json": {
@@ -5079,7 +5208,8 @@
               }
             }
           }
-        }
+        },
+        "parameters": []
       }
     },
     "/identity/login": {
@@ -5142,7 +5272,8 @@
           }
         },
         "x-implemented-in": "1B",
-        "security": []
+        "security": [],
+        "parameters": []
       }
     },
     "/identity/callback": {
@@ -5205,7 +5336,8 @@
           }
         },
         "x-implemented-in": "1B",
-        "security": []
+        "security": [],
+        "parameters": []
       }
     },
     "/identity/me": {
@@ -5279,7 +5411,8 @@
           {
             "StaffSession": []
           }
-        ]
+        ],
+        "parameters": []
       }
     },
     "/identity/logout": {
@@ -5353,7 +5486,8 @@
           {
             "StaffSession": []
           }
-        ]
+        ],
+        "parameters": []
       }
     },
     "/identity/organizations/{org}/memberships": {
@@ -5652,6 +5786,894 @@
           }
         ]
       }
+    },
+    "/v1/public/intake-challenges": {
+      "post": {
+        "operationId": "reporting_intake_challenge",
+        "summary": "Create browser-bound synthetic intake challenge",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "RPT-01",
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Browser-bound challenge",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntakeChallenge"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reporter/upload-intents/{id}/content": {
+      "put": {
+        "operationId": "reporting_upload_content",
+        "summary": "Stream bounded bytes to immutable encrypted quarantine",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "API-11",
+        "security": [
+          {
+            "ReporterCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 32,
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Bound immutable version and checksum",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadComplete"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "image/png": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "image/jpeg": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            },
+            "image/webp": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/staff/cases/{id}/moderation": {
+      "post": {
+        "operationId": "reporting_moderation",
+        "summary": "Review, hold or pause a suspicious submission",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "API-14",
+        "security": [
+          {
+            "StaffSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\"[1-9][0-9]*\"$"
+            }
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Synthetic Phase 1C success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reference"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Moderation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/public/drafts": {
+      "get": {
+        "operationId": "reporting_draft_get",
+        "summary": "Private synthetic server draft get",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "RPT-DRAFT",
+        "security": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Synthetic Phase 1C success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftRead"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "reporting_draft_post",
+        "summary": "Private synthetic server draft post",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "RPT-DRAFT",
+        "security": [
+          {
+            "IntakeChallenge": [],
+            "IntakeBrowser": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Synthetic Phase 1C success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DraftSaved"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrivateDraft"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reporter/logout": {
+      "post": {
+        "operationId": "reporting_reporter_logout",
+        "summary": "Revoke own reporter session",
+        "tags": [
+          "reporting-case-management"
+        ],
+        "x-implementation-status": "implemented-phase-1c",
+        "x-feature-id": "API-07",
+        "security": [
+          {
+            "ReporterCapability": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-CSRF-Token",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 32,
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden action",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Inaccessible or nonexistent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict or idempotency body mismatch",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Stale revision",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported media",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Phase disabled or verification unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Session revoked",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoutDTO"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -5664,7 +6686,7 @@
       "ReporterCapability": {
         "type": "apiKey",
         "in": "cookie",
-        "name": "foc_reporter"
+        "name": "__Host-foc-reporter"
       },
       "IntakeChallenge": {
         "type": "apiKey",
@@ -5675,6 +6697,11 @@
         "type": "apiKey",
         "in": "cookie",
         "name": "__Host-foc-session"
+      },
+      "IntakeBrowser": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-foc-intake"
       }
     },
     "schemas": {
@@ -5859,6 +6886,14 @@
               "month",
               "interval"
             ]
+          },
+          "local_date_lower": {
+            "type": "string",
+            "format": "date"
+          },
+          "local_date_upper": {
+            "type": "string",
+            "format": "date"
           }
         },
         "required": [
@@ -6048,6 +7083,14 @@
           },
           "missing_at": {
             "$ref": "#/components/schemas/TimeInterval"
+          },
+          "reported_sex": {
+            "enum": [
+              "female",
+              "male",
+              "unknown",
+              "not_collected"
+            ]
           }
         },
         "required": [
@@ -6159,6 +7202,14 @@
           },
           "restricted_custody": {
             "$ref": "#/components/schemas/RestrictedIntake"
+          },
+          "reported_sex": {
+            "enum": [
+              "female",
+              "male",
+              "unknown",
+              "not_collected"
+            ]
           }
         },
         "required": [
@@ -6217,17 +7268,16 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "expires_at": {
-            "type": "string",
-            "format": "date-time"
+          "status": {
+            "const": "verified"
           },
-          "submission": {
-            "$ref": "#/components/schemas/Reference"
+          "expires_in": {
+            "const": 1800
           }
         },
         "required": [
-          "expires_at",
-          "submission"
+          "status",
+          "expires_in"
         ]
       },
       "Claim": {
@@ -6247,6 +7297,15 @@
           "source_id": {
             "type": "string",
             "format": "uuid"
+          },
+          "encoding": {
+            "type": "string",
+            "enum": [
+              "text",
+              "json"
+            ],
+            "default": "text",
+            "description": "Response projection distinguishes literal submitted text from bounded structured uncertainty; supplements remain literal text."
           }
         },
         "required": [
@@ -6356,11 +7415,28 @@
           "bytes": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 20971520
+            "maximum": 5242880
           },
           "sha256": {
             "type": "string",
             "pattern": "^[a-f0-9]{64}$"
+          },
+          "capture_date": {
+            "$ref": "#/components/schemas/DateInterval"
+          },
+          "capture_age": {
+            "$ref": "#/components/schemas/AgeInterval"
+          },
+          "purpose": {
+            "enum": [
+              "photograph",
+              "evidence"
+            ]
+          },
+          "subject_statement": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
           }
         },
         "required": [
@@ -6373,14 +7449,17 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "content-type": {
+          "Content-Type": {
             "type": "string",
-            "minLength": 1,
-            "maxLength": 128
+            "enum": [
+              "image/png",
+              "image/jpeg",
+              "image/webp"
+            ]
           }
         },
         "required": [
-          "content-type"
+          "Content-Type"
         ]
       },
       "UploadPermission": {
@@ -6462,6 +7541,13 @@
           "revision": {
             "type": "integer",
             "minimum": 1
+          },
+          "verification_status": {
+            "enum": [
+              "unverified",
+              "verified",
+              "disputed"
+            ]
           }
         },
         "required": [
@@ -6469,7 +7555,8 @@
           "organization_id",
           "registry",
           "lifecycle",
-          "revision"
+          "revision",
+          "verification_status"
         ]
       },
       "Case": {
@@ -6489,7 +7576,66 @@
           "verified_assertions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Assertion"
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "field": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "source_id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "precision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "claimed",
+                    "verified",
+                    "disputed"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "maxItems": 20
+                },
+                "verified_by": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                }
+              },
+              "required": [
+                "id",
+                "field",
+                "value",
+                "source_id",
+                "precision",
+                "state",
+                "evidence_refs",
+                "verified_by"
+              ]
             },
             "maxItems": 100
           },
@@ -6507,6 +7653,238 @@
               "null"
             ],
             "format": "uuid"
+          },
+          "contact_verified": {
+            "type": "boolean"
+          },
+          "contact_paused": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "author": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "revision": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "maxItems": 20
+                }
+              },
+              "required": [
+                "id",
+                "author",
+                "revision",
+                "text",
+                "evidence_refs"
+              ]
+            },
+            "maxItems": 100
+          },
+          "photographs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "state": {
+                  "enum": [
+                    "pending",
+                    "uploaded",
+                    "scanning",
+                    "ready",
+                    "rejected",
+                    "expired"
+                  ]
+                },
+                "media_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                },
+                "capture": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "capture_date": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/DateInterval"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "capture_age": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/AgeInterval"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "purpose": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "subject_statement": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "capture_date",
+                    "capture_age",
+                    "purpose",
+                    "subject_statement"
+                  ]
+                },
+                "scan_engine": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "scan_signature": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "state",
+                "media_id",
+                "capture",
+                "scan_engine",
+                "scan_signature"
+              ]
+            },
+            "maxItems": 10
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "field": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "source_id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "precision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "claimed",
+                    "verified",
+                    "disputed"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "maxItems": 20
+                },
+                "verified_by": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                }
+              },
+              "required": [
+                "id",
+                "field",
+                "value",
+                "source_id",
+                "precision",
+                "state",
+                "evidence_refs",
+                "verified_by"
+              ]
+            },
+            "maxItems": 100
+          },
+          "reporter_messages": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "message"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2000
+                }
+              }
+            }
           }
         },
         "required": [
@@ -6514,7 +7892,13 @@
           "claims",
           "verified_assertions",
           "evidence_refs",
-          "assignment"
+          "assignment",
+          "contact_verified",
+          "contact_paused",
+          "notes",
+          "photographs",
+          "assertions",
+          "reporter_messages"
         ]
       },
       "CasePage": {
@@ -6564,12 +7948,41 @@
               "$ref": "#/components/schemas/Claim"
             },
             "maxItems": 100
+          },
+          "upload_statuses": {
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "state"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "state": {
+                  "enum": [
+                    "pending",
+                    "uploaded",
+                    "scanning",
+                    "ready",
+                    "rejected",
+                    "expired"
+                  ]
+                }
+              }
+            }
           }
         },
         "required": [
           "id",
           "intake_status",
-          "submitted_claims"
+          "submitted_claims",
+          "upload_statuses"
         ]
       },
       "Transition": {
@@ -7680,6 +9093,292 @@
           "allowed"
         ],
         "title": "PermissionDTO"
+      },
+      "ReportAccepted": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "message_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "receipt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "request_id",
+          "message_key",
+          "receipt"
+        ]
+      },
+      "IntakeChallenge": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "challenge": {
+            "type": "string",
+            "minLength": 43,
+            "maxLength": 43
+          },
+          "expires_in": {
+            "const": 600
+          }
+        },
+        "required": [
+          "challenge",
+          "expires_in"
+        ]
+      },
+      "Moderation": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "hold",
+              "review",
+              "reject",
+              "fraud"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "decision",
+          "reason",
+          "evidence_refs"
+        ]
+      },
+      "MediaUploadResult": {
+        "$ref": "#/components/schemas/UploadComplete"
+      },
+      "PrivateDraft": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "registry",
+          "revision",
+          "fields"
+        ],
+        "properties": {
+          "registry": {
+            "enum": [
+              "missing",
+              "found"
+            ]
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "region": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "age": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "relationship": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "contact": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "birthLower": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "birthUpper": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "eventLower": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "eventUpper": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "marks": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "clothing": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "authority": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "aliases": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "nameLanguage": {
+                "type": "string",
+                "maxLength": 4000
+              },
+              "reportedSex": {
+                "type": "string",
+                "maxLength": 4000
+              }
+            }
+          }
+        }
+      },
+      "DraftRead": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "draft",
+          "revision"
+        ],
+        "properties": {
+          "draft": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "registry": {
+                "enum": [
+                  "missing",
+                  "found"
+                ]
+              },
+              "fields": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "region": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "age": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "contact": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "birthLower": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "birthUpper": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "eventLower": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "eventUpper": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "marks": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "clothing": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "authority": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "aliases": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "nameLanguage": {
+                    "type": "string",
+                    "maxLength": 4000
+                  },
+                  "reportedSex": {
+                    "type": "string",
+                    "maxLength": 4000
+                  }
+                }
+              }
+            },
+            "required": [
+              "registry",
+              "fields"
+            ],
+            "additionalProperties": false
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "DraftSaved": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "revision"
+        ],
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
       }
     }
   }

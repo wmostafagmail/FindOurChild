@@ -1,0 +1,28 @@
+{
+  "scope": "local real PostgreSQL/scanner/storage and controlled worker/outage tests; browser/TLS acceptance hosted only",
+  "source_digest": "62dd1f80cd9126faf44083ec312eea4ee32201a86486ce053d467c7c606edd28",
+  "baseline": {
+    "passed": 158,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "reporting": {
+    "passed": 107,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "scanner_outage": {
+    "passed": 1,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "recovery": {
+    "status": "passed",
+    "migrations": 21,
+    "reporting_metadata_rls": "passed",
+    "operational_erasure": "pending"
+  },
+  "configuration": "175 structural/history checks passed",
+  "types_and_production_build": "passed",
+  "dependency_audit": "passed with pinned runtime; 0 known vulnerabilities"
+}

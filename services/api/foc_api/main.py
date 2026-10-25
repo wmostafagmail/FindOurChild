@@ -1,3 +1,4 @@
+import hashlib
 import json
 import logging
 from pathlib import Path
@@ -22,6 +23,11 @@ def create_app(settings: Settings | None = None):
     from .identity import router
 
     app.include_router(router)
+    from .reporting import router as reporting_router
+
+    # Prefer concrete routes over generic action paths.
+    reporting_router.routes.sort(key=lambda route: route.path.count("{"))
+    app.include_router(reporting_router)
 
     @app.exception_handler(HTTPException)
     async def identity_error(request: Request, exc: HTTPException):
@@ -32,6 +38,7 @@ def create_app(settings: Settings | None = None):
                 "request_id": request.state.request_id,
             },
             status_code=exc.status_code,
+            headers=exc.headers,
         )
 
     @app.exception_handler(RequestValidationError)
@@ -45,8 +52,36 @@ def create_app(settings: Settings | None = None):
             status_code=422,
         )
 
+    @app.exception_handler(psycopg.errors.InsufficientPrivilege)
+    async def denied_database(request: Request, exc):
+        return JSONResponse(
+            {"code": "NOT_FOUND", "message_key": "errors.not_found", "request_id": request.state.request_id},
+            status_code=404,
+        )
+
+    @app.exception_handler(psycopg.errors.UniqueViolation)
+    async def conflict_database(request: Request, exc):
+        return JSONResponse(
+            {
+                "code": "IDEMPOTENCY_CONFLICT",
+                "message_key": "errors.conflict",
+                "request_id": request.state.request_id,
+            },
+            status_code=409,
+        )
+
     @app.exception_handler(psycopg.Error)
     async def database_error(request: Request, exc: psycopg.Error):
+        if exc.sqlstate in {"P0412", "P0409", "P0422"}:
+            status = {"P0412": 412, "P0409": 409, "P0422": 422}[exc.sqlstate]
+            return JSONResponse(
+                {
+                    "code": "REQUEST_CONFLICT",
+                    "message_key": "errors.conflict",
+                    "request_id": request.state.request_id,
+                },
+                status_code=status,
+            )
         return JSONResponse(
             {
                 "code": "SERVICE_UNAVAILABLE",
@@ -60,6 +95,18 @@ def create_app(settings: Settings | None = None):
     async def security_headers(request: Request, call_next):
         request_id = str(uuid4())  # Never trust an inbound correlation string in reports.
         request.state.request_id = request_id
+        if request.method in {"POST", "PUT", "PATCH"}:
+            ceiling = 5242880 if request.url.path.endswith("/content") else 65536
+            chunks = bytearray()
+            async for chunk in request.stream():
+                chunks.extend(chunk)
+                if len(chunks) > ceiling:
+                    return JSONResponse(
+                        {"code": "TOO_LARGE", "message_key": "errors.too_large", "request_id": request_id},
+                        status_code=413,
+                        headers={"Cache-Control": "no-store"},
+                    )
+            request._body = bytes(chunks)
         response = await call_next(request)
         response.headers.update(
             {
@@ -88,6 +135,14 @@ def create_app(settings: Settings | None = None):
                 ).fetchone()
                 if row is None or row[:2] != ("synthetic", "0001") or role != (False, False):
                     raise RuntimeError("Untrusted database identity")
+                required = {
+                    p.stem: hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in (Path(__file__).resolve().parents[3] / "database/migrations").glob("*.sql")
+                }
+                applied = dict(conn.execute("SELECT version,sha256 FROM platform.migrations").fetchall())
+                if not required or any(applied.get(k) != v for k, v in required.items()):
+                    raise RuntimeError("Required migration not applied")
+
             return {
                 "status": "ready",
                 "data_class": "synthetic",

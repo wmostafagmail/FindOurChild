@@ -18,12 +18,26 @@ class Results:
     def __init__(self):
         self.collected = []
         self.reports = {}
+        self.failures = {}
 
     def pytest_collection_finish(self, session):
         self.collected = [item.nodeid for item in session.items]
 
     def pytest_runtest_logreport(self, report):
         self.reports.setdefault(report.nodeid, {})[report.when] = report.outcome
+        if report.failed:
+            crash = getattr(report.longrepr, "reprcrash", None)
+            if crash:
+                candidate = Path(crash.path)
+                try:
+                    location = str(candidate.resolve().relative_to(ROOT))
+                except ValueError:
+                    location = "external"
+                line = getattr(crash, "lineno", 0)
+                self.failures.setdefault(report.nodeid, {})[report.when] = {
+                    "file": location if location.startswith("tests/") else "external",
+                    "line": line if isinstance(line, int) and 0 <= line <= 20000 else 0,
+                }
 
 
 def main():
@@ -86,6 +100,13 @@ def main():
     # Combined API-process + baseline + host identity coverage is enforced at 75% in the final CI gate.
     # No clean skips, empty discovery, uncollected mandatory cases or teardown failures count as success.
     expected = json.loads((ROOT / "docs/phase1a/required-tests.json").read_text())["python"]
+    failed = [
+        {"id": t["id"], "locations": results.failures.get(t["id"], {})}
+        for t in entries
+        if t["status"] != "passed" and t["id"] in expected
+    ]
+    if failed:
+        print("Sanitized failure locations: " + json.dumps(failed))
     if (
         digest != fingerprint()
         or set(expected) != set(results.collected)

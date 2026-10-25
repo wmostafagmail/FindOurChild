@@ -17,6 +17,9 @@ def main():
         )
         from scripts.identity_setup import seed
         seed(conn)
+        from scripts.reporting_setup import seed as reporting_seed
+        reporting_seed(conn)
+        conn.execute(sql.SQL("ALTER ROLE foc_worker PASSWORD {}").format(sql.Literal(os.environ["FOC_WORKER_PASSWORD"])))
         row = conn.execute("SELECT instance_id::text FROM platform.environment").fetchone()
     Path(".runtime/instance.json").write_text(
         json.dumps({"database": "foc_synthetic", "instance_id": row[0], "data_class": "synthetic"})

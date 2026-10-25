@@ -101,6 +101,16 @@ def main():
         ):
             raise RuntimeError("Restored command RLS disabled")
         report["identity_session_rls"] = "passed"
+        unsafe = int(
+            query(
+                name,
+                "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='platform' AND c.relkind='r' AND c.relname NOT IN ('environment','migrations') AND NOT(c.relrowsecurity AND c.relforcerowsecurity)",
+            )
+        )
+        if unsafe:
+            raise RuntimeError("Restored private metadata RLS disabled")
+        report["reporting_metadata_rls"] = "passed"
+
         report["hardening_sha256"] = hardening
         output = ROOT / "artifacts/raw"
         output.mkdir(parents=True, exist_ok=True)

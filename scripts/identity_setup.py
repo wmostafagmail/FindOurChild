@@ -29,12 +29,22 @@ REVOCATIONS = [
     "grant_revoked",
     "grant_expired",
 ]
-EXTRA_USERS = [
-    f"synthetic-{b}-{l}-{w}"
-    for b in ["chromium", "firefox", "webkit"]
-    for l in ["ar-EG", "en-GB"]
-    for w in [320, 360, 390, 1280]
-] + ["synthetic-revoke-" + name for name in REVOCATIONS]
+EXTRA_USERS = (
+    [
+        f"synthetic-{b}-{l}-{w}"
+        for b in ["chromium", "firefox", "webkit"]
+        for l in ["ar-EG", "en-GB"]
+        for w in [320, 360, 390, 1280]
+    ]
+    + ["synthetic-revoke-" + name for name in REVOCATIONS]
+    + [
+        f"synthetic-reporting-{b}-{l}-{w}"
+        for b in ["chromium", "firefox", "webkit"]
+        for l in ["ar-EG", "en-GB"]
+        for w in [320, 360, 390, 1280]
+    ]
+    + ["synthetic-reporting-http", "synthetic-intake-moderator"]
+)
 
 
 def fixture_id(name):
