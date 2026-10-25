@@ -10,6 +10,11 @@ for(const registry of ['missing','found']){
   await expect(screen.getByRole('heading','Reporting and case management')).toBeVisible();
   await browser.locator('[data-testid="registry"]').selectOption({value:registry});
   await browser.locator('[data-testid="child-name"]').fill('Synthetic <script>not executable</script>');
+  await screen.getByTestId('save-draft').click();
+  await expect(screen.getByTestId('reporting-status')).toContainText('Private server draft saved');
+  await app.open('/en/reporting');
+  await expect(browser.locator('[data-testid="registry"]')).toHaveValue(registry);
+  await expect(browser.locator('[data-testid="child-name"]')).toHaveValue('Synthetic <script>not executable</script>');
   await screen.getByRole('button','العربية').click();
   await expect(browser.locator('html')).toHaveAttribute('dir','rtl');
   await expect(screen.getByRole('heading','الإبلاغ وإدارة الحالات')).toBeFocused();
@@ -21,6 +26,7 @@ for(const registry of ['missing','found']){
   await screen.getByTestId('submit-report').click();
   await expect(screen.getByTestId('reporting-status')).toContainText('Your report has been received for review.');
   const receipt=await browser.locator('[data-testid="receipt"]').inputValue();expect(receipt.length).toBe(43);
+  expect(await browser.evaluate(async()=>{const r=await fetch('/v1/public/drafts');return {status:r.status,draft:(await r.json()).draft};})).toEqual({status:200,draft:null});
   writeFileSync('.runtime/e2e-receipt.json',JSON.stringify({receipt}),{mode:0o600});
   try{
    await screen.getByTestId('request-code').click();
@@ -45,6 +51,10 @@ for(const registry of ['missing','found']){
   await screen.getByTestId('upload-files').click();
   await expect(screen.getByTestId('reporting-status')).toContainText('Files entered quarantine');
   expect(await browser.locator('img').count()).toBe(0);
+  await expect(screen.getByText('Sanitized review copy ready',{exact:true})).toHaveCount(2);
+  await screen.getByLabel('Message through NGO relay',{exact:true}).fill('Synthetic private relay statement');
+  await screen.getByRole('button','Send safe message',{exact:true}).click();
+  await expect(screen.getByTestId('reporting-status')).toContainText('Message received for review.');
   const boundary=await browser.evaluate(async()=>({staff:(await fetch('/v1/staff/cases?organization_id=10000000-0000-4000-8000-000000000001')).status,csrf:(await fetch('/v1/reporter/contact',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':'forged','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({message:'synthetic'})})).status,storage:localStorage.length+sessionStorage.length,overflow:document.documentElement.scrollWidth>innerWidth}));
   expect(boundary).toEqual({staff:401,csrf:403,storage:0,overflow:false});
   await browser.evaluate('() => {\n'+axeSource+'\n; return true;\n}');
@@ -54,6 +64,10 @@ for(const registry of ['missing','found']){
   expect(await browser.evaluate(()=>{document.documentElement.style.fontSize='200%';return document.documentElement.scrollWidth<=innerWidth;})).toBe(true);
   await browser.evaluate('() => {\n'+axeSource+'\n; return true;\n}');
   expect(await browser.evaluate(`async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>v.id)`)).toEqual([]);
+  await screen.getByRole('button','English').click();
+  await screen.getByRole('button','End reporter session',{exact:true}).click();
+  await expect(screen.getByTestId('reporter-state')).toHaveAttribute('data-state','unverified');
+  expect(await browser.evaluate(async()=>(await fetch('/v1/reporter/submission')).status)).toBe(401);
  });
 }
 
