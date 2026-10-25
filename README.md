@@ -1,6 +1,14 @@
 # Find Our Child
 
-> Current status (2026-10-25): Phase 1B is accepted after PR #3 merged and required hosted CI passed on exact main `9fcb6ef`. See [acceptance](docs/phase1b/ACCEPTANCE.md). Phase 1C implementation is under validation on `codex/phase-1c-reporting-case-management`. No Phase 2 authorization is inferred. Earlier status descriptions below are historical.
+Phase 1B is accepted after PR #3 merged and required CI passed on exact main `9fcb6ef`. [Acceptance evidence](docs/phase1b/ACCEPTANCE.md).
+
+Phase 1C reporting and case management is implemented and technically validated in [draft PR #4](https://github.com/wmostafagmail/FindOurChild/pull/4), awaiting owner review. [Validation report](docs/phase1c/VALIDATION_REPORT.md), [reproducible environment](docs/phase1c/ENVIRONMENT.md), [architecture](docs/phase1c/ARCHITECTURE.md), [locks](docs/phase1c/LOCKED_DEPENDENCIES.md), [source inventory](docs/phase1c/SOURCE_INVENTORY.md) and [traceability](docs/phase1c/TEST_TRACEABILITY.md).
+
+Required hosted validation passed: **332 Python tests, 168 official TesterArmy browser executions (56 each Chromium/Firefox/WebKit), all 21 migrations and restore/RLS, security audits and sanitized artifact gates**. Synthetic data only. No production facial recognition, operational child release or Phase 2 work.
+
+## Historical phase records
+
+Earlier status statements and commands below describe their recorded phase. Current Phase 1C instructions and limits are linked above.
 
 Phase 1A is accepted after PR #1 and hosted CI on merged main `683180e`. **Phase 1B identity/security is implemented and technically validated in [draft PR #3](https://github.com/wmostafagmail/FindOurChild/pull/3), awaiting owner review.** Phase 1C has not begun; all 32 reporting/media/matching/safeguarding domain operations remain fail-closed with 503.
 

@@ -1,7 +1,7 @@
 {
   "scope": "Local-only current-source regression. Not a complete hosted acceptance artifact.",
-  "recorded_at": "2026-10-25T05:47:20.347099+00:00",
-  "source_digest": "df4590562d75150e703fd03f4bca47843519961bc0b36854797fcb1eb2d534b8",
+  "recorded_at": "2026-10-25T06:27:52.302074+00:00",
+  "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
   "execution_sources": {
     ".coveragerc": "7a2f55d87025644575f812af91e3172a5c34f6feb85c88e844a131785a03f804",
     ".github/workflows/phase1a.yml": "4db2a4d703449c65354ec1f6f186b0c703672e24da71f16781b97ab957aa5527",
@@ -9,7 +9,7 @@
     "apps/web/app/[locale]/identity/session.tsx": "c36a7b6133708de6deabbfca6c573cd4338cce00e95772d701a28392901981c1",
     "apps/web/app/[locale]/page.tsx": "c95876f068c0ade894a6dbe68c7eef41f68b5efde9933031627710faf3477c76",
     "apps/web/app/[locale]/reporting/page.tsx": "13676f5a3fead855535d344803236b5bf990a023d8fe03963383b8bb034924f1",
-    "apps/web/app/[locale]/reporting/reporting.tsx": "b2ceb6fa086e5f06f5d3e7809f6d4ff2aecd64f79f1009e172d2b085f5eb0dfc",
+    "apps/web/app/[locale]/reporting/reporting.tsx": "3d4bc5feeb3bbeadff883003857e46548424a78c9054a1f31ebe48b6a0909c2c",
     "apps/web/app/identity/[...path]/route.ts": "548e95f892748e187dcbe34c30cf34b8679d5821d8671dbf121d734278a54ba8",
     "apps/web/app/layout.tsx": "120aac3b1635afee01c64f11343c2cf5b7982479a2d0aab25e141dc12ea0bd8c",
     "apps/web/app/page.tsx": "dfa78bb4d3098db85d63af7603edd6b0dad0ffdf160541fbab2665518b358588",
@@ -45,7 +45,7 @@
     "docs/contracts/openapi.json": "ac4fc1cbb03d9414515aa65dff92d18cd2363c2564245f6010ea2aab096624d0",
     "docs/phase1a/required-tests.json": "ec635421cb82b7db937020e4373172aa6bb455e193a7719a896f6c0d7b2b75e6",
     "docs/phase1b/required-tests.json": "1c86bf28a39e8492e8c41bd82b06c3fe79fd187d5e3a052e1fb4ca3e7d9f5c99",
-    "docs/phase1c/required-tests.json": "25204721461e50921ecea42eec0e5f31f06faa8b11f8cc95dcf352a50f435f3d",
+    "docs/phase1c/required-tests.json": "d764e13f9d2ed7c536524f53dd7e949e453c873fbd9cfdfa551438d6ab484cfb",
     "e2e.config.ts": "e9fa4a6e443bf160d1765f3ac34081164bf86e19be383dd17070e05a002edef2",
     "package-lock.json": "7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff",
     "package.json": "ab247effd48b47af2560056b1159291f45f7142a7d7792d64076fbae59b256ea",
@@ -67,15 +67,15 @@
     "scripts/migrate.py": "10a3a4e15d7c30e7fa48c851ea2ecb7869f59da2a42111bff61bf4cef29c2410",
     "scripts/preflight.py": "f884c667c6d04dbe3361a6744c930b9baa6177f42c653f60f0678c7ca39b7fae",
     "scripts/recovery.py": "326a7683c6bf3704317855d8914bb5deb799869b2d18981d09e811ce4b06bbff",
-    "scripts/reporting_code.py": "9d1732c91aa366833b6028d1889c1d00e41e573034447dc5d20492f210403f3c",
+    "scripts/reporting_code.py": "8b663855d5450e520052afac852bad86205985b4a9549e25a7d488d75620a28e",
     "scripts/reporting_http_test.py": "44cd077a4a4b199cfbdb440fac4240aa334918efbb349c48ed18274c37cb4532",
     "scripts/reporting_setup.py": "ade39a3a6410fc009dfca882962c253d9c9b9a5894fc2378c2ae6d101baa1aa2",
     "scripts/reporting_test.py": "b092e47d2822533f6a0c8dc8b908fbe327438bec2639de444140d38e56b91150",
     "scripts/reporting_validate.py": "bd5eb4f485422a8b9c3fbf37cb864b7500334e84d27788aa6508364f4eb56638",
     "scripts/resilience_test.py": "92ade528a8e8a87d0fd833dcfbebecf77d6a4f650fcd9862b3fb578ec0cf9cef",
     "scripts/results_gate.py": "037b2b50bff18eb17dfbb0103872423e21a99005c2d5ac725683bd667793dc08",
-    "scripts/run-browser.mjs": "7993aec4876fad1e7077ff0f06448fd313312c79b10a6844bcfe9d1db3a7a167",
-    "scripts/test.py": "e90eb96863911c20aa4ebe8a437044e47caeba96370bec4aecb753ceafcf109a",
+    "scripts/run-browser.mjs": "504c00529494d3c1e882d6390c76c94b29aa77752e7f509f991e3b65f505dacb",
+    "scripts/test.py": "304102c96000d3b095fc549a17a0f058c4a9c5435b309126ff9e9554b146e7b1",
     "scripts/test_credentials.ts": "f2120bae909a1dbc1a6b0651428632c62e55ac610ea6e69c95cfd9bdeef52a11",
     "scripts/tls.mjs": "6ca72614de76200800c5462066affdeb4d5a4aa72cf6b4467258a4883ccb81f1",
     "scripts/tls_setup.py": "aedcc4963c0e2bfea6b7484483bafc5adc05b3887bf01864f107e11ee328013f",
@@ -87,7 +87,7 @@
     "services/api/foc_api/identity.py": "dace4e6002d74c07119a69e2f74dbc84423a4fa0b8e93dfce2063f4dba6cf30e",
     "services/api/foc_api/main.py": "c2b1f2e46f51c75592ab19ebc52e240eb2df0a3221657cae6b351108698fa8a2",
     "services/api/foc_api/media.py": "28f40a71f91206081e500d8e7635dd2925ac28b691707b3d7e20b87ab25c8784",
-    "services/api/foc_api/reporting.py": "0eaccddc7998fb3202b880adf14855f415cbe7bb115b8c20065cc6a48280e8a2",
+    "services/api/foc_api/reporting.py": "c593dbee22fb5bf62fda373c48c075aa4f234a2e991d2433eb537f2250eed248",
     "services/api/foc_api/worker.py": "fb2748b2691af4c29cd8ae6a4056c0298cbc08b315c7e32e028380d899b7cf08",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -95,7 +95,7 @@
     "tests/browser/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/browser/foundation.e2e.ts": "fcfb1316be78fe6a5e5253ca4f4a49f34730bc3c498ad26d37352eb8623e415d",
     "tests/browser/identity.e2e.ts": "8e489c2cb118aa6874fa69ef3211ea0645d0c54e20cc86338bc0f6bbb1f2ac07",
-    "tests/browser/reporting.e2e.ts": "e2f71aa9d89da785ee39465267d9d06f031596d8feb0967f5060af9e4da0dc92",
+    "tests/browser/reporting.e2e.ts": "f9148f279df7f03d0f5de222acbb38b480c2670221635f983cb5f59f5859d482",
     "tests/conftest.py": "c5d8ac8691bb44f4ced98ab34c7f7ea4388357d6f5dba48a439a62340d998765",
     "tests/database/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/database/test_contract_hardening.py": "1c50ee739b3207827156f59f95d56479ee6fa47e450099a9dfa0492ea73f3e42",
@@ -112,11 +112,11 @@
     "tests/reporting/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/reporting/helpers.py": "9fbb3631f91c4b3299f6d6b292998e3e4f15db86844454e21f6ce171d05842d5",
     "tests/reporting/test_cases.py": "e14a6ed5b87d9043261c1a3d0e1f2a6204818fe27c12b4198a0e7125c8639868",
-    "tests/reporting/test_intake.py": "cb018138323905b100b0c9db4294cea4aed302ce7e8681f81cf57b83d854f1ca",
+    "tests/reporting/test_intake.py": "bc85818a0082ff4f23ff94cabfce425bb327f3e7ab65a1d45e2a4df48162d48d",
     "tests/reporting/test_media.py": "9d6433f6ae63230adb3367474e9575f2a1ac168c882b0bd124b9aa0f570013e2",
     "tests/reporting/test_workers.py": "b5607417dd09c771799fcc1d9d06abc735f2fdcd32ee320e84aa458df12ea623",
     "tests/reporting_http/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/reporting_http/test_live.py": "0d37f0d7a6e35a84cd47cb7663a25201fe893db6493d2d9fcbfd9e2be27570e7",
+    "tests/reporting_http/test_live.py": "c3c6641ffa1963d0c2e8532fecd494fae2266110a8b00c4a864d146b77c83fbb",
     "tests/resilience/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/resilience/test_scanner_outage.py": "2b2f1e71b424fcb8700bc39ccd0e78bc964516e76e34e75ed8b39b0422fc34ac",
     "tests/security/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -132,12 +132,12 @@
   },
   "lanes": {
     "baseline": {
-      "source_digest": "df4590562d75150e703fd03f4bca47843519961bc0b36854797fcb1eb2d534b8",
+      "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
       "executed": 158,
       "passed": 158,
       "skipped": 0,
       "failed": 0,
-      "raw_report_sha256": "66e18f32dede6fe50a4a5f1c3c177eab2dd5e8d0453939ad7eb5ff679d3c1bf1",
+      "raw_report_sha256": "2e7316469cef58e46c925e81de916259a712f43f57fc0fb3d4ef0b89dfa39ebe",
       "tests": [
         {
           "id": "tests/unit/test_foundation.py::test_fnd_config_rejects_non_synthetic[None]",
@@ -1564,12 +1564,12 @@
       ]
     },
     "reporting": {
-      "source_digest": "df4590562d75150e703fd03f4bca47843519961bc0b36854797fcb1eb2d534b8",
-      "executed": 108,
-      "passed": 108,
+      "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
+      "executed": 109,
+      "passed": 109,
       "skipped": 0,
       "failed": 0,
-      "raw_report_sha256": "fc2970a08740c39f4a0469b8f6ff8c5fca5568a5365562733babda5a6c0f00e2",
+      "raw_report_sha256": "857ece5b9e3f75069d1124d67fb9104e0cc18a222168fd8b378347e12fda0cbd",
       "tests": [
         {
           "id": "tests/reporting/test_cases.py::test_case_projection_is_closed_and_has_no_custody_or_contacts",
@@ -2229,6 +2229,15 @@
           }
         },
         {
+          "id": "tests/reporting/test_intake.py::test_signed_anonymous_browser_limits_isolate_reporters_and_bound_peer_admission",
+          "status": "passed",
+          "stages": {
+            "setup": "passed",
+            "call": "passed",
+            "teardown": "passed"
+          }
+        },
+        {
           "id": "tests/reporting/test_media.py::test_real_clamav_versioned_storage_and_sanitized_derivative[image/png-PNG]",
           "status": "passed",
           "stages": {
@@ -2546,12 +2555,12 @@
       ]
     },
     "scanner_outage": {
-      "source_digest": "df4590562d75150e703fd03f4bca47843519961bc0b36854797fcb1eb2d534b8",
+      "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
       "executed": 1,
       "passed": 1,
       "skipped": 0,
       "failed": 0,
-      "raw_report_sha256": "6793a4a0400e6ffa7057dfdce78e6b7c6412e3a2090e5f0c60000da796f36ca6",
+      "raw_report_sha256": "e0c32c3ff6ad6694beed98eaecf430da5af406cbe08a6e5ad0d07c99e3d5eff7",
       "tests": [
         {
           "id": "tests/resilience/test_scanner_outage.py::test_actual_scanner_outage_keeps_media_quarantined_and_retries_bounded",
@@ -2570,31 +2579,38 @@
     "checks": 175,
     "historical_validators_passed": true
   },
-  "types": "passed",
-  "production_build": "passed",
+  "types": "Prior identical web source passed; full current-source hosted validation pending",
+  "production_build": "Prior identical web source passed; full current-source hosted validation pending",
   "logs": {
-    "foc-phase1c-prototype-baseline.log": {
-      "sha256": "a58d5632f878465fc3608b02adafd8031cee3bcb5ef9d434732b03d606730b89",
-      "location": "/private/tmp/foc-phase1c-prototype-baseline.log"
+    "foc-phase1c-owner-final-baseline.log": {
+      "sha256": "f3996fd478020c2d6344d42d0e6eb7c5c326bc332525123102bacfe172c20ee0",
+      "location": "/private/tmp/foc-phase1c-owner-final-baseline.log"
     },
-    "foc-phase1c-prototype-reporting.log": {
-      "sha256": "7c858472fee8e9f5d145b81de1efc6432b5b442a2020cfee94aac4b48124ca6f",
-      "location": "/private/tmp/foc-phase1c-prototype-reporting.log"
+    "foc-phase1c-owner-final-reporting.log": {
+      "sha256": "b55df39eb9ad97e3193d08f891a426574f776a7cdd68c4c5cd3202b443766c30",
+      "location": "/private/tmp/foc-phase1c-owner-final-reporting.log"
     },
-    "foc-phase1c-prototype-final-types.log": {
-      "sha256": "a6060b9d1a6f530bbf3a764ef316cd85f773258e28bac0ba9bee93130257a633",
-      "location": "/private/tmp/foc-phase1c-prototype-final-types.log"
-    },
-    "foc-phase1c-prototype-build.log": {
-      "sha256": "256ba4f2cc3d97918709bc982c50aed883e4e25db5b02f77a85c619c5293436f",
-      "location": "/private/tmp/foc-phase1c-prototype-build.log"
+    "foc-phase1c-owner-final-recovery.log": {
+      "sha256": "8d0da6472b0d69be2a1be62890e8c178f56f505fd5ecd81b00480602a5353144",
+      "location": "/private/tmp/foc-phase1c-owner-final-recovery.log"
     }
   },
-  "pending": [
+  "recovery": {
+    "status": "passed",
+    "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
+    "migrations": 21,
+    "app_tables_forced_rls": 41,
+    "identity_session_rls": "passed",
+    "reporting_metadata_rls": "passed",
+    "operational_erasure": "pending",
+    "report_sha256": "c8499901d28a1bab5413d09397a57a4c68e0ac2964a300b06351dfe13563d742"
+  },
+  "outside_local_scope": [
     "identity 58",
     "reporting TLS HTTP 6",
     "TesterArmy 168 (56 per Chromium/Firefox/WebKit)",
-    "current-source recovery and dependency audit",
+    "current-source dependency audit",
     "hosted sanitized artifact and final commit verification"
-  ]
+  ],
+  "hosted_evidence": "hosted-artifact-verification.json"
 }

@@ -38,7 +38,7 @@ for fid,title,suite,nodes,related in groups:
         else:file=node.split('::')[0];command='.venv/bin/python -m scripts.reporting_http_test' if suite=='integration' else '.venv/bin/python -m scripts.reporting_validate'
         cases.append({'test_case_id':f'TC_{fid.replace("-","_")}_{i:03}','kind':'positive_negative_security_edge','scenario':node,'planned_file':file,'planned_selector':node,'planned_command':command,'expected_outcome':'Exact DTO/state/absence/authorization assertions in the executable; no unauthorized disclosure, unsafe ready image, duplicate committed action or unexecuted mandatory target.','required_from_phase':'1C','phase1c_required':True,'status':status,'execution_evidence':{'artifact':'artifacts/phase1c-sanitized/results.json','source_digest':evidence['gate']['source_digest']} if evidence else None})
         all_nodes.append(node)
-    x['features'].append({'feature_id':fid,'category':suite,'source':'phase1c/ARCHITECTURE.md','title':title,'suite':suite,'phase_introduced':'1C','related_requirements':related,'positive_scenarios':'Unknown/no-photo missing/found intake; verified own-submission access; clean multi-image evidence; authorized human case operations and recoverable private drafts.','negative_scenarios':'Malformed/oversize/forged/replayed requests, wrong contacts, expired/revoked capabilities, unapproved notices, invalid media/scanner outage and stale revisions deny without unsafe effects.','security_authorization_scenarios':'Cross-org/case/no-grant/forged-CSRF/original-media access denied; claimed parent/guardian never gains staff/custody; current access rechecked before publication/delivery; audit failures roll back.','edge_cases':'Offset ordering/unknown dates, literal text, concurrent revision writes, process loss before/after each object write, stale fencing, unbound uploads, quotas, orphan cleanup acknowledgments and source/result reconciliation.','fixture_ids':['FX-REPORTING','FX-BASE','FX-IDP','FX-MEDIA','FX-EVENT','FX-DB','FX-FAILURE'],'expected_outcomes':'Deterministic current-source assertions pass in every required lane/target. Synthetic data and sanitized artifacts only; disabled matching/disclosure/release remain denied.','test_cases':cases})
+    x['features'].append({'feature_id':fid,'category':suite,'source':'phase1c/ARCHITECTURE.md','title':title,'suite':suite,'phase_introduced':'1C','current_validation_status':status,'execution_evidence':{'artifact':'artifacts/phase1c-sanitized/results.json','source_digest':evidence['gate']['source_digest']} if evidence else None,'related_requirements':related,'positive_scenarios':'Unknown/no-photo missing/found intake; verified own-submission access; clean multi-image evidence; authorized human case operations and recoverable private drafts.','negative_scenarios':'Malformed/oversize/forged/replayed requests, wrong contacts, expired/revoked capabilities, unapproved notices, invalid media/scanner outage and stale revisions deny without unsafe effects.','security_authorization_scenarios':'Cross-org/case/no-grant/forged-CSRF/original-media access denied; claimed parent/guardian never gains staff/custody; current access rechecked before publication/delivery; audit failures roll back.','edge_cases':'Offset ordering/unknown dates, literal text, concurrent revision writes, process loss before/after each object write, stale fencing, unbound uploads, quotas, orphan cleanup acknowledgments and source/result reconciliation.','fixture_ids':['FX-REPORTING','FX-BASE','FX-IDP','FX-MEDIA','FX-EVENT','FX-DB','FX-FAILURE'],'expected_outcomes':'Deterministic current-source assertions pass in every required lane/target. Synthetic data and sanitized artifacts only; disabled matching/disclosure/release remain denied.','test_cases':cases})
 assert len(all_nodes)==len(set(all_nodes))==sum(len(required[k]) for k in ['python','resilience','http','browser_titles'])
 x['application_test_status']='phase1c_hosted_technical_validation_passed_awaiting_owner_review' if evidence else 'phase1b_accepted_phase1c_validation_pending'
 registry.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
@@ -49,14 +49,53 @@ for fid,title,suite,nodes,related in groups:
     lines += [f'| TC_{fid.replace("-","_")}_{i:03} | `{node}` | {status} |' for i,node in enumerate(nodes,1)]
     lines += ['']
 lines+=['## API, jobs, database and safeguarding crosswalk','','| Boundary | Executable coverage / status |','|---|---|']
+operation_scenarios={
+ 'api_01':['unknown_attributes_without_photo_create_independent_quarantined_reports[missing]','intake_rejects_invalid_or_unapproved_payload','idempotency_exact_replay_and_conflict','challenge_and_transport_boundaries'],
+ 'api_02':['unknown_attributes_without_photo_create_independent_quarantined_reports[found]','restricted_custody_never_in_receipt_submission_or_staff_projection','intake_rejects_invalid_or_unapproved_payload','challenge_and_transport_boundaries'],
+ 'api_03':['neutral_access_request_for_unknown_and_wrong_contact','access_request_replay_keeps_original_verification_code','reporter_expiry_revocation_and_verification_fail_safely'],
+ 'api_04':['code_one_use_contact_possession_not_guardianship','reporter_expiry_revocation_and_verification_fail_safely','contact_verified_claimants_never_gain_staff_or_custody_authority'],
+ 'api_05':['restricted_custody_never_in_receipt_submission_or_staff_projection','code_one_use_contact_possession_not_guardianship','reporter_expiry_revocation_and_verification_fail_safely'],
+ 'api_06':['supplement_immutable_original_and_replay','reporter_csrf_and_arbitrary_evidence_denied','untrusted_supplement_keys_and_values_remain_literal_unverified_claims'],
+ 'api_07':['reporter_csrf_and_arbitrary_evidence_denied','public_command_replay_cannot_change_contact_or_duplicate_concern'],
+ 'api_08':['abuse_report_does_not_lookup_receipt','public_command_replay_cannot_change_contact_or_duplicate_concern'],
+ 'api_09':['bilingual_safety_has_no_unapproved_emergency_numbers'],
+ 'api_10':['multiple_photos_keep_individual_intents_and_no_automatic_identity','upload_quota_and_oversize_rejected_before_storage','upload_binding_rejects_tampering_and_replay'],
+ 'api_11':['duplicate_completion_creates_only_one_scan_job','upload_binding_rejects_tampering_and_replay','real_clamav_versioned_storage_and_sanitized_derivative'],
+ 'api_12':['case_projection_is_closed_and_has_no_custody_or_contacts','staff_case_scope_denies_existence_and_cross_organization_exposure'],
+ 'api_13':['case_projection_is_closed_and_has_no_custody_or_contacts','staff_case_scope_denies_existence_and_cross_organization_exposure'],
+ 'api_14':['verification_or_scanning_incomplete_blocks_active_transition','close_revokes_reporter_and_reopen_requires_supervisor','sensitive_workflow_bypasses_have_no_effect'],
+ 'api_15':['assignment_bounded_to_active_same_org_staff','staff_case_scope_denies_existence_and_cross_organization_exposure'],
+ 'api_16':['evidence_assertions_require_same_case_clean_object_and_supervisor','sensitive_workflow_bypasses_have_no_effect'],
+ 'api_18':['media_gateway_reauthorizes_and_never_serves_original','real_media_gateway_serves_derivative_and_denies_original','storage_role_permissions_and_no_anonymous_access'],
+ 'api_22':['moderation_notes_revision_and_idempotency','audit_failure_rolls_back_case_note_revision_and_outbox','concurrent_case_writes_allow_one_revision_and_one_audit'],
+ 'reporting_intake_challenge':['challenge_and_transport_boundaries','signed_anonymous_browser_limits_isolate_reporters_and_bound_peer_admission'],
+ 'reporting_upload_content':['upload_binding_rejects_tampering_and_replay','upload_quota_and_oversize_rejected_before_storage','multiple_photos_keep_individual_intents_and_no_automatic_identity'],
+ 'reporting_moderation':['moderation_notes_revision_and_idempotency','fraudulent_parent_claim_pauses_contact_without_establishing_identity','real_suspicious_claim_pause_revokes_reporter_without_identity_or_release'],
+ 'reporting_draft_get':['private_server_draft_scope_revision_expiry_and_removal','expired_private_draft_is_not_recovered'],
+ 'reporting_draft_post':['private_server_draft_scope_revision_expiry_and_removal'],
+ 'reporting_reporter_logout':['reporter_logout_revokes_replayed_session'],
+}
+operation_tests={}
+all_required=required['python']+required['resilience']+required['http']
+for operation,scenarios in operation_scenarios.items():
+    selected=[]
+    for scenario in scenarios:
+        matches=[node for node in all_required if node.split('::')[-1].removeprefix('test_').startswith(scenario)]
+        assert matches, (operation,scenario)
+        selected.extend(matches)
+    operation_tests[operation]=sorted(set(selected))
+
 contract=json.loads((ROOT/'docs/contracts/openapi.json').read_text())
 for path,item in contract['paths'].items():
     for method,o in item.items():
         if path.startswith('/identity'):link='Preserved 58-case identity inventory and MFA browser regression'
         elif not path.startswith('/v1'):link='Preserved baseline API/contract/readiness suite'
-        elif o.get('x-implementation-status')=='implemented-phase-1c':link='RPTC-01–07; exact positive/negative selectors above and immutable required inventory'
+        elif o.get('x-implementation-status')=='implemented-phase-1c':
+            assert o['operationId'] in operation_tests
+            link='; '.join('`'+node+'`' for node in operation_tests[o['operationId']])+'; **'+status+'**'
         else:link='Preserved 64 anonymous/forged domain guards and SAF-04/07/08/09 disabled-capability denial; future positive behavior pending'
         lines.append(f'| `{method.upper()} {path}` ({o["operationId"]}) | {link} |')
 lines += ['| media.scan, lease/retry/dead-letter/publication | RPTC-03/05: actual scanner, worker roles, crash checkpoints, fences and deletion-generation negatives |','| outbox/notification delivery | RPTC-04: neutral payload, current grants, idempotent private sink, exhausted lease |','| quarantine/orphan/draft expiry | RPTC-01/04: expiry, actual immutable version erasure and acknowledgment; whole-case/backup erasure remains pending |','| cases/grants/memberships/org/principal | Preserved DB/RLS/identity regression plus RPTC-02 current grant/tenant/role/transaction tests |','| claims/codes/sessions/commands/restricted intake/journals | RPTC-01/02: hashed capabilities, replay/expiry, no direct runtime reads/writes, closed projections, custody exclusion |','| objects/intents/photos/derivatives/evidence | RPTC-03: immutable key/version/hash, quota, MIME/bomb/EICAR, metadata stripping, exact-owner scope and current media grants |','| audit/outbox | RPTC-02/04: same-transaction rollback, non-sensitive envelopes, role separation; operational WORM export remains a release gate |','| fraudulent parent/guardian, found location, original media, tenant leaks | RPTC-01/02/06/07 and permanent security guards; exact denials/no-effects |','| biometric search, self-approval, release/custody bypass | Existing permanent disabled-route guards plus RPTC-02/06/07; no positive production capability implemented |','| model accuracy, federation, operational custody/reunion/deletion/legal hold | Original future cases remain pending; browser tests cannot validate those unimplemented capabilities |','']
+assert set(operation_tests)=={o['operationId'] for item in contract['paths'].values() for o in item.values() if o.get('x-implementation-status')=='implemented-phase-1c'}
 (ROOT/'docs/phase1c/TEST_TRACEABILITY.md').write_text('\n'.join(lines))
 print({'features':len(x['features']),'cases':sum(counts.values()),'status_counts':dict(counts)})
