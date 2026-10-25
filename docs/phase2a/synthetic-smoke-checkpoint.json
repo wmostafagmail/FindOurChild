@@ -1,0 +1,77 @@
+{
+  "evidence_scope": "local synthetic arithmetic/pipeline smoke checkpoint; hosted current-commit verification pending",
+  "source_digest": "07a9b3067faaa9d9e36f098b3118921d132a40b524ee164b9c727111aa0220e6",
+  "private_raw_sha256": "8f29f49ebba381524f2b692abbe4bf57680184c84fb5e841908cdffb54cfd947",
+  "recognition_models_run": 0,
+  "recognition_accuracy_claim": false,
+  "pipeline_images": 32,
+  "metrics": {
+    "denominators": {
+      "gallery_images": 16,
+      "probes": 17,
+      "mate_present": 16,
+      "mate_absent": 1,
+      "subjects": 16
+    },
+    "recall": {
+      "1": 0.0625,
+      "10": 0.625,
+      "50": 1.0
+    },
+    "macro_recall": {
+      "1": 0.0625,
+      "10": 0.625,
+      "50": 1.0
+    },
+    "subject_bootstrap_95_recall_at_1": [
+      0.0,
+      0.1875
+    ],
+    "fpir": 0.0,
+    "fnir": 0.9375,
+    "tpir": 0.0625,
+    "false_leads_per_query": 2.764705882352941,
+    "strata": {
+      "capture_gap": {
+        "over5y": {
+          "mate_present": 16,
+          "recall": {
+            "1": 0.0625,
+            "10": 0.625,
+            "50": 1.0
+          },
+          "tpir": 0.0625
+        }
+      },
+      "capture_age": {
+        "10-13y": {
+          "mate_present": 16,
+          "recall": {
+            "1": 0.0625,
+            "10": 0.625,
+            "50": 1.0
+          },
+          "tpir": 0.0625
+        }
+      }
+    },
+    "protocol": {
+      "space_id": "a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b",
+      "threshold": 0.99,
+      "threshold_source": "synthetic_fixture_protocol_v1",
+      "seed": 20261025,
+      "bootstrap_samples": 2000,
+      "photo_cap": 3,
+      "top_k": 50,
+      "training_overlap": "not_applicable_weight_free_fixture",
+      "ann_status": "not_run"
+    },
+    "manifest_digest": "e65d8d67a9ffb8033ea602a544ed473d1a0d2ae20230fea6e66463d125b42b71",
+    "limitations": [
+      "geometric/vector fixtures only",
+      "no child accuracy or fairness evidence",
+      "no operational threshold",
+      "rare-event confidence and sample-power approval pending"
+    ]
+  }
+}

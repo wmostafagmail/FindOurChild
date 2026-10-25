@@ -1,0 +1,298 @@
+{
+  "base": "1f6af0e99a32c2002beac842790c4f56f6b7e1e0",
+  "implementation": "4facbec19c7dc33ef4ed223461114ca4fbe9aa58",
+  "files": [
+    {
+      "path": ".github/workflows/phase1a.yml",
+      "sha256": "9ec1ca8a28dca4e513d3be15afdc8dc8a253a944c815d7849c3d81fe89af0670"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1683a125c9db73e111ea1e534e2a75411673b0b6df8d9a6bd93c3b6bcd14c8f1"
+    },
+    {
+      "path": "apps/web/app/identity/[...path]/route.ts",
+      "sha256": "4bc1c7d3c27c567a7f47099efc433c34ab92facb67992d9772a49ab73aa58423"
+    },
+    {
+      "path": "config/research-candidates.json",
+      "sha256": "2b922794558acad998ebd915cd01cc0cd82d13a9bc54dc72f624a71178933cce"
+    },
+    {
+      "path": "database/migrations/0022_synthetic_research.sql",
+      "sha256": "75afb7397aceae169e305f85a2ee18902af9caa903c42872b4fbcf8ee29a20ac"
+    },
+    {
+      "path": "database/migrations/0023_research_vector_namespace.sql",
+      "sha256": "2c804c7b84d5e0f9537133169d5270e533c856acaf2154d8337a686827765620"
+    },
+    {
+      "path": "database/migrations/0024_research_identity_revocation.sql",
+      "sha256": "0e1a65cce6c20df7e3bb5c471b770fa0fcd7aff872f0b1cbc00c1cbd1ebb7f52"
+    },
+    {
+      "path": "docs/ENGINEERING_ARCHITECTURE.md",
+      "sha256": "666e082924d21d71685aeb87a42351fe0f9707d4f7c4b4efed8234b73140f172"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PHASES.md",
+      "sha256": "6b6fda267de258d6ac6d47c752a1f79212cee357824eac25200cc44861114c10"
+    },
+    {
+      "path": "docs/PHASE_0_REVIEW.md",
+      "sha256": "3a82fd54359a9401b1d38cabf0604811be4ea02b5b49bfba5691e47fca5a7115"
+    },
+    {
+      "path": "docs/TEST_MATRIX.md",
+      "sha256": "3da9522f997d435ea411f49281a7ee82dcfc512c5d98ea27986cf844f766e989"
+    },
+    {
+      "path": "docs/contracts/openapi.json",
+      "sha256": "aa530d3fcbf34a87eaff5cf5d66f52bc8cb8abe268fdcee2e2a94535b2532914"
+    },
+    {
+      "path": "docs/phase1c/ACCEPTANCE.md",
+      "sha256": "2df2964e7041da3ed738dae4b9a5597d24c1c9889659c6c1f4875df344177ebd"
+    },
+    {
+      "path": "docs/phase1c/WORK_STATUS.md",
+      "sha256": "e64ed9339d13e794c143f8a8615fb3393b66db681afdbd97467e668164e72ade"
+    },
+    {
+      "path": "docs/phase1c/main-merge-validation.json",
+      "sha256": "a35679d17e4b8043f85a48b7907bdae8a87b1aee34bbb561a529766a0a755cc6"
+    },
+    {
+      "path": "docs/phase1c/main-protection.acceptance.json",
+      "sha256": "16e425d1f8a09de871b0383b998e0c16da47ee44cdd47fe1c5f098818031215b"
+    },
+    {
+      "path": "docs/phase2a/ARCHITECTURE.md",
+      "sha256": "b219d80b6ca03d525fefd3263a7e2a08d525f56512c96906cc1cc237f87867f4"
+    },
+    {
+      "path": "docs/phase2a/CI_TEST_GATES.md",
+      "sha256": "5057de63942875c0401eb6201a4158b5a36eef9331060f6d0c18baf898638418"
+    },
+    {
+      "path": "docs/phase2a/LICENSING_MATRIX.md",
+      "sha256": "6c182effa06da8ab6abb086465dd328ec7243761ae3a9750d36bcf740ca84862"
+    },
+    {
+      "path": "docs/phase2a/TEST_TRACEABILITY.md",
+      "sha256": "4eb2ef720ba1d4c6c050a2da37837b6fcd48fa5291ad43eddfb8d2188a44548d"
+    },
+    {
+      "path": "docs/phase2a/VALIDATION_REPORT.md",
+      "sha256": "e886228be97e227cda6acdbf74a934fedc7956411c0f4451953844af8db49d31"
+    },
+    {
+      "path": "docs/phase2a/WORK_STATUS.md",
+      "sha256": "5310c6d2761cfab29e19a60821008b4feca2b1a42dd9c861e2221c85e23e5f54"
+    },
+    {
+      "path": "docs/phase2a/local-validation.json",
+      "sha256": "c42b562f84f0554bb4acb01b31a8b35dbbe167677e2d6c8abc54760049391c09"
+    },
+    {
+      "path": "docs/phase2a/locked-dependency-manifest.json",
+      "sha256": "632d5ba804f39561eaee57571fbc7bc3af05dd348ea02a2234cf6687d47dad7c"
+    },
+    {
+      "path": "docs/phase2a/required-tests.json",
+      "sha256": "589d7f1b2f34986a5e29154ba07868a72b482052cc22540b485737d504b9e854"
+    },
+    {
+      "path": "docs/phase2a/research/adaface/LICENSE",
+      "sha256": "95b6e493eb9dba27f2150304e790ae254bab18d1611f4d6e2ade28fa3a271583"
+    },
+    {
+      "path": "docs/phase2a/research/adaface/README.md",
+      "sha256": "c3e65e47bb06a6387287bb76efe0fcf835ffbec466c305eb0a9744cc362ff18a"
+    },
+    {
+      "path": "docs/phase2a/research/adaface/face_alignment/align.py",
+      "sha256": "eb25a903c24cca9a4756f728d7ac097387f20e29ff5fe961a29f53b2aff1d356"
+    },
+    {
+      "path": "docs/phase2a/research/adaface/inference.py",
+      "sha256": "5c0758cb3218ccf8c5ebfcaea71aca59da7332e94c0c2a57dbe87bc21b4f8cfa"
+    },
+    {
+      "path": "docs/phase2a/research/auraface/LICENSE.md",
+      "sha256": "609e2cb599f84aaa41d8ef29d8fdb04d164fab22e8d9292ca34a599d0f56a338"
+    },
+    {
+      "path": "docs/phase2a/research/auraface/README.md",
+      "sha256": "106272348689716d3c159ff16ec42e5f36aafebca591b3678b375f8aa2d12cde"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/LICENSE",
+      "sha256": "7359d8df037688e9f4373aedd9dd297a467703072a3c9b001b169ec8ce395477"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/README.md",
+      "sha256": "71c7ec0abe4d4fdc07d1cd6dc80378a1b56a04a0be44bba475eac3678134ad8d"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/deepface/commons/weight_utils.py",
+      "sha256": "9956c3aa3ef9d0c54adeec3e3099a38b3ea30ac1c6f0e2319e473810d8b97efc"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/deepface/models/facial_recognition/onnx/ArcFace.py",
+      "sha256": "606b178116ea9f746b4805eba44ea702dbb687fec0e2ad58de80211aa67ef904"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/deepface/models/facial_recognition/onnx/SFace.py",
+      "sha256": "e7c9f1782faaaa8cdd813a648c60d4eb7118fd14202d4637a5a01b32c85cc953"
+    },
+    {
+      "path": "docs/phase2a/research/deepface/deepface/modules/modeling.py",
+      "sha256": "03b14638b5cb97044a77321940a5e106dad28471c7ab793e546595db91571f2d"
+    },
+    {
+      "path": "docs/phase2a/research/insightface/README.md",
+      "sha256": "1846967d19f2b19845b967e14715c162881e7598360e23ab6646a47c88667758"
+    },
+    {
+      "path": "docs/phase2a/research/insightface/python-package/README.md",
+      "sha256": "941d176f93855e6c684797632bb8c8bda1fba78d6379ac4c1f178516f136b5e5"
+    },
+    {
+      "path": "docs/phase2a/research/insightface/python-package/insightface/app/face_analysis.py",
+      "sha256": "38751912e3e49583af62a8823da3b688b41779be101333be8a066cf490e11c3a"
+    },
+    {
+      "path": "docs/phase2a/research/insightface/python-package/insightface/model_zoo/arcface_onnx.py",
+      "sha256": "2df3524243b8e807b0e4756d98bd3f8fd7456feaf6d04da7502a24a54d74e2bc"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/models/face_detection_yunet/LICENSE",
+      "sha256": "c83b8120c50ccbd4c4f96edf53141bdd566ebb8f8e9227e415326aa1b1aba958"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/models/face_detection_yunet/README.md",
+      "sha256": "a140c9e9574ff99d3dc1c435d5e8b5e60690dc91597e66387cbbb52be12cce4c"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/models/face_recognition_sface/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/models/face_recognition_sface/README.md",
+      "sha256": "e090e126f3fb5c0b0b2d84ee644b17e42a70b2e45a90616814970b811e91d063"
+    },
+    {
+      "path": "docs/phase2a/research/opencv_zoo/models/face_recognition_sface/sface.py",
+      "sha256": "a2351d8387a0fc6b4ddb5f13f5e30d2afa32bc25ede9d80c39d1ebf212a48ef7"
+    },
+    {
+      "path": "docs/phase2a/research/rea-evidence.json",
+      "sha256": "f05eacf0527259797d908a67c69cdb4481bce6fc76da1949f2925bf9c7743a82"
+    },
+    {
+      "path": "docs/phase2a/research/rea-inputs.json",
+      "sha256": "73fb660101162ed9be72791469258e8a1e6354e460fd3d3bb4cda86216715e92"
+    },
+    {
+      "path": "docs/phase2a/research/source-lock.json",
+      "sha256": "9528d8e8ebeaebfd4c12f90b6a5327e89cb5d5c6e155a0c02fb242e687d6aab9"
+    },
+    {
+      "path": "docs/testing/test-matrix.json",
+      "sha256": "1ada63fe599a57c382a1cbc97cd2d5788897c54e3958458850e05f5d185a909b"
+    },
+    {
+      "path": "scripts/artifacts.py",
+      "sha256": "1cb55c2e606e269eadb6d5d082a0738096b00f7508088f4ef54a9708146c0a84"
+    },
+    {
+      "path": "scripts/check_foundation.py",
+      "sha256": "93771537c25b3406511c62d6335767b28d43c89d8116ea7aa14354ea26bafd91"
+    },
+    {
+      "path": "scripts/fingerprint.py",
+      "sha256": "df36c26d77c5bba0df6c61c4887ed3648ebf939f550d1f7f6d1b4f68f0e95855"
+    },
+    {
+      "path": "scripts/recovery.py",
+      "sha256": "537e8a554c54f4f8df657f8850b7f3dc5f1c53fc2bd1f4a3f070483b8b226d31"
+    },
+    {
+      "path": "scripts/research_benchmark.py",
+      "sha256": "5907b28ec9f7f91f1f7d93d428160faa398045f8a0cf4c56d15a88aedd4ef830"
+    },
+    {
+      "path": "scripts/research_evidence.py",
+      "sha256": "c239fc7f1fe380407b6f485140519ca8bb31d43c2fc5ae6f68cedd30cec6c119"
+    },
+    {
+      "path": "scripts/research_test.py",
+      "sha256": "2d665dee0dcfff042f543462bdd37fbfe37211c77f39ce33e4b35957b5a938ce"
+    },
+    {
+      "path": "scripts/research_validate.py",
+      "sha256": "20fc4c73461bb6dc1fd8a158064f8651dc0db3aa9ca50ac1934af2ea9b70f10b"
+    },
+    {
+      "path": "services/api/foc_api/identity.py",
+      "sha256": "c99d9ebc3e22dc4f14692b00f8a5732139efc34bcdd430130d05f5b2098e2069"
+    },
+    {
+      "path": "services/api/foc_api/research/__init__.py",
+      "sha256": "1648404ba1ee270af97820b42dbdc9c771bb9ce3a61be3da3206253936776972"
+    },
+    {
+      "path": "services/api/foc_api/research/evaluation.py",
+      "sha256": "3ae89953692368e1e8dfb2a9a71162441bc61f8218eca53e25830a3ac7b9ca14"
+    },
+    {
+      "path": "services/api/foc_api/research/pipeline.py",
+      "sha256": "b5e19090b60ac5ca54fed1a9d2498164ed10514d5e0b8e52ea7987710d944bf4"
+    },
+    {
+      "path": "tests/api/test_foundation.py",
+      "sha256": "342e4468c1c0b8af394a272543af12511ef07675538d402ac1f7104d598f9c38"
+    },
+    {
+      "path": "tests/browser/identity.e2e.ts",
+      "sha256": "7e924a33eee38af7324a555a32f510ed41c644613783787d0f89129c2d2ec677"
+    },
+    {
+      "path": "tests/research/test_database.py",
+      "sha256": "1c504e74e5377c3a9425df3c0f5ced3d8b50ea50e33b478085cc6a24b1d333bd"
+    },
+    {
+      "path": "tests/research/test_evaluation.py",
+      "sha256": "3ee530001332dc36462d8ca78fbb8bcf82b26ab7625cb9ffa6d3f22abf8b17dd"
+    },
+    {
+      "path": "tests/research/test_evidence.py",
+      "sha256": "9fa690a7adbc22a6fb4d7533821fd9fab56442146e30232e017255c7fa149de2"
+    },
+    {
+      "path": "tests/research/test_pipeline.py",
+      "sha256": "f936d84cf690247d4a9e61d4e1ba8289a0d2fdcce0118e7981be2e765f9db682"
+    },
+    {
+      "path": "tests/research_http/test_live.py",
+      "sha256": "86f6b69d83e52470683b6ce72d8789252c1e427754b7d4f125be7078b9907074"
+    },
+    {
+      "path": "tools/research_phase2a.py",
+      "sha256": "17693faa71c35374a51cb52aa8f3c1463b61f1f214d2e34d29ab11b26a846ca0"
+    },
+    {
+      "path": "tools/update_phase2a_matrix.py",
+      "sha256": "e2c3b6dd9680e48a8946ce84c207f918b2fecdc931c756a51821bf8ed313115b"
+    },
+    {
+      "path": "tools/verify_phase2a_evidence.py",
+      "sha256": "e035e6d6999a22e4302e5855cdf53bbf16ae26dcd0ed5c451a7c995cbc7caffc"
+    }
+  ]
+}

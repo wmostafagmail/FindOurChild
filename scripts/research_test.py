@@ -70,6 +70,13 @@ def main():
         f"{lane}: {sum(t['status'] == 'passed' for t in entries)} passed / {len(entries)} executed; diagnostics private"
     )
     expected = json.loads((ROOT / "docs/phase2a/required-tests.json").read_text())[lane]
+    failed = [
+        {"id": t["id"], "locations": results.failures.get(t["id"], {})}
+        for t in entries
+        if t["status"] != "passed" and t["id"] in expected
+    ]
+    if failed:
+        print("Sanitized failure locations: " + json.dumps(failed))
     python_gate(report, {"python": expected}, fingerprint())
     if before != fingerprint():
         raise SystemExit("source changed during validation")

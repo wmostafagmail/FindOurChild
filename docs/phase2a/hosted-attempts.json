@@ -1,0 +1,22 @@
+[
+  {
+    "run_id": 40232842556,
+    "head_sha": "4facbec19c7dc33ef4ed223461114ca4fbe9aa58",
+    "conclusion": "failure",
+    "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40232842556",
+    "first_failed_step": "Synthetic research API database and adversarial regression",
+    "root_cause": "Research container writer UID lacked host artifacts-directory write permission; later HTTP services were not started",
+    "log_sha256": "b305059b163a7b52975c0b3e3d9b9ded0848de07c4cf073e5505138ef731a2ea",
+    "evidence_status": "failed_not_accepted"
+  },
+  {
+    "run_id": 40232787794,
+    "head_sha": "4facbec19c7dc33ef4ed223461114ca4fbe9aa58",
+    "conclusion": "failure",
+    "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40232787794",
+    "first_failed_step": "Synthetic research API database and adversarial regression",
+    "root_cause": "Research container writer UID lacked host artifacts-directory write permission; later HTTP services were not started",
+    "log_sha256": "6506e1f7d230313cfd92687de34e1b29941ccdacc2e160b01fef5090b382c148",
+    "evidence_status": "failed_not_accepted"
+  }
+]
