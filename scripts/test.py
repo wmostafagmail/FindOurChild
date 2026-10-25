@@ -35,9 +35,14 @@ class Results:
                     location = "external"
                 line = getattr(crash, "lineno", 0)
                 self.failures.setdefault(report.nodeid, {})[report.when] = {
-                    "file": location if location.startswith("tests/") else "external",
+                    "file": location if location.startswith(("tests/", "scripts/", "services/api/")) else "external",
                     "line": line if isinstance(line, int) and 0 <= line <= 20000 else 0,
                 }
+                message = getattr(crash, "message", "")
+                for category in ["delivery_missing", "delivery_key_mismatch", "delivery_permission_denied", "api_not_running", "fixture_process_failed"]:
+                    if "Synthetic delivery fixture unavailable: " + category in message:
+                        self.failures[report.nodeid][report.when]["reason"] = category
+                        break
 
 
 def main():

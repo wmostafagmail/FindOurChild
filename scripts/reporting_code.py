@@ -1,6 +1,7 @@
 """Operator-only synthetic delivery reader; never exposed as an application route.
 
-Read the running API's private sink/key together. No new container/configuration,
+Read the running API's private sink/key as its existing unprivileged owner.
+No root/DAC override, permission changes, new container/configuration,
 remote model, raw subprocess output or secret-bearing diagnostics are required.
 """
 
@@ -22,7 +23,7 @@ def read_code():
         "Path('/delivery/' + " + repr(name) + ").read_bytes()))['code'])"
     )
     result = subprocess.run(
-        ["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "--user", "0:0", "api", "python", "-c", program],
+        ["docker", "compose", "-f", str(ROOT / "compose.yaml"), "exec", "-T", "api", "python", "-c", program],
         env=environment(), cwd=ROOT, capture_output=True, text=True, timeout=30, check=False,
     )
     if result.returncode:

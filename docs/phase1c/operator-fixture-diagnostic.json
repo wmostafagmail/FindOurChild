@@ -1,0 +1,7 @@
+{
+  "scope": "backend-only synthetic operator fixture diagnostic, not browser or TLS acceptance",
+  "api_file_owner_uid": 10001,
+  "root_without_capabilities": "PermissionError as expected",
+  "unprivileged_api_owner_reader": "passed",
+  "provider_sha256": "8b663855d5450e520052afac852bad86205985b4a9549e25a7d488d75620a28e"
+}

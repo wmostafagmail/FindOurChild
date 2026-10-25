@@ -1,9 +1,11 @@
 """Synthetic-only reporting and case management. DTOs are projected, never table serialization."""
 
+import base64
 import hashlib
 import hmac
 import json
 import os
+import re
 import secrets
 from datetime import UTC, date, datetime, time
 from pathlib import Path
@@ -114,10 +116,35 @@ def origin_guard(request):
         raise HTTPException(403, "CSRF_DENIED")
 
 
-def limited(request, scope, maximum=20):
-    # Trusted peer only; ignore X-Forwarded-For. BFF aggregation is supplemented by contact/session quotas.
+def anonymous_browser(value=None):
+    """Signed anonymous rate scope only; never identity, contact or case authority."""
+    key = os.environ["FOC_CONTACT_KEY"].encode()
+    context = b"foc:anonymous-browser:v1:"
+    if value is None:
+        nonce = int(datetime.now(UTC).timestamp()).to_bytes(8, "big") + secrets.token_bytes(8)
+        tag = hmac.digest(key, context + nonce, "sha256")[:16]
+        return base64.urlsafe_b64encode(nonce + tag).rstrip(b"=").decode()
+    if not isinstance(value, str) or not re.fullmatch(r"[A-Za-z0-9_-]{43}", value):
+        return False
+    decoded = base64.urlsafe_b64decode(value + "=")
+    if len(decoded) != 32 or base64.urlsafe_b64encode(decoded).rstrip(b"=").decode() != value:
+        return False
+    age = int(datetime.now(UTC).timestamp()) - int.from_bytes(decoded[:8], "big")
+    return 0 <= age <= 1800 and hmac.compare_digest(
+        decoded[16:], hmac.digest(key, context + decoded[:16], "sha256")[:16]
+    )
+
+
+def limited(request, scope, maximum=20, admission=False, verified_subject=None):
+    # A shared BFF peer is not a reporter identity. First bound new browser
+    # admission by the trusted socket peer; then bound each signed browser.
+    # Never trust X-Forwarded-For or an unsigned client-chosen rate identifier.
     peer = request.client.host if request.client else "unknown"
-    hashed = hmac.digest(os.environ["FOC_CONTACT_KEY"].encode(), f"{scope}:{peer}".encode(), "sha256")
+    browser = request.cookies.get(BROWSER, "")
+    subject = verified_subject or (peer if admission else browser)
+    if verified_subject is None and not admission and not anonymous_browser(browser):
+        raise HTTPException(401, "INTAKE_CHALLENGE_REQUIRED")
+    hashed = hmac.digest(os.environ["FOC_CONTACT_KEY"].encode(), f"{scope}:{subject}".encode(), "sha256")
     with connection(request) as conn:
         allowed = conn.execute("SELECT platform.intake_limit(%s,%s)", (hashed, maximum)).fetchone()[0]
     if not allowed:
@@ -128,7 +155,7 @@ def challenge_guard(request, command):
     origin_guard(request)
     token = request.headers.get("x-intake-challenge", "")
     browser = request.cookies.get(BROWSER, "")
-    if len(token) != 43 or len(browser) != 43:
+    if len(token) != 43 or not anonymous_browser(browser):
         raise HTTPException(401, "INTAKE_CHALLENGE_REQUIRED")
     with connection(request) as conn:
         valid = conn.execute(
@@ -166,11 +193,13 @@ def delivery(payload, receipt):
 @router.post("/v1/public/intake-challenges", status_code=201)
 def challenge(request: Request):
     origin_guard(request)
-    limited(request, "challenge", 100)
+    browser = request.cookies.get(BROWSER, "")
+    if anonymous_browser(browser):
+        limited(request, "challenge", 100)
+    else:
+        limited(request, "new-browser", 100, admission=True)
+        browser = anonymous_browser()
     token = secrets.token_urlsafe(32)
-    browser = request.cookies.get(BROWSER) or secrets.token_urlsafe(32)
-    if len(browser) != 43:
-        browser = secrets.token_urlsafe(32)
     with connection(request) as conn:
         conn.execute("SELECT platform.intake_challenge(%s,%s)", (digest(token), digest(browser)))
     response = JSONResponse({"challenge": token, "expires_in": 600}, status_code=201)
@@ -411,7 +440,7 @@ def reporter_append(
     if action not in ("supplements", "contact"):
         raise HTTPException(404, "NOT_FOUND")
     token, _ = reporter(request, True)
-    limited(request, "reporter-append", 100)
+    limited(request, "reporter-append", 100, verified_subject=token)
     validate("Supplement" if action == "supplements" else "RelayMessage", body)
     if action == "supplements" and body["evidence_refs"]:
         raise HTTPException(422, "EVIDENCE_MUST_BE_OWN_UPLOAD")

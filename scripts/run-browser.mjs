@@ -40,7 +40,11 @@ try{
  const failed=report.run.results.filter(r=>r.status!=='passed').map(r=>{
   const attempt=r.attempts?.at(-1);
   const source=attempt?.error?.source??attempt?.steps?.find(s=>s.status==='failed'||s.status==='error')?.source;
-  return {id:required.includes(r.titlePath?.at(-1))?r.titlePath.at(-1):'unknown',target:/^(chromium|firefox|webkit)-(ar-EG|en-GB)-(320|360|390|1280)$/.test(r.targetId)?r.targetId:'unknown',source:source&&allowedFiles.has(source.file)&&Number.isInteger(source.line)&&source.line>0&&source.line<=20000?{file:source.file,line:source.line}:null};
+  const sourceFile=typeof source?.file==='string'?source.file.replaceAll('\\','/'):'';
+  const file=[...allowedFiles].find(f=>sourceFile===f||sourceFile===process.cwd()+'/'+f);
+  const serialized=JSON.stringify(attempt?.error??{});
+  const reason=['delivery_missing','delivery_key_mismatch','delivery_permission_denied','api_not_running','fixture_process_failed'].find(v=>serialized.includes('Synthetic delivery fixture unavailable: '+v))??null;
+  return {id:required.includes(r.titlePath?.at(-1))?r.titlePath.at(-1):'unknown',target:/^(chromium|firefox|webkit)-(ar-EG|en-GB)-(320|360|390|1280)$/.test(r.targetId)?r.targetId:'unknown',source:file&&Number.isInteger(source?.line)&&source.line>0&&source.line<=20000?{file,line:source.line}:null,reason};
  });
  if(failed.length)console.log('Sanitized browser failure locations: '+JSON.stringify(failed));
 }catch{console.log('Browser result manifest unavailable; required gate remains blocked');}

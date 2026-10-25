@@ -7,6 +7,7 @@ from fastapi import HTTPException
 from foc_api.reporting import validate
 
 from .helpers import (
+    ORG,
     ORIGIN,
     admin,
     cid,
@@ -587,3 +588,59 @@ def test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims()
                 ).fetchone()[0]
                 == "unverified"
             )
+
+
+def test_signed_anonymous_browser_limits_isolate_reporters_and_bound_peer_admission():
+    import hmac
+    import os
+    from uuid import uuid4
+
+    from fastapi.testclient import TestClient
+    from foc_api.reporting import BROWSER, anonymous_browser
+
+    peer = str(uuid4())
+    from foc_api.config import Settings
+    from foc_api.main import create_app
+
+    app = create_app(Settings.load())
+    first = TestClient(app, base_url=ORIGIN, client=(peer, 50000))
+    second = TestClient(app, base_url=ORIGIN, client=(peer, 50001))
+    third = TestClient(app, base_url=ORIGIN, client=(peer, 50002))
+    admission = hmac.digest(os.environ["FOC_CONTACT_KEY"].encode(), ("new-browser:" + peer).encode(), "sha256")
+    try:
+        with admin() as conn:
+            conn.execute("INSERT INTO platform.intake_limits VALUES(%s,now(),98)", (admission,))
+        assert first.post("/v1/public/intake-challenges", json={}, headers={"Origin": ORIGIN}).status_code == 201
+        token = first.cookies[BROWSER]
+        assert anonymous_browser(token)
+        assert not anonymous_browser("A" * 43)
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+        alias = token[:-1] + alphabet[alphabet.index(token[-1]) ^ 1]
+        assert not anonymous_browser(alias)
+        from datetime import UTC, datetime, timedelta
+        from unittest.mock import patch
+
+        with patch("foc_api.reporting.datetime") as clock:
+            clock.now.return_value = datetime.now(UTC) + timedelta(seconds=1801)
+            assert not anonymous_browser(token)
+        browser_limit = hmac.digest(os.environ["FOC_CONTACT_KEY"].encode(), ("challenge:" + token).encode(), "sha256")
+        with admin() as conn:
+            conn.execute("INSERT INTO platform.intake_limits VALUES(%s,now(),100)", (browser_limit,))
+        denied = first.post("/v1/public/intake-challenges", json={}, headers={"Origin": ORIGIN})
+        assert denied.status_code == 429 and denied.headers["Retry-After"] == "600"
+        assert second.post("/v1/public/intake-challenges", json={}, headers={"Origin": ORIGIN}).status_code == 201
+        assert second.cookies[BROWSER] != token
+        third.cookies.set(BROWSER, "A" * 43, domain="127.0.0.1", path="/")
+        denied = third.post("/v1/public/intake-challenges", json={}, headers={"Origin": ORIGIN, "X-Forwarded-For": str(uuid4())})
+        assert denied.status_code == 429
+        assert second.get("/v1/reporter/submission").status_code == 401
+        assert second.get("/v1/staff/cases?organization_id=" + ORG).status_code == 401
+        receipt, body = create_report(second)
+        verify_reporter(second, receipt, body["reporter"]["encrypted_transport_contact"])
+        second.cookies.set(BROWSER, "A" * 43, domain="127.0.0.1", path="/")
+        # Anonymous-cookie rotation/expiry cannot revoke a separately valid reporter session.
+        assert second.post("/v1/reporter/contact", json={"message": "synthetic"}, headers=headers(second)).status_code == 202
+    finally:
+        first.close()
+        second.close()
+        third.close()
