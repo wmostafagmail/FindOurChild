@@ -1,4 +1,4 @@
-name: Foundation identity and reporting required validation
+name: Foundation reporting and synthetic research required validation
 on:
   pull_request:
   push:
@@ -51,6 +51,8 @@ jobs:
         run: .venv/bin/python -m scripts.dev test
       - name: Reporting PostgreSQL media and safeguarding regression
         run: .venv/bin/python -m scripts.reporting_validate
+      - name: Synthetic research API database and adversarial regression
+        run: .venv/bin/python -m scripts.research_validate
       - name: Synthetic backup and restore
         run: .venv/bin/python -m scripts.recovery
       - name: Dependency security audit
@@ -86,6 +88,9 @@ jobs:
       - name: Real reporting BFF API and worker regression
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.reporting_http_test
+      - name: Real research capability API regression
+        if: ${{ !cancelled() }}
+        run: .venv/bin/python -m scripts.research_test research_http
       - name: Collect API-process and combined regression coverage
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.coverage_finish

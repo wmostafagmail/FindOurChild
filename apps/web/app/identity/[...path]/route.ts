@@ -1,5 +1,5 @@
 // Fixed upstream BFF. No browser-controlled URL, bearer token, or forwarded identity headers.
-const paths = /^(login|callback|me|logout|organizations\/[a-f0-9-]{36}\/(memberships|audit|cases\/[a-f0-9-]{36}\/permission))$/;
+const paths = /^(login|callback|me|logout|research-capabilities|organizations\/[a-f0-9-]{36}\/(memberships|audit|cases\/[a-f0-9-]{36}\/permission))$/;
 async function proxy(request: Request, context: {params: Promise<{path:string[]}>}) {
   const path = (await context.params).path.join('/');
   if (!paths.test(path)) return Response.json({code:'NOT_FOUND'}, {status:404});

@@ -1,0 +1,104 @@
+{
+  "schema_version": "candidate-review-1",
+  "review_date": "2026-10-25",
+  "synthetic_only": true,
+  "candidates": [
+    {
+      "candidate_id": "insightface",
+      "code_commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "code_license_review": "MIT declaration in root and Python README; component notices separate",
+      "prospective_weight_review": "buffalo_l/w600k_r50.onnx and associated detector: non-commercial research restriction; no NGO-specific entitlement obtained",
+      "weight_sha256": null,
+      "training_data_review": "WebFace600K lineage described; exact subject rights and dataset grant not established",
+      "code_evidence": [
+        "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/README.md",
+        "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/README.md",
+        "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/app/face_analysis.py",
+        "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/model_zoo/arcface_onnx.py"
+      ],
+      "weight_download_allowed": false,
+      "evaluation_use_allowed": false,
+      "operational_use_allowed": false,
+      "qualification_status": "blocked_missing_exact_weight_or_training_data_clearance",
+      "benchmark_status": "not_run_no_weights_or_approved_real_dataset"
+    },
+    {
+      "candidate_id": "adaface",
+      "code_commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "code_license_review": "MIT source; alignment third-party notices separate",
+      "prospective_weight_review": "AdaFace IR50 MS1MV2 checkpoint link; separate checkpoint grant not established",
+      "weight_sha256": null,
+      "training_data_review": "MS1MV2/MS1MV3, CASIA-WebFace, VGGFace2, WebFace variants require independent exact dataset rights",
+      "code_evidence": [
+        "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/README.md",
+        "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/LICENSE",
+        "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/inference.py",
+        "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/face_alignment/align.py"
+      ],
+      "weight_download_allowed": false,
+      "evaluation_use_allowed": false,
+      "operational_use_allowed": false,
+      "qualification_status": "blocked_missing_exact_weight_or_training_data_clearance",
+      "benchmark_status": "not_run_no_weights_or_approved_real_dataset"
+    },
+    {
+      "candidate_id": "deepface",
+      "code_commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "code_license_review": "MIT facade; third-party backend licensing separate",
+      "prospective_weight_review": "ONNX ArcFace/SFace wrappers delegate upstream weight downloads and terms; no universal DeepFace weight license",
+      "weight_sha256": null,
+      "training_data_review": "Depends on exact selected upstream checkpoint; wrapper license does not clear training data",
+      "code_evidence": [
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/README.md",
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/LICENSE",
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/ArcFace.py",
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/SFace.py",
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/modules/modeling.py",
+        "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/commons/weight_utils.py"
+      ],
+      "weight_download_allowed": false,
+      "evaluation_use_allowed": false,
+      "operational_use_allowed": false,
+      "qualification_status": "blocked_missing_exact_weight_or_training_data_clearance",
+      "benchmark_status": "not_run_no_weights_or_approved_real_dataset"
+    },
+    {
+      "candidate_id": "opencv_zoo",
+      "code_commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "code_license_review": "Apache-2.0 root and SFace directory; YuNet directory terms separate",
+      "prospective_weight_review": "SFace face_recognition_sface_2021dec.onnx directory Apache-2.0 declaration; exact binary not downloaded/hashed",
+      "weight_sha256": null,
+      "training_data_review": "README does not establish complete exact training-data rights/provenance for NGO child use",
+      "code_evidence": [
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/LICENSE",
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/README.md",
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/LICENSE",
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/sface.py",
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/README.md",
+        "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/LICENSE"
+      ],
+      "weight_download_allowed": false,
+      "evaluation_use_allowed": false,
+      "operational_use_allowed": false,
+      "qualification_status": "blocked_missing_exact_weight_or_training_data_clearance",
+      "benchmark_status": "not_run_no_weights_or_approved_real_dataset"
+    },
+    {
+      "candidate_id": "auraface",
+      "code_commit": "af6d057c9b0ec4071d4c49c80e3539258798b609",
+      "code_license_review": "Uses separately licensed InsightFace inference code; no library code adopted",
+      "prospective_weight_review": "AuraFace-v1 glintr100.onnx: publisher Apache-2.0 declaration at pinned model repository; bundled detectors assessed separately",
+      "weight_sha256": null,
+      "training_data_review": "Publisher describes commercial/mixed-source training without identifying exact licensed dataset and subject-level authority",
+      "code_evidence": [
+        "https://huggingface.co/fal/AuraFace-v1/raw/af6d057c9b0ec4071d4c49c80e3539258798b609/README.md",
+        "https://huggingface.co/fal/AuraFace-v1/raw/af6d057c9b0ec4071d4c49c80e3539258798b609/LICENSE.md"
+      ],
+      "weight_download_allowed": false,
+      "evaluation_use_allowed": false,
+      "operational_use_allowed": false,
+      "qualification_status": "blocked_missing_exact_weight_or_training_data_clearance",
+      "benchmark_status": "not_run_no_weights_or_approved_real_dataset"
+    }
+  ]
+}

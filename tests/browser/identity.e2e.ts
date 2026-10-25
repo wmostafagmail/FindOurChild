@@ -7,6 +7,7 @@ const {source:axeSource}=createRequire(import.meta.url)('axe-core') as {source:s
 test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   const fixture=JSON.parse(readFileSync('.runtime/identity.json','utf8')) as {password:string,otp:string,users:Record<string,string>};
   await app.open('/en/identity');
+  expect(await browser.evaluate(async()=>(await fetch('/identity/research-capabilities')).status)).toBe(401);
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','signed_out');
   await screen.getByRole('link','Sign in with MFA').click();
   const target=await browser.evaluate(()=>{const ua=navigator.userAgent;const b=ua.includes('Firefox')?'firefox':ua.includes('Chrome')?'chromium':'webkit';return `${b}-${navigator.language}-${innerWidth}`;});
@@ -23,6 +24,8 @@ test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   expect(await browser.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await browser.evaluate('() => {\n'+axeSource+'\n; return true;\n}');
   expect(await browser.evaluate(`async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>v.id)`)).toEqual([]);
+  const research=await browser.evaluate(async()=>{const r=await fetch('/identity/research-capabilities'); return {status:r.status,body:await r.json()};});
+  expect(research).toEqual({status:200,body:{phase:'2A',data_class:'synthetic',operational_activation:false,public_biometric_search:false,automatic_identity_confirmation:false,custody_disclosure:false,recognition_backend:'none'}});
   const cookies=await browser.cookies();
   const session=cookies.find(c=>c.name==='__Host-foc-session');
   expect(Boolean(session?.httpOnly && session.secure && session.path==='/')).toBe(true);
@@ -43,4 +46,5 @@ test('TC_ID_BROWSER_MFA_TENANT_LOGOUT',async({app,screen,browser})=>{
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','signed_out');
   const denied=await browser.evaluate(async()=>(await fetch('/identity/me')).status);
   expect(denied).toBe(401);
+  expect(await browser.evaluate(async()=>(await fetch('/identity/research-capabilities')).status)).toBe(401);
 });

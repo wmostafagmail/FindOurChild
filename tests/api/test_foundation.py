@@ -38,9 +38,9 @@ def test_fnd_unavailable_database_fails_safely():
 
 def test_fnd_full_openapi(client):
     validate(CONTRACT)
-    assert sum(len(v) for v in CONTRACT["paths"].values()) == 48
+    assert sum(len(v) for v in CONTRACT["paths"].values()) == 49
     assert client.get("/openapi.json").json() == CONTRACT
-    assert len({o["operationId"] for p in CONTRACT["paths"].values() for o in p.values()}) == 48
+    assert len({o["operationId"] for p in CONTRACT["paths"].values() for o in p.values()}) == 49
 
 
 def test_fnd_closed_report_schema():

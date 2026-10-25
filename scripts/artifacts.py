@@ -160,6 +160,21 @@ def export(root=ROOT):
             summaries[name] = [{"id": t["id"], "status": "passed"} for t in report["tests"]]
         except (ValueError, KeyError, OSError, TypeError):
             failures.append(name + " required evidence incomplete or nonpassing")
+    for lane in ["research", "research_http"]:
+        try:
+            required = json.loads((root / "docs/phase2a/required-tests.json").read_text())[lane]
+            report = json.loads((root / "artifacts/raw" / (lane + "-results.json")).read_text())
+            summaries[lane] = python_gate(report, {"python": required}, digest)
+        except (ValueError, KeyError, OSError, TypeError):
+            failures.append("missing or nonpassing " + lane + " evidence")
+    try:
+        from scripts.research_evidence import aggregate
+
+        summaries["synthetic_model_smoke"] = aggregate(
+            json.loads((root / "artifacts/raw/research-benchmark.json").read_text()), digest
+        )
+    except (ValueError, KeyError, OSError, TypeError):
+        failures.append("missing or unsafe synthetic model smoke evidence")
     cov = {}
     # Coverage is exported as counts and repository-relative filenames only, with no source snippets or contexts.
     try:
@@ -184,6 +199,8 @@ def export(root=ROOT):
             or recovery["database"]["forced_rls"] != 41
         ):
             raise ValueError("Recovery incomplete")
+        if recovery.get("research_vector_restore") != {"status": "passed", "vectors_verified": 1, "forced_research_tables": 4, "raw_vector_exported": False}:
+            raise ValueError("Research restore incomplete")
         summaries["migration_and_recovery"] = {
             "status": "passed",
             "scope": "synthetic foundation backup/restore only",
@@ -196,6 +213,7 @@ def export(root=ROOT):
             "all_migrations": recovery["all_migrations"],
             "identity_session_rls": recovery["identity_session_rls"],
             "reporting_metadata_rls": recovery["reporting_metadata_rls"],
+            "research_vector_restore": recovery["research_vector_restore"],
             "operational_erasure": "pending",
         }
     except (ValueError, KeyError, OSError, TypeError):
@@ -289,7 +307,7 @@ def export(root=ROOT):
         "source_digest": digest,
     }
     # Allowlisted log replaces arbitrary free-text process logs.
-    (output / "validation.log").write_text("Phase 1C required gate: " + summaries["gate"]["status"] + "\n")
+    (output / "validation.log").write_text("Phase 2A required gate: " + summaries["gate"]["status"] + "\n")
     (output / "results.json").write_text(json.dumps(summaries, indent=2) + "\n")
     (output / "source-manifest.json").write_text(json.dumps(inventory(), indent=2) + "\n")
     (output / "checksums.json").write_text(

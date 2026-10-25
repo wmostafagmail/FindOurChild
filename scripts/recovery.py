@@ -37,12 +37,31 @@ def main():
     }
     name = "foc_restore_" + uuid4().hex
     created = False
+    sentinel = str(uuid4())
+    seeded = False
     try:
         if (
             query("foc_synthetic", "SELECT data_class||':'||schema_version FROM platform.environment")
             != "synthetic:0001"
         ):
             raise RuntimeError("Untrusted source")
+        # Private synthetic sentinel proves nonempty pgvector and per-photo metadata restoration.
+        content_hash = hashlib.sha256((ROOT / "tests/fixtures/synthetic-green.png").read_bytes()).hexdigest()
+        vector = "[1," + ",".join(["0"] * 127) + "]"
+        space_sql = query(
+            "foc_synthetic",
+            "SELECT pg_get_constraintdef(oid) FROM pg_constraint WHERE conrelid='platform.research_vectors_synthetic_v1'::regclass AND contype='c' AND pg_get_constraintdef(oid) LIKE '%space_id%'",
+        )
+        import re
+
+        spaces = re.findall(r"[a-f0-9]{64}", space_sql)
+        if len(spaces) != 1:
+            raise RuntimeError("Research space manifest missing")
+        query(
+            "foc_synthetic",
+            f"BEGIN; INSERT INTO platform.research_datasets VALUES('{sentinel}','{sentinel}',true,'synthetic-2a-v1',now()+interval '1 hour',1,NULL); INSERT INTO platform.research_photographs(organization_id,dataset_id,generation,id,case_ref,subject_ref,family_ref,image_sha256,registry,partition,role,capture_precision,source,synthetic) VALUES('{sentinel}','{sentinel}',1,'{sentinel}','{sentinel}','{sentinel}','{sentinel}','{content_hash}','found','test','gallery','unknown','procedural-geometric-fixture-v1',true); INSERT INTO platform.research_vectors_synthetic_v1 VALUES('{sentinel}','{sentinel}','{sentinel}','{spaces[0]}','{vector}'::public.vector,1,now()); COMMIT;",
+        )
+        seeded = True
         dump = run(["pg_dump", "-U", "postgres", "-d", "foc_synthetic", "--format=custom"])
         run(["createdb", "-U", "postgres", name])
         created = True
@@ -92,6 +111,35 @@ def main():
         ):
             raise RuntimeError("Restored session RLS disabled")
         report["all_migrations"] = restored_migrations
+        restored_vector = query(
+            name,
+            f"SELECT vector::text FROM platform.research_vectors_synthetic_v1 WHERE organization_id='{sentinel}' AND photo_id='{sentinel}'",
+        )
+        metadata = query(
+            name,
+            f"SELECT image_sha256||':'||capture_precision||':'||(capture_lower IS NULL AND capture_upper IS NULL AND age_min_months IS NULL AND age_max_months IS NULL)::text FROM platform.research_photographs WHERE organization_id='{sentinel}' AND id='{sentinel}'",
+        )
+        research_rls = query(
+            name,
+            "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='platform' AND c.relkind='r' AND c.relname LIKE 'research_%' AND c.relrowsecurity AND c.relforcerowsecurity",
+        )
+        denied = query(
+            name,
+            "SELECT NOT has_table_privilege('foc_api','platform.research_vectors_synthetic_v1','SELECT') AND NOT (SELECT rolcanlogin FROM pg_roles WHERE rolname='foc_research')",
+        )
+        if (
+            restored_vector != vector
+            or metadata != content_hash + ":unknown:true"
+            or research_rls != "4"
+            or denied != "t"
+        ):
+            raise RuntimeError("Synthetic vector/metadata/authorization restore differs")
+        report["research_vector_restore"] = {
+            "status": "passed",
+            "vectors_verified": 1,
+            "forced_research_tables": 4,
+            "raw_vector_exported": False,
+        }
         if (
             query(
                 name,
@@ -122,6 +170,11 @@ def main():
             source_digest=fingerprint(),
         )
     finally:
+        if seeded:
+            query(
+                "foc_synthetic",
+                f"DELETE FROM platform.research_datasets WHERE organization_id='{sentinel}' AND id='{sentinel}'",
+            )
         if created:
             run(["dropdb", "-U", "postgres", name])
         output = ROOT / "artifacts/raw"

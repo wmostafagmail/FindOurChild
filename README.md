@@ -1,5 +1,7 @@
 # Find Our Child
 
+> Phase 1C is accepted after verified PR #4 merge and exact-main hosted CI. Phase 2A is in progress: [research scope, licensing and validation](docs/phase2a/VALIDATION_REPORT.md). Synthetic data only; operational recognition and Phase 2B remain disabled.
+
 Phase 1B is accepted after PR #3 merged and required CI passed on exact main `9fcb6ef`. [Acceptance evidence](docs/phase1b/ACCEPTANCE.md).
 
 Phase 1C reporting and case management is implemented and technically validated in [draft PR #4](https://github.com/wmostafagmail/FindOurChild/pull/4), awaiting owner review. [Validation report](docs/phase1c/VALIDATION_REPORT.md), [reproducible environment](docs/phase1c/ENVIRONMENT.md), [architecture](docs/phase1c/ARCHITECTURE.md), [locks](docs/phase1c/LOCKED_DEPENDENCIES.md), [source inventory](docs/phase1c/SOURCE_INVENTORY.md) and [traceability](docs/phase1c/TEST_TRACEABILITY.md).

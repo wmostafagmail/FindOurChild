@@ -386,3 +386,11 @@ def audit(org: UUID, request: Request):
             for row in rows
         ]
     }
+
+
+@router.get("/identity/research-capabilities")
+def research_capabilities(request: Request):
+    authenticate(request)
+    from .research.pipeline import capabilities
+
+    return capabilities()

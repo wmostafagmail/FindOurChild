@@ -1,0 +1,8 @@
+{
+  "input_path": "/private/tmp/foc-phase2a-rea-boundary",
+  "scope": "two application BFF source files only; no execution, model files, browser sessions or child data",
+  "sources": {
+    "identity-bff.ts": "4bc1c7d3c27c567a7f47099efc433c34ab92facb67992d9772a49ab73aa58423",
+    "reporting-bff.ts": "046335685d07192ad4cd16094f089087ccfe8edca690fbba5faf2d256273fec3"
+  }
+}

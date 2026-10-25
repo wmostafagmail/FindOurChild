@@ -58,8 +58,8 @@ def main():
     contract = json.loads((ROOT / "docs/contracts/openapi.json").read_text())
     validate(contract)
     operations = [(p, m, o) for p, item in contract["paths"].items() for m, o in item.items()]
-    require(len(operations) == 48, "32 domain contracts plus 3 foundation, 7 identity and 6 reporting additions")
-    require(len({o["operationId"] for _, _, o in operations}) == 48, "Unique operation IDs")
+    require(len(operations) == 49, "32 domain contracts plus 3 foundation, 8 identity/capability and 6 reporting additions")
+    require(len({o["operationId"] for _, _, o in operations}) == 49, "Unique operation IDs")
     for path, method, operation in operations:
         require(
             "503" in operation["responses"] or not path.startswith("/v1/"),
