@@ -16,8 +16,9 @@ export default async function Home({params}: {params: Promise<{locale:string}>})
     </header>
     <main id="main" tabIndex={-1}><p className="eyebrow">{ar?'بيئة هندسية تجريبية':'ENGINEERING ENVIRONMENT'}</p>
       <h1>{ar?'معًا من أجل سلامة كل طفل':'Together for every child’s safety'}</h1>
-      <p>{ar?'يجري إعداد المنصة. الإبلاغ والوصول إلى القضايا غير متاحين بعد.':'The platform is being prepared. Reporting and case access are not yet available.'}</p>
+      <p>{ar?'مساحة الإبلاغ وإدارة الحالات الاصطناعية متاحة للمراجعة الهندسية.':'The synthetic reporting and NGO case workspace is available for engineering review.'}</p>
       <p className="notice">{ar?'بيانات اصطناعية فقط. لا تُدخل معلومات أو صور أطفال حقيقيين.':'Synthetic data only. Do not enter information or photographs of real children.'}</p>
+      <p><a href={`/${locale}/reporting`}>{ar?'الإبلاغ وإدارة الحالات':'Reporting and case management'}</a></p>
       <section aria-label={ar?'حالة الخدمات':'Service status'}><h2>{ar?'حالة الخدمات':'Service status'}</h2>
         <p role="status" data-testid="readiness" data-ready={String(ready)}>{ready ? (ar?'الخدمات الأساسية جاهزة':'Foundation services ready') : (ar?'الخدمات الأساسية غير متاحة':'Foundation services unavailable')}</p>
       </section>

@@ -58,14 +58,14 @@ def main():
     contract = json.loads((ROOT / "docs/contracts/openapi.json").read_text())
     validate(contract)
     operations = [(p, m, o) for p, item in contract["paths"].items() for m, o in item.items()]
-    require(len(operations) == 42, "32 closed domain contracts plus 3 foundation and 7 identity operations")
-    require(len({o["operationId"] for _, _, o in operations}) == 42, "Unique operation IDs")
+    require(len(operations) == 48, "32 domain contracts plus 3 foundation, 7 identity and 6 reporting additions")
+    require(len({o["operationId"] for _, _, o in operations}) == 48, "Unique operation IDs")
     for path, method, operation in operations:
         require(
             "503" in operation["responses"] or not path.startswith("/v1/"),
             "Disabled domain operations declare 503",
         )
-        if path.startswith("/v1/") and method == "post":
+        if path.startswith("/v1/") and method == "post" and path != "/v1/public/intake-challenges":
             require(operation["requestBody"]["required"], "All domain writes have typed bodies")
     package = json.loads((ROOT / "package.json").read_text())
     lock = json.loads((ROOT / "package-lock.json").read_text())

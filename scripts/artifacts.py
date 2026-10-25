@@ -130,6 +130,36 @@ def export(root=ROOT):
         summaries["identity"] = [{"id": t["id"], "status": "passed"} for t in identity["tests"]]
     except (ValueError, KeyError, OSError, TypeError):
         failures.append("missing or nonpassing identity evidence")
+    required_reporting = json.loads((root / "docs/phase1c/required-tests.json").read_text())
+    for name, key, filename in [
+        ("reporting", "python", "reporting-results.json"),
+        ("reporting_http", "http", "reporting-http-results.json"),
+        ("resilience", "resilience", "resilience-results.json"),
+    ]:
+        try:
+            report = json.loads((root / "artifacts/raw" / filename).read_text())
+            expected = required_reporting[key]
+            summaries[name + "_observed"] = [
+                {
+                    "id": t["id"] if t.get("id") in expected else "unknown",
+                    "status": t.get("status") if t.get("status") in ["passed", "failed"] else "unknown",
+                }
+                for t in report.get("tests", [])
+            ]
+            if (
+                report["source_digest"] != digest
+                or report["exit_code"] != 0
+                or sorted(t["id"] for t in report["tests"]) != sorted(expected)
+                or not report["tests"]
+                or any(
+                    (t["status"] != "passed" or t["stages"] != {"setup": "passed", "call": "passed", "teardown": "passed"})
+                    for t in report["tests"]
+                )
+            ):
+                raise ValueError("Incomplete reporting suite")
+            summaries[name] = [{"id": t["id"], "status": "passed"} for t in report["tests"]]
+        except (ValueError, KeyError, OSError, TypeError):
+            failures.append(name + " required evidence incomplete or nonpassing")
     cov = {}
     # Coverage is exported as counts and repository-relative filenames only, with no source snippets or contexts.
     try:
@@ -165,6 +195,7 @@ def export(root=ROOT):
             "hardening_sha256": recovery["hardening_sha256"],
             "all_migrations": recovery["all_migrations"],
             "identity_session_rls": recovery["identity_session_rls"],
+            "reporting_metadata_rls": recovery["reporting_metadata_rls"],
             "operational_erasure": "pending",
         }
     except (ValueError, KeyError, OSError, TypeError):
@@ -258,7 +289,7 @@ def export(root=ROOT):
         "source_digest": digest,
     }
     # Allowlisted log replaces arbitrary free-text process logs.
-    (output / "validation.log").write_text("Phase 1A required gate: " + summaries["gate"]["status"] + "\n")
+    (output / "validation.log").write_text("Phase 1C required gate: " + summaries["gate"]["status"] + "\n")
     (output / "results.json").write_text(json.dumps(summaries, indent=2) + "\n")
     (output / "source-manifest.json").write_text(json.dumps(inventory(), indent=2) + "\n")
     (output / "checksums.json").write_text(

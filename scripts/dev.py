@@ -24,6 +24,9 @@ def environment():
     generate()
     identity = json.loads((STATE / "identity.json").read_text())
     data.update({k: v for k, v in identity.items() if k.startswith("FOC_")})
+    from scripts.reporting_setup import generate as generate_reporting
+    data.update(generate_reporting())
+    data["FOC_WORKER_DATABASE_URL"] = "postgresql://foc_worker:" + quote(data["FOC_WORKER_PASSWORD"]) + "@db:5432/foc_synthetic"
     data["FOC_CONTAINER_ADMIN_URL"] = data["FOC_DATABASE_ADMIN_URL"].replace("127.0.0.1:55439", "db:5432")
     data["FOC_CONTAINER_DATABASE_URL"] = data["FOC_DATABASE_URL"].replace("127.0.0.1:55439", "db:5432")
     return {
@@ -79,9 +82,10 @@ def main():
             json.dump(data, stream)
         print("Created private, synthetic-only credentials")
     elif command == "db":
-        compose("up", "-d", "--wait", "db")
+        compose("up", "-d", "--wait", "db", "storage", "scanner")
         compose("build", "api")
         compose("run", "--rm", "--user", "0:0", "migrate")
+        compose("run", "--rm", "--user", "0:0", "migrate", "python", "-m", "scripts.reporting_setup")
     elif command == "api":
         compose("stop", "api")
         compose(
@@ -93,7 +97,7 @@ def main():
             "-c",
             "from pathlib import Path; [p.unlink() for p in Path('/coverage').glob('.coverage.*') if p.is_file()]",
         )
-        compose("up", "-d", "api", "keycloak")
+        compose("up", "-d", "api", "keycloak", "worker")
     elif command == "web":
         env = sanitize_environment(environment())
         os.execvpe("npm", ["npm", "run", "dev"], env)

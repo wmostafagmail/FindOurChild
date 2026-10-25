@@ -25,6 +25,7 @@ services:
       FOC_DATABASE_ADMIN_URL: ${FOC_CONTAINER_ADMIN_URL:?}
       FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
       FOC_DB_API_PASSWORD: ${FOC_DB_API_PASSWORD:?}
+      FOC_WORKER_PASSWORD: ${FOC_WORKER_PASSWORD:?}
       FOC_DATA_CLASS: synthetic
     volumes: ["./.runtime:/workspace/.runtime"]
     networks: [private]
@@ -36,14 +37,68 @@ services:
       FOC_DATA_CLASS: synthetic
       FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
       FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
+      FOC_REPORT_KEY: ${FOC_REPORT_KEY:?}
+      FOC_CONTACT_KEY: ${FOC_CONTACT_KEY:?}
+      FOC_S3_API_KEY: ${FOC_S3_API_KEY:?}
+      FOC_S3_API_SECRET: ${FOC_S3_API_SECRET:?}
+      FOC_S3_GATEWAY_KEY: ${FOC_S3_GATEWAY_KEY:?}
+      FOC_S3_GATEWAY_SECRET: ${FOC_S3_GATEWAY_SECRET:?}
       COVERAGE_FILE: /coverage/.coverage.api
     ports: ["127.0.0.1:8000:8000"]
     read_only: true
     tmpfs: ["/tmp"]
     cap_drop: [ALL]
     security_opt: ["no-new-privileges:true"]
-    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro", "api_coverage:/coverage", "./.coveragerc:/workspace/.coveragerc:ro"]
+    volumes: ["./services/api:/workspace/services/api:ro", "./docs/contracts:/workspace/docs/contracts:ro", "api_coverage:/coverage", "./.coveragerc:/workspace/.coveragerc:ro", "delivery_sink:/delivery"]
     networks: [private, edge]
+  storage:
+    environment:
+      FOC_CONFIGURATION_SHA256: ${FOC_S3_CONFIG_SHA256:?}
+    image: chrislusf/seaweedfs:4.48@sha256:4e61d15fd35994cb1e43e1e553dff106794841fd9a99ade2fc8c8bfce4d7872d
+    user: "1000:1000"
+    command: ["server", "-dir=/data", "-ip=storage", "-volume.max=30", "-master.volumeSizeLimitMB=32", "-s3", "-s3.config=/etc/foc/s3.json", "-filer"]
+    volumes: ["synthetic_objects:/data", "./.runtime/s3.json:/etc/foc/s3.json:ro"]
+    networks: [private]
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 8333 && nc -z 127.0.0.1 9333"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    mem_limit: 512m
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+  scanner:
+    image: clamav/clamav-debian:1.5.4@sha256:d7ede3cefeaf3b8a72ebcdee849d13f504bbca3f3b3cfade5bc7b6ee06a4f62c
+    environment:
+      CLAMAV_NO_FRESHCLAMD: 'true'
+      CLAMAV_NO_MILTERD: 'true'
+    healthcheck:
+      test: ["CMD", "clamdscan", "--ping=1"]
+      interval: 5s
+      timeout: 3s
+      retries: 60
+      start_period: 60s
+    mem_limit: 1536m
+    networks: [private]
+  worker:
+    <<: *python
+    command: ["python", "-m", "foc_api.worker"]
+    restart: "on-failure:5"
+    environment:
+      FOC_DATA_CLASS: synthetic
+      FOC_WORKER_DATABASE_URL: ${FOC_WORKER_DATABASE_URL:?}
+      FOC_REPORT_KEY: ${FOC_REPORT_KEY:?}
+      FOC_S3_WORKER_KEY: ${FOC_S3_WORKER_KEY:?}
+      FOC_S3_WORKER_SECRET: ${FOC_S3_WORKER_SECRET:?}
+    volumes: ["./services/api:/workspace/services/api:ro", "notification_sink:/notifications"]
+    networks: [private]
+    read_only: true
+    tmpfs: ["/tmp:size=64m"]
+    mem_limit: 512m
+    pids_limit: 64
+    cpus: 1
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
   keycloak:
     image: quay.io/keycloak/keycloak:26.7.0@sha256:0f198be292568439d700cdbfb893e69a6009bb43a94a06a945b1d3d506c76b13
     command: ["start-dev", "--import-realm", "--hostname=https://127.0.0.1:8443", "--http-enabled=true", "--proxy-headers=xforwarded"]
@@ -60,7 +115,18 @@ services:
       FOC_DATA_CLASS: synthetic
       FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
       FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
-    volumes: [".:/workspace", "./artifacts/raw:/workspace/artifacts/raw"]
+      FOC_REPORT_KEY: ${FOC_REPORT_KEY:?}
+      FOC_CONTACT_KEY: ${FOC_CONTACT_KEY:?}
+      FOC_S3_API_KEY: ${FOC_S3_API_KEY:?}
+      FOC_S3_API_SECRET: ${FOC_S3_API_SECRET:?}
+      FOC_S3_GATEWAY_KEY: ${FOC_S3_GATEWAY_KEY:?}
+      FOC_S3_GATEWAY_SECRET: ${FOC_S3_GATEWAY_SECRET:?}
+      FOC_S3_WORKER_KEY: ${FOC_S3_WORKER_KEY:?}
+      FOC_S3_WORKER_SECRET: ${FOC_S3_WORKER_SECRET:?}
+      FOC_S3_ADMIN_KEY: ${FOC_S3_ADMIN_KEY:?}
+      FOC_S3_ADMIN_SECRET: ${FOC_S3_ADMIN_SECRET:?}
+      FOC_WORKER_DATABASE_URL: ${FOC_WORKER_DATABASE_URL:?}
+    volumes: [".:/workspace", "./artifacts/raw:/workspace/artifacts/raw", "delivery_sink:/delivery", "notification_sink:/notifications"]
     networks: [private]
 networks:
   private:
@@ -69,3 +135,6 @@ networks:
 volumes:
   synthetic_db:
   api_coverage:
+  synthetic_objects:
+  delivery_sink:
+  notification_sink:

@@ -1,4 +1,4 @@
-name: Foundation and identity required validation
+name: Foundation identity and reporting required validation
 on:
   pull_request:
   push:
@@ -13,7 +13,7 @@ concurrency:
 jobs:
   phase1a-required:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       E2E_TELEMETRY_DISABLED: '1'
       DO_NOT_TRACK: '1'
@@ -49,6 +49,8 @@ jobs:
           .venv/bin/python -m scripts.dev api
       - name: Python API database security regression
         run: .venv/bin/python -m scripts.dev test
+      - name: Reporting PostgreSQL media and safeguarding regression
+        run: .venv/bin/python -m scripts.reporting_validate
       - name: Synthetic backup and restore
         run: .venv/bin/python -m scripts.recovery
       - name: Dependency security audit
@@ -81,6 +83,9 @@ jobs:
       - name: Real Keycloak identity and authorization regression
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.identity_test
+      - name: Real reporting BFF API and worker regression
+        if: ${{ !cancelled() }}
+        run: .venv/bin/python -m scripts.reporting_http_test
       - name: Collect API-process and combined regression coverage
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.coverage_finish

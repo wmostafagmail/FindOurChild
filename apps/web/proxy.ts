@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 export function proxy(request: NextRequest) {
-  if (request.nextUrl.pathname.includes("identity") && request.headers.get("x-forwarded-proto") !== "https") {
+  if ((request.nextUrl.pathname.includes("identity") || request.nextUrl.pathname.includes("reporting") || request.nextUrl.pathname.startsWith("/v1/")) && request.headers.get("x-forwarded-proto") !== "https") {
     return NextResponse.redirect(new URL(request.nextUrl.pathname+request.nextUrl.search,"https://127.0.0.1:3443"));
   }
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');

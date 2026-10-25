@@ -1,5 +1,7 @@
 # Implementation phases and validation gates
 
+> Current status (2026-10-25): Phase 1B is accepted on verified merged main `9fcb6ef` and required hosted CI; see [acceptance](phase1b/ACCEPTANCE.md). Phase 1C is implemented and technically validated in [draft PR #4](https://github.com/wmostafagmail/FindOurChild/pull/4), awaiting owner review. See [results and limits](phase1c/VALIDATION_REPORT.md). Synthetic data only; no Phase 2 authorization. Earlier status descriptions below are historical.
+
 > Current status (2026-10-24): Phase 1A is accepted after PR #1 merged and required hosted CI passed on merged main `683180e`. See [acceptance](phase1a/ACCEPTANCE.md). Phase 1B is explicitly authorized on `codex/phase-1b-identity-security`; Phase 1C remains unauthorized. Earlier observations below are historical.
 
 > Current authorization is **Phase 1A only**. Original Phase 0 stop statements below describe the historical run and are superseded solely by the explicit Phase 1A authorization. Phase 1A covers repository/locks/environment/contracts/schema/skeleton/tests. Stop for review after 1A; implement identity/security only after separate Phase 1B approval; stop again before Phase 1C reporting. No production facial matching or real child information is permitted. The [current review](phase1a/REVIEW.md) records passing technical gates and readiness for owner acceptance review; no approval for 1B is inferred.

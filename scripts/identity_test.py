@@ -61,6 +61,13 @@ def main():
     )
 
     required = json.loads((ROOT / "docs/phase1b/required-tests.json").read_text())["python"]
+    failed = [
+        {"id": t["id"], "locations": result.failures.get(t["id"], {})}
+        for t in entries
+        if t["status"] != "passed" and t["id"] in required
+    ]
+    if failed:
+        print("Sanitized failure locations: " + json.dumps(failed))
     if (
         before != fingerprint()
         or set(required) != set(result.collected)

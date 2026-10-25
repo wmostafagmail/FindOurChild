@@ -13,7 +13,7 @@ def inventory():
             for p in (ROOT / base).rglob("*")
             if p.is_file()
             and p.name != "next-env.d.ts"
-            and p.suffix in {".ts", ".tsx", ".css", ".py", ".sql", ".mjs", ".json"}
+            and p.suffix in {".ts", ".tsx", ".css", ".py", ".sql", ".mjs", ".json", ".png"}
             and not any(x in p.parts for x in [".next", "__pycache__", "node_modules"])
         )
     paths += [
@@ -21,6 +21,7 @@ def inventory():
         for p in [
             ".coveragerc",
             "docs/phase1b/required-tests.json",
+            "docs/phase1c/required-tests.json",
             "package.json",
             "package-lock.json",
             "pyproject.toml",

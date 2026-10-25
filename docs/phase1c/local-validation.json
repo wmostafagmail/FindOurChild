@@ -1,0 +1,44 @@
+{
+  "scope": "Local-only current-source regression. Not a complete hosted acceptance artifact.",
+  "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
+  "baseline": {
+    "passed": 158,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "reporting": {
+    "passed": 109,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "scanner_outage": {
+    "passed": 1,
+    "failed": 0,
+    "mandatory_skips": 0
+  },
+  "configuration": "175 structural/history checks passed",
+  "types_and_production_build": "Prior identical web source passed; full current-source hosted validation pending",
+  "detailed_evidence": "local-regression-evidence.json",
+  "prior_source_validation": {
+    "source_digest": "62dd1f80cd9126faf44083ec312eea4ee32201a86486ce053d467c7c606edd28",
+    "recovery": {
+      "status": "passed",
+      "migrations": 21,
+      "reporting_metadata_rls": "passed",
+      "operational_erasure": "pending"
+    },
+    "dependency_audit": "passed with pinned runtime; 0 known vulnerabilities"
+  },
+  "acceptance": "Local-only record; full hosted technical validation independently verified separately; owner review pending",
+  "recovery": {
+    "status": "passed",
+    "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7",
+    "migrations": 21,
+    "app_tables_forced_rls": 41,
+    "identity_session_rls": "passed",
+    "reporting_metadata_rls": "passed",
+    "operational_erasure": "pending",
+    "report_sha256": "c8499901d28a1bab5413d09397a57a4c68e0ac2964a300b06351dfe13563d742"
+  },
+  "hosted_evidence": "hosted-artifact-verification.json"
+}

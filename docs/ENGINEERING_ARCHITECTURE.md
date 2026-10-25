@@ -1,5 +1,7 @@
 # Engineering architecture
 
+> Current status (2026-10-25): Phase 1B is accepted on verified merged main `9fcb6ef` and required hosted CI; see [acceptance](phase1b/ACCEPTANCE.md). Phase 1C is implemented and technically validated in [draft PR #4](https://github.com/wmostafagmail/FindOurChild/pull/4), awaiting owner review. See [results and limits](phase1c/VALIDATION_REPORT.md). Synthetic data only; no Phase 2 authorization. Earlier status descriptions below are historical.
+
 > Current status (2026-10-24): Phase 1A is accepted after PR #1 merged and required hosted CI passed on merged main `683180e`. See [acceptance](phase1a/ACCEPTANCE.md). Phase 1B is explicitly authorized on `codex/phase-1b-identity-security`; Phase 1C remains unauthorized. Earlier observations below are historical.
 
 > Phase 1A implementation update: [review and limits](phase1a/REVIEW.md). The modular Next/FastAPI/PostgreSQL skeleton now exists. PostgreSQL stays on an internal-only network; only the non-owner API bridges to loopback access. All tenant/domain tables force RLS; only the narrowly scoped case-read policy is enabled, with other classifications/writes denied. Live identity/MFA and action policies require Phase 1B approval; reporting/media/workers require Phase 1C. A trusted transaction context is a server boundary, not protection against arbitrary SQL executed with stolen runtime credentials. The original four safeguarding sequence diagrams and architecture decisions below are unchanged.
