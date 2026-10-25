@@ -1,6 +1,6 @@
 # Phase 2A executable traceability
 
-Phase 0–1C records are preserved. All new rows are pending until independently verified hosted current-source evidence is attached. The existing 151-feature / 630-case Phase 0 baseline remains immutable. Research rows do not mark operational ML requirements passed.
+Phase 0–1C records are preserved. 118 research foundation cases passed on independently verified hosted current-source evidence; six real model/data qualification cases remain pending. The existing 151-feature / 630-case Phase 0 baseline remains immutable. Research rows do not mark operational ML requirements passed.
 
 - RSC-01: Versioned synthetic adapter and fail-closed model loading; 40 logical cases.
 - RSC-02: Reproducible open-set and capture-age/gap evaluation; 26 logical cases.

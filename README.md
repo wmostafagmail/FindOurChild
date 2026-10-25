@@ -1,6 +1,6 @@
 # Find Our Child
 
-> Phase 1C is accepted after verified PR #4 merge and exact-main hosted CI. Phase 2A is in progress: [research scope, licensing and validation](docs/phase2a/VALIDATION_REPORT.md). Synthetic data only; operational recognition and Phase 2B remain disabled.
+> Phase 1C is accepted after verified PR #4 merge and exact-main hosted CI. Phase 2A synthetic foundation is technically validated and awaiting owner review in draft PR #5: [research scope, licensing and validation](docs/phase2a/VALIDATION_REPORT.md). Synthetic data only; operational recognition and Phase 2B remain disabled.
 
 Phase 1B is accepted after PR #3 merged and required CI passed on exact main `9fcb6ef`. [Acceptance evidence](docs/phase1b/ACCEPTANCE.md).
 

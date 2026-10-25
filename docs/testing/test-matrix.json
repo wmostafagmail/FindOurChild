@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
   "scope": "Preserved Phase 0/1A baseline plus explicitly scoped Phase 1B identity executables; no Phase 1C",
-  "application_test_status": "phase2a_implementation_validation_pending",
+  "application_test_status": "phase2a_hosted_technical_validation_passed_awaiting_owner_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -18250,8 +18250,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18263,8 +18271,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18276,8 +18292,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18289,8 +18313,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18302,8 +18334,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18315,8 +18355,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18328,8 +18376,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18341,8 +18397,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18354,8 +18418,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18367,8 +18439,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18380,8 +18460,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18393,8 +18481,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18406,8 +18502,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18419,8 +18523,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18432,8 +18544,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18445,8 +18565,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18458,8 +18586,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18471,8 +18607,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18484,8 +18628,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18497,8 +18649,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18510,8 +18670,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18523,8 +18691,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18536,8 +18712,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18549,8 +18733,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18562,8 +18754,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18575,8 +18775,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18588,8 +18796,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18601,8 +18817,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18614,8 +18838,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18627,8 +18859,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18640,8 +18880,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18653,8 +18901,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18666,8 +18922,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18679,8 +18943,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18692,8 +18964,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18705,8 +18985,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18718,8 +19006,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18731,8 +19027,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18744,8 +19048,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18757,8 +19069,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]
@@ -18790,8 +19110,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18803,8 +19131,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18816,8 +19152,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18829,8 +19173,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18842,8 +19194,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18855,8 +19215,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18868,8 +19236,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18881,8 +19257,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18894,8 +19278,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18907,8 +19299,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18920,8 +19320,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18933,8 +19341,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18946,8 +19362,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18959,8 +19383,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18972,8 +19404,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18985,8 +19425,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -18998,8 +19446,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19011,8 +19467,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19024,8 +19488,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19037,8 +19509,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19050,8 +19530,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19063,8 +19551,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19076,8 +19572,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19089,8 +19593,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19102,8 +19614,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19115,8 +19635,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]
@@ -19148,8 +19676,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19161,8 +19697,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19174,8 +19718,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19187,8 +19739,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19200,8 +19760,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19213,8 +19781,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19226,8 +19802,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19239,8 +19823,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19252,8 +19844,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19265,8 +19865,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19278,8 +19886,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19291,8 +19907,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19304,8 +19928,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19317,8 +19949,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19330,8 +19970,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19343,8 +19991,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19356,8 +20012,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19369,8 +20033,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19382,8 +20054,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19395,8 +20075,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19408,8 +20096,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19421,8 +20117,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19434,8 +20138,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19447,8 +20159,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19460,8 +20180,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19473,8 +20201,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19486,8 +20222,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19499,8 +20243,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19512,8 +20264,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19525,8 +20285,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19538,8 +20306,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19551,8 +20327,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19564,8 +20348,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19577,8 +20369,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19590,21 +20390,37 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
           "test_case_id": "TC_RSC_03_036",
           "kind": "research_validation",
           "scenario": "scripts.recovery:research_vector_restore",
-          "planned_file": "scripts.recovery:research_vector_restore",
+          "planned_file": "scripts/recovery.py",
           "planned_selector": "scripts.recovery:research_vector_restore",
-          "planned_command": "python -m scripts.research_validate",
+          "planned_command": "python -m scripts.recovery",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]
@@ -19636,8 +20452,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19649,8 +20473,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19662,8 +20494,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19675,8 +20515,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19688,8 +20536,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19701,8 +20557,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19714,8 +20578,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19727,8 +20599,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19740,8 +20620,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19753,8 +20641,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19766,8 +20662,16 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19779,21 +20683,37 @@
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
           "test_case_id": "TC_RSC_04_013",
           "kind": "research_validation",
           "scenario": "scripts.research_benchmark:synthetic_model_smoke",
-          "planned_file": "scripts.research_benchmark:synthetic_model_smoke",
+          "planned_file": "scripts/research_benchmark.py",
           "planned_selector": "scripts.research_benchmark:synthetic_model_smoke",
           "planned_command": "python -m scripts.research_validate",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]
@@ -19825,8 +20745,16 @@
           "planned_command": "python -m scripts.research_test research_http",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         },
         {
@@ -19838,8 +20766,16 @@
           "planned_command": "python -m scripts.research_test research_http",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]
@@ -19866,13 +20802,21 @@
           "test_case_id": "TC_RSC_06_001",
           "kind": "research_validation",
           "scenario": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
-          "planned_file": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+          "planned_file": "tests/browser/identity.e2e.ts",
           "planned_selector": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
           "planned_command": "python -m scripts.dev browser",
           "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
           "required_from_phase": "2A",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+            "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+            "artifact_id": 12614004484,
+            "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40233614540",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
           "phase2a_required": true
         }
       ]

@@ -1,0 +1,35 @@
+{
+  "verified_head": "975b1fa8f5fa12274dfaafdd51153540eca9c08a",
+  "source_digest": "c20150475555b9c7c5684f2ed61dea8c7fd2f3425d57dcf11284cae8380c286b",
+  "source_files_verified_against_git_blobs": 166,
+  "artifact_id": 12614004484,
+  "artifact_name": "phase1a-sanitized-30b06e974eafb52703bba33f726bb87e15145c7d",
+  "archive_sha256": "e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
+  "verified_payload_checksums": 53,
+  "counts": {
+    "python": 158,
+    "identity": 58,
+    "reporting": 109,
+    "resilience": 1,
+    "reporting_http": 6,
+    "research": 113,
+    "research_http": 2
+  },
+  "python_total": 447,
+  "browser_total": 168,
+  "browser_counts": {
+    "chromium": 56,
+    "firefox": 56,
+    "webkit": 56
+  },
+  "migration_count": 24,
+  "coverage": {
+    "covered_lines": 1139,
+    "num_statements": 1205,
+    "percent_covered": 94.52282157676349,
+    "missing_lines": 66
+  },
+  "screenshots": 48,
+  "traces": 168,
+  "status": "passed"
+}
