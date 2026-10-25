@@ -556,3 +556,34 @@ def test_long_literal_and_structured_claims_match_closed_response_contracts():
         assert (
             len([c for c in result.json()["submitted_claims"] if c["field"] == "distinguishing_marks"]) == 20
         )
+
+
+def test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims():
+    with make_client() as client:
+        receipt, body = create_report(client)
+        verify_reporter(client, receipt, body["reporter"]["encrypted_transport_contact"])
+        source = client.get("/v1/reporter/submission").json()["submitted_claims"][0]["source_id"]
+        claims = [
+            {"field": key, "value": "prototype-" + key, "source_id": source}
+            for key in ["__proto__", "constructor", "toString"]
+        ]
+        assert (
+            client.post(
+                "/v1/reporter/supplements",
+                json={"claims": claims, "evidence_refs": []},
+                headers=headers(client),
+            ).status_code
+            == 202
+        )
+        result = client.get("/v1/reporter/submission").json()["submitted_claims"]
+        for claim in claims:
+            projected = next(c for c in result if c["field"] == claim["field"])
+            assert projected["value"] == claim["value"]
+            assert projected["encoding"] == "text"
+        with admin() as conn:
+            assert (
+                conn.execute(
+                    "SELECT verification_status FROM app.cases WHERE id=%s", (cid(receipt),)
+                ).fetchone()[0]
+                == "unverified"
+            )

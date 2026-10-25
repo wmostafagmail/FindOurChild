@@ -72,6 +72,7 @@
     "tests/reporting/test_intake.py::test_temporal_uncertainty_and_offset_ordering_are_not_fabricated[unknown_precision_with_date]",
     "tests/reporting/test_intake.py::test_temporal_uncertainty_and_offset_ordering_are_not_fabricated[reversed_actual_instants]",
     "tests/reporting/test_intake.py::test_long_literal_and_structured_claims_match_closed_response_contracts",
+    "tests/reporting/test_intake.py::test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims",
     "tests/reporting/test_media.py::test_real_clamav_versioned_storage_and_sanitized_derivative[image/png-PNG]",
     "tests/reporting/test_media.py::test_real_clamav_versioned_storage_and_sanitized_derivative[image/jpeg-JPEG]",
     "tests/reporting/test_media.py::test_real_clamav_versioned_storage_and_sanitized_derivative[image/webp-WEBP]",

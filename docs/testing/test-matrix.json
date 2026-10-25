@@ -16681,6 +16681,19 @@
           "phase1c_required": true,
           "status": "pending",
           "execution_evidence": null
+        },
+        {
+          "test_case_id": "TC_RPTC_01_048",
+          "kind": "positive_negative_security_edge",
+          "scenario": "tests/reporting/test_intake.py::test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims",
+          "planned_file": "tests/reporting/test_intake.py",
+          "planned_selector": "tests/reporting/test_intake.py::test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims",
+          "planned_command": ".venv/bin/python -m scripts.reporting_validate",
+          "expected_outcome": "Exact DTO/state/absence/authorization assertions in the executable; no unauthorized disclosure, unsafe ready image, duplicate committed action or unexecuted mandatory target.",
+          "required_from_phase": "1C",
+          "phase1c_required": true,
+          "status": "pending",
+          "execution_evidence": null
         }
       ]
     },

@@ -2,9 +2,9 @@
 
 Current status: **pending**. New cases remain pending until the full current-source hosted artifact passes and is independently verified. The Phase 0 151-feature/630-test snapshot and all accepted Phase 1A–1B entries are preserved.
 
-Master registry: 178 features, 970 logical cases; 227 passed, 743 pending. Logical mappings are not browser execution counts.
+Master registry: 178 features, 971 logical cases; 227 passed, 744 pending. Logical mappings are not browser execution counts.
 
-Phase 1C inventory: 107 reporting cases, 1 real scanner-outage case, 6 actual TLS/BFF cases and 3 browser titles ×24 targets. Together with preserved 158 baseline/58 identity and four prior browser titles, full required execution is 330 Python and 168 TesterArmy cases.
+Phase 1C inventory: 108 reporting cases, 1 real scanner-outage case, 6 actual TLS/BFF cases and 3 browser titles ×24 targets. Together with preserved 158 baseline/58 identity and four prior browser titles, full required execution is 331 Python and 168 TesterArmy cases.
 
 Identity-boundary doubles in test_cases.py are explicitly scoped API/SQL tests; actual MFA/HTTP/browser lanes remain independently mandatory.
 
@@ -61,6 +61,7 @@ Related requirements: FR-01, FR-02, FR-03, FR-04, FR-13, API-01, API-02, API-03,
 | TC_RPTC_01_045 | `tests/reporting/test_intake.py::test_temporal_uncertainty_and_offset_ordering_are_not_fabricated[unknown_precision_with_date]` | pending |
 | TC_RPTC_01_046 | `tests/reporting/test_intake.py::test_temporal_uncertainty_and_offset_ordering_are_not_fabricated[reversed_actual_instants]` | pending |
 | TC_RPTC_01_047 | `tests/reporting/test_intake.py::test_long_literal_and_structured_claims_match_closed_response_contracts` | pending |
+| TC_RPTC_01_048 | `tests/reporting/test_intake.py::test_untrusted_supplement_keys_and_values_remain_literal_unverified_claims` | pending |
 
 ## RPTC-02 — NGO moderation, scoped case access, assignments, evidence assertions, revisions and audit/outbox atomicity
 

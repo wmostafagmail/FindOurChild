@@ -32,6 +32,15 @@ for(const registry of ['missing','found']){
   await browser.locator('[data-testid="supplement"]').fill('Synthetic supplementary statement');
   await screen.getByRole('button','Add information',{exact:true}).click();
   await expect(screen.getByText('Synthetic supplementary statement',{exact:false})).toBeVisible();
+  const appended=await browser.evaluate(async()=>{
+    const submission=await (await fetch('/v1/reporter/submission')).json();
+    const csrf=document.cookie.split('; ').find(v=>v.startsWith('__Host-foc-reporter-csrf='))?.split('=')[1]??'';
+    return (await fetch('/v1/reporter/supplements',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf,'Idempotency-Key':crypto.randomUUID()},body:JSON.stringify({claims:[{field:'__proto__',value:'prototype-not-executable',source_id:submission.submitted_claims[0].source_id},{field:'relationship_claim',value:'constructor',source_id:submission.submitted_claims[0].source_id}],evidence_refs:[]})})).status;
+  });
+  expect(appended).toBe(202);
+  await app.open('/en/reporting');
+  await expect(screen.getByTestId('reporter-state')).toHaveAttribute('data-state','verified');
+  await expect(screen.getByText('prototype-not-executable',{exact:true})).toBeVisible();
   await browser.locator('[data-testid="photo-files"]').setInputFiles([resolve('tests/fixtures/synthetic-green.png'),resolve('tests/fixtures/synthetic-blue.png')]);
   await screen.getByTestId('upload-files').click();
   await expect(screen.getByTestId('reporting-status')).toContainText('Files entered quarantine');

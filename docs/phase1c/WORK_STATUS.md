@@ -1,9 +1,9 @@
-# Phase 1C engineering work in progress
+# Phase 1C work status
 
-Phase 1B acceptance is verified in ../phase1b/ACCEPTANCE.md. Current branch: codex/phase-1c-reporting-case-management. No Phase 2 authorization.
+Phase 1B is accepted on verified merged main `9fcb6ef52057a9b46826c8ad7e03e8cb13276431` and required hosted run `40144238603`.
 
-Implemented draft source: reporting.py/media.py/worker.py; migrations 0007–0014; private SeaweedFS 4.48, ClamAV Debian 1.5.4, Pillow 13.0.0; bilingual reporting page and fixed BFF routes; reporter contact verification into encrypted private local sink; staff moderation/notes/assertions/assignment; scoped media gateway and leases. Original 0001–0006 migrations and protected research are preserved.
+Phase 1C implementation is committed at `afc97a71d35287940c63f507c7cd61d3e1cfabad` on `codex/phase-1c-reporting-case-management` and submitted as [draft PR #4](https://github.com/wmostafagmail/FindOurChild/pull/4). The prototype-property rendering fix, regression and updated local evidence are subsequent local changes awaiting commit and full hosted validation. Do not accept Phase 1C from earlier-source CI.
 
-Diagnostic reporting runs: 55/83, 64/85, then 85/85 passed against actual PostgreSQL/S3/ClamAV. Subsequent source changes require fresh full validation. Browser additions exist but are unexecuted. Phase 1C is not accepted or complete. Pending work includes hosted validation, live-HTTP reporting cases, outage/worker cleanup tests, CI/result-gate integration, final traceability/evidence/report and draft PR.
+Current-source local regression: 158 baseline +108 reporting +1 real scanner-outage tests pass without skips; Ruff, 175 structural/history checks, TypeScript and production build pass. Required complete validation: 331 Python tests, 168 official TesterArmy executions (56 per browser), all 21 migrations and recovery/security/audit/artifact gates. Hosted identity/TLS/browser and final artifact verification remain pending. See [validation report](VALIDATION_REPORT.md) and [traceability](TEST_TRACEABILITY.md).
 
-Known limitations to retain in final report: synthetic-only notice/contact restrictions; no external messaging provider; operational legal/NGO/retention/KMS approvals remain; no production facial recognition or custody/release/disclosure implementation. Typed public-command idempotency wrappers were added after the diagnostic runs and need regression. All local certificate trust restrictions remain: browser TLS validation hosted only.
+Automatic approval review failed on the GitHub status check because of a usage limit; the command was not executed. Resume hosted verification and publication through the normal approval path after that service is available. No local certificate-trust workaround is authorized. The working tree is not yet clean. Phase 1C is not complete or accepted. No Phase 2 work has begun.
