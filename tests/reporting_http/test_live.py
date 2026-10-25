@@ -3,8 +3,6 @@
 import io
 import json
 import ssl
-import subprocess
-import sys
 import time
 from pathlib import Path
 from uuid import uuid4
@@ -13,6 +11,7 @@ import httpx
 import pytest
 from PIL import Image
 
+from scripts.reporting_code import read_code
 from tests.identity.helpers import real_login
 from tests.reporting.helpers import ORG, ORIGIN, report_body
 
@@ -55,9 +54,7 @@ def flow():
     private.write_text(json.dumps({"receipt": receipt}))
     private.chmod(0o600)
     try:
-        code = subprocess.check_output(
-            [sys.executable, "-m", "scripts.reporting_code"], cwd=ROOT, text=True
-        ).strip()
+        code = read_code()
     finally:
         private.unlink(missing_ok=True)
     response = public(reporter, "access-exchanges", {"receipt": receipt, "code": code})

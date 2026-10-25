@@ -8,7 +8,7 @@ for(const registry of ['missing','found']){
  test(`TC_RPT_BROWSER_${registry.toUpperCase()}_INTAKE`,async({app,screen,browser})=>{
   await app.open('/en/reporting');
   await expect(screen.getByRole('heading','Reporting and case management')).toBeVisible();
-  await browser.locator('[data-testid="registry"]').selectOption(registry);
+  await browser.locator('[data-testid="registry"]').selectOption({value:registry});
   await browser.locator('[data-testid="child-name"]').fill('Synthetic <script>not executable</script>');
   await screen.getByRole('button','العربية').click();
   await expect(browser.locator('html')).toHaveAttribute('dir','rtl');
@@ -71,6 +71,7 @@ test('TC_RPT_BROWSER_NGO_MODERATION',async({app,screen,browser})=>{
  await browser.locator('[data-testid="staff-reason"]').fill('Synthetic NGO intake review');
  await screen.getByRole('button','Review',{exact:true}).click();
  await expect(screen.getByTestId('case-detail')).toContainText('review');
+ await expect(browser.locator('[data-testid="staff-reason"]')).toHaveValue('');
  await browser.locator('[data-testid="staff-reason"]').fill('Synthetic investigation note');
  await screen.getByRole('button','Append note',{exact:true}).click();
  await expect(screen.getByTestId('case-detail')).toContainText('Synthetic investigation note');
