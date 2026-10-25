@@ -51,7 +51,9 @@ for(const registry of ['missing','found']){
   await screen.getByTestId('upload-files').click();
   await expect(screen.getByTestId('reporting-status')).toContainText('Files entered quarantine');
   expect(await browser.locator('img').count()).toBe(0);
-  await expect(screen.getByText('Sanitized review copy ready',{exact:true})).toHaveCount(2);
+  // Real scans are asynchronous and the UI polls every 5s; the default 5s matcher races that poll.
+  // Require both actual clean derivatives within a bounded 30s worker budget; no test retry or bypass.
+  await expect(screen.getByText('Sanitized review copy ready',{exact:true})).toHaveCount(2,{timeout:30_000});
   await screen.getByLabel('Message through NGO relay',{exact:true}).fill('Synthetic private relay statement');
   await screen.getByRole('button','Send safe message',{exact:true}).click();
   await expect(screen.getByTestId('reporting-status')).toContainText('Message received for review.');

@@ -132,6 +132,7 @@
     "services/api/foc_api/research/pipeline.py",
     "tests/api/test_foundation.py",
     "tests/browser/identity.e2e.ts",
+    "tests/browser/reporting.e2e.ts",
     "tests/research/test_database.py",
     "tests/research/test_evaluation.py",
     "tests/research/test_evidence.py",
@@ -141,6 +142,6 @@
     "tools/update_phase2a_matrix.py",
     "tools/verify_phase2a_evidence.py"
   ],
-  "path_count": 137,
-  "scope": "final review payload paths; no self-referential file hash; exact review head recorded in PR"
+  "path_count": 138,
+  "scope": "review path inventory; new browser deadline source requires fresh independent verification"
 }

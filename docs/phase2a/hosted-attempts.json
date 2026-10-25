@@ -18,5 +18,26 @@
     "root_cause": "Research container writer UID lacked host artifacts-directory write permission; later HTTP services were not started",
     "log_sha256": "6506e1f7d230313cfd92687de34e1b29941ccdacc2e160b01fef5090b382c148",
     "evidence_status": "failed_not_accepted"
+  },
+  {
+    "run_id": 40236702497,
+    "head_sha": "ed95bff64e1374450e0c23a216d32dee981e2789",
+    "conclusion": "failure",
+    "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40236702497",
+    "first_failed_step": "TesterArmy browser regression",
+    "browser_passed": 167,
+    "browser_failed": [
+      {
+        "id": "TC_RPT_BROWSER_MISSING_INTAKE",
+        "target": "firefox-en-GB-390",
+        "status": "failed"
+      }
+    ],
+    "python_passed": 447,
+    "artifact_id": 12614794440,
+    "artifact_sha256": "sha256:baad6899f6ca37dc8af6e9c5cca77cbfb4d061c7e11190525757746a4afb43bb",
+    "root_cause": "Five-second default assertion deadline races five-second UI polling and asynchronous worker completion; exact raw observed state/timing not retained in sanitized output",
+    "correction": "Bound only two-clean-copy readiness assertion to 30s; same condition, targets, framework and zero retries",
+    "evidence_status": "failed_not_accepted"
   }
 ]
