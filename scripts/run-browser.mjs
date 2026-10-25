@@ -32,6 +32,17 @@ result=spawnSync('./node_modules/.bin/e2e',['run','--config','e2e.config.ts','--
 }
 writeFileSync('artifacts/raw/browser-console.log',Buffer.concat([result.stdout??Buffer.alloc(0),result.stderr??Buffer.alloc(0)]),{mode:0o600});
 if (result.error) throw new Error('Browser runner process failed; private diagnostics retained');
-try{const report=JSON.parse(readFileSync('.e2e/report.json','utf8'));console.log('Official TesterArmy browser assertions: '+JSON.stringify(report.run.summary));}catch{console.log('Browser result manifest unavailable; required gate remains blocked');}
+try{
+ const report=JSON.parse(readFileSync('.e2e/report.json','utf8'));
+ console.log('Official TesterArmy browser assertions: '+JSON.stringify(report.run.summary));
+ const required=JSON.parse(readFileSync('docs/phase1a/required-tests.json','utf8')).browser_titles;
+ const allowedFiles=new Set(['tests/browser/foundation.e2e.ts','tests/browser/identity.e2e.ts','tests/browser/reporting.e2e.ts']);
+ const failed=report.run.results.filter(r=>r.status!=='passed').map(r=>{
+  const attempt=r.attempts?.at(-1);
+  const source=attempt?.error?.source??attempt?.steps?.find(s=>s.status==='failed'||s.status==='error')?.source;
+  return {id:required.includes(r.titlePath?.at(-1))?r.titlePath.at(-1):'unknown',target:/^(chromium|firefox|webkit)-(ar-EG|en-GB)-(320|360|390|1280)$/.test(r.targetId)?r.targetId:'unknown',source:source&&allowedFiles.has(source.file)&&Number.isInteger(source.line)&&source.line>0&&source.line<=20000?{file:source.file,line:source.line}:null};
+ });
+ if(failed.length)console.log('Sanitized browser failure locations: '+JSON.stringify(failed));
+}catch{console.log('Browser result manifest unavailable; required gate remains blocked');}
 writeFileSync('artifacts/raw/browser-run.json',JSON.stringify({source_digest:before,exit_code:result.status ?? 1,app_data_isolated:appData !== null}));
 process.exit(before===digest() ? (result.status ?? 1) : 1);
