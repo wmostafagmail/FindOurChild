@@ -1,0 +1,3 @@
+# Research source notices
+
+Files here are inert documentary snapshots, not imported or installed dependencies. Their repository revisions, source URLs and hashes are in source-lock.json. All existing Phase 2A license/copyright evidence remains distributed in this repository: AdaFace LICENSE, DeepFace LICENSE, OpenCV root and SFace Apache-2.0 and YuNet MIT notices, and the AuraFace publisher license. See ../../phase2a/research and ../../phase2a/LICENSING_MATRIX.md. Original source headers are preserved. Inclusion of source evidence grants no rights in model weights or training images. New pointer/JSON files contain publisher identity metadata only, not binary payloads.
