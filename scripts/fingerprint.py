@@ -23,6 +23,9 @@ def inventory():
             "docs/phase1b/required-tests.json",
             "docs/phase1c/required-tests.json",
             "docs/phase2a/required-tests.json",
+            "docs/phase2b/required-tests.json",
+            "docs/phase2b/research/source-lock.json",
+            "compose.qualification.yaml",
             "docs/phase2a/research/source-lock.json",
             "package.json",
             "package-lock.json",
@@ -44,6 +47,13 @@ def inventory():
         candidate = (research_root / entry["local"]).resolve()
         if not candidate.is_relative_to(research_root) or not candidate.is_file():
             raise ValueError("Research evidence path escaped or missing")
+        paths.append(candidate)
+    qualification_root = (ROOT / "docs/phase2b/research").resolve()
+    qualification_lock = json.loads((qualification_root / "source-lock.json").read_text())
+    for entry in qualification_lock["sources"]:
+        candidate = (qualification_root / entry["local"]).resolve()
+        if not candidate.is_relative_to(qualification_root) or not candidate.is_file():
+            raise ValueError("Qualification evidence escaped or missing")
         paths.append(candidate)
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(set(paths))}
 

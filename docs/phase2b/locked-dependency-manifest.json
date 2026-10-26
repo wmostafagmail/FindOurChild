@@ -1,0 +1,24 @@
+{
+  "status": "existing_Phase1C_pins_preserved_no_recognition_dependencies_added",
+  "node": "24.18.0",
+  "npm": "11.16.0",
+  "python": "3.13.13",
+  "uv": "0.12.0",
+  "testerarmy_e2e": "0.21.3",
+  "testerarmy_web": "0.15.3",
+  "playwright_core": "1.64.1",
+  "pgvector": "0.8.7",
+  "files": {
+    "package.json": "ab247effd48b47af2560056b1159291f45f7142a7d7792d64076fbae59b256ea",
+    "package-lock.json": "7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff",
+    "pyproject.toml": "3fa40214077708a37a66209c3e7fb1c71a91922b7b15c3defbbcfb30043dffef",
+    "uv.lock": "b65e6540dc21a6d630addd9d20d47266c3d626bb0f64c576cc808dae42998004",
+    "compose.yaml": "d5eafd66c77739333445dd2fd038f11e1f93cbbd7cea8e6637a92f20267db82e",
+    "requirements-bootstrap.txt": "524c21e2a1cf273b13001b30f117affa2718978f0586846d1fc731a5d826d66e",
+    "tools/rea/package-lock.json": "1294546c54e18f7914f29363c5d058eb425565539d28051eac17b3f0ee097816"
+  },
+  "recognition_packages_installed": false,
+  "recognition_weights_downloaded": false,
+  "qualification_compose_sha256": "4d265e100d18e9e1ab3ef00fe9aa42d65ce162a8248a25c4773d901e7d18b7aa",
+  "qualification_environment": "Separate synthetic metadata cluster, existing pinned PostgreSQL image and foundation test image; no inference runtime pinned or installed"
+}

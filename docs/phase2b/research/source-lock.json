@@ -1,0 +1,170 @@
+{
+  "scope": "Pinned source text, Git LFS pointers and publisher metadata only. No weight bytes, datasets or portraits fetched. Binary verification and rights clearance remain blocked.",
+  "sources": [
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "model_zoo/README.md",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/model_zoo/README.md",
+      "local": "insightface/model_zoo/README.md",
+      "sha256": "b6f00e8bfc6e2354c12a4df48e13d026a816b5c70b85aacc85928b710f2c66d0",
+      "bytes": 15470,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "python-package/insightface/utils/face_align.py",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/utils/face_align.py",
+      "local": "insightface/python-package/insightface/utils/face_align.py",
+      "sha256": "a8b34ddd06716f5ca7e7501415cbd3789ccbce18db9e557b35e537695290d922",
+      "bytes": 3356,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "python-package/insightface/utils/storage.py",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/utils/storage.py",
+      "local": "insightface/python-package/insightface/utils/storage.py",
+      "sha256": "1992cb139bb71b9026713ee2edaa549be39cc5483d08c73d6ec4557c4b93a199",
+      "bytes": 2197,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "README_TRAIN.md",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/README_TRAIN.md",
+      "local": "adaface/README_TRAIN.md",
+      "sha256": "f03f5f57664b60f5c7cec2cbe9b3c3cdd048f9a08fe1d8ad5333a809b2f1f5cc",
+      "bytes": 4007,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "net.py",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/net.py",
+      "local": "adaface/net.py",
+      "sha256": "b4db4eb0174a385fd29e5f616391b50d443f455990c8b88dcab1f8021af8ba4c",
+      "bytes": 12787,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/models/facial_recognition/onnx/Facenet.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/Facenet.py",
+      "local": "deepface/deepface/models/facial_recognition/onnx/Facenet.py",
+      "sha256": "9fb5302da5e9a70f8a19ff36e0460a2a81fde58d4e7d2fc439311c9b63e6e55c",
+      "bytes": 2078,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/models/facial_recognition/onnx/OnnxFacialRecognition.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/OnnxFacialRecognition.py",
+      "local": "deepface/deepface/models/facial_recognition/onnx/OnnxFacialRecognition.py",
+      "sha256": "9bf61c2569417a05e43310a90d078a95ffca9ff041246cfee043c442670b0f3f",
+      "bytes": 1289,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/commons/onnx_utils.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/commons/onnx_utils.py",
+      "local": "deepface/deepface/commons/onnx_utils.py",
+      "sha256": "0bab7cd45553e93731e602b49215fea55a3b425b8c9ab0a589e164d6482cbbd2",
+      "bytes": 8895,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/modules/preprocessing.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/modules/preprocessing.py",
+      "local": "deepface/deepface/modules/preprocessing.py",
+      "sha256": "9c131f82603b84b6b260352c377d2c5798cb6a267b523570700f370ec2c0446f",
+      "bytes": 3433,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_detection_yunet/yunet.py",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/yunet.py",
+      "local": "opencv/models/face_detection_yunet/yunet.py",
+      "sha256": "8115b70ce52f514958d9df23fded86729880aec02ee38f0ea18feebce360099a",
+      "bytes": 1948,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_recognition_sface/demo.py",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/demo.py",
+      "local": "opencv/models/face_recognition_sface/demo.py",
+      "sha256": "907e28b2e4e620fbc2aa4b66229c7142356aa23ebfa12fd9798966379a671e51",
+      "bytes": 7034,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_recognition_sface/face_recognition_sface_2021dec.onnx.lfs-pointer.txt",
+      "url": "https://api.github.com/repos/opencv/opencv_zoo/git/blobs/5817e559d509b2c1d5069f3c49a388bc45d4395f",
+      "local": "opencv/models/face_recognition_sface/face_recognition_sface_2021dec.onnx.lfs-pointer.txt",
+      "sha256": "056d0f5482483764dcac0d4b3beacc2a878e23f2b4ce935b50ded42624644fea",
+      "bytes": 133,
+      "status": "publisher_lfs_pointer_only_no_weight_bytes"
+    },
+    {
+      "candidate": "opencv",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_detection_yunet/face_detection_yunet_2023mar.onnx.lfs-pointer.txt",
+      "url": "https://api.github.com/repos/opencv/opencv_zoo/git/blobs/2d8804a5986e229f1fde3a1994feacc66c91b58b",
+      "local": "opencv/models/face_detection_yunet/face_detection_yunet_2023mar.onnx.lfs-pointer.txt",
+      "sha256": "0b6ceccb83e3d6cb38ae9a92499469937eb210e0267f26f7e68c5a13b53818c3",
+      "bytes": 131,
+      "status": "publisher_lfs_pointer_only_no_weight_bytes"
+    },
+    {
+      "candidate": "auraface",
+      "repository": "fal/AuraFace-v1",
+      "commit": "af6d057c9b0ec4071d4c49c80e3539258798b609",
+      "path": "publisher-tree.json",
+      "url": "https://huggingface.co/api/models/fal/AuraFace-v1/tree/af6d057c9b0ec4071d4c49c80e3539258798b609?recursive=true&expand=false",
+      "local": "auraface/publisher-tree.json",
+      "sha256": "41d06c9ba0042a8e0423faa13585348a77573306c6fe44d966ea286f7dfbd45d",
+      "bytes": 1783,
+      "status": "publisher_metadata_only_no_weight_bytes"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface_models",
+      "commit": "release-v1.0",
+      "path": "publisher-release-assets.json",
+      "url": "https://api.github.com/repos/serengil/deepface_models/releases/tags/v1.0",
+      "local": "deepface/publisher-release-assets.json",
+      "sha256": "3f5bed6f8043efe580bf5319bf65b5d141eb5145d257b22d3d494db307513721",
+      "bytes": 778,
+      "status": "publisher_metadata_only_no_weight_bytes"
+    }
+  ]
+}

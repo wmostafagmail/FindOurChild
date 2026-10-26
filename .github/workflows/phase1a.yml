@@ -1,4 +1,4 @@
-name: Foundation reporting and synthetic research required validation
+name: Foundation and synthetic qualification required validation
 on:
   pull_request:
   push:
@@ -53,6 +53,8 @@ jobs:
         run: .venv/bin/python -m scripts.reporting_validate
       - name: Synthetic research API database and adversarial regression
         run: .venv/bin/python -m scripts.research_validate
+      - name: Isolated qualification preparation and recovery
+        run: .venv/bin/python -m scripts.qualification_validate
       - name: Synthetic backup and restore
         run: .venv/bin/python -m scripts.recovery
       - name: Dependency security audit

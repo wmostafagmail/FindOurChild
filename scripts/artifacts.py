@@ -168,6 +168,16 @@ def export(root=ROOT):
         except (ValueError, KeyError, OSError, TypeError):
             failures.append("missing or nonpassing " + lane + " evidence")
     try:
+        required = json.loads((root / "docs/phase2b/required-tests.json").read_text())["qualification"]
+        report = json.loads((root / "artifacts/raw/qualification-results.json").read_text())
+        summaries["qualification"] = python_gate(report, {"python": required}, digest)
+        isolation = {"separate_database": True, "network_internal": True, "published_ports": 0, "operational_credentials_mounted": False, "forced_rls_tables": 4, "metadata_backup_restore": "passed", "restored_revocation": "passed", "real_data_authorized": False}
+        if report["lab_isolation"] != isolation:
+            raise ValueError("qualification isolation or recovery incomplete")
+        summaries["qualification_isolation"] = isolation
+    except (ValueError, KeyError, OSError, TypeError):
+        failures.append("missing or nonpassing qualification preparation evidence")
+    try:
         from scripts.research_evidence import aggregate
 
         summaries["synthetic_model_smoke"] = aggregate(
@@ -307,7 +317,7 @@ def export(root=ROOT):
         "source_digest": digest,
     }
     # Allowlisted log replaces arbitrary free-text process logs.
-    (output / "validation.log").write_text("Phase 2A required gate: " + summaries["gate"]["status"] + "\n")
+    (output / "validation.log").write_text("Phase 2B preparation required gate: " + summaries["gate"]["status"] + "\n")
     (output / "results.json").write_text(json.dumps(summaries, indent=2) + "\n")
     (output / "source-manifest.json").write_text(json.dumps(inventory(), indent=2) + "\n")
     (output / "checksums.json").write_text(

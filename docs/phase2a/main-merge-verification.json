@@ -1,0 +1,36 @@
+{
+  "verified_head": "0d5abdaa713c504ef9bd90b7ec0fdd04e4a8accd",
+  "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+  "source_files_verified_against_git_blobs": 166,
+  "artifact_id": 12638876093,
+  "artifact_name": "phase1a-sanitized-0d5abdaa713c504ef9bd90b7ec0fdd04e4a8accd",
+  "archive_sha256": "2ec300939fabd3a6053dee9cb693fb1992fc1224b192e782c40cb867c87bf026",
+  "verified_payload_checksums": 53,
+  "counts": {
+    "python": 158,
+    "identity": 58,
+    "reporting": 109,
+    "resilience": 1,
+    "reporting_http": 6,
+    "research": 113,
+    "research_http": 2
+  },
+  "python_total": 447,
+  "browser_total": 168,
+  "browser_counts": {
+    "chromium": 56,
+    "firefox": 56,
+    "webkit": 56
+  },
+  "migration_count": 24,
+  "coverage": {
+    "covered_lines": 1139,
+    "num_statements": 1205,
+    "percent_covered": 94.52282157676349,
+    "missing_lines": 66
+  },
+  "screenshots": 48,
+  "traces": 168,
+  "status": "passed",
+  "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40294754349"
+}

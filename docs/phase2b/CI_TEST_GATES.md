@@ -1,0 +1,11 @@
+# Phase 2B preparation CI gates
+
+The existing protected check `phase1a-required` remains required and retains the complete Phase 1A–2A suites, all 24 migrations, real API/Keycloak/worker/scanner/PostgreSQL/RLS integration, security, dependency audits, combined coverage >=75%, native application backup/restore and 168 official TesterArmy executions (56 per engine, two locales/four widths). No mandatory skip or retry counts as passed. The runner/web/Playwright pins remain 0.21.3/0.15.3/1.64.1; model-assisted steps and external testing-model tokens remain zero.
+
+A new mandatory isolated-lab step runs all 107 exact inventory selectors and native synthetic metadata backup/restore/revocation checks. It uses a distinct cluster/internal-only network, no ports or operational credentials, and drops only its own disposable volumes. The source fingerprint includes its Compose file, SQL, code, test manifest, model register and every newly locked source/publisher-metadata file. Missing, stale, duplicated, skipped, setup/call/teardown-failed or nonpassing results block the full gate.
+
+Closed artifacts add only approved test ID/status and lab isolation/recovery booleans. They retain input-free screenshots, minimized traces, migration/recovery results and coverage; raw logs, dumps, vectors, pixels, subject manifests, credentials and DOM remain private. Independently verify archive digest, every payload checksum, each committed execution-source blob, exact test inventories and no operational/real-model activation before review.
+
+Every changed feature runs affected tests and the complete required regression workflow. Critical safeguarding/security failures block progression. Committed YAML alone does not establish branch protection; direct GitHub observation remains necessary. Current main protection requires strict/up-to-date Actions app 15368 `phase1a-required`, administrators included, resolved conversations and no force-push/deletion; independent approvals are currently zero, not required. No settings were changed.
+
+This gate validates synthetic preparation. Real model/data/hardware/independent accuracy qualifications remain pending external approval and do not count as passed engineering tests. No next phase or operational activation follows automatically from CI.

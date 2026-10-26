@@ -1,0 +1,57 @@
+name: foc-qualification
+services:
+  labdb:
+    image: pgvector/pgvector:0.8.7-pg17-bookworm@sha256:ac08538c6f8b9904c33c8224c5e5706dbe760aca29db1d096972b4052c22a75d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: foc_qualification
+      POSTGRES_PASSWORD_FILE: /run/secrets/lab_admin
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    secrets: [lab_admin]
+    volumes:
+      - qualification_db:/var/lib/postgresql/data
+      - ./database/qualification/0001_preparation.sql:/docker-entrypoint-initdb.d/0001_preparation.sql:ro
+    networks: [qualification_only]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U postgres -d foc_qualification]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    mem_limit: 512m
+    pids_limit: 128
+    security_opt: [no-new-privileges:true]
+  tester:
+    image: foc-foundation:0.1.0
+    command: [python, -m, scripts.qualification_test]
+    environment:
+      FOC_LAB_HOST: labdb
+      FOC_LAB_DATABASE: foc_qualification
+      COVERAGE_FILE: /lab-output/.coverage.qualification
+    secrets: [lab_admin, lab_runtime]
+    volumes:
+      - ./services/api:/workspace/services/api:ro
+      - ./scripts:/workspace/scripts:ro
+      - ./tests/qualification:/workspace/tests/qualification:ro
+      - ./config/qualification-models.json:/workspace/config/qualification-models.json:ro
+      - ./docs/phase2a/research:/workspace/docs/phase2a/research:ro
+      - ./docs/phase2b/research:/workspace/docs/phase2b/research:ro
+      - ./docs/phase2b/required-tests.json:/workspace/docs/phase2b/required-tests.json:ro
+      - ./.coveragerc:/workspace/.coveragerc:ro
+      - ./artifacts/raw/qualification-lab:/lab-output
+    networks: [qualification_only]
+    read_only: true
+    tmpfs: [/tmp:size=64m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 768m
+    pids_limit: 128
+networks:
+  qualification_only:
+    internal: true
+volumes:
+  qualification_db:
+secrets:
+  lab_admin:
+    file: ./.runtime/qualification/admin
+  lab_runtime:
+    file: ./.runtime/qualification/runtime

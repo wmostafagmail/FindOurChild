@@ -1,0 +1,22 @@
+{
+  "tag": "v1.0",
+  "observed": "2026-10-26",
+  "assets": [
+    {
+      "id": 601316846,
+      "name": "arcface_weights.onnx",
+      "size": 136588094,
+      "digest": "sha256:a897e00dcf6f15e99f7218f8ed081550ebd38c7115c434772faa7c488eb6ad40",
+      "browser_download_url": "https://github.com/serengil/deepface_models/releases/download/v1.0/arcface_weights.onnx",
+      "updated_at": "2026-09-30T16:11:50Z"
+    },
+    {
+      "id": 601326180,
+      "name": "facenet512_weights.onnx",
+      "size": 93956456,
+      "digest": "sha256:a7a4fbcc6af3175f5c4e91de0b92b4fa387e0e9f141efd59616337220363da33",
+      "browser_download_url": "https://github.com/serengil/deepface_models/releases/download/v1.0/facenet512_weights.onnx",
+      "updated_at": "2026-09-30T16:17:05Z"
+    }
+  ]
+}
