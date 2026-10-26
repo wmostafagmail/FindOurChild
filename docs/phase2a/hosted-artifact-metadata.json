@@ -1,0 +1,20 @@
+{
+  "id": 12616672764,
+  "node_id": "MDg6QXJ0aWZhY3QxMjYxNjY3Mjc2NA==",
+  "name": "phase1a-sanitized-584014567183a9f343f573cd9695ba820c43ccc8",
+  "size_in_bytes": 2124000,
+  "url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12616672764",
+  "archive_download_url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12616672764/zip",
+  "expired": false,
+  "digest": "sha256:04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+  "created_at": "2026-10-25T22:31:11Z",
+  "updated_at": "2026-10-25T22:31:11Z",
+  "expires_at": "2026-11-01T22:31:10Z",
+  "workflow_run": {
+    "id": 40239078581,
+    "repository_id": 1431972312,
+    "head_repository_id": 1431972312,
+    "head_branch": "codex/phase-2a-model-qualification-foundation",
+    "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48"
+  }
+}

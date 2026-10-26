@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
   "scope": "Preserved Phase 0/1A baseline plus explicitly scoped Phase 1B identity executables; no Phase 1C",
-  "application_test_status": "phase1c_hosted_technical_validation_passed_awaiting_owner_review",
+  "application_test_status": "phase2a_hosted_technical_validation_passed_awaiting_owner_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -19,7 +19,16 @@
     "FX-FOUNDATION": {
       "description": "Disposable internal-only PostgreSQL/pgvector, synthetic org/principal/case UUIDs, input-free bilingual shell, generated one-pixel sanitizer unit fixtures and synthetic validator reports. Validator unit fixtures never count as real browser/application evidence."
     },
-    "FX-REPORTING": "Only generated synthetic contacts/names/receipts, separate NGO/staff principals, encrypted operator sinks, solid-color PNG/JPEG/WebP, inert EICAR test string, immutable S3 versions, real ClamAV, real PG non-owner roles and controlled crash/outage barriers. No real child images or production information."
+    "FX-REPORTING": "Only generated synthetic contacts/names/receipts, separate NGO/staff principals, encrypted operator sinks, solid-color PNG/JPEG/WebP, inert EICAR test string, immutable S3 versions, real ClamAV, real PG non-owner roles and controlled crash/outage barriers. No real child images or production information.",
+    "FX-2A-GEOMETRIC": {
+      "description": "32 local geometric PNGs; no faces, weights or child data"
+    },
+    "FX-2A-ANALYTIC": {
+      "description": "Hand-constructed normalized vectors and pseudonymous metric ground truth"
+    },
+    "FX-2A-PG": {
+      "description": "Isolated real PostgreSQL research grants/datasets/photographs/vector rows; cleanup after each test"
+    }
   },
   "features": [
     {
@@ -10917,7 +10926,7 @@
       "positive_scenarios": "Keyboard/labels/focus/status/zoom/manual screen-reader review",
       "negative_scenarios": "Missing names, focus traps and clipped actionable text fail",
       "security_authorization_scenarios": "Private content absent from accessible tree and page title",
-      "edge_cases": "3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth",
+      "edge_cases": "3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth",
       "fixture_ids": [
         "FX-A11Y"
       ],
@@ -10965,11 +10974,11 @@
         {
           "test_case_id": "TC_A11Y_01_E",
           "kind": "edge",
-          "scenario": "3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth",
+          "scenario": "3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth",
           "planned_file": "tests/browser/a11y_01.e2e.ts",
           "planned_selector": "TC_A11Y_01_E",
           "planned_command": "./node_modules/.bin/e2e run tests/browser/a11y_01.e2e.ts --grep TC_A11Y_01_E --retries 0 --no-cache",
-          "expected_outcome": "Under 3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth, supported success preserves: WCAG acceptance evidence plus deterministic layout/DOM checks; manual results separate; any failure remains safely held/denied without an unauthorized partial effect",
+          "expected_outcome": "Under 3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth, supported success preserves: WCAG acceptance evidence plus deterministic layout/DOM checks; manual results separate; any failure remains safely held/denied without an unauthorized partial effect",
           "required_from_phase": 1,
           "status": "pending",
           "execution_evidence": null,
@@ -11134,7 +11143,7 @@
       "positive_scenarios": "Measure proposed workload with controls enabled",
       "negative_scenarios": "Resource saturation/queue overload fails capacity gate",
       "security_authorization_scenarios": "No rate-limit/authorization bypass for benchmark",
-      "edge_cases": "50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
+      "edge_cases": "50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
       "fixture_ids": [
         "FX-BASE",
         "FX-MATCH",
@@ -11184,11 +11193,11 @@
         {
           "test_case_id": "TC_PERF_01_E",
           "kind": "edge",
-          "scenario": "50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
+          "scenario": "50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
           "planned_file": "tests/performance/test_perf_01.py",
           "planned_selector": "test_tc_perf_01_e",
           "planned_command": "pytest tests/performance/test_perf_01.py::test_tc_perf_01_e",
-          "expected_outcome": "Under 50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact, supported success preserves: Observed p50/p95/p99/error/resources and review workload; provisional SLOs not assumed passed; any failure remains safely held/denied without an unauthorized partial effect",
+          "expected_outcome": "Under 50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact, supported success preserves: Observed p50/p95/p99/error/resources and review workload; provisional SLOs not assumed passed; any failure remains safely held/denied without an unauthorized partial effect",
           "required_from_phase": 1,
           "status": "pending",
           "execution_evidence": null,
@@ -18211,6 +18220,2698 @@
             "artifact": "artifacts/phase1c-sanitized/results.json",
             "source_digest": "1c15c86da0fe7972c0358b91c074c9d42f3851bf7ba914449cdd57724b59f3b7"
           }
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-01",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Versioned synthetic adapter and fail-closed model loading",
+      "suite": "test_pipeline.py",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_01_001",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_procedural_pipeline_has_complete_stage_provenance",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_procedural_pipeline_has_complete_stage_provenance",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_002",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_003",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[not-an-image]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[not-an-image]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_004",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unapproved_bytes_are_rejected[xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_005",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[False]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[False]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_006",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[None]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[None]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_007",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_008",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[approved]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_sensitive_subject_selection_fails_closed[approved]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_009",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unknown_region_cannot_silently_align",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unknown_region_cannot_silently_align",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_010",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[-1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[-1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_011",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[32]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[32]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_012",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[True]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[True]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_013",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_fixture_factory_is_bounded[1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_014",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value0]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value0]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_015",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_016",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value2]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_017",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value3]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value3]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_018",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value4]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_invalid_embeddings_are_rejected[value4]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_019",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[code_revision]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[code_revision]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_020",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[detector_version]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[detector_version]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_021",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[alignment_version]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[alignment_version]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_022",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[quality_version]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[quality_version]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_023",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[preprocessing_version]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[preprocessing_version]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_024",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[schema_version]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[schema_version]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_025",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[weights_sha256]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_equal_dimensions_do_not_imply_compatible_spaces[weights_sha256]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_026",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs0]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs0]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_027",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_028",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs2]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_029",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs3]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs3]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_030",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs4]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs4]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_031",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs5]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_unqualified_space_is_rejected[kwargs5]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_032",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_operational_model_loading_cannot_be_activated",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_operational_model_loading_cannot_be_activated",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_033",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_pipeline_has_no_network_dependency",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_pipeline_has_no_network_dependency",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_034",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers0]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers0]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_035",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers1]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_036",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers2]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_capability_api_rejects_unauthorized_access[headers2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_037",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/public/biometric-search]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/public/biometric-search]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_038",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/research/activate]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/research/activate]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_039",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/custody/disclose]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/custody/disclose]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_01_040",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/identity/confirm]",
+          "planned_file": "tests/research/test_pipeline.py",
+          "planned_selector": "tests/research/test_pipeline.py::test_operational_routes_remain_disabled[/v1/identity/confirm]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-02",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Reproducible open-set and capture-age/gap evaluation",
+      "suite": "test_evaluation.py",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_02_001",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_metrics_use_separate_present_absent_denominators",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_metrics_use_separate_present_absent_denominators",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_002",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_open_set_false_match_is_not_hidden_by_recall",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_open_set_false_match_is_not_hidden_by_recall",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_003",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_threshold_miss_is_distinct_from_retrieval_hit",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_threshold_miss_is_distinct_from_retrieval_hit",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_004",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unknown_and_uncertain_capture_intervals_stay_explicit",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unknown_and_uncertain_capture_intervals_stay_explicit",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_005",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[duplicate]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[duplicate]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_006",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[subject-split]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[subject-split]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_007",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[family-split]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[family-split]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_008",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[case-label]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[case-label]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_009",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[real]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[real]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_010",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[space]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[space]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_011",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[inverted-date]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[inverted-date]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_012",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[partial-date]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[partial-date]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_013",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[negative-age]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[negative-age]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_014",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[partial-age]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[partial-age]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_015",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[unknown-partition]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_manifest_adversarial_inputs_fail_closed[unknown-partition]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_016",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[nan]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[nan]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_017",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[inf]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[inf]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_018",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[2]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_019",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[None]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[None]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_020",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[True]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_unfrozen_invalid_thresholds_rejected[True]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_021",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_absent_denominator_is_null_when_no_open_set_probes",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_absent_denominator_is_null_when_no_open_set_probes",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_022",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_empty_and_incomplete_evaluations_rejected",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_empty_and_incomplete_evaluations_rejected",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_023",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_ties_photo_caps_and_registry_filter_are_deterministic",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_ties_photo_caps_and_registry_filter_are_deterministic",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_024",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[0]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[0]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_025",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[51]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[51]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_02_026",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[True]",
+          "planned_file": "tests/research/test_evaluation.py",
+          "planned_selector": "tests/research/test_evaluation.py::test_retrieval_budget_cannot_be_bypassed[True]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-03",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Private pgvector exact retrieval, per-photo metadata and RLS",
+      "suite": "test_database.py",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_03_001",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_exact_pgvector_retrieval_and_unknown_per_photo_metadata",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_exact_pgvector_retrieval_and_unknown_per_photo_metadata",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_002",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_grants]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_grants]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_003",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_datasets]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_datasets]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_004",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_photographs]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_photographs]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_005",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_vectors_synthetic_v1]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_app_runtime_has_no_research_access[research_vectors_synthetic_v1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_006",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_app_runtime_cannot_become_research_role",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_app_runtime_cannot_become_research_role",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_007",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.photographs]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.photographs]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_008",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.embeddings]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.embeddings]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_009",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.restricted_custody]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[app.restricted_custody]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_010",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[platform.upload_metadata]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[platform.upload_metadata]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_011",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[platform.research_grants]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_research_cannot_access_operational_or_approval_data[platform.research_grants]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_012",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_missing_context_and_cross_organization_are_empty",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_missing_context_and_cross_organization_are_empty",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_013",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_grants SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_grants SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_014",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_grants SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_grants SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_015",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_datasets SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_datasets SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_016",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_datasets SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_expired_revoked_authorization_or_data_invalidates_retrieval[UPDATE platform.research_datasets SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_017",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_deletion_cleans_exact_vector_index_and_prevents_stale_write",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_deletion_cleans_exact_vector_index_and_prevents_stale_write",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_018",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[wrong-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-1]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[wrong-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_019",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[1,0]-1]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[1,0]-1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_020",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-1]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-1]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_021",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-2]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_incompatible_dimension_space_normalization_revision_rejected[a4b39dd8ee7e3e4a756d70981d91d8a84314975147893a5c68d28b30b00bf14b-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]-2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_022",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_historical_photo_constraints[capture_lower='2021-01-01',capture_upper='2020-01-01',capture_precision='interval']",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_historical_photo_constraints[capture_lower='2021-01-01',capture_upper='2020-01-01',capture_precision='interval']",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_023",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_historical_photo_constraints[age_min_months=-1,age_max_months=2]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_historical_photo_constraints[age_min_months=-1,age_max_months=2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_024",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_historical_photo_constraints[synthetic=false]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_historical_photo_constraints[synthetic=false]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_025",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_historical_photo_constraints[capture_lower='2020-01-01']",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_historical_photo_constraints[capture_lower='2020-01-01']",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_026",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_historical_photo_constraints[age_min_months=2]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_historical_photo_constraints[age_min_months=2]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_027",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_every_research_table_forces_rls_and_role_is_no_login",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_every_research_table_forces_rls_and_role_is_no_login",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_028",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_authorized_research_write_preserves_independent_photo_history",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_authorized_research_write_preserves_independent_photo_history",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_029",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_cross_tenant_mutations_and_unversioned_updates_are_denied",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_cross_tenant_mutations_and_unversioned_updates_are_denied",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_030",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.memberships SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.memberships SET revoked_at=now() WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_031",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.memberships SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.memberships SET expires_at=now()-interval '1 second' WHERE organization_id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_032",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.organizations SET suspended_at=now() WHERE id=%s]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.organizations SET suspended_at=now() WHERE id=%s]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_033",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.staff_principals SET disabled_at=now() WHERE id IN (SELECT principal_id FROM app.memberships WHERE organization_id=%s)]",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_identity_revocation_also_revokes_research[UPDATE app.staff_principals SET disabled_at=now() WHERE id IN (SELECT principal_id FROM app.memberships WHERE organization_id=%s)]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_034",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_read_committed_rechecks_research_revocation_without_pool_reset",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_read_committed_rechecks_research_revocation_without_pool_reset",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_035",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_database.py::test_pgvector_matches_independent_python_exact_search_with_photo_caps",
+          "planned_file": "tests/research/test_database.py",
+          "planned_selector": "tests/research/test_database.py::test_pgvector_matches_independent_python_exact_search_with_photo_caps",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_03_036",
+          "kind": "research_validation",
+          "scenario": "scripts.recovery:research_vector_restore",
+          "planned_file": "scripts/recovery.py",
+          "planned_selector": "scripts.recovery:research_vector_restore",
+          "planned_command": "python -m scripts.recovery",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-04",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Licensing evidence integrity and privacy-safe artifact gates",
+      "suite": "test_evidence.py",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_04_001",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_no_recognition_artifact_is_cleared_and_all_source_evidence_is_pinned",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_no_recognition_artifact_is_cleared_and_all_source_evidence_is_pinned",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_002",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_export_retains_only_aggregate_evidence",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_export_retains_only_aggregate_evidence",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_003",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[source]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[source]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_004",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[real]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[real]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_005",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[status]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[status]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_006",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[count]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[count]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_007",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[data]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[data]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_008",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[accuracy]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[accuracy]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_009",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[hash]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[hash]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_010",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[nan]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[nan]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_011",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[injection]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[injection]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_012",
+          "kind": "research_validation",
+          "scenario": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[burden]",
+          "planned_file": "tests/research/test_evidence.py",
+          "planned_selector": "tests/research/test_evidence.py::test_unsafe_or_incomplete_benchmark_evidence_blocks_ci[burden]",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_04_013",
+          "kind": "research_validation",
+          "scenario": "scripts.research_benchmark:synthetic_model_smoke",
+          "planned_file": "scripts/research_benchmark.py",
+          "planned_selector": "scripts.research_benchmark:synthetic_model_smoke",
+          "planned_command": "python -m scripts.research_validate",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-05",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Authenticated capability API and actual BFF regression",
+      "suite": "research_http",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_05_001",
+          "kind": "research_validation",
+          "scenario": "tests/research_http/test_live.py::test_real_authenticated_capabilities_and_revoked_session",
+          "planned_file": "tests/research_http/test_live.py",
+          "planned_selector": "tests/research_http/test_live.py::test_real_authenticated_capabilities_and_revoked_session",
+          "planned_command": "python -m scripts.research_test research_http",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        },
+        {
+          "test_case_id": "TC_RSC_05_002",
+          "kind": "research_validation",
+          "scenario": "tests/research_http/test_live.py::test_real_bff_denies_unauthenticated_research_and_activation",
+          "planned_file": "tests/research_http/test_live.py",
+          "planned_selector": "tests/research_http/test_live.py::test_real_bff_denies_unauthenticated_research_and_activation",
+          "planned_command": "python -m scripts.research_test research_http",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-06",
+      "category": "research_foundation",
+      "source": "phase2a/ARCHITECTURE.md",
+      "title": "Three-engine deterministic disabled-capability regression",
+      "suite": "browser",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Authorized synthetic processing, deterministic metrics and exact scoped retrieval",
+      "negative_scenarios": "Invalid manifests, nonfinite vectors, missing/expired/revoked authority or evidence are rejected",
+      "security_authorization_scenarios": "API/worker cannot access research; research cannot access operational data; no activation or disclosure",
+      "edge_cases": "Unknown dates/ages, ties, duplicate captures, stale revisions, no-mate denominators, cross-bin uncertainty",
+      "fixture_ids": [
+        "FX-2A-GEOMETRIC",
+        "FX-2A-ANALYTIC",
+        "FX-2A-PG"
+      ],
+      "expected_outcomes": "Reviewable engineering evidence only; real recognition/production qualifications remain pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_06_001",
+          "kind": "research_validation",
+          "scenario": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+          "planned_file": "tests/browser/identity.e2e.ts",
+          "planned_selector": "TC_ID_BROWSER_MFA_TENANT_LOGOUT",
+          "planned_command": "python -m scripts.dev browser",
+          "expected_outcome": "Synthetic foundation invariants hold; unauthorized or incompatible operations fail closed; no real model is qualified",
+          "required_from_phase": "2A",
+          "status": "passed",
+          "execution_evidence": {
+            "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48",
+            "source_digest": "d5b0bee4cf540055ed87ea759cc0805604f1f3633c03c2049a1484e6f2304f60",
+            "artifact_id": 12616672764,
+            "archive_sha256": "04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+            "verification": "docs/phase2a/hosted-artifact-verification.json",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40239078581",
+            "scope": "synthetic engineering only; zero real recognition models"
+          },
+          "phase2a_required": true
+        }
+      ]
+    },
+    {
+      "feature_id": "RSC-07",
+      "category": "model_qualification",
+      "source": "phase2a/LICENSING_MATRIX.md",
+      "title": "Real artifact rights, lawful corpus and child-recognition qualification remain blocked",
+      "suite": "model_evaluation",
+      "phase_introduced": "2A",
+      "positive_scenarios": "Only separately approved artifacts and data enter future evaluation",
+      "negative_scenarios": "Missing provenance/entitlement blocks download and use",
+      "security_authorization_scenarios": "No synthetic result can enable operational recognition or identity/custody decisions",
+      "edge_cases": "Different bundled detector licenses, training overlap uncertainty and insufficient age-gap evidence",
+      "fixture_ids": [],
+      "expected_outcomes": "All real model qualification cases pending",
+      "test_cases": [
+        {
+          "test_case_id": "TC_RSC_07_001",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: insightface",
+          "planned_file": "not_authorized",
+          "planned_selector": "insightface",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
+        },
+        {
+          "test_case_id": "TC_RSC_07_002",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: adaface",
+          "planned_file": "not_authorized",
+          "planned_selector": "adaface",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
+        },
+        {
+          "test_case_id": "TC_RSC_07_003",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: deepface",
+          "planned_file": "not_authorized",
+          "planned_selector": "deepface",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
+        },
+        {
+          "test_case_id": "TC_RSC_07_004",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: opencv_zoo",
+          "planned_file": "not_authorized",
+          "planned_selector": "opencv_zoo",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
+        },
+        {
+          "test_case_id": "TC_RSC_07_005",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: auraface",
+          "planned_file": "not_authorized",
+          "planned_selector": "auraface",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
+        },
+        {
+          "test_case_id": "TC_RSC_07_006",
+          "kind": "qualification",
+          "scenario": "Exact artifact/data clearance and independent real evaluation: authorized_real_dataset_protocol",
+          "planned_file": "not_authorized",
+          "planned_selector": "authorized_real_dataset_protocol",
+          "planned_command": "Pending separate authorization and rights clearance; no download or execution",
+          "expected_outcome": "Fail closed until exact weights/data/protocol and measured qualification approvals exist",
+          "required_from_phase": "2B",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2a_required": false
         }
       ]
     }

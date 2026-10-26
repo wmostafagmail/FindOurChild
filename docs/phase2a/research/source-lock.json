@@ -1,0 +1,247 @@
+{
+  "scope": "Documentation and selected source only; no weights, datasets, image samples or executable dependencies downloaded",
+  "sources": [
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/README.md",
+      "local": "insightface/README.md",
+      "sha256": "1846967d19f2b19845b967e14715c162881e7598360e23ab6646a47c88667758",
+      "bytes": 16825,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "python-package/README.md",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/README.md",
+      "local": "insightface/python-package/README.md",
+      "sha256": "941d176f93855e6c684797632bb8c8bda1fba78d6379ac4c1f178516f136b5e5",
+      "bytes": 13363,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "python-package/insightface/app/face_analysis.py",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/app/face_analysis.py",
+      "local": "insightface/python-package/insightface/app/face_analysis.py",
+      "sha256": "38751912e3e49583af62a8823da3b688b41779be101333be8a066cf490e11c3a",
+      "bytes": 11676,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "insightface",
+      "repository": "deepinsight/insightface",
+      "commit": "c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52",
+      "path": "python-package/insightface/model_zoo/arcface_onnx.py",
+      "url": "https://raw.githubusercontent.com/deepinsight/insightface/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/insightface/model_zoo/arcface_onnx.py",
+      "local": "insightface/python-package/insightface/model_zoo/arcface_onnx.py",
+      "sha256": "2df3524243b8e807b0e4756d98bd3f8fd7456feaf6d04da7502a24a54d74e2bc",
+      "bytes": 3494,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/README.md",
+      "local": "adaface/README.md",
+      "sha256": "c3e65e47bb06a6387287bb76efe0fcf835ffbec466c305eb0a9744cc362ff18a",
+      "bytes": 17214,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/LICENSE",
+      "local": "adaface/LICENSE",
+      "sha256": "95b6e493eb9dba27f2150304e790ae254bab18d1611f4d6e2ade28fa3a271583",
+      "bytes": 1067,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "inference.py",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/inference.py",
+      "local": "adaface/inference.py",
+      "sha256": "5c0758cb3218ccf8c5ebfcaea71aca59da7332e94c0c2a57dbe87bc21b4f8cfa",
+      "bytes": 1380,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "adaface",
+      "repository": "mk-minchul/AdaFace",
+      "commit": "c60eaa786a42c03444f3df7096dbaf9d57ae010d",
+      "path": "face_alignment/align.py",
+      "url": "https://raw.githubusercontent.com/mk-minchul/AdaFace/c60eaa786a42c03444f3df7096dbaf9d57ae010d/face_alignment/align.py",
+      "local": "adaface/face_alignment/align.py",
+      "sha256": "eb25a903c24cca9a4756f728d7ac097387f20e29ff5fe961a29f53b2aff1d356",
+      "bytes": 1068,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/README.md",
+      "local": "deepface/README.md",
+      "sha256": "71c7ec0abe4d4fdc07d1cd6dc80378a1b56a04a0be44bba475eac3678134ad8d",
+      "bytes": 27620,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/LICENSE",
+      "local": "deepface/LICENSE",
+      "sha256": "7359d8df037688e9f4373aedd9dd297a467703072a3c9b001b169ec8ce395477",
+      "bytes": 1077,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/models/facial_recognition/onnx/ArcFace.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/ArcFace.py",
+      "local": "deepface/deepface/models/facial_recognition/onnx/ArcFace.py",
+      "sha256": "606b178116ea9f746b4805eba44ea702dbb687fec0e2ad58de80211aa67ef904",
+      "bytes": 1165,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/models/facial_recognition/onnx/SFace.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/models/facial_recognition/onnx/SFace.py",
+      "local": "deepface/deepface/models/facial_recognition/onnx/SFace.py",
+      "sha256": "e7c9f1782faaaa8cdd813a648c60d4eb7118fd14202d4637a5a01b32c85cc953",
+      "bytes": 2332,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/modules/modeling.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/modules/modeling.py",
+      "local": "deepface/deepface/modules/modeling.py",
+      "sha256": "03b14638b5cb97044a77321940a5e106dad28471c7ab793e546595db91571f2d",
+      "bytes": 9816,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "deepface",
+      "repository": "serengil/deepface",
+      "commit": "b748cb4e3622d3beaca9a3b60abcc2ee77617a8a",
+      "path": "deepface/commons/weight_utils.py",
+      "url": "https://raw.githubusercontent.com/serengil/deepface/b748cb4e3622d3beaca9a3b60abcc2ee77617a8a/deepface/commons/weight_utils.py",
+      "local": "deepface/deepface/commons/weight_utils.py",
+      "sha256": "9956c3aa3ef9d0c54adeec3e3099a38b3ea30ac1c6f0e2319e473810d8b97efc",
+      "bytes": 9065,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/LICENSE",
+      "local": "opencv_zoo/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_recognition_sface/README.md",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/README.md",
+      "local": "opencv_zoo/models/face_recognition_sface/README.md",
+      "sha256": "e090e126f3fb5c0b0b2d84ee644b17e42a70b2e45a90616814970b811e91d063",
+      "bytes": 2267,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_recognition_sface/LICENSE",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/LICENSE",
+      "local": "opencv_zoo/models/face_recognition_sface/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_recognition_sface/sface.py",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_recognition_sface/sface.py",
+      "local": "opencv_zoo/models/face_recognition_sface/sface.py",
+      "sha256": "a2351d8387a0fc6b4ddb5f13f5e30d2afa32bc25ede9d80c39d1ebf212a48ef7",
+      "bytes": 2277,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_detection_yunet/README.md",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/README.md",
+      "local": "opencv_zoo/models/face_detection_yunet/README.md",
+      "sha256": "a140c9e9574ff99d3dc1c435d5e8b5e60690dc91597e66387cbbb52be12cce4c",
+      "bytes": 3221,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "opencv_zoo",
+      "repository": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "path": "models/face_detection_yunet/LICENSE",
+      "url": "https://raw.githubusercontent.com/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/LICENSE",
+      "local": "opencv_zoo/models/face_detection_yunet/LICENSE",
+      "sha256": "c83b8120c50ccbd4c4f96edf53141bdd566ebb8f8e9227e415326aa1b1aba958",
+      "bytes": 1085,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "auraface",
+      "repository": "fal/AuraFace-v1",
+      "commit": "af6d057c9b0ec4071d4c49c80e3539258798b609",
+      "path": "README.md",
+      "url": "https://huggingface.co/fal/AuraFace-v1/raw/af6d057c9b0ec4071d4c49c80e3539258798b609/README.md",
+      "local": "auraface/README.md",
+      "sha256": "106272348689716d3c159ff16ec42e5f36aafebca591b3678b375f8aa2d12cde",
+      "bytes": 3959,
+      "status": "retrieved_text_only"
+    },
+    {
+      "candidate": "auraface",
+      "repository": "fal/AuraFace-v1",
+      "commit": "af6d057c9b0ec4071d4c49c80e3539258798b609",
+      "path": "LICENSE.md",
+      "url": "https://huggingface.co/fal/AuraFace-v1/raw/af6d057c9b0ec4071d4c49c80e3539258798b609/LICENSE.md",
+      "local": "auraface/LICENSE.md",
+      "sha256": "609e2cb599f84aaa41d8ef29d8fdb04d164fab22e8d9292ca34a599d0f56a338",
+      "bytes": 12624,
+      "status": "retrieved_text_only"
+    }
+  ]
+}

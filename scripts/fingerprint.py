@@ -22,6 +22,8 @@ def inventory():
             ".coveragerc",
             "docs/phase1b/required-tests.json",
             "docs/phase1c/required-tests.json",
+            "docs/phase2a/required-tests.json",
+            "docs/phase2a/research/source-lock.json",
             "package.json",
             "package-lock.json",
             "pyproject.toml",
@@ -36,6 +38,13 @@ def inventory():
             ".github/workflows/phase1a.yml",
         ]
     ]
+    research_root = (ROOT / "docs/phase2a/research").resolve()
+    lock = json.loads((research_root / "source-lock.json").read_text())
+    for entry in lock["sources"]:
+        candidate = (research_root / entry["local"]).resolve()
+        if not candidate.is_relative_to(research_root) or not candidate.is_file():
+            raise ValueError("Research evidence path escaped or missing")
+        paths.append(candidate)
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(set(paths))}
 
 
