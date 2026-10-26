@@ -1,10 +1,10 @@
 """Disposable, separate synthetic qualification cluster; no case-service credentials/ports."""
+
 import json
 import os
 import secrets
 import shutil
 import subprocess
-import sys
 from pathlib import Path
 
 from scripts.fingerprint import fingerprint
@@ -12,11 +12,18 @@ from scripts.results_gate import python_gate
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "artifacts/raw/qualification-lab"
-COMMAND = ["docker", "compose", "--project-name", "foc-qualification", "-f", str(ROOT / "compose.qualification.yaml")]
+COMMAND = [
+    "docker",
+    "compose",
+    "--project-name",
+    "foc-qualification",
+    "-f",
+    str(ROOT / "compose.qualification.yaml"),
+]
 
 
 def run(args, data=None):
-    result = subprocess.run(args, cwd=ROOT, input=data, capture_output=True)
+    result = subprocess.run(args, cwd=ROOT, input=data, capture_output=True, check=False)
     with (OUTPUT / "commands.log").open("ab") as log:
         log.write(result.stdout + result.stderr)
     if result.returncode:
@@ -25,7 +32,11 @@ def run(args, data=None):
 
 
 def sql(text, database="foc_qualification"):
-    return run(COMMAND + ["exec", "-T", "labdb", "psql", "-XAt", "-v", "ON_ERROR_STOP=1", "-U", "postgres", "-d", database], text.encode())
+    return run(
+        COMMAND
+        + ["exec", "-T", "labdb", "psql", "-XAt", "-v", "ON_ERROR_STOP=1", "-U", "postgres", "-d", database],
+        text.encode(),
+    )
 
 
 def recovery():
@@ -40,12 +51,46 @@ def recovery():
     ('00000000-0000-0000-0000-000000000006','00000000-0000-0000-0000-000000000002','00000000-0000-0000-0000-000000000004',repeat('a',64),'00000000-0000-0000-0000-000000000007','synthetic-qualification',now()+interval '1 hour',now());
     """
     sql(seed)
-    dump = run(COMMAND + ["exec", "-T", "labdb", "pg_dump", "-U", "postgres", "-d", "foc_qualification", "--no-owner", "--no-comments"])
+    dump = run(
+        COMMAND
+        + [
+            "exec",
+            "-T",
+            "labdb",
+            "pg_dump",
+            "-U",
+            "postgres",
+            "-d",
+            "foc_qualification",
+            "--no-owner",
+            "--no-comments",
+        ]
+    )
     (OUTPUT / "metadata-backup.sql").write_bytes(dump)
     sql("CREATE DATABASE foc_qualification_restore;")
-    run(COMMAND + ["exec", "-T", "labdb", "psql", "-X", "-v", "ON_ERROR_STOP=1", "-U", "postgres", "-d", "foc_qualification_restore"], dump)
-    sql("REVOKE CONNECT,TEMPORARY ON DATABASE foc_qualification_restore FROM PUBLIC; GRANT CONNECT ON DATABASE foc_qualification_restore TO foc_qualification;", "foc_qualification_restore")
-    sql("""
+    run(
+        COMMAND
+        + [
+            "exec",
+            "-T",
+            "labdb",
+            "psql",
+            "-X",
+            "-v",
+            "ON_ERROR_STOP=1",
+            "-U",
+            "postgres",
+            "-d",
+            "foc_qualification_restore",
+        ],
+        dump,
+    )
+    sql(
+        "REVOKE CONNECT,TEMPORARY ON DATABASE foc_qualification_restore FROM PUBLIC; GRANT CONNECT ON DATABASE foc_qualification_restore TO foc_qualification;",
+        "foc_qualification_restore",
+    )
+    sql(
+        """
     DO $$ BEGIN
       IF (SELECT count(*) FROM qualification.datasets) <> 2 OR (SELECT count(*) FROM qualification.grants WHERE revoked_at IS NOT NULL) <> 1 THEN RAISE EXCEPTION 'metadata restore mismatch'; END IF;
       IF (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='qualification' AND c.relkind='r' AND c.relforcerowsecurity AND c.relrowsecurity) <> 4 THEN RAISE EXCEPTION 'restored RLS missing'; END IF;
@@ -57,7 +102,9 @@ def recovery():
     UPDATE qualification.grants SET revoked_at=now();
     SET ROLE foc_qualification;
     DO $$ BEGIN IF EXISTS(SELECT 1 FROM qualification.datasets) THEN RAISE EXCEPTION 'restored revocation bypass'; END IF; END $$;
-    """, "foc_qualification_restore")
+    """,
+        "foc_qualification_restore",
+    )
 
 
 def main():
@@ -78,11 +125,18 @@ def main():
     try:
         cfg = json.loads(run(COMMAND + ["config", "--format", "json"]))
         assert cfg["name"] == "foc-qualification" and set(cfg["services"]) == {"labdb", "tester"}
-        assert set(cfg["networks"]) == {"qualification_only"} and cfg["networks"]["qualification_only"]["internal"] is True
+        assert (
+            set(cfg["networks"]) == {"qualification_only"}
+            and cfg["networks"]["qualification_only"]["internal"] is True
+        )
         for service in cfg["services"].values():
             assert not service.get("ports") and set(service["networks"]) == {"qualification_only"}
         tester = cfg["services"]["tester"]
-        assert set(cfg["volumes"]) == {"qualification_db"} and cfg["volumes"]["qualification_db"]["name"] == "foc-qualification_qualification_db" and not cfg["volumes"]["qualification_db"].get("external")
+        assert (
+            set(cfg["volumes"]) == {"qualification_db"}
+            and cfg["volumes"]["qualification_db"]["name"] == "foc-qualification_qualification_db"
+            and not cfg["volumes"]["qualification_db"].get("external")
+        )
         for name in ["admin", "runtime"]:
             assert Path(cfg["secrets"]["lab_" + name]["file"]).resolve() == (secret_dir / name).resolve()
         assert set(tester["environment"]) == {"FOC_LAB_HOST", "FOC_LAB_DATABASE", "COVERAGE_FILE"}
@@ -108,11 +162,22 @@ def main():
         python_gate(report, {"python": expected}, before)
         recovery()
         assert fingerprint() == before
-        report["lab_isolation"] = {"separate_database": True, "network_internal": True, "published_ports": 0, "operational_credentials_mounted": False, "forced_rls_tables": 4, "metadata_backup_restore": "passed", "restored_revocation": "passed", "real_data_authorized": False}
+        report["lab_isolation"] = {
+            "separate_database": True,
+            "network_internal": True,
+            "published_ports": 0,
+            "operational_credentials_mounted": False,
+            "forced_rls_tables": 4,
+            "metadata_backup_restore": "passed",
+            "restored_revocation": "passed",
+            "real_data_authorized": False,
+        }
         report_file.write_text(json.dumps(report, indent=2) + "\n")
         report_file.chmod(0o600)
         shutil.copyfile(OUTPUT / ".coverage.qualification", ROOT / "artifacts/raw/.coverage.qualification")
-        print(f"qualification: {len(expected)} required tests passed; isolated database, restored RLS and revocation verified")
+        print(
+            f"qualification: {len(expected)} required tests passed; isolated database, restored RLS and revocation verified"
+        )
     finally:
         # Only this new disposable project is stopped/deleted; application volumes are untouched.
         run(COMMAND + ["down", "--volumes", "--remove-orphans"])
