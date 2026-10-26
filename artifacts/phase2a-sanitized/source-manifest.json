@@ -126,7 +126,7 @@
   "tests/browser/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tests/browser/foundation.e2e.ts": "fcfb1316be78fe6a5e5253ca4f4a49f34730bc3c498ad26d37352eb8623e415d",
   "tests/browser/identity.e2e.ts": "7e924a33eee38af7324a555a32f510ed41c644613783787d0f89129c2d2ec677",
-  "tests/browser/reporting.e2e.ts": "f9148f279df7f03d0f5de222acbb38b480c2670221635f983cb5f59f5859d482",
+  "tests/browser/reporting.e2e.ts": "75a90c3acaaab509d0551408e99bf2755406b88518153aa010f5dc8cb2e7183c",
   "tests/conftest.py": "c5d8ac8691bb44f4ced98ab34c7f7ea4388357d6f5dba48a439a62340d998765",
   "tests/database/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "tests/database/test_contract_hardening.py": "1c50ee739b3207827156f59f95d56479ee6fa47e450099a9dfa0492ea73f3e42",

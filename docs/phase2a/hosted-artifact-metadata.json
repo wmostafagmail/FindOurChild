@@ -1,20 +1,20 @@
 {
-  "id": 12614004484,
-  "node_id": "MDg6QXJ0aWZhY3QxMjYxNDAwNDQ4NA==",
-  "name": "phase1a-sanitized-30b06e974eafb52703bba33f726bb87e15145c7d",
-  "size_in_bytes": 2124004,
-  "url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12614004484",
-  "archive_download_url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12614004484/zip",
+  "id": 12616672764,
+  "node_id": "MDg6QXJ0aWZhY3QxMjYxNjY3Mjc2NA==",
+  "name": "phase1a-sanitized-584014567183a9f343f573cd9695ba820c43ccc8",
+  "size_in_bytes": 2124000,
+  "url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12616672764",
+  "archive_download_url": "https://api.github.com/repos/wmostafagmail/FindOurChild/actions/artifacts/12616672764/zip",
   "expired": false,
-  "digest": "sha256:e0867756c22cd456ee1d5ed264f12a18c3d35dcfda9374d7326862a085d1243c",
-  "created_at": "2026-10-25T21:22:11Z",
-  "updated_at": "2026-10-25T21:22:11Z",
-  "expires_at": "2026-11-01T21:22:11Z",
+  "digest": "sha256:04625f5bc98134e2f23ac4cff19e273b896a63aaaef64847ecce36498031465c",
+  "created_at": "2026-10-25T22:31:11Z",
+  "updated_at": "2026-10-25T22:31:11Z",
+  "expires_at": "2026-11-01T22:31:10Z",
   "workflow_run": {
-    "id": 40233614540,
+    "id": 40239078581,
     "repository_id": 1431972312,
     "head_repository_id": 1431972312,
     "head_branch": "codex/phase-2a-model-qualification-foundation",
-    "head_sha": "975b1fa8f5fa12274dfaafdd51153540eca9c08a"
+    "head_sha": "8393e77f489884cb2daff2f9443631bd2b5f2d48"
   }
 }
