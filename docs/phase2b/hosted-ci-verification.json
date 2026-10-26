@@ -1,0 +1,261 @@
+{
+  "conclusion": "success",
+  "event": "push",
+  "headBranch": "codex/phase-2b-model-qualification",
+  "headSha": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+  "jobs": [
+    {
+      "completedAt": "2026-10-26T11:03:26Z",
+      "conclusion": "success",
+      "databaseId": 121529169418,
+      "name": "phase1a-required",
+      "startedAt": "2026-10-26T10:47:58Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-26T10:48:00Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-26T10:47:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:48:02Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "number": 2,
+          "startedAt": "2026-10-26T10:48:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:48:09Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "number": 3,
+          "startedAt": "2026-10-26T10:48:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:48:10Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9",
+          "number": 4,
+          "startedAt": "2026-10-26T10:48:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:48:17Z",
+          "conclusion": "success",
+          "name": "Locked dependencies",
+          "number": 5,
+          "startedAt": "2026-10-26T10:48:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:48:19Z",
+          "conclusion": "success",
+          "name": "Contracts and preserved evidence",
+          "number": 6,
+          "startedAt": "2026-10-26T10:48:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:49:14Z",
+          "conclusion": "success",
+          "name": "Private database and migrations",
+          "number": 7,
+          "startedAt": "2026-10-26T10:48:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:49:29Z",
+          "conclusion": "success",
+          "name": "Python API database security regression",
+          "number": 8,
+          "startedAt": "2026-10-26T10:49:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:33Z",
+          "conclusion": "success",
+          "name": "Reporting PostgreSQL media and safeguarding regression",
+          "number": 9,
+          "startedAt": "2026-10-26T10:49:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:38Z",
+          "conclusion": "success",
+          "name": "Synthetic research API database and adversarial regression",
+          "number": 10,
+          "startedAt": "2026-10-26T10:50:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:44Z",
+          "conclusion": "success",
+          "name": "Isolated qualification preparation and recovery",
+          "number": 11,
+          "startedAt": "2026-10-26T10:50:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:45Z",
+          "conclusion": "success",
+          "name": "Synthetic backup and restore",
+          "number": 12,
+          "startedAt": "2026-10-26T10:50:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:48Z",
+          "conclusion": "success",
+          "name": "Dependency security audit",
+          "number": 13,
+          "startedAt": "2026-10-26T10:50:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:51Z",
+          "conclusion": "success",
+          "name": "Web types and build",
+          "number": 14,
+          "startedAt": "2026-10-26T10:50:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:50:51Z",
+          "conclusion": "success",
+          "name": "Configure bounded Ubuntu package downloads",
+          "number": 15,
+          "startedAt": "2026-10-26T10:50:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:51:30Z",
+          "conclusion": "success",
+          "name": "Install pinned browser engines",
+          "number": 16,
+          "startedAt": "2026-10-26T10:50:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:51:32Z",
+          "conclusion": "success",
+          "name": "Configure ephemeral runner TLS trust",
+          "number": 17,
+          "startedAt": "2026-10-26T10:51:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T10:51:33Z",
+          "conclusion": "success",
+          "name": "Start actual web service",
+          "number": 18,
+          "startedAt": "2026-10-26T10:51:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:01:24Z",
+          "conclusion": "success",
+          "name": "TesterArmy browser regression",
+          "number": 19,
+          "startedAt": "2026-10-26T10:51:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:06Z",
+          "conclusion": "success",
+          "name": "Real Keycloak identity and authorization regression",
+          "number": 20,
+          "startedAt": "2026-10-26T11:01:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:10Z",
+          "conclusion": "success",
+          "name": "Real reporting BFF API and worker regression",
+          "number": 21,
+          "startedAt": "2026-10-26T11:03:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:11Z",
+          "conclusion": "success",
+          "name": "Real research capability API regression",
+          "number": 22,
+          "startedAt": "2026-10-26T11:03:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:12Z",
+          "conclusion": "success",
+          "name": "Collect API-process and combined regression coverage",
+          "number": 23,
+          "startedAt": "2026-10-26T11:03:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:12Z",
+          "conclusion": "success",
+          "name": "Sanitize and enforce complete results",
+          "number": 24,
+          "startedAt": "2026-10-26T11:03:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:13Z",
+          "conclusion": "success",
+          "name": "Publish only sanitized evidence",
+          "number": 25,
+          "startedAt": "2026-10-26T11:03:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:24Z",
+          "conclusion": "success",
+          "name": "Stop disposable services",
+          "number": 26,
+          "startedAt": "2026-10-26T11:03:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:24Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9",
+          "number": 50,
+          "startedAt": "2026-10-26T11:03:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "number": 51,
+          "startedAt": "2026-10-26T11:03:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:24Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "number": 52,
+          "startedAt": "2026-10-26T11:03:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T11:03:24Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 53,
+          "startedAt": "2026-10-26T11:03:24Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640/job/121529169418"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640"
+}

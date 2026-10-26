@@ -1,7 +1,7 @@
 {
   "schema_version": "2",
   "scope": "Preserved Phase 0/1A baseline plus explicitly scoped Phase 1B identity executables; no Phase 1C",
-  "application_test_status": "phase2b_preparation_validation_pending",
+  "application_test_status": "phase2b_preparation_hosted_validation_passed_awaiting_owner_review",
   "fixture_catalog": {
     "FX-BASE": "Synthetic organizations A/B, unrelated cases, named requester/reviewer/authority/auditor/operator, same-role different principals, explicit grants; no real identities.",
     "FX-UNCERTAIN": "Original Arabic/English spellings, Arabic digits, NULL/approximate/disputed intervals, no-photo reports, impossible chronology and multiple revisions.",
@@ -20941,8 +20941,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_registry_has_eight_blocked_profiles_and_no_verified_binary"
+          },
           "phase2b_required": true
         },
         {
@@ -20954,8 +20961,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[missing]"
+          },
           "phase2b_required": true
         },
         {
@@ -20967,8 +20981,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[duplicate]"
+          },
           "phase2b_required": true
         },
         {
@@ -20980,8 +21001,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[unknown]"
+          },
           "phase2b_required": true
         },
         {
@@ -20993,8 +21021,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[extra]"
+          },
           "phase2b_required": true
         },
         {
@@ -21006,8 +21041,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[download]"
+          },
           "phase2b_required": true
         },
         {
@@ -21019,8 +21061,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[execute]"
+          },
           "phase2b_required": true
         },
         {
@@ -21032,8 +21081,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[operate]"
+          },
           "phase2b_required": true
         },
         {
@@ -21045,8 +21101,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[verified]"
+          },
           "phase2b_required": true
         },
         {
@@ -21058,8 +21121,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[mutable]"
+          },
           "phase2b_required": true
         },
         {
@@ -21071,8 +21141,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[provenance]"
+          },
           "phase2b_required": true
         },
         {
@@ -21084,8 +21161,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[evidence]"
+          },
           "phase2b_required": true
         },
         {
@@ -21097,8 +21181,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_model_manifest_rejects_incomplete_or_activation_claims[identity]"
+          },
           "phase2b_required": true
         },
         {
@@ -21110,8 +21201,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_publisher_evidence_integrity_and_identity_binding[source]"
+          },
           "phase2b_required": true
         },
         {
@@ -21123,8 +21221,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_publisher_evidence_integrity_and_identity_binding[escape]"
+          },
           "phase2b_required": true
         },
         {
@@ -21136,8 +21241,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_publisher_evidence_integrity_and_identity_binding[digest]"
+          },
           "phase2b_required": true
         },
         {
@@ -21149,8 +21261,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[adaface-ir50-ms1mv2]"
+          },
           "phase2b_required": true
         },
         {
@@ -21162,8 +21281,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[auraface-r100]"
+          },
           "phase2b_required": true
         },
         {
@@ -21175,8 +21301,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[deepface-arcface-onnx]"
+          },
           "phase2b_required": true
         },
         {
@@ -21188,8 +21321,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[deepface-facenet512-onnx]"
+          },
           "phase2b_required": true
         },
         {
@@ -21201,8 +21341,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[deepface-sface-onnx]"
+          },
           "phase2b_required": true
         },
         {
@@ -21214,8 +21361,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[insightface-buffalo-l]"
+          },
           "phase2b_required": true
         },
         {
@@ -21227,8 +21381,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[opencv-sface-fp32]"
+          },
           "phase2b_required": true
         },
         {
@@ -21240,8 +21401,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_restricted_download_cannot_be_enabled_by_flags_or_urls[opencv-yunet-2023mar]"
+          },
           "phase2b_required": true
         },
         {
@@ -21253,8 +21421,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_known_synthetic_artifact_integrity_only"
+          },
           "phase2b_required": true
         },
         {
@@ -21266,8 +21441,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_unknown_corrupted_or_self_hashed_artifacts_rejected[child photograph-0000000000000000000000000000000000000000000000000000000000000000]"
+          },
           "phase2b_required": true
         },
         {
@@ -21279,8 +21461,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_unknown_corrupted_or_self_hashed_artifacts_rejected[Find Our Child: synthetic artifact integrity fixture v1\\nx-1a89ed61781a6bbc4edeeeba788b1ba79234688ee6b4e8b898eb0d2a7877de6d]"
+          },
           "phase2b_required": true
         },
         {
@@ -21292,8 +21481,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_unknown_corrupted_or_self_hashed_artifacts_rejected[Find Our Child: synthetic artifact integrity fixture v1\\n-0000000000000000000000000000000000000000000000000000000000000000]"
+          },
           "phase2b_required": true
         },
         {
@@ -21305,8 +21501,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_unknown_corrupted_or_self_hashed_artifacts_rejected[Find Our Child: synthetic artifact integrity fixture v1\\n-1a89ed61781a6bbc4edeeeba788b1ba79234688ee6b4e8b898eb0d2a7877de6d]"
+          },
           "phase2b_required": true
         },
         {
@@ -21318,8 +21521,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_unknown_corrupted_or_self_hashed_artifacts_rejected[pickle-1111111111111111111111111111111111111111111111111111111111111111]"
+          },
           "phase2b_required": true
         }
       ]
@@ -21349,8 +21559,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_synthetic_dataset_requires_bound_independent_permission"
+          },
           "phase2b_required": true
         },
         {
@@ -21362,8 +21579,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[real]"
+          },
           "phase2b_required": true
         },
         {
@@ -21375,8 +21599,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[self-claimed-approved-real]"
+          },
           "phase2b_required": true
         },
         {
@@ -21388,8 +21619,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[protocol]"
+          },
           "phase2b_required": true
         },
         {
@@ -21401,8 +21639,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[tuning]"
+          },
           "phase2b_required": true
         },
         {
@@ -21414,8 +21659,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[training-overlap]"
+          },
           "phase2b_required": true
         },
         {
@@ -21427,8 +21679,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[age-progression]"
+          },
           "phase2b_required": true
         },
         {
@@ -21440,8 +21699,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[duplicate]"
+          },
           "phase2b_required": true
         },
         {
@@ -21453,8 +21719,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[subject-split]"
+          },
           "phase2b_required": true
         },
         {
@@ -21466,8 +21739,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[nonfixture]"
+          },
           "phase2b_required": true
         },
         {
@@ -21479,8 +21759,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[capture-relabel]"
+          },
           "phase2b_required": true
         },
         {
@@ -21492,8 +21779,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[extra-field]"
+          },
           "phase2b_required": true
         },
         {
@@ -21505,8 +21799,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[revoked]"
+          },
           "phase2b_required": true
         },
         {
@@ -21518,8 +21819,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[expired]"
+          },
           "phase2b_required": true
         },
         {
@@ -21531,8 +21839,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[future]"
+          },
           "phase2b_required": true
         },
         {
@@ -21544,8 +21859,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[naive-time]"
+          },
           "phase2b_required": true
         },
         {
@@ -21557,8 +21879,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[retention]"
+          },
           "phase2b_required": true
         },
         {
@@ -21570,8 +21899,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[self-review]"
+          },
           "phase2b_required": true
         },
         {
@@ -21583,8 +21919,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[operator-review]"
+          },
           "phase2b_required": true
         },
         {
@@ -21596,8 +21939,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[tenant]"
+          },
           "phase2b_required": true
         },
         {
@@ -21609,8 +21959,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[principal]"
+          },
           "phase2b_required": true
         },
         {
@@ -21622,8 +21979,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[dataset-swap]"
+          },
           "phase2b_required": true
         },
         {
@@ -21635,8 +21999,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[purpose]"
+          },
           "phase2b_required": true
         },
         {
@@ -21648,8 +22019,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[missing-context]"
+          },
           "phase2b_required": true
         },
         {
@@ -21661,8 +22039,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_dataset_authorization_revocation_and_leakage_fail_closed[withdrawal]"
+          },
           "phase2b_required": true
         }
       ]
@@ -21692,8 +22077,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_separate_cluster_has_no_operational_schema_roles_or_credentials"
+          },
           "phase2b_required": true
         },
         {
@@ -21705,8 +22097,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_authorized_synthetic_metadata_is_visible"
+          },
           "phase2b_required": true
         },
         {
@@ -21718,8 +22117,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_context_and_cross_tenant_denials[absent]"
+          },
           "phase2b_required": true
         },
         {
@@ -21731,8 +22137,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_context_and_cross_tenant_denials[organization]"
+          },
           "phase2b_required": true
         },
         {
@@ -21744,8 +22157,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_context_and_cross_tenant_denials[principal]"
+          },
           "phase2b_required": true
         },
         {
@@ -21757,8 +22177,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_context_and_cross_tenant_denials[purpose]"
+          },
           "phase2b_required": true
         },
         {
@@ -21770,8 +22197,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[grants-revoked_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21783,8 +22217,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[grants-expires_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21796,8 +22237,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[datasets-revoked_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21809,8 +22257,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[datasets-expires_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21822,8 +22277,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[protocols-revoked_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21835,8 +22297,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_expiration_and_revocation_deny_next_statement[protocols-expires_at]"
+          },
           "phase2b_required": true
         },
         {
@@ -21848,8 +22317,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[SET ROLE postgres]"
+          },
           "phase2b_required": true
         },
         {
@@ -21861,8 +22337,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[CREATE SCHEMA unauthorized]"
+          },
           "phase2b_required": true
         },
         {
@@ -21874,8 +22357,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[SELECT * FROM pg_authid]"
+          },
           "phase2b_required": true
         },
         {
@@ -21887,8 +22377,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[INSERT INTO qualification.datasets DEFAULT VALUES]"
+          },
           "phase2b_required": true
         },
         {
@@ -21900,8 +22397,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[UPDATE qualification.grants SET revoked_at=NULL]"
+          },
           "phase2b_required": true
         },
         {
@@ -21913,8 +22417,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_runtime_cannot_escalate_or_undo_revocation[DELETE FROM qualification.protocols]"
+          },
           "phase2b_required": true
         },
         {
@@ -21926,8 +22437,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_owner_cannot_insert_real_class_or_cross_bound_metadata[real]"
+          },
           "phase2b_required": true
         },
         {
@@ -21939,8 +22457,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_owner_cannot_insert_real_class_or_cross_bound_metadata[cross-org]"
+          },
           "phase2b_required": true
         },
         {
@@ -21952,8 +22477,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_owner_cannot_insert_real_class_or_cross_bound_metadata[protocol-swap]"
+          },
           "phase2b_required": true
         },
         {
@@ -21965,8 +22497,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_database.py::test_no_accuracy_claim_and_no_stale_result_after_deletion"
+          },
           "phase2b_required": true
         },
         {
@@ -21978,8 +22517,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "scripts.qualification_validate:isolated_native_recovery"
+          },
           "phase2b_required": true
         }
       ]
@@ -22009,8 +22555,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_recall_and_fnir_at_fixed_case_ranks[1]"
+          },
           "phase2b_required": true
         },
         {
@@ -22022,8 +22575,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_recall_and_fnir_at_fixed_case_ranks[10]"
+          },
           "phase2b_required": true
         },
         {
@@ -22035,8 +22595,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_recall_and_fnir_at_fixed_case_ranks[50]"
+          },
           "phase2b_required": true
         },
         {
@@ -22048,8 +22615,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_recall_and_fnir_at_fixed_case_ranks[51]"
+          },
           "phase2b_required": true
         },
         {
@@ -22061,8 +22635,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[0-0-2y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22074,8 +22655,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[6-0-2y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22087,8 +22675,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[24-0-2y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22100,8 +22695,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[36-3-5y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22113,8 +22715,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[72-6-9y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22126,8 +22735,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[120-10-13y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22139,8 +22755,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invented_capture_age_strata_do_not_claim_longitudinal_accuracy[168-14-17y]"
+          },
           "phase2b_required": true
         },
         {
@@ -22152,8 +22775,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_rare_event_budget_is_independent_subjects_not_image_pairs"
+          },
           "phase2b_required": true
         },
         {
@@ -22165,8 +22795,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_independent_trial_denominators_rejected[-1]"
+          },
           "phase2b_required": true
         },
         {
@@ -22178,8 +22815,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_independent_trial_denominators_rejected[0]"
+          },
           "phase2b_required": true
         },
         {
@@ -22191,8 +22835,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_independent_trial_denominators_rejected[True]"
+          },
           "phase2b_required": true
         },
         {
@@ -22204,8 +22855,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_independent_trial_denominators_rejected[1.5]"
+          },
           "phase2b_required": true
         },
         {
@@ -22217,8 +22875,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_independent_trial_denominators_rejected[10000000000]"
+          },
           "phase2b_required": true
         },
         {
@@ -22230,8 +22895,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[0]"
+          },
           "phase2b_required": true
         },
         {
@@ -22243,8 +22915,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[1]"
+          },
           "phase2b_required": true
         },
         {
@@ -22256,8 +22935,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[-1]"
+          },
           "phase2b_required": true
         },
         {
@@ -22269,8 +22955,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[nan]"
+          },
           "phase2b_required": true
         },
         {
@@ -22282,8 +22975,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[True]"
+          },
           "phase2b_required": true
         },
         {
@@ -22295,8 +22995,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_invalid_statistical_targets_rejected[None]"
+          },
           "phase2b_required": true
         },
         {
@@ -22308,8 +23015,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_case_aggregation_is_bounded_and_order_independent"
+          },
           "phase2b_required": true
         },
         {
@@ -22321,8 +23035,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[duplicate]"
+          },
           "phase2b_required": true
         },
         {
@@ -22334,8 +23055,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[subject]"
+          },
           "phase2b_required": true
         },
         {
@@ -22347,8 +23075,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[partition]"
+          },
           "phase2b_required": true
         },
         {
@@ -22360,8 +23095,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[space]"
+          },
           "phase2b_required": true
         },
         {
@@ -22373,8 +23115,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[query-gallery]"
+          },
           "phase2b_required": true
         },
         {
@@ -22386,8 +23135,15 @@
           "planned_command": "python -m scripts.qualification_validate",
           "expected_outcome": "Synthetic preparation invariants hold and sensitive requests fail closed",
           "required_from_phase": "2B preparation",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640",
+            "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+            "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+            "artifact_id": 12645650250,
+            "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+            "selector": "tests/qualification/test_preparation.py::test_multi_photo_query_leakage_and_context_fail_closed[budget]"
+          },
           "phase2b_required": true
         }
       ]

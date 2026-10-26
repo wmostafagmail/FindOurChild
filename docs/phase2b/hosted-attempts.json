@@ -1,0 +1,36 @@
+{
+  "attempts": [
+    {
+      "head": "3b44dd00eeaf1423c4a84c24feddcd0473521f13",
+      "run": 40304592412,
+      "status": "failed",
+      "reason": "12 lint violations in new Python files; dependent required stages skipped or failed due missing setup",
+      "counted_as_pass": false
+    },
+    {
+      "head": "db68d11675f27024402bb340f149ac4bbbee3e2b",
+      "run": 40305567193,
+      "attempt": 1,
+      "status": "cancelled",
+      "reason": "over twenty minutes of Azure Ubuntu mirror package transfers",
+      "counted_as_pass": false
+    },
+    {
+      "head": "db68d11675f27024402bb340f149ac4bbbee3e2b",
+      "run": 40305567193,
+      "attempt": 2,
+      "status": "cancelled",
+      "reason": "superseded by reproducible Ubuntu primary-archive provisioning correction",
+      "counted_as_pass": false
+    },
+    {
+      "head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+      "run": 40310140640,
+      "status": "passed",
+      "all_required_steps": "success",
+      "counted_as_pass": true
+    }
+  ],
+  "raw_originals": "artifacts/raw/phase2b-hosted-history (private; not uploaded)",
+  "local_history": "Source read canceled before tests; collection scratch hook typo; initial reporter missing timestamps rejected despite 107 completed test bodies. Corrected strict 107-case suite and native recovery passed. Original diagnostics retained privately; no rejected attempt counts as validation."
+}

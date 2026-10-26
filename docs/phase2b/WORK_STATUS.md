@@ -1,3 +1,3 @@
-# Phase 2B preparation in progress
+# Phase 2B preparation ready for owner review
 
-Phase 2A accepted on exact merged main 0d5abda after independent required-CI verification. The 107-case isolated local suite and native metadata restore passed at the recorded local checkpoint; final committed-source hosted regression is pending. [Validation report](VALIDATION_REPORT.md). Real model/download/data approvals remain blocked; stop for owner review after preparation.
+The full committed implementation passed 554 Python and 168 official TesterArmy executions (56/browser), 24 application migrations, isolated lab RLS/recovery, security/API/integration, audits and 94.29% coverage. [Report and exact evidence](VALIDATION_REPORT.md). The final evidence-only head must also pass the entire workflow; exact final verification is recorded in the draft PR. Owner acceptance remains pending. All real models, child datasets and operational recognition remain blocked. Stop after preparation.

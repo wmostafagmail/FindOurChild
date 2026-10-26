@@ -1,0 +1,48 @@
+{
+  "verified_head": "ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+  "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+  "source_files_verified_against_git_blobs": 191,
+  "artifact_id": 12645650250,
+  "artifact_name": "phase1a-sanitized-ee7486c854b2052d61f797b6a381f0f9cb7d1522",
+  "archive_sha256": "34f5fe6f8c47e477b065538c19f5fbdc4a73cf453d94b880fbd54760a407a053",
+  "verified_payload_checksums": 53,
+  "counts": {
+    "python": 158,
+    "identity": 58,
+    "reporting": 109,
+    "resilience": 1,
+    "reporting_http": 6,
+    "research": 113,
+    "research_http": 2,
+    "qualification": 107
+  },
+  "python_total": 554,
+  "browser_total": 168,
+  "browser_counts": {
+    "chromium": 56,
+    "firefox": 56,
+    "webkit": 56
+  },
+  "migration_count": 24,
+  "coverage": {
+    "covered_lines": 1305,
+    "num_statements": 1384,
+    "percent_covered": 94.29190751445087,
+    "missing_lines": 79
+  },
+  "screenshots": 48,
+  "traces": 168,
+  "status": "passed",
+  "qualification_isolation": {
+    "separate_database": true,
+    "network_internal": true,
+    "published_ports": 0,
+    "operational_credentials_mounted": false,
+    "forced_rls_tables": 4,
+    "metadata_backup_restore": "passed",
+    "restored_revocation": "passed",
+    "real_data_authorized": false
+  },
+  "real_models_qualified": 0,
+  "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40310140640"
+}
