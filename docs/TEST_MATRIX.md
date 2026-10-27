@@ -1,5 +1,7 @@
 # Find Our Child — test matrix
 
+> Phase 2D implementation: [traceability](phase2d/TEST_TRACEABILITY.md), [exact required inventory](phase2d/required-tests.json). Adds 20 groups / 80 scenarios to the preserved 190/1216 baseline. Final hosted validation is pending; no new case is marked passed.
+
 > Phase 2A extension: [research traceability](phase2a/TEST_TRACEABILITY.md). All 178 prior features and 972 cases are preserved exactly; 7 research groups append 124 logical cases: 118 passed after independent hosted verification, six real qualifications pending. Current registry: **185 features / 1096 cases; 464 passed, 632 pending**. Real model clearance and recognition qualification remain pending.
 
 > Phase 1C: [current traceability and exact execution inventory](phase1c/TEST_TRACEABILITY.md). Phase 1B is accepted; all 119 new Phase 1C logical cases passed after independent current-source hosted artifact verification. Current registry: **178 features / 972 cases; 346 passed, 626 future cases pending**. Earlier counts below are historical snapshots. The immutable Phase 0 151/630 baseline is preserved.

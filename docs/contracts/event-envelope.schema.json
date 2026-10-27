@@ -40,7 +40,9 @@
         "reunification.recorded",
         "deletion.requested",
         "deletion.completed",
-        "notification.requested"
+        "notification.requested",
+        "synthetic.workflow.requested",
+        "synthetic.workflow.changed"
       ]
     },
     "organization_id": {

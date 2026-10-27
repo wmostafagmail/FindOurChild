@@ -1,0 +1,297 @@
+{
+  "$defs": {
+    "FixtureScore": {
+      "additionalProperties": false,
+      "properties": {
+        "metric": {
+          "const": "scripted_ordinal",
+          "title": "Metric",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "null"
+        },
+        "semantics": {
+          "const": "fixture_order_only_not_identity_probability",
+          "title": "Semantics",
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric",
+        "value",
+        "semantics"
+      ],
+      "title": "FixtureScore",
+      "type": "object"
+    },
+    "FixtureSource": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "fixture_scenario",
+          "title": "Kind",
+          "type": "string"
+        },
+        "provider_version": {
+          "const": "fixture-scenario-v1",
+          "title": "Provider Version",
+          "type": "string"
+        },
+        "model_version": {
+          "title": "Model Version",
+          "type": "null"
+        },
+        "embedding_space_id": {
+          "title": "Embedding Space Id",
+          "type": "null"
+        },
+        "score": {
+          "$ref": "#/$defs/FixtureScore"
+        },
+        "photo_refs": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 6,
+          "title": "Photo Refs",
+          "type": "array"
+        },
+        "provenance": {
+          "const": "closed_procedural_fixture",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "policy_version": {
+          "const": "synthetic-2d-v1",
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "calibration_status": {
+          "const": "not_applicable_synthetic_demo",
+          "title": "Calibration Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "provider_version",
+        "model_version",
+        "embedding_space_id",
+        "score",
+        "photo_refs",
+        "provenance",
+        "policy_version",
+        "calibration_status"
+      ],
+      "title": "FixtureSource",
+      "type": "object"
+    },
+    "FutureModelSource": {
+      "additionalProperties": false,
+      "description": "Phase 2E compatibility specification ONLY; no current route/provider accepts it.",
+      "properties": {
+        "kind": {
+          "const": "licensed_demo_model",
+          "title": "Kind",
+          "type": "string"
+        },
+        "model_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Model Version",
+          "type": "string"
+        },
+        "embedding_space_id": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Embedding Space Id",
+          "type": "string"
+        },
+        "weight_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Weight Sha256",
+          "type": "string"
+        },
+        "detector_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Detector Version",
+          "type": "string"
+        },
+        "alignment_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Alignment Version",
+          "type": "string"
+        },
+        "preprocessing_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Preprocessing Version",
+          "type": "string"
+        },
+        "photo_refs": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 2,
+          "title": "Photo Refs",
+          "type": "array"
+        },
+        "embedding_dimension": {
+          "enum": [
+            128,
+            512
+          ],
+          "title": "Embedding Dimension",
+          "type": "integer"
+        },
+        "normalization": {
+          "const": "unit_l2",
+          "title": "Normalization",
+          "type": "string"
+        },
+        "raw_score": {
+          "title": "Raw Score",
+          "type": "number"
+        },
+        "aggregation_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Aggregation Version",
+          "type": "string"
+        },
+        "pair_scores": {
+          "items": {
+            "$ref": "#/$defs/FuturePhotoScore"
+          },
+          "maxItems": 9,
+          "minItems": 1,
+          "title": "Pair Scores",
+          "type": "array"
+        },
+        "metric": {
+          "enum": [
+            "cosine_similarity",
+            "euclidean_distance"
+          ],
+          "title": "Metric",
+          "type": "string"
+        },
+        "score_semantics": {
+          "const": "raw_similarity_not_identity_probability",
+          "title": "Score Semantics",
+          "type": "string"
+        },
+        "acquisition_authorization_ref": {
+          "format": "uuid",
+          "title": "Acquisition Authorization Ref",
+          "type": "string"
+        },
+        "dataset_authorization_ref": {
+          "format": "uuid",
+          "title": "Dataset Authorization Ref",
+          "type": "string"
+        },
+        "operational_activation": {
+          "const": false,
+          "title": "Operational Activation",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "model_version",
+        "embedding_space_id",
+        "weight_sha256",
+        "detector_version",
+        "alignment_version",
+        "preprocessing_version",
+        "photo_refs",
+        "embedding_dimension",
+        "normalization",
+        "raw_score",
+        "aggregation_version",
+        "pair_scores",
+        "metric",
+        "score_semantics",
+        "acquisition_authorization_ref",
+        "dataset_authorization_ref",
+        "operational_activation"
+      ],
+      "title": "FutureModelSource",
+      "type": "object"
+    },
+    "FuturePhotoScore": {
+      "additionalProperties": false,
+      "properties": {
+        "query_photo_id": {
+          "format": "uuid",
+          "title": "Query Photo Id",
+          "type": "string"
+        },
+        "candidate_photo_id": {
+          "format": "uuid",
+          "title": "Candidate Photo Id",
+          "type": "string"
+        },
+        "metric": {
+          "enum": [
+            "cosine_similarity",
+            "euclidean_distance"
+          ],
+          "title": "Metric",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "model_version": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Model Version",
+          "type": "string"
+        },
+        "embedding_space_id": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Embedding Space Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query_photo_id",
+        "candidate_photo_id",
+        "metric",
+        "value",
+        "model_version",
+        "embedding_space_id"
+      ],
+      "title": "FuturePhotoScore",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "fixture_scenario": "#/$defs/FixtureSource",
+      "licensed_demo_model": "#/$defs/FutureModelSource"
+    },
+    "propertyName": "kind"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/FixtureSource"
+    },
+    {
+      "$ref": "#/$defs/FutureModelSource"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Candidate provenance contract v1; future model branch is descriptive only",
+  "x-current-provider": "fixture_scenario",
+  "x-operational-activation": false
+}

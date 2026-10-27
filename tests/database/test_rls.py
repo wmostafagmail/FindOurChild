@@ -115,7 +115,7 @@ def test_fnd_all_domain_relations_force_rls(db):
         )
         .fetchall()
     )
-    assert len(rows) == 41
+    assert len(rows) == 46
     assert all(enabled and forced and owner == "foc_owner" for _, enabled, forced, owner in rows)
 
 

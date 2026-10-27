@@ -36,7 +36,7 @@ try{
  const report=JSON.parse(readFileSync('.e2e/report.json','utf8'));
  console.log('Official TesterArmy browser assertions: '+JSON.stringify(report.run.summary));
  const required=JSON.parse(readFileSync('docs/phase1a/required-tests.json','utf8')).browser_titles;
- const allowedFiles=new Set(['tests/browser/foundation.e2e.ts','tests/browser/identity.e2e.ts','tests/browser/reporting.e2e.ts']);
+ const allowedFiles=new Set(['tests/browser/foundation.e2e.ts','tests/browser/identity.e2e.ts','tests/browser/reporting.e2e.ts','tests/browser/synthetic_workflow.e2e.ts']);
  const failed=report.run.results.filter(r=>r.status!=='passed').map(r=>{
   const attempt=r.attempts?.at(-1);
   const source=attempt?.error?.source??attempt?.steps?.find(s=>s.status==='failed'||s.status==='error')?.source;

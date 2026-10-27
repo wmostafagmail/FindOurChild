@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 import re
 import shutil
 import struct
@@ -177,6 +178,29 @@ def export(root=ROOT):
         summaries["qualification_isolation"] = isolation
     except (ValueError, KeyError, OSError, TypeError):
         failures.append("missing or nonpassing qualification preparation evidence")
+    for lane in ["synthetic_workflow", "synthetic_workflow_http"]:
+        try:
+            required = json.loads((root / "docs/phase2d/required-tests.json").read_text())[lane]
+            report = json.loads((root / "artifacts/raw" / (lane + "-results.json")).read_text())
+            summaries[lane] = python_gate(report, {"python": required}, digest)
+        except (ValueError, KeyError, OSError, TypeError):
+            failures.append("missing or nonpassing " + lane + " evidence")
+    try:
+        capacity = json.loads((root / "artifacts/raw/workflow-capacity.json").read_text())
+        if (
+            set(capacity) != {"source_digest","scope","sessions","queries","candidates_per_query","model_inference","p50_ms","p95_ms","p99_ms","database_p95_within_planning_1000ms","status"}
+            or capacity["source_digest"] != digest
+            or capacity["scope"] != "synthetic_database_retrieval_only"
+            or (capacity["sessions"],capacity["queries"],capacity["candidates_per_query"]) != (20,100,50)
+            or capacity["model_inference"] is not False or capacity["status"] != "measured"
+            or any(type(capacity[k]) not in {int,float} or not math.isfinite(capacity[k]) or capacity[k]<0 for k in ["p50_ms","p95_ms","p99_ms"])
+            or not capacity["p50_ms"] <= capacity["p95_ms"] <= capacity["p99_ms"]
+            or capacity["database_p95_within_planning_1000ms"] != (capacity["p95_ms"]<=1000)
+        ):
+            raise ValueError("Unsafe or stale capacity evidence")
+        summaries["synthetic_workflow_capacity"] = {k:v for k,v in capacity.items() if k!="source_digest"}
+    except (ValueError,KeyError,OSError,TypeError):
+        failures.append("missing or unsafe workflow capacity evidence")
     try:
         from scripts.research_evidence import aggregate
 
@@ -206,7 +230,7 @@ def export(root=ROOT):
         if (
             recovery["status"] != "passed"
             or recovery["source_digest"] != digest
-            or recovery["database"]["forced_rls"] != 41
+            or recovery["database"]["forced_rls"] != 46
         ):
             raise ValueError("Recovery incomplete")
         if recovery.get("research_vector_restore") != {"status": "passed", "vectors_verified": 1, "forced_research_tables": 4, "raw_vector_exported": False}:
@@ -214,8 +238,8 @@ def export(root=ROOT):
         summaries["migration_and_recovery"] = {
             "status": "passed",
             "scope": "synthetic foundation backup/restore only",
-            "tables": 41,
-            "forced_rls": 41,
+            "tables": 46,
+            "forced_rls": 46,
             "schema_version": "0001",
             "vector_version": "0.8.7",
             "migration_sha256": recovery["database"]["migration_sha"],
@@ -224,6 +248,7 @@ def export(root=ROOT):
             "identity_session_rls": recovery["identity_session_rls"],
             "reporting_metadata_rls": recovery["reporting_metadata_rls"],
             "research_vector_restore": recovery["research_vector_restore"],
+            "synthetic_workflow_restore": recovery["synthetic_workflow_restore"],
             "operational_erasure": "pending",
         }
     except (ValueError, KeyError, OSError, TypeError):
@@ -317,7 +342,7 @@ def export(root=ROOT):
         "source_digest": digest,
     }
     # Allowlisted log replaces arbitrary free-text process logs.
-    (output / "validation.log").write_text("Phase 2B preparation required gate: " + summaries["gate"]["status"] + "\n")
+    (output / "validation.log").write_text("Phase 2D synthetic investigation required gate: " + summaries["gate"]["status"] + "\n")
     (output / "results.json").write_text(json.dumps(summaries, indent=2) + "\n")
     (output / "source-manifest.json").write_text(json.dumps(inventory(), indent=2) + "\n")
     (output / "checksums.json").write_text(

@@ -27,6 +27,7 @@ services:
       FOC_DB_API_PASSWORD: ${FOC_DB_API_PASSWORD:?}
       FOC_WORKER_PASSWORD: ${FOC_WORKER_PASSWORD:?}
       FOC_DATA_CLASS: synthetic
+      FOC_WORKFLOW_EPOCH: ${FOC_WORKFLOW_EPOCH:?}
     volumes: ["./.runtime:/workspace/.runtime"]
     networks: [private]
   api:
@@ -35,6 +36,7 @@ services:
     environment:
       FOC_DATABASE_URL: ${FOC_CONTAINER_DATABASE_URL:?}
       FOC_DATA_CLASS: synthetic
+      FOC_WORKFLOW_EPOCH: ${FOC_WORKFLOW_EPOCH:?}
       FOC_IDP_SECRET: ${FOC_IDP_SECRET:?}
       FOC_SESSION_KEY: ${FOC_SESSION_KEY:?}
       FOC_REPORT_KEY: ${FOC_REPORT_KEY:?}
@@ -88,6 +90,7 @@ services:
       FOC_DATA_CLASS: synthetic
       FOC_WORKER_DATABASE_URL: ${FOC_WORKER_DATABASE_URL:?}
       FOC_REPORT_KEY: ${FOC_REPORT_KEY:?}
+      FOC_WORKFLOW_EPOCH: ${FOC_WORKFLOW_EPOCH:?}
       FOC_S3_WORKER_KEY: ${FOC_S3_WORKER_KEY:?}
       FOC_S3_WORKER_SECRET: ${FOC_S3_WORKER_SECRET:?}
     volumes: ["./services/api:/workspace/services/api:ro", "notification_sink:/notifications"]
@@ -126,6 +129,7 @@ services:
       FOC_S3_ADMIN_KEY: ${FOC_S3_ADMIN_KEY:?}
       FOC_S3_ADMIN_SECRET: ${FOC_S3_ADMIN_SECRET:?}
       FOC_WORKER_DATABASE_URL: ${FOC_WORKER_DATABASE_URL:?}
+      FOC_WORKFLOW_EPOCH: ${FOC_WORKFLOW_EPOCH:?}
     volumes: [".:/workspace", "./artifacts/raw:/workspace/artifacts/raw", "delivery_sink:/delivery", "notification_sink:/notifications"]
     networks: [private]
 networks:

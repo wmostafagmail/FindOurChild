@@ -51,6 +51,17 @@ def fixture_id(name):
     return str(uuid5(NAMESPACE_URL, "https://synthetic.invalid/foc/" + name))
 
 
+WORKFLOW_USERS = [
+    f"synthetic-workflow{suffix}-{b}-{l}-{w}"
+    for suffix in ["", "-peer", "-alias"]
+    for b in ["chromium", "firefox", "webkit"]
+    for l in ["ar-EG", "en-GB"]
+    for w in [320, 360, 390, 1280]
+] + ["synthetic-workflow-http", "synthetic-workflow-peer-http", "synthetic-workflow-alias-http"]
+
+EXTRA_USERS += WORKFLOW_USERS
+
+
 def users():
     return [
         (STAFF_A, "synthetic-reviewer-a"),

@@ -10927,7 +10927,7 @@
       "positive_scenarios": "Keyboard/labels/focus/status/zoom/manual screen-reader review",
       "negative_scenarios": "Missing names, focus traps and clipped actionable text fail",
       "security_authorization_scenarios": "Private content absent from accessible tree and page title",
-      "edge_cases": "3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth",
+      "edge_cases": "3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth",
       "fixture_ids": [
         "FX-A11Y"
       ],
@@ -10975,11 +10975,11 @@
         {
           "test_case_id": "TC_A11Y_01_E",
           "kind": "edge",
-          "scenario": "3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth",
+          "scenario": "3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth",
           "planned_file": "tests/browser/a11y_01.e2e.ts",
           "planned_selector": "TC_A11Y_01_E",
           "planned_command": "./node_modules/.bin/e2e run tests/browser/a11y_01.e2e.ts --grep TC_A11Y_01_E --retries 0 --no-cache",
-          "expected_outcome": "Under 3 browsers × 2 locales × 4 widths; reduced motion, bidi and low bandwidth, supported success preserves: WCAG acceptance evidence plus deterministic layout/DOM checks; manual results separate; any failure remains safely held/denied without an unauthorized partial effect",
+          "expected_outcome": "Under 3 browsers \u00d7 2 locales \u00d7 4 widths; reduced motion, bidi and low bandwidth, supported success preserves: WCAG acceptance evidence plus deterministic layout/DOM checks; manual results separate; any failure remains safely held/denied without an unauthorized partial effect",
           "required_from_phase": 1,
           "status": "pending",
           "execution_evidence": null,
@@ -11144,7 +11144,7 @@
       "positive_scenarios": "Measure proposed workload with controls enabled",
       "negative_scenarios": "Resource saturation/queue overload fails capacity gate",
       "security_authorization_scenarios": "No rate-limit/authorization bypass for benchmark",
-      "edge_cases": "50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
+      "edge_cases": "50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
       "fixture_ids": [
         "FX-BASE",
         "FX-MATCH",
@@ -11194,11 +11194,11 @@
         {
           "test_case_id": "TC_PERF_01_E",
           "kind": "edge",
-          "scenario": "50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
+          "scenario": "50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact",
           "planned_file": "tests/performance/test_perf_01.py",
           "planned_selector": "test_tc_perf_01_e",
           "planned_command": "pytest tests/performance/test_perf_01.py::test_tc_perf_01_e",
-          "expected_outcome": "Under 50k cases × five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact, supported success preserves: Observed p50/p95/p99/error/resources and review workload; provisional SLOs not assumed passed; any failure remains safely held/denied without an unauthorized partial effect",
+          "expected_outcome": "Under 50k cases \u00d7 five synthetic photos, 30 staff, 100 reports/hour; scoped ANN vs exact, supported success preserves: Observed p50/p95/p99/error/resources and review workload; provisional SLOs not assumed passed; any failure remains safely held/denied without an unauthorized partial effect",
           "required_from_phase": 1,
           "status": "pending",
           "execution_evidence": null,
@@ -23321,6 +23321,1730 @@
           "phase2b_required": false
         }
       ]
+    },
+    {
+      "feature_id": "SWF-01",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-01 synthetic environment gate",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: valid environment/manifest \u2192 fixed synthetic descriptor, operational flags false",
+      "negative_scenarios": "N: altered manifest/hash \u2192 no activation, 503",
+      "security_authorization_scenarios": "A: anonymous/reporter \u2192 no workspace inventory, 401/404 as specified",
+      "edge_cases": "E: restored wrong epoch \u2192 workspace disabled, no stale work",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-01-P",
+          "kind": "positive",
+          "scenario": "P: valid environment/manifest \u2192 fixed synthetic descriptor, operational flags false",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_real_fixture_provider_completes_without_model_or_identity_effect",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "fixed synthetic descriptor, operational flags false",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-01-N",
+          "kind": "negative",
+          "scenario": "N: altered manifest/hash \u2192 no activation, 503",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no activation, 503",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-01-A",
+          "kind": "security_authorization",
+          "scenario": "A: anonymous/reporter \u2192 no workspace inventory, 401/404 as specified",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[admin_only]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[admin_only]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no workspace inventory, 401/404 as specified",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-01-E",
+          "kind": "edge",
+          "scenario": "E: restored wrong epoch \u2192 workspace disabled, no stale work",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[missing_epoch]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[missing_epoch]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "workspace disabled, no stale work",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-02",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-02 staff identity/session",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: real MFA/session/introspection \u2192 assigned workspace access",
+      "negative_scenarios": "N: forged bearer/role claim \u2192 denied, no DB effects",
+      "security_authorization_scenarios": "A: org-admin without case/workflow grants \u2192 no leads",
+      "edge_cases": "E: expiry/logout/IdP outage while comparison open \u2192 evidence cleared, new reads denied",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-02-P",
+          "kind": "positive",
+          "scenario": "P: real MFA/session/introspection \u2192 assigned workspace access",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_bff_mfa_worker_media_and_independent_safeguarding",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "assigned workspace access",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-02-N",
+          "kind": "negative",
+          "scenario": "N: forged bearer/role claim \u2192 denied, no DB effects",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied, no DB effects",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-02-A",
+          "kind": "security_authorization",
+          "scenario": "A: org-admin without case/workflow grants \u2192 no leads",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[anonymous-SW-01]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-01]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no leads",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-02-E",
+          "kind": "edge",
+          "scenario": "E: expiry/logout/IdP outage while comparison open \u2192 evidence cleared, new reads denied",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[expired_workflow]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "evidence cleared, new reads denied",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-03",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-03 paired tenant/case access",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: both cases authorized \u2192 one visible paired lead",
+      "negative_scenarios": "N: nonexistent candidate/lead \u2192 generic 404",
+      "security_authorization_scenarios": "A: query-only, other NGO, revoked counterpart \u2192 no row/count/ID/photo",
+      "edge_cases": "E: revoke between selection and response \u2192 no newly released projection; document already-seen bytes limit",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-03-P",
+          "kind": "positive",
+          "scenario": "P: both cases authorized \u2192 one visible paired lead",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_real_fixture_provider_completes_without_model_or_identity_effect",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "one visible paired lead",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-03-N",
+          "kind": "negative",
+          "scenario": "N: nonexistent candidate/lead \u2192 generic 404",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[query_only]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[query_only]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "generic 404",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-03-A",
+          "kind": "security_authorization",
+          "scenario": "A: query-only, other NGO, revoked counterpart \u2192 no row/count/ID/photo",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-06]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no row/count/ID/photo",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-03-E",
+          "kind": "edge",
+          "scenario": "E: revoke between selection and response \u2192 no newly released projection; document already-seen bytes limit",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[candidate_only]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no newly released projection; document already-seen bytes limit",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-04",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-04 closed scenario intake",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: provisioned query/scenario/revision \u2192 one queued run",
+      "negative_scenarios": "N: arbitrary result JSON, URL, model or embedding \u2192 closed DTO rejection, no job",
+      "security_authorization_scenarios": "A: unentitled scenario or forged workflow purpose \u2192 denied",
+      "edge_cases": "E: changed claim/revision or unknown image bytes relabeled synthetic \u2192 rejected/held, no publication",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-04-P",
+          "kind": "positive",
+          "scenario": "P: provisioned query/scenario/revision \u2192 one queued run",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_real_fixture_provider_completes_without_model_or_identity_effect",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "one queued run",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-04-N",
+          "kind": "negative",
+          "scenario": "N: arbitrary result JSON, URL, model or embedding \u2192 closed DTO rejection, no job",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_direct_runtime_run_function_rejects_unbounded_input[url]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[url]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "closed DTO rejection, no job",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-04-A",
+          "kind": "security_authorization",
+          "scenario": "A: unentitled scenario or forged workflow purpose \u2192 denied",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_run_requires_each_live_query_permission[matching.request]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_run_requires_each_live_query_permission[matching.request]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-04-E",
+          "kind": "edge",
+          "scenario": "E: changed claim/revision or unknown image bytes relabeled synthetic \u2192 rejected/held, no publication",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected/held, no publication",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-05",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-05 bounded run worker",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: actual leased fixture job \u2192 deterministic completed leads",
+      "negative_scenarios": "N: fixture parse/integrity failure \u2192 failed/held run, not empty success",
+      "security_authorization_scenarios": "A: org suspended or requester grant revoked during lease \u2192 no publication",
+      "edge_cases": "E: crash/retry/stale fence token \u2192 one publication, dead-letter/cancel behavior honest",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-05-P",
+          "kind": "positive",
+          "scenario": "P: actual leased fixture job \u2192 deterministic completed leads",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "deterministic completed leads",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-05-N",
+          "kind": "negative",
+          "scenario": "N: fixture parse/integrity failure \u2192 failed/held run, not empty success",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "failed/held run, not empty success",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-05-A",
+          "kind": "security_authorization",
+          "scenario": "A: org suspended or requester grant revoked during lease \u2192 no publication",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no publication",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-05-E",
+          "kind": "edge",
+          "scenario": "E: crash/retry/stale fence token \u2192 one publication, dead-letter/cancel behavior honest",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_cancelled_run_cannot_be_published",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_cancelled_run_cannot_be_published"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "one publication, dead-letter/cancel behavior honest",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-06",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-06 queue and pagination",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: authorized filters/pages \u2192 stable bounded unique rows",
+      "negative_scenarios": "N: tampered/reused foreign cursor \u2192 denied/no payload",
+      "security_authorization_scenarios": "A: hidden candidate rows \u2192 no gaps, withheld totals or placeholders",
+      "edge_cases": "E: ties/revision changes between pages \u2192 explicit stale cursor or consistent snapshot, no duplicate leaks",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-06-P",
+          "kind": "positive",
+          "scenario": "P: authorized filters/pages \u2192 stable bounded unique rows",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_real_queue_pagination_filters_and_actor_bound_cursors",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "stable bounded unique rows",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-06-N",
+          "kind": "negative",
+          "scenario": "N: tampered/reused foreign cursor \u2192 denied/no payload",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied/no payload",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-06-A",
+          "kind": "security_authorization",
+          "scenario": "A: hidden candidate rows \u2192 no gaps, withheld totals or placeholders",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no gaps, withheld totals or placeholders",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-06-E",
+          "kind": "edge",
+          "scenario": "E: ties/revision changes between pages \u2192 explicit stale cursor or consistent snapshot, no duplicate leaks",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "explicit stale cursor or consistent snapshot, no duplicate leaks",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-07",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-07 authorized side-by-side media",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: both grants and clean immutable fixture versions \u2192 correct paired derivatives",
+      "negative_scenarios": "N: quarantine/hash/object-version mismatch \u2192 no bytes/fallback",
+      "security_authorization_scenarios": "A: copied URL, unrelated photo ID, missing media grant \u2192 no content or storage reference",
+      "edge_cases": "E: scanner provenance/storage/audit unavailable \u2192 placeholder/hold and safe denial, never originals",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-07-P",
+          "kind": "positive",
+          "scenario": "P: both grants and clean immutable fixture versions \u2192 correct paired derivatives",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_bff_mfa_worker_media_and_independent_safeguarding",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "correct paired derivatives",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-07-N",
+          "kind": "negative",
+          "scenario": "N: quarantine/hash/object-version mismatch \u2192 no bytes/fallback",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no bytes/fallback",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-07-A",
+          "kind": "security_authorization",
+          "scenario": "A: copied URL, unrelated photo ID, missing media grant \u2192 no content or storage reference",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_no_media_grant_withholds_photo_ids_and_never_originals",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_no_media_grant_withholds_photo_ids_and_never_originals"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no content or storage reference",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-07-E",
+          "kind": "edge",
+          "scenario": "E: scanner provenance/storage/audit unavailable \u2192 placeholder/hold and safe denial, never originals",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "placeholder/hold and safe denial, never originals",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-08",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-08 per-photo chronology",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: two photos with different intervals \u2192 each retains its own age/date/source",
+      "negative_scenarios": "N: inverted/partial intervals \u2192 rejected at schema boundary",
+      "security_authorization_scenarios": "A: source ref from another case/tenant \u2192 rejected, no linkage",
+      "edge_cases": "E: unknown/cross-bin/conflicting dates \u2192 explicit uncertainty, no midpoint/today/face-estimated age",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-08-P",
+          "kind": "positive",
+          "scenario": "P: two photos with different intervals \u2192 each retains its own age/date/source",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_real_fixture_provider_completes_without_model_or_identity_effect",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "each retains its own age/date/source",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-08-N",
+          "kind": "negative",
+          "scenario": "N: inverted/partial intervals \u2192 rejected at schema boundary",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds0]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds0]",
+            "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds1]",
+            "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds2]",
+            "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds3]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected at schema boundary",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-08-A",
+          "kind": "security_authorization",
+          "scenario": "A: source ref from another case/tenant \u2192 rejected, no linkage",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected, no linkage",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-08-E",
+          "kind": "edge",
+          "scenario": "E: unknown/cross-bin/conflicting dates \u2192 explicit uncertainty, no midpoint/today/face-estimated age",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_unknowns_are_null_and_reference_dates_are_not_capture_age_inference",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_unknowns_are_null_and_reference_dates_are_not_capture_age_inference"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "explicit uncertainty, no midpoint/today/face-estimated age",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-09",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-09 explanations and ranking",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: closed scenario reasons \u2192 source-backed supporting/contradictory/unknown labels",
+      "negative_scenarios": "N: forged probability, unbounded score, unknown reason code \u2192 rejected",
+      "security_authorization_scenarios": "A: hidden source facts \u2192 never used in visible explanation/count",
+      "edge_cases": "E: equal scores, missing channels, metadata-only case \u2192 stable ranking, quality unmeasured, no forced exclusion",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-09-P",
+          "kind": "positive",
+          "scenario": "P: closed scenario reasons \u2192 source-backed supporting/contradictory/unknown labels",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "source-backed supporting/contradictory/unknown labels",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-09-N",
+          "kind": "negative",
+          "scenario": "N: forged probability, unbounded score, unknown reason code \u2192 rejected",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_future_model_source_is_not_accepted_as_fixture_provenance",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_future_model_source_is_not_accepted_as_fixture_provenance"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-09-A",
+          "kind": "security_authorization",
+          "scenario": "A: hidden source facts \u2192 never used in visible explanation/count",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_no_media_grant_withholds_photo_ids_and_never_originals",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_no_media_grant_withholds_photo_ids_and_never_originals"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "never used in visible explanation/count",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-09-E",
+          "kind": "edge",
+          "scenario": "E: equal scores, missing channels, metadata-only case \u2192 stable ranking, quality unmeasured, no forced exclusion",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "stable ranking, quality unmeasured, no forced exclusion",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-10",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-10 first human decision",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: hold/reject/escalate with valid snapshot \u2192 one immutable event",
+      "negative_scenarios": "N: identity-confirm/reunite outcome or invented evidence \u2192 rejected; case verification unchanged",
+      "security_authorization_scenarios": "A: reviewer lacks either write/workflow action \u2192 denied",
+      "edge_cases": "E: no authorized evidence \u2192 hold remains available; escalate cannot fabricate approval",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-10-P",
+          "kind": "positive",
+          "scenario": "P: hold/reject/escalate with valid snapshot \u2192 one immutable event",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
+            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[reject]",
+            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[escalate]",
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "one immutable event",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-10-N",
+          "kind": "negative",
+          "scenario": "N: identity-confirm/reunite outcome or invented evidence \u2192 rejected; case verification unchanged",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected; case verification unchanged",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-10-A",
+          "kind": "security_authorization",
+          "scenario": "A: reviewer lacks either write/workflow action \u2192 denied",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_both_case_write_permissions_are_required_for_human_decisions[query]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-10-E",
+          "kind": "edge",
+          "scenario": "E: no authorized evidence \u2192 hold remains available; escalate cannot fabricate approval",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_exact_replay_changed_body_stale_revision_and_revoked_replay",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "hold remains available; escalate cannot fabricate approval",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-11",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-11 optimistic commands",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: exact idempotent replay \u2192 same safe reference, one event/outbox/audit",
+      "negative_scenarios": "N: same key changed body \u2192 409, no second effect",
+      "security_authorization_scenarios": "A: replay after expiry/revocation \u2192 denied before cached result disclosure",
+      "edge_cases": "E: concurrent opposite decisions / reversed case lock order \u2192 one valid revision, 412/409 and no deadlock/lost history",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-11-P",
+          "kind": "positive",
+          "scenario": "P: exact idempotent replay \u2192 same safe reference, one event/outbox/audit",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_exact_replay_changed_body_stale_revision_and_revoked_replay",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "same safe reference, one event/outbox/audit",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-11-N",
+          "kind": "negative",
+          "scenario": "N: same key changed body \u2192 409, no second effect",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_exact_replay_changed_body_stale_revision_and_revoked_replay",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "409, no second effect",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-11-A",
+          "kind": "security_authorization",
+          "scenario": "A: replay after expiry/revocation \u2192 denied before cached result disclosure",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_exact_replay_changed_body_stale_revision_and_revoked_replay",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied before cached result disclosure",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-11-E",
+          "kind": "edge",
+          "scenario": "E: concurrent opposite decisions / reversed case lock order \u2192 one valid revision, 412/409 and no deadlock/lost history",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_twenty_actual_database_sessions_preserve_one_revision_and_audit",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "one valid revision, 412/409 and no deadlock/lost history",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-12",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-12 structured collaboration",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: authorized template note/evidence request \u2192 append-only bilingual event",
+      "negative_scenarios": "N: arbitrary narrative/HTML/URL/attachment or unknown code \u2192 rejected",
+      "security_authorization_scenarios": "A: counterpart evidence ref or collaborator without paired rights \u2192 denied",
+      "edge_cases": "E: two simultaneous notes \u2192 both retained or explicit revision conflict; no overwrite",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-12-P",
+          "kind": "positive",
+          "scenario": "P: authorized template note/evidence request \u2192 append-only bilingual event",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_assignment_structured_notes_and_independent_safeguarding_review",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "append-only bilingual event",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-12-N",
+          "kind": "negative",
+          "scenario": "N: arbitrary narrative/HTML/URL/attachment or unknown code \u2192 rejected",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_structured_note_rejects_real_data_entry_even_through_direct_sql",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_structured_note_rejects_real_data_entry_even_through_direct_sql"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-12-A",
+          "kind": "security_authorization",
+          "scenario": "A: counterpart evidence ref or collaborator without paired rights \u2192 denied",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-11]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-11]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-12-E",
+          "kind": "edge",
+          "scenario": "E: two simultaneous notes \u2192 both retained or explicit revision conflict; no overwrite",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_twenty_actual_database_sessions_preserve_one_revision_and_audit",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "both retained or explicit revision conflict; no overwrite",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-13",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-13 assignment without escalation",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: supervisor assigns already authorized colleague within expiry \u2192 task event only",
+      "negative_scenarios": "N: expiry past grants or nonexistent principal \u2192 rejected",
+      "security_authorization_scenarios": "A: self-grant, org-admin-only assignment, other NGO \u2192 denied; grant tables unchanged",
+      "edge_cases": "E: target membership revoked after assignment \u2192 task no longer grants visibility/action",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-13-P",
+          "kind": "positive",
+          "scenario": "P: supervisor assigns already authorized colleague within expiry \u2192 task event only",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_assignment_does_not_create_or_extend_case_permissions",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_assignment_does_not_create_or_extend_case_permissions"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "task event only",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-13-N",
+          "kind": "negative",
+          "scenario": "N: expiry past grants or nonexistent principal \u2192 rejected",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_independence_assignment_and_conflict_denials[self]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[self]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[other_org]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[expired]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[not_escalated]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[reviewer_not_safeguarding]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-13-A",
+          "kind": "security_authorization",
+          "scenario": "A: self-grant, org-admin-only assignment, other NGO \u2192 denied; grant tables unchanged",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[admin_without_case-SW-10]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-10]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied; grant tables unchanged",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-13-E",
+          "kind": "edge",
+          "scenario": "E: target membership revoked after assignment \u2192 task no longer grants visibility/action",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "task no longer grants visibility/action",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-14",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-14 independent peer review",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: distinct eligible person reviews current escalation \u2192 workflow state only",
+      "negative_scenarios": "N: unknown conflict/identity binding or absent first-review evidence \u2192 held/denied",
+      "security_authorization_scenarios": "A: first reviewer, dual-role same person or second principal same person \u2192 cannot approve own work",
+      "edge_cases": "E: evidence/first review changes before second commit \u2192 old approval invalid, fresh review required",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-14-P",
+          "kind": "positive",
+          "scenario": "P: distinct eligible person reviews current escalation \u2192 workflow state only",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_assignment_structured_notes_and_independent_safeguarding_review",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "workflow state only",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-14-N",
+          "kind": "negative",
+          "scenario": "N: unknown conflict/identity binding or absent first-review evidence \u2192 held/denied",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_independence_assignment_and_conflict_denials[wrong_first_review]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "held/denied",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-14-A",
+          "kind": "security_authorization",
+          "scenario": "A: first reviewer, dual-role same person or second principal same person \u2192 cannot approve own work",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_independence_assignment_and_conflict_denials[alias]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "cannot approve own work",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-14-E",
+          "kind": "edge",
+          "scenario": "E: evidence/first review changes before second commit \u2192 old approval invalid, fresh review required",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "old approval invalid, fresh review required",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-15",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-15 safeguarding invariant",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: independent synthetic workflow complete \u2192 case remains unverified, no custody/reunion effect",
+      "negative_scenarios": "N: try disabled real matching/disclosure/handover paths or activation flags \u2192 remain denied/503",
+      "security_authorization_scenarios": "A: claimant, parent-claim, reporter receipt or admin override \u2192 no lead/location/biometric search",
+      "edge_cases": "E: fraud/conflict/verification outage \u2192 hold; notifications disclose no found-child existence",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-15-P",
+          "kind": "positive",
+          "scenario": "P: independent synthetic workflow complete \u2192 case remains unverified, no custody/reunion effect",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_bff_mfa_worker_media_and_independent_safeguarding",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "case remains unverified, no custody/reunion effect",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-15-N",
+          "kind": "negative",
+          "scenario": "N: try disabled real matching/disclosure/handover paths or activation flags \u2192 remain denied/503",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[identity_confirmation]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "remain denied/503",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-15-A",
+          "kind": "security_authorization",
+          "scenario": "A: claimant, parent-claim, reporter receipt or admin override \u2192 no lead/location/biometric search",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[anonymous-SW-13]",
+          "executable_selectors": [
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-13]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no lead/location/biometric search",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-15-E",
+          "kind": "edge",
+          "scenario": "E: fraud/conflict/verification outage \u2192 hold; notifications disclose no found-child existence",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "hold; notifications disclose no found-child existence",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-16",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-16 audit and neutral notifications",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: transaction commits event + per-tenant chained audit + one private neutral task",
+      "negative_scenarios": "N: audit/outbox failure \u2192 no partial successful mutation/read",
+      "security_authorization_scenarios": "A: audit without paired grants or wrong recipient \u2192 no sensitive projection/delivery",
+      "edge_cases": "E: duplicate/out-of-order outbox with recipient revocation \u2192 dedup/deny, no case payload",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-16-P",
+          "kind": "positive",
+          "scenario": "P: transaction commits event + per-tenant chained audit + one private neutral task",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_assignment_structured_notes_and_independent_safeguarding_review",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "P: transaction commits event + per-tenant chained audit + one private neutral task",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-16-N",
+          "kind": "negative",
+          "scenario": "N: audit/outbox failure \u2192 no partial successful mutation/read",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no partial successful mutation/read",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-16-A",
+          "kind": "security_authorization",
+          "scenario": "A: audit without paired grants or wrong recipient \u2192 no sensitive projection/delivery",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no sensitive projection/delivery",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-16-E",
+          "kind": "edge",
+          "scenario": "E: duplicate/out-of-order outbox with recipient revocation \u2192 dedup/deny, no case payload",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "dedup/deny, no case payload",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-17",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-17 stale evidence/rejection scope",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: reject exact snapshot \u2192 prior rationale retained and only that snapshot suppressed",
+      "negative_scenarios": "N: changed evidence silently reuses old review/approval \u2192 rejected as stale",
+      "security_authorization_scenarios": "A: deletion/closed case/access withdrawal \u2192 no new list/media/action",
+      "edge_cases": "E: new justified scenario/policy revision \u2192 new pending review with old rejection visible, never silent identity acceptance",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-17-P",
+          "kind": "positive",
+          "scenario": "P: reject exact snapshot \u2192 prior rationale retained and only that snapshot suppressed",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "prior rationale retained and only that snapshot suppressed",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-17-N",
+          "kind": "negative",
+          "scenario": "N: changed evidence silently reuses old review/approval \u2192 rejected as stale",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "rejected as stale",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-17-A",
+          "kind": "security_authorization",
+          "scenario": "A: deletion/closed case/access withdrawal \u2192 no new list/media/action",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no new list/media/action",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-17-E",
+          "kind": "edge",
+          "scenario": "E: new justified scenario/policy revision \u2192 new pending review with old rejection visible, never silent identity acceptance",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "new pending review with old rejection visible, never silent identity acceptance",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-18",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-18 Arabic/English accessibility",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: complete translations/keyboard/focus/status announcements in both locales",
+      "negative_scenarios": "N: untranslated status, color-only decision or drag-only control \u2192 mandatory failure",
+      "security_authorization_scenarios": "A: initial SSR/back/locale restore before session recheck \u2192 no stale private page content",
+      "edge_cases": "E: 320px/zoom/mixed bidi/unknown dates \u2192 correct source order, readable intervals and isolated IDs",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-18-P",
+          "kind": "positive",
+          "scenario": "P: complete translations/keyboard/focus/status announcements in both locales",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_08_ACCESSIBILITY",
+          "executable_selectors": [
+            "SWB_08_ACCESSIBILITY"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "P: complete translations/keyboard/focus/status announcements in both locales",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-18-N",
+          "kind": "negative",
+          "scenario": "N: untranslated status, color-only decision or drag-only control \u2192 mandatory failure",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_08_ACCESSIBILITY",
+          "executable_selectors": [
+            "SWB_08_ACCESSIBILITY"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "mandatory failure",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-18-A",
+          "kind": "security_authorization",
+          "scenario": "A: initial SSR/back/locale restore before session recheck \u2192 no stale private page content",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_06_REVOCATION",
+          "executable_selectors": [
+            "SWB_06_REVOCATION"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no stale private page content",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-18-E",
+          "kind": "edge",
+          "scenario": "E: 320px/zoom/mixed bidi/unknown dates \u2192 correct source order, readable intervals and isolated IDs",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_08_ACCESSIBILITY",
+          "executable_selectors": [
+            "SWB_08_ACCESSIBILITY"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "correct source order, readable intervals and isolated IDs",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-19",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-19 recovery/performance",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: empty/upgrade migration and isolated restore \u2192 RLS/history intact, epoch revalidated",
+      "negative_scenarios": "N: wrong/missing migration/hash or no control ledger \u2192 workspace disabled",
+      "security_authorization_scenarios": "A: restored post-backup revoked grant or old session/worker fence \u2192 no resurrected access/effect",
+      "edge_cases": "E: 20-session load, cancellation/OOM/dependency restart \u2192 bounded honest failures, no bypass or leaked data",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-19-P",
+          "kind": "positive",
+          "scenario": "P: empty/upgrade migration and isolated restore \u2192 RLS/history intact, epoch revalidated",
+          "planned_file": "tests/synthetic_workflow/test_capacity.py",
+          "planned_selector": "test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "RLS/history intact, epoch revalidated",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-19-N",
+          "kind": "negative",
+          "scenario": "N: wrong/missing migration/hash or no control ledger \u2192 workspace disabled",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "workspace disabled",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-19-A",
+          "kind": "security_authorization",
+          "scenario": "A: restored post-backup revoked grant or old session/worker fence \u2192 no resurrected access/effect",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_paired_scope_and_purpose_fail_closed[missing_epoch]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[missing_epoch]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no resurrected access/effect",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-19-E",
+          "kind": "edge",
+          "scenario": "E: 20-session load, cancellation/OOM/dependency restart \u2192 bounded honest failures, no bypass or leaked data",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "bounded honest failures, no bypass or leaked data",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
+    },
+    {
+      "feature_id": "SWF-20",
+      "category": "synthetic_investigation",
+      "source": "phase2d/IMPLEMENTATION_SPEC.md",
+      "title": "SWF-20 traceability/artifacts/regression",
+      "suite": "unit/api/postgresql/security/integration/official_browser/recovery",
+      "phase_introduced": "2D",
+      "positive_scenarios": "P: complete exact-head required IDs/targets + sanitized hashes \u2192 reviewable engineering evidence",
+      "negative_scenarios": "N: skipped/missing/zero-result lane or canary in artifact \u2192 required gate/publication fails",
+      "security_authorization_scenarios": "A: raw screenshots/DOM/tokens/fixture bodies in publish set \u2192 denied, private diagnostics retained",
+      "edge_cases": "E: existing 554 Python / 168 browser regression or one new browser target fails \u2192 no phase pass/reduced coverage",
+      "fixture_ids": [
+        "FX-SYNTHETIC-WORKFLOW"
+      ],
+      "expected_outcomes": "Authorized fictional workflow only; all denied or unverifiable operations fail closed; no identity/custody effect",
+      "test_cases": [
+        {
+          "test_case_id": "SWF-20-P",
+          "kind": "positive",
+          "scenario": "P: complete exact-head required IDs/targets + sanitized hashes \u2192 reviewable engineering evidence",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_08_ACCESSIBILITY",
+          "executable_selectors": [
+            "SWB_08_ACCESSIBILITY"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "reviewable engineering evidence",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-20-N",
+          "kind": "negative",
+          "scenario": "N: skipped/missing/zero-result lane or canary in artifact \u2192 required gate/publication fails",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_07_FAILURE",
+          "executable_selectors": [
+            "SWB_07_FAILURE"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "required gate/publication fails",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-20-A",
+          "kind": "security_authorization",
+          "scenario": "A: raw screenshots/DOM/tokens/fixture bodies in publish set \u2192 denied, private diagnostics retained",
+          "planned_file": "tests/synthetic_workflow/test_contracts.py",
+          "planned_selector": "test_closed_review_input_cannot_admit_data_or_activation[model_url]",
+          "executable_selectors": [
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[model_url]",
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[custody]",
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[text]",
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[photograph]",
+            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "denied, private diagnostics retained",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        },
+        {
+          "test_case_id": "SWF-20-E",
+          "kind": "edge",
+          "scenario": "E: existing 554 Python / 168 browser regression or one new browser target fails \u2192 no phase pass/reduced coverage",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_01_QUEUE",
+          "executable_selectors": [
+            "SWB_01_QUEUE"
+          ],
+          "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
+          "expected_outcome": "no phase pass/reduced coverage",
+          "required_from_phase": "2D",
+          "status": "pending",
+          "execution_evidence": null,
+          "phase2d_required": true
+        }
+      ],
+      "execution_evidence": null,
+      "current_validation_status": "pending"
     }
   ],
   "baseline": {

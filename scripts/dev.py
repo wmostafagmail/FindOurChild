@@ -26,6 +26,11 @@ def environment():
     data.update({k: v for k, v in identity.items() if k.startswith("FOC_")})
     from scripts.reporting_setup import generate as generate_reporting
     data.update(generate_reporting())
+    workflow_state = STATE / "workflow-epoch.json"
+    if not workflow_state.exists():
+        workflow_state.write_text(json.dumps({"epoch": secrets.token_hex(32)}))
+        workflow_state.chmod(0o600)
+    data["FOC_WORKFLOW_EPOCH"] = json.loads(workflow_state.read_text())["epoch"]
     data["FOC_WORKER_DATABASE_URL"] = "postgresql://foc_worker:" + quote(data["FOC_WORKER_PASSWORD"]) + "@db:5432/foc_synthetic"
     data["FOC_CONTAINER_ADMIN_URL"] = data["FOC_DATABASE_ADMIN_URL"].replace("127.0.0.1:55439", "db:5432")
     data["FOC_CONTAINER_DATABASE_URL"] = data["FOC_DATABASE_URL"].replace("127.0.0.1:55439", "db:5432")
