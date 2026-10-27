@@ -3,6 +3,7 @@
 These are the explicit phase-change paths submitted for review; the Git PR diff and independently verified execution-source manifest are authoritative. Prior evidence and research are retained.
 
 - `.github/workflows/phase1a.yml`
+- `apps/web/app/[locale]/identity/session.tsx`
 - `apps/web/app/[locale]/investigation/page.tsx`
 - `apps/web/app/[locale]/investigation/workspace.tsx`
 - `apps/web/app/style.css`

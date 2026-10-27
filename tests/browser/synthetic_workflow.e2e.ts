@@ -22,7 +22,7 @@ for(const journey of ['01_QUEUE','02_COMPARISON','03_DECISIONS','04_COLLABORATIO
   const username='synthetic-workflow-'+target;
   await browser.locator('#username').fill(username);await browser.locator('#password').fill(secrets.get('staff_password'));await browser.locator('#kc-login').click();await expect(browser.locator('#otp')).toBeVisible();await browser.locator('#otp').fill(secrets.get('staff_otp'));await browser.locator('#kc-login').click();
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','authenticated');
-  await app.open('/en/investigation');await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','ready');
+  await screen.getByRole('link','Synthetic investigations').click();await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','ready');
   await expect(screen.getByTestId('synthetic-banner')).toContainText('Fictional records');
   await screen.getByTestId('start-scenario').click();await expect(screen.getByTestId('run-state')).toHaveAttribute('data-state','completed',{timeout:30_000});
   await browser.locator('[data-testid="open-candidate"]').first().click();await expect(screen.getByTestId('synthetic-comparison')).toBeVisible();
