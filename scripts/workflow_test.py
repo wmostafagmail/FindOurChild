@@ -62,7 +62,9 @@ def main():
     }
     output = ROOT / "artifacts/raw"
     output.mkdir(parents=True, exist_ok=True)
-    history = output / "history" / str(time.time_ns())
+    # Earlier root-owned reporting diagnostics have a separate history tree.
+    # Keep workflow evidence private and owned by the host runner on Linux.
+    history = output / "workflow-history" / str(time.time_ns())
     history.mkdir(parents=True, mode=0o700)
     for name, value in [
         (lane + "-results.json", json.dumps(report, indent=2) + "\n"),
