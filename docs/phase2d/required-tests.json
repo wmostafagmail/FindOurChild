@@ -96,7 +96,18 @@
     "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
     "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
     "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]",
-    "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]"
+    "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_concurrent_notes_conflict_then_explicit_retry_preserves_both",
+    "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[unknown_principal]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[workflow]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[membership]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[query]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[candidate]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_membership_revocation_after_assignment_denies_task_access_and_action",
+    "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
+    "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[provider]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[candidate_uuid]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection"
   ],
   "synthetic_workflow_http": [
     "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
@@ -151,7 +162,9 @@
     "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-12]",
     "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-13]",
     "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-14]",
-    "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors"
+    "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors",
+    "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap",
+    "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
   ],
   "browser_titles": [
     "SWB_01_QUEUE",

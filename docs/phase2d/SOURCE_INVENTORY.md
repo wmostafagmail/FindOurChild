@@ -52,6 +52,7 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `tests/synthetic_workflow/test_capacity.py`
 - `tests/synthetic_workflow/test_contracts.py`
 - `tests/synthetic_workflow/test_transactions.py`
+- `tests/synthetic_workflow/test_review_gaps.py`
 - `tests/synthetic_workflow_http/__init__.py`
 - `tests/synthetic_workflow_http/test_live.py`
 - `tools/freeze_phase2d_contract.py`

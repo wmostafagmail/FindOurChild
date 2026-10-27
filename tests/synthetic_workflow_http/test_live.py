@@ -278,3 +278,69 @@ def test_real_queue_pagination_filters_and_actor_bound_cursors():
             peer.close()
     finally:
         client.close()
+
+
+def test_hidden_candidate_does_not_leave_a_visible_rank_gap():
+    from scripts.identity_setup import fixture_id
+    from tests.synthetic_workflow.helpers import ACTOR, admin
+
+    client, headers = real_login("synthetic-workflow-http")
+    try:
+        view = new_lead(client, headers)
+        endpoint = path("/cases/" + view["query_case_id"] + "/leads") + "&limit=3"
+        original = client.get(endpoint, headers=headers)
+        assert original.status_code == 200
+        original = original.json()["items"]
+        assert len(original) == 3 and len({x["run_id"] for x in original}) == 1
+        hidden_case = fixture_id("workflow-found-contradictory")
+        with admin() as a:
+            previous = a.execute(
+                "SELECT revoked_at FROM app.case_grants WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission='case.read'",
+                (ORG_A, ACTOR, hidden_case),
+            ).fetchone()
+            assert previous is not None
+            a.execute(
+                "UPDATE app.case_grants SET revoked_at=now() WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission='case.read'",
+                (ORG_A, ACTOR, hidden_case),
+            )
+            try:
+                response = client.get(endpoint, headers=headers)
+                assert response.status_code == 200
+                visible = [x for x in response.json()["items"] if x["run_id"] == original[0]["run_id"]]
+                assert [x["visible_rank"] for x in visible] == [1, 2]
+                assert [x["id"] for x in visible] == [original[0]["id"], original[2]["id"]]
+                assert original[1]["id"] not in response.text and "total" not in response.json()
+            finally:
+                a.execute(
+                    "UPDATE app.case_grants SET revoked_at=%s WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission='case.read'",
+                    (previous[0], ORG_A, ACTOR, hidden_case),
+                )
+    finally:
+        client.close()
+
+
+def test_actual_private_storage_outage_denies_photo_then_recovers():
+    from scripts.dev import compose
+
+    client, headers = real_login("synthetic-workflow-http")
+    try:
+        view = new_lead(client, headers)
+        endpoint = path("/leads/" + view["lead_id"] + "/photos/" + view["photos"][0]["id"] + "/content")
+        before = client.get(endpoint, headers=headers)
+        assert before.status_code == 200 and before.content.startswith(b"\x89PNG\r\n\x1a\n")
+        compose("stop", "storage")
+        try:
+            denied = client.get(endpoint, headers=headers)
+            assert denied.status_code == 503
+            assert denied.headers["cache-control"] == "no-store"
+            assert not denied.content.startswith(b"\x89PNG")
+            assert all(
+                value not in denied.text
+                for value in ["opaque_key", "wrapped_key", "object_version", "SYNTHETIC_SECRET_CANARY"]
+            )
+        finally:
+            compose("up", "-d", "--wait", "storage")
+        after = client.get(endpoint, headers=headers)
+        assert after.status_code == 200 and after.content == before.content
+    finally:
+        client.close()

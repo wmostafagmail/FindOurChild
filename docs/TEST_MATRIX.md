@@ -3957,3 +3957,5 @@ Expected: Tenant/principal/operation/key scope is unique, hashes have fixed leng
 
 Per-case scenarios, commands, expected outcomes, phase applicability and evidence selectors are recorded in the machine-readable matrix above.
 
+
+Phase 2D final review adds explicit exact selectors and records broader unexecuted variants in `phase2d/traceability.json` (`remaining_validation`). A passing executable inventory is not a claim that every clause of every broad scenario has been exercised.

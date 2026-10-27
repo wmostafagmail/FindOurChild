@@ -23360,8 +23360,9 @@
           "kind": "negative",
           "scenario": "N: altered manifest/hash \u2192 no activation, 503",
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[object_hash]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
             "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -23375,10 +23376,11 @@
           "test_case_id": "SWF-01-A",
           "kind": "security_authorization",
           "scenario": "A: anonymous/reporter \u2192 no workspace inventory, 401/404 as specified",
-          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_paired_scope_and_purpose_fail_closed[admin_only]",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_anonymous_staff_namespace_has_no_private_projection",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[admin_only]"
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[admin_only]",
+            "tests/synthetic_workflow_http/test_live.py::test_anonymous_staff_namespace_has_no_private_projection"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no workspace inventory, 401/404 as specified",
@@ -23443,9 +23445,18 @@
           "test_case_id": "SWF-02-N",
           "kind": "negative",
           "scenario": "N: forged bearer/role claim \u2192 denied, no DB effects",
-          "planned_file": "tests/synthetic_workflow_http/test_live.py",
-          "planned_selector": "test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]",
+          "planned_file": "tests/identity/test_boundaries.py",
+          "planned_selector": "test_anonymous_or_forged_identity_denied",
           "executable_selectors": [
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+            "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
             "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -23460,9 +23471,9 @@
           "kind": "security_authorization",
           "scenario": "A: org-admin without case/workflow grants \u2192 no leads",
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
-          "planned_selector": "test_every_operation_has_live_negative_authorization[anonymous-SW-01]",
+          "planned_selector": "test_every_operation_has_live_negative_authorization[admin_without_case-SW-01]",
           "executable_selectors": [
-            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-01]"
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-01]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no leads",
@@ -23475,9 +23486,11 @@
           "test_case_id": "SWF-02-E",
           "kind": "edge",
           "scenario": "E: expiry/logout/IdP outage while comparison open \u2192 evidence cleared, new reads denied",
-          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_paired_scope_and_purpose_fail_closed[expired_workflow]",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_06_REVOCATION",
           "executable_selectors": [
+            "SWB_06_REVOCATION",
+            "SWB_07_FAILURE",
             "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -23527,10 +23540,10 @@
           "test_case_id": "SWF-03-N",
           "kind": "negative",
           "scenario": "N: nonexistent candidate/lead \u2192 generic 404",
-          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_paired_scope_and_purpose_fail_closed[query_only]",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_lead]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[query_only]"
+            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_lead]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "generic 404",
@@ -23559,9 +23572,10 @@
           "test_case_id": "SWF-03-E",
           "kind": "edge",
           "scenario": "E: revoke between selection and response \u2192 no newly released projection; document already-seen bytes limit",
-          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_paired_scope_and_purpose_fail_closed[candidate_only]",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_06_REVOCATION",
           "executable_selectors": [
+            "SWB_06_REVOCATION",
             "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -23569,7 +23583,8 @@
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "remaining_validation": "Revocation before the next read and UI poll is exercised. A deterministically paused concurrent metadata response during revocation is not exercised; already-viewed bytes cannot be recalled."
         }
       ],
       "execution_evidence": null,
@@ -23646,9 +23661,9 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
@@ -23702,9 +23717,13 @@
           "kind": "negative",
           "scenario": "N: fixture parse/integrity failure \u2192 failed/held run, not empty success",
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[object_hash]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester"
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
+            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+            "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[candidate_uuid]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[provider]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "failed/held run, not empty success",
@@ -23733,10 +23752,11 @@
           "test_case_id": "SWF-05-E",
           "kind": "edge",
           "scenario": "E: crash/retry/stale fence token \u2192 one publication, dead-letter/cancel behavior honest",
-          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_cancelled_run_cannot_be_published",
+          "planned_file": "tests/synthetic_workflow/test_transactions.py",
+          "planned_selector": "test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_cancelled_run_cannot_be_published"
+            "tests/synthetic_workflow/test_boundaries.py::test_cancelled_run_cannot_be_published",
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one publication, dead-letter/cancel behavior honest",
@@ -23804,7 +23824,8 @@
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
           "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
           "executable_selectors": [
-            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]"
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
+            "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no gaps, withheld totals or placeholders",
@@ -23817,10 +23838,12 @@
           "test_case_id": "SWF-06-E",
           "kind": "edge",
           "scenario": "E: ties/revision changes between pages \u2192 explicit stale cursor or consistent snapshot, no duplicate leaks",
-          "planned_file": "tests/synthetic_workflow/test_transactions.py",
-          "planned_selector": "test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+          "planned_file": "tests/synthetic_workflow_http/test_live.py",
+          "planned_selector": "test_real_queue_pagination_filters_and_actor_bound_cursors",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+            "tests/synthetic_workflow/test_contracts.py::test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes",
+            "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+            "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "explicit stale cursor or consistent snapshot, no duplicate leaks",
@@ -23869,9 +23892,11 @@
           "test_case_id": "SWF-07-N",
           "kind": "negative",
           "scenario": "N: quarantine/hash/object-version mismatch \u2192 no bytes/fallback",
-          "planned_file": "tests/synthetic_workflow_http/test_live.py",
-          "planned_selector": "test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[object_hash]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
             "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -23901,10 +23926,12 @@
           "test_case_id": "SWF-07-E",
           "kind": "edge",
           "scenario": "E: scanner provenance/storage/audit unavailable \u2192 placeholder/hold and safe denial, never originals",
-          "planned_file": "tests/synthetic_workflow/test_transactions.py",
-          "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
+          "planned_selector": "SWB_07_FAILURE",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+            "SWB_07_FAILURE",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "placeholder/hold and safe denial, never originals",
@@ -23973,15 +24000,10 @@
           "kind": "security_authorization",
           "scenario": "A: source ref from another case/tenant \u2192 rejected, no linkage",
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+          "planned_selector": "test_review_rejects_forged_sensitive_conclusions_and_evidence[wrong_ref]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+            "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[wrong_ref]",
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected, no linkage",
@@ -24046,9 +24068,10 @@
           "test_case_id": "SWF-09-N",
           "kind": "negative",
           "scenario": "N: forged probability, unbounded score, unknown reason code \u2192 rejected",
-          "planned_file": "tests/synthetic_workflow/test_contracts.py",
-          "planned_selector": "test_future_model_source_is_not_accepted_as_fixture_provenance",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_review_rejects_forged_sensitive_conclusions_and_evidence[unknown_reason]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[unknown_reason]",
             "tests/synthetic_workflow/test_contracts.py::test_future_model_source_is_not_accepted_as_fixture_provenance"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24117,11 +24140,11 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[escalate]",
             "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
             "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[reject]",
-            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[escalate]",
-            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
-            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]"
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one immutable event",
@@ -24138,8 +24161,8 @@
           "planned_selector": "test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]",
           "executable_selectors": [
             "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]",
-            "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]",
-            "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]"
+            "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]",
+            "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected; case verification unchanged",
@@ -24155,8 +24178,8 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_both_case_write_permissions_are_required_for_human_decisions[query]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
-            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]"
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
+            "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied",
@@ -24170,9 +24193,10 @@
           "kind": "edge",
           "scenario": "E: no authorized evidence \u2192 hold remains available; escalate cannot fabricate approval",
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
-          "planned_selector": "test_exact_replay_changed_body_stale_revision_and_revoked_replay",
+          "planned_selector": "test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+            "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
+            "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[no_evidence]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "hold remains available; escalate cannot fabricate approval",
@@ -24340,6 +24364,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_twenty_actual_database_sessions_preserve_one_revision_and_audit",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_concurrent_notes_conflict_then_explicit_retry_preserves_both",
             "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24392,13 +24417,18 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_independence_assignment_and_conflict_denials[self]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[self]",
             "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
-            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[other_org]",
             "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[expired]",
             "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[not_escalated]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[other_org]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[reviewer_not_safeguarding]",
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[self]",
             "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]",
-            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[reviewer_not_safeguarding]"
+            "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[candidate]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[membership]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[query]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[unknown_principal]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[workflow]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected",
@@ -24430,6 +24460,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_membership_revocation_after_assignment_denies_task_access_and_action",
             "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24515,9 +24546,9 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
@@ -24658,6 +24689,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
             "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24690,6 +24722,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
           "executable_selectors": [
+            "tests/reporting/test_workers.py::test_neutral_notification_sink_deduplicates_and_has_no_child_payload",
             "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24742,9 +24775,9 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_changed_evidence_invalidates_all_pair_projections[case_revision]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+            "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
@@ -24780,6 +24813,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection",
             "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24897,17 +24931,21 @@
           "test_case_id": "SWF-19-P",
           "kind": "positive",
           "scenario": "P: empty/upgrade migration and isolated restore \u2192 RLS/history intact, epoch revalidated",
-          "planned_file": "tests/synthetic_workflow/test_capacity.py",
-          "planned_selector": "test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
+          "planned_file": "tests/synthetic_workflow/test_boundaries.py",
+          "planned_selector": "test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions"
+            "tests/synthetic_workflow/test_boundaries.py::test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "RLS/history intact, epoch revalidated",
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
+          ]
         },
         {
           "test_case_id": "SWF-19-N",
@@ -24923,7 +24961,10 @@
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
+          ]
         },
         {
           "test_case_id": "SWF-19-A",
@@ -24939,7 +24980,10 @@
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
+          ]
         },
         {
           "test_case_id": "SWF-19-E",
@@ -24955,7 +24999,11 @@
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "remaining_validation": "Actual worker process exit, stale fencing and 20-session database load are exercised. OS-level OOM and a dependency restart during this workflow are not injected.",
+          "execution_checks": [
+            "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
+          ]
         }
       ],
       "execution_evidence": null,
@@ -24981,69 +25029,99 @@
           "test_case_id": "SWF-20-P",
           "kind": "positive",
           "scenario": "P: complete exact-head required IDs/targets + sanitized hashes \u2192 reviewable engineering evidence",
-          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
-          "planned_selector": "SWB_08_ACCESSIBILITY",
+          "planned_file": "tests/unit/test_results_gate.py",
+          "planned_selector": "test_fnd_gate_accepts_complete_validator_fixture",
           "executable_selectors": [
-            "SWB_08_ACCESSIBILITY"
+            "tests/unit/test_results_gate.py::test_fnd_gate_accepts_complete_validator_fixture"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "reviewable engineering evidence",
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
+            "tools/verify_phase2d_evidence.py: independent committed-blob, inventory, checksum and aggregate audit"
+          ]
         },
         {
           "test_case_id": "SWF-20-N",
           "kind": "negative",
           "scenario": "N: skipped/missing/zero-result lane or canary in artifact \u2192 required gate/publication fails",
-          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
-          "planned_selector": "SWB_07_FAILURE",
+          "planned_file": "tests/unit/test_results_gate.py",
+          "planned_selector": "test_fnd_gate_rejects_missing_python_result",
           "executable_selectors": [
-            "SWB_07_FAILURE"
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[cleanup]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[duplicate-result]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[model]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[origin]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[retry]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[stale]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_missing_python_result",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-call]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-setup]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-teardown]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-call]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-setup]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "required gate/publication fails",
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
+            "tools/verify_phase2d_evidence.py: independent committed-blob, inventory, checksum and aggregate audit"
+          ]
         },
         {
           "test_case_id": "SWF-20-A",
           "kind": "security_authorization",
           "scenario": "A: raw screenshots/DOM/tokens/fixture bodies in publish set \u2192 denied, private diagnostics retained",
-          "planned_file": "tests/synthetic_workflow/test_contracts.py",
-          "planned_selector": "test_closed_review_input_cannot_admit_data_or_activation[model_url]",
+          "planned_file": "tests/unit/test_results_gate.py",
+          "planned_selector": "test_fnd_png_sanitizer_strips_metadata_canary",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[model_url]",
-            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[custody]",
-            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[text]",
-            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[photograph]",
-            "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]"
+            "tests/unit/test_results_gate.py::test_fnd_artifact_path_rejects_escape_and_symlink",
+            "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_strips_metadata_canary"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied, private diagnostics retained",
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
+            "tools/verify_phase2d_evidence.py: independent committed-blob, inventory, checksum and aggregate audit"
+          ]
         },
         {
           "test_case_id": "SWF-20-E",
           "kind": "edge",
           "scenario": "E: existing 554 Python / 168 browser regression or one new browser target fails \u2192 no phase pass/reduced coverage",
-          "planned_file": "tests/browser/synthetic_workflow.e2e.ts",
-          "planned_selector": "SWB_01_QUEUE",
+          "planned_file": "tests/unit/test_results_gate.py",
+          "planned_selector": "test_fnd_gate_rejects_browser_defects[missing-target]",
           "executable_selectors": [
-            "SWB_01_QUEUE"
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no phase pass/reduced coverage",
           "required_from_phase": "2D",
           "status": "pending",
           "execution_evidence": null,
-          "phase2d_required": true
+          "phase2d_required": true,
+          "execution_checks": [
+            "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
+            "tools/verify_phase2d_evidence.py: independent committed-blob, inventory, checksum and aggregate audit"
+          ]
         }
       ],
       "execution_evidence": null,

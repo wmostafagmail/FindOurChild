@@ -28,3 +28,5 @@ The [machine mapping](traceability.json) records every feature, scenario, fixtur
 | SWF-20 — SWF-20 traceability/artifacts/regression | 8 explicit selectors; P/N/A/E details in JSON | Pending hosted verification |
 
 Manual native-language and assistive-technology review is unexecuted and remains a distinct review limitation. No synthetic engineering test qualifies a model, dataset or child-identification accuracy.
+
+Phase 2D final review adds explicit exact selectors and records broader unexecuted variants in `phase2d/traceability.json` (`remaining_validation`). A passing executable inventory is not a claim that every clause of every broad scenario has been exercised.
