@@ -1,3 +1,5 @@
+> Latest roadmap (2026-10-27): [Phases 2D, 2E, 2F and 3](ROADMAP_PHASES_2D_3.md) defines the revised demo-first scope, dependencies, test/acceptance gates and a concrete [demonstration licensing packet](planning/demo/DEMO_LICENSING_DECISION.md). Implementation and artifact acquisition still require owner approval. The earlier milestone proposal below is preserved as historical planning.
+
 # Revised development roadmap — complete demonstration before institutional operations
 
 Strategic clarification recorded 2026-10-27. The immediate project objective is a fully functional, production-representative **demonstration** using synthetic cases, fictional identities and appropriately licensed demonstration models/images. Institutional NGO/government operational approval processes begin after the complete demonstration is ready. They do not block development and testing of synthetic reporting, matching demonstrations, investigation UX, security or collaboration.
