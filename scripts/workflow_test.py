@@ -30,7 +30,12 @@ def main():
     digest = fingerprint()
     started = time.time()
     captured = io.StringIO()
-    with redirect_stdout(captured), redirect_stderr(captured):
+    from contextlib import nullcontext
+
+    from scripts.workflow_http_environment import private_sql_bridge
+
+    transport = private_sql_bridge() if lane.endswith("_http") else nullcontext()
+    with transport, redirect_stdout(captured), redirect_stderr(captured):
         code = pytest.main(
             [
                 "tests/" + lane,
@@ -80,6 +85,7 @@ def main():
     for entry in entries:
         if entry["status"] != "passed":
             print("Required nonpassing selector: " + entry["id"])
+            print("Sanitized failure location: " + json.dumps(result.failures.get(entry["id"], {})))
     if digest != fingerprint():
         raise SystemExit("Source changed during validation")
     required = json.loads((ROOT / "docs/phase2d/required-tests.json").read_text())[lane]

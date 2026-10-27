@@ -114,7 +114,7 @@ def test_actual_bff_mfa_worker_media_and_independent_safeguarding():
     ],
 )
 def test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests(attack):
-    client, headers = real_login("synthetic-workflow-http")
+    client, headers = real_login("synthetic-workflow-http-invalid-" + attack)
     try:
         view = new_lead(client, headers)
         lid = view["lead_id"]
@@ -174,7 +174,7 @@ def test_anonymous_staff_namespace_has_no_private_projection():
 
 @pytest.fixture(scope="module")
 def operation_inventory():
-    client, headers = real_login("synthetic-workflow-http")
+    client, headers = real_login("synthetic-workflow-http-inventory")
     try:
         view = new_lead(client, headers)
         lid = view["lead_id"]
@@ -225,7 +225,11 @@ def test_every_operation_has_live_negative_authorization(operation_inventory, in
         )
         headers = {}
     else:
-        client, headers = real_login("synthetic-reviewer-b" if actor == "other_ngo" else "synthetic-admin-a")
+        client, headers = real_login(
+            "synthetic-workflow-denied-"
+            + ("other" if actor == "other_ngo" else "admin")
+            + f"-SW-{index + 1:02}"
+        )
     try:
         method, endpoint, payload = operation_inventory[index]
         response = (
@@ -244,7 +248,7 @@ def test_every_operation_has_live_negative_authorization(operation_inventory, in
 
 
 def test_real_queue_pagination_filters_and_actor_bound_cursors():
-    client, headers = real_login("synthetic-workflow-http")
+    client, headers = real_login("synthetic-workflow-http-pagination")
     try:
         view = new_lead(client, headers)
         endpoint = path("/cases/" + view["query_case_id"] + "/leads") + "&limit=1"
@@ -263,7 +267,7 @@ def test_real_queue_pagination_filters_and_actor_bound_cursors():
         filtered = client.get(endpoint + "&review_state=pending", headers=headers)
         assert filtered.status_code == 200
         assert all(x["review_state"] == "pending" for x in filtered.json()["items"])
-        peer, peer_headers = real_login("synthetic-workflow-peer-http")
+        peer, peer_headers = real_login("synthetic-workflow-peer-http-pagination")
         try:
             assert (
                 peer.get(
@@ -282,9 +286,11 @@ def test_real_queue_pagination_filters_and_actor_bound_cursors():
 
 def test_hidden_candidate_does_not_leave_a_visible_rank_gap():
     from scripts.identity_setup import fixture_id
-    from tests.synthetic_workflow.helpers import ACTOR, admin
+    from tests.synthetic_workflow.helpers import admin
 
-    client, headers = real_login("synthetic-workflow-http")
+    ACTOR = fixture_id("synthetic-workflow-http-hidden-rank")
+
+    client, headers = real_login("synthetic-workflow-http-hidden-rank")
     try:
         view = new_lead(client, headers)
         endpoint = path("/cases/" + view["query_case_id"] + "/leads") + "&limit=3"
@@ -322,7 +328,7 @@ def test_hidden_candidate_does_not_leave_a_visible_rank_gap():
 def test_actual_private_storage_outage_denies_photo_then_recovers():
     from scripts.dev import compose
 
-    client, headers = real_login("synthetic-workflow-http")
+    client, headers = real_login("synthetic-workflow-http-storage")
     try:
         view = new_lead(client, headers)
         endpoint = path("/leads/" + view["lead_id"] + "/photos/" + view["photos"][0]["id"] + "/content")
@@ -340,7 +346,262 @@ def test_actual_private_storage_outage_denies_photo_then_recovers():
             )
         finally:
             compose("up", "-d", "--wait", "storage")
-        after = client.get(endpoint, headers=headers)
-        assert after.status_code == 200 and after.content == before.content
+        # A listening storage port is not evidence that its existing volumes
+        # are ready. Require actual authorized object recovery within the bound.
+        deadline = time.monotonic() + 30
+        while True:
+            after = client.get(endpoint, headers=headers)
+            if after.status_code == 200:
+                break
+            assert after.status_code == 503 and not after.content.startswith(b"\x89PNG")
+            if time.monotonic() >= deadline:
+                raise AssertionError("Actual private object did not recover within 30 seconds")
+            time.sleep(0.25)
+        assert after.content == before.content
     finally:
         client.close()
+
+
+@pytest.mark.parametrize(
+    "projection", ["status", "run", "queue", "comparison", "history", "comparison_media"]
+)
+def test_live_read_denies_revocation_committed_during_audit_wait(projection):
+    from concurrent.futures import ThreadPoolExecutor
+
+    from scripts.identity_setup import fixture_id
+    from scripts.synthetic_workflow_setup import CANDIDATE, QUERY
+    from tests.synthetic_workflow.helpers import admin
+
+    ACTOR = fixture_id("synthetic-workflow-http-race-" + projection)
+
+    client, headers = real_login("synthetic-workflow-http-race-" + projection)
+    try:
+        view = new_lead(client, headers)
+        page = client.get(path("/cases/" + view["query_case_id"] + "/leads"), headers=headers).json()
+        rid = next(x["run_id"] for x in page["items"] if x["id"] == view["lead_id"])
+        endpoints = {
+            "status": "/status",
+            "run": "/runs/" + rid,
+            "queue": "/cases/" + view["query_case_id"] + "/leads",
+            "comparison": "/leads/" + view["lead_id"] + "/comparison",
+            "history": "/leads/" + view["lead_id"] + "/investigation",
+            "comparison_media": "/leads/" + view["lead_id"] + "/comparison",
+        }
+        marker = (
+            "SELECT platform.sw_status"
+            if projection == "status"
+            else "SELECT platform.sw_read"
+            if projection in ["comparison", "history", "comparison_media"]
+            else "SELECT platform.case_list_audit"
+        )
+        cid = QUERY if projection in ["status", "run"] else CANDIDATE
+        permission = "media.read" if projection == "comparison_media" else "case.read"
+        with admin() as a, admin() as lock:
+            previous = a.execute(
+                "SELECT revoked_at FROM app.case_grants WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                (ORG_A, ACTOR, cid, permission),
+            ).fetchone()
+            assert previous is not None
+            lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+            with ThreadPoolExecutor(1) as pool:
+                future = pool.submit(client.get, path(endpoints[projection]), headers=headers)
+                try:
+                    deadline = time.monotonic() + 2
+                    while time.monotonic() < deadline:
+                        if (
+                            a.execute(
+                                "SELECT count(*) FROM pg_stat_activity WHERE usename='foc_api' AND wait_event='advisory' AND query LIKE %s",
+                                (marker + "%",),
+                            ).fetchone()[0]
+                            == 1
+                        ):
+                            break
+                        time.sleep(0.02)
+                    else:
+                        raise AssertionError("Actual API read did not reach its audit boundary")
+                    a.execute(
+                        "UPDATE app.case_grants SET revoked_at=now() WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                        (ORG_A, ACTOR, cid, permission),
+                    )
+                    lock.execute("SELECT pg_advisory_unlock(hashtextextended(%s,0))", (ORG_A,))
+                    response = future.result(timeout=10)
+                    if permission == "media.read":
+                        assert response.status_code == 200
+                        value = response.json()
+                        forbidden = {p["id"] for p in view["photos"] if p["side"] == "candidate"}
+                        assert len(value["photos"]) == 3 and all(
+                            p["side"] == "query" for p in value["photos"]
+                        )
+                        assert all(pid not in response.text for pid in forbidden)
+                        assert set(value["result_source"]["photo_refs"]) == {p["id"] for p in value["photos"]}
+                        photo = client.get(
+                            path(
+                                "/leads/" + view["lead_id"] + "/photos/" + next(iter(forbidden)) + "/content"
+                            ),
+                            headers=headers,
+                        )
+                        assert photo.status_code == 404 and not photo.content.startswith(b"\x89PNG")
+                    else:
+                        assert response.status_code == 404
+                        assert all(
+                            secret not in response.text
+                            for secret in [
+                                view["lead_id"],
+                                "snapshot_hash",
+                                "photos",
+                                "SYNTHETIC_SECRET_CANARY",
+                            ]
+                        )
+                finally:
+                    lock.execute("SELECT pg_advisory_unlock_all()")
+                    future.result(timeout=10)
+                    a.execute(
+                        "UPDATE app.case_grants SET revoked_at=%s WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                        (previous[0], ORG_A, ACTOR, cid, permission),
+                    )
+        assert client.get(path(endpoints[projection]), headers=headers).status_code == 200
+    finally:
+        client.close()
+
+
+def test_actual_api_denies_bad_migration_ledger_then_recovers():
+    from tests.synthetic_workflow.helpers import admin
+
+    client, headers = real_login("synthetic-workflow-http-ledger")
+    try:
+        assert client.get(path("/status"), headers=headers).status_code == 200
+        with admin() as a:
+            previous = a.execute(
+                "SELECT sha256 FROM platform.migrations WHERE version='0032_synthetic_ledger_guard'"
+            ).fetchone()
+            assert previous is not None
+            a.execute(
+                "UPDATE platform.migrations SET sha256=repeat('0',64) WHERE version='0032_synthetic_ledger_guard'"
+            )
+            try:
+                denied = client.get(path("/status"), headers=headers)
+                assert denied.status_code == 503 and "scenarios" not in denied.text
+            finally:
+                a.execute(
+                    "UPDATE platform.migrations SET sha256=%s WHERE version='0032_synthetic_ledger_guard'",
+                    previous,
+                )
+        assert client.get(path("/status"), headers=headers).status_code == 200
+    finally:
+        client.close()
+
+
+def test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results():
+    import json
+    import os
+    import subprocess
+    from pathlib import Path
+    from urllib.parse import urlparse
+
+    import psycopg
+    from foc_api.synthetic_workflow import epoch
+
+    from scripts.dev import compose
+    from tests.synthetic_workflow.helpers import admin, runtime, scenario, start
+
+    def docker(*args, timeout=60):
+        return subprocess.run(
+            ["docker", *args], capture_output=True, text=True, check=True, timeout=timeout
+        ).stdout.strip()
+
+    compose("stop", "worker")
+    name = "foc-synthetic-oom-" + uuid4().hex
+    env_file = Path(".runtime") / (name + ".env")
+    created = False
+    try:
+        with scenario() as (sid, _), runtime() as c, admin() as a:
+            run = start(c, sid)
+            c.commit()
+            networks = json.loads(
+                docker("inspect", "--format", "{{json .NetworkSettings.Networks}}", "foc-phase1a-worker-1")
+            )
+            assert len(networks) == 1
+            network = next(iter(networks))
+            assert docker("network", "inspect", "--format", "{{.Internal}}", network) == "true"
+            image = docker("inspect", "--format", "{{.Image}}", "foc-phase1a-worker-1")
+            assert image.startswith("sha256:")
+            descriptor = os.open(env_file, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            with os.fdopen(descriptor, "w") as stream:
+                stream.write(
+                    "FOC_DATABASE_URL="
+                    + os.environ["FOC_WORKER_DATABASE_URL"]
+                    + "\nFOC_WORKFLOW_EPOCH="
+                    + os.environ["FOC_WORKFLOW_EPOCH"]
+                    + "\nFOC_DATA_CLASS=synthetic\nFOC_EXPECTED_RUN="
+                    + run["id"]
+                    + "\n"
+                )
+            script = "import os,psycopg; from foc_api.synthetic_workflow import epoch; c=psycopg.connect(os.environ['FOC_DATABASE_URL']); epoch(c); job=c.execute('SELECT platform.sw_lease()').fetchone()[0]; assert job['id']==os.environ['FOC_EXPECTED_RUN']; c.commit(); print('synthetic lease committed',flush=True); chunks=[]\nfor _ in range(64): chunks.append(b'x'*(16*1024*1024))"
+            docker(
+                "create",
+                "--name",
+                name,
+                "--network",
+                network,
+                "--memory",
+                "384m",
+                "--memory-swap",
+                "384m",
+                "--cpus",
+                "1",
+                "--pids-limit",
+                "32",
+                "--read-only",
+                "--tmpfs",
+                "/tmp:size=16m",
+                "--cap-drop",
+                "ALL",
+                "--security-opt",
+                "no-new-privileges:true",
+                "--env-file",
+                str(env_file),
+                "--entrypoint",
+                "python",
+                image,
+                "-c",
+                script,
+            )
+            created = True
+            process = subprocess.run(
+                ["docker", "start", "--attach", name], capture_output=True, text=True, timeout=60, check=False
+            )
+            state = json.loads(docker("inspect", "--format", "{{json .State}}", name))
+            assert process.returncode == 137 and state["OOMKilled"] is True and state["ExitCode"] == 137
+            assert "synthetic lease committed" in process.stdout
+            row = a.execute(
+                "SELECT state,lease_token FROM app.synthetic_matching_runs WHERE id=%s", (run["id"],)
+            ).fetchone()
+            assert row[0] == "running" and row[1] is not None
+            old_token = row[1]
+            a.execute(
+                "UPDATE app.synthetic_matching_runs SET lease_until=now()-interval '1 second' WHERE id=%s",
+                (run["id"],),
+            )
+            host = urlparse(os.environ["FOC_DATABASE_URL"])
+            with psycopg.connect(
+                os.environ["FOC_WORKER_DATABASE_URL"], host=host.hostname, port=host.port
+            ) as w:
+                epoch(w)
+                new = w.execute("SELECT platform.sw_lease()").fetchone()[0]
+                w.commit()
+                assert new["id"] == run["id"] and new["token"] != str(old_token)
+                epoch(w)
+                assert w.execute(
+                    "SELECT platform.sw_finish(%s,%s,%s)", (ORG_A, run["id"], old_token)
+                ).fetchone() == (False,)
+                assert w.execute(
+                    "SELECT platform.sw_finish(%s,%s,%s)", (ORG_A, run["id"], new["token"])
+                ).fetchone() == (True,)
+            assert a.execute(
+                "SELECT count(*) FROM app.synthetic_candidate_leads WHERE run_id=%s", (run["id"],)
+            ).fetchone() == (3,)
+    finally:
+        if created:
+            docker("rm", "--force", name)
+        env_file.unlink(missing_ok=True)
+        compose("up", "-d", "worker")

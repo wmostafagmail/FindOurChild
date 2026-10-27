@@ -23576,7 +23576,17 @@
           "planned_selector": "SWB_06_REVOCATION",
           "executable_selectors": [
             "SWB_06_REVOCATION",
-            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]"
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[audit]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[investigation]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[queue]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[run]",
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no newly released projection; document already-seen bytes limit",
@@ -23584,7 +23594,7 @@
           "status": "pending",
           "execution_evidence": null,
           "phase2d_required": true,
-          "remaining_validation": "Revocation before the next read and UI poll is exercised. A deterministically paused concurrent metadata response during revocation is not exercised; already-viewed bytes cannot be recalled."
+          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination."
         }
       ],
       "execution_evidence": null,
@@ -23739,7 +23749,10 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester"
+            "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[cancellations]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[runs]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[worker]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no publication",
@@ -24178,6 +24191,7 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_both_case_write_permissions_are_required_for_human_decisions[query]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[reviews]",
             "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
             "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]"
           ],
@@ -24348,6 +24362,7 @@
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
           "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-11]",
           "executable_selectors": [
+            "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[notes]",
             "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-11]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
@@ -24954,7 +24969,10 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]"
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[checksum]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[missing_entry]",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "workspace disabled",
@@ -24964,7 +24982,8 @@
           "phase2d_required": true,
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
-          ]
+          ],
+          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination."
         },
         {
           "test_case_id": "SWF-19-A",
@@ -24992,7 +25011,10 @@
           "planned_file": "tests/synthetic_workflow/test_transactions.py",
           "planned_selector": "test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+            "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
+            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "bounded honest failures, no bypass or leaked data",
@@ -25000,7 +25022,7 @@
           "status": "pending",
           "execution_evidence": null,
           "phase2d_required": true,
-          "remaining_validation": "Actual worker process exit, stale fencing and 20-session database load are exercised. OS-level OOM and a dependency restart during this workflow are not injected.",
+          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination.",
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
           ]

@@ -1,17 +1,20 @@
 """Additional real-database fault and collaboration checks found during review."""
 
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime, timedelta
 from uuid import uuid4
 
 import psycopg
 import pytest
+from fastapi import HTTPException
 from psycopg import sql
 from psycopg.types.json import Jsonb
 
 from scripts.synthetic_workflow_setup import CANDIDATE
 from tests.synthetic_workflow.helpers import (
+    ACTOR,
     ORG_A,
     PEER,
     QUERY,
@@ -24,6 +27,228 @@ from tests.synthetic_workflow.helpers import (
     scenario,
     start,
 )
+
+
+@pytest.mark.parametrize(
+    "view_name,permission",
+    [
+        ("comparison", "case.read"),
+        ("investigation", "case.read"),
+        ("audit", "case.read"),
+        ("comparison", "media.read"),
+    ],
+    ids=["comparison", "investigation", "audit", "comparison_media"],
+)
+def test_revocation_while_sensitive_read_waits_for_audit_denies_projection(view_name, permission):
+    with scenario() as (sid, _), runtime() as conn, admin() as a, admin() as lock:
+        lid = publish(conn, sid)
+        before = comparison(conn, lid)
+        forbidden_photos = {p["id"] for p in before["photos"] if p["side"] == "candidate"}
+        conn.commit()
+        name = "sw_read_race_" + uuid4().hex
+        previous = a.execute(
+            "SELECT revoked_at FROM app.case_grants WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+            (ORG_A, ACTOR, CANDIDATE, permission),
+        ).fetchone()
+        lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+
+        def read():
+            try:
+                with runtime() as c:
+                    c.execute("SELECT set_config('application_name',%s,false)", (name,))
+                    value = c.execute(
+                        "SELECT platform.sw_read(%s,%s,%s)", (ORG_A, lid, view_name)
+                    ).fetchone()[0]
+                if permission == "media.read":
+                    return {
+                        "state": "filtered",
+                        "query_photos": len([p for p in value["photos"] if p["side"] == "query"]),
+                        "candidate_photos": len([p for p in value["photos"] if p["side"] == "candidate"]),
+                        "private_reference_leak": any(pid in str(value) for pid in forbidden_photos),
+                        "refs_filtered": set(value["result_source"]["photo_refs"])
+                        == {p["id"] for p in value["photos"]},
+                    }
+                return {"state": "disclosed", "has_photos": bool(value.get("photos"))}
+            except psycopg.Error as error:
+                return {"state": "denied", "sqlstate": error.sqlstate}
+
+        with ThreadPoolExecutor(1) as pool:
+            future = pool.submit(read)
+            try:
+                deadline = time.monotonic() + 5
+                while time.monotonic() < deadline:
+                    if a.execute(
+                        "SELECT count(*) FROM pg_stat_activity WHERE application_name=%s AND wait_event='advisory'",
+                        (name,),
+                    ).fetchone() == (1,):
+                        break
+                    time.sleep(0.02)
+                else:
+                    raise AssertionError("Sensitive read did not reach the real audit lock")
+                a.execute(
+                    "UPDATE app.case_grants SET revoked_at=now() WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                    (ORG_A, ACTOR, CANDIDATE, permission),
+                )
+                lock.execute("SELECT pg_advisory_unlock(hashtextextended(%s,0))", (ORG_A,))
+                expected = (
+                    {
+                        "state": "filtered",
+                        "query_photos": 3,
+                        "candidate_photos": 0,
+                        "private_reference_leak": False,
+                        "refs_filtered": True,
+                    }
+                    if permission == "media.read"
+                    else {"state": "denied", "sqlstate": "42501"}
+                )
+                assert future.result(timeout=10) == expected
+            finally:
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                future.result(timeout=10)
+                a.execute(
+                    "UPDATE app.case_grants SET revoked_at=%s WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                    (previous[0], ORG_A, ACTOR, CANDIDATE, permission),
+                )
+
+
+@pytest.mark.parametrize("corruption", ["checksum", "missing_entry"])
+def test_runtime_and_worker_deny_migration_ledger_corruption(corruption):
+    from foc_api.synthetic_workflow import epoch, worker_once
+
+    with runtime() as c:
+        epoch(c)
+    with admin() as a:
+        previous = a.execute(
+            "SELECT sha256,applied_at FROM platform.migrations WHERE version='0032_synthetic_ledger_guard'"
+        ).fetchone()
+        assert previous is not None
+        if corruption == "checksum":
+            a.execute(
+                "UPDATE platform.migrations SET sha256=repeat('0',64) WHERE version='0032_synthetic_ledger_guard'"
+            )
+        else:
+            a.execute("DELETE FROM platform.migrations WHERE version='0032_synthetic_ledger_guard'")
+        try:
+            with runtime() as c:
+                with pytest.raises(HTTPException) as error:
+                    epoch(c)
+                assert error.value.status_code == 503
+            with psycopg.connect(os.environ["FOC_WORKER_DATABASE_URL"]) as w:
+                with pytest.raises(HTTPException) as error:
+                    worker_once(w)
+                assert error.value.status_code == 503
+        finally:
+            a.execute(
+                "INSERT INTO platform.migrations(version,sha256,applied_at) VALUES('0032_synthetic_ledger_guard',%s,%s) ON CONFLICT(version) DO UPDATE SET sha256=excluded.sha256,applied_at=excluded.applied_at",
+                previous,
+            )
+    with runtime() as c:
+        epoch(c)
+
+
+@pytest.mark.parametrize("operation", ["reviews", "notes", "runs", "cancellations", "worker"])
+def test_revocation_at_audit_boundary_rolls_back_sensitive_command(operation):
+    with scenario() as (sid, _), runtime() as conn, admin() as a, admin() as lock:
+        lid = view = run = lease = None
+        if operation in ["reviews", "notes"]:
+            lid = publish(conn, sid)
+            view = comparison(conn, lid)
+        elif operation in ["cancellations", "worker"]:
+            run = start(conn, sid)
+        conn.commit()
+        if operation == "worker":
+            with psycopg.connect(os.environ["FOC_WORKER_DATABASE_URL"]) as w:
+                w.execute(
+                    "SELECT set_config('foc.workflow_epoch',%s,false)", (os.environ["FOC_WORKFLOW_EPOCH"],)
+                )
+                lease = w.execute("SELECT platform.sw_lease()").fetchone()[0]
+                assert lease["id"] == run["id"]
+        cid = CANDIDATE if operation in ["reviews", "notes"] else QUERY
+        permission = "matching.request" if operation in ["runs", "worker"] else "case.write"
+        previous = a.execute(
+            "SELECT revoked_at FROM app.case_grants WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+            (ORG_A, ACTOR, cid, permission),
+        ).fetchone()
+        assert previous is not None
+        name = "sw_command_race_" + uuid4().hex
+        lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+
+        def write():
+            try:
+                if operation == "worker":
+                    with psycopg.connect(os.environ["FOC_WORKER_DATABASE_URL"]) as w:
+                        w.execute("SELECT set_config('application_name',%s,false)", (name,))
+                        w.execute(
+                            "SELECT set_config('foc.workflow_epoch',%s,false)",
+                            (os.environ["FOC_WORKFLOW_EPOCH"],),
+                        )
+                        w.execute("SELECT platform.sw_finish(%s,%s,%s)", (ORG_A, run["id"], lease["token"]))
+                else:
+                    with runtime() as c:
+                        c.execute("SELECT set_config('application_name',%s,false)", (name,))
+                        if operation == "runs":
+                            start(c, sid)
+                        elif operation == "cancellations":
+                            c.execute(
+                                "SELECT platform.sw_run_command(%s,%s,'cancellations','{}',1,%s)",
+                                (ORG_A, run["id"], uuid4()),
+                            )
+                        else:
+                            command(
+                                c,
+                                lid,
+                                operation,
+                                body(view, "hold") if operation == "reviews" else body(view),
+                            )
+                return {"state": "committed"}
+            except psycopg.Error as error:
+                return {"state": "denied", "sqlstate": error.sqlstate}
+
+        with ThreadPoolExecutor(1) as pool:
+            future = pool.submit(write)
+            try:
+                deadline = time.monotonic() + 5
+                while time.monotonic() < deadline:
+                    if a.execute(
+                        "SELECT count(*) FROM pg_stat_activity WHERE application_name=%s AND wait_event='advisory'",
+                        (name,),
+                    ).fetchone() == (1,):
+                        break
+                    time.sleep(0.02)
+                else:
+                    raise AssertionError("Sensitive command did not reach its real audit lock")
+                a.execute(
+                    "UPDATE app.case_grants SET revoked_at=now() WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                    (ORG_A, ACTOR, cid, permission),
+                )
+                lock.execute("SELECT pg_advisory_unlock(hashtextextended(%s,0))", (ORG_A,))
+                assert future.result(timeout=10) == {"state": "denied", "sqlstate": "42501"}
+                if lid is not None:
+                    assert a.execute(
+                        "SELECT revision FROM app.synthetic_candidate_leads WHERE id=%s", (lid,)
+                    ).fetchone() == (1,)
+                    assert a.execute(
+                        "SELECT count(*) FROM app.synthetic_investigation_events WHERE lead_id=%s", (lid,)
+                    ).fetchone() == (0,)
+                elif operation == "runs":
+                    assert a.execute(
+                        "SELECT count(*) FROM app.synthetic_matching_runs WHERE scenario_id=%s", (sid,)
+                    ).fetchone() == (0,)
+                else:
+                    expected_state = "running" if operation == "worker" else "queued"
+                    assert a.execute(
+                        "SELECT state FROM app.synthetic_matching_runs WHERE id=%s", (run["id"],)
+                    ).fetchone() == (expected_state,)
+                    assert a.execute(
+                        "SELECT count(*) FROM app.synthetic_candidate_leads WHERE run_id=%s", (run["id"],)
+                    ).fetchone() == (0,)
+            finally:
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                future.result(timeout=10)
+                a.execute(
+                    "UPDATE app.case_grants SET revoked_at=%s WHERE organization_id=%s AND principal_id=%s AND case_id=%s AND permission=%s",
+                    (previous[0], ORG_A, ACTOR, cid, permission),
+                )
 
 
 @pytest.mark.parametrize("corruption", ["provider", "candidate_uuid"])

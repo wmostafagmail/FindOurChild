@@ -3,6 +3,8 @@
 import hashlib
 import json
 import os
+from functools import cache
+from pathlib import Path
 from typing import Annotated, Literal
 from uuid import UUID
 
@@ -38,6 +40,15 @@ def audit_denial(request):
             conn.execute("SELECT platform.sw_denial(%s)", (org,))
 
 
+@cache
+def migration_contract():
+    folder = Path(__file__).resolve().parents[3] / "database/migrations"
+    expected = {p.stem: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(folder.glob("*.sql"))}
+    if "0033_synthetic_photo_projection_reauthorization" not in expected:
+        raise HTTPException(503, "WORKFLOW_UNAVAILABLE")
+    return expected
+
+
 def epoch(conn):
     value = os.environ.get("FOC_WORKFLOW_EPOCH", "")
     if len(value) != 64 or any(c not in "0123456789abcdef" for c in value):
@@ -46,6 +57,11 @@ def epoch(conn):
     conn.execute("SET LOCAL statement_timeout='8s'")
     conn.execute("SET LOCAL lock_timeout='3s'")
     conn.execute("SET LOCAL idle_in_transaction_session_timeout='10s'")
+    if (
+        dict(conn.execute("SELECT version,sha256 FROM platform.migrations").fetchall())
+        != migration_contract()
+    ):
+        raise HTTPException(503, "WORKFLOW_UNAVAILABLE")
 
 
 class RunCommand(Closed):
@@ -181,6 +197,11 @@ def run_status(rid: UUID, request: Request, organization_id: UUID):
         if row is None:
             raise HTTPException(404, "NOT_FOUND")
         conn.execute("SELECT platform.case_list_audit(%s)", (organization_id,))
+        if not conn.execute(
+            "SELECT id FROM app.synthetic_matching_runs WHERE organization_id=%s AND id=%s",
+            (organization_id, rid),
+        ).fetchone():
+            raise HTTPException(404, "NOT_FOUND")
     return response({"id": str(row[0]), "revision": row[1], "state": row[2]})
 
 
@@ -264,6 +285,19 @@ def leads(
             (*parameters, limit + 1, offset),
         ).fetchall()
         conn.execute("SELECT platform.case_list_audit(%s)", (organization_id,))
+        # RLS is evaluated again after a potentially contended audit write. Do not
+        # emit a projection selected before committed access withdrawal.
+        still_visible = conn.execute(
+            "SELECT id FROM app.synthetic_candidate_leads WHERE organization_id=%s AND id=ANY(%s::uuid[])",
+            (organization_id, [r[0] for r in rows]),
+        ).fetchall()
+        if (
+            len(still_visible) != len(rows)
+            or not conn.execute(
+                "SELECT platform.case_permission(%s,%s,'case.read')", (organization_id, cid)
+            ).fetchone()[0]
+        ):
+            raise HTTPException(404, "NOT_FOUND")
     items = [
         {
             "id": str(r[0]),

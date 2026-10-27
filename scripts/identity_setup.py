@@ -59,15 +59,91 @@ WORKFLOW_USERS = [
     for w in [320, 360, 390, 1280]
 ] + ["synthetic-workflow-http", "synthetic-workflow-peer-http", "synthetic-workflow-alias-http"]
 
+# Every browser journey uses a separate credential, preserving the IdP's TOTP
+# replay prevention and brute-force policy instead of reusing one OTP/account.
+WORKFLOW_JOURNEYS = [
+    "01-queue",
+    "02-comparison",
+    "03-decisions",
+    "04-collaboration",
+    "05-independent",
+    "06-revocation",
+    "07-failure",
+    "08-accessibility",
+]
+WORKFLOW_USERS += (
+    [
+        f"synthetic-workflow-{b}-{l}-{w}-{journey}"
+        for b in ["chromium", "firefox", "webkit"]
+        for l in ["ar-EG", "en-GB"]
+        for w in [320, 360, 390, 1280]
+        for journey in WORKFLOW_JOURNEYS
+    ]
+    + [
+        "synthetic-workflow-http-" + suffix
+        for suffix in [
+            "invalid-cross_org",
+            "invalid-unknown_lead",
+            "invalid-unknown_photo",
+            "invalid-csrf",
+            "invalid-origin",
+            "invalid-stale",
+            "invalid-real_model",
+            "invalid-identity_confirmation",
+            "inventory",
+            "pagination",
+            "hidden-rank",
+            "storage",
+            "race-status",
+            "race-run",
+            "race-queue",
+            "race-comparison",
+            "race-comparison_media",
+            "race-history",
+            "ledger",
+        ]
+    ]
+    + ["synthetic-workflow-peer-http-pagination"]
+)
+WORKFLOW_DENIAL_USERS = [
+    (
+        f"synthetic-workflow-denied-{kind}-SW-{index:02}",
+        ORG_B if kind == "other" else ORG_A,
+        "reviewer" if kind == "other" else "org_admin",
+    )
+    for kind in ["other", "admin"]
+    for index in range(1, 15)
+]
+
+
+def workflow_person_name(name):
+    if name not in WORKFLOW_USERS:
+        raise ValueError("Unknown closed workflow fixture")
+    for journey in WORKFLOW_JOURNEYS:
+        suffix = "-" + journey
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
+            break
+    if name.startswith("synthetic-workflow-http-"):
+        name = "synthetic-workflow-http"
+    if name == "synthetic-workflow-peer-http-pagination":
+        name = "synthetic-workflow-peer-http"
+    return name.replace("synthetic-workflow-alias-", "synthetic-workflow-")
+
+
 EXTRA_USERS += WORKFLOW_USERS
 
 
 def users():
-    return [
-        (STAFF_A, "synthetic-reviewer-a"),
-        (STAFF_B, "synthetic-reviewer-b"),
-        (ADMIN_A, "synthetic-admin-a"),
-    ] + [(fixture_id(name), name) for name in EXTRA_USERS]
+    return (
+        [
+            (STAFF_A, "synthetic-reviewer-a"),
+            (STAFF_B, "synthetic-reviewer-b"),
+            (ADMIN_A, "synthetic-admin-a"),
+        ]
+        + [(fixture_id(name), name) for name in EXTRA_USERS]
+        + [(fixture_id(name), name) for name, _, _ in WORKFLOW_DENIAL_USERS]
+    )
 
 
 def generate():
@@ -141,11 +217,15 @@ def seed(conn):
             "INSERT INTO app.staff_principals(id,oidc_issuer,oidc_subject) VALUES(%s,'https://127.0.0.1:8443/realms/foc-synthetic',%s) ON CONFLICT(id) DO UPDATE SET oidc_issuer=excluded.oidc_issuer,oidc_subject=excluded.oidc_subject",
             (pid, pid),
         )
-    for org, pid, role in [
-        (ORG_A, STAFF_A, "reviewer"),
-        (ORG_B, STAFF_B, "reviewer"),
-        (ORG_A, ADMIN_A, "org_admin"),
-    ] + [(ORG_A, fixture_id(name), "reviewer") for name in EXTRA_USERS]:
+    for org, pid, role in (
+        [
+            (ORG_A, STAFF_A, "reviewer"),
+            (ORG_B, STAFF_B, "reviewer"),
+            (ORG_A, ADMIN_A, "org_admin"),
+        ]
+        + [(ORG_A, fixture_id(name), "reviewer") for name in EXTRA_USERS]
+        + [(org, fixture_id(name), role) for name, org, role in WORKFLOW_DENIAL_USERS]
+    ):
         conn.execute(
             "INSERT INTO app.memberships(organization_id,principal_id,role,expires_at) VALUES(%s,%s,%s,now()+interval '1 day') ON CONFLICT(organization_id,principal_id,role) DO UPDATE SET expires_at=excluded.expires_at,revoked_at=NULL",
             (org, pid, role),

@@ -60,7 +60,7 @@ with zipfile.ZipFile(io.BytesIO(raw)) as z:
     assert len(results['browser'])==len(expected)==360
     assert all(t['status']=='passed' and set(t)=={'id','target','status'} for t in results['browser'])
     per_browser=Counter(t['target'].split('-')[0] for t in results['browser']);assert per_browser=={'chromium':120,'firefox':120,'webkit':120}
-    migrations=results['migration_and_recovery']['all_migrations'];assert len(migrations)==30
+    migrations=results['migration_and_recovery']['all_migrations'];assert len(migrations)==33
     for name,digest in migrations.items():assert source['database/migrations/'+name+'.sql']==digest
     assert results['migration_and_recovery']['forced_rls']==46
     assert results['migration_and_recovery']['identity_session_rls']=='passed'

@@ -9,7 +9,7 @@ from uuid import uuid4
 import psycopg
 from psycopg.types.json import Jsonb
 
-from scripts.identity_setup import ORG_A, WORKFLOW_USERS, fixture_id
+from scripts.identity_setup import ORG_A, WORKFLOW_USERS, fixture_id, workflow_person_name
 
 QUERY = fixture_id("workflow-missing")
 CANDIDATE = fixture_id("workflow-found")
@@ -226,7 +226,7 @@ def provision(conn):
             (ORG_A, sid, instance, epoch, Jsonb(manifest), Jsonb(manifest)),
         )
         for name in USERS:
-            person_name = name.replace("synthetic-workflow-alias-", "synthetic-workflow-")
+            person_name = workflow_person_name(name)
             conn.execute(
                 "INSERT INTO platform.synthetic_workflow_grants VALUES(%s,%s,%s,%s,true,'synthetic_investigation',%s,now()+interval '1 day',NULL) ON CONFLICT DO NOTHING",
                 (

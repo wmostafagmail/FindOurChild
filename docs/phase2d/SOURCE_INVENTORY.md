@@ -16,6 +16,9 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `database/migrations/0028_synthetic_definer_binding.sql`
 - `database/migrations/0029_synthetic_denial_audit.sql`
 - `database/migrations/0030_synthetic_decision_evidence.sql`
+- `database/migrations/0031_synthetic_post_audit_authorization.sql`
+- `database/migrations/0032_synthetic_ledger_guard.sql`
+- `database/migrations/0033_synthetic_photo_projection_reauthorization.sql`
 - `docs/TEST_MATRIX.md`
 - `docs/contracts/event-envelope.schema.json`
 - `docs/contracts/openapi.json`
@@ -38,6 +41,7 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `scripts/run-browser.mjs`
 - `scripts/synthetic_workflow_setup.py`
 - `scripts/workflow_fault.py`
+- `scripts/workflow_http_environment.py`
 - `scripts/workflow_test.py`
 - `scripts/workflow_validate.py`
 - `services/api/foc_api/main.py`

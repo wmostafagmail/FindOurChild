@@ -19,7 +19,7 @@ for(const journey of ['01_QUEUE','02_COMPARISON','03_DECISIONS','04_COLLABORATIO
   expect(await browser.evaluate(async()=>(await fetch('/v1/staff/synthetic-workflow/status?organization_id=10000000-0000-4000-8000-000000000001')).status)).toBe(401);
   await app.open('/en/identity');await screen.getByRole('link','Sign in with MFA').click();
   const target=await browser.evaluate(()=>{const ua=navigator.userAgent;return `${ua.includes('Firefox')?'firefox':ua.includes('Chrome')?'chromium':'webkit'}-${navigator.language}-${innerWidth}`;});
-  const username='synthetic-workflow-'+target;
+  const username='synthetic-workflow-'+target+'-'+journey.toLowerCase().replace('_','-');
   await browser.locator('#username').fill(username);await browser.locator('#password').fill(secrets.get('staff_password'));await browser.locator('#kc-login').click();await expect(browser.locator('#otp')).toBeVisible();await browser.locator('#otp').fill(secrets.get('staff_otp'));await browser.locator('#kc-login').click();
   await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','authenticated');
   await screen.getByRole('link','Synthetic investigations').click();await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','ready');

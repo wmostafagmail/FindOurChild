@@ -107,7 +107,18 @@
     "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
     "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[provider]",
     "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[candidate_uuid]",
-    "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection"
+    "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[investigation]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[audit]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[checksum]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[missing_entry]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[reviews]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[notes]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[runs]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[cancellations]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[worker]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]"
   ],
   "synthetic_workflow_http": [
     "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
@@ -164,7 +175,15 @@
     "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-14]",
     "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors",
     "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap",
-    "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
+    "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[run]",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[queue]",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison]",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
+    "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers",
+    "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]"
   ],
   "browser_titles": [
     "SWB_01_QUEUE",
