@@ -48,6 +48,7 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `tests/synthetic_workflow/__init__.py`
 - `tests/synthetic_workflow/helpers.py`
 - `tests/synthetic_workflow/test_boundaries.py`
+- `tests/synthetic_workflow/test_capacity.py`
 - `tests/synthetic_workflow/test_contracts.py`
 - `tests/synthetic_workflow/test_transactions.py`
 - `tests/synthetic_workflow_http/__init__.py`
