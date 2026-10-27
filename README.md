@@ -1,3 +1,5 @@
+> Phase 2A is accepted; Phase 2B is qualification preparation only. [Current scope, evidence and blockers](docs/phase2b/VALIDATION_REPORT.md). Real model use, real child photographs and operational recognition remain prohibited.
+
 # Find Our Child
 
 > Phase 1C is accepted after verified PR #4 merge and exact-main hosted CI. Phase 2A synthetic foundation is technically validated and awaiting owner review in draft PR #5: [research scope, licensing and validation](docs/phase2a/VALIDATION_REPORT.md). Synthetic data only; operational recognition and Phase 2B remain disabled.

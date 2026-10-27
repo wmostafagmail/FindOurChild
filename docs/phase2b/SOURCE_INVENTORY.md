@@ -1,0 +1,3 @@
+# Phase 2B source inventory
+
+[Final review inventory](final-source-inventory.json) lists 116 changed review paths including source/evidence snapshots, tests, governance and sanitized artifacts. [Initial implementation snapshot](source-inventory.json) is historical. All 191 execution inputs were independently verified against committed Git blobs; the complete required source closure includes 22 preserved and 15 new source/publisher records. All 185 prior feature rows, all 24 application migrations and seven dependency/compose/bootstrap locks are preserved. [Locked manifest](locked-dependency-manifest.json). No recognition dependency or weight is installed.

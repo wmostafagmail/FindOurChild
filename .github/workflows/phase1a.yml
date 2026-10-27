@@ -1,4 +1,4 @@
-name: Foundation reporting and synthetic research required validation
+name: Foundation and synthetic qualification required validation
 on:
   pull_request:
   push:
@@ -53,6 +53,8 @@ jobs:
         run: .venv/bin/python -m scripts.reporting_validate
       - name: Synthetic research API database and adversarial regression
         run: .venv/bin/python -m scripts.research_validate
+      - name: Isolated qualification preparation and recovery
+        run: .venv/bin/python -m scripts.qualification_validate
       - name: Synthetic backup and restore
         run: .venv/bin/python -m scripts.recovery
       - name: Dependency security audit
@@ -61,6 +63,23 @@ jobs:
         run: |
           npm run typecheck
           npm run build
+      - name: Configure bounded Ubuntu package downloads
+        run: |
+          test "$GITHUB_ACTIONS" = true
+          test "$RUNNER_OS" = Linux
+          sudo python3 - <<'PYAPT'
+          from pathlib import Path
+          for name in ["/etc/apt/sources.list", "/etc/apt/sources.list.d/ubuntu.sources"]:
+              path = Path(name)
+              if not path.exists():
+                  continue
+              original = path.read_text()
+              updated = original.replace("http://azure.archive.ubuntu.com/ubuntu", "https://archive.ubuntu.com/ubuntu").replace("https://azure.archive.ubuntu.com/ubuntu", "https://archive.ubuntu.com/ubuntu")
+              if updated != original:
+                  path.write_text(updated)
+          Path("/etc/apt/apt.conf.d/99foc-ci-network").write_text('Acquire::http::Timeout "30";\nAcquire::https::Timeout "30";\nAcquire::Retries "2";\n')
+          print("Ubuntu primary archive configured; suites, components and signing keys retained")
+          PYAPT
       - name: Install pinned browser engines
         run: ./node_modules/.bin/e2e-web install chromium firefox webkit --with-deps
       - name: Configure ephemeral runner TLS trust

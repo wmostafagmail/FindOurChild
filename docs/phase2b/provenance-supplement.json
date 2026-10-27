@@ -1,0 +1,28 @@
+{
+  "observed": "2026-10-26",
+  "scope": "Human provenance investigation, no binary/image downloads or execution; not runtime clearance",
+  "sface_author": {
+    "revision": "cb5ffb3c4863eecb3abf6a80529daffb05a0e820",
+    "readme_url": "https://raw.githubusercontent.com/zhongyy/SFace/cb5ffb3c4863eecb3abf6a80529daffb05a0e820/README.md",
+    "readme_sha256": "f2e5233e7ac015d15a7e480a8cb7d53e7f4d4e96b067be038dcda5cb338803b2",
+    "github_license_detection": null,
+    "observation": "README names experimental training on CASIA-WebFace, VGGFace2 and MS-Celeb-1M. This does not map the exact OpenCV 2021dec artifact to a complete corpus/rights chain."
+  },
+  "adaface_author_related_release": {
+    "revision": "aa35c74e86afb7482cb7859af4c14eab83a8728d",
+    "readme_url": "https://huggingface.co/minchul/cvlface_adaface_ir50_ms1mv2/raw/aa35c74e86afb7482cb7859af4c14eab83a8728d/README.md",
+    "readme_sha256": "c4e6f3068939e31ee0c4408e7530475f93adddee5b36ee17543aaedfa3703c66",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "feature-extraction",
+      "custom_code",
+      "en",
+      "arxiv:2204.00964",
+      "region:us"
+    ],
+    "observation": "Author-associated CVLFace IR50/MS1MV2 card requires compliance with the training dataset license. Safetensors/custom-code release is a distinct unqualified artifact; it is not presumed equal to the original Drive checkpoint."
+  },
+  "real_model_bytes_downloaded": 0,
+  "real_photos_downloaded": 0
+}

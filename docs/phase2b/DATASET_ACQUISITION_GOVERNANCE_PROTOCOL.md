@@ -1,0 +1,47 @@
+# Dataset acquisition and governance protocol
+
+Status: complete preparation procedure; **no acquisition or real-data evaluation authorized**. This is not a signed protocol, consent form or legal opinion. No child photograph may be collected, scraped, uploaded, transferred to an external model or processed under Phase 2B. The executable gate accepts only the 32 existing procedural geometric fixture hashes, even when a request claims legal approval. No real-data ingestion interface is implemented.
+
+## Approval before contact, acquisition or processing
+
+The NGO owner, independent safeguarding lead, data-protection lead, qualified counsel for every relevant jurisdiction and independent ethics/evaluation reviewer must approve a numbered protocol and signed data-sharing agreement. Record controller/processor roles, countries, legal basis for originals and biometrics separately, necessity/proportionality, child welfare/assent where appropriate, verified guardian authority or another independently established lawful authority, voluntariness and a withdrawal route. Do not presume that parental consent alone is sufficient or that reporting a missing child authorizes research. Resolve conflicts, disputed custody, fraudulent guardians and the risk of revealing a found child's location before any data transfer. No emergency, humanitarian or nonprofit exception is inferred by this engineering plan.
+
+Keep model code, weight, detector and training-data rights reviews separate from the authority to evaluate these subjects. Verify training overlap without scraping or acquiring restricted training corpora. Unknown overlap and missing corpus provenance block qualification; absence of a discovered duplicate is not proof of disjointness. No training/fine-tuning or operational use is included in a future evaluation-only permit.
+
+## Trusted sources and independently verified identity
+
+Acquire only through a separately approved custodian and documented, purpose-limited transfer. Social-media scraping, public image searches, operational report exports and crowd-sourced identity labels are prohibited. A lawful custodian holds source records and the identity linkage outside the lab. Two independent authorized reviewers, separate from the model developer and applicant, verify longitudinal identity using appropriate authoritative records and documented chronology. Model similarity must never establish ground truth. Guardian self-assertion, case status and a face-match score are not independent identity evidence.
+
+Record verifier roles, independent attestations, authority scope, source agreement, conflicts and disagreement resolution in a restricted provenance ledger. Unresolved identities are quarantined and excluded from scored ground truth with counts/reasons retained; do not force a label or selectively discard hard negatives. Truth reviewers are blinded to model scores. The independent benchmark custodian seals labels; inference operators receive pseudonymous records only. Names, contacts, case links, documents and custody locations never enter model inputs, public reporting, CI or the lab's result exports.
+
+## Image-level lineage, dates and age
+
+For each photograph retain a distinct opaque image ID, original content hash, custodian source reference, authorization version, capture-event ID, lower/upper capture-date bounds, precision and evidence confidence, lower/upper age-at-capture bounds in months with their reference interval, and a separate quality/pose/occlusion annotation provenance. Unknown values remain unknown. Do not replace uncertain intervals with a midpoint or infer a missing age from a face. Different images of the same subject must retain different historical metadata. Clock time, upload date, EXIF and case creation date are not automatically capture dates. Preserve originals and separate derivative crop/alignment/version hashes; never overwrite source metadata with model output.
+
+Pre-register eligibility from infancy through adolescence, and how intervals crossing 18 years or cohort boundaries are adjudicated before test unblinding. Define known-date, uncertain-cross-bin and unknown strata. Preserve those denominators and missingness; no retrospective reassignment to improve results.
+
+## Subject/family/event disjoint splits and cohort design
+
+Before derivatives or model selection, deduplicate originals and authorized near-duplicates/capture events under an approved method. Assign subjects, families/siblings/twins and linked capture events to one development, calibration or sealed-test partition. Gallery and probe photographs of a genuine test subject intentionally share identity within test, but use different capture events. No subject, family, original, crop, resized copy or generated derivative may cross partitions. Freeze source/manifest/protocol/label hashes and independent custody; no test-set tuning. Reconcile every image to its authorization and independently verified subject.
+
+Plan capture-age bands 0–5, 6–11, 12–23, 24–35, 36–71, 72–119, 120–167 and 168–215 months, including unknown/cross-bin intervals. Pre-register capture-gap intervals in days, reporting exact boundaries and uncertainty; cover under one year, one–three, three–five, five–ten and over ten years where lawful feasible longitudinal evidence exists. The synthetic Phase 2A bins are historical arithmetic fixtures, not a validated child cohort. Record the distribution of both probe and gallery ages, gaps, photographs per child, acquisition source and failures. Do not pretend empty or underpowered cells are covered.
+
+Set representative population/source/camera/quality coverage with independent NGO and statistical review. Demographic attributes may only come from separately authorized provenance; do not infer sensitive attributes from photographs. Record unknowns, intersections and nonparticipation bias. Balance safety and statistical needs; collecting more children simply to meet an unapproved sample-size target is prohibited. If rare-event, subgroup or long-gap targets are infeasible, report the limitation and withhold the qualification claim.
+
+## Isolation and controlled execution
+
+A future child-data lab requires separate accounts/infrastructure, PostgreSQL cluster, encrypted private image store, model-artifact quarantine, dataset keys, grant ledger and offline inference workers. No operational credentials, networks, case databases, object buckets or reporting endpoints may be shared. The current separate Compose lab contains synthetic metadata only; containers sharing an operator-controlled host are not certification against a privileged host administrator. Phase 2A app-schema research tables remain synthetic integration fixtures and cannot be repurposed for child data.
+
+After separate approvals, use independently authenticated, least-privilege, time-limited purpose/dataset/protocol/operator grants and two-person release. Revalidate authorization and revocation before read, queue dispatch, inference and aggregate export. No model internet access, default auto-download, arbitrary URL, public image URL, external AI evaluator or direct database access for public users. Keep labels/linkage unavailable to inference operators. Record immutable, sanitized audit events and cancellation checkpoints. Suspend a run on any unverifiable approval, compromised key, subject withdrawal, provenance discrepancy or model manifest mismatch; never fall back to a public service or an uncleared model.
+
+## Retention, withdrawal and incidents
+
+The agreement must specify actual expiry dates and shorter applicable limits; proposed planning ceilings are seven days for unapproved intake, 90 days for an approved evaluation copy, and 35 days for encrypted backups. These are proposals, not legal entitlements or retention minima. No collection begins until the NGO/DPO approves the exact schedule, keys and deletion verification. Extensions require a new review, not automatic renewal.
+
+On withdrawal/expiry revoke grants and queued tasks immediately; cancel in-flight work, prevent stale results/export, and erase originals, derivatives, embeddings, indices, caches and temporary files under the approved procedure. Retain only the minimal authorized audit evidence. Record a deletion/tombstone ledger so restoring an older backup cannot resurrect authorization or derived data. Recompute or withdraw affected benchmark claims transparently. Verify every storage/backup/key path and record exceptions. Current synthetic metadata restore/revocation tests do not certify real-photo erasure or backup tombstone replay.
+
+Incident handling freezes processing/export, revokes relevant keys/grants, preserves access-controlled evidence, escalates through the NGO's approved legal/safeguarding procedure and prevents location or notification leakage. Any required notification is an owner-directed action, not an automated message sent by this preparation work.
+
+## Independent release package
+
+Before any proposed real evaluation, submit signed authority/provenance records, source/model rights, approved cohort and power plan, identity review process, split/label hashes, protocol/threshold lock, access/key/egress verification, retention/deletion drill and incident procedures to independent review. Only a new explicit owner authorization can allow acquisition or execution. Evaluation approval never authorizes operational case searching, identity confirmation or child release.

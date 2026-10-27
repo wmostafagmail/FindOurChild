@@ -1,0 +1,22 @@
+{
+  "source_digest": "459bd1f4750a29a635be13e885a7e40a84439e9ed10e644dc3c149f692e1a8e5",
+  "started_at": 1793009355.4271266,
+  "finished_at": 1793009356.1806712,
+  "lab_isolation": {
+    "separate_database": true,
+    "network_internal": true,
+    "published_ports": 0,
+    "operational_credentials_mounted": false,
+    "forced_rls_tables": 4,
+    "metadata_backup_restore": "passed",
+    "restored_revocation": "passed",
+    "real_data_authorized": false
+  },
+  "tests_executed": 107,
+  "passed": 107,
+  "mandatory_skips": 0,
+  "status": "passed",
+  "scope": "isolated qualification suite only; full current-head regression pending hosted CI",
+  "foundation_structural_checks": 179,
+  "ruff": "passed on complete services/scripts/tests"
+}
