@@ -14,6 +14,7 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `database/migrations/0027_synthetic_commands_and_projection.sql`
 - `database/migrations/0028_synthetic_definer_binding.sql`
 - `database/migrations/0029_synthetic_denial_audit.sql`
+- `database/migrations/0030_synthetic_decision_evidence.sql`
 - `docs/TEST_MATRIX.md`
 - `docs/contracts/event-envelope.schema.json`
 - `docs/contracts/openapi.json`

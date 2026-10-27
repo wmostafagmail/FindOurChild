@@ -270,3 +270,14 @@ def test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_st
             assert w.execute(
                 "SELECT platform.outbox_recipient_current(%s,%s,%s)", (eid, ACTOR, event["attempt"])
             ).fetchone() == (False,)
+
+
+@pytest.mark.parametrize("outcome", ["reject", "escalate"])
+def test_decisions_require_corresponding_visible_evidence_and_reason(outcome):
+    with scenario() as (sid, _), runtime() as conn:
+        lid = publish(conn, sid)
+        payload = body(comparison(conn, lid), outcome)
+        payload["rationale_codes"] = ["SYNTHETIC_WORKFLOW_ONLY"]
+        with pytest.raises(psycopg.Error) as error:
+            command(conn, lid, "reviews", payload)
+        assert error.value.sqlstate == "P0422"

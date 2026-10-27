@@ -117,7 +117,13 @@ def body(view, outcome=None):
     if outcome is not None:
         result["outcome"] = outcome
         if outcome != "hold":
-            result["evidence_refs"] = [view["explanations"][0]["source_ref"]]
+            kind = "contradictory" if outcome == "reject" else "supporting"
+            result["evidence_refs"] = [
+                next(e["source_ref"] for e in view["explanations"] if e["kind"] == kind)
+            ]
+            result["rationale_codes"] = [
+                "CONTRADICTORY_FIXTURE_CLAIM" if outcome == "reject" else "SUPPORTING_FIXTURE_CLAIM"
+            ]
     return result
 
 

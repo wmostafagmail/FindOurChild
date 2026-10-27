@@ -94,7 +94,9 @@
     "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
     "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
     "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
-    "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+    "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
+    "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]",
+    "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]"
   ],
   "synthetic_workflow_http": [
     "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
