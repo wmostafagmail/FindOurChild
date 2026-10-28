@@ -14,7 +14,7 @@ export default function Identity({ar}:{ar:boolean}) {
   }
   return <section className="identity-panel" aria-label={ar?'الجلسة':'Session'}><p role="status" data-testid="identity-state" data-state={state}>
     {state==='authenticated'?(ar?'تم التحقق بخطوتين':'MFA verified'):state==='loading'?(ar?'جارٍ التحقق':'Checking session'):state==='unavailable'?(ar?'التحقق غير متاح. الوصول مرفوض.':'Verification unavailable. Access denied.'):(ar?'يلزم تسجيل الدخول':'Sign in required')}</p>
-    {!session&&<a href="/identity/login">{ar?'تسجيل الدخول بخطوتين':'Sign in with MFA'}</a>}
+    {!session&&<><a href="/identity/login">{ar?'تسجيل الدخول بخطوتين':'Sign in with MFA'}</a><p>{ar?'الخروج من التطبيق لا ينهي جلسة مزود الهوية. لتبديل الموظف، أكد الخروج لدى المزود ثم عد إلى هذه الصفحة وسجل الدخول بخطوتين.':'Application sign-out does not end the identity-provider session. To switch staff, confirm provider sign-out, return here, and sign in with MFA.'}</p><a data-testid="provider-sign-out" href="https://127.0.0.1:8443/realms/foc-synthetic/protocol/openid-connect/logout?client_id=foc-bff">{ar?'إنهاء جلسة مزود الهوية لتبديل الموظف':'End provider session to switch staff'}</a></>}
     {session&&<><p data-testid="principal">{session.principal_id}</p><ul>{session.organizations.map((o)=><li key={o.id+o.role}>{o.id} · {o.role}</li>)}</ul><p><a href={ar?'/ar/investigation':'/en/investigation'}>{ar?'التحقيقات الاصطناعية':'Synthetic investigations'}</a></p><button onClick={logout}>{ar?'تسجيل الخروج':'Sign out'}</button></>}
   </section>;
 }

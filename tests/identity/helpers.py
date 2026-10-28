@@ -22,10 +22,10 @@ def otp(secret):
     return str((int.from_bytes(mac[offset : offset + 4], "big") & 0x7FFFFFFF) % 1000000).zfill(6)
 
 
-def real_login(username="synthetic-reviewer-a"):
+def real_login(username="synthetic-reviewer-a", *, client=None):
     """Running Next BFF -> running Keycloak -> running API/private DB. Secure cookies forwarded explicitly by this non-browser HTTP harness."""
     private = json.loads((Path(__file__).resolve().parents[2] / ".runtime/identity.json").read_text())
-    client = httpx.Client(
+    client = client if client is not None else httpx.Client(
         follow_redirects=False,
         timeout=20,
         trust_env=False,

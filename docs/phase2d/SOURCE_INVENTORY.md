@@ -65,3 +65,5 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `tools/verify_phase2d_evidence.py`
 
 No runtime or development dependency version/lock is changed. TesterArmy e2e 0.21.3, @e2e-dev/web 0.15.3 and its locked Playwright engine dependency remain pinned. No real recognition model or image dataset is acquired.
+
+- `tests/identity/helpers.py` — supports an existing synthetic HTTP session for the real provider-sign-out / second-reviewer MFA handoff.

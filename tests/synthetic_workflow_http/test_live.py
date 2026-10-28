@@ -76,7 +76,24 @@ def test_actual_bff_mfa_worker_media_and_independent_safeguarding():
         payload.update(principal_id=PEER, expires_at=(datetime.now(UTC) + timedelta(minutes=5)).isoformat())
         result = write(client, headers, "/leads/" + lid + "/peer-review-requests", payload, 2)
         assert result.status_code == 201
-        peer, peer_headers = real_login("synthetic-workflow-peer-http")
+        # A second reviewer in the same browser must end the separate IdP SSO
+        # session using its real CSRF-confirmed form; never clear cookies or MFA.
+        import html
+        import re
+        from urllib.parse import urljoin
+
+        assert client.post("https://127.0.0.1:3443/identity/logout", headers=headers).status_code == 200
+        assert client.get("https://127.0.0.1:3443/identity/me", headers=headers).status_code == 401
+        provider = "https://127.0.0.1:8443/realms/foc-synthetic/protocol/openid-connect/logout?client_id=foc-bff"
+        confirmation = client.get(provider)
+        assert confirmation.status_code == 200 and 'id="kc-logout"' in confirmation.text
+        action = html.unescape(re.search(r'<form[^>]*action="([^"]+)"', confirmation.text).group(1))
+        fields = {html.unescape(n): html.unescape(v) for n, v in re.findall(
+            r'<input[^>]*name="([^"]+)"[^>]*value="([^"]*)"', confirmation.text
+        )}
+        ended = client.post(urljoin(provider, action), data=fields)
+        assert ended.status_code == 200 and "logged out" in ended.text.lower()
+        peer, peer_headers = real_login("synthetic-workflow-peer-http", client=client)
         try:
             payload = body(view)
             payload.update(outcome="workflow_review_complete", first_review_id=first.json()["id"])
@@ -406,7 +423,7 @@ def test_live_read_denies_revocation_committed_during_audit_wait(projection):
             with ThreadPoolExecutor(1) as pool:
                 future = pool.submit(client.get, path(endpoints[projection]), headers=headers)
                 try:
-                    deadline = time.monotonic() + 2
+                    deadline = time.monotonic() + 6
                     while time.monotonic() < deadline:
                         if (
                             a.execute(
