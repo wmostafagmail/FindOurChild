@@ -13,7 +13,7 @@ concurrency:
 jobs:
   phase1a-required:
     runs-on: ubuntu-24.04
-    # Full 360-browser /746-Python serial regression; timeout never implies success.
+    # Full 360-browser /747-Python serial regression; timeout never implies success.
     timeout-minutes: 150
     env:
       E2E_TELEMETRY_DISABLED: '1'

@@ -1,5 +1,6 @@
 """Synthetic staff identity boundary. No bearer tokens or IdP responses enter browser reports."""
 
+import atexit
 import base64
 import hashlib
 import hmac
@@ -9,6 +10,7 @@ import secrets
 import time
 from contextlib import contextmanager
 from datetime import UTC, datetime
+from threading import Lock
 from typing import Annotated, Literal
 from urllib.parse import urlencode
 from uuid import UUID
@@ -84,11 +86,40 @@ def configuration():
     }
 
 
+_idp_pool = None
+_idp_pool_lock = Lock()
+
+
+def _idp_transport():
+    # Pool sockets/TLS setup only. Never cache tokens, claims or authorization.
+    global _idp_pool
+    if _idp_pool is None:
+        with _idp_pool_lock:
+            if _idp_pool is None:
+                pool = httpx.HTTPTransport(
+                    verify=True, trust_env=False, retries=0,
+                    limits=httpx.Limits(max_connections=32, max_keepalive_connections=16),
+                )
+                atexit.register(pool.close)
+                _idp_pool = pool
+    return _idp_pool
+
+
+class _IdpRequestTransport(httpx.BaseTransport):
+    def handle_request(self, request):
+        return _idp_transport().handle_request(request)
+
+    def close(self):
+        # The process owns the bounded pool. Each Client/cookie jar is private
+        # to one IdP request and is discarded when its context exits.
+        pass
+
+
 def idp(path, data=None):
     config = configuration()
     url = config["upstream"] + path
     try:
-        with httpx.Client(timeout=5, follow_redirects=False, trust_env=False) as client:
+        with httpx.Client(timeout=5, follow_redirects=False, trust_env=False, transport=_IdpRequestTransport()) as client:
             if data is None:
                 response = client.get(url)
             else:

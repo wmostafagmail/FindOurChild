@@ -76,3 +76,5 @@ No runtime or development dependency version/lock is changed. TesterArmy e2e 0.2
 - `database/migrations/0036_synthetic_live_expiry.sql` — real-time authority and pending-approval/worker deadlines after audit waits, preserving predicates, owners and grants.
 
 - `apps/web/app/[locale]/identity/page.tsx` — corrects the stale pre-reporting notice in Arabic and English without changing authentication behavior.
+
+- `services/api/foc_api/identity.py` — bounded connection/TLS transport reuse with per-request cookie/client isolation, unchanged validation/introspection/timeout and zero retries.

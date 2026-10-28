@@ -1,6 +1,6 @@
 # Find Our Child — test matrix
 
-> Phase 2D: [traceability](phase2d/TEST_TRACEABILITY.md), [required inventory](phase2d/required-tests.json), [reverse test index](phase2d/test-to-feature.json), [validation report](phase2d/VALIDATION_REPORT.md). Required inventory: **746 Python / 360 official TesterArmy executions / 36 migrations**. Hosted validation of the final corrections is pending. Global registry: **210 features / 1296 cases; 572 passed, 724 pending**. New Phase 2D cases are not passed until exact-source hosted evidence is verified.
+> Phase 2D: [traceability](phase2d/TEST_TRACEABILITY.md), [required inventory](phase2d/required-tests.json), [reverse test index](phase2d/test-to-feature.json), [validation report](phase2d/VALIDATION_REPORT.md). Required inventory: **747 Python / 360 official TesterArmy executions / 36 migrations**. Hosted validation of the final corrections is pending. Global registry: **210 features / 1296 cases; 572 passed, 724 pending**. New Phase 2D cases are not passed until exact-source hosted evidence is verified.
 
 > Phase 2A extension: [research traceability](phase2a/TEST_TRACEABILITY.md). All 178 prior features and 972 cases are preserved exactly; 7 research groups append 124 logical cases: 118 passed after independent hosted verification, six real qualifications pending. Current registry: **185 features / 1096 cases; 464 passed, 632 pending**. Real model clearance and recognition qualification remain pending.
 

@@ -136,7 +136,8 @@
             "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
             "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
             "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
-            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]"
+            "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]",
+            "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied, no DB effects",
@@ -241,7 +242,8 @@
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
           "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-06]",
           "executable_selectors": [
-            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]"
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]",
+            "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no row/count/ID/photo",
@@ -1714,7 +1716,8 @@
             "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]",
             "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison",
             "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval",
-            "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons"
+            "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons",
+            "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "bounded honest failures, no bypass or leaked data",

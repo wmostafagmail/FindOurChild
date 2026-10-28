@@ -128,3 +128,65 @@ def test_api_capacity_publication_denies_private_stale_and_incomplete_evidence()
         candidate.update(change)
         with pytest.raises((ValueError, TypeError)):
             http_capacity_record(candidate, source)
+
+
+def test_idp_connection_reuse_never_reuses_cookies_or_identity_requests(monkeypatch):
+    import json
+    from concurrent.futures import ThreadPoolExecutor
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+    from threading import Lock, Thread
+    from urllib.parse import parse_qs
+
+    import httpx
+    from foc_api import identity
+
+    observed = []
+    lock = Lock()
+
+    class Provider(BaseHTTPRequestHandler):
+        protocol_version = "HTTP/1.1"
+
+        def log_message(self, *args):
+            pass
+
+        def do_POST(self):
+            size = int(self.headers["content-length"])
+            assert 0 < size < 4096
+            values = parse_qs(self.rfile.read(size).decode())
+            with lock:
+                observed.append((self.headers.get("cookie"), values, self.client_address[1]))
+            body = json.dumps({"active": True, "sub": values["token"][0]}).encode()
+            self.send_response(200)
+            self.send_header("content-type", "application/json")
+            self.send_header("content-length", str(len(body)))
+            self.send_header("set-cookie", "provider-private-state=must-not-cross-requests; Path=/")
+            self.end_headers()
+            self.wfile.write(body)
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Provider)
+    thread = Thread(target=server.serve_forever, daemon=True)
+    transport = httpx.HTTPTransport(trust_env=False, retries=0)
+    thread.start()
+    monkeypatch.setattr(identity, "_idp_transport", lambda: transport)
+    monkeypatch.setattr(identity, "configuration", lambda: {
+        "upstream": "http://127.0.0.1:" + str(server.server_port),
+        "client": "synthetic-unit-client", "secret": "synthetic-unit-only",
+    })
+    try:
+        def send(i):
+            return identity.idp("/introspect", {"token": "fictional-subject-" + str(i)})
+
+        assert send(0)["sub"] == "fictional-subject-0"
+        assert send(1)["sub"] == "fictional-subject-1"
+        with ThreadPoolExecutor(4) as pool:
+            results = list(pool.map(send, range(2, 14)))
+        assert [r["sub"] for r in results] == ["fictional-subject-" + str(i) for i in range(2, 14)]
+        assert len(observed) == 14 and all(cookie is None for cookie, _, _ in observed)
+        assert len({port for _, _, port in observed}) < len(observed)
+        assert {v["token"][0] for _, v, _ in observed} == {"fictional-subject-" + str(i) for i in range(14)}
+        assert all(v["client_id"] == ["synthetic-unit-client"] and v["client_secret"] == ["synthetic-unit-only"] for _, v, _ in observed)
+    finally:
+        transport.close()
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=5)

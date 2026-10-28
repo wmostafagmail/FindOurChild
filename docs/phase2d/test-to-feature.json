@@ -1,8 +1,8 @@
 {
   "scope": "Reverse ownership of every new required selector; assertion-level logical scenarios remain in traceability.json. Prior 554 Python and 168 browser executions retain prior feature mappings.",
   "status": "pending_hosted_verification",
-  "selector_definitions": 200,
-  "new_python_executions": 192,
+  "selector_definitions": 201,
+  "new_python_executions": 193,
   "new_browser_executions": 192,
   "entries": [
     {
@@ -1270,6 +1270,17 @@
         "SWF-14",
         "SWF-15",
         "SWF-16",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-02",
+        "SWF-03",
         "SWF-19"
       ],
       "status": "pending_hosted_verification",
