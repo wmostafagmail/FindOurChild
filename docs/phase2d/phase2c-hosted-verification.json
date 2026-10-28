@@ -1,0 +1,106 @@
+{
+  "verification_date": "2026-10-27",
+  "review_head": "aca8a2a3c9aa2fd04840caacf53086fe9bc45a76",
+  "pr_url": "https://github.com/wmostafagmail/FindOurChild/pull/7",
+  "pr_merge_checkout": "e0c32be7d9b832afe9efa557a5abd3fa62e9e0ba",
+  "merge_tree_equals_review_head": true,
+  "phase2d_implementation_authorized": false,
+  "phase2d_features_executed": 0,
+  "phase2d_tests_executed": 0,
+  "push": {
+    "verified_head": "aca8a2a3c9aa2fd04840caacf53086fe9bc45a76",
+    "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+    "source_files_verified_against_git_blobs": 191,
+    "artifact_id": 12720274274,
+    "artifact_name": "phase1a-sanitized-aca8a2a3c9aa2fd04840caacf53086fe9bc45a76",
+    "archive_sha256": "7958501ec52e96d29eff7ed34f9726a13e60b4061a1aa1e50ea27727765e2ee6",
+    "verified_payload_checksums": 53,
+    "counts": {
+      "python": 158,
+      "identity": 58,
+      "reporting": 109,
+      "resilience": 1,
+      "reporting_http": 6,
+      "research": 113,
+      "research_http": 2,
+      "qualification": 107
+    },
+    "python_total": 554,
+    "browser_total": 168,
+    "browser_counts": {
+      "chromium": 56,
+      "firefox": 56,
+      "webkit": 56
+    },
+    "migration_count": 24,
+    "coverage": {
+      "covered_lines": 1305,
+      "num_statements": 1384,
+      "percent_covered": 94.29190751445087,
+      "missing_lines": 79
+    },
+    "screenshots": 48,
+    "traces": 168,
+    "status": "passed",
+    "qualification_isolation": {
+      "separate_database": true,
+      "network_internal": true,
+      "published_ports": 0,
+      "operational_credentials_mounted": false,
+      "forced_rls_tables": 4,
+      "metadata_backup_restore": "passed",
+      "restored_revocation": "passed",
+      "real_data_authorized": false
+    },
+    "real_models_qualified": 0,
+    "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40474607704"
+  },
+  "pull_request": {
+    "verified_head": "aca8a2a3c9aa2fd04840caacf53086fe9bc45a76",
+    "source_digest": "2513f3776af7a360d7c22acc864bd537435ecf7b959c7e2f33f031787baf27fa",
+    "source_files_verified_against_git_blobs": 191,
+    "artifact_id": 12720154787,
+    "artifact_name": "phase1a-sanitized-e0c32be7d9b832afe9efa557a5abd3fa62e9e0ba",
+    "archive_sha256": "a20d7fe0f700aa7c86db99825a190153b22cae26067a7c2162b37d3c83ccb0b5",
+    "verified_payload_checksums": 53,
+    "counts": {
+      "python": 158,
+      "identity": 58,
+      "reporting": 109,
+      "resilience": 1,
+      "reporting_http": 6,
+      "research": 113,
+      "research_http": 2,
+      "qualification": 107
+    },
+    "python_total": 554,
+    "browser_total": 168,
+    "browser_counts": {
+      "chromium": 56,
+      "firefox": 56,
+      "webkit": 56
+    },
+    "migration_count": 24,
+    "coverage": {
+      "covered_lines": 1305,
+      "num_statements": 1384,
+      "percent_covered": 94.29190751445087,
+      "missing_lines": 79
+    },
+    "screenshots": 48,
+    "traces": 168,
+    "status": "passed",
+    "qualification_isolation": {
+      "separate_database": true,
+      "network_internal": true,
+      "published_ports": 0,
+      "operational_credentials_mounted": false,
+      "forced_rls_tables": 4,
+      "metadata_backup_restore": "passed",
+      "restored_revocation": "passed",
+      "real_data_authorized": false
+    },
+    "real_models_qualified": 0,
+    "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40474700684"
+  }
+}

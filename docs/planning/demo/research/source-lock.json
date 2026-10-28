@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-27",
+  "scope": "official license/source text and JSON metadata only; no weights/images",
+  "sources": [
+    {
+      "repository": "davisking/dlib-models",
+      "commit": "fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "path": "README.md",
+      "local": "dlib-models-README.md",
+      "git_blob": "868e8aa6482125b3ccf5379ae5fc9a2839a891cb",
+      "sha256": "9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c",
+      "bytes": 15318,
+      "url": "https://github.com/davisking/dlib-models/blob/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md"
+    },
+    {
+      "repository": "davisking/dlib-models",
+      "commit": "fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "path": "LICENSE",
+      "local": "dlib-models-LICENSE.txt",
+      "git_blob": "2c4afabdb632b5d68e60c9fe9fe0b0819676a729",
+      "sha256": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+      "bytes": 6556,
+      "url": "https://github.com/davisking/dlib-models/blob/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE"
+    },
+    {
+      "repository": "davisking/dlib",
+      "commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+      "path": "dlib/LICENSE.txt",
+      "local": "dlib-code-LICENSE.txt",
+      "git_blob": "127a5bc39ba030c7cb99cc0aedc4f280ffe27310",
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "bytes": 1337,
+      "url": "https://github.com/davisking/dlib/blob/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt"
+    },
+    {
+      "repository": "davisking/dlib",
+      "commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+      "path": "python_examples/face_recognition.py",
+      "local": "dlib-face-recognition-example.py.txt",
+      "git_blob": "25d99a8ceab1bf56f278a57af118bd4dd59af88d",
+      "sha256": "6c3184f08a4ac2a1564209f208cf3340e77e55f5c710a5dc7425edceab3d8688",
+      "bytes": 6163,
+      "url": "https://github.com/davisking/dlib/blob/2e0b3846b4dcd0953951a9c0172503c666975229/python_examples/face_recognition.py"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0",
+      "local": "synvis-api.json",
+      "sha256": "c9e9b916895d4a29c163b0ff53a27a8791b45106b00e8db84fc13acb1ff17e8a",
+      "bytes": 62677
+    },
+    {
+      "url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md",
+      "local": "synvis-README.md",
+      "sha256": "4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d",
+      "bytes": 8892
+    },
+    {
+      "url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/metadata_headshot.csv",
+      "local": "synvis-headshot-links.csv",
+      "sha256": "6ee9b0f0c528ac7e1606aabd5f0e73ccaa24ecb146b51e95d0fc353c600b70b8",
+      "bytes": 25937
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/base?limit=1000",
+      "local": "synvis-base-tree.json",
+      "sha256": "84a16545033437b31426df241cee1e698e8813ec4722b93e64cfd10e36b68031",
+      "bytes": 146401
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/headshot?limit=1000",
+      "local": "synvis-headshot-tree.json",
+      "sha256": "cea692a661e6a9f5a75509bac4f321c6182e4f07b01a6566de6e0a2b26743e55",
+      "bytes": 147519
+    },
+    {
+      "url": "https://huggingface.co/api/models/Qwen/Qwen-Image",
+      "local": "qwen-image-api.json",
+      "sha256": "b45ec6be55e1b739fecebddf02cbe4de5916defad5a5f0b94c9565f9cf8efaa0",
+      "bytes": 5411
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen-Image/raw/75e0b4be04f60ec59a75f475837eced720f823b6/README.md",
+      "local": "qwen-image-README.md",
+      "sha256": "c70f9851b364e5d6209305d6f07e065086126132ecc24805c652de45d3d92ca8",
+      "bytes": 6778
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen-Image/raw/75e0b4be04f60ec59a75f475837eced720f823b6/LICENSE",
+      "local": "qwen-image-LICENSE.txt",
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "bytes": 11343
+    },
+    {
+      "url": "https://huggingface.co/api/models/Qwen/Qwen-Image-Edit-2509",
+      "local": "qwen-image-edit-api.json",
+      "sha256": "90d318b1ce196c0d2a06d0cca52a5962ab863dbe5481cc0718edd1c7753aed9a",
+      "bytes": 6456
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2509/raw/d3968ef930e841f4c73640fb8afa3b306a78167e/README.md",
+      "local": "qwen-image-edit-README.md",
+      "sha256": "43794458d2fafed26f7910459eb716589b4ae2020bf1ac37c7f37510d2ca8c0e",
+      "bytes": 10273
+    },
+    {
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "local": "CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "local": "CC-BY-SA-4.0.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+      "bytes": 20138
+    },
+    {
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "local": "Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "url": "https://api.github.com/repos/davisking/dlib-models/git/trees/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "local": "dlib-model-metadata.json",
+      "sha256": "823a98aa704195d768fc4a7a87d861e2f8e19e95fedc5fc2242eb310f9e744a1",
+      "bytes": 1956
+    }
+  ]
+}
