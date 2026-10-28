@@ -1384,7 +1384,9 @@
           "planned_selector": "test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
           "executable_selectors": [
             "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
-            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+            "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
+            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no partial successful mutation/read",
@@ -1693,7 +1695,9 @@
             "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
             "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
             "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
-            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
+            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
+            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
+            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "bounded honest failures, no bypass or leaked data",

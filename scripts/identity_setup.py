@@ -101,6 +101,8 @@ WORKFLOW_USERS += (
             "race-comparison_media",
             "race-history",
             "ledger",
+            "denial-audit-comparison",
+            "denial-audit-run",
         ]
     ]
     + ["synthetic-workflow-peer-http-pagination"]

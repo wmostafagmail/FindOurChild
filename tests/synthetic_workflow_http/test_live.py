@@ -605,3 +605,42 @@ def test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_result
             docker("rm", "--force", name)
         env_file.unlink(missing_ok=True)
         compose("up", "-d", "worker")
+
+
+@pytest.mark.parametrize("operation", ["comparison", "run"])
+def test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health(operation):
+    from concurrent.futures import ThreadPoolExecutor
+
+    from tests.synthetic_workflow.helpers import admin
+
+    client, headers = real_login("synthetic-workflow-http-denial-audit-" + operation)
+    guessed = str(uuid4())
+    endpoint = "/leads/" + guessed + "/comparison" if operation == "comparison" else "/runs/" + guessed
+    try:
+        with admin() as lock, admin() as observer, ThreadPoolExecutor(1) as pool:
+            lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+            started = time.monotonic()
+            future = pool.submit(client.get, path(endpoint), headers=headers, timeout=8)
+            try:
+                deadline = time.monotonic() + 2
+                while time.monotonic() < deadline:
+                    if observer.execute(
+                        "SELECT count(*) FROM pg_stat_activity WHERE usename='foc_api' AND wait_event='advisory' AND query LIKE 'SELECT platform.sw_denial%'"
+                    ).fetchone()[0]:
+                        break
+                    time.sleep(0.02)
+                else:
+                    raise AssertionError("Denial did not reach its actual audit lock")
+                with httpx.Client(trust_env=False, timeout=1.5) as health:
+                    response = health.get("http://127.0.0.1:8000/health/live")
+                    assert response.status_code == 200 and response.json()["status"] == "alive"
+                denied = future.result(timeout=6)
+                assert denied.status_code == 503 and time.monotonic() - started < 7
+                assert guessed not in denied.text and "photos" not in denied.text
+            finally:
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                future.result(timeout=8)
+        recovered = client.get(path(endpoint), headers=headers)
+        assert recovered.status_code == 404 and guessed not in recovered.text
+    finally:
+        client.close()

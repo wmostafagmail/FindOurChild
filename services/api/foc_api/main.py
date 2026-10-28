@@ -6,6 +6,7 @@ from uuid import uuid4
 
 import psycopg
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
@@ -34,13 +35,20 @@ def create_app(settings: Settings | None = None):
 
     @app.exception_handler(HTTPException)
     async def identity_error(request: Request, exc: HTTPException):
-        if exc.status_code in {401,403,404} and getattr(request.state, "workflow_actor", None):
+        if exc.status_code in {401, 403, 404} and getattr(request.state, "workflow_actor", None):
             from .synthetic_workflow import audit_denial
 
             try:
-                audit_denial(request)
-            except psycopg.Error:
-                return JSONResponse({"code":"SERVICE_UNAVAILABLE","message_key":"errors.service_unavailable","request_id":request.state.request_id},status_code=503)
+                await run_in_threadpool(audit_denial, request)
+            except (psycopg.Error, HTTPException):
+                return JSONResponse(
+                    {
+                        "code": "SERVICE_UNAVAILABLE",
+                        "message_key": "errors.service_unavailable",
+                        "request_id": request.state.request_id,
+                    },
+                    status_code=503,
+                )
         return JSONResponse(
             {
                 "code": str(exc.detail),
@@ -67,9 +75,16 @@ def create_app(settings: Settings | None = None):
         from .synthetic_workflow import audit_denial
 
         try:
-            audit_denial(request)
-        except psycopg.Error:
-            return JSONResponse({"code":"SERVICE_UNAVAILABLE","message_key":"errors.service_unavailable","request_id":request.state.request_id},status_code=503)
+            await run_in_threadpool(audit_denial, request)
+        except (psycopg.Error, HTTPException):
+            return JSONResponse(
+                {
+                    "code": "SERVICE_UNAVAILABLE",
+                    "message_key": "errors.service_unavailable",
+                    "request_id": request.state.request_id,
+                },
+                status_code=503,
+            )
         return JSONResponse(
             {"code": "NOT_FOUND", "message_key": "errors.not_found", "request_id": request.state.request_id},
             status_code=404,

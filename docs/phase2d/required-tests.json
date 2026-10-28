@@ -183,7 +183,9 @@
     "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
     "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers",
     "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
-    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]"
+    "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]",
+    "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
+    "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
   ],
   "browser_titles": [
     "SWB_01_QUEUE",

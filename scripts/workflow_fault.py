@@ -13,7 +13,7 @@ from scripts.synthetic_workflow_setup import CANDIDATE, USERS
 
 def main():
     name, kind, state = sys.argv[1:4]
-    if name not in USERS or kind not in {"grant", "audit"} or state not in {"on", "off"}:
+    if name not in USERS or kind not in {"grant", "audit", "logout"} or state not in {"on", "off"}:
         raise RuntimeError("Invalid synthetic fixture operation")
     if "--inside" not in sys.argv:
         from scripts.dev import compose
@@ -48,10 +48,15 @@ def main():
         else:
             identifier = sql.Identifier("sw_fault_" + hashlib.sha256(name.encode()).hexdigest()[:12])
             if state == "on":
+                action = (
+                    sql.SQL("NEW.action = 'session.logout'")
+                    if kind == "logout"
+                    else sql.SQL("NEW.action LIKE 'synthetic.%'")
+                )
                 conn.execute(
                     sql.SQL(
-                        "CREATE FUNCTION platform.{}() RETURNS trigger LANGUAGE plpgsql AS $body$ BEGIN IF NEW.actor_ref={}::uuid AND NEW.action LIKE 'synthetic.%' THEN RAISE EXCEPTION 'synthetic audit unavailable'; END IF; RETURN NEW; END $body$"
-                    ).format(identifier, sql.Literal(actor))
+                        "CREATE FUNCTION platform.{}() RETURNS trigger LANGUAGE plpgsql AS $body$ BEGIN IF NEW.actor_ref={}::uuid AND ({}) THEN RAISE EXCEPTION 'synthetic audit unavailable'; END IF; RETURN NEW; END $body$"
+                    ).format(identifier, sql.Literal(actor), action)
                 )
                 conn.execute(
                     sql.SQL(

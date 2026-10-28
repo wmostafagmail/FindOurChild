@@ -37,6 +37,7 @@ def audit_denial(request):
     org = getattr(request.state, "workflow_org", None)
     if actor and org:
         with connection(request, actor, org) as conn:
+            epoch(conn)
             conn.execute("SELECT platform.sw_denial(%s)", (org,))
 
 

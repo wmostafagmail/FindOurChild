@@ -6,7 +6,7 @@ import {spawnSync} from 'node:child_process';
 const {source:axeSource}=createRequire(import.meta.url)('axe-core') as {source:string};
 const org='10000000-0000-4000-8000-000000000001';
 const fixtures=JSON.parse(readFileSync('.runtime/workflow-fixtures.json','utf8')) as {query_case_id:string,users:Record<string,string>};
-function fault(username:string,kind:'grant'|'audit',state:'on'|'off'){
+function fault(username:string,kind:'grant'|'audit'|'logout',state:'on'|'off'){
  const result=spawnSync('.venv/bin/python',['-m','scripts.workflow_fault',username,kind,state],{stdio:'pipe',timeout:30_000});
  if(result.status!==0)throw new Error('Synthetic workflow fixture operation failed; private operator diagnostics retained');
 }
@@ -60,7 +60,13 @@ for(const journey of ['01_QUEUE','02_COMPARISON','03_DECISIONS','04_COLLABORATIO
    fault(username,'grant','on');
    try{await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','denied',{timeout:10_000});expect(await browser.locator('[data-testid="synthetic-comparison"] img').count()).toBe(0);}finally{fault(username,'grant','off');}
    await app.open('/en/investigation');await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','ready');
-   await screen.getByRole('button','Sign out and clear evidence').click();await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','denied');expect(await browser.locator('[data-testid="synthetic-comparison"] img').count()).toBe(0);
+   fault(username,'logout','on');
+   try{
+    await screen.getByRole('button','Sign out and clear evidence').click();await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','logout_failed');expect(await browser.locator('[data-testid="synthetic-comparison"] img').count()).toBe(0);
+    await screen.getByRole('button','العربية').click();await expect(screen.getByTestId('workflow-state')).toContainText('تعذر تأكيد تسجيل الخروج');
+    await browser.evaluate(()=>{window.dispatchEvent(new Event('pageshow'));return true;});await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','logout_failed');expect(await browser.locator('[data-testid="synthetic-comparison"] img').count()).toBe(0);
+   }finally{fault(username,'logout','off');}
+   await screen.getByTestId('retry-sign-out').click();await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','denied');expect(await browser.locator('[data-testid="synthetic-comparison"] img').count()).toBe(0);
    expect(await browser.evaluate(async()=>(await fetch('/v1/staff/synthetic-workflow/status?organization_id=10000000-0000-4000-8000-000000000001')).status)).toBe(401);
    await app.open('/ar/investigation');await expect(screen.getByTestId('workflow-state')).toHaveAttribute('data-state','denied');expect(await browser.locator('img').count()).toBe(0);
   }

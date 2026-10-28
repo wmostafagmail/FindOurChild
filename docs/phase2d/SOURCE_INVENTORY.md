@@ -31,6 +31,7 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 - `docs/phase2d/VALIDATION_REPORT.md`
 - `docs/phase2d/required-tests.json`
 - `docs/phase2d/traceability.json`
+- `docs/phase2d/test-to-feature.json`
 - `docs/testing/test-matrix.json`
 - `scripts/artifacts.py`
 - `scripts/check_foundation.py`
