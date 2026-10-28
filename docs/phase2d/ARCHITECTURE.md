@@ -1,6 +1,6 @@
 # Phase 2D synthetic investigation implementation
 
-This document describes implementation under validation. Phase acceptance remains pending hosted evidence and owner review. The original approved specification and roadmap are retained unchanged.
+This document describes the implementation verified by the exact-source hosted runs recorded in [VALIDATION_REPORT.md](VALIDATION_REPORT.md). Phase acceptance remains pending owner review, including the documented performance and manual accessibility limitations. The original approved specification and roadmap are retained unchanged.
 
 The staff-only Next.js workspace at `/en/investigation` and `/ar/investigation` uses the fixed BFF and accepted live Keycloak MFA/session/CSRF boundary. Fourteen closed synthetic workflow operations are additive to the 49 preserved contracts. Generic operational matching, lead review, custody disclosure and handover remain disabled. `synthetic-candidate-source-v1.schema.json` specifies current fixture provenance and a descriptive future model variant; current routes accept only fixture provenance and never load a model.
 

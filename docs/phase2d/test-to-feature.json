@@ -1,6 +1,6 @@
 {
   "scope": "Reverse ownership of every new required selector; assertion-level logical scenarios remain in traceability.json. Prior 554 Python and 168 browser executions retain prior feature mappings.",
-  "status": "pending_hosted_verification",
+  "status": "required_exact_source_hosted_inventory_verified",
   "selector_definitions": 201,
   "new_python_executions": 193,
   "new_browser_executions": 192,
@@ -14,8 +14,15 @@
         "SWF-05",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_run_requires_each_live_query_permission[case.read]",
@@ -24,8 +31,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_run_requires_each_live_query_permission[case.write]",
@@ -34,8 +48,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_run_requires_each_live_query_permission[matching.request]",
@@ -44,8 +65,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[other_tenant]",
@@ -55,8 +83,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[admin_only]",
@@ -66,8 +101,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[query_only]",
@@ -77,8 +119,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]",
@@ -88,8 +137,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_purpose]",
@@ -99,8 +155,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[missing_epoch]",
@@ -110,8 +173,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
@@ -121,8 +191,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]",
@@ -132,8 +209,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[revoked_workflow]",
@@ -143,8 +227,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[unknown_conflict]",
@@ -154,8 +245,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[url]",
@@ -164,8 +262,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[model]",
@@ -174,8 +279,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[embedding]",
@@ -184,8 +296,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[candidates]",
@@ -194,8 +313,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[version]",
@@ -204,8 +330,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[custody]",
@@ -214,8 +347,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
@@ -225,8 +365,15 @@
         "SWF-15",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[reject]",
@@ -236,8 +383,15 @@
         "SWF-15",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[escalate]",
@@ -247,8 +401,15 @@
         "SWF-15",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]",
@@ -257,8 +418,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[reunited]",
@@ -267,8 +435,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[no_evidence]",
@@ -277,8 +452,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[wrong_ref]",
@@ -287,8 +469,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[wrong_snapshot]",
@@ -297,8 +486,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[no_ack]",
@@ -307,8 +503,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[html]",
@@ -317,8 +520,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[free_text]",
@@ -327,8 +537,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[unknown_reason]",
@@ -337,8 +554,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[too_many_reasons]",
@@ -347,8 +571,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay",
@@ -357,8 +588,15 @@
         "SWF-03",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review",
@@ -368,8 +606,15 @@
         "SWF-13",
         "SWF-14"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[self]",
@@ -378,8 +623,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
@@ -388,8 +640,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[other_org]",
@@ -398,8 +657,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[expired]",
@@ -408,8 +674,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[not_escalated]",
@@ -418,8 +691,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]",
@@ -428,8 +708,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[reviewer_not_safeguarding]",
@@ -438,8 +725,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
@@ -449,8 +743,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
@@ -460,8 +761,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
@@ -471,8 +779,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
@@ -482,8 +797,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
@@ -493,8 +815,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
@@ -504,8 +833,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
@@ -515,8 +851,15 @@
         "SWF-08",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_private_control_tables_deny_runtime_select_and_writes[synthetic_workflow_scenarios]",
@@ -525,8 +868,15 @@
         "SWF-03",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_private_control_tables_deny_runtime_select_and_writes[synthetic_workflow_grants]",
@@ -535,8 +885,15 @@
         "SWF-03",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_private_control_tables_deny_runtime_select_and_writes[synthetic_workflow_commands]",
@@ -545,8 +902,15 @@
         "SWF-03",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_internal_definers_unavailable_to_api[sw_lease()]",
@@ -555,8 +919,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_internal_definers_unavailable_to_api[sw_finish(gen_random_uuid(),gen_random_uuid(),gen_random_uuid())]",
@@ -565,8 +936,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_internal_definers_unavailable_to_api[sw_event_command_base(gen_random_uuid(),gen_random_uuid(),'reviews','{}',1,gen_random_uuid())]",
@@ -575,8 +953,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_internal_definers_unavailable_to_api[outbox_next_1c()]",
@@ -585,8 +970,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
@@ -595,8 +987,15 @@
         "SWF-16",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
@@ -605,8 +1004,15 @@
         "SWF-05",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_cancelled_run_cannot_be_published",
@@ -614,8 +1020,15 @@
       "feature_ids": [
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_structured_note_rejects_real_data_entry_even_through_direct_sql",
@@ -624,8 +1037,15 @@
         "SWF-12",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
@@ -633,8 +1053,15 @@
       "feature_ids": [
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds0]",
@@ -642,8 +1069,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds1]",
@@ -651,8 +1085,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds2]",
@@ -660,8 +1101,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds3]",
@@ -669,8 +1117,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_age_bounds_reject_inferred_zero_and_incoherence[bounds0]",
@@ -678,8 +1133,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_age_bounds_reject_inferred_zero_and_incoherence[bounds1]",
@@ -687,8 +1149,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_age_bounds_reject_inferred_zero_and_incoherence[bounds2]",
@@ -696,8 +1165,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_age_bounds_reject_inferred_zero_and_incoherence[bounds3]",
@@ -705,8 +1181,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_unknowns_are_null_and_reference_dates_are_not_capture_age_inference",
@@ -714,8 +1197,15 @@
       "feature_ids": [
         "SWF-08"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[model_url]",
@@ -724,8 +1214,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[custody]",
@@ -734,8 +1231,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[text]",
@@ -744,8 +1248,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[photograph]",
@@ -754,8 +1265,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]",
@@ -764,8 +1282,15 @@
         "SWF-04",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_future_model_source_is_not_accepted_as_fixture_provenance",
@@ -774,8 +1299,15 @@
         "SWF-09",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[1]",
@@ -783,8 +1315,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"0\"]",
@@ -792,8 +1331,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"-1\"]",
@@ -801,8 +1347,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"1.5\"]",
@@ -810,8 +1363,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"9223372036854775808\"]",
@@ -819,8 +1379,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"nan\"]",
@@ -828,8 +1395,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_strong_revision_header_is_bounded[\"<script>\"]",
@@ -837,8 +1411,15 @@
       "feature_ids": [
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes",
@@ -847,8 +1428,15 @@
         "SWF-03",
         "SWF-06"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_structured_collaboration_has_no_free_form_channel",
@@ -856,8 +1444,15 @@
       "feature_ids": [
         "SWF-12"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit",
@@ -867,8 +1462,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
@@ -877,8 +1479,15 @@
         "SWF-05",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
@@ -887,8 +1496,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_assignment_does_not_create_or_extend_case_permissions",
@@ -897,8 +1513,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_no_media_grant_withholds_photo_ids_and_never_originals",
@@ -907,8 +1530,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated",
@@ -917,8 +1547,15 @@
         "SWF-10",
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
@@ -927,8 +1564,15 @@
         "SWF-08",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]",
@@ -937,8 +1581,15 @@
         "SWF-03",
         "SWF-10"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
@@ -947,8 +1598,15 @@
         "SWF-03",
         "SWF-10"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff",
@@ -957,8 +1615,15 @@
         "SWF-03",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]",
@@ -967,8 +1632,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]",
@@ -977,8 +1649,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_concurrent_notes_conflict_then_explicit_retry_preserves_both",
@@ -987,8 +1666,15 @@
         "SWF-11",
         "SWF-12"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[unknown_principal]",
@@ -997,8 +1683,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[workflow]",
@@ -1007,8 +1700,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[membership]",
@@ -1017,8 +1717,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[query]",
@@ -1027,8 +1734,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[candidate]",
@@ -1037,8 +1751,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_membership_revocation_after_assignment_denies_task_access_and_action",
@@ -1047,8 +1768,15 @@
         "SWF-02",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
@@ -1057,8 +1785,15 @@
         "SWF-11",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[provider]",
@@ -1067,8 +1802,15 @@
         "SWF-04",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[candidate_uuid]",
@@ -1077,8 +1819,15 @@
         "SWF-04",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection",
@@ -1086,8 +1835,15 @@
       "feature_ids": [
         "SWF-17"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison]",
@@ -1097,8 +1853,15 @@
         "SWF-07",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[investigation]",
@@ -1108,8 +1871,15 @@
         "SWF-07",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[audit]",
@@ -1119,8 +1889,15 @@
         "SWF-07",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[checksum]",
@@ -1129,8 +1906,15 @@
         "SWF-01",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[missing_entry]",
@@ -1139,8 +1923,15 @@
         "SWF-01",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[reviews]",
@@ -1150,8 +1941,15 @@
         "SWF-05",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[notes]",
@@ -1161,8 +1959,15 @@
         "SWF-05",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[runs]",
@@ -1172,8 +1977,15 @@
         "SWF-05",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[cancellations]",
@@ -1183,8 +1995,15 @@
         "SWF-05",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[worker]",
@@ -1194,8 +2013,15 @@
         "SWF-05",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]",
@@ -1205,8 +2031,15 @@
         "SWF-07",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence",
@@ -1216,8 +2049,15 @@
         "SWF-19",
         "SWF-20"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks",
@@ -1227,8 +2067,15 @@
         "SWF-06",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
@@ -1238,8 +2085,15 @@
         "SWF-03",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
@@ -1249,8 +2103,15 @@
         "SWF-03",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]",
@@ -1260,8 +2121,15 @@
         "SWF-03",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval",
@@ -1272,8 +2140,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests",
@@ -1283,8 +2158,15 @@
         "SWF-03",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
@@ -1298,8 +2180,15 @@
         "SWF-15",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[cross_org]",
@@ -1309,8 +2198,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_lead]",
@@ -1320,8 +2216,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]",
@@ -1331,8 +2234,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]",
@@ -1342,8 +2252,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[origin]",
@@ -1353,8 +2270,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[stale]",
@@ -1364,8 +2288,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[real_model]",
@@ -1375,8 +2306,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[identity_confirmation]",
@@ -1386,8 +2324,15 @@
         "SWF-10",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_anonymous_staff_namespace_has_no_private_projection",
@@ -1396,8 +2341,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-01]",
@@ -1407,8 +2359,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-02]",
@@ -1418,8 +2377,15 @@
         "SWF-04",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-03]",
@@ -1428,8 +2394,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-04]",
@@ -1438,8 +2411,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-05]",
@@ -1449,8 +2429,15 @@
         "SWF-06",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-06]",
@@ -1461,8 +2448,15 @@
         "SWF-08",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-07]",
@@ -1471,8 +2465,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-08]",
@@ -1482,8 +2483,15 @@
         "SWF-10",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-09]",
@@ -1494,8 +2502,15 @@
         "SWF-12",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-10]",
@@ -1504,8 +2519,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-11]",
@@ -1514,8 +2536,15 @@
         "SWF-03",
         "SWF-12"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-12]",
@@ -1524,8 +2553,15 @@
         "SWF-03",
         "SWF-14"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-13]",
@@ -1535,8 +2571,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-14]",
@@ -1545,8 +2588,15 @@
         "SWF-03",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-01]",
@@ -1556,8 +2606,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-02]",
@@ -1567,8 +2624,15 @@
         "SWF-04",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-03]",
@@ -1577,8 +2641,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-04]",
@@ -1587,8 +2658,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
@@ -1598,8 +2676,15 @@
         "SWF-06",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]",
@@ -1610,8 +2695,15 @@
         "SWF-08",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-07]",
@@ -1620,8 +2712,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-08]",
@@ -1631,8 +2730,15 @@
         "SWF-10",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-09]",
@@ -1643,8 +2749,15 @@
         "SWF-12",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-10]",
@@ -1653,8 +2766,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-11]",
@@ -1663,8 +2783,15 @@
         "SWF-03",
         "SWF-12"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-12]",
@@ -1673,8 +2800,15 @@
         "SWF-03",
         "SWF-14"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-13]",
@@ -1684,8 +2818,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-14]",
@@ -1694,8 +2835,15 @@
         "SWF-03",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-01]",
@@ -1705,8 +2853,15 @@
         "SWF-02",
         "SWF-03"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-02]",
@@ -1716,8 +2871,15 @@
         "SWF-04",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-03]",
@@ -1726,8 +2888,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-04]",
@@ -1736,8 +2905,15 @@
         "SWF-03",
         "SWF-05"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-05]",
@@ -1747,8 +2923,15 @@
         "SWF-06",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-06]",
@@ -1759,8 +2942,15 @@
         "SWF-08",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-07]",
@@ -1769,8 +2959,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-08]",
@@ -1780,8 +2977,15 @@
         "SWF-10",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-09]",
@@ -1792,8 +2996,15 @@
         "SWF-12",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-10]",
@@ -1802,8 +3013,15 @@
         "SWF-03",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-11]",
@@ -1812,8 +3030,15 @@
         "SWF-03",
         "SWF-12"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-12]",
@@ -1822,8 +3047,15 @@
         "SWF-03",
         "SWF-14"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-13]",
@@ -1833,8 +3065,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-14]",
@@ -1843,8 +3082,15 @@
         "SWF-03",
         "SWF-16"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors",
@@ -1853,8 +3099,15 @@
         "SWF-03",
         "SWF-06"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap",
@@ -1863,8 +3116,15 @@
         "SWF-06",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
@@ -1873,8 +3133,15 @@
         "SWF-07",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]",
@@ -1883,8 +3150,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[run]",
@@ -1893,8 +3167,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[queue]",
@@ -1903,8 +3184,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison]",
@@ -1913,8 +3201,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
@@ -1923,8 +3218,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers",
@@ -1933,8 +3235,15 @@
         "SWF-01",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
@@ -1943,8 +3252,15 @@
         "SWF-05",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]",
@@ -1953,8 +3269,15 @@
         "SWF-03",
         "SWF-07"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
@@ -1964,8 +3287,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]",
@@ -1975,8 +3305,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons",
@@ -1987,8 +3324,15 @@
         "SWF-07",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison",
@@ -1999,8 +3343,15 @@
         "SWF-07",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_01_QUEUE",
@@ -2013,8 +3364,15 @@
         "SWF-05",
         "SWF-06"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_02_COMPARISON",
@@ -2025,8 +3383,15 @@
         "SWF-08",
         "SWF-09"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_03_DECISIONS",
@@ -2036,8 +3401,15 @@
         "SWF-10",
         "SWF-11"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_04_COLLABORATION",
@@ -2047,8 +3419,15 @@
         "SWF-12",
         "SWF-13"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_05_INDEPENDENT",
@@ -2058,8 +3437,15 @@
         "SWF-14",
         "SWF-15"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_06_REVOCATION",
@@ -2072,8 +3458,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_07_FAILURE",
@@ -2085,8 +3478,15 @@
         "SWF-16",
         "SWF-19"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     },
     {
       "selector": "SWB_08_ACCESSIBILITY",
@@ -2096,8 +3496,15 @@
         "SWF-15",
         "SWF-18"
       ],
-      "status": "pending_hosted_verification",
-      "execution_evidence": null
+      "status": "passed",
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      }
     }
   ]
 }

@@ -23351,8 +23351,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "fixed synthetic descriptor, operational flags false",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23368,8 +23379,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no activation, 503",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23385,8 +23408,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no workspace inventory, 401/404 as specified",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[admin_only]",
+              "tests/synthetic_workflow_http/test_live.py::test_anonymous_staff_namespace_has_no_private_projection"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23401,13 +23436,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "workspace disabled, no stale work",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[missing_epoch]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-02",
@@ -23437,8 +23490,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "assigned workspace access",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23463,8 +23527,29 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied, no DB effects",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-me]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/audit]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-me]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Basic forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-me]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/audit]",
+              "tests/identity/test_boundaries.py::test_anonymous_or_forged_identity_denied[Bearer forged-organizations/10000000-0000-4000-8000-000000000001/cases/30000000-0000-4000-8000-000000000001/permission]",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[csrf]",
+              "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23479,8 +23564,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no leads",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-01]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23500,13 +23596,36 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "evidence cleared, new reads denied",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_06_REVOCATION",
+              "SWB_07_FAILURE",
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-03",
@@ -23536,8 +23655,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one visible paired lead",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23552,8 +23682,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "generic 404",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_lead]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23569,8 +23710,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no row/count/ID/photo",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]",
+              "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23600,14 +23753,46 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no newly released projection; document already-seen bytes limit",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
-          "phase2d_required": true,
-          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination."
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_06_REVOCATION",
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[candidate_only]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[audit]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[investigation]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[queue]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[run]",
+              "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]",
+              "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
+          "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-04",
@@ -23637,8 +23822,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one queued run",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23653,8 +23849,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "closed DTO rejection, no job",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_direct_runtime_run_function_rejects_unbounded_input[url]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23669,8 +23876,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_run_requires_each_live_query_permission[matching.request]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23691,13 +23909,37 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected/held, no publication",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-05",
@@ -23727,8 +23969,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "deterministic completed leads",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23747,8 +24000,23 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "failed/held run, not empty success",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
+              "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+              "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[candidate_uuid]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_corrupt_leased_fixture_never_publishes_empty_success[provider]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23766,8 +24034,22 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no publication",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_fenced_worker_cancellation_expired_lease_and_revoked_requester",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[cancellations]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[runs]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[worker]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23783,13 +24065,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one publication, dead-letter/cancel behavior honest",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_cancelled_run_cannot_be_published",
+              "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-06",
@@ -23820,8 +24121,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "stable bounded unique rows",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors",
+              "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23836,8 +24149,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied/no payload",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_contracts.py::test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23854,8 +24178,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no gaps, withheld totals or placeholders",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
+              "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap",
+              "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23872,13 +24209,33 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "explicit stale cursor or consistent snapshot, no duplicate leaks",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_contracts.py::test_cursor_is_authenticated_expiring_actor_scoped_and_detects_changes",
+              "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality",
+              "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-07",
@@ -23908,8 +24265,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "correct paired derivatives",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23926,8 +24294,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no bytes/fallback",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[unknown_photo]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23942,8 +24323,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no content or storage reference",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_no_media_grant_withholds_photo_ids_and_never_originals"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -23961,13 +24353,34 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "placeholder/hold and safe denial, never originals",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_07_FAILURE",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
+              "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-08",
@@ -23997,8 +24410,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "each retains its own age/date/source",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_real_fixture_provider_completes_without_model_or_identity_effect"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24016,8 +24440,22 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected at schema boundary",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds0]",
+              "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds1]",
+              "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds2]",
+              "tests/synthetic_workflow/test_contracts.py::test_capture_bounds_reject_incomplete_inverted_or_false_precision[bounds3]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24033,8 +24471,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected, no linkage",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[wrong_ref]",
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-06]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24049,13 +24499,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "explicit uncertainty, no midpoint/today/face-estimated age",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_contracts.py::test_unknowns_are_null_and_reference_dates_are_not_capture_age_inference"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-09",
@@ -24085,8 +24553,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "source-backed supporting/contradictory/unknown labels",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24102,8 +24581,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[unknown_reason]",
+              "tests/synthetic_workflow/test_contracts.py::test_future_model_source_is_not_accepted_as_fixture_provenance"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24118,8 +24609,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "never used in visible explanation/count",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_no_media_grant_withholds_photo_ids_and_never_originals"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24134,13 +24636,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "stable ranking, quality unmeasured, no forced exclusion",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_ranked_candidates_include_metadata_only_records_without_fabricated_quality"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-10",
@@ -24174,8 +24694,23 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one immutable event",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[escalate]",
+              "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
+              "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[reject]",
+              "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
+              "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24192,8 +24727,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected; case verification unchanged",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[confirm_identity]",
+              "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[escalate]",
+              "tests/synthetic_workflow/test_transactions.py::test_decisions_require_corresponding_visible_evidence_and_reason[reject]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24210,8 +24758,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[reviews]",
+              "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[candidate]",
+              "tests/synthetic_workflow/test_transactions.py::test_both_case_write_permissions_are_required_for_human_decisions[query]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24227,13 +24788,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "hold remains available; escalate cannot fabricate approval",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_human_decisions_are_immutable_and_do_not_verify_identity[hold]",
+              "tests/synthetic_workflow/test_boundaries.py::test_review_rejects_forged_sensitive_conclusions_and_evidence[no_evidence]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-11",
@@ -24263,8 +24843,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "same safe reference, one event/outbox/audit",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24279,8 +24870,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "409, no second effect",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24295,8 +24897,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied before cached result disclosure",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_exact_replay_changed_body_stale_revision_and_revoked_replay"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24311,13 +24924,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "one valid revision, 412/409 and no deadlock/lost history",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-12",
@@ -24347,8 +24978,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "append-only bilingual event",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24363,8 +25005,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_structured_note_rejects_real_data_entry_even_through_direct_sql"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24380,8 +25033,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[notes]",
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-11]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24397,13 +25062,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "both retained or explicit revision conflict; no overwrite",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_concurrent_notes_conflict_then_explicit_retry_preserves_both",
+              "tests/synthetic_workflow/test_transactions.py::test_twenty_actual_database_sessions_preserve_one_revision_and_audit"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-13",
@@ -24433,8 +25117,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "task event only",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_assignment_does_not_create_or_extend_case_permissions"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24460,8 +25155,30 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[expired]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[not_escalated]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[other_org]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[reviewer_not_safeguarding]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[self]",
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[candidate]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[membership]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[query]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[unknown_principal]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_assignment_expiry_never_outlives_any_underlying_authority[workflow]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24476,8 +25193,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied; grant tables unchanged",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[admin_without_case-SW-10]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24493,13 +25221,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "task no longer grants visibility/action",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_membership_revocation_after_assignment_denies_task_access_and_action",
+              "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-14",
@@ -24530,8 +25277,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "workflow state only",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24546,8 +25305,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "held/denied",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[wrong_first_review]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24563,8 +25333,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "cannot approve own work",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24585,13 +25367,37 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "old approval invalid, fresh review required",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-15",
@@ -24621,8 +25427,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "case remains unverified, no custody/reunion effect",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24638,8 +25455,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "remain denied/503",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_contracts.py::test_closed_review_input_cannot_admit_data_or_activation[automatic_identity_confirmation]",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_sensitive_operations_deny_unauthorized_or_invalid_requests[identity_confirmation]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24655,8 +25484,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no lead/location/biometric search",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-13]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24671,13 +25512,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "hold; notifications disclose no found-child existence",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-16",
@@ -24707,8 +25566,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "P: transaction commits event + per-tenant chained audit + one private neutral task",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_assignment_structured_notes_and_independent_safeguarding_review"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24726,8 +25596,22 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no partial successful mutation/read",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency",
+              "tests/synthetic_workflow/test_transactions.py::test_audit_outage_rolls_back_event_task_revision_command_and_outbox",
+              "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
+              "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24742,8 +25626,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no sensitive projection/delivery",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24759,13 +25654,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "dedup/deny, no case payload",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/reporting/test_workers.py::test_neutral_notification_sink_deduplicates_and_has_no_child_payload",
+              "tests/synthetic_workflow/test_transactions.py::test_new_notification_recipient_checks_do_not_disclose_pairs_to_case_only_staff"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-17",
@@ -24795,8 +25709,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "prior rationale retained and only that snapshot suppressed",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24817,8 +25742,25 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "rejected as stale",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_deleted]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_revision]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[claims]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_hash]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[object_version]",
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24833,8 +25775,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no new list/media/action",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[case_closed]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24850,13 +25803,32 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "new pending review with old rejection visible, never silent identity acceptance",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_review_gaps.py::test_new_sealed_policy_snapshot_requires_fresh_review_and_retains_old_rejection",
+              "tests/synthetic_workflow/test_transactions.py::test_identical_rejected_snapshot_is_held_and_cannot_be_reescalated"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-18",
@@ -24886,8 +25858,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "P: complete translations/keyboard/focus/status announcements in both locales",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_08_ACCESSIBILITY"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24902,8 +25885,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "mandatory failure",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_08_ACCESSIBILITY"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24918,8 +25912,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no stale private page content",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_06_REVOCATION"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         },
         {
@@ -24934,13 +25939,31 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "correct source order, readable intervals and isolated IDs",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "SWB_08_ACCESSIBILITY"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-19",
@@ -24972,8 +25995,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "RLS/history intact, epoch revalidated",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
+              "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+              "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
@@ -24995,13 +26031,27 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "workspace disabled",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[checksum]",
+              "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[missing_entry]",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers",
+              "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
-          ],
-          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination."
+          ]
         },
         {
           "test_case_id": "SWF-19-A",
@@ -25015,8 +26065,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no resurrected access/effect",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[missing_epoch]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
@@ -25043,17 +26104,43 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "bounded honest failures, no bypass or leaked data",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/synthetic_workflow/test_capacity.py::test_one_hundred_queries_fifty_candidates_twenty_real_rls_sessions",
+              "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
+              "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
+              "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
+              "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]",
+              "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison",
+              "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval",
+              "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons",
+              "tests/synthetic_workflow/test_contracts.py::test_idp_connection_reuse_never_reuses_cookies_or_identity_requests"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
-          "remaining_validation": "New deterministic real-database/live-service selectors are implemented; complete exact-source hosted execution remains pending. Already viewed bytes cannot be recalled; synthetic fault checks do not certify every production failure combination.",
           "execution_checks": [
             "scripts.recovery: all migration hashes, 46 forced-RLS app tables, eight synthetic relations, restored database default denial"
           ]
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     },
     {
       "feature_id": "SWF-20",
@@ -25083,8 +26170,19 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "reviewable engineering evidence",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/unit/test_results_gate.py::test_fnd_gate_accepts_complete_validator_fixture"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
@@ -25119,8 +26217,35 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "required gate/publication fails",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[cleanup]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[duplicate-result]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[model]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[origin]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[retry]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[stale]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_missing_python_result",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-call]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-setup]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-teardown]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-call]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-setup]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]",
+              "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
@@ -25140,8 +26265,20 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "denied, private diagnostics retained",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/unit/test_results_gate.py::test_fnd_artifact_path_rejects_escape_and_symlink",
+              "tests/unit/test_results_gate.py::test_fnd_png_sanitizer_strips_metadata_canary"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
@@ -25162,8 +26299,21 @@
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no phase pass/reduced coverage",
           "required_from_phase": "2D",
-          "status": "pending",
-          "execution_evidence": null,
+          "status": "passed",
+          "execution_evidence": {
+            "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+            "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+            "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+            "artifact_id": 12814923598,
+            "verification": "phase2d/hosted-artifact-verification.json",
+            "scope": "Listed executed software assertions only; no scientific recognition accuracy claim",
+            "selectors": [
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[missing-target]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[runner]",
+              "tests/unit/test_results_gate.py::test_fnd_gate_rejects_browser_defects[skip]"
+            ],
+            "validation_scope": "listed_assertions_passed"
+          },
           "phase2d_required": true,
           "execution_checks": [
             "scripts.artifacts: complete exact-source required inventory and sanitized allowlist",
@@ -25171,8 +26321,15 @@
           ]
         }
       ],
-      "execution_evidence": null,
-      "current_validation_status": "pending"
+      "execution_evidence": {
+        "implementation_commit": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+        "run_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40677924049",
+        "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+        "artifact_id": 12814923598,
+        "verification": "phase2d/hosted-artifact-verification.json",
+        "scope": "Listed executed software assertions only; no scientific recognition accuracy claim"
+      },
+      "current_validation_status": "passed"
     }
   ],
   "baseline": {
