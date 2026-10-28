@@ -45,7 +45,7 @@ def audit_denial(request):
 def migration_contract():
     folder = Path(__file__).resolve().parents[3] / "database/migrations"
     expected = {p.stem: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(folder.glob("*.sql"))}
-    if "0033_synthetic_photo_projection_reauthorization" not in expected:
+    if "0036_synthetic_live_expiry" not in expected:
         raise HTTPException(503, "WORKFLOW_UNAVAILABLE")
     return expected
 
@@ -271,46 +271,25 @@ def leads(
         ).fetchone()[0]:
             raise HTTPException(404, "NOT_FOUND")
         scope = [str(actor), str(organization_id), str(cid), "leads", str(review_state), str(assigned_to_me)]
-        predicate = "l.organization_id=%s AND l.query_case_id=%s AND (%s::text IS NULL OR l.review_state=%s) AND (NOT %s::boolean OR EXISTS(SELECT 1 FROM app.synthetic_investigation_tasks t WHERE t.organization_id=l.organization_id AND t.lead_id=l.id AND t.target=%s AND t.state='pending' AND t.expires_at>now()))"
-        parameters = (organization_id, cid, review_state, review_state, assigned_to_me, actor)
+        parameters = (organization_id, cid, review_state, assigned_to_me)
         stamp = conn.execute(
-            "SELECT encode(sha256(convert_to(coalesce(string_agg(l.id::text||l.revision::text,',' ORDER BY l.id),''),'UTF8')),'hex') FROM app.synthetic_candidate_leads l WHERE "
-            + predicate,
-            parameters,
-        ).fetchone()[0]
+            "SELECT platform.sw_queue(%s,%s,%s,%s,0,0)", parameters
+        ).fetchone()[0]["stamp"]
         offset = cursor_offset(cursor, scope, stamp, limit)
-        rows = conn.execute(
-            "SELECT l.id,l.review_state,l.investigation_state,l.revision,l.run_id FROM app.synthetic_candidate_leads l JOIN app.synthetic_matching_runs r ON r.organization_id=l.organization_id AND r.id=l.run_id WHERE "
-            + predicate
-            + " ORDER BY r.created_at DESC,l.internal_rank,l.id LIMIT %s OFFSET %s",
-            (*parameters, limit + 1, offset),
-        ).fetchall()
+        page = conn.execute(
+            "SELECT platform.sw_queue(%s,%s,%s,%s,%s,%s)", (*parameters, offset, limit + 1)
+        ).fetchone()[0]
+        if page["stamp"] != stamp:
+            raise HTTPException(412, "STALE_CURSOR")
         conn.execute("SELECT platform.case_list_audit(%s)", (organization_id,))
-        # RLS is evaluated again after a potentially contended audit write. Do not
-        # emit a projection selected before committed access withdrawal.
-        still_visible = conn.execute(
-            "SELECT id FROM app.synthetic_candidate_leads WHERE organization_id=%s AND id=ANY(%s::uuid[])",
-            (organization_id, [r[0] for r in rows]),
-        ).fetchall()
-        if (
-            len(still_visible) != len(rows)
-            or not conn.execute(
-                "SELECT platform.case_permission(%s,%s,'case.read')", (organization_id, cid)
-            ).fetchone()[0]
-        ):
+        # Fresh statement after the real audit wait: no authorization cache.
+        current = conn.execute(
+            "SELECT platform.sw_queue(%s,%s,%s,%s,%s,%s)", (*parameters, offset, limit + 1)
+        ).fetchone()[0]
+        if current != page:
             raise HTTPException(404, "NOT_FOUND")
-    items = [
-        {
-            "id": str(r[0]),
-            "review_state": r[1],
-            "investigation_state": r[2],
-            "revision": r[3],
-            "run_id": str(r[4]),
-            "visible_rank": offset + i + 1,
-            "data_class": "synthetic",
-        }
-        for i, r in enumerate(rows[:limit])
-    ]
+    rows = page["items"]
+    items = rows[:limit]
     return {
         "items": items,
         "next_cursor": next_cursor(scope, stamp, offset + limit) if len(rows) > limit else None,

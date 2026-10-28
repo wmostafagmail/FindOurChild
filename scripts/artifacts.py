@@ -64,6 +64,37 @@ def safe_id(value):
     return hashlib.sha256(value.encode()).hexdigest()[:24]
 
 
+def http_capacity_record(value, digest):
+    """Closed numeric load evidence: never accept report content or identifiers."""
+    fixed = {"source_digest", "scope", "sessions", "queries", "candidates_per_query", "requests",
+             "failed_requests", "model_inference", "host_logical_cpus", "host_memory_bytes",
+             "host_architecture", "status", "queue", "comparison"}
+    if set(value) != fixed or value["source_digest"] != digest:
+        raise ValueError("Unexpected or stale HTTP capacity evidence")
+    if (value["scope"], value["status"], value["model_inference"]) != (
+        "actual_synthetic_tls_bff_api_metadata", "measured", False
+    ) or value["model_inference"] is not False or any(type(value[k]) is not int or value[k] != n for k, n in [
+        ("sessions", 20), ("queries", 100), ("candidates_per_query", 50), ("requests", 200), ("failed_requests", 0)
+    ]):
+        raise ValueError("Incomplete HTTP capacity execution")
+    if (type(value["host_logical_cpus"]) is not int or not 1 <= value["host_logical_cpus"] <= 1024
+        or type(value["host_memory_bytes"]) is not int or not 0 < value["host_memory_bytes"] <= 2**50
+        or value["host_architecture"] not in {"arm64", "aarch64", "x86_64"}):
+        raise ValueError("Invalid declared hardware")
+    for name, target in [("queue", 1000), ("comparison", 1500)]:
+        sample = value[name]
+        if (set(sample) != {"samples", "p50_ms", "p95_ms", "p99_ms", "planning_target_ms", "planning_target_met"}
+            or type(sample["samples"]) is not int or sample["samples"] != 100
+            or type(sample["planning_target_ms"]) is not int or sample["planning_target_ms"] != target
+            or any(type(sample[k]) not in {int, float} or not math.isfinite(sample[k]) or sample[k] < 0
+                   for k in ["p50_ms", "p95_ms", "p99_ms"])
+            or not sample["p50_ms"] <= sample["p95_ms"] <= sample["p99_ms"]
+            or type(sample["planning_target_met"]) is not bool
+            or sample["planning_target_met"] != (sample["p95_ms"] <= target)):
+            raise ValueError("Invalid HTTP latency evidence")
+    return {k: v for k, v in value.items() if k != "source_digest"}
+
+
 def export(root=ROOT):
     output = root / "artifacts/sanitized"
     if output.exists():
@@ -201,6 +232,12 @@ def export(root=ROOT):
         summaries["synthetic_workflow_capacity"] = {k:v for k,v in capacity.items() if k!="source_digest"}
     except (ValueError,KeyError,OSError,TypeError):
         failures.append("missing or unsafe workflow capacity evidence")
+    try:
+        summaries["synthetic_workflow_http_capacity"] = http_capacity_record(
+            json.loads((root / "artifacts/raw/workflow-http-capacity.json").read_text()), digest
+        )
+    except (ValueError, KeyError, OSError, TypeError):
+        failures.append("missing or unsafe actual API capacity evidence")
     try:
         from scripts.research_evidence import aggregate
 

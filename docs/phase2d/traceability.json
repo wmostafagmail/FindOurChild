@@ -170,7 +170,10 @@
           "executable_selectors": [
             "SWB_06_REVOCATION",
             "SWB_07_FAILURE",
-            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]"
+            "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[expired_workflow]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "evidence cleared, new reads denied",
@@ -265,7 +268,11 @@
             "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[history]",
             "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[queue]",
             "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[run]",
-            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]"
+            "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[status]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]",
+            "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no newly released projection; document already-seen bytes limit",
@@ -484,7 +491,8 @@
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
           "planned_selector": "test_real_queue_pagination_filters_and_actor_bound_cursors",
           "executable_selectors": [
-            "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors"
+            "tests/synthetic_workflow_http/test_live.py::test_real_queue_pagination_filters_and_actor_bound_cursors",
+            "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "stable bounded unique rows",
@@ -517,7 +525,8 @@
           "planned_selector": "test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
           "executable_selectors": [
             "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[other_ngo-SW-05]",
-            "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap"
+            "tests/synthetic_workflow_http/test_live.py::test_hidden_candidate_does_not_leave_a_visible_rank_gap",
+            "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no gaps, withheld totals or placeholders",
@@ -623,7 +632,8 @@
           "executable_selectors": [
             "SWB_07_FAILURE",
             "tests/synthetic_workflow/test_boundaries.py::test_changed_evidence_invalidates_all_pair_projections[scanner_provenance]",
-            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers"
+            "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
+            "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "placeholder/hold and safe denial, never originals",
@@ -1224,7 +1234,8 @@
           "planned_file": "tests/synthetic_workflow/test_boundaries.py",
           "planned_selector": "test_independence_assignment_and_conflict_denials[alias]",
           "executable_selectors": [
-            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]"
+            "tests/synthetic_workflow/test_boundaries.py::test_independence_assignment_and_conflict_denials[alias]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "cannot approve own work",
@@ -1315,7 +1326,8 @@
           "planned_file": "tests/synthetic_workflow_http/test_live.py",
           "planned_selector": "test_every_operation_has_live_negative_authorization[anonymous-SW-13]",
           "executable_selectors": [
-            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-13]"
+            "tests/synthetic_workflow_http/test_live.py::test_every_operation_has_live_negative_authorization[anonymous-SW-13]",
+            "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "no lead/location/biometric search",
@@ -1631,7 +1643,8 @@
           "planned_selector": "test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
           "executable_selectors": [
             "tests/synthetic_workflow/test_boundaries.py::test_eight_new_tables_force_rls_and_nonowner_history_is_append_only",
-            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish"
+            "tests/synthetic_workflow/test_transactions.py::test_actual_process_exit_after_lease_is_recovered_and_old_fence_cannot_publish",
+            "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "RLS/history intact, epoch revalidated",
@@ -1653,7 +1666,8 @@
             "tests/synthetic_workflow/test_boundaries.py::test_paired_scope_and_purpose_fail_closed[wrong_epoch]",
             "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[checksum]",
             "tests/synthetic_workflow/test_review_gaps.py::test_runtime_and_worker_deny_migration_ledger_corruption[missing_entry]",
-            "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers"
+            "tests/synthetic_workflow_http/test_live.py::test_actual_api_denies_bad_migration_ledger_then_recovers",
+            "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "workspace disabled",
@@ -1697,7 +1711,10 @@
             "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
             "tests/synthetic_workflow_http/test_live.py::test_actual_private_storage_outage_denies_photo_then_recovers",
             "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
-            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
+            "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]",
+            "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison",
+            "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval",
+            "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "bounded honest failures, no bypass or leaked data",
@@ -1772,7 +1789,8 @@
             "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[failed-teardown]",
             "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-call]",
             "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-setup]",
-            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]"
+            "tests/unit/test_results_gate.py::test_fnd_gate_rejects_nonpassing_stage[skipped-teardown]",
+            "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence"
           ],
           "planned_command": ".venv/bin/python -m scripts.workflow_validate; .venv/bin/python -m scripts.workflow_test synthetic_workflow_http; .venv/bin/python -m scripts.dev browser",
           "expected_outcome": "required gate/publication fails",

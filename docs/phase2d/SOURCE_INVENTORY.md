@@ -67,3 +67,12 @@ These are the explicit phase-change paths submitted for review; the Git PR diff 
 No runtime or development dependency version/lock is changed. TesterArmy e2e 0.21.3, @e2e-dev/web 0.15.3 and its locked Playwright engine dependency remain pinned. No real recognition model or image dataset is acquired.
 
 - `tests/identity/helpers.py` — supports an existing synthetic HTTP session for the real provider-sign-out / second-reviewer MFA handoff.
+
+- `database/migrations/0034_synthetic_queue_projection.sql` — scenario-scoped projection preserving live paired authorization and unchanged direct-table RLS.
+- `tests/synthetic_workflow_http/test_capacity.py` — actual 20-session /100-query /50-candidate TLS/BFF/API metadata measurement; no inference.
+
+- `database/migrations/0035_synthetic_policy_lookup_indexes.sql` — expression indexes for unchanged policy predicates and sealed report-integrity lookups; no new grants or altered authorization functions.
+
+- `database/migrations/0036_synthetic_live_expiry.sql` — real-time authority and pending-approval/worker deadlines after audit waits, preserving predicates, owners and grants.
+
+- `apps/web/app/[locale]/identity/page.tsx` — corrects the stale pre-reporting notice in Arabic and English without changing authentication behavior.

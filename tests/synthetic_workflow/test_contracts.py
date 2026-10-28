@@ -101,3 +101,30 @@ def test_structured_collaboration_has_no_free_form_channel():
                 "note": "fictional but unbounded text",
             }
         )
+
+
+def test_api_capacity_publication_denies_private_stale_and_incomplete_evidence():
+    import copy
+
+    from scripts.artifacts import http_capacity_record
+
+    source = "1" * 64
+    value = {"source_digest": source, "scope": "actual_synthetic_tls_bff_api_metadata",
+             "sessions": 20, "queries": 100, "candidates_per_query": 50, "requests": 200,
+             "failed_requests": 0, "model_inference": False, "status": "measured",
+             "host_logical_cpus": 4, "host_memory_bytes": 16 * 1024**3, "host_architecture": "x86_64"}
+    for name, target in [("queue", 1000), ("comparison", 1500)]:
+        value[name] = {"samples": 100, "p50_ms": 500, "p95_ms": 1100, "p99_ms": 1700,
+                       "planning_target_ms": target, "planning_target_met": 1100 <= target}
+    published = http_capacity_record(value, source)
+    assert "source_digest" not in published and published["queue"]["planning_target_met"] is False
+    assert published["comparison"]["planning_target_met"] is True
+    changes = [{"cookie": "SYNTHETIC_SECRET_CANARY"}, {"source_digest": "stale"},
+               {"requests": 199}, {"failed_requests": 1}, {"model_inference": 0}, {"host_architecture": "private-hostname"},
+               {"host_logical_cpus": True}, {"queue": {**value["queue"], "p95_ms": float("nan")}},
+               {"queue": {**value["queue"], "planning_target_met": True}}]
+    for change in changes:
+        candidate = copy.deepcopy(value)
+        candidate.update(change)
+        with pytest.raises((ValueError, TypeError)):
+            http_capacity_record(candidate, source)

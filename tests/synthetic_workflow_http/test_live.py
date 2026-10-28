@@ -661,3 +661,43 @@ def test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health(operat
         assert recovered.status_code == 404 and guessed not in recovered.text
     finally:
         client.close()
+
+
+def test_natural_case_expiry_during_actual_audit_wait_denies_comparison():
+    from concurrent.futures import ThreadPoolExecutor
+
+    from scripts.identity_setup import fixture_id
+    from tests.synthetic_workflow.helpers import admin
+
+    name = "synthetic-workflow-webkit-en-GB-1280"
+    actor = fixture_id(name)
+    client, headers = real_login(name)
+    try:
+        view = new_lead(client, headers)
+        with admin() as a, admin() as lock, ThreadPoolExecutor(1) as pool:
+            previous = a.execute("SELECT expires_at FROM app.case_grants WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management'", (ORG_A, view["candidate_case_id"], actor)).fetchone()
+            assert previous is not None
+            lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+            expiry = a.execute("UPDATE app.case_grants SET expires_at=clock_timestamp()+interval '1500 milliseconds' WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management' RETURNING expires_at", (ORG_A, view["candidate_case_id"], actor)).fetchone()[0]
+            future = pool.submit(client.get, path("/leads/" + view["lead_id"] + "/comparison"), headers=headers)
+            try:
+                deadline = time.monotonic() + 2
+                while time.monotonic() < deadline:
+                    if a.execute("SELECT count(*) FROM pg_stat_activity WHERE usename='foc_api' AND wait_event='advisory' AND query LIKE 'SELECT platform.sw_read%' ").fetchone()[0] == 1:
+                        break
+                    time.sleep(0.02)
+                else:
+                    raise AssertionError("Actual comparison did not reach its audit barrier")
+                while not a.execute("SELECT clock_timestamp()>%s", (expiry,)).fetchone()[0]:
+                    time.sleep(0.02)
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                response = future.result(timeout=8)
+                assert response.status_code == 404
+                assert view["lead_id"] not in response.text and "photos" not in response.text
+            finally:
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                future.result(timeout=8)
+                a.execute("UPDATE app.case_grants SET expires_at=%s WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management'", (previous[0], ORG_A, view["candidate_case_id"], actor))
+        assert client.get(path("/leads/" + view["lead_id"] + "/comparison"), headers=headers).status_code == 200
+    finally:
+        client.close()

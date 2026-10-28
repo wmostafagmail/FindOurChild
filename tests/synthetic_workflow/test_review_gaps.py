@@ -488,3 +488,79 @@ def test_outbox_insert_failure_rolls_back_decision_audit_and_idempotency():
         finally:
             a.execute(sql.SQL("DROP TRIGGER {} ON app.outbox_events").format(sql.Identifier(name)))
             a.execute(sql.SQL("DROP FUNCTION platform.{}()").format(sql.Identifier(name)))
+
+
+@pytest.mark.parametrize("boundary", ["case", "membership", "workflow"])
+def test_natural_expiry_ends_authority_within_an_existing_transaction(boundary):
+    import time
+
+    with scenario() as (sid, _), admin() as a, runtime() as c:
+        if boundary == "case":
+            previous = a.execute("SELECT expires_at FROM app.case_grants WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management'", (ORG_A, CANDIDATE, ACTOR)).fetchone()
+            a.execute("UPDATE app.case_grants SET expires_at=clock_timestamp()+interval '250 milliseconds' WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management'", (ORG_A, CANDIDATE, ACTOR))
+        elif boundary == "membership":
+            previous = a.execute("SELECT role,expires_at FROM app.memberships WHERE organization_id=%s AND principal_id=%s", (ORG_A, ACTOR)).fetchall()
+            a.execute("UPDATE app.memberships SET expires_at=clock_timestamp()+interval '250 milliseconds' WHERE organization_id=%s AND principal_id=%s", (ORG_A, ACTOR))
+        else:
+            previous = a.execute("SELECT expires_at FROM platform.synthetic_workflow_grants WHERE organization_id=%s AND scenario_id=%s AND principal_id=%s", (ORG_A, sid, ACTOR)).fetchone()
+            a.execute("UPDATE platform.synthetic_workflow_grants SET expires_at=clock_timestamp()+interval '250 milliseconds' WHERE organization_id=%s AND scenario_id=%s AND principal_id=%s", (ORG_A, sid, ACTOR))
+        try:
+            query = "SELECT platform.case_permission(%s,%s,'case.read'),platform.sw_allowed(%s,%s,'view')"
+            args = (ORG_A, CANDIDATE, ORG_A, sid)
+            assert c.execute(query, args).fetchone() == (True, True)
+            time.sleep(0.35)
+            expected = {"case": (False, True), "membership": (False, False), "workflow": (True, False)}
+            assert c.execute(query, args).fetchone() == expected[boundary]
+        finally:
+            if boundary == "case":
+                a.execute("UPDATE app.case_grants SET expires_at=%s WHERE organization_id=%s AND case_id=%s AND principal_id=%s AND permission='case.read' AND purpose='case_management'", (previous[0], ORG_A, CANDIDATE, ACTOR))
+            elif boundary == "membership":
+                for role, expiry in previous:
+                    a.execute("UPDATE app.memberships SET expires_at=%s WHERE organization_id=%s AND principal_id=%s AND role=%s", (expiry, ORG_A, ACTOR, role))
+            else:
+                a.execute("UPDATE platform.synthetic_workflow_grants SET expires_at=%s WHERE organization_id=%s AND scenario_id=%s AND principal_id=%s", (previous[0], ORG_A, sid, ACTOR))
+
+
+def test_independent_task_expiring_during_audit_wait_rolls_back_approval():
+    with scenario() as (sid, _), runtime() as conn, admin() as a, admin() as lock:
+        lid = publish(conn, sid)
+        view = comparison(conn, lid)
+        first = command(conn, lid, "reviews", body(view, "escalate"))
+        payload = body(view)
+        payload.update(principal_id=PEER, expires_at=(datetime.now(UTC) + timedelta(seconds=1.5)).isoformat())
+        command(conn, lid, "peer-review-requests", payload, 2)
+        conn.commit()
+        expiry = a.execute("SELECT max(expires_at) FROM app.synthetic_investigation_tasks WHERE lead_id=%s AND state='pending'", (lid,)).fetchone()[0]
+        name = "sw_task_expiry_" + uuid4().hex
+        lock.execute("SELECT pg_advisory_lock(hashtextextended(%s,0))", (ORG_A,))
+
+        def finish():
+            try:
+                with runtime(actor=PEER) as c:
+                    c.execute("SELECT set_config('application_name',%s,false)", (name,))
+                    decision = body(view)
+                    decision.update(outcome="workflow_review_complete", first_review_id=first["id"])
+                    command(c, lid, "independent-reviews", decision, 3)
+                return "committed"
+            except psycopg.errors.InsufficientPrivilege:
+                return "denied"
+
+        with ThreadPoolExecutor(1) as pool:
+            future = pool.submit(finish)
+            try:
+                deadline = time.monotonic() + 2
+                while time.monotonic() < deadline:
+                    if a.execute("SELECT count(*) FROM pg_stat_activity WHERE application_name=%s AND wait_event='advisory'", (name,)).fetchone() == (1,):
+                        break
+                    time.sleep(0.02)
+                else:
+                    raise AssertionError("Independent approval did not reach its real audit wait")
+                while not a.execute("SELECT clock_timestamp()>%s", (expiry,)).fetchone()[0]:
+                    time.sleep(0.02)
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                assert future.result(timeout=10) == "denied"
+                assert a.execute("SELECT revision,investigation_state FROM app.synthetic_candidate_leads WHERE id=%s", (lid,)).fetchone() == (3, "awaiting_independent_review")
+                assert a.execute("SELECT count(*) FROM app.synthetic_investigation_events WHERE lead_id=%s AND kind='independent-reviews'", (lid,)).fetchone() == (0,)
+            finally:
+                lock.execute("SELECT pg_advisory_unlock_all()")
+                future.result(timeout=10)

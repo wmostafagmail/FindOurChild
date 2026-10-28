@@ -118,7 +118,13 @@
     "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[runs]",
     "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[cancellations]",
     "tests/synthetic_workflow/test_review_gaps.py::test_revocation_at_audit_boundary_rolls_back_sensitive_command[worker]",
-    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]"
+    "tests/synthetic_workflow/test_review_gaps.py::test_revocation_while_sensitive_read_waits_for_audit_denies_projection[comparison_media]",
+    "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence",
+    "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks",
+    "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]",
+    "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval"
   ],
   "synthetic_workflow_http": [
     "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
@@ -185,7 +191,9 @@
     "tests/synthetic_workflow_http/test_live.py::test_actual_cgroup_oom_recovers_fenced_worker_lease_without_duplicate_results",
     "tests/synthetic_workflow_http/test_live.py::test_live_read_denies_revocation_committed_during_audit_wait[comparison_media]",
     "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[comparison]",
-    "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]"
+    "tests/synthetic_workflow_http/test_live.py::test_denial_audit_lock_is_bounded_and_does_not_block_unrelated_health[run]",
+    "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons",
+    "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison"
   ],
   "browser_titles": [
     "SWB_01_QUEUE",

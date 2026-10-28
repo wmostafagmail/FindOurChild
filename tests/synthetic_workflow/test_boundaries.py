@@ -128,6 +128,16 @@ def test_paired_scope_and_purpose_fail_closed(attack):
                             ).fetchall()
                             == []
                         )
+                        # The optimized queue projection must enforce the same
+                        # live scope as direct-table RLS, without hidden IDs.
+                        try:
+                            with conn.transaction():
+                                queue = conn.execute(
+                                    "SELECT platform.sw_queue(%s,%s,NULL,false,0,101)", (ORG_A, QUERY)
+                                ).fetchone()[0]
+                        except psycopg.errors.InsufficientPrivilege:
+                            queue = {"items": []}
+                        assert all(row["id"] != str(lid) for row in queue["items"])
                         with pytest.raises(psycopg.errors.InsufficientPrivilege):
                             comparison(conn, lid)
             finally:
@@ -455,3 +465,26 @@ def test_structured_note_rejects_real_data_entry_even_through_direct_sql():
         payload["outcome"] = "SYNTHETIC_SECRET_CANARY"
         with pytest.raises(psycopg.Error):
             command(conn, lid, "notes", payload)
+
+
+def test_queue_projection_is_bounded_and_never_exposes_internal_ranks():
+    with scenario() as (sid, _), runtime() as conn:
+        expected = {"synthetic_principal_context_lookup", "synthetic_membership_context_lookup",
+                    "synthetic_case_grant_context_lookup", "synthetic_workflow_context_lookup",
+                    "synthetic_report_integrity_lookup"}
+        assert {row[0] for row in conn.execute(
+            "SELECT indexname FROM pg_indexes WHERE indexname=ANY(%s)", (list(expected),)
+        ).fetchall()} == expected
+        lid = publish(conn, sid)
+        queue = conn.execute(
+            "SELECT platform.sw_queue(%s,%s,NULL,false,0,26)", (ORG_A, QUERY)
+        ).fetchone()[0]
+        assert any(row["id"] == str(lid) for row in queue["items"])
+        assert all(set(row) == {"id", "review_state", "investigation_state", "revision", "run_id", "visible_rank", "data_class"} for row in queue["items"])
+        assert [row["visible_rank"] for row in queue["items"]] == list(range(1, len(queue["items"]) + 1))
+        for state, mine, skip, size in [(None, False, None, 25), (None, False, 0, None),
+                                      (None, False, -1, 25), (None, False, 0, 102),
+                                      (None, None, 0, 25), ("identity_confirmed", False, 0, 25)]:
+            with pytest.raises(psycopg.errors.InvalidParameterValue), conn.transaction():
+                conn.execute("SELECT platform.sw_queue(%s,%s,%s,%s,%s,%s)",
+                             (ORG_A, QUERY, state, mine, skip, size))

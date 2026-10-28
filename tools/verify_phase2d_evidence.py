@@ -60,7 +60,7 @@ with zipfile.ZipFile(io.BytesIO(raw)) as z:
     assert len(results['browser'])==len(expected)==360
     assert all(t['status']=='passed' and set(t)=={'id','target','status'} for t in results['browser'])
     per_browser=Counter(t['target'].split('-')[0] for t in results['browser']);assert per_browser=={'chromium':120,'firefox':120,'webkit':120}
-    migrations=results['migration_and_recovery']['all_migrations'];assert len(migrations)==33
+    migrations=results['migration_and_recovery']['all_migrations'];assert len(migrations)==36
     for name,digest in migrations.items():assert source['database/migrations/'+name+'.sql']==digest
     assert results['migration_and_recovery']['forced_rls']==46
     assert results['migration_and_recovery']['identity_session_rls']=='passed'
@@ -113,6 +113,23 @@ with zipfile.ZipFile(io.BytesIO(raw)) as z:
     assert 0<=capacity['p50_ms']<=capacity['p95_ms']<=capacity['p99_ms']
     assert capacity['database_p95_within_planning_1000ms']==(capacity['p95_ms']<=1000)
     proof['synthetic_workflow_capacity']=capacity
+    api_capacity=results['synthetic_workflow_http_capacity']
+    assert set(api_capacity)=={'scope','status','sessions','queries','candidates_per_query','requests','failed_requests','model_inference','host_logical_cpus','host_memory_bytes','host_architecture','queue','comparison'}
+    assert api_capacity['scope']=='actual_synthetic_tls_bff_api_metadata' and api_capacity['status']=='measured'
+    assert (api_capacity['sessions'],api_capacity['queries'],api_capacity['candidates_per_query'],api_capacity['requests'],api_capacity['failed_requests'])==(20,100,50,200,0)
+    assert api_capacity['model_inference'] is False
+    assert type(api_capacity['host_logical_cpus']) is int and 1<=api_capacity['host_logical_cpus']<=1024
+    assert type(api_capacity['host_memory_bytes']) is int and 0<api_capacity['host_memory_bytes']<=2**50
+    assert api_capacity['host_architecture'] in {'x86_64','arm64','aarch64'}
+    import math
+    for category,target_ms in [('queue',1000),('comparison',1500)]:
+        sample=api_capacity[category]
+        assert set(sample)=={'samples','p50_ms','p95_ms','p99_ms','planning_target_ms','planning_target_met'}
+        assert sample['samples']==100 and sample['planning_target_ms']==target_ms
+        assert all(type(sample[k]) in {int,float} and math.isfinite(sample[k]) and sample[k]>=0 for k in ['p50_ms','p95_ms','p99_ms'])
+        assert sample['p50_ms']<=sample['p95_ms']<=sample['p99_ms']
+        assert type(sample['planning_target_met']) is bool and sample['planning_target_met']==(sample['p95_ms']<=target_ms)
+    proof['synthetic_workflow_http_capacity']=api_capacity
     for name in migrations:
         if name[:4]<='0024':
             old=subprocess.check_output(['git','show','6e793b424c5e3c6eabe9bfc8b819404cf2cfeeed:database/migrations/'+name+'.sql'],cwd=root)

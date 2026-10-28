@@ -1,8 +1,8 @@
 {
   "scope": "Reverse ownership of every new required selector; assertion-level logical scenarios remain in traceability.json. Prior 554 Python and 168 browser executions retain prior feature mappings.",
   "status": "pending_hosted_verification",
-  "selector_definitions": 192,
-  "new_python_executions": 184,
+  "selector_definitions": 200,
+  "new_python_executions": 192,
   "new_browser_executions": 192,
   "entries": [
     {
@@ -1209,6 +1209,73 @@
       "execution_evidence": null
     },
     {
+      "selector": "tests/synthetic_workflow/test_contracts.py::test_api_capacity_publication_denies_private_stale_and_incomplete_evidence",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-16",
+        "SWF-19",
+        "SWF-20"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_boundaries.py::test_queue_projection_is_bounded_and_never_exposes_internal_ranks",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-03",
+        "SWF-06",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[case]",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-02",
+        "SWF-03",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[membership]",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-02",
+        "SWF-03",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_review_gaps.py::test_natural_expiry_ends_authority_within_an_existing_transaction[workflow]",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-02",
+        "SWF-03",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow/test_review_gaps.py::test_independent_task_expiring_during_audit_wait_rolls_back_approval",
+      "lane": "synthetic_workflow",
+      "feature_ids": [
+        "SWF-14",
+        "SWF-15",
+        "SWF-16",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
       "selector": "tests/synthetic_workflow_http/test_live.py::test_actual_bff_mfa_worker_media_and_independent_safeguarding",
       "lane": "synthetic_workflow_http",
       "feature_ids": [
@@ -1895,6 +1962,30 @@
       "feature_ids": [
         "SWF-03",
         "SWF-16",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow_http/test_capacity.py::test_twenty_mfa_sessions_one_hundred_actual_api_queues_and_comparisons",
+      "lane": "synthetic_workflow_http",
+      "feature_ids": [
+        "SWF-03",
+        "SWF-06",
+        "SWF-07",
+        "SWF-19"
+      ],
+      "status": "pending_hosted_verification",
+      "execution_evidence": null
+    },
+    {
+      "selector": "tests/synthetic_workflow_http/test_live.py::test_natural_case_expiry_during_actual_audit_wait_denies_comparison",
+      "lane": "synthetic_workflow_http",
+      "feature_ids": [
+        "SWF-02",
+        "SWF-03",
+        "SWF-07",
         "SWF-19"
       ],
       "status": "pending_hosted_verification",
