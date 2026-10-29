@@ -1,0 +1,165 @@
+{
+  "scope": "official text and metadata only; no binary/model/image acquired or executed",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md",
+      "prior_url": "https://github.com/davisking/dlib-models/blob/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md",
+      "local": "dlib-models-README.md",
+      "sha256": "9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c",
+      "bytes": 15318,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:56.173435+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE",
+      "prior_url": "https://github.com/davisking/dlib-models/blob/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE",
+      "local": "dlib-models-LICENSE.txt",
+      "sha256": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+      "bytes": 6556,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:56.519941+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt",
+      "prior_url": "https://github.com/davisking/dlib/blob/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt",
+      "local": "dlib-code-LICENSE.txt",
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "bytes": 1337,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:56.895572+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/python_examples/face_recognition.py",
+      "prior_url": "https://github.com/davisking/dlib/blob/2e0b3846b4dcd0953951a9c0172503c666975229/python_examples/face_recognition.py",
+      "local": "dlib-face-recognition-example.py.txt",
+      "sha256": "6c3184f08a4ac2a1564209f208cf3340e77e55f5c710a5dc7425edceab3d8688",
+      "bytes": 6163,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:57.247092+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md",
+      "prior_url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md",
+      "local": "synvis-README.md",
+      "sha256": "4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d",
+      "bytes": 8892,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:57.631675+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/metadata_headshot.csv",
+      "prior_url": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/metadata_headshot.csv",
+      "local": "synvis-headshot-links.csv",
+      "sha256": "6ee9b0f0c528ac7e1606aabd5f0e73ccaa24ecb146b51e95d0fc353c600b70b8",
+      "bytes": 25937,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:57.848469+00:00"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/base?limit=1000",
+      "prior_url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/base?limit=1000",
+      "local": "synvis-base-tree.json",
+      "sha256": "84a16545033437b31426df241cee1e698e8813ec4722b93e64cfd10e36b68031",
+      "bytes": 146401,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:58.307235+00:00"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/headshot?limit=1000",
+      "prior_url": "https://huggingface.co/api/datasets/retowyss/Syn-Vis-v0/tree/100262732989e77f38cd831d70a376a93735006a/images/headshot?limit=1000",
+      "local": "synvis-headshot-tree.json",
+      "sha256": "cea692a661e6a9f5a75509bac4f321c6182e4f07b01a6566de6e0a2b26743e55",
+      "bytes": 147519,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:58.679712+00:00"
+    },
+    {
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "prior_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "local": "CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:58.871923+00:00"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "prior_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "local": "CC-BY-SA-4.0.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+      "bytes": 20138,
+      "matches_approved_evidence": true,
+      "observed_at": "2026-10-29T08:21:59.027713+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/davisking/dlib-models/git/trees/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "prior_url": "https://api.github.com/repos/davisking/dlib-models/git/trees/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "local": "dlib-model-metadata.json",
+      "sha256": "f435bc0443303c6d1085e857661249f79797154a3e04f6babca38be4ba92b516",
+      "bytes": 5375,
+      "matches_approved_evidence": false,
+      "observed_at": "2026-10-29T08:21:59.416008+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/setup.py",
+      "local": "dlib-setup.py.txt",
+      "sha256": "72801ef8b95fc562479de701a9bb751355b1ca74c6f9c3484aee23f7bd148fef",
+      "bytes": 11487,
+      "observed_at": "2026-10-29T08:21:59.744954+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/python_examples/cnn_face_detector.py",
+      "local": "dlib-cnn-example.py.txt",
+      "sha256": "9190a50da88acff076e00ace40944de7afe8f919e75cb214c17d3bc6d9710ee5",
+      "bytes": 3236,
+      "observed_at": "2026-10-29T08:22:00.076205+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/tools/python/src/face_recognition.cpp",
+      "local": "dlib-recognition-binding.cpp.txt",
+      "sha256": "6120a96b7d2c1687af77b53de1f796fed36dbf917c04190c70161a808a9ba992",
+      "bytes": 18921,
+      "observed_at": "2026-10-29T08:22:00.438278+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/tools/python/CMakeLists.txt",
+      "local": "dlib-python-CMakeLists.txt",
+      "sha256": "9f0bd0a857158b3a42e6cc1be72090bd71543f1992a759bf2972965fd41143e9",
+      "bytes": 3031,
+      "observed_at": "2026-10-29T08:22:00.784580+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/image_transforms/interpolation.h",
+      "local": "dlib-interpolation.h.txt",
+      "sha256": "0ebda4d09f951ebadc59d2c86fa1095a8850e3a0fd54bf70dff66f1c9e212af7",
+      "bytes": 84228,
+      "observed_at": "2026-10-29T08:22:01.194700+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/davisking/dlib/git/ref/tags/v20.0",
+      "local": "dlib-tag.json",
+      "sha256": "c2b813066180f49032b034d321da6074287423a29a9f194849ffd9408b6aa1a8",
+      "bytes": 331,
+      "observed_at": "2026-10-29T08:36:46.568796+00:00",
+      "representation": "complete API response"
+    },
+    {
+      "url": "https://api.github.com/repos/davisking/dlib/commits/2e0b3846b4dcd0953951a9c0172503c666975229",
+      "local": "dlib-commit.json",
+      "sha256": "c7f622c90d3c99b4d84062d23c746193561f8a832dc6ce1c12fd0ee7e9dfba4e",
+      "bytes": 128,
+      "observed_at": "2026-10-29T08:36:46.569004+00:00",
+      "representation": "compact selected public metadata fields"
+    },
+    {
+      "url": "https://api.github.com/repos/davisking/dlib-models/commits/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+      "local": "dlib-models-commit.json",
+      "sha256": "5492fb98ba9b3123a0dd8dd753ad355985c578db99bda1e54c1bd2e026b30648",
+      "bytes": 127,
+      "observed_at": "2026-10-29T08:36:46.569060+00:00",
+      "representation": "compact selected public metadata fields"
+    }
+  ],
+  "all_prior_text_metadata_match": false,
+  "interpretation": "A byte difference in model tree metadata is full-response versus prior six-file projection, not changed selected artifacts. See revalidation.json; all prior official license/source text and image metadata match byte-for-byte."
+}

@@ -1,0 +1,86 @@
+{
+  "observed_at": "2026-10-29T09:28:56.313127+00:00",
+  "acceptance_scope": "Phase 2D engineering only; owner carries documented performance/security-governance limitations",
+  "pr": {
+    "number": 9,
+    "url": "https://github.com/wmostafagmail/FindOurChild/pull/9",
+    "merged": true,
+    "merged_at": "2026-10-29T08:15:12Z",
+    "head_sha": "cbcd2b9424d267b8268c505e54aa12a27943b240",
+    "merge_commit_sha": "e168e1361af565c80c8d12f6c729f3b9fcd05376",
+    "base": "main"
+  },
+  "main_sha_at_verification": "e168e1361af565c80c8d12f6c729f3b9fcd05376",
+  "merged_tree_equals_reviewed_head": true,
+  "tree": "324c06338b0e683235ad82cc932634573407b676",
+  "required_run": {
+    "id": 40840815727,
+    "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40840815727",
+    "head_sha": "e168e1361af565c80c8d12f6c729f3b9fcd05376",
+    "branch": "main",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "required_check": {
+    "name": "phase1a-required",
+    "id": 123336465460,
+    "app_id": 15368,
+    "head_sha": "e168e1361af565c80c8d12f6c729f3b9fcd05376",
+    "status": "completed",
+    "conclusion": "success",
+    "details_url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40840815727/job/123336465460"
+  },
+  "protection": {
+    "strict": true,
+    "required_checks": [
+      {
+        "context": "phase1a-required",
+        "app_id": 15368
+      }
+    ],
+    "enforce_admins": true,
+    "conversation_resolution": true,
+    "allow_force_pushes": false,
+    "allow_deletions": false,
+    "required_approving_review_count": 0,
+    "require_code_owner_reviews": false,
+    "require_last_push_approval": false,
+    "applied_rulesets": []
+  },
+  "security_governance": {
+    "visibility": "public",
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "disabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "disabled"
+      },
+      "dependabot_security_updates": {
+        "status": "disabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "settings_changed": false,
+    "independent_review_required": false
+  },
+  "artifact": {
+    "id": 12886421860,
+    "sha256": "20758b076467d0e0fb4fe27eea822ad32a6c4e964aeb5f3dfb1431d77ab44466",
+    "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+    "source_files_verified": 225
+  },
+  "limitations_carried_forward": [
+    "Phase 2D planning performance misses remain open",
+    "public exposure assessment is bounded, not a penetration certification",
+    "independent review not enforced and security automation disabled",
+    "P3-MAN-AR, P3-MAN-SR and P3-MAN-HIST remain pending",
+    "no real model or real-child qualification/operational approval"
+  ]
+}

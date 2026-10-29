@@ -1,0 +1,51 @@
+{
+  "observed_date": "2026-10-29",
+  "decision": "publisher_demo_grants_revalidated_conditionally; acquisition_execution_not_authorized",
+  "source_commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+  "weight_repository_commit": "fd81b6308a6a73d4ce08859eb2f4b628a21e27a2",
+  "weight_metadata": [
+    {
+      "path": "dlib_face_recognition_resnet_model_v1.dat.bz2",
+      "expected_git_blob": "6c3a71f376b4a6df36d6db00847253b0461cf5ab",
+      "declared_compressed_bytes": 21428389,
+      "metadata_matches": true,
+      "compressed_sha256": null,
+      "decompressed_sha256": null,
+      "bytes_verified": false
+    },
+    {
+      "path": "mmod_human_face_detector.dat.bz2",
+      "expected_git_blob": "f5093194e8025223bad20165a8520357d1797dae",
+      "declared_compressed_bytes": 694687,
+      "metadata_matches": true,
+      "compressed_sha256": null,
+      "decompressed_sha256": null,
+      "bytes_verified": false
+    },
+    {
+      "path": "shape_predictor_5_face_landmarks.dat.bz2",
+      "expected_git_blob": "3021e2b5f7074adc3cf0ea7590478aaf0b871876",
+      "declared_compressed_bytes": 5706710,
+      "metadata_matches": true,
+      "compressed_sha256": null,
+      "decompressed_sha256": null,
+      "bytes_verified": false
+    }
+  ],
+  "image_repository_commit": "100262732989e77f38cd831d70a376a93735006a",
+  "image_metadata_refs_verified": 48,
+  "image_bytes_verified": false,
+  "image_pixels_reviewed": false,
+  "runtime_compatibility": "not_executed",
+  "prior_proposal_sha256": "15764ebc11994cf469a2b13d43653255b44a32c771194994c21d99c12cda502d",
+  "approved_weight_tree_projection_matches": true,
+  "metadata_snapshot_difference": "Prior model metadata retained a six-file projection; new snapshot is full pinned upstream tree. All six identity records match; license/source and image metadata snapshots match byte-for-byte. No upstream weight/license change found.",
+  "unresolved": [
+    "compressed_and_decompressed_weight_sha256",
+    "actual_image_hashes_and_visual_consistency",
+    "native_build_runtime_compatibility",
+    "transitive_dependency_notices_and_security",
+    "complete_training_subject_rights_and_provenance",
+    "real_child_dataset_authority_and_independent_validation"
+  ]
+}
