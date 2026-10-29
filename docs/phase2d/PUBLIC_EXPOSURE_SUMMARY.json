@@ -1,0 +1,95 @@
+{
+  "assessment_utc": "2026-10-28T19:36:12.922850+00:00",
+  "status": "bounded_read_only_assessment_completed_owner_review_pending",
+  "snapshot_main": "4f1e50729fc18a78d15732e2f65e7cec1e7c6f1b",
+  "snapshot_pr9": "301037cecae0bd4489bedf1ace1a5c5e5941b317",
+  "git": {
+    "advertised_refs": 19,
+    "commits": 53,
+    "trees": 548,
+    "unique_blobs": 989,
+    "blob_bytes": 62905243,
+    "binary_png_blobs_not_semantically_reviewed": 74,
+    "shallow": false
+  },
+  "github": {
+    "releases": 0,
+    "issues": 9,
+    "issue-comments": 0,
+    "review-comments": 0,
+    "commit-comments": 0,
+    "pull-requests": 9,
+    "server_secret_alerts": null,
+    "actions_secret_count": 0,
+    "workflow_runs": 77,
+    "artifacts": 76,
+    "artifact_payloads_checked": 76,
+    "job_log_archives_checked": 76,
+    "historical_attempt_archives": 2,
+    "total_log_archives": 78,
+    "wiki_enabled": false,
+    "discussions_enabled": false,
+    "pages_enabled": false
+  },
+  "findings": {
+    "confirmed_reusable_secret_identified": false,
+    "absence_of_secrets_certified": false,
+    "provider_token_or_private_key_material_signature_hits": 0,
+    "bearer_test_labels_and_example_credential_urls": "Triaged as known negative-fixture inputs, placeholders and upstream FTP documentation example; no live validity probes",
+    "email_identifier_observations_in_git": 169,
+    "unique_email_identifier_fingerprints_in_git": 36,
+    "home_path_observations": 143,
+    "unique_home_path_fragments": 3,
+    "possible_personal_field_literals": 2,
+    "personal_field_triage": [
+      "Synthetic negative event-contract fixture",
+      "GitHub repository full_name metadata, not a person"
+    ],
+    "real_child_records_identified_by_text_path_screening": false,
+    "binary_and_embedded_media_visual_review": "not_executed"
+  },
+  "server_controls": {
+    "visibility": "public",
+    "security_and_analysis": {
+      "secret_scanning": {
+        "status": "disabled"
+      },
+      "secret_scanning_push_protection": {
+        "status": "disabled"
+      },
+      "dependabot_security_updates": {
+        "status": "disabled"
+      },
+      "secret_scanning_non_provider_patterns": {
+        "status": "disabled"
+      },
+      "secret_scanning_validity_checks": {
+        "status": "disabled"
+      }
+    },
+    "secret_alert_api": "HTTP404: Secret scanning is disabled on this repository",
+    "repository_actions_secret_names_count": 0,
+    "settings_changed": false
+  },
+  "method": {
+    "tools": "Python stdlib regex/contextual entropy screening, Git object reads and authenticated gh read-only API requests",
+    "procedure_sha256": {
+      "foc-public-exposure-scan.py": "67a57bdb96db84e8a883841ee05ab535661d24f2e3c23864ab74e35a1ac98b5f",
+      "foc-public-github-surface.py": "b5eb21471085a779b0150dbc52c06e4868ec90f5e0a3d9fa6ed39ca3c76be689",
+      "foc-exposure-secondary.py": "f74bcf41b0d81c461bab92ae367631375662f5e6ca70b0972a9ee028c99c1a8b"
+    },
+    "external_scanning_service": false,
+    "credential_validity_probes": false,
+    "models_or_datasets_downloaded": false,
+    "history_rewritten": false,
+    "values_or_identifier_fingerprints_published": false
+  },
+  "limitations": [
+    "No guarantee against unknown secret formats or false negatives",
+    "No semantic/OCR review of binary PNG or embedded media",
+    "No enumeration of remote unreachable/deleted objects, old forks/clones or external caches",
+    "No active deployment/host probing or production penetration test",
+    "No GitHub server secret-alert inventory because feature is disabled",
+    "Snapshot excludes later remediation commits/runs; their known documentation delta and artifacts are verified separately before handoff"
+  ]
+}

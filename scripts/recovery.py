@@ -74,8 +74,8 @@ def main():
         )
         expected = hashlib.sha256((ROOT / "database/migrations/0001_foundation.sql").read_bytes()).hexdigest()
         if evidence != {
-            "tables": 41,
-            "forced_rls": 41,
+            "tables": 46,
+            "forced_rls": 46,
             "schema": "0001",
             "vector": "0.8.7",
             "migration_sha": expected,
@@ -158,6 +158,12 @@ def main():
         if unsafe:
             raise RuntimeError("Restored private metadata RLS disabled")
         report["reporting_metadata_rls"] = "passed"
+        workflow_rls = query(name, "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname IN ('platform','app') AND c.relkind='r' AND c.relname LIKE 'synthetic_%' AND c.relrowsecurity AND c.relforcerowsecurity")
+        # A restored copy has no synthetic activation: independent database name + epoch gates.
+        workflow_denied = query(name, "SET ROLE foc_api; SELECT count(*) FROM app.synthetic_candidate_leads;").splitlines()[-1]
+        if workflow_rls != '8' or workflow_denied != '0':
+            raise RuntimeError('Restored workflow isolation differs')
+        report['synthetic_workflow_restore'] = {'forced_rls_tables':8,'quarantined_restore_denies_access':True,'activation_epoch_reissue_required':True,'operational_erasure':'pending'}
 
         report["hardening_sha256"] = hardening
         output = ROOT / "artifacts/raw"

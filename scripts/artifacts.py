@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 import re
 import shutil
 import struct
@@ -61,6 +62,37 @@ def artifact_path(root, relative):
 def safe_id(value):
     # IDs and filenames must come from the reviewed manifest, not exception or DOM contents.
     return hashlib.sha256(value.encode()).hexdigest()[:24]
+
+
+def http_capacity_record(value, digest):
+    """Closed numeric load evidence: never accept report content or identifiers."""
+    fixed = {"source_digest", "scope", "sessions", "queries", "candidates_per_query", "requests",
+             "failed_requests", "model_inference", "host_logical_cpus", "host_memory_bytes",
+             "host_architecture", "status", "queue", "comparison"}
+    if set(value) != fixed or value["source_digest"] != digest:
+        raise ValueError("Unexpected or stale HTTP capacity evidence")
+    if (value["scope"], value["status"], value["model_inference"]) != (
+        "actual_synthetic_tls_bff_api_metadata", "measured", False
+    ) or value["model_inference"] is not False or any(type(value[k]) is not int or value[k] != n for k, n in [
+        ("sessions", 20), ("queries", 100), ("candidates_per_query", 50), ("requests", 200), ("failed_requests", 0)
+    ]):
+        raise ValueError("Incomplete HTTP capacity execution")
+    if (type(value["host_logical_cpus"]) is not int or not 1 <= value["host_logical_cpus"] <= 1024
+        or type(value["host_memory_bytes"]) is not int or not 0 < value["host_memory_bytes"] <= 2**50
+        or value["host_architecture"] not in {"arm64", "aarch64", "x86_64"}):
+        raise ValueError("Invalid declared hardware")
+    for name, target in [("queue", 1000), ("comparison", 1500)]:
+        sample = value[name]
+        if (set(sample) != {"samples", "p50_ms", "p95_ms", "p99_ms", "planning_target_ms", "planning_target_met"}
+            or type(sample["samples"]) is not int or sample["samples"] != 100
+            or type(sample["planning_target_ms"]) is not int or sample["planning_target_ms"] != target
+            or any(type(sample[k]) not in {int, float} or not math.isfinite(sample[k]) or sample[k] < 0
+                   for k in ["p50_ms", "p95_ms", "p99_ms"])
+            or not sample["p50_ms"] <= sample["p95_ms"] <= sample["p99_ms"]
+            or type(sample["planning_target_met"]) is not bool
+            or sample["planning_target_met"] != (sample["p95_ms"] <= target)):
+            raise ValueError("Invalid HTTP latency evidence")
+    return {k: v for k, v in value.items() if k != "source_digest"}
 
 
 def export(root=ROOT):
@@ -177,6 +209,35 @@ def export(root=ROOT):
         summaries["qualification_isolation"] = isolation
     except (ValueError, KeyError, OSError, TypeError):
         failures.append("missing or nonpassing qualification preparation evidence")
+    for lane in ["synthetic_workflow", "synthetic_workflow_http"]:
+        try:
+            required = json.loads((root / "docs/phase2d/required-tests.json").read_text())[lane]
+            report = json.loads((root / "artifacts/raw" / (lane + "-results.json")).read_text())
+            summaries[lane] = python_gate(report, {"python": required}, digest)
+        except (ValueError, KeyError, OSError, TypeError):
+            failures.append("missing or nonpassing " + lane + " evidence")
+    try:
+        capacity = json.loads((root / "artifacts/raw/workflow-capacity.json").read_text())
+        if (
+            set(capacity) != {"source_digest","scope","sessions","queries","candidates_per_query","model_inference","p50_ms","p95_ms","p99_ms","database_p95_within_planning_1000ms","status"}
+            or capacity["source_digest"] != digest
+            or capacity["scope"] != "synthetic_database_retrieval_only"
+            or (capacity["sessions"],capacity["queries"],capacity["candidates_per_query"]) != (20,100,50)
+            or capacity["model_inference"] is not False or capacity["status"] != "measured"
+            or any(type(capacity[k]) not in {int,float} or not math.isfinite(capacity[k]) or capacity[k]<0 for k in ["p50_ms","p95_ms","p99_ms"])
+            or not capacity["p50_ms"] <= capacity["p95_ms"] <= capacity["p99_ms"]
+            or capacity["database_p95_within_planning_1000ms"] != (capacity["p95_ms"]<=1000)
+        ):
+            raise ValueError("Unsafe or stale capacity evidence")
+        summaries["synthetic_workflow_capacity"] = {k:v for k,v in capacity.items() if k!="source_digest"}
+    except (ValueError,KeyError,OSError,TypeError):
+        failures.append("missing or unsafe workflow capacity evidence")
+    try:
+        summaries["synthetic_workflow_http_capacity"] = http_capacity_record(
+            json.loads((root / "artifacts/raw/workflow-http-capacity.json").read_text()), digest
+        )
+    except (ValueError, KeyError, OSError, TypeError):
+        failures.append("missing or unsafe actual API capacity evidence")
     try:
         from scripts.research_evidence import aggregate
 
@@ -206,7 +267,7 @@ def export(root=ROOT):
         if (
             recovery["status"] != "passed"
             or recovery["source_digest"] != digest
-            or recovery["database"]["forced_rls"] != 41
+            or recovery["database"]["forced_rls"] != 46
         ):
             raise ValueError("Recovery incomplete")
         if recovery.get("research_vector_restore") != {"status": "passed", "vectors_verified": 1, "forced_research_tables": 4, "raw_vector_exported": False}:
@@ -214,8 +275,8 @@ def export(root=ROOT):
         summaries["migration_and_recovery"] = {
             "status": "passed",
             "scope": "synthetic foundation backup/restore only",
-            "tables": 41,
-            "forced_rls": 41,
+            "tables": 46,
+            "forced_rls": 46,
             "schema_version": "0001",
             "vector_version": "0.8.7",
             "migration_sha256": recovery["database"]["migration_sha"],
@@ -224,6 +285,7 @@ def export(root=ROOT):
             "identity_session_rls": recovery["identity_session_rls"],
             "reporting_metadata_rls": recovery["reporting_metadata_rls"],
             "research_vector_restore": recovery["research_vector_restore"],
+            "synthetic_workflow_restore": recovery["synthetic_workflow_restore"],
             "operational_erasure": "pending",
         }
     except (ValueError, KeyError, OSError, TypeError):
@@ -317,7 +379,7 @@ def export(root=ROOT):
         "source_digest": digest,
     }
     # Allowlisted log replaces arbitrary free-text process logs.
-    (output / "validation.log").write_text("Phase 2B preparation required gate: " + summaries["gate"]["status"] + "\n")
+    (output / "validation.log").write_text("Phase 2D synthetic investigation required gate: " + summaries["gate"]["status"] + "\n")
     (output / "results.json").write_text(json.dumps(summaries, indent=2) + "\n")
     (output / "source-manifest.json").write_text(json.dumps(inventory(), indent=2) + "\n")
     (output / "checksums.json").write_text(

@@ -6,6 +6,7 @@ from uuid import uuid4
 
 import psycopg
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
@@ -28,9 +29,26 @@ def create_app(settings: Settings | None = None):
     # Prefer concrete routes over generic action paths.
     reporting_router.routes.sort(key=lambda route: route.path.count("{"))
     app.include_router(reporting_router)
+    from .synthetic_workflow import router as workflow_router
+
+    app.include_router(workflow_router)
 
     @app.exception_handler(HTTPException)
     async def identity_error(request: Request, exc: HTTPException):
+        if exc.status_code in {401, 403, 404} and getattr(request.state, "workflow_actor", None):
+            from .synthetic_workflow import audit_denial
+
+            try:
+                await run_in_threadpool(audit_denial, request)
+            except (psycopg.Error, HTTPException):
+                return JSONResponse(
+                    {
+                        "code": "SERVICE_UNAVAILABLE",
+                        "message_key": "errors.service_unavailable",
+                        "request_id": request.state.request_id,
+                    },
+                    status_code=503,
+                )
         return JSONResponse(
             {
                 "code": str(exc.detail),
@@ -54,6 +72,19 @@ def create_app(settings: Settings | None = None):
 
     @app.exception_handler(psycopg.errors.InsufficientPrivilege)
     async def denied_database(request: Request, exc):
+        from .synthetic_workflow import audit_denial
+
+        try:
+            await run_in_threadpool(audit_denial, request)
+        except (psycopg.Error, HTTPException):
+            return JSONResponse(
+                {
+                    "code": "SERVICE_UNAVAILABLE",
+                    "message_key": "errors.service_unavailable",
+                    "request_id": request.state.request_id,
+                },
+                status_code=503,
+            )
         return JSONResponse(
             {"code": "NOT_FOUND", "message_key": "errors.not_found", "request_id": request.state.request_id},
             status_code=404,
@@ -72,8 +103,8 @@ def create_app(settings: Settings | None = None):
 
     @app.exception_handler(psycopg.Error)
     async def database_error(request: Request, exc: psycopg.Error):
-        if exc.sqlstate in {"P0412", "P0409", "P0422"}:
-            status = {"P0412": 412, "P0409": 409, "P0422": 422}[exc.sqlstate]
+        if exc.sqlstate in {"P0412", "P0409", "P0422", "P0429"}:
+            status = {"P0412": 412, "P0409": 409, "P0422": 422, "P0429": 429}[exc.sqlstate]
             return JSONResponse(
                 {
                     "code": "REQUEST_CONFLICT",

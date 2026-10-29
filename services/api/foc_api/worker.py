@@ -22,7 +22,10 @@ def connection():
         or parsed.username != "foc_worker"
     ):
         raise RuntimeError("Synthetic worker database required")
-    return psycopg.connect(url, connect_timeout=3)
+    conn = psycopg.connect(url, connect_timeout=3)
+    # Independent server-side activation epoch is never accepted from a browser header.
+    conn.execute("SELECT set_config('foc.workflow_epoch',%s,true)", (os.environ.get("FOC_WORKFLOW_EPOCH", ""),))
+    return conn
 
 
 def once():
@@ -113,7 +116,7 @@ def maintain():
                 "task_id": event["event_id"],
                 "recipient_ref": recipient,
                 "template": "neutral-task-v1",
-                "task_link": "/en/reporting",
+                "task_link": "/en/investigation" if event.get("synthetic_workflow") else "/en/reporting",
             },
             sort_keys=True,
         ).encode()
@@ -139,6 +142,10 @@ if __name__ == "__main__":
     while True:
         try:
             worked = once()
+            from .synthetic_workflow import worker_once
+
+            with connection() as workflow_connection:
+                worked = worker_once(workflow_connection) or worked
             maintain()
         except (*media.FAILURES, psycopg.Error):
             worked = False

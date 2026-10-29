@@ -1,0 +1,16 @@
+{
+  "old_phase2d_head": "301037cecae0bd4489bedf1ace1a5c5e5941b317",
+  "main_head": "4f1e50729fc18a78d15732e2f65e7cec1e7c6f1b",
+  "forward_merge_commit": "d758cc941143e67f70411521a740edec6c65e0da",
+  "tree": "a11bb7872bf470865c38a61a6dc53c83ce415bc0",
+  "content_changed": false,
+  "history_rewritten": false,
+  "roadmap_pr": 8,
+  "roadmap_merged_at": "2026-10-28T19:14:38Z",
+  "roadmap_merged_by_owner_account": true,
+  "roadmap_approved_head": "6e793b424c5e3c6eabe9bfc8b819404cf2cfeeed",
+  "roadmap_tree_equals_main": true,
+  "formal_pr8_reviews": 0,
+  "independent_review_inferred": false,
+  "phase2d_accepted": false
+}

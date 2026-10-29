@@ -1,5 +1,7 @@
 # Find Our Child — test matrix
 
+> Phase 2D: [traceability](phase2d/TEST_TRACEABILITY.md), [validation report](phase2d/VALIDATION_REPORT.md), [required inventory](phase2d/required-tests.json). Verified 747 Python and 360 official TesterArmy executions. The preserved 190/1216 baseline gains 20 groups / 80 scenarios with passing listed assertions. Total registry: **210 features / 1296 cases; 652 passed, 644 future pending**. Owner phase acceptance and manual review remain separate.
+
 > Phase 2A extension: [research traceability](phase2a/TEST_TRACEABILITY.md). All 178 prior features and 972 cases are preserved exactly; 7 research groups append 124 logical cases: 118 passed after independent hosted verification, six real qualifications pending. Current registry: **185 features / 1096 cases; 464 passed, 632 pending**. Real model clearance and recognition qualification remain pending.
 
 > Phase 1C: [current traceability and exact execution inventory](phase1c/TEST_TRACEABILITY.md). Phase 1B is accepted; all 119 new Phase 1C logical cases passed after independent current-source hosted artifact verification. Current registry: **178 features / 972 cases; 346 passed, 626 future cases pending**. Earlier counts below are historical snapshots. The immutable Phase 0 151/630 baseline is preserved.
@@ -3955,3 +3957,5 @@ Expected: Tenant/principal/operation/key scope is unique, hashes have fixed leng
 
 Per-case scenarios, commands, expected outcomes, phase applicability and evidence selectors are recorded in the machine-readable matrix above.
 
+
+Phase 2D final review adds explicit exact selectors and records broader unexecuted variants in `phase2d/traceability.json` (`remaining_validation`). A passing executable inventory is not a claim that every clause of every broad scenario has been exercised.

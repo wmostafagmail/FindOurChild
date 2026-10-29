@@ -1,0 +1,176 @@
+{
+  "status": "observed_budget_misses_open",
+  "interpretation": "Per-run percentiles; no pooled percentile, causal bottleneck or biometric accuracy claim",
+  "planning_budgets_ms": {
+    "queue_api_p95": 1000,
+    "comparison_api_p95": 1500,
+    "direct_database_p95": 1000
+  },
+  "runs": [
+    {
+      "run": 40677924049,
+      "event": "pull_request",
+      "head": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+      "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+      "hardware": {
+        "host_logical_cpus": 4,
+        "host_memory_bytes": 16760344576,
+        "host_architecture": "x86_64"
+      },
+      "queue": {
+        "samples": 100,
+        "p50_ms": 726.6697729992302,
+        "p95_ms": 1064.484599000025,
+        "p99_ms": 1163.6670279995087,
+        "planning_target_ms": 1000,
+        "planning_target_met": false
+      },
+      "comparison": {
+        "samples": 100,
+        "p50_ms": 606.81147699961,
+        "p95_ms": 760.55353799984,
+        "p99_ms": 800.9729999994306,
+        "planning_target_ms": 1500,
+        "planning_target_met": true
+      },
+      "database": {
+        "scope": "synthetic_database_retrieval_only",
+        "sessions": 20,
+        "queries": 100,
+        "candidates_per_query": 50,
+        "model_inference": false,
+        "p50_ms": 1017.5304030000234,
+        "p95_ms": 1198.3846389999826,
+        "p99_ms": 1261.1347019999926,
+        "database_p95_within_planning_1000ms": false,
+        "status": "measured"
+      },
+      "requests": 200,
+      "failed_requests": 0
+    },
+    {
+      "run": 40677916769,
+      "event": "push",
+      "head": "a04b108abf077c2dac12f270b570f2c4b6e4204a",
+      "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+      "hardware": {
+        "host_logical_cpus": 4,
+        "host_memory_bytes": 16765378560,
+        "host_architecture": "x86_64"
+      },
+      "queue": {
+        "samples": 100,
+        "p50_ms": 567.6853109998774,
+        "p95_ms": 799.7226679999585,
+        "p99_ms": 926.5105139998013,
+        "planning_target_ms": 1000,
+        "planning_target_met": true
+      },
+      "comparison": {
+        "samples": 100,
+        "p50_ms": 481.21843799981434,
+        "p95_ms": 536.5067979996638,
+        "p99_ms": 559.727230000135,
+        "planning_target_ms": 1500,
+        "planning_target_met": true
+      },
+      "database": {
+        "scope": "synthetic_database_retrieval_only",
+        "sessions": 20,
+        "queries": 100,
+        "candidates_per_query": 50,
+        "model_inference": false,
+        "p50_ms": 804.5674079999685,
+        "p95_ms": 936.8434509999872,
+        "p99_ms": 967.4834939999926,
+        "database_p95_within_planning_1000ms": true,
+        "status": "measured"
+      },
+      "requests": 200,
+      "failed_requests": 0
+    },
+    {
+      "run": 40738595411,
+      "event": "pull_request",
+      "head": "301037cecae0bd4489bedf1ace1a5c5e5941b317",
+      "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+      "hardware": {
+        "host_logical_cpus": 4,
+        "host_memory_bytes": 16760344576,
+        "host_architecture": "x86_64"
+      },
+      "queue": {
+        "samples": 100,
+        "p50_ms": 520.16372900016,
+        "p95_ms": 759.1898159998891,
+        "p99_ms": 833.6486020002667,
+        "planning_target_ms": 1000,
+        "planning_target_met": true
+      },
+      "comparison": {
+        "samples": 100,
+        "p50_ms": 436.805142999674,
+        "p95_ms": 510.11418500002037,
+        "p99_ms": 542.557319000025,
+        "planning_target_ms": 1500,
+        "planning_target_met": true
+      },
+      "database": {
+        "scope": "synthetic_database_retrieval_only",
+        "sessions": 20,
+        "queries": 100,
+        "candidates_per_query": 50,
+        "model_inference": false,
+        "p50_ms": 703.8847150000151,
+        "p95_ms": 906.9775620000087,
+        "p99_ms": 937.9017509999699,
+        "database_p95_within_planning_1000ms": true,
+        "status": "measured"
+      },
+      "requests": 200,
+      "failed_requests": 0
+    },
+    {
+      "run": 40738586398,
+      "event": "push",
+      "head": "301037cecae0bd4489bedf1ace1a5c5e5941b317",
+      "source_digest": "b1c1bd063d67d7fc906394cbc2c6ddade57207b4121dc002d530d148ec7e2747",
+      "hardware": {
+        "host_logical_cpus": 4,
+        "host_memory_bytes": 16760344576,
+        "host_architecture": "x86_64"
+      },
+      "queue": {
+        "samples": 100,
+        "p50_ms": 708.140122000259,
+        "p95_ms": 1092.7532420000716,
+        "p99_ms": 1346.1440109995237,
+        "planning_target_ms": 1000,
+        "planning_target_met": false
+      },
+      "comparison": {
+        "samples": 100,
+        "p50_ms": 623.4107469999799,
+        "p95_ms": 753.0058660004215,
+        "p99_ms": 829.5129429998269,
+        "planning_target_ms": 1500,
+        "planning_target_met": true
+      },
+      "database": {
+        "scope": "synthetic_database_retrieval_only",
+        "sessions": 20,
+        "queries": 100,
+        "candidates_per_query": 50,
+        "model_inference": false,
+        "p50_ms": 989.8963210000034,
+        "p95_ms": 1192.6345090000154,
+        "p99_ms": 1221.8646079999758,
+        "database_p95_within_planning_1000ms": false,
+        "status": "measured"
+      },
+      "requests": 200,
+      "failed_requests": 0
+    }
+  ],
+  "updated_reconciliation_runs": "Recorded in PR9 final CI evidence after execution; no pending run counted passed"
+}
