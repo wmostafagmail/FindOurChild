@@ -48,6 +48,7 @@ def main():
     assert platform.machine() == "x86_64"
     assert native.dlib_version == "20.0.0"
     assert native.interface_version == "foc-dlib-source-probe-v1"
+    assert native.cuda_enabled is False and native.avx_enabled is False
     assert native.model_execution_api_available is False
     assert not hasattr(native, "get_frontal_face_detector")
     assert not hasattr(native, "load_image")
@@ -93,7 +94,8 @@ def main():
     report = {
         "scope": "data_free_source_only_preflight", "python": platform.python_version(),
         "soabi": sysconfig.get_config_var("SOABI"), "gil_disabled": bool(sysconfig.get_config_var("Py_GIL_DISABLED")),
-        "architecture": platform.machine(), "dlib": native.dlib_version, "cuda": False, "avx": False,
+        "architecture": platform.machine(), "dlib": native.dlib_version,
+        "cuda": native.cuda_enabled, "avx": native.avx_enabled,
         "native_interface_version": native.interface_version,
         "model_execution_api_available": False, "A1b_accepted": False,
         "bundled_pretrained_components": [], "native_negative_checks": negative_checks,

@@ -7,7 +7,6 @@
 #include <dlib/dnn.h>
 #include <dlib/image_processing/shape_predictor.h>
 #include <dlib/image_transforms/interpolation.h>
-#include <dlib/revision.h>
 #include <array>
 #include <cstdint>
 #include <string>
@@ -80,8 +79,17 @@ RGB aligned_chip(const RGB& rgb, const Points& coordinates, bool batch) {
 
 PYBIND11_MODULE(_foc_dlib_native, module) {
     module.doc() = "Data-free source probe only; no model loading/inference API";
-    module.attr("dlib_version") = std::to_string(DLIB_MAJOR_VERSION)+"."+
-        std::to_string(DLIB_MINOR_VERSION)+"."+std::to_string(DLIB_PATCH_VERSION);
+    module.attr("dlib_version") = FOC_DLIB_VERSION;
+#ifdef DLIB_USE_CUDA
+    module.attr("cuda_enabled") = true;
+#else
+    module.attr("cuda_enabled") = false;
+#endif
+#ifdef __AVX__
+    module.attr("avx_enabled") = true;
+#else
+    module.attr("avx_enabled") = false;
+#endif
     module.attr("interface_version") = "foc-dlib-source-probe-v1";
     module.attr("model_execution_api_available") = false;
     module.attr("compiled_cnn_type_bytes") = sizeof(cnn_type);
