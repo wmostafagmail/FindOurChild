@@ -20,7 +20,8 @@ TREE = "f7b2ad020a481144c4ccb3c47d24d654bbad2732"
 LOCK = ROOT / "config/phase2e/source-projection.json"
 MAX_FILE = 2_000_000
 MAX_TOTAL = 30_000_000
-ROOT_FILES = {"LICENSE.txt", "README.md", "setup.py", "MANIFEST.in", "pyproject.toml"}
+ROOT_FILES = {"LICENSE.txt", "README.md"}
+FORBIDDEN_EMBEDDED_MODELS = {"frontal_face_detector.h", "frontal_face_detector_abstract.h"}
 SUFFIXES = {".h", ".hpp", ".cpp", ".c", ".cmake", ".txt", ".in", ".py", ".cu", ".rst", ".toml"}
 EXTENSIONLESS = {
     "cassert", "cstring", "fstream", "iomanip", "iosfwd", "iostream", "istream",
@@ -45,7 +46,9 @@ def allowed_path(value):
         return False
     if value in ROOT_FILES:
         return True
-    if not value.startswith(("dlib/", "tools/python/")):
+    if not value.startswith("dlib/") or p.name in FORBIDDEN_EMBEDDED_MODELS:
+        return False
+    if value == "dlib/python.h" or value.startswith("dlib/python/"):
         return False
     if any(x in p.parts for x in ("test", "tests", "examples", "docs", "java", "matlab")):
         return False
@@ -58,7 +61,7 @@ def validate_lock(lock):
     if set(lock) != {"version", "commit", "tree", "scope", "entries"}:
         raise ProjectionError("Unknown projection fields")
     if (lock["version"], lock["commit"], lock["tree"], lock["scope"]) != (
-        1, COMMIT, TREE, "data_free_cpu_build_only"
+        2, COMMIT, TREE, "minimal_core_no_pretrained_payloads"
     ):
         raise ProjectionError("Unapproved source identity")
     rows = lock["entries"]
@@ -85,6 +88,8 @@ def validate_lock(lock):
 def verify_blob(data, row):
     if len(data) != row["bytes"] or b"\0" in data:
         raise ProjectionError("Not exact text source")
+    if any(marker in data for marker in [b"get_serialized_frontal_faces", b"base64 encoded data from the file 'object_detector.dat'"]):
+        raise ProjectionError("Unexpected embedded pretrained payload; no build permitted")
     actual = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
     if actual != row["git_blob"]:
         raise ProjectionError("Source Git blob mismatch")
@@ -124,7 +129,7 @@ def acquire(destination):
         # Preserve partial evidence; no retry to another ref or provider, no build receipt.
         raise ProjectionError("Projection acquisition failed; partial files retained privately") from None
     receipt = {
-        "version": 1, "scope": "data_free_cpu_build_only", "commit": COMMIT, "tree": TREE,
+        "version": 2, "scope": "minimal_core_no_pretrained_payloads", "commit": COMMIT, "tree": TREE,
         "lock_sha256": hashlib.sha256(lock_bytes).hexdigest(), "entries": entries,
         "model_files_acquired": 0, "dataset_images_acquired": 0,
     }

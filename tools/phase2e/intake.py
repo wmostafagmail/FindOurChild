@@ -92,6 +92,8 @@ def approved_preflight(result_bytes, review):
         raise IntakeError("Unqualified Python/native ABI")
     if not native.get("runtime_dependency_inventory", {}).get("loaded_libraries"):
         raise IntakeError("Actual native dependency closure missing")
+    if native.get("model_execution_api_available") is not True:
+        raise IntakeError("Source prototype is not a complete approved model execution interface")
     if (native["python"], native["dlib"], native["architecture"], native["model_files_loaded"],
         native["images_processed"], native["inference_executed"]) != ("3.13.13", "20.0.0", "x86_64", 0, 0, False):
         raise IntakeError("Wrong source-only compatibility result")

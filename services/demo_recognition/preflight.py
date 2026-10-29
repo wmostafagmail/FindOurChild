@@ -13,7 +13,7 @@ import sysconfig
 import time
 from pathlib import Path
 
-import dlib
+import _foc_dlib_native as native
 import numpy as np
 
 
@@ -46,11 +46,16 @@ def main():
     started = time.monotonic()
     assert sys.version_info[:3] == (3, 13, 13)
     assert platform.machine() == "x86_64"
-    assert dlib.__version__ == "20.0.0"
-    assert not dlib.DLIB_USE_CUDA and not dlib.USE_AVX_INSTRUCTIONS
-    for name in ["cnn_face_detection_model_v1", "shape_predictor", "face_recognition_model_v1",
-                 "get_face_chip", "get_face_chip_details", "extract_image_chip", "full_object_detection"]:
-        assert callable(getattr(dlib, name))
+    assert native.dlib_version == "20.0.0"
+    assert native.interface_version == "foc-dlib-source-probe-v1"
+    assert native.model_execution_api_available is False
+    assert not hasattr(native, "get_frontal_face_detector")
+    assert not hasattr(native, "load_image")
+    assert not hasattr(native, "deserialize")
+    assert native.compiled_cnn_type_bytes > 0 and native.compiled_encoder_type_bytes > 0
+    assert native.compiled_predictor_type_bytes > 0
+    for name in ["align_chip", "align_chip_batch"]:
+        assert callable(getattr(native, name))
     assert os.getuid() == 10001
     status = Path("/proc/self/status").read_text()
     assert "CapEff:\t0000000000000000" in status and "NoNewPrivs:\t1" in status
@@ -67,21 +72,31 @@ def main():
     # Purely generated colored pixels and fictional coordinates; no photo bytes.
     rows, cols = np.indices((256, 256), dtype=np.uint16)
     image = np.stack((rows % 256, cols % 256, (rows + cols) % 256), axis=2).astype(np.uint8)
-    landmarks = dlib.points([dlib.point(174, 100), dlib.point(145, 100), dlib.point(81, 100),
-                            dlib.point(110, 100), dlib.point(128, 145)])
-    shape = dlib.full_object_detection(dlib.rectangle(48, 48, 207, 207), landmarks)
-    chip = dlib.get_face_chip(image, shape, size=150, padding=0.25)
-    details = dlib.get_face_chip_details(shape, size=150, padding=0.25)
-    explicit = dlib.extract_image_chip(image, details)
+    points = [[174, 100], [145, 100], [81, 100], [110, 100], [128, 145]]
+    chip = native.align_chip(image, points)
+    explicit = native.align_chip_batch(image, points)
     assert chip.shape == (150, 150, 3) and chip.dtype == np.uint8
-    assert np.array_equal(chip, explicit) and np.array_equal(chip, dlib.get_face_chip(image, shape))
+    assert np.array_equal(chip, explicit) and np.array_equal(chip, native.align_chip(image, points))
     assert np.std(chip) > 0 and not np.array_equal(chip[:, :, 0], chip[:, :, 1])
-    assert dlib.length(dlib.dpoint(3.0, 4.0)) == 5.0
+    negative_checks = 0
+    for bad_image, bad_points in [(image.astype(np.float32), points), (image[::-1], points),
+                                 (image, points[:4]), (image, points + points),
+                                 (image, [[-1, 100], *points[1:]])]:
+        try:
+            native.align_chip(bad_image, bad_points)
+        except (TypeError, ValueError):
+            negative_checks += 1
+        else:
+            raise AssertionError("Invalid source-probe input accepted")
+    assert negative_checks == 5
     assert not list(Path("/opt").rglob("*.dat")) and not list(Path("/opt").rglob("*.bz2"))
     report = {
         "scope": "data_free_source_only_preflight", "python": platform.python_version(),
         "soabi": sysconfig.get_config_var("SOABI"), "gil_disabled": bool(sysconfig.get_config_var("Py_GIL_DISABLED")),
-        "architecture": platform.machine(), "dlib": dlib.__version__, "cuda": False, "avx": False,
+        "architecture": platform.machine(), "dlib": native.dlib_version, "cuda": False, "avx": False,
+        "native_interface_version": native.interface_version,
+        "model_execution_api_available": False, "A1b_accepted": False,
+        "bundled_pretrained_components": [], "native_negative_checks": negative_checks,
         "native_transform_executed": True, "explicit_chip_parity": True,
         "chip_output_sha256": hashlib.sha256(chip.tobytes()).hexdigest(),
         "model_files_loaded": 0, "images_processed": 0, "inference_executed": False,

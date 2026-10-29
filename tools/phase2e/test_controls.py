@@ -23,6 +23,8 @@ def sources():
 
 
 def main():
+    if not __debug__:
+        raise SystemExit("Required-result assertions cannot be disabled")
     manifest = json.loads((ROOT / "docs/phase2e/e0-required-tests.json").read_text())
     inventory = sources()
     result = Results()

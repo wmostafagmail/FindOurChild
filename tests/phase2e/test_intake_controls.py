@@ -23,6 +23,7 @@ def synthetic_review():
               "explicit_chip_parity": True, "nonroot": True, "read_only": True,
               "capabilities_dropped": True, "internet_probe_denied": True}
     native.update({"cuda": False, "avx": False, "soabi": "cpython-313-x86_64-linux-gnu", "gil_disabled": False,
+                   "model_execution_api_available": True,
                    "runtime_dependency_inventory": {"loaded_libraries": {"fictional-lib.so": {"sha256": "0" * 64}}}})
     raw = json.dumps({"scope": "data_free_source_only_preflight", "host_architecture": "x86_64",
                       "native": native, "resource_limits": {"cpus": 2, "memory_bytes": 1073741824,
@@ -65,7 +66,7 @@ def test_pre_acquisition_review_cannot_be_omitted_or_rebound(change):
 
 
 @pytest.mark.parametrize("change", ["arm64", "no_transform", "privileged", "online", "image_processed",
-                                     "gpu", "wrong_abi", "no_closure", "no_limits"])
+                                     "gpu", "wrong_abi", "no_closure", "no_limits", "prototype_no_model_api"])
 def test_incomplete_or_wrong_native_target_cannot_authorize_intake(change):
     raw, review = synthetic_review()
     value = json.loads(raw)
@@ -85,8 +86,10 @@ def test_incomplete_or_wrong_native_target_cannot_authorize_intake(change):
         value["native"]["soabi"] = "cpython-313t"
     elif change == "no_closure":
         value["native"]["runtime_dependency_inventory"] = {}
-    else:
+    elif change == "no_limits":
         value.pop("resource_limits")
+    else:
+        value["native"]["model_execution_api_available"] = False
     altered = json.dumps(value).encode()
     review["preflight_result_sha256"] = hashlib.sha256(altered).hexdigest()
     with pytest.raises(IntakeError):
@@ -121,6 +124,14 @@ def test_looping_redirect_denied_before_network():
 
 def test_exact_metadata_only_image_transport_policy():
     assert image_transport_policy() == {"us.aws.cdn.hf.co"}
+
+
+def test_current_policy_blocks_before_any_review_read_or_network(tmp_path):
+    from tools.phase2e.intake import acquire
+    with pytest.raises(IntakeError, match="Acquisition blocked"):
+        acquire(tmp_path / "unused-quarantine", tmp_path / "unused-keys",
+                tmp_path / "nonexistent-result", tmp_path / "nonexistent-review")
+    assert not (tmp_path / "unused-quarantine").exists() and not (tmp_path / "unused-keys").exists()
 
 
 @pytest.mark.parametrize("change", ["host", "missing_reference", "changed_hash"])

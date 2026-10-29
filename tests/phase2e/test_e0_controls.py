@@ -113,7 +113,7 @@ def test_source_projection_blocks_data_and_path_injection(path):
     assert not allowed_path(path)
 
 
-@pytest.mark.parametrize("path", ["setup.py", "dlib/matrix.h", "tools/python/src/face_recognition.cpp",
+@pytest.mark.parametrize("path", ["LICENSE.txt", "dlib/matrix.h", "dlib/image_processing/shape_predictor.h",
                                    "dlib/external/pybind11/LICENSE"])
 def test_source_projection_accepts_reviewed_code_and_notices(path):
     assert allowed_path(path)
@@ -122,8 +122,8 @@ def test_source_projection_accepts_reviewed_code_and_notices(path):
 def test_exact_source_inventory_has_no_model_image_or_unreviewed_dependency():
     lock = json.loads(LOCK.read_text())
     rows = validate_lock(lock)
-    assert len(rows) == 1187
-    assert sum(row["bytes"] for row in rows) == 15059168
+    assert len(rows) == 1141
+    assert sum(row["bytes"] for row in rows) == 14274490
     assert all(allowed_path(row["path"]) for row in rows)
 
 
@@ -162,6 +162,20 @@ def test_exact_text_git_blob_and_sha256_verified():
 def test_source_bytes_not_trusted_from_extension(data):
     with pytest.raises(ProjectionError):
         verify_blob(data, {"bytes": len(data), "git_blob": "1" * 40})
+
+
+@pytest.mark.parametrize("path", ["dlib/image_processing/frontal_face_detector.h",
+                                   "dlib/image_processing/frontal_face_detector_abstract.h",
+                                   "tools/python/src/object_detection.cpp", "setup.py"])
+def test_embedded_model_and_broad_binding_paths_are_excluded(path):
+    assert not allowed_path(path)
+
+
+def test_text_extension_cannot_hide_a_known_pretrained_payload():
+    data = b"// synthetic sentinel get_serialized_frontal_faces\n"
+    row = {"bytes": len(data), "git_blob": hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()}
+    with pytest.raises(ProjectionError, match="embedded pretrained"):
+        verify_blob(data, row)
 
 
 def test_artifact_hash_algorithms_are_distinct_and_both_checked():

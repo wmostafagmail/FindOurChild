@@ -75,7 +75,7 @@ def main():
         receipt = json.loads(one("/sanitized/source-receipt.json"))
         lock = json.loads(blob("config/phase2e/source-projection.json"))
         assert receipt["lock_sha256"] == hashlib.sha256(blob("config/phase2e/source-projection.json")).hexdigest()
-        assert len(receipt["entries"]) == len(lock["entries"]) == 1187
+        assert len(receipt["entries"]) == len(lock["entries"])
         assert receipt["model_files_acquired"] == receipt["dataset_images_acquired"] == 0
         for actual, expected in zip(receipt["entries"], lock["entries"], strict=True):
             assert {k: actual[k] for k in expected} == expected and re.fullmatch(r"[a-f0-9]{64}", actual["sha256"])
@@ -85,6 +85,19 @@ def main():
                  "upstream_source_blobs": len(receipt["entries"]), "sanitized_payload_checksums": len(checks),
                  "build": build, "native": native, "independent_human_review": "pending",
                  "E0_complete": False, "native_inference_tests": 0, "status": "source_only_verified"}
+        forbidden = [r["path"] for r in lock["entries"] if r["path"].endswith("/frontal_face_detector.h")]
+        if forbidden:
+            proof["status"] = "integrity_verified_source_policy_blocked"
+            proof["unexpected_pretrained_source_components"] = forbidden
+            proof["A1b_accepted"] = False
+        else:
+            assert lock["version"] == 2 and len(lock["entries"]) == 1141
+            assert not any(r["path"].startswith("tools/python/") for r in lock["entries"])
+            assert build["known_embedded_model_headers"] == 0 and build["model_execution_api_available"] is False
+            assert native["model_execution_api_available"] is False and native["native_negative_checks"] == 5
+            assert result["A1b_accepted"] is False
+            proof["status"] = "minimal_source_prototype_verified_pending_design_review"
+            proof["A1b_accepted"] = False
         print(json.dumps(proof, indent=2))
 
 

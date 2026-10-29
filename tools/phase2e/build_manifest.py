@@ -20,7 +20,7 @@ def main():
     output.mkdir()
     notices = output / "dependency-notices"
     notices.mkdir()
-    wheel, = (root / "source/dist").glob("*.whl")
+    wheel, = (root / "dist").glob("*.whl")
     source = json.loads((root / "source-receipt.json").read_text())
     dependencies = json.loads((root / "dependency-lock.json").read_text())
     components = []
@@ -51,18 +51,17 @@ def main():
         if copyright.is_file():
             (notices / (name.replace(":", "_") + "-copyright.txt")).write_bytes(copyright.read_bytes())
     sbom = {"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1, "components": components,
-            "metadata": {"component": {"type": "library", "name": "dlib-source-only-qualification", "version": "20.0.0"}}}
+            "metadata": {"component": {"type": "library", "name": "foc-dlib-native-source-probe", "version": "0.1.0"}}}
     # Inventory is not a claim that every transitive native license/security issue is resolved.
     (output / "sbom.cdx.json").write_text(json.dumps(sbom, indent=2) + "\n")
     (output / "source-receipt.json").write_text(json.dumps(source, indent=2) + "\n")
-    cache, = (root / "source/build").glob("temp.*/CMakeCache.txt")
-    assert "DLIB_PNG_SUPPORT:BOOL=ON" in cache.read_text()
-    assert "PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/" in cache.read_text()
-    assert "DLIB_JPEG_SUPPORT:BOOL=ON" in cache.read_text()
-    assert "JPEG_LIBRARY_RELEASE:FILEPATH=/usr/lib/" in cache.read_text()
+    cache = root / "native-build/CMakeCache.txt"
+    for key in ["DLIB_PNG_SUPPORT", "DLIB_JPEG_SUPPORT", "DLIB_USE_CUDA", "DLIB_USE_BLAS"]:
+        assert key + ":BOOL=OFF" in cache.read_text()
+    assert not (root / "source/dlib/image_processing/frontal_face_detector.h").exists()
     for p in Path("/runtime-notices").iterdir():
         (output / p.name).write_bytes(p.read_bytes())
-    report = {"version": 1, "scope": "data_free_cpu_build_only", "python": platform.python_version(),
+    report = {"version": 2, "scope": "minimal_core_source_probe_pending_review", "python": platform.python_version(),
               "architecture": platform.machine(), "source_commit": source["commit"],
               "source_receipt_sha256": digest(root / "source-receipt.json"),
               "dependency_lock_sha256": digest(root / "dependency-lock.json"),
@@ -72,7 +71,9 @@ def main():
               "runtime_native_libraries": {p.name: digest(p) for p in Path("/runtime-libs").iterdir()},
               "runtime_native_notices": {p.name: digest(p) for p in Path("/runtime-notices").iterdir()},
               "cmake_cache_sha256": digest(cache), "sbom_sha256": digest(output / "sbom.cdx.json"),
-              "pretrained_assets_present": False, "transitive_review": "pending"}
+              "known_embedded_model_headers": 0, "standard_python_bindings_included": False,
+              "pretrained_assets_present": False, "transitive_review": "pending",
+              "model_execution_api_available": False, "A1b_accepted": False}
     (output / "build-manifest.json").write_text(json.dumps(report, indent=2) + "\n")
     (output / "CMakeCache.txt").write_bytes(cache.read_bytes())
 

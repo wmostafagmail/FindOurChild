@@ -51,7 +51,9 @@ def prepare(work):
     shutil.copyfile(CONFIG / "build-dependencies.json", context / "dependency-lock.json")
     for filename in ["Dockerfile.preflight", "requirements-build.txt", "preflight.py"]:
         shutil.copyfile(WORKER / filename, context / filename)
+    shutil.copytree(WORKER / "native", context / "native")
     shutil.copyfile(ROOT / "tools/phase2e/build_manifest.py", context / "build_manifest.py")
+    shutil.copyfile(ROOT / "tools/phase2e/package_probe.py", context / "package_probe.py")
     return context
 
 
@@ -102,12 +104,15 @@ def qualify(work):
                   "resource_limits": {"cpus": 2, "memory_bytes": 1073741824, "pids": 64, "timeout_seconds": 60},
                   "model_acquisition_authorized": False, "image_acquisition_authorized": False,
                   "independent_manifest_review": "pending", "E0_complete": False}
+        report["A1b_accepted"] = False
+        report["acquisition_gate"] = "blocked_pending_clean_worker_design_review"
         (output / "source-only-result.json").write_text(json.dumps(report, indent=2) + "\n")
         checksums = {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()
                      for p in sorted(output.rglob("*")) if p.is_file()}
         (output / "checksums.json").write_text(json.dumps(checksums, indent=2) + "\n")
         print(json.dumps({"source_only_preflight": "passed", "model_inference": "not_executed",
-                          "independent_review": "pending", "E0_complete": False}))
+                          "independent_review": "pending", "A1b_accepted": False,
+                          "acquisition": "blocked_pending_design_review", "E0_complete": False}))
     finally:
         subprocess.run(["docker", "rm", "--force", container], stdout=subprocess.DEVNULL,
                        stderr=subprocess.DEVNULL, check=False)

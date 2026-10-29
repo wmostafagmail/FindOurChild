@@ -1,18 +1,13 @@
 {
-  "version": 1,
+  "version": 2,
   "commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
   "tree": "f7b2ad020a481144c4ccb3c47d24d654bbad2732",
-  "scope": "data_free_cpu_build_only",
+  "scope": "minimal_core_no_pretrained_payloads",
   "entries": [
     {
       "path": "LICENSE.txt",
       "git_blob": "127a5bc39ba030c7cb99cc0aedc4f280ffe27310",
       "bytes": 1337
-    },
-    {
-      "path": "MANIFEST.in",
-      "git_blob": "2ba72dc45b2e613cf6b2d40afb52883c66dcf5f0",
-      "bytes": 351
     },
     {
       "path": "README.md",
@@ -2430,16 +2425,6 @@
       "bytes": 3291
     },
     {
-      "path": "dlib/image_processing/frontal_face_detector.h",
-      "git_blob": "3f4b597699652afcc598c9b251e7ba32cc95632d",
-      "bytes": 219037
-    },
-    {
-      "path": "dlib/image_processing/frontal_face_detector_abstract.h",
-      "git_blob": "20815cd0e4e06b7ce31a8e5b9a41a69e045d56e4",
-      "bytes": 757
-    },
-    {
       "path": "dlib/image_processing/full_object_detection.h",
       "git_blob": "5c6d112dfaf9a6b5c6612a9a564d8d3636445508",
       "bytes": 7883
@@ -3848,31 +3833,6 @@
       "path": "dlib/platform.h",
       "git_blob": "349954520c51273cedfbfc9b5990cfe5361c7a46",
       "bytes": 1502
-    },
-    {
-      "path": "dlib/python.h",
-      "git_blob": "4898d56c3b87ab8307be072999bb4ea1bf8f0144",
-      "bytes": 342
-    },
-    {
-      "path": "dlib/python/numpy_image.h",
-      "git_blob": "33f576efeb214612e2a12ae8ce9f7e39ad876d63",
-      "bytes": 16559
-    },
-    {
-      "path": "dlib/python/pyassert.h",
-      "git_blob": "80939f501f9a9ab89f2be14eeaafeee67779c58a",
-      "bytes": 719
-    },
-    {
-      "path": "dlib/python/pybind_utils.h",
-      "git_blob": "d7608a4aff4633c3518c920fbab6481c3a800fb8",
-      "bytes": 2617
-    },
-    {
-      "path": "dlib/python/serialize_pickle.h",
-      "git_blob": "da121efd619f4b136262ce1ec3668bc070656083",
-      "bytes": 2253
     },
     {
       "path": "dlib/quantum_computing.h",
@@ -5748,196 +5708,6 @@
       "path": "dlib/xml_parser/xml_parser_kernel_interfaces.h",
       "git_blob": "a0edf331759d54b6fbb3083cfe5e6ef3e1621091",
       "bytes": 8273
-    },
-    {
-      "path": "pyproject.toml",
-      "git_blob": "9787c3bdf008a57ae3cb2e27a8261eb3f134ff73",
-      "bytes": 90
-    },
-    {
-      "path": "setup.py",
-      "git_blob": "9c0e57347f411d4e3f73c7bfeea61661ced2ee40",
-      "bytes": 11487
-    },
-    {
-      "path": "tools/python/CMakeLists.txt",
-      "git_blob": "349f8f3f83ed3ca9e41b1eb3e9429c0d0c9f6980",
-      "bytes": 3031
-    },
-    {
-      "path": "tools/python/dlib/__init__.py.in",
-      "git_blob": "4a289ed5e03ec51833a5e37144aca16d5015f4d8",
-      "bytes": 787
-    },
-    {
-      "path": "tools/python/src/basic.cpp",
-      "git_blob": "26492df2dacf1d9fe99f8ad50864c9abd057adc6",
-      "bytes": 9376
-    },
-    {
-      "path": "tools/python/src/cca.cpp",
-      "git_blob": "dcf47652204b8a47ae5b37e9abc69ce18a80a356",
-      "bytes": 6149
-    },
-    {
-      "path": "tools/python/src/cnn_face_detector.cpp",
-      "git_blob": "00fc2c703b7fa4a45283c62931fdb475a8ef00a8",
-      "bytes": 6494
-    },
-    {
-      "path": "tools/python/src/conversion.h",
-      "git_blob": "a700b633c05e8d6883ce9f081566d852c78e67f5",
-      "bytes": 1206
-    },
-    {
-      "path": "tools/python/src/correlation_tracker.cpp",
-      "git_blob": "8afd874cf785049b006c81dd7f6de6a6120758cb",
-      "bytes": 6989
-    },
-    {
-      "path": "tools/python/src/decision_functions.cpp",
-      "git_blob": "341c68cc02296f2415269d8909f2cb9c7b4b7995",
-      "bytes": 28309
-    },
-    {
-      "path": "tools/python/src/dlib.cpp",
-      "git_blob": "114ecde6ff9503a02c6b46cc43d709a165545f36",
-      "bytes": 4263
-    },
-    {
-      "path": "tools/python/src/face_recognition.cpp",
-      "git_blob": "ca2af5c763fff53b9eb80919bfc482d8fbd4ac3e",
-      "bytes": 18921
-    },
-    {
-      "path": "tools/python/src/global_optimization.cpp",
-      "git_blob": "beb0f0afd127d7263fd751767721590ee7a52532",
-      "bytes": 19801
-    },
-    {
-      "path": "tools/python/src/gui.cpp",
-      "git_blob": "1176b5ccf578c5082df2ad52ed69c9161940788a",
-      "bytes": 17705
-    },
-    {
-      "path": "tools/python/src/image.cpp",
-      "git_blob": "e686b40aefacacd6b57d55adde46860bbc789702",
-      "bytes": 39843
-    },
-    {
-      "path": "tools/python/src/image2.cpp",
-      "git_blob": "774568e49c4a1dca9a4b5377bed17804004b3273",
-      "bytes": 43734
-    },
-    {
-      "path": "tools/python/src/image3.cpp",
-      "git_blob": "024b74a70acc6fd3aa587f04620abd4033807174",
-      "bytes": 43992
-    },
-    {
-      "path": "tools/python/src/image4.cpp",
-      "git_blob": "65d29c53576a4ed466a9dce97fa73ca63497c34a",
-      "bytes": 44191
-    },
-    {
-      "path": "tools/python/src/image_dataset_metadata.cpp",
-      "git_blob": "b1ed8b47df5a53231d88a17d5be114211c7b3838",
-      "bytes": 13658
-    },
-    {
-      "path": "tools/python/src/indexing.h",
-      "git_blob": "3aa398f023faf70e0f67fe46c178a53a5a8f8a27",
-      "bytes": 332
-    },
-    {
-      "path": "tools/python/src/line.cpp",
-      "git_blob": "7f0eef12d58e157dbd54d8deb4bc4adae2a0074c",
-      "bytes": 8395
-    },
-    {
-      "path": "tools/python/src/matrix.cpp",
-      "git_blob": "ceb0f20d790b7eef4350312242e3c84ffee612cd",
-      "bytes": 6030
-    },
-    {
-      "path": "tools/python/src/numpy_returns.cpp",
-      "git_blob": "cf6c6f21df9a5f4f2858d34adce299e37c0cd597",
-      "bytes": 9876
-    },
-    {
-      "path": "tools/python/src/object_detection.cpp",
-      "git_blob": "2daf209acf9a5c24b8f1981055fd14e1c5c00b61",
-      "bytes": 29254
-    },
-    {
-      "path": "tools/python/src/opaque_types.h",
-      "git_blob": "67087a3966be1799fa3429f938270975fd518a07",
-      "bytes": 2248
-    },
-    {
-      "path": "tools/python/src/other.cpp",
-      "git_blob": "6967f42857d7abc87d68f040419f7b7305b7e677",
-      "bytes": 15831
-    },
-    {
-      "path": "tools/python/src/rectangles.cpp",
-      "git_blob": "ed2f54f3ea2d2f92e7d71510304325b8b481bd5c",
-      "bytes": 15747
-    },
-    {
-      "path": "tools/python/src/sequence_segmenter.cpp",
-      "git_blob": "d6959911c2ca902debb2dbf1da74a9a458ea8559",
-      "bytes": 32322
-    },
-    {
-      "path": "tools/python/src/serialize_object_detector.h",
-      "git_blob": "e53401c81f516b20232b0005e10b6442e0c1aa41",
-      "bytes": 1949
-    },
-    {
-      "path": "tools/python/src/shape_predictor.cpp",
-      "git_blob": "179f167eb57bc3a203eb719969c9e75436cc1da9",
-      "bytes": 18199
-    },
-    {
-      "path": "tools/python/src/shape_predictor.h",
-      "git_blob": "54d3fe327479f73fc0f205449063e72f97f12b9f",
-      "bytes": 11715
-    },
-    {
-      "path": "tools/python/src/simple_object_detector.h",
-      "git_blob": "a7e6280ea6a21697624659909992da5f0652a74f",
-      "bytes": 15920
-    },
-    {
-      "path": "tools/python/src/simple_object_detector_py.h",
-      "git_blob": "10337e237abeb68dee063d988af007157e004264",
-      "bytes": 11293
-    },
-    {
-      "path": "tools/python/src/svm_c_trainer.cpp",
-      "git_blob": "7b592abe7eb8a1f252a01e8176fa92ff4517ce84",
-      "bytes": 12304
-    },
-    {
-      "path": "tools/python/src/svm_rank_trainer.cpp",
-      "git_blob": "26cf3111ae60ac85f242bc3332ef6bfad0ba55ee",
-      "bytes": 5783
-    },
-    {
-      "path": "tools/python/src/svm_struct.cpp",
-      "git_blob": "f85debfbbde5e8940d4573de9609731f7a224732",
-      "bytes": 5485
-    },
-    {
-      "path": "tools/python/src/testing_results.h",
-      "git_blob": "746e2934a97c1c4cc0b24023ee2fb1dd69d76fcb",
-      "bytes": 1165
-    },
-    {
-      "path": "tools/python/src/vector.cpp",
-      "git_blob": "9c8e3ab93cf83a9253a47247ae4949b73a8e3917",
-      "bytes": 18169
     }
   ]
 }

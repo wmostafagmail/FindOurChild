@@ -1,4 +1,4 @@
-name: Phase 2E data-free native qualification
+name: Phase 2E source prototype validation
 on:
   pull_request:
   push:
@@ -31,7 +31,7 @@ jobs:
           .venv/bin/python -m tools.phase2e.test_controls
       - name: Audit exact source-only build dependency versions
         run: .venv/bin/python -m pip_audit --no-deps --disable-pip -r services/demo_recognition/requirements-build.txt --format json --output artifacts/phase2e-e0-controls/dependency-audit.json
-      - name: Native source-only offline CPU qualification
+      - name: Native source-only prototype probe (not A1b approval)
         run: .venv/bin/python -m tools.phase2e.qualify "$RUNNER_TEMP/foc-phase2e-source"
       - name: Publish data-free qualification evidence
         if: always()

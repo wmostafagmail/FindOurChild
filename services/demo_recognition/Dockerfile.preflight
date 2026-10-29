@@ -1,33 +1,25 @@
-# Data-free build qualification only. No model acquisition or serving entry point.
+# Revised data-free prototype. Named asset acquisition remains hard-disabled.
 FROM --platform=linux/amd64 python:3.13.13-bookworm@sha256:2383bb1108fe80f7191b1f3ddbbd2ce1a13a1e99e7400a42fa28b27defa34841 AS build
-ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 CMAKE_BUILD_PARALLEL_LEVEL=2 SOURCE_DATE_EPOCH=1747267200
+ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 SOURCE_DATE_EPOCH=1747267200
 WORKDIR /build
 COPY wheels /wheels
 COPY requirements-build.txt ./
 RUN --network=none python -m pip install --no-index --no-deps --require-hashes --find-links=/wheels -r requirements-build.txt
 COPY source /build/source
-COPY source-receipt.json dependency-lock.json build_manifest.py /build/
-WORKDIR /build/source
-RUN --network=none python setup.py bdist_wheel \
-    --set DLIB_NO_GUI_SUPPORT=ON --no DLIB_USE_CUDA --no DLIB_USE_BLAS --no DLIB_USE_LAPACK \
-    --no DLIB_USE_MKL_FFT --no DLIB_USE_FFMPEG --no DLIB_LINK_WITH_SQLITE3 \
-    --set DLIB_JPEG_SUPPORT=ON --set DLIB_PNG_SUPPORT=ON --no DLIB_GIF_SUPPORT --no DLIB_WEBP_SUPPORT \
-    --no DLIB_JXL_SUPPORT --set USE_SSE2_INSTRUCTIONS=ON --no USE_SSE4_INSTRUCTIONS --no USE_AVX_INSTRUCTIONS
+COPY native /build/native
+COPY source-receipt.json dependency-lock.json build_manifest.py package_probe.py /build/
+RUN --network=none cmake -S /build/native -B /build/native-build -DCMAKE_BUILD_TYPE=Release \
+    && cmake --build /build/native-build --parallel 2 \
+    && python /build/package_probe.py
 RUN --network=none mkdir /runtime-libs /runtime-notices \
     && cp -L /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /runtime-libs/libstdc++.so.6 \
-    && cp -L /usr/lib/x86_64-linux-gnu/libpng16.so.16 /runtime-libs/libpng16.so.16 \
-    && cp -L /usr/lib/x86_64-linux-gnu/libjpeg.so.62 /runtime-libs/libjpeg.so.62 \
-    && cp -L /usr/lib/x86_64-linux-gnu/libz.so.1 /runtime-libs/libz.so.1 \
     && cp -L /usr/share/doc/libstdc++6/copyright /runtime-notices/libstdc++6-copyright.txt \
-    && cp -L /usr/share/doc/libpng16-16/copyright /runtime-notices/libpng-copyright.txt \
-    && cp -L /usr/share/doc/libjpeg62-turbo/copyright /runtime-notices/libjpeg-copyright.txt \
-    && cp -L /usr/share/doc/zlib1g/copyright /runtime-notices/zlib-copyright.txt \
     && python /build/build_manifest.py
 
 FROM --platform=linux/amd64 python:3.13.13-slim-bookworm@sha256:355bfa66770995d7e9a0da4b3473b44d0cb451f6b56f5615ad9c39e3c4eca03f
 ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
 WORKDIR /opt/qualification
-COPY --from=build /build/source/dist/*.whl /wheels/
+COPY --from=build /build/dist/*.whl /wheels/
 COPY --from=build /wheels/numpy-*.whl /wheels/
 COPY --from=build /build/evidence /opt/qualification/evidence
 COPY --from=build /runtime-libs/ /usr/local/lib/
