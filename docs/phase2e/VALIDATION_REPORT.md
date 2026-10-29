@@ -1,4 +1,12 @@
-# Phase 2E specification validation report
+# Phase 2E validation report
+
+## Implementation checkpoint after owner authorization
+
+Phase 2E E0 implementation has started on `codex/phase-2e-licensed-recognition`, after verifying required hosted CI on exact accepted main `4082dbf97da3fd1aa55a336b9d7e9caa4e0a8281`. [E0_PROGRESS.md](E0_PROGRESS.md) records executable code, source/dependency manifests, tests and current hard gate boundaries. E0 is incomplete; E1/E2 and actual-model/browser additions are pending. No Phase 2E acceptance is claimed.
+
+The earlier preparation report below is preserved as historical evidence; its documentation-only scope describes that earlier snapshot.
+
+---
 
 Date: 2026-10-29. Scope: acceptance evidence for existing Phase 2D plus **Phase 2E documentation and primary-source revalidation only**. No Phase 2E application feature, native dependency, migration, runtime flag, asset acquisition or model execution was implemented. The proposed actual-inference tests are all pending.
 

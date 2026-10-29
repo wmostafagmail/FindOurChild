@@ -1,0 +1,28 @@
+# Data-free build qualification only. No model acquisition or serving entry point.
+FROM --platform=linux/amd64 python:3.13.13-bookworm@sha256:2383bb1108fe80f7191b1f3ddbbd2ce1a13a1e99e7400a42fa28b27defa34841 AS build
+ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 CMAKE_BUILD_PARALLEL_LEVEL=2 SOURCE_DATE_EPOCH=1747267200
+WORKDIR /build
+COPY wheels /wheels
+COPY requirements-build.txt ./
+RUN --network=none python -m pip install --no-index --no-deps --require-hashes --find-links=/wheels -r requirements-build.txt
+COPY source /build/source
+COPY source-receipt.json dependency-lock.json build_manifest.py /build/
+WORKDIR /build/source
+RUN --network=none python setup.py bdist_wheel \
+    --set DLIB_NO_GUI_SUPPORT=ON --no DLIB_USE_CUDA --no DLIB_USE_BLAS --no DLIB_USE_LAPACK \
+    --no DLIB_USE_MKL_FFT --no DLIB_USE_FFMPEG --no DLIB_LINK_WITH_SQLITE3 \
+    --no DLIB_JPEG_SUPPORT --no DLIB_PNG_SUPPORT --no DLIB_GIF_SUPPORT --no DLIB_WEBP_SUPPORT \
+    --no DLIB_JXL_SUPPORT --set USE_SSE2_INSTRUCTIONS=ON --no USE_SSE4_INSTRUCTIONS --no USE_AVX_INSTRUCTIONS
+RUN --network=none python /build/build_manifest.py && mkdir /runtime-libs && cp -L /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /runtime-libs/libstdc++.so.6
+
+FROM --platform=linux/amd64 python:3.13.13-slim-bookworm@sha256:355bfa66770995d7e9a0da4b3473b44d0cb451f6b56f5615ad9c39e3c4eca03f
+ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+WORKDIR /opt/qualification
+COPY --from=build /build/source/dist/*.whl /wheels/
+COPY --from=build /wheels/numpy-*.whl /wheels/
+COPY --from=build /build/evidence /opt/qualification/evidence
+COPY --from=build /runtime-libs/ /usr/local/lib/
+RUN --network=none python -m pip install --no-index --no-deps /wheels/*.whl && rm -r /wheels && ldconfig
+COPY preflight.py ./
+USER 10001:10001
+ENTRYPOINT ["python", "/opt/qualification/preflight.py"]

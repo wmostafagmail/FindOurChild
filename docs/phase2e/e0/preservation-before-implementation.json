@@ -1,0 +1,7 @@
+{
+  "commit": "30639220228f9f9d04cad38cd641b0ded7b7bfae",
+  "tracked_files_verified": 899,
+  "mismatches": [],
+  "method": "streamed Git blob hashes, no mmap, no file replacement",
+  "status": "passed"
+}
