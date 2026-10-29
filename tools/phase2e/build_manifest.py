@@ -50,6 +50,8 @@ def main():
     cache, = (root / "source/build").glob("temp.*/CMakeCache.txt")
     assert "DLIB_PNG_SUPPORT:BOOL=ON" in cache.read_text()
     assert "PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/" in cache.read_text()
+    assert "DLIB_JPEG_SUPPORT:BOOL=ON" in cache.read_text()
+    assert "JPEG_LIBRARY_RELEASE:FILEPATH=/usr/lib/" in cache.read_text()
     for p in Path("/runtime-notices").iterdir():
         (output / p.name).write_bytes(p.read_bytes())
     report = {"version": 1, "scope": "data_free_cpu_build_only", "python": platform.python_version(),

@@ -87,13 +87,13 @@ def qualify(work):
         assert restrictions["NanoCpus"] == 2000000000 and restrictions["PidsLimit"] == 64
         assert "no-new-privileges:true" in restrictions["SecurityOpt"]
         assert not inspect["Mounts"] and not restrictions.get("Devices") and not restrictions["Privileged"]
+        command(["docker", "cp", container + ":/opt/qualification/evidence/.", str(output)],
+                raw / "copy.log", timeout=30)
         command(["docker", "start", "--attach", container], raw / "native.log", timeout=60)
         finished, = json.loads(subprocess.check_output(["docker", "inspect", container]))
         assert finished["State"]["ExitCode"] == 0 and not finished["State"]["OOMKilled"]
         native = json.loads((raw / "native.log").read_text())
         assert native["native_transform_executed"] and native["inference_executed"] is False
-        command(["docker", "cp", container + ":/opt/qualification/evidence/.", str(output)],
-                raw / "copy.log", timeout=30)
         report = {"version": 1, "scope": "data_free_source_only_preflight",
                   "head_sha": os.environ.get("GITHUB_SHA"), "host_architecture": platform.machine(),
                   "image_id": image_info["Id"], "native": native,
@@ -132,6 +132,9 @@ def main():
                        "original_logs": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                                          for p in raw.glob("*.log")}}
             (output / "failure.json").write_text(json.dumps(failure, indent=2) + "\n")
+            checksums = {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()
+                         for p in sorted(output.rglob("*")) if p.is_file() and p.name != "checksums.json"}
+            (output / "checksums.json").write_text(json.dumps(checksums, indent=2) + "\n")
         print(json.dumps({"source_only_preflight": "failed", "error_type": type(error).__name__,
                           "E0_complete": False}), file=sys.stderr)
         raise SystemExit(1) from None

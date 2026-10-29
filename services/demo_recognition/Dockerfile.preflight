@@ -11,14 +11,16 @@ WORKDIR /build/source
 RUN --network=none python setup.py bdist_wheel \
     --set DLIB_NO_GUI_SUPPORT=ON --no DLIB_USE_CUDA --no DLIB_USE_BLAS --no DLIB_USE_LAPACK \
     --no DLIB_USE_MKL_FFT --no DLIB_USE_FFMPEG --no DLIB_LINK_WITH_SQLITE3 \
-    --no DLIB_JPEG_SUPPORT --set DLIB_PNG_SUPPORT=ON --no DLIB_GIF_SUPPORT --no DLIB_WEBP_SUPPORT \
+    --set DLIB_JPEG_SUPPORT=ON --set DLIB_PNG_SUPPORT=ON --no DLIB_GIF_SUPPORT --no DLIB_WEBP_SUPPORT \
     --no DLIB_JXL_SUPPORT --set USE_SSE2_INSTRUCTIONS=ON --no USE_SSE4_INSTRUCTIONS --no USE_AVX_INSTRUCTIONS
 RUN --network=none mkdir /runtime-libs /runtime-notices \
     && cp -L /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /runtime-libs/libstdc++.so.6 \
     && cp -L /usr/lib/x86_64-linux-gnu/libpng16.so.16 /runtime-libs/libpng16.so.16 \
+    && cp -L /usr/lib/x86_64-linux-gnu/libjpeg.so.62 /runtime-libs/libjpeg.so.62 \
     && cp -L /usr/lib/x86_64-linux-gnu/libz.so.1 /runtime-libs/libz.so.1 \
     && cp -L /usr/share/doc/libstdc++6/copyright /runtime-notices/libstdc++6-copyright.txt \
     && cp -L /usr/share/doc/libpng16-16/copyright /runtime-notices/libpng-copyright.txt \
+    && cp -L /usr/share/doc/libjpeg62-turbo/copyright /runtime-notices/libjpeg-copyright.txt \
     && cp -L /usr/share/doc/zlib1g/copyright /runtime-notices/zlib-copyright.txt \
     && python /build/build_manifest.py
 
