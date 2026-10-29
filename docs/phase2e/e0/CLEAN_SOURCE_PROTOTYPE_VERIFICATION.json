@@ -1,0 +1,343 @@
+{
+  "head_sha": "a634328b014abc26e2413e18390a255be7eb9b61",
+  "artifact_id": 12933817882,
+  "archive_sha256": "2fede5d2ac2a3228886744139cd1f5a73617fab7b09ea784d462333c1f2472c2",
+  "source_only_controls_passed": 119,
+  "source_inputs_verified": 24,
+  "upstream_source_blobs": 1141,
+  "sanitized_payload_checksums": 457,
+  "build": {
+    "version": 2,
+    "scope": "minimal_core_source_probe_pending_review",
+    "python": "3.13.13",
+    "architecture": "x86_64",
+    "source_commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+    "source_receipt_sha256": "72f892d576a0e557ecca464da586c6335e866f314861b689412149ebac53c5ba",
+    "dependency_lock_sha256": "0819bf38b9e8db6a9204d29afc1dd54bdcb28e857d198e4bb50d9a086a9efe6c",
+    "wheel": {
+      "name": "foc_dlib_native-0.1.0-cp313-cp313-linux_x86_64.whl",
+      "bytes": 130571,
+      "sha256": "4570ec9f896e6f88faed32e138690ebe1ccaaac344c6c553145dbcb6460361e5"
+    },
+    "cmake_version": "cmake version 3.31.6",
+    "compiler": "c++ (Debian 12.2.0-14+deb12u1) 12.2.0",
+    "runtime_native_libraries": {
+      "libstdc++.so.6": "e7848e32af4932840ba775169041759a2a8dd5a008af360e5c55bce506eebcf4"
+    },
+    "runtime_native_notices": {
+      "libstdc++6-copyright.txt": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3"
+    },
+    "cmake_cache_sha256": "a42dfc676be8109d3290ee114141173799228618a4033a7ba97e4c93361b5c51",
+    "sbom_sha256": "eb856735d05f888ff9d38a343d9bbcf1a92dc280c752efb4fa4360ca8df2edcc",
+    "known_embedded_model_headers": 0,
+    "standard_python_bindings_included": false,
+    "pretrained_assets_present": false,
+    "transitive_review": "pending",
+    "model_execution_api_available": false,
+    "A1b_accepted": false
+  },
+  "native": {
+    "A1b_accepted": false,
+    "architecture": "x86_64",
+    "avx": false,
+    "bundled_pretrained_components": [],
+    "capabilities_dropped": true,
+    "chip_output_sha256": "5c3bab292f6894aa2dc445d38311bb4531a7d4e8c33441a32f16a4dd1377a213",
+    "cuda": false,
+    "dlib": "20.0.0",
+    "elapsed_ms": 8.550995999996758,
+    "explicit_chip_parity": true,
+    "gil_disabled": false,
+    "images_processed": 0,
+    "inference_executed": false,
+    "internet_probe_denied": true,
+    "model_execution_api_available": false,
+    "model_files_loaded": 0,
+    "native_interface_version": "foc-dlib-source-probe-v1",
+    "native_negative_checks": 5,
+    "native_transform_executed": true,
+    "nonroot": true,
+    "peak_rss_kib": 40912,
+    "python": "3.13.13",
+    "read_only": true,
+    "runtime_dependency_inventory": {
+      "debian_packages": {
+        "adduser": "3.134",
+        "apt": "2.6.1",
+        "base-files": "12.4+deb12u14",
+        "base-passwd": "3.6.1",
+        "bash": "5.2.15-2+b13",
+        "bsdutils": "1:2.38.1-5+deb12u3",
+        "ca-certificates": "20230311+deb12u1",
+        "coreutils": "9.1-1",
+        "dash": "0.5.12-2",
+        "debconf": "1.5.82",
+        "debian-archive-keyring": "2023.3+deb12u2",
+        "debianutils": "5.7-0.5~deb12u1",
+        "diffutils": "1:3.8-4",
+        "dpkg": "1.21.23",
+        "e2fsprogs": "1.47.0-2+b2",
+        "findutils": "4.9.0-4",
+        "gcc-12-base": "12.2.0-14+deb12u1",
+        "gpgv": "2.2.40-1.1+deb12u2",
+        "grep": "3.8-5",
+        "gzip": "1.12-1",
+        "hostname": "3.23+nmu1",
+        "init-system-helpers": "1.65.2+deb12u1",
+        "libacl1": "2.3.1-3",
+        "libapt-pkg6.0": "2.6.1",
+        "libattr1": "1:2.5.1-4",
+        "libaudit-common": "1:3.0.9-1",
+        "libaudit1": "1:3.0.9-1",
+        "libblkid1": "2.38.1-5+deb12u3",
+        "libbz2-1.0": "1.0.8-5+b1",
+        "libc-bin": "2.36-9+deb12u14",
+        "libc6": "2.36-9+deb12u14",
+        "libcap-ng0": "0.8.3-1+b3",
+        "libcap2": "1:2.66-4+deb12u3+b1",
+        "libcom-err2": "1.47.0-2+b2",
+        "libcrypt1": "1:4.4.33-2",
+        "libdb5.3": "5.3.28+dfsg2-1",
+        "libdebconfclient0": "0.270",
+        "libext2fs2": "1.47.0-2+b2",
+        "libffi8": "3.4.4-1",
+        "libgcc-s1": "12.2.0-14+deb12u1",
+        "libgcrypt20": "1.10.1-3",
+        "libgdbm6": "1.23-3",
+        "libgmp10": "2:6.2.1+dfsg1-1.1",
+        "libgnutls30": "3.7.9-2+deb12u6",
+        "libgpg-error0": "1.46-1",
+        "libhogweed6": "3.8.1-2",
+        "libidn2-0": "2.3.3-1+b1",
+        "liblz4-1": "1.9.4-1",
+        "liblzma5": "5.4.1-1",
+        "libmd0": "1.0.4-2",
+        "libmount1": "2.38.1-5+deb12u3",
+        "libncursesw6": "6.4-4",
+        "libnettle8": "3.8.1-2",
+        "libp11-kit0": "0.24.1-2",
+        "libpam-modules": "1.5.2-6+deb12u2",
+        "libpam-modules-bin": "1.5.2-6+deb12u2",
+        "libpam-runtime": "1.5.2-6+deb12u2",
+        "libpam0g": "1.5.2-6+deb12u2",
+        "libpcre2-8-0": "10.42-1",
+        "libreadline8": "8.2-1.3",
+        "libseccomp2": "2.5.4-1+deb12u1",
+        "libselinux1": "3.4-1+b6",
+        "libsemanage-common": "3.4-1",
+        "libsemanage2": "3.4-1+b5",
+        "libsepol2": "3.4-2.1",
+        "libsmartcols1": "2.38.1-5+deb12u3",
+        "libsqlite3-0": "3.40.1-2+deb12u2",
+        "libss2": "1.47.0-2+b2",
+        "libssl3": "3.0.20-1~deb12u1",
+        "libstdc++6": "12.2.0-14+deb12u1",
+        "libsystemd0": "252.39-1~deb12u2",
+        "libtasn1-6": "4.19.0-2+deb12u1",
+        "libtinfo6": "6.4-4",
+        "libudev1": "252.39-1~deb12u2",
+        "libunistring2": "1.0-2",
+        "libuuid1": "2.38.1-5+deb12u3",
+        "libxxhash0": "0.8.1-1",
+        "libzstd1": "1.5.4+dfsg2-5",
+        "login": "1:4.13+dfsg1-1+deb12u2",
+        "logsave": "1.47.0-2+b2",
+        "mawk": "1.3.4.20200120-3.1",
+        "mount": "2.38.1-5+deb12u3",
+        "ncurses-base": "6.4-4",
+        "ncurses-bin": "6.4-4",
+        "netbase": "6.4",
+        "openssl": "3.0.20-1~deb12u1",
+        "passwd": "1:4.13+dfsg1-1+deb12u2",
+        "perl-base": "5.36.0-7+deb12u3",
+        "readline-common": "8.2-1.3",
+        "sed": "4.9-1+deb12u1",
+        "sysvinit-utils": "3.06-4",
+        "tar": "1.34+dfsg-1.2+deb12u1",
+        "tzdata": "2026b-0+deb12u1",
+        "usr-is-merged": "37~deb12u1",
+        "util-linux": "2.38.1-5+deb12u3",
+        "util-linux-extra": "2.38.1-5+deb12u3",
+        "zlib1g": "1:1.2.13.dfsg-1"
+      },
+      "loaded_libraries": {
+        "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": {
+          "bytes": 215000,
+          "sha256": "02bcda52c1a5dfc236f94d9e5255b4a0e26347d8a372a5223b650e31f291ce3c"
+        },
+        "/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4": {
+          "bytes": 74688,
+          "sha256": "e4f501c8bd22390e42422691093d8af4e744a3e854809b809948055e8b08bda5"
+        },
+        "/usr/lib/x86_64-linux-gnu/libc.so.6": {
+          "bytes": 1926232,
+          "sha256": "6b4a45352fd0c540a9c7c718f35ce8c8e46a4e482f9d3885a910c32d1a0e1421"
+        },
+        "/usr/lib/x86_64-linux-gnu/libcrypto.so.3": {
+          "bytes": 4734232,
+          "sha256": "3d59cd674afed31d688ead6b6c63c43f902b7892c9042442496e740c2e8c8eac"
+        },
+        "/usr/lib/x86_64-linux-gnu/libffi.so.8.1.2": {
+          "bytes": 43480,
+          "sha256": "983e72b7e964f3db43fe8a3dc8b338e731fade6ca38df6867aebb58186aaeb68"
+        },
+        "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": {
+          "bytes": 125312,
+          "sha256": "2bd1552c47799ef67e701e81d4383061fd76059868e446e63560f0dd0d5ec14e"
+        },
+        "/usr/lib/x86_64-linux-gnu/liblzma.so.5.4.1": {
+          "bytes": 190456,
+          "sha256": "aaead752b2f290547267341891424f17244d86a95202c3f3a41cc75c77d76821"
+        },
+        "/usr/lib/x86_64-linux-gnu/libm.so.6": {
+          "bytes": 911904,
+          "sha256": "7f2ca87f652f56b094462474b076749e90e689d0ecb9cb63c7679820b271b4e7"
+        },
+        "/usr/lib/x86_64-linux-gnu/libpthread.so.0": {
+          "bytes": 14480,
+          "sha256": "b93a680da8a05b939b235c1533572e7a2f6d3d8808bf70209997edc64ea5fedc"
+        },
+        "/usr/lib/x86_64-linux-gnu/libz.so.1.2.13": {
+          "bytes": 121280,
+          "sha256": "7e2a72b4c4b38c61e6962de6e3f4a5e9ae692e732c68deead10a7ce2135a7f68"
+        },
+        "/usr/local/lib/libpython3.13.so.1.0": {
+          "bytes": 5248000,
+          "sha256": "1d7ea14d0f23943ca6b91d0780067710c738112b60f2fae240241da75441a0b1"
+        },
+        "/usr/local/lib/libstdc++.so.6": {
+          "bytes": 2190440,
+          "sha256": "e7848e32af4932840ba775169041759a2a8dd5a008af360e5c55bce506eebcf4"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_bisect.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 23424,
+          "sha256": "56d233525c81f76a6473e59e50afe69739a57f17a032b1a762e5102aca2aa6e7"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_blake2.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 48608,
+          "sha256": "f7cec5ceb998dca2d0e0923b5e08025f32a5a6a793df6c91e9f7f40030a69f2f"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_bz2.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 27864,
+          "sha256": "b52c9b3b9de5b32728da2bee92a69158ce211ea6ce4e1df8b8a308eb8d058301"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_contextvars.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 14360,
+          "sha256": "638e774cd0893664f7fc6fed8b249b771c0cf3f450b213f28a604210008d66bc"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_ctypes.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 134072,
+          "sha256": "c2a657881e6cf4a1f25a92a7293340bf6f12a7f1d9cc3822452f53ba52ae810a"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_datetime.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 113496,
+          "sha256": "070e6f06350e4fb83fb52d1028c9b9da23186275c2d2e745acb5997098c63b69"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_hashlib.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 64160,
+          "sha256": "b41cba51691bb1da745822c77cb892697148ef8853e2fdf3e6dfda07025dfccb"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_json.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 44840,
+          "sha256": "60ee144a52ca3c6e932ef75c5f45857a0d595a464dac430ae445123cbb4659c5"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_lzma.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 40880,
+          "sha256": "b45a3cef2ecabd480746808db6511991fc3719bfee1dd5ad2dc018a0a9a1f98b"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_opcode.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 28448,
+          "sha256": "37dcd0044b59e1750fef9b48d34a60c1eefbfb3c23eb99e2623da1ad25e2a642"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_pickle.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 124904,
+          "sha256": "bf34b5898c6c50c30bf35c308f321f29437d9c14be64bda490d36398de45b202"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_posixsubprocess.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 27280,
+          "sha256": "8e33f09760536a61cfc8bf08b8e3eaa78dd62a17f3e94470db46276d734048c2"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_random.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 23240,
+          "sha256": "963e47e8779d6aa7409e3598481fb0816a30d9256e705c9599a18ffadc12a33c"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_socket.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 104192,
+          "sha256": "e0b024963b798fd5dbf66b9608f4bf437eee0dd4d32e4abb2b021e40e25a279c"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/_struct.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 55016,
+          "sha256": "45efdcf3d6d632f45e70e0ef789e3f5ff4be33d841bece8fa413472f516f4fa1"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/array.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 74728,
+          "sha256": "34f67e1cd9c0ceef92c6b7eaa5702875167d8b9d1869331e3ee66512125fc4b0"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/binascii.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 32224,
+          "sha256": "fe45e906c2d3a8e8c19e7396967d2d8ccfe6b0de6494a09848ace38ad2012eb5"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/fcntl.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 22992,
+          "sha256": "411b0c9c9c8a1298c466027c040ac369a975bda1ba0cf03883faf45dc26935bc"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/grp.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 19256,
+          "sha256": "a7400ea11a0e8dc9c890b8df6c002d8d3b1d2df702334c60b52146721b4eeef9"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/math.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 70432,
+          "sha256": "b6b858d31b04d4381ac026448e698fe9c8a739e96c2df23f8a07935a0cd6835b"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/resource.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 19336,
+          "sha256": "70cd5812c37777b24cc31ae82aefd9f87a7f8ce73737c25568ace9c7caf9c76b"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/select.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 32776,
+          "sha256": "2c7a52f03a4770877a2d502493a5d6e239c0c7e83be3d07d14060f057577a2b4"
+        },
+        "/usr/local/lib/python3.13/lib-dynload/zlib.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 50232,
+          "sha256": "3da15b8d77cc70d2b4c5a8f142cc332531b9fbed4a46d1dd2e82939b08cdb267"
+        },
+        "/usr/local/lib/python3.13/site-packages/_foc_dlib_native.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 300296,
+          "sha256": "853406ef833bc0eed6345f04670fac089d21edbbb875674bb2c84fb2db61cf03"
+        },
+        "/usr/local/lib/python3.13/site-packages/numpy.libs/libgfortran-040039e1-0352e75f.so.5.0.0": {
+          "bytes": 2833617,
+          "sha256": "c6090048eccc763522c12ef016f81da6b627cb3a044f55cf0479a839c41c0980"
+        },
+        "/usr/local/lib/python3.13/site-packages/numpy.libs/libquadmath-96973f99-934c22de.so.0.0.0": {
+          "bytes": 250985,
+          "sha256": "6ed5137f412781ad7863439fb543613f620b43c32b63292a0029246162f5bbc6"
+        },
+        "/usr/local/lib/python3.13/site-packages/numpy.libs/libscipy_openblas64_-8fb3d286.so": {
+          "bytes": 25050385,
+          "sha256": "37ba6b373a22ff42844e014f5dcbb428183f2325fd993361b41fccf68241333d"
+        },
+        "/usr/local/lib/python3.13/site-packages/numpy/_core/_multiarray_umath.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 10804753,
+          "sha256": "e0b9eb0dbb00b24c0634a5386f8f44d0895241fa87b34dba37562c58252cc05e"
+        },
+        "/usr/local/lib/python3.13/site-packages/numpy/linalg/_umath_linalg.cpython-313-x86_64-linux-gnu.so": {
+          "bytes": 231833,
+          "sha256": "7f9eb8599d9967315f791ddfff066eea29fcb76ed69df833207dbb3a936d3419"
+        }
+      },
+      "python_packages": {
+        "foc-dlib-native": "0.1.0",
+        "numpy": "2.3.3",
+        "pip": "26.0.1"
+      }
+    },
+    "scope": "data_free_source_only_preflight",
+    "soabi": "cpython-313-x86_64-linux-gnu"
+  },
+  "independent_human_review": "pending",
+  "E0_complete": false,
+  "native_inference_tests": 0,
+  "status": "minimal_source_prototype_verified_pending_design_review",
+  "A1b_accepted": false
+}
