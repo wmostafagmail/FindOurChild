@@ -1,5 +1,7 @@
 # Phase 2D validation report
 
+Subsequent status, 2026-10-29: [Phase 2D engineering acceptance](ACCEPTANCE.md) is recorded after merged PR #9 and successful required CI on exact main `e168e1361af565c80c8d12f6c729f3b9fcd05376`. Original observations below are retained; performance/security-governance limitations and manual Phase 3 gates remain open.
+
 Required executable inventory: **passed** on `a04b108abf077c2dac12f270b570f2c4b6e4204a`. Phase 2D owner acceptance remains pending. Phase 2E has not begun. Operational biometric activation remains disabled.
 
 ## Entry gate and preserved work

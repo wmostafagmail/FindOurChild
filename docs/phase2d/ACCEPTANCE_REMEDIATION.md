@@ -1,5 +1,7 @@
 # Phase 2D conditional engineering acceptance remediation
 
+Subsequent status, 2026-10-29: [Phase 2D engineering acceptance](ACCEPTANCE.md) is recorded after merged PR #9 and successful required CI on exact main `e168e1361af565c80c8d12f6c729f3b9fcd05376`. Original observations below are retained; performance/security-governance limitations and manual Phase 3 gates remain open.
+
 Status: **owner review pending; Phase 2D is not yet marked accepted**. This implements the owner's acceptance-remediation directive only. No Phase 2E, model acquisition or operational biometric activation is authorized or started.
 
 ## Roadmap merge and reconciliation

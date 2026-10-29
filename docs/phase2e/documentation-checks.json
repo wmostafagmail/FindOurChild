@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "scope": "documentation/source-reference/preservation checks only; no Phase 2E functional/native tests executed",
+  "checks": 380,
+  "primary_text_metadata_sources": 19,
+  "weight_metadata_references": 3,
+  "image_metadata_references": 48,
+  "existing_inputs_preserved": 203,
+  "planned_feature_groups": 27,
+  "planned_nonbrowser_scenario_groups": 54,
+  "planned_browser_journeys": 8,
+  "new_phase2e_tests_executed": 0,
+  "new_phase2e_validation": "pending",
+  "assets_acquired": false,
+  "inference_executed": false,
+  "command": "python3 docs/phase2e/check_specification.py",
+  "initial_preservation": {
+    "tracked_files_verified": 864,
+    "mismatches": 0,
+    "method": "streamed Git blob hashes and modes against pre-existing committed source"
+  }
+}
