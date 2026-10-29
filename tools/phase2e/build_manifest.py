@@ -13,9 +13,13 @@ def digest(path):
 
 
 def main():
+    if not __debug__:
+        raise RuntimeError("Build-manifest assertions cannot be disabled")
     root = Path("/build")
     output = root / "evidence"
     output.mkdir()
+    notices = output / "dependency-notices"
+    notices.mkdir()
     wheel, = (root / "source/dist").glob("*.whl")
     source = json.loads((root / "source-receipt.json").read_text())
     dependencies = json.loads((root / "dependency-lock.json").read_text())
@@ -25,10 +29,11 @@ def main():
         assert distribution.version == package["version"]
         licenses = []
         for item in distribution.files or []:
-            if "license" in str(item).lower() or "copying" in str(item).lower():
+            if any(token in str(item).lower() for token in ["license", "licence", "copying", "copyright", "notice"]):
                 path = Path(distribution.locate_file(item))
                 if path.is_file():
                     licenses.append({"path": str(item), "sha256": digest(path)})
+                    (notices / (package["name"] + "-" + digest(path) + ".txt")).write_bytes(path.read_bytes())
         assert licenses, "Missing exact dependency license evidence"
         components.append({"type": "library", "name": package["name"], "version": package["version"],
                            "hashes": [{"alg": "SHA-256", "content": package["sha256"]}],
@@ -42,6 +47,9 @@ def main():
     for line in packages.splitlines():
         name, version = line.split("\t")
         components.append({"type": "operating-system", "name": name, "version": version})
+        copyright = Path("/usr/share/doc") / name / "copyright"
+        if copyright.is_file():
+            (notices / (name.replace(":", "_") + "-copyright.txt")).write_bytes(copyright.read_bytes())
     sbom = {"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1, "components": components,
             "metadata": {"component": {"type": "library", "name": "dlib-source-only-qualification", "version": "20.0.0"}}}
     # Inventory is not a claim that every transitive native license/security issue is resolved.

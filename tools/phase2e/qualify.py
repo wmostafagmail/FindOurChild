@@ -56,6 +56,8 @@ def prepare(work):
 
 
 def qualify(work):
+    if not __debug__:
+        raise RuntimeError("Qualification assertions cannot be disabled")
     # Container uname under emulation is not proof of native host compatibility.
     if platform.system() != "Linux" or platform.machine() != "x86_64":
         raise RuntimeError("Native Linux x86_64 host required; ARM/emulation is not qualification")

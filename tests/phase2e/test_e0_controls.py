@@ -40,7 +40,7 @@ def receipt(gate="A4"):
     return private, envelope, keys
 
 
-@pytest.mark.parametrize("gate", ["A4", "A6", "A7"])
+@pytest.mark.parametrize("gate", ["A3", "A4", "A6", "A7"])
 def test_synthetic_independent_signature_binds_gate_and_manifest(gate):
     _, envelope, keys = receipt(gate)
     assert verify(envelope, keys, gate=gate, manifest_digest=DIGEST,

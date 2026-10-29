@@ -1,0 +1,65 @@
+{
+  "head_sha": "586c58d1c380407569779b9b709f7ae924999321",
+  "artifact_id": 12930806635,
+  "archive_sha256": "eb2b95cf6975d33d8612f675583311542c1c642f9adb407d8a4e6153bd5d8910",
+  "source_only_controls_passed": 81,
+  "source_inputs_verified": 15,
+  "upstream_source_blobs": 1187,
+  "sanitized_payload_checksums": 12,
+  "build": {
+    "version": 1,
+    "scope": "data_free_cpu_build_only",
+    "python": "3.13.13",
+    "architecture": "x86_64",
+    "source_commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+    "source_receipt_sha256": "f88a4845040603c0f39226d321976d9b929288731b5c4da347591462920809a0",
+    "dependency_lock_sha256": "50ab899c3404e1b834bf1c910a48bba762e8c17ad62802d42c061d469ed90d82",
+    "wheel": {
+      "name": "dlib-20.0.0-cp313-cp313-linux_x86_64.whl",
+      "bytes": 3543829,
+      "sha256": "84ac8e2a34a5ef4f1aa93c07051d17c314e4ccc94017cfff6301e787ed70c8c8"
+    },
+    "cmake_version": "cmake version 3.31.6",
+    "compiler": "c++ (Debian 12.2.0-14+deb12u1) 12.2.0",
+    "runtime_native_libraries": {
+      "libpng16.so.16": "5518ea5152046061f30bc1b49598e393acc7c0799dcb216b6703a6d27597deab",
+      "libjpeg.so.62": "dad87949ccad2be7e40a02986306087fdcfb35ccaadd59aea923a3f96d290eec",
+      "libz.so.1": "7e2a72b4c4b38c61e6962de6e3f4a5e9ae692e732c68deead10a7ce2135a7f68",
+      "libstdc++.so.6": "e7848e32af4932840ba775169041759a2a8dd5a008af360e5c55bce506eebcf4"
+    },
+    "runtime_native_notices": {
+      "libpng-copyright.txt": "68bd3997355bc44ccb97ff5e2bb146360e762c7d9c721945a4fabf77d1349e4a",
+      "libjpeg-copyright.txt": "3821184e23385bf2cdc01f56bd999b34036fc3aa03d5135d41680374eb81bf8a",
+      "libstdc++6-copyright.txt": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3",
+      "zlib-copyright.txt": "9e5b96d63773a5d177ba264254390f792be07e41748ebd94730981c6cac31cc6"
+    },
+    "cmake_cache_sha256": "3b2b10f9e67a16820b895ca81378a9d272a14a9fe2080860d56f6a1fd1812719",
+    "sbom_sha256": "1b0dd43700d5f1c189eae577b3e79e7bb108dec8bd11e1a32fa3d5cb286eea84",
+    "pretrained_assets_present": false,
+    "transitive_review": "pending"
+  },
+  "native": {
+    "architecture": "x86_64",
+    "avx": false,
+    "capabilities_dropped": true,
+    "chip_output_sha256": "5c3bab292f6894aa2dc445d38311bb4531a7d4e8c33441a32f16a4dd1377a213",
+    "cuda": false,
+    "dlib": "20.0.0",
+    "elapsed_ms": 4.155544000013833,
+    "explicit_chip_parity": true,
+    "images_processed": 0,
+    "inference_executed": false,
+    "internet_probe_denied": true,
+    "model_files_loaded": 0,
+    "native_transform_executed": true,
+    "nonroot": true,
+    "peak_rss_kib": 49784,
+    "python": "3.13.13",
+    "read_only": true,
+    "scope": "data_free_source_only_preflight"
+  },
+  "independent_human_review": "pending",
+  "E0_complete": false,
+  "native_inference_tests": 0,
+  "status": "source_only_verified"
+}

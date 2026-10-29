@@ -1,0 +1,400 @@
+{
+  "version": 1,
+  "scope": "pinned_51_assets_byte_quarantine_only",
+  "source_revision": "100262732989e77f38cd831d70a376a93735006a",
+  "reviewed_image_redirect_hosts": [
+    "us.aws.cdn.hf.co"
+  ],
+  "observation_utc": "2026-10-29T20:43:21.316802+00:00",
+  "evidence": "TLS-verified official immutable resolver HEAD responses; signed redirect URLs and queries deliberately not retained",
+  "records": [
+    {
+      "source_path": "images/base/001-0001.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3384420,
+      "lfs_sha256": "2d8519c507b3d46a7c9da37e39cf61a2f72c5c0809b4fd47f16161379e54eaba",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0001.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 851668,
+      "lfs_sha256": "8b59550e67054550bc0398b5ee1ba3e9008aaff733671ab526ced38992a7500a",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0002.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3839236,
+      "lfs_sha256": "50649a55247dd0b9760b2e422bb1947ff70e0e05924b325d376da8102fad6f21",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0002.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1067376,
+      "lfs_sha256": "158c4467b820e39490474369433d55f0bd9f5701f12e9776e4f8bbbbbdf0d264",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0003.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3121978,
+      "lfs_sha256": "608e088182b28fdf3f7faa57166f324c528aa1623b87f10c3b7369542e53c662",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0003.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 887734,
+      "lfs_sha256": "31938e783365f99cecfd6cebb7088336f110bee4b955b900a6bcc42ae8325abb",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0004.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3239593,
+      "lfs_sha256": "a6723e92d2d36bfe4ee4aa0faa9ba0fcd76b02dcb95ba47f83123d6981475fd9",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0004.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 903000,
+      "lfs_sha256": "940fdc0dfc993980bae78b36e735bec8b8efa8b34a5a08a33a22999442b7773d",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0005.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3027408,
+      "lfs_sha256": "6e11c43bbc29b5b3cf58e3afba25075410b803ab950d7ff4b56682ddc054d4ef",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0005.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 814800,
+      "lfs_sha256": "970669f0da64ff891c6a98c3b6de57c7e7f008b52e8ea687924cfb836dae67cf",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0006.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3156572,
+      "lfs_sha256": "5d6015fa50026574a164cf16409e329f5909d98810bee088df0ab8af88aeb1d2",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0006.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1269811,
+      "lfs_sha256": "2262f27a6907af3bc7ea549dc0d92fbb5e87ebb75e93673645b125a07ba8875f",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0007.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3100371,
+      "lfs_sha256": "c75554d8cb20c41de9c10ffecc92d3b828d966fff498c8de2594f73c6c41de67",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0007.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 813473,
+      "lfs_sha256": "266a235601c33fc3f878f143b2e4f1b0b707e38df762a5e2ffd25923e421793e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0008.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 2917163,
+      "lfs_sha256": "12fb1c92f90ed15235ed6082a9c4ccedee87d23c779600b9ee0643bd7edf2afe",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0008.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 932645,
+      "lfs_sha256": "54fcb0680a6358c5180c6434ae4eb000c1f0288412e63541fadb8cd4858b7d8e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0009.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3397049,
+      "lfs_sha256": "396199565aefcd0973d26bf47443adf995269b45c9e495ec19e08705026c7865",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0009.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 911242,
+      "lfs_sha256": "84f813b584143b16e5524ee1b87bd4dd2c0a9304505179f9a70f3aa88d376283",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0010.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 2677847,
+      "lfs_sha256": "d7bd25f92550a9323a6197e03c373ae679e46bf451a504434808b24d8c9ad277",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0010.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 981072,
+      "lfs_sha256": "a99d235c14c3c010c0fcbe85e1a5a194b0ba0a09845031975f2b51e883331cee",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0011.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3063848,
+      "lfs_sha256": "93f06c400350097b7e20df4c75c7834533afca9955cec55cc04d6078f389731d",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0011.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 855282,
+      "lfs_sha256": "1fff3756ceffb394314630b8ddf95752ec5b68a577b490ad2f77f7b65a153470",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0012.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3208861,
+      "lfs_sha256": "c6909918f7bab2f05ecf12a21acbfccdec72d2bd08a719ff56929b37aef885d9",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0012.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 890787,
+      "lfs_sha256": "a1b33fbfca7911d401a6905fcabad4a6785330c844ad68a765e450cb3aea8f1e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0013.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3658110,
+      "lfs_sha256": "fc05485972a3053248256b8f2c161a9f7696f1fb15e2eaf3ab1ea7fd539fac04",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0013.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1044769,
+      "lfs_sha256": "ae8dea4a9d5c94b6212f91cfc961ccad9a16dc3f4f50633e5e41dc4bba99d236",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0014.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3880777,
+      "lfs_sha256": "9050c2eec86540ff3ef09b2fc94ba5be9acfc92e0f44855eba60ac4ea22d6c99",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0014.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1091040,
+      "lfs_sha256": "eed51b6637e747bfac105f7b9d4e0fc0f7834bf43346c221ce3b0e1a187e0f88",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0015.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3085557,
+      "lfs_sha256": "75a4a4ffa228ec76118440a9e2dc2c4ac706ec405a623f302a44f6fceaf3a771",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0015.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 837993,
+      "lfs_sha256": "6efbad1d34ab1c37c5266caf0aec6db5f8ccacac40a5e3509d6a0900da520aac",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0016.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3897609,
+      "lfs_sha256": "07d82389e93150034ec6360603a8a1e9c287d73e0be0170e3672c6f1f1f307e4",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0016.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1123981,
+      "lfs_sha256": "af46fc520396ab7146031d13a42139b3b974a72986423909c10573ae6c8be607",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0017.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3560427,
+      "lfs_sha256": "34eec072000fefb43f6a4611cd3c5d69c7f0f4b3bfe864fe7ef2bf408913273e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0017.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 993931,
+      "lfs_sha256": "f30bed9c7e7f397bd129047fe034e86759b1c16c9258d8d4409297919669663c",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0018.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3876643,
+      "lfs_sha256": "aac613d32ceb5bf3651fc007e6b5d779b782812f9a326c56d4b9af16ff7bfa3b",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0018.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1093475,
+      "lfs_sha256": "dbbc6d4366b6249f5da132fe9ddb797ebbc267e2f7f0e61a5d35473cd9292778",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0019.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3244430,
+      "lfs_sha256": "2baa2cb4063709c89390eb8470573997c628bb3466c9f63a8c2f6fcefd1bb6b6",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0019.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 997279,
+      "lfs_sha256": "e11d3a984880b1e5179fc35505c33a0b07033e68cbb34caebd2bffd5638a7e01",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0020.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3028336,
+      "lfs_sha256": "c6c93356b346d02b351dad8634358012df5ef7f57d16f34570a84d0a90187e94",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0020.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 861178,
+      "lfs_sha256": "fdf5482cf981fdfe992eec3c5c682b5640c2ec1ce3ea9077045ab580234679b9",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0021.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3331261,
+      "lfs_sha256": "77200f50b3ce5b1ca91d291cfcb640a3ae7370252588b9de8f62dcd1a3b9b543",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0021.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 854752,
+      "lfs_sha256": "b38944ae25837e0f43b0b27b34759f5c403df59a94a573018bf1b40ecd5d5d54",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0022.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3968704,
+      "lfs_sha256": "3d643172cb20c3919f8e8aed7794c6a407582547923f0e965baf1d563503f71b",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0022.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 1088698,
+      "lfs_sha256": "da530644e157f068248ff180b10e84ba90fb9642594013db19adb8add1e7f52e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0023.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3257873,
+      "lfs_sha256": "1e8ca60182fc16825359520d50261909dde51d546f1b71f12b5da1d8a56efec0",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0023.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 940028,
+      "lfs_sha256": "5c9e0c2273a420c3a71da06ce1b03abeb1b328c71d3e1ad84a2758e3bab4327e",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/base/001-0024.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 3619877,
+      "lfs_sha256": "a9538b78a91d144870cc3296f69685e0a8cdc585d69ad4b6c8361f4586d53035",
+      "image_body_bytes_read": 0
+    },
+    {
+      "source_path": "images/headshot/001-0024.png",
+      "status": 302,
+      "delegated_https_host": "us.aws.cdn.hf.co",
+      "declared_bytes": 956585,
+      "lfs_sha256": "2ad40611ca107319efd29f94987af89ad64757917773511279ead202b061c33e",
+      "image_body_bytes_read": 0
+    }
+  ],
+  "curation_license": "CC-BY-SA-4.0",
+  "individual_image_license": "CC0-1.0",
+  "attribution": "Reto Wyss / Syn-Vis-v0 (2025)",
+  "changes": "selected original approved 48 paths; added metadata-only HTTPS resolver identity/host checks; no image processing"
+}

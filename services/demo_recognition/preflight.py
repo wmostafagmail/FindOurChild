@@ -1,12 +1,15 @@
 """Data-free ABI/native transform check. Never loads a model or infers a face."""
 
 import hashlib
+import importlib.metadata
 import json
 import os
 import platform
 import resource
 import socket
+import subprocess
 import sys
+import sysconfig
 import time
 from pathlib import Path
 
@@ -14,7 +17,32 @@ import dlib
 import numpy as np
 
 
+def file_hash(path):
+    value = hashlib.sha256()
+    with path.open("rb") as stream:
+        while block := stream.read(65536):
+            value.update(block)
+    return value.hexdigest()
+
+
+def dependency_inventory():
+    # Source-only container: no photographs, models, host mounts or credentials.
+    # Record actual loaded ELF bytes, including NumPy's bundled native libraries.
+    libraries = {}
+    for line in Path("/proc/self/maps").read_text().splitlines():
+        fields = line.split()
+        if len(fields) == 6 and fields[5].startswith("/") and ".so" in fields[5]:
+            path = Path(fields[5])
+            libraries[str(path)] = {"sha256": file_hash(path), "bytes": path.stat().st_size}
+    packages = {d.metadata["Name"]: d.version for d in importlib.metadata.distributions()}
+    debian = subprocess.check_output(["dpkg-query", "-W", "-f=${Package}\t${Version}\n"], text=True)
+    return {"loaded_libraries": libraries, "python_packages": packages,
+            "debian_packages": dict(row.split("\t") for row in debian.splitlines())}
+
+
 def main():
+    if not __debug__:
+        raise RuntimeError("Native qualification assertions cannot be disabled")
     started = time.monotonic()
     assert sys.version_info[:3] == (3, 13, 13)
     assert platform.machine() == "x86_64"
@@ -52,6 +80,7 @@ def main():
     assert not list(Path("/opt").rglob("*.dat")) and not list(Path("/opt").rglob("*.bz2"))
     report = {
         "scope": "data_free_source_only_preflight", "python": platform.python_version(),
+        "soabi": sysconfig.get_config_var("SOABI"), "gil_disabled": bool(sysconfig.get_config_var("Py_GIL_DISABLED")),
         "architecture": platform.machine(), "dlib": dlib.__version__, "cuda": False, "avx": False,
         "native_transform_executed": True, "explicit_chip_parity": True,
         "chip_output_sha256": hashlib.sha256(chip.tobytes()).hexdigest(),
@@ -59,6 +88,7 @@ def main():
         "nonroot": True, "read_only": True, "capabilities_dropped": True, "internet_probe_denied": True,
         "elapsed_ms": (time.monotonic() - started) * 1000,
         "peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+        "runtime_dependency_inventory": dependency_inventory(),
     }
     print(json.dumps(report, sort_keys=True))
 

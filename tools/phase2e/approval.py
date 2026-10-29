@@ -37,7 +37,7 @@ def verify(envelope, trusted_keys, *, gate, manifest_digest, operator_id, now=No
     evidence. Review records and owner administration remain necessary governance.
     """
     now = now or datetime.now(UTC)
-    if not isinstance(gate, str) or gate not in {"A4", "A6", "A7"}:
+    if not isinstance(gate, str) or gate not in {"A3", "A4", "A6", "A7"}:
         raise ApprovalError("Unknown gate or manifest")
     if not isinstance(manifest_digest, str) or not re.fullmatch(r"[a-f0-9]{64}", manifest_digest):
         raise ApprovalError("Unknown gate or manifest")

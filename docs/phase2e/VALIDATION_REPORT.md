@@ -2,6 +2,8 @@
 
 ## Implementation checkpoint after owner authorization
 
+**A1b is blocked.** The [source-policy disposition](e0/SOURCE_POLICY_DISPOSITION.md) invalidates the initial data-free claim: the standard dlib binding source includes an embedded HOG payload. It was not invoked. Named weights/images remain unacquired, and intake is hard-disabled pending review of a clean minimal worker design. Historical successful chip/ABI checks are not acquisition approval.
+
 Phase 2E E0 implementation has started on `codex/phase-2e-licensed-recognition`, after verifying required hosted CI on exact accepted main `4082dbf97da3fd1aa55a336b9d7e9caa4e0a8281`. [E0_PROGRESS.md](E0_PROGRESS.md) records executable code, source/dependency manifests, tests and current hard gate boundaries. E0 is incomplete; E1/E2 and actual-model/browser additions are pending. No Phase 2E acceptance is claimed.
 
 The earlier preparation report below is preserved as historical evidence; its documentation-only scope describes that earlier snapshot.
