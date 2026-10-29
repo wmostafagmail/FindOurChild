@@ -29,14 +29,18 @@ jobs:
         run: |
           .venv/bin/ruff check tools/phase2e services/demo_recognition tests/phase2e
           .venv/bin/python -m tools.phase2e.test_controls
+      - name: Audit exact source-only build dependency versions
+        run: .venv/bin/python -m pip_audit --no-deps --disable-pip -r services/demo_recognition/requirements-build.txt --format json --output artifacts/phase2e-e0-controls/dependency-audit.json
       - name: Native source-only offline CPU qualification
         run: .venv/bin/python -m tools.phase2e.qualify "$RUNNER_TEMP/foc-phase2e-source"
       - name: Publish data-free qualification evidence
+        if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: phase2e-source-only-${{ github.sha }}
           path: |
             ${{ runner.temp }}/foc-phase2e-source/sanitized/
             artifacts/phase2e-e0-controls/
+            ${{ runner.temp }}/foc-phase2e-source/raw/
           if-no-files-found: error
           retention-days: 7

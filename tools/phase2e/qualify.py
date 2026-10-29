@@ -8,6 +8,7 @@ import platform
 import shutil
 import subprocess
 import sys
+import traceback
 import urllib.request
 from pathlib import Path
 
@@ -117,7 +118,20 @@ def main():
     try:
         qualify(args.work.absolute())
     except (AssertionError, OSError, ValueError, RuntimeError, subprocess.SubprocessError) as error:
-        # No environment, URLs, media, descriptors, receipts or secrets in summary.
+        # This job has no model/media/application credentials. Retain original source-
+        # only diagnostics even on failure; never reuse this policy for inference logs.
+        work = args.work.absolute()
+        if work.is_dir() and not work.is_symlink():
+            raw = work / "raw"
+            raw.mkdir(exist_ok=True, mode=0o700)
+            (raw / "failure.log").write_text(traceback.format_exc())
+            output = work / "sanitized"
+            output.mkdir(exist_ok=True)
+            failure = {"source_only_preflight": "failed", "error_type": type(error).__name__,
+                       "E0_complete": False, "head_sha": os.environ.get("GITHUB_SHA"),
+                       "original_logs": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                                         for p in raw.glob("*.log")}}
+            (output / "failure.json").write_text(json.dumps(failure, indent=2) + "\n")
         print(json.dumps({"source_only_preflight": "failed", "error_type": type(error).__name__,
                           "E0_complete": False}), file=sys.stderr)
         raise SystemExit(1) from None
