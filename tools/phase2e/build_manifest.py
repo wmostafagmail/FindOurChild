@@ -47,7 +47,11 @@ def main():
     # Inventory is not a claim that every transitive native license/security issue is resolved.
     (output / "sbom.cdx.json").write_text(json.dumps(sbom, indent=2) + "\n")
     (output / "source-receipt.json").write_text(json.dumps(source, indent=2) + "\n")
-    cache, = (root / "source/build").rglob("CMakeCache.txt")
+    cache, = (root / "source/build").glob("temp.*/CMakeCache.txt")
+    assert "DLIB_PNG_SUPPORT:BOOL=ON" in cache.read_text()
+    assert "PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/" in cache.read_text()
+    for p in Path("/runtime-notices").iterdir():
+        (output / p.name).write_bytes(p.read_bytes())
     report = {"version": 1, "scope": "data_free_cpu_build_only", "python": platform.python_version(),
               "architecture": platform.machine(), "source_commit": source["commit"],
               "source_receipt_sha256": digest(root / "source-receipt.json"),
@@ -55,6 +59,8 @@ def main():
               "wheel": {"name": wheel.name, "bytes": wheel.stat().st_size, "sha256": digest(wheel)},
               "cmake_version": subprocess.check_output(["cmake", "--version"], text=True).splitlines()[0],
               "compiler": subprocess.check_output(["c++", "--version"], text=True).splitlines()[0],
+              "runtime_native_libraries": {p.name: digest(p) for p in Path("/runtime-libs").iterdir()},
+              "runtime_native_notices": {p.name: digest(p) for p in Path("/runtime-notices").iterdir()},
               "cmake_cache_sha256": digest(cache), "sbom_sha256": digest(output / "sbom.cdx.json"),
               "pretrained_assets_present": False, "transitive_review": "pending"}
     (output / "build-manifest.json").write_text(json.dumps(report, indent=2) + "\n")

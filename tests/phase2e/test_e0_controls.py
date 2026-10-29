@@ -93,6 +93,15 @@ def test_even_valid_signature_cannot_skip_blinded_fixture_review():
         verify(envelope, keys, gate="A6", manifest_digest=DIGEST, operator_id="operator", now=NOW)
 
 
+@pytest.mark.parametrize("field,value", [("key_id", []), ("reviewer_id", {}), ("issued_at", None),
+                                        ("scope", "x" * 129), ("review_record_sha256", False)])
+def test_malformed_field_types_do_not_bypass_approval_verifier(field, value):
+    _, envelope, keys = receipt()
+    envelope["payload"][field] = value
+    with pytest.raises(ApprovalError):
+        verify(envelope, keys, gate="A4", manifest_digest=DIGEST, operator_id="operator", now=NOW)
+
+
 @pytest.mark.parametrize("path", [
     "examples/faces/a.jpg", "dlib/test/image.cpp", "dlib/test/ffmpeg_data/dog.jpg",
     "dlib/external/libjpeg/sample.jpg", "python_examples/demo.py", "../setup.py", "/setup.py",

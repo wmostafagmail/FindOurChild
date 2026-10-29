@@ -37,7 +37,9 @@ def verify(envelope, trusted_keys, *, gate, manifest_digest, operator_id, now=No
     evidence. Review records and owner administration remain necessary governance.
     """
     now = now or datetime.now(UTC)
-    if gate not in {"A4", "A6", "A7"} or not re.fullmatch(r"[a-f0-9]{64}", manifest_digest):
+    if not isinstance(gate, str) or gate not in {"A4", "A6", "A7"}:
+        raise ApprovalError("Unknown gate or manifest")
+    if not isinstance(manifest_digest, str) or not re.fullmatch(r"[a-f0-9]{64}", manifest_digest):
         raise ApprovalError("Unknown gate or manifest")
     if not isinstance(envelope, dict) or set(envelope) != {"payload", "signature"}:
         raise ApprovalError("Closed approval envelope required")
@@ -46,6 +48,11 @@ def verify(envelope, trusted_keys, *, gate, manifest_digest, operator_id, now=No
                 "scope", "decision", "review_record_sha256", "blind_to_model_scores"}
     if not isinstance(payload, dict) or set(payload) != required:
         raise ApprovalError("Closed approval payload required")
+    for field in required - {"version", "blind_to_model_scores"}:
+        if not isinstance(payload[field], str) or not 1 <= len(payload[field]) <= 128:
+            raise ApprovalError("Invalid approval field type/size")
+    if not isinstance(trusted_keys, dict) or not isinstance(operator_id, str) or not operator_id:
+        raise ApprovalError("Trusted configuration/operator required")
     if (payload["version"], payload["gate"], payload["manifest_sha256"], payload["scope"], payload["decision"]) != (
         1, gate, manifest_digest, "private_synthetic_demo_only", "approved"
     ) or type(payload["version"]) is not int:
