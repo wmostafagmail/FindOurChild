@@ -97,7 +97,9 @@ def main():
               "linked_component_methods": linked,
               "native_contract_binary_sha256": digest(root / 'native-build/native_contract_tests'),
               "known_embedded_model_headers": 0, "standard_python_bindings_included": False,
-              "pretrained_assets_present": False, "transitive_review": "pending",
+              "pretrained_assets_present": False,
+              "pretrained_asset_flag_scope": "no serialized model files; exact source RGB preprocessing constants retained",
+              "transitive_review": "pending",
               "model_execution_api_available": False, "A1b_accepted": False}
     (output / "build-manifest.json").write_text(json.dumps(report, indent=2) + "\n")
     (output / "CMakeCache.txt").write_bytes(cache.read_bytes())

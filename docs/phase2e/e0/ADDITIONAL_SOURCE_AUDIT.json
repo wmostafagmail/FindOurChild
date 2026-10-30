@@ -177,5 +177,16 @@
     "dlib/gui_widgets/fonts.h",
     "dlib/gui_widgets/fonts_abstract.h"
   ],
-  "declaration_header_disposition": "dlib/dnn/input.h transitively includes draw.h and the two font declaration headers. Retained unchanged code only; fonts.cpp remains excluded and NO_MAKEFILE is never enabled. Compiler dependency audit enforces no excluded implementation."
+  "declaration_header_disposition": "dlib/dnn/input.h transitively includes draw.h and the two font declaration headers. Retained unchanged code only; fonts.cpp remains excluded and NO_MAKEFILE is never enabled. Compiler dependency audit enforces no excluded implementation.",
+  "retained_source_preprocessing_constants": {
+    "path": "dlib/dnn/input.h",
+    "sha256": "d8cf579b38773cf59b617a567310c4b11741c3fe47a4562164616dc8d607e020",
+    "rgb_centering_defaults": [
+      122.782,
+      117.001,
+      104.298
+    ],
+    "classification": "Fixed upstream RGB preprocessing constants in licensed source, not an acquired serialized model file. Their existence is disclosed; source-only does not mean absence of every numeric/preprocessing constant.",
+    "provenance_and_manifest_disposition": "Preserve exact source fingerprint and code grant; bind preprocessing in future embedding-space manifest. Independent review and model training-data provenance remain pending."
+  }
 }
