@@ -172,6 +172,10 @@ def signed_bytes(payload):
     return DOMAIN.encode() + b"\x00" + payload["kind"].encode() + b"\x00" + canonical(payload)
 
 
+def review_identity(payload):
+    return digest(canonical({k: payload[k] for k in ["person", "fixture", "reviewed", "evidence"]}))
+
+
 def validate_chain(root, records, registry, binding, now, *, action, clock_trusted=True):
     """Verify an exact chain, not an execution capability or actual human review.
 
@@ -255,6 +259,11 @@ def validate_chain(root, records, registry, binding, now, *, action, clock_trust
             require(p["person"] != p["operator"], "operator_conflict")
         if role == "F":
             require(p["blind"] and reviewed <= time_value(registry.blind_until), "fixture_not_blind")
+            if p["person"] in registry.score_access:
+                require(
+                    registry.sealed_reviews.get((p["person"], p["fixture"])) == review_identity(p),
+                    "post_score_review_requires_authentic_original_seal",
+                )
         key, _ = public_key(entry["der"])
         signature_verify(key, env["signature"], signed_bytes(p))
         active.add(identity)

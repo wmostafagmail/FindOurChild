@@ -57,6 +57,7 @@ class Registry:
         self.project, self.instance = project, instance
         self.epoch, self.activation_epoch, self.current_epoch = epoch, activation_epoch, current_epoch
         self.blind_until, self.test_only = blind_until, test_only
+        self.score_access, self.sealed_reviews = {}, {}
 
     def validate(self, now):
         require(
@@ -366,6 +367,7 @@ class PrivateRegistry:
             self._verify_history(c, entries, row[0], row[1])
             result = self._snapshot(entries, row[0], row[1])
             result.validate(now)
+            self._bind_blinding(c, result, now)
             return result
 
     def revoke(self, token, fingerprint, signature, now):
@@ -439,11 +441,35 @@ class PrivateRegistry:
                 derived.append(dict(e, fingerprint=fp, revoked=False))
             elif action == "score-access":
                 require(
-                    set(message) == {"domain", "kind", "policy", "person", "at", "permit", "epoch"},
+                    set(message)
+                    == {
+                        "domain",
+                        "kind",
+                        "policy",
+                        "person",
+                        "at",
+                        "permit",
+                        "epoch",
+                        "fixture",
+                        "reviewer",
+                        "reviewed",
+                        "fixture_record",
+                        "review_content",
+                    },
                     "score_history_fields",
                 )
                 require(any(e["person"] == message["person"] for e in derived), "score_history_person")
-                time_value(message["at"])
+                from .records import sha
+
+                require(
+                    all(sha(message[k]) for k in ["fixture", "fixture_record", "permit", "review_content"]),
+                    "score_history_digest",
+                )
+                require(time_value(message["reviewed"]) <= time_value(message["at"]), "score_history_review")
+                require(
+                    any(e["person"] == message["reviewer"] and "F" in e["roles"] for e in derived),
+                    "score_history_reviewer",
+                )
                 seen_scores.setdefault(message["person"], message["at"])
             else:
                 require(
@@ -478,6 +504,17 @@ class PrivateRegistry:
             require(digest(raw) == actual, "audit_integrity")
             previous = actual
 
+    def _bind_blinding(self, c, registry, now):
+        from .records import decode
+
+        registry.blind_until = utc(now)
+        registry.score_access = dict(c.execute("SELECT person,first_seen FROM score_access"))
+        for (raw,) in c.execute("SELECT message FROM changes WHERE action='score-access' ORDER BY epoch"):
+            message = decode(bytes(raw))
+            registry.sealed_reviews.setdefault(
+                (message["reviewer"], message["fixture"]), message["review_content"]
+            )
+
     def accept(self, root, records, binding, now, *, action):
         """Consume verified signed records idempotently; never signs/activates.
 
@@ -492,8 +529,7 @@ class PrivateRegistry:
             entries = json.loads(row[2])
             self._verify_history(c, entries, row[0], row[1])
             registry = self._snapshot(entries, row[0], row[1])
-            earliest = c.execute("SELECT min(first_seen) FROM score_access").fetchone()[0]
-            registry.blind_until = earliest or utc(now)
+            self._bind_blinding(c, registry, now)
             payload = validate_chain(root, records, registry, binding, now, action=action)
             needed = set()
 
@@ -521,7 +557,7 @@ class PrivateRegistry:
         This only records a monotonic blinding fence; it exposes no scores and
         cannot activate a provider. A7 is necessary even for technical tooling.
         """
-        from .records import validate_chain
+        from .records import decode, review_identity, validate_chain
 
         self.authenticate_owner(token, now)
         with self.transaction() as c:
@@ -530,10 +566,18 @@ class PrivateRegistry:
             entries = json.loads(row[2])
             self._verify_history(c, entries, row[0], row[1])
             registry = self._snapshot(entries, row[0], row[1])
-            earliest = c.execute("SELECT min(first_seen) FROM score_access").fetchone()[0]
-            registry.blind_until = earliest or utc(now)
+            self._bind_blinding(c, registry, now)
             validate_chain(root, records, registry, binding, now, action="A7")
             require(any(e["person"] == person for e in entries), "unknown_score_viewer")
+            root_payload = decode(records[root])["payload"]
+            candidates = [(dep, decode(records[dep])["payload"]) for dep in root_payload["predecessors"]]
+            fixture_digest, fixture_record = next(
+                (dep, rec) for dep, rec in candidates if rec["kind"] == "A6"
+            )
+            require(
+                c.execute("SELECT 1 FROM records WHERE digest=?", (fixture_digest,)).fetchone() is not None,
+                "fixture_must_be_accepted_before_score_access",
+            )
             require((row[0], row[1]) == self.external_epoch(), "authority_changed_during_audit")
             owner = next(e for e in entries if "O" in e["roles"] and not e["revoked"])
             message = canonical(
@@ -545,6 +589,11 @@ class PrivateRegistry:
                     "at": utc(now),
                     "permit": root,
                     "epoch": row[0] + 1,
+                    "fixture": fixture_record["fixture"],
+                    "reviewer": fixture_record["person"],
+                    "reviewed": fixture_record["reviewed"],
+                    "fixture_record": fixture_digest,
+                    "review_content": review_identity(fixture_record),
                 }
             )
             signature_verify(public_key(owner["der"])[0], owner_signature, message)

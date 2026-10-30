@@ -75,6 +75,25 @@ def test_dg_r09_dual_reviewer_not_blind():
     w.registry.blind_until = utc(NOW - timedelta(seconds=1))
     with pytest.raises(Denied):
         w.verify()
+    # A backdated claim cannot establish a fresh blind review after score
+    # access. Only the exact authentic original fixture/review time can renew.
+    w = World()
+    w.registry.score_access["synthetic-reviewer"] = utc(NOW)
+    with pytest.raises(Denied):
+        w.verify()
+    from tools.phase2e.demo_governance.records import review_identity
+
+    w.registry.sealed_reviews[("synthetic-reviewer", "a" * 64)] = review_identity(w.payload("A6"))
+    assert w.verify()["kind"] == "A7"
+    p = w.payload("A6")
+    p["evidence"]["links"] = "b" * 64
+    with pytest.raises(Denied):
+        w.verify("A6", root=w.sign(p))
+    w.registry.sealed_reviews.clear()
+    p = w.payload("A6")
+    p["reviewed"] = utc(NOW - timedelta(hours=1))
+    with pytest.raises(Denied):
+        w.verify("A6", root=w.sign(p))
 
 
 def test_dg_r10_fixture_operator_also_technical():

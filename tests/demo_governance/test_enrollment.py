@@ -10,7 +10,7 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
 from tests.demo_governance.helpers import World
-from tools.phase2e.demo_governance.records import DOMAIN, POLICY, Denied, canonical, digest
+from tools.phase2e.demo_governance.records import DOMAIN, POLICY, Denied, canonical, digest, review_identity
 from tools.phase2e.demo_governance.registry import ENROLLMENT, PrivateRegistry, utc
 
 
@@ -211,6 +211,11 @@ def test_transactional_records_replay_and_blinding_fence(tmp_path):
             "at": utc(e.now),
             "permit": w.by_kind["A7"],
             "epoch": e.epochs[0] + 1,
+            "fixture": w.payload("A6")["fixture"],
+            "reviewer": w.payload("A6")["person"],
+            "reviewed": w.payload("A6")["reviewed"],
+            "fixture_record": w.by_kind["A6"],
+            "review_content": review_identity(w.payload("A6")),
         }
     )
     signature = base64.b64encode(w.keys["synthetic-owner"].sign(message)).decode()
