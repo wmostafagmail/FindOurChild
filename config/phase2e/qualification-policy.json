@@ -6,6 +6,6 @@
   "image_decoding_enabled": false,
   "inference_enabled": false,
   "operational_enabled": false,
-  "status": "A1b_blocked_pending_clean_worker_design_review",
-  "reason": "Standard dlib bindings pull an embedded pretrained HOG payload. The initial extension-based source allowlist was not data-free. No HOG detector was invoked. A corrected minimal interface and source projection require review before asset acquisition."
+  "status": "A1b_engineering_approved_second_review_pending",
+  "reason": "Owner approved corrected minimal architecture at 3442923 for continued source-only engineering. Full A1b, acquisition, deserialization and inference remain denied pending a second independent review and later gates."
 }

@@ -53,3 +53,11 @@ The [minimal worker review packet](e0/MINIMAL_WORKER_REVIEW.md) is the current d
 ## Corrected prototype first build attempt
 
 Native prototype attempts on `8c8adca43874d30ab7cd5d7ac6a5d8be6de47ff7` failed compilation because `dlib/revision.h` is generated only for an installed standalone build, not exposed by the embedded core target. The actual push diagnostic is preserved in artifact 12934351305, ZIP SHA-256 `095587dcbefd33c8960a4950d7d5d86fd6564b9dbacd8332bc23461911420eda`. The bridge now obtains its version from dlib's exported CMake `DLIB_VERSION` and exposes the actual compiled CUDA/AVX flags for runtime assertions. The core source and strengthened source policy remain unchanged; no model/image acquisition or model execution occurred. All 119 local source-control tests and 203 foundation checks pass; native prototype and full current-head hosted results still require verification.
+
+## 2026-10-30 — architecture continuation approved; second A1b review required
+
+The owner reviewed checkpoint3442923 and authorized continued minimal-worker engineering only. Acquisition, model parsing, inference and full A1b acceptance remain unapproved. The updated review packet is `e0/A1B_INTERFACE_SPEC.md`, `e0/A1B_BUILD_INTERFACE_REVIEW.md` and `e0/A1B_REVIEW_AND_BLOCKERS.md`.
+
+The closed0.2.0 interface compiles all three actual dlib parser/forward APIs separately; every model operation remains review-locked. The version3 projection contains1114 source/license files,13108426 bytes.27 unused GUI/font/stylesheet source files are excluded. Two transitively required font declaration headers remain; the encoded implementation is absent. Strict actual-byte source auditing and portable Clang syntax checks passed. The original missing-header/audit/transport/Docker failures remain preserved, with no model/media acquisition or inference.
+
+The136 E0 controls preserve all119 baseline selectors.52 named new source-only native cases, the full747/360/36 regression and exact-head hosted source/build/artifact verification remain mandatory before this checkpoint's review receipt. Local Docker storage is read-only on a full host disk; no cleanup/reset was performed, and local ARM/emulation is not qualification. No model or image identity was self-approved. Independent human review and all subsequent gates remain pending.

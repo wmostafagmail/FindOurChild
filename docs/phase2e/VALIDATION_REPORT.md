@@ -1,3 +1,33 @@
+# Phase 2E validation report — second A1b review checkpoint
+
+**The corrected architecture is approved for continued engineering; full A1b and Phase 2E are not accepted.** The owner reviewed PR #11 at `3442923` and explicitly withheld acquisition/deserialization/inference approval. This continuation completes a review-locked source-only interface, with no model/image acquisition, model parsing or neural execution. Stop for the second A1b review. No merge, E1/E2, Phase 2F/3 or operational activation.
+
+## Delivered continuation
+
+- Native 0.2.0 / `foc-dlib-closed-interface-v2`: actual selected CNN/predictor/encoder parser and forward-call bodies compile separately, with six required linked symbols. Typed fixed interfaces, bounds and error/fault behavior are implemented. Every model entry checks a permanently closed review guard; actual identities and actual-manifest authority are absent.
+- Fixed internal component paths only. OpenSSL SHA-256 held-FD integrity streams reject symlinked/untrusted parents, non-regular/writable/unowned/hardlinked files, unknown/oversized identity and content drift. No arbitrary model path, URL, callback, plugin, browser manifest or runtime approval setter. Model-dependent parser/forward/error behavior remains **unexecuted**.
+- Version 3 source projection:1114 exact code/license blobs,13108426 bytes.27 unused GUI/font/encoded-stylesheet source files additionally excluded, with unchanged original fingerprints retained. No embedded-data exception or claim of universal detection. Exact source bytes and actual compile dependency closure receive separate audits.
+-136 locked E0 Python controls: every original119 selector preserved,17 additional source/approval negatives.32 closed-interface and20 benign stream cases are declared in a machine-readable native inventory, in addition to the preserved transform/parity/five input denials. None is called a model inference test.
+- Source-only runtime retains pinned Linux x86_64/CPython 3.13.13/CMake 3.31.6/NumPy 2.3.3 and immutable images;2 CPUs/1GiB/64 PIDs/no network/nonroot/read-only limits. Added CPU10s/core0/file1MiB/FD64 process limits and one native thread. Neural workload resources/latency remain unmeasured.
+
+Detailed [interface specification](e0/A1B_INTERFACE_SPEC.md), [review findings](e0/A1B_BUILD_INTERFACE_REVIEW.md), [approval/blocker register](e0/A1B_REVIEW_AND_BLOCKERS.md), [source exclusions](e0/ADDITIONAL_SOURCE_AUDIT.json) and [current review entry](e0/MINIMAL_WORKER_REVIEW.md) distinguish author review, independent automated evidence checks and pending independent human approval. The full original3442923 report is preserved [verbatim](e0/REVIEW_3442923_REPORT.md), and historical evidence below remains explicitly historical.
+
+## Execution evidence and exact-head publication
+
+Local136 E0 controls and Ruff passed with no skipped mandatory case. Four portable native translation units also passed Clang syntax/type checking against the exact1114-file source projection; this is a macOS compile diagnostic, not Linux ABI/loading/runtime qualification. The separate actual-byte source audit passed. See [local evidence scope](e0/A1B_LOCAL_EVIDENCE.json). Native-host qualification, all52 new native cases,747 application/API/database/security tests,360 official TesterArmy executions and36 migration/recovery checks require actual hosted execution on the final current head. Their **final verified status, run/checkout SHA, complete counts, artifact IDs/digests and independent audit receipts are published in [PR #11](https://github.com/wmostafagmail/FindOurChild/pull/11) after verification**. A planned inventory or an older green run is never a pass for the new interface. PR synthetic merge checkout and literal push-head execution are recorded separately. Publication remains blocked unless all required cases execute successfully, with no skip/retry-as-pass.
+
+The earlier3442923 checkpoint independently passed two full747/360/36 regressions and two119-control source probes; those results are retained in PR history/private receipts. They do not prove the new native interface. New receipt paths are `artifacts/raw/phase2e-e0/a1b-second-review/`; accepted prior receipts are not overwritten. Source evidence uses its actual run SHA, avoiding a claim that a future documentation commit already ran.
+
+Local Python initially failed HTTPS verification because its default CA path was missing; the representative original traceback/partial directory were retained. A fresh source-only preparation succeeded using existing system CAs, without changing trust or disabling TLS. Local Docker diagnostics then failed with read-only build storage on a full host disk. Original log is preserved; no existing images, volumes, services, credentials or research evidence were deleted/reset. Local ARM/emulation is not x86_64 qualification. Hosted native Linux remains mandatory.
+
+## Performance and unresolved acceptance
+
+The earlier3442923 push DB p951075.499ms exceeded1000ms; accepted-main4082dbf DB p951189.444ms and prior queue/repeatability misses remain open. New exact-head measurements are reported separately in the PR receipt, including misses. No planning target is relaxed, pooled away or asserted resolved. Source-only transform/denial timing is not CNN/encoder/job latency; all neural p95, real ranks/distances and independently measured child-identification accuracy remain unmeasured.
+
+All27 functional feature groups and192 new recognition browser executions remain pending; the>=552 cumulative Phase 2E browser acceptance gate is not satisfied by 360 preserved regressions. Independent human build/interface/license approval is pending. Actual model/image bodies, approved decompressed digests/resource limits, parser qualification, blinded fixture review, private-inference permit, E1/E2 integration and Phase 3 manual Arabic/screen-reader/long-history gates remain pending. Every acquisition/loading/decode/inference/operational flag remainsfalse; no inference permit or real reviewer credential is fabricated.
+
+## Historical checkpoint record — superseded where continuation above differs
+
 # Phase 2E validation report — blocked E0 review checkpoint
 
 **Phase 2E is incomplete and is not accepted. A1b is blocked pending review of the corrected minimal worker design and completion/review of its real-model execution interface.** The default acquisition policy is false. E1/E2, model loading, actual facial recognition, all additional 192 browser executions and production activation remain unimplemented/unexecuted. No pending scenario is counted as passed.
@@ -114,3 +144,5 @@ Existing full regression commands remain `.venv/bin/python -m scripts.dev test`,
 Source groups: `services/demo_recognition/` (native CMake/C++ probe, wheel/runtime entry point, locked requirements/Dockerfile), `tools/phase2e/` (projection, qualification, packaging/SBOM, approval/integrity/intake/verifiers/strict test runner), `config/phase2e/` (locks, metadata-only transport policy and enforced block), `tests/phase2e/` / `e0-required-tests.json` (119 selectors), separate prototype Actions workflow, and this review/evidence packet. Every actual changed file is available in the draft PR diff; no accepted migration/API/browser source was deleted or replaced.
 
 Stop for the A1b review. Do not merge as completed Phase 2E, acquire/parse assets under a fake approval, implement Phase 2F/3 or activate operational matching.
+
+Two unchanged font declaration headers are required transitively by dlib DNN input/drawing declarations. They are retained as code only; the encoded font implementation remains excluded. `NO_MAKEFILE` is never enabled; compiler-input auditing rejects any excluded implementation. The failed missing-header syntax diagnostic is preserved.

@@ -1,0 +1,27 @@
+{
+  "scope": "local_source_only_controls_and_portable_syntax_not_native_Linux_qualification",
+  "source_projection_sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd",
+  "actual_source_files_audited": 1114,
+  "actual_source_bytes": 13108426,
+  "portable_Cpp_syntax_units": [
+    "source_probe.cpp",
+    "fixed_interface.cpp",
+    "model_backend.cpp",
+    "execution_guard.cpp"
+  ],
+  "portable_syntax_result": "passed",
+  "portable_syntax_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "e0_python_controls_last_run": 136,
+  "required_prior_selectors_preserved": 119,
+  "new_native_case_inventory": 52,
+  "native_Linux_qualification": "pending_hosted",
+  "model_deserializations": 0,
+  "neural_inference": 0,
+  "independent_human_review": "pending",
+  "A1b_accepted": false,
+  "failures_preserved": [
+    "local-portable-syntax.log",
+    "local-python-tls-failure.log",
+    "local-docker-build.log"
+  ]
+}

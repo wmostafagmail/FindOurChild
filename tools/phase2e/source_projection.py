@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import re
+import traceback
 import urllib.error
 import urllib.request
 from pathlib import Path, PurePosixPath
@@ -48,6 +49,12 @@ def allowed_path(value):
         return True
     if not value.startswith("dlib/") or p.name in FORBIDDEN_EMBEDDED_MODELS:
         return False
+    if value in {"dlib/gui_widgets/fonts.h", "dlib/gui_widgets/fonts_abstract.h"}:
+        return True
+    if value.startswith(("dlib/gui_widgets/", "dlib/gui_core/")) or value in {"dlib/gui_widgets.h", "dlib/gui_core.h"}:
+        return False
+    if value == "dlib/data_io/image_dataset_metadata.cpp":
+        return False
     if value == "dlib/python.h" or value.startswith("dlib/python/"):
         return False
     if any(x in p.parts for x in ("test", "tests", "examples", "docs", "java", "matlab")):
@@ -61,7 +68,7 @@ def validate_lock(lock):
     if set(lock) != {"version", "commit", "tree", "scope", "entries"}:
         raise ProjectionError("Unknown projection fields")
     if (lock["version"], lock["commit"], lock["tree"], lock["scope"]) != (
-        2, COMMIT, TREE, "minimal_core_no_pretrained_payloads"
+        3, COMMIT, TREE, "minimal_fixed_interface_no_gui_or_pretrained_payloads"
     ):
         raise ProjectionError("Unapproved source identity")
     rows = lock["entries"]
@@ -127,9 +134,13 @@ def acquire(destination):
             entries = list(pool.map(lambda row: fetch(row, destination), rows))
     except (OSError, ValueError):
         # Preserve partial evidence; no retry to another ref or provider, no build receipt.
+        failure = destination.parent / (destination.name + '-failure.log')
+        with failure.open('x') as stream:
+            stream.write(traceback.format_exc())
+        os.chmod(failure, 0o600)
         raise ProjectionError("Projection acquisition failed; partial files retained privately") from None
     receipt = {
-        "version": 2, "scope": "minimal_core_no_pretrained_payloads", "commit": COMMIT, "tree": TREE,
+        "version": 3, "scope": "minimal_fixed_interface_no_gui_or_pretrained_payloads", "commit": COMMIT, "tree": TREE,
         "lock_sha256": hashlib.sha256(lock_bytes).hexdigest(), "entries": entries,
         "model_files_acquired": 0, "dataset_images_acquired": 0,
     }

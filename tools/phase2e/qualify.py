@@ -49,11 +49,14 @@ def prepare(work):
         assert len(data) == package["size"] and hashlib.sha256(data).hexdigest() == package["sha256"]
         (wheels / package["filename"]).write_bytes(data)
     shutil.copyfile(CONFIG / "build-dependencies.json", context / "dependency-lock.json")
-    for filename in ["Dockerfile.preflight", "requirements-build.txt", "preflight.py"]:
+    for filename in ["Dockerfile.preflight", "requirements-build.txt", "preflight.py", "interface_checks.py", "native_fixtures.py"]:
         shutil.copyfile(WORKER / filename, context / filename)
     shutil.copytree(WORKER / "native", context / "native")
     shutil.copyfile(ROOT / "tools/phase2e/build_manifest.py", context / "build_manifest.py")
     shutil.copyfile(ROOT / "tools/phase2e/package_probe.py", context / "package_probe.py")
+    shutil.copyfile(CONFIG / "source-projection.json", context / "source-projection.json")
+    shutil.copyfile(ROOT / "tools/phase2e/audit_source.py", context / "audit_source.py")
+    shutil.copyfile(CONFIG / "native-test-inventory.json", context / "native-test-inventory.json")
     return context
 
 
@@ -105,14 +108,14 @@ def qualify(work):
                   "model_acquisition_authorized": False, "image_acquisition_authorized": False,
                   "independent_manifest_review": "pending", "E0_complete": False}
         report["A1b_accepted"] = False
-        report["acquisition_gate"] = "blocked_pending_clean_worker_design_review"
+        report["acquisition_gate"] = "blocked_pending_second_A1b_review"
         (output / "source-only-result.json").write_text(json.dumps(report, indent=2) + "\n")
         checksums = {str(p.relative_to(output)): hashlib.sha256(p.read_bytes()).hexdigest()
                      for p in sorted(output.rglob("*")) if p.is_file()}
         (output / "checksums.json").write_text(json.dumps(checksums, indent=2) + "\n")
         print(json.dumps({"source_only_preflight": "passed", "model_inference": "not_executed",
                           "independent_review": "pending", "A1b_accepted": False,
-                          "acquisition": "blocked_pending_design_review", "E0_complete": False}))
+                          "acquisition": "blocked_pending_second_A1b_review", "E0_complete": False}))
     finally:
         subprocess.run(["docker", "rm", "--force", container], stdout=subprocess.DEVNULL,
                        stderr=subprocess.DEVNULL, check=False)

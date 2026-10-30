@@ -15,6 +15,7 @@ from pathlib import Path
 
 import _foc_dlib_native as native
 import numpy as np
+from interface_checks import checks as interface_checks
 
 
 def file_hash(path):
@@ -44,10 +45,14 @@ def main():
     if not __debug__:
         raise RuntimeError("Native qualification assertions cannot be disabled")
     started = time.monotonic()
+    resource.setrlimit(resource.RLIMIT_CPU, (10, 10))
+    resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+    resource.setrlimit(resource.RLIMIT_FSIZE, (1048576, 1048576))
+    resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
     assert sys.version_info[:3] == (3, 13, 13)
     assert platform.machine() == "x86_64"
     assert native.dlib_version == "20.0.0"
-    assert native.interface_version == "foc-dlib-source-probe-v1"
+    assert native.interface_version == "foc-dlib-closed-interface-v2"
     assert native.cuda_enabled is False and native.avx_enabled is False
     assert native.model_execution_api_available is False
     assert not hasattr(native, "get_frontal_face_detector")
@@ -90,8 +95,20 @@ def main():
         else:
             raise AssertionError("Invalid source-probe input accepted")
     assert negative_checks == 5
+    interface = interface_checks(image, chip)
+    stream_tests = json.loads(subprocess.check_output(["/opt/qualification/native_contract_tests"], text=True, timeout=10))
+    inventory = json.loads(Path('/opt/qualification/native-test-inventory.json').read_text())
+    for expected, actual in [(inventory['interface_cases'], interface['tests']),
+                             (inventory['stream_cases'], stream_tests['tests'])]:
+        assert actual == [{'id': name, 'status': 'passed'} for name in expected]
+    assert stream_tests['model_deserializations'] == 0
+    assert len(list(Path('/proc/self/task').iterdir())) == 1
+    assert all(os.environ.get(name) == '1' for name in ['DLIB_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS'])
     assert not list(Path("/opt").rglob("*.dat")) and not list(Path("/opt").rglob("*.bz2"))
     report = {
+        "closed_interface_tests": interface, "stream_integrity_tests": stream_tests,
+        "process_limits": {"cpu_seconds": 10, "core_bytes": 0, "file_bytes": 1048576, "open_files": 64},
+        "native_threads": len(list(Path('/proc/self/task').iterdir())),
         "scope": "data_free_source_only_preflight", "python": platform.python_version(),
         "soabi": sysconfig.get_config_var("SOABI"), "gil_disabled": bool(sysconfig.get_config_var("Py_GIL_DISABLED")),
         "architecture": platform.machine(), "dlib": native.dlib_version,

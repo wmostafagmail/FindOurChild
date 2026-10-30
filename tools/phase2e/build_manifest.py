@@ -51,17 +51,38 @@ def main():
         if copyright.is_file():
             (notices / (name.replace(":", "_") + "-copyright.txt")).write_bytes(copyright.read_bytes())
     sbom = {"bomFormat": "CycloneDX", "specVersion": "1.6", "version": 1, "components": components,
-            "metadata": {"component": {"type": "library", "name": "foc-dlib-native-source-probe", "version": "0.1.0"}}}
+            "metadata": {"component": {"type": "library", "name": "foc-dlib-native-closed-interface", "version": "0.2.0"}}}
     # Inventory is not a claim that every transitive native license/security issue is resolved.
     (output / "sbom.cdx.json").write_text(json.dumps(sbom, indent=2) + "\n")
     (output / "source-receipt.json").write_text(json.dumps(source, indent=2) + "\n")
+    (output / "source-policy-audit.json").write_bytes((root / "source-policy-audit.json").read_bytes())
     cache = root / "native-build/CMakeCache.txt"
     for key in ["DLIB_PNG_SUPPORT", "DLIB_JPEG_SUPPORT", "DLIB_USE_CUDA", "DLIB_USE_BLAS"]:
         assert key + ":BOOL=OFF" in cache.read_text()
     assert not (root / "source/dlib/image_processing/frontal_face_detector.h").exists()
     for p in Path("/runtime-notices").iterdir():
         (output / p.name).write_bytes(p.read_bytes())
-    report = {"version": 2, "scope": "minimal_core_source_probe_pending_review", "python": platform.python_version(),
+    module, = (root / 'native-build').glob('_foc_dlib_native*.so')
+    symbols = subprocess.check_output(['nm', '-C', '--defined-only', str(module)], text=True)
+    names = ['compiled_parse_cnn', 'compiled_parse_predictor', 'compiled_parse_encoder',
+             'compiled_run_cnn', 'compiled_run_predictor', 'compiled_run_encoder']
+    linked = {}
+    for name in names:
+        found = [s for s in symbols.splitlines() if 'foc::'+name+'(' in s and ' [clone ' not in s]
+        assert len(found) == 1, 'Real component method missing from linked native module: '+name
+        linked[name] = hashlib.sha256(found[0].encode()).hexdigest()
+    dependency_files = {}
+    for dep in (root / 'native-build').rglob('*.o.d'):
+        for name in dep.read_text().replace('\\\n', '').split()[1:]:
+            path = Path(name)
+            if path.is_file():
+                key = str(path)
+                if key.startswith('/build/source/'):
+                    assert key.removeprefix('/build/source/') in {r['path'] for r in source['entries']}
+                dependency_files[key] = digest(path)
+    assert dependency_files
+    (output / 'compiled-dependencies.json').write_text(json.dumps(dependency_files, indent=2)+'\n')
+    report = {"version": 3, "scope": "closed_component_interface_pending_second_review", "python": platform.python_version(),
               "architecture": platform.machine(), "source_commit": source["commit"],
               "source_receipt_sha256": digest(root / "source-receipt.json"),
               "dependency_lock_sha256": digest(root / "dependency-lock.json"),
@@ -71,6 +92,10 @@ def main():
               "runtime_native_libraries": {p.name: digest(p) for p in Path("/runtime-libs").iterdir()},
               "runtime_native_notices": {p.name: digest(p) for p in Path("/runtime-notices").iterdir()},
               "cmake_cache_sha256": digest(cache), "sbom_sha256": digest(output / "sbom.cdx.json"),
+              "source_policy_audit_sha256": digest(output / 'source-policy-audit.json'),
+              "compiled_dependencies_sha256": digest(output / 'compiled-dependencies.json'),
+              "linked_component_methods": linked,
+              "native_contract_binary_sha256": digest(root / 'native-build/native_contract_tests'),
               "known_embedded_model_headers": 0, "standard_python_bindings_included": False,
               "pretrained_assets_present": False, "transitive_review": "pending",
               "model_execution_api_available": False, "A1b_accepted": False}

@@ -8,6 +8,8 @@ RUN --network=none python -m pip install --no-index --no-deps --require-hashes -
 COPY source /build/source
 COPY native /build/native
 COPY source-receipt.json dependency-lock.json build_manifest.py package_probe.py /build/
+COPY audit_source.py source-projection.json /build/
+RUN --network=none python audit_source.py /build/source /build/source-projection.json > /build/source-policy-audit.json
 RUN --network=none cmake -S /build/native -B /build/native-build -DCMAKE_BUILD_TYPE=Release \
     && cmake --build /build/native-build --parallel 2 \
     && python /build/package_probe.py
@@ -17,7 +19,7 @@ RUN --network=none mkdir /runtime-libs /runtime-notices \
     && python /build/build_manifest.py
 
 FROM --platform=linux/amd64 python:3.13.13-slim-bookworm@sha256:355bfa66770995d7e9a0da4b3473b44d0cb451f6b56f5615ad9c39e3c4eca03f
-ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+ENV PIP_NO_INDEX=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 DLIB_NUM_THREADS=1
 WORKDIR /opt/qualification
 COPY --from=build /build/dist/*.whl /wheels/
 COPY --from=build /wheels/numpy-*.whl /wheels/
@@ -25,6 +27,8 @@ COPY --from=build /build/evidence /opt/qualification/evidence
 COPY --from=build /runtime-libs/ /usr/local/lib/
 COPY --from=build /runtime-notices/ /usr/share/doc/foc-runtime/
 RUN --network=none python -m pip install --no-index --no-deps /wheels/*.whl && rm -r /wheels && ldconfig
-COPY preflight.py ./
+COPY preflight.py interface_checks.py native_fixtures.py native-test-inventory.json ./
+COPY --from=build /build/native-build/native_contract_tests /opt/qualification/native_contract_tests
+RUN --network=none python native_fixtures.py && rm native_fixtures.py
 USER 10001:10001
 ENTRYPOINT ["python", "/opt/qualification/preflight.py"]

@@ -1,0 +1,181 @@
+{
+  "scope": "additional_unused_gui_exclusion_not_a_pretrained_model_finding",
+  "old_projection_sha256": "94b1f1de04c187b22f775480f4c1cffdce7d661af1b6f2b42da4451bddd99e69",
+  "excluded": [
+    {
+      "path": "dlib/gui_core.h",
+      "git_blob": "6ba54b11c9326680a2ec03784851455f3d7967eb",
+      "bytes": 314,
+      "sha256": "4b364df2539b99d5f37c08ced539e739f40ba6c80ef518b24215c797486092a2"
+    },
+    {
+      "path": "dlib/gui_core/gui_core_kernel_1.cpp",
+      "git_blob": "3d7b9de3e8ca87456d3d8b6b305e02c6b38f6c78",
+      "bytes": 79755,
+      "sha256": "eb6c7829ebd9f013ea556958d663cdcdabcf4069d57b4a38e3b7921ea1a23097"
+    },
+    {
+      "path": "dlib/gui_core/gui_core_kernel_1.h",
+      "git_blob": "b7077ac01fe4cbb68a8ba4b25a7c9b426358dbd9",
+      "bytes": 10069,
+      "sha256": "5d0f00990c7d75c5f5b5eeebd32fd4f69a73736c269f2c0ed011eff9d0cf20e8"
+    },
+    {
+      "path": "dlib/gui_core/gui_core_kernel_2.cpp",
+      "git_blob": "be1cfb8d1792c3aca7ce40a06c6a35b390a0cd1c",
+      "bytes": 74800,
+      "sha256": "0afc268ea019c7be5cbe09c99879a4cbc272deb6197c54d834bb23e44ca9a588"
+    },
+    {
+      "path": "dlib/gui_core/gui_core_kernel_2.h",
+      "git_blob": "efcd4ba19a010b654806399961ad5a62d7ea00d1",
+      "bytes": 10094,
+      "sha256": "f89fe679f33f707487bf9a1fa3a21c74f86ef1346761b5341a3b992537064525"
+    },
+    {
+      "path": "dlib/gui_core/gui_core_kernel_abstract.h",
+      "git_blob": "8cdf33c19547428ef34f43d350ba16cb8f05f65f",
+      "bytes": 27928,
+      "sha256": "0725e1618844e580c2c9d41407a1b563fef50842e4d974168dc9a1ec78926860"
+    },
+    {
+      "path": "dlib/gui_core/windows.h",
+      "git_blob": "8d71fd70e3f9185ffad802c1721c9fe5f516112c",
+      "bytes": 200,
+      "sha256": "96f32eb5736636722a5408ceec42b14402a7f9d7c682e532346e20a61599bef2"
+    },
+    {
+      "path": "dlib/gui_core/xlib.h",
+      "git_blob": "de9c4666b4da29a1898f415da5cafdbe9daf2d05",
+      "bytes": 200,
+      "sha256": "bac25220c99be7a502f15870c6a4fdc857b3a6e0cf52d35704c4c6eccf9e58c6"
+    },
+    {
+      "path": "dlib/gui_widgets.h",
+      "git_blob": "5b243ef8f5a17019eead20ab8fe4c949f431ac92",
+      "bytes": 330,
+      "sha256": "0c1818300946ebf6553a9e4004aff8e46f6a459349c01f9070aca53a53605f00"
+    },
+    {
+      "path": "dlib/gui_widgets/base_widgets.cpp",
+      "git_blob": "23071903317f909cb8b954929e631a8ce6a2e25b",
+      "bytes": 95819,
+      "sha256": "90e5b4279622871ddb723a8cae02391ea9cc394ac6f0b0c90cf5a63b6a89abd8"
+    },
+    {
+      "path": "dlib/gui_widgets/base_widgets.h",
+      "git_blob": "44ccdbaafeabaea88cb91cdaae86967430fac772",
+      "bytes": 69635,
+      "sha256": "2449d8906954a0f48b101b24aecdf23d0d1786b0386fa3bc97ed6f280f30c509"
+    },
+    {
+      "path": "dlib/gui_widgets/base_widgets_abstract.h",
+      "git_blob": "3dcee0d5a00f48b357cbb85a26bac7cce0e7ddfe",
+      "bytes": 76995,
+      "sha256": "0f0dcf8a82ecab176f8835d0c4804b34f7f8a7218c64ccd3c728e14fa1c73c91"
+    },
+    {
+      "path": "dlib/gui_widgets/canvas_drawing.cpp",
+      "git_blob": "0fecd1cd390284cfee0fee75244314a8d04df618",
+      "bytes": 4037,
+      "sha256": "96e7a318ddd947c2d1db28d3eae849a99785065235ceae2c68796693a0efe28c"
+    },
+    {
+      "path": "dlib/gui_widgets/canvas_drawing.h",
+      "git_blob": "7cb7e577546a07e4d792d1bd83e5c0505201c92c",
+      "bytes": 32004,
+      "sha256": "9c736495d87bc4e1479d68edce7878c48d3d8c5ce4e7c97fdb861110ae262f3e"
+    },
+    {
+      "path": "dlib/gui_widgets/canvas_drawing_abstract.h",
+      "git_blob": "e4a298c769ce0bfeb0eb93615413cff520e4995c",
+      "bytes": 13193,
+      "sha256": "4016ce2c8b417ee5dc43fa040d8397cc532e4baa635f71db4f78455db5a39310"
+    },
+    {
+      "path": "dlib/gui_widgets/drawable.cpp",
+      "git_blob": "8cf114950d359c683eda4e6233d6af9d88ddf15d",
+      "bytes": 15423,
+      "sha256": "2a53f28c1be5c6bcf970272f82e6b5e190d60da984355a38a097945d2a6db616"
+    },
+    {
+      "path": "dlib/gui_widgets/drawable.h",
+      "git_blob": "a270b53c8b2b43f277996c144795807a19c9b3f1",
+      "bytes": 12851,
+      "sha256": "8655a67ed120d23702bb44236aca0ec63ad38d67a5c00be7b4c5b46d71039e9a"
+    },
+    {
+      "path": "dlib/gui_widgets/drawable_abstract.h",
+      "git_blob": "8f741d8bb1b6ce707f010ecf1fdbc980f7d42484",
+      "bytes": 25626,
+      "sha256": "cada13bcd68adc248d67f3651face6d53379909f9ab983eae6a6cb9b2fcd2c7b"
+    },
+    {
+      "path": "dlib/gui_widgets/fonts.cpp",
+      "git_blob": "e536ccc4a3613be68a9623c05635be025175b0bd",
+      "bytes": 25730,
+      "sha256": "8e8c0a6330b9121a5406638829fc88e8e9d342a7bc454cc2894a68eccaa11f5b"
+    },
+    {
+      "path": "dlib/gui_widgets/nativefont.h",
+      "git_blob": "69f0cfade625171a7dcc7cfea2d6bfc8c5c04a03",
+      "bytes": 23506,
+      "sha256": "eb07b7f18895e30e899487b05dd33da8861531086040cd7f1dc084066b709319"
+    },
+    {
+      "path": "dlib/gui_widgets/style.cpp",
+      "git_blob": "a3d22d10f52f35af59b13374b9224719deee0fce",
+      "bytes": 31253,
+      "sha256": "8b76e7cf7c441695263a0e2799c3905d145e5841313ec5dde67d89c0576a3ddb"
+    },
+    {
+      "path": "dlib/gui_widgets/style.h",
+      "git_blob": "f31caee30b2611bc499fb4f872de16f671a1063b",
+      "bytes": 24320,
+      "sha256": "7972861d5c01ea0783349f39b0f2489bc3580e2ac3401f0ee6d2baee46c600a8"
+    },
+    {
+      "path": "dlib/gui_widgets/style_abstract.h",
+      "git_blob": "e4d3245df4b56c766716c4faa734f6f3791b2249",
+      "bytes": 28013,
+      "sha256": "89a5fd815b893ca041a57d2c8d4c80b557f114baac6bafe9a91a9b37febd3d60"
+    },
+    {
+      "path": "dlib/gui_widgets/widgets.cpp",
+      "git_blob": "6627d4cc928baeafc29bf01b2c213a956da64dd6",
+      "bytes": 228200,
+      "sha256": "aba04e91d6a8aab5be0abf6eed38cae47b1220c21646821372a4d0a371959920"
+    },
+    {
+      "path": "dlib/gui_widgets/widgets.h",
+      "git_blob": "54b3ce70edcf0eccbfb85dd1ade0cf383e1cad96",
+      "bytes": 120480,
+      "sha256": "c9541935795eba6b13c901d4222e1608b500d55a2e1d77191ad017d6587a6b7c"
+    },
+    {
+      "path": "dlib/gui_widgets/widgets_abstract.h",
+      "git_blob": "21071afed7311c50019cbef764736292cd5f7a82",
+      "bytes": 118206,
+      "sha256": "602176aa44df2344b323150ea5d68da10911500a0420f6bc7235124ffc960b6b"
+    },
+    {
+      "path": "dlib/data_io/image_dataset_metadata.cpp",
+      "git_blob": "e1ca410898d0d9414a67cb8ba31407c618c3bb99",
+      "bytes": 17083,
+      "sha256": "de878c09a44212e95720fce255415b2f8ccc521f5f07081963683e8af4b76d26"
+    }
+  ],
+  "reviewed_font_payload": {
+    "path": "dlib/gui_widgets/fonts.cpp",
+    "classification": "licensed_default_font_not_recognition_weights",
+    "compiled_with_gui_disabled": false
+  },
+  "remaining_blobs": 1114,
+  "remaining_bytes": 13108426,
+  "stylesheet_disposition": "Upstream-declared compressed XSL stylesheet; not classified as recognition weights. Entire unused source excluded; no encoded-payload exception and no native decoding.",
+  "required_declaration_headers": [
+    "dlib/gui_widgets/fonts.h",
+    "dlib/gui_widgets/fonts_abstract.h"
+  ],
+  "declaration_header_disposition": "dlib/dnn/input.h transitively includes draw.h and the two font declaration headers. Retained unchanged code only; fonts.cpp remains excluded and NO_MAKEFILE is never enabled. Compiler dependency audit enforces no excluded implementation."
+}

@@ -1,0 +1,274 @@
+{
+  "base_checkpoint": "3442923ba5505b3cedb19863452910b3423749f4",
+  "scope": "A1b continuation only; does not replace prior Phase2E inventory",
+  "entries": [
+    {
+      "path": ".github/workflows/phase2e-source-preflight.yml",
+      "change": "modified",
+      "bytes": 1875,
+      "sha256": "5cd5c4bb4483839bec06287aded1acd83f1c6c1a08664bfd497fd169f7d5feab",
+      "git_blob": "e46a1883d4de3acdb6a701bc7f35f9240076be2f"
+    },
+    {
+      "path": "config/phase2e/native-test-inventory.json",
+      "change": "added",
+      "bytes": 1186,
+      "sha256": "65ce9f206568f8d6dc8c537c889846c7fb5562ae6875ffb931a42458ea2008f3",
+      "git_blob": "0269b4205d43e77096213b2365a5e33ee64cc83d"
+    },
+    {
+      "path": "config/phase2e/qualification-policy.json",
+      "change": "modified",
+      "bytes": 524,
+      "sha256": "1e4127a057d50d1a79559cdda4440edffe9c1eb05e580ef7b787ea2c4a130581",
+      "git_blob": "675d08bd73a472fd451a43f108efdb58620d3d63"
+    },
+    {
+      "path": "config/phase2e/source-projection.json",
+      "change": "modified",
+      "bytes": 165237,
+      "sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd",
+      "git_blob": "f4f2b6c028cc49850a4c21c4402bd40632d5170a"
+    },
+    {
+      "path": "docs/phase2e/E0_PROGRESS.md",
+      "change": "modified",
+      "bytes": 13048,
+      "sha256": "3815b35f8e2268941396013c93b183bcc72554204e7cf4c4ad1eddb96d7c9d90",
+      "git_blob": "1bd1edb95ad08fba5a5597ea0803dc6064414795"
+    },
+    {
+      "path": "docs/phase2e/TEST_MATRIX.md",
+      "change": "modified",
+      "bytes": 18554,
+      "sha256": "7343567033447336cbf98167c1fe9db3bf426a97c6929fd0fd83b88b5b37a1dd",
+      "git_blob": "782091650f55bcd68924668ed58c701e33e97737"
+    },
+    {
+      "path": "docs/phase2e/VALIDATION_REPORT.md",
+      "change": "modified",
+      "bytes": 25709,
+      "sha256": "0589454f92a12ca11c6811e38a984d04b400d410153a4627b217284bf33e04fc",
+      "git_blob": "8ba8099df939b0fb443733d57985414c564166fe"
+    },
+    {
+      "path": "docs/phase2e/e0-required-tests.json",
+      "change": "modified",
+      "bytes": 16288,
+      "sha256": "c666fb3693fc5f842e5aca1ddb949a81f5f90cb09a5d4f4e5f49260c146227d8",
+      "git_blob": "0ce17ee8133e5a92726aaa01a524639ef6048c5d"
+    },
+    {
+      "path": "docs/phase2e/e0/A1B_BUILD_INTERFACE_REVIEW.md",
+      "change": "added",
+      "bytes": 5157,
+      "sha256": "9ad47b51698dc4f53e6ea97fb9f61c15b3727362295ded5efdf54c96e7218a3e",
+      "git_blob": "a33265352e5d34d8111522b642ce63546d88e5e5"
+    },
+    {
+      "path": "docs/phase2e/e0/A1B_INTERFACE_SPEC.md",
+      "change": "added",
+      "bytes": 7810,
+      "sha256": "3f0f25ea29cd184bc9e974905bd984bc608444aa1b3795cd1789efe77a635ace",
+      "git_blob": "88f926a6dcfe9d70514593a0af2313ca7bc92240"
+    },
+    {
+      "path": "docs/phase2e/e0/A1B_LOCAL_EVIDENCE.json",
+      "change": "added",
+      "bytes": 964,
+      "sha256": "8bd74a6f229bf946efd3b4b0b8ae09191c59bfe58de41885a3ebe73bdab1daaf",
+      "git_blob": "e556cd8b2b1cc3c6ac09c5e95ae8a505761d0208"
+    },
+    {
+      "path": "docs/phase2e/e0/A1B_REVIEW_AND_BLOCKERS.md",
+      "change": "added",
+      "bytes": 4599,
+      "sha256": "b229b990471e449c9756269e61add0365a9a5ceeb4c2614e9cced89812ff8d17",
+      "git_blob": "b8fcb66754be5298805af53ec6821d0ec1436cb4"
+    },
+    {
+      "path": "docs/phase2e/e0/ADDITIONAL_SOURCE_AUDIT.json",
+      "change": "added",
+      "bytes": 7193,
+      "sha256": "0a470017254d629772291c237372691408e6c4b4baf14ea13db377de8bb756aa",
+      "git_blob": "c887854c747cdbea118ebc3be1bee4592a02b628"
+    },
+    {
+      "path": "docs/phase2e/e0/MINIMAL_WORKER_REVIEW.md",
+      "change": "modified",
+      "bytes": 2921,
+      "sha256": "01fd9c76f85ccd635950310f766f145c208e9b42e4ddb48bb4103d584c5f3a1a",
+      "git_blob": "db8556cda940d2cb45bafb2876d13ace99bf7adb"
+    },
+    {
+      "path": "docs/phase2e/e0/REVIEW_3442923_REPORT.md",
+      "change": "added",
+      "bytes": 19238,
+      "sha256": "b03d0c81b1d9761bd4fca08b6efdc713a0ae621cd872c8cd5ede875e1a95f2af",
+      "git_blob": "828587d4da298d5612e7f6dcc87a87467b939d29"
+    },
+    {
+      "path": "services/demo_recognition/Dockerfile.preflight",
+      "change": "modified",
+      "bytes": 2302,
+      "sha256": "e926e36c1952f6bcd9a6d05b5630246505d516260aaf1b256e3b713c57beff97",
+      "git_blob": "5fce6b795d1d24e720c170a4a0facb7c708f4f93"
+    },
+    {
+      "path": "services/demo_recognition/interface_checks.py",
+      "change": "added",
+      "bytes": 4366,
+      "sha256": "34c7c07efde9b57693a6fa248061802806ed05b8dccc9d6734e311747f1b1c2c",
+      "git_blob": "edd27a5972cdd1fc960089aa37fb631e044111f4"
+    },
+    {
+      "path": "services/demo_recognition/native/CMakeLists.txt",
+      "change": "modified",
+      "bytes": 1876,
+      "sha256": "35d4c780da809029a2fbfc7cb9667d5d049caef87d85c4a1ddedfee7fbdf9a04",
+      "git_blob": "fbb2688c7ee2e7e57659c380c65bd977126100de"
+    },
+    {
+      "path": "services/demo_recognition/native/contract_tests.cpp",
+      "change": "added",
+      "bytes": 2941,
+      "sha256": "efafb4665df6d728c540c38a3c0e612998c2cbcbb98e3b9369fa8c408a315952",
+      "git_blob": "10de6c04ac105441a6263a728cf64de7587207cc"
+    },
+    {
+      "path": "services/demo_recognition/native/execution_guard.cpp",
+      "change": "added",
+      "bytes": 549,
+      "sha256": "5aaa8ff96b5860cd89bf20120beae4c7c1552ce636935071173ba6bf2ed40af6",
+      "git_blob": "47a7410047b2e610d84427635c72d62212a3dcab"
+    },
+    {
+      "path": "services/demo_recognition/native/fixed_interface.cpp",
+      "change": "added",
+      "bytes": 7054,
+      "sha256": "9b19801c42fec4978c301285f2f244f4cbcafa3101dd986f3e7f71e100fb26fe",
+      "git_blob": "8cf0cfb982df60fd61088601aaa124171493fdd9"
+    },
+    {
+      "path": "services/demo_recognition/native/fixed_interface.h",
+      "change": "added",
+      "bytes": 487,
+      "sha256": "c85c3b9254515d51934a7758f472a75808383e8262bb401a83364c3e0ea73641",
+      "git_blob": "91e52053af3a478440d70cbee5fba4d72d408edf"
+    },
+    {
+      "path": "services/demo_recognition/native/model_backend.cpp",
+      "change": "added",
+      "bytes": 1099,
+      "sha256": "a7e51b803df2d8eea0927b2635f11baef3cc431c12c1ec9c14221b6d90e1445c",
+      "git_blob": "1eadfcbf418cef44664347f7830b4d404fd74380"
+    },
+    {
+      "path": "services/demo_recognition/native/model_backend.h",
+      "change": "added",
+      "bytes": 840,
+      "sha256": "e010bac6b2c0b090dfa179b21e533f258b29cae64dae1a121829947d099e94d4",
+      "git_blob": "5174bda9d71fc6771a25f587f377fd5759719067"
+    },
+    {
+      "path": "services/demo_recognition/native/model_types.h",
+      "change": "added",
+      "bytes": 1843,
+      "sha256": "5404a163040f21c2338fa63019346541b16da78c4cff1da2f395c66e4c354e93",
+      "git_blob": "f501134730f8b37ba777c8eb9eba2261da8e64ee"
+    },
+    {
+      "path": "services/demo_recognition/native/source_probe.cpp",
+      "change": "modified",
+      "bytes": 3714,
+      "sha256": "042b92a355c96e8e1cc9486a9d1211feaad1c0ef67d386d3a928c3ebda74a901",
+      "git_blob": "45a7c327d846a2f0c633679709313d19be3c5e3f"
+    },
+    {
+      "path": "services/demo_recognition/native/verified_stream.cpp",
+      "change": "added",
+      "bytes": 4115,
+      "sha256": "5268b0ffd31d426c4ff1edb06d9dafbe481f2ef5b693988bde2b37307763e26b",
+      "git_blob": "478896a75a8a45a71f0c260384b980f6687a3ccd"
+    },
+    {
+      "path": "services/demo_recognition/native/verified_stream.h",
+      "change": "added",
+      "bytes": 926,
+      "sha256": "569300c0669da930039c1bbe9567b57949702faaf77944349a61394c70271032",
+      "git_blob": "a78dcefa40ef58c40f535d121e2a3c57030df3e8"
+    },
+    {
+      "path": "services/demo_recognition/native_fixtures.py",
+      "change": "added",
+      "bytes": 642,
+      "sha256": "f68eb6ad85901a8c3683ba4432b032efd9a50f56f19b4cd48de0f5eb8a342760",
+      "git_blob": "9d2252e8cf7cd04436f9081523d75350806d5765"
+    },
+    {
+      "path": "services/demo_recognition/preflight.py",
+      "change": "modified",
+      "bytes": 6568,
+      "sha256": "ac7324a1af315fa7193fc73b2dbf5b1ceb6841a3c009a5e2fd820714a37dd445",
+      "git_blob": "24d839e9c957a6d2545b9156b64c804bc1d764af"
+    },
+    {
+      "path": "tests/phase2e/test_e0_controls.py",
+      "change": "modified",
+      "bytes": 9979,
+      "sha256": "115961761ac86c8248f8b1c9f27655a8438524ff4a5a3be4757f5499d62fb6f0",
+      "git_blob": "a13c65c2a6cadfac1214a032ab7e28704de86875"
+    },
+    {
+      "path": "tests/phase2e/test_worker_interface_controls.py",
+      "change": "added",
+      "bytes": 3722,
+      "sha256": "b7aebdbe1688b2e0a6904849d0f0546d93b48a6251b798548432628121c20664",
+      "git_blob": "875d3390bc7747498aa47e869b78b6cf4307d7f2"
+    },
+    {
+      "path": "tools/phase2e/audit_source.py",
+      "change": "added",
+      "bytes": 2294,
+      "sha256": "8352729403a288a226e77fcc767c7a96dc5d6319f3c20cff9cf36e5f41654225",
+      "git_blob": "e38385f672725c46482a52c731d11719281a2164"
+    },
+    {
+      "path": "tools/phase2e/build_manifest.py",
+      "change": "modified",
+      "bytes": 6489,
+      "sha256": "0345a28cdc50f31f351b97133fe03522e460ce58482dce40dc3c032ef97057ac",
+      "git_blob": "e68c6e3f21db72c30b8a1d087ff680a78ef4e94f"
+    },
+    {
+      "path": "tools/phase2e/package_probe.py",
+      "change": "modified",
+      "bytes": 2035,
+      "sha256": "63d157a550d771f8bca62346e73a3f1f7eb1d469b7a55980c43901a25902c6fa",
+      "git_blob": "b4b08c5a4f19f1f02740293ece1492b11bf818fe"
+    },
+    {
+      "path": "tools/phase2e/qualify.py",
+      "change": "modified",
+      "bytes": 8893,
+      "sha256": "61af88f754e83ded8a0c9ac219c573a79f1d2afa1cc9c605e7617481c1aa2474",
+      "git_blob": "9672003949ae879bda7e2b268d39503e54601e78"
+    },
+    {
+      "path": "tools/phase2e/source_projection.py",
+      "change": "modified",
+      "bytes": 7249,
+      "sha256": "408377426ac199e1cc100dd59f7b1887df43d6c786ad6f383f58fd62cf2cd33e",
+      "git_blob": "f58b62cadaeee4a92dbc5feeb2b06420e549cc40"
+    },
+    {
+      "path": "tools/phase2e/verify_source_evidence.py",
+      "change": "modified",
+      "bytes": 9971,
+      "sha256": "499d737d9b1565839324406f847ed183fb6ec87ac4831f319f9815c4336c50f2",
+      "git_blob": "e3d684582088e0c1ba1558b8adfeafab2ad16468"
+    }
+  ],
+  "self_excluded_to_avoid_recursive_hash": "docs/phase2e/e0/A1B_FILE_INVENTORY.json",
+  "deletions": 0
+}

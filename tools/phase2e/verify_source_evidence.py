@@ -91,13 +91,47 @@ def main():
             proof["unexpected_pretrained_source_components"] = forbidden
             proof["A1b_accepted"] = False
         else:
-            assert lock["version"] == 2 and len(lock["entries"]) == 1141
+            assert (lock['version'], len(lock['entries'])) in {(2, 1141), (3, 1114)}
             assert not any(r["path"].startswith("tools/python/") for r in lock["entries"])
             assert build["known_embedded_model_headers"] == 0 and build["model_execution_api_available"] is False
             assert native["model_execution_api_available"] is False and native["native_negative_checks"] == 5
             assert result["A1b_accepted"] is False
             proof["status"] = "minimal_source_prototype_verified_pending_design_review"
             proof["A1b_accepted"] = False
+            if lock['version'] == 3:
+                assert build['version'] == 3 and build['scope'] == 'closed_component_interface_pending_second_review'
+                assert len(build['linked_component_methods']) == 6
+                assert set(build['linked_component_methods']) == {'compiled_parse_cnn', 'compiled_parse_predictor',
+                    'compiled_parse_encoder', 'compiled_run_cnn', 'compiled_run_predictor', 'compiled_run_encoder'}
+                assert all(re.fullmatch('[a-f0-9]{64}', d) for d in build['linked_component_methods'].values())
+                inventory = json.loads(blob('config/phase2e/native-test-inventory.json'))
+                interface = native['closed_interface_tests']
+                streams = native['stream_integrity_tests']
+                assert interface['tests'] == [{'id': n, 'status': 'passed'} for n in inventory['interface_cases']]
+                assert streams['tests'] == [{'id': n, 'status': 'passed'} for n in inventory['stream_cases']]
+                assert streams['model_deserializations'] == 0 and interface['model_inference_executed'] is False
+                for key in ['model_open_attempts', 'deserialization_attempts', 'inference_attempts']:
+                    assert interface['boundary_counters'][key] == 0
+                assert native['native_threads'] == 1 and native['peak_rss_kib'] < 262144
+                assert native['process_limits'] == {'cpu_seconds': 10, 'core_bytes': 0,
+                                                   'file_bytes': 1048576, 'open_files': 64}
+                for name, field in [('source-policy-audit.json', 'source_policy_audit_sha256'),
+                                    ('compiled-dependencies.json', 'compiled_dependencies_sha256')]:
+                    assert hashlib.sha256(one('/sanitized/'+name)).hexdigest() == build[field]
+                audit_source = json.loads(one('/sanitized/source-policy-audit.json'))
+                assert audit_source['unresolved_heuristic_hits'] == 0 and audit_source['universal_absence_claim'] is False
+                expected = {r['path']: {'path': r['path'], 'sha256': r['sha256'], 'git_blob': r['git_blob']}
+                            for r in receipt['entries']}
+                assert audit_source['files'] == list(expected.values())
+                dependencies = json.loads(one('/sanitized/compiled-dependencies.json'))
+                assert dependencies and all(re.fullmatch('[a-f0-9]{64}', d) for d in dependencies.values())
+                for path, digest in dependencies.items():
+                    if path.startswith('/build/source/'):
+                        assert expected[path.removeprefix('/build/source/')]['sha256'] == digest
+                    elif path.startswith('/build/native/'):
+                        assert hashlib.sha256(blob('services/demo_recognition/native/'+path.removeprefix('/build/native/'))).hexdigest() == digest
+                proof['source_only_native_cases_passed'] = len(interface['tests'])+len(streams['tests'])
+                proof['status'] = 'closed_interface_verified_second_A1b_review_pending'
         print(json.dumps(proof, indent=2))
 
 

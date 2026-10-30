@@ -1,6 +1,6 @@
 // Selected graph declarations adapted from Davis E. King's pinned dlib v20.0
 // tools/python/src/{cnn_face_detector,face_recognition}.cpp (BSL-1.0).
-// No upstream broad Python bindings, pretrained payload or model loader.
+// No broad bindings or pretrained payload. All model operations remain review-locked.
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
@@ -14,28 +14,9 @@
 namespace py = pybind11;
 using namespace dlib;
 
-template <long N, typename S> using con5d = con<N,5,5,2,2,S>;
-template <long N, typename S> using con5 = con<N,5,5,1,1,S>;
-template <typename S> using downsampler = relu<affine<con5d<32,relu<affine<con5d<32,relu<affine<con5d<16,S>>>>>>>>>;
-template <typename S> using rcon5 = relu<affine<con5<45,S>>>;
-using cnn_type = loss_mmod<con<1,9,9,1,1,rcon5<rcon5<rcon5<downsampler<input_rgb_image_pyramid<pyramid_down<6>>>>>>>>;
-
-template <template <int,template<typename>class,int,typename> class B, int N, template<typename>class BN, typename S>
-using residual = add_prev1<B<N,BN,1,tag1<S>>>;
-template <template <int,template<typename>class,int,typename> class B, int N, template<typename>class BN, typename S>
-using residual_down = add_prev2<avg_pool<2,2,2,2,skip1<tag2<B<N,BN,2,tag1<S>>>>>>;
-template <int N, template<typename>class BN, int stride, typename S>
-using block = BN<con<N,3,3,1,1,relu<BN<con<N,3,3,stride,stride,S>>>>>;
-template <int N, typename S> using ares = relu<residual<block,N,affine,S>>;
-template <int N, typename S> using ares_down = relu<residual_down<block,N,affine,S>>;
-template <typename S> using alevel0 = ares_down<256,S>;
-template <typename S> using alevel1 = ares<256,ares<256,ares_down<256,S>>>;
-template <typename S> using alevel2 = ares<128,ares<128,ares_down<128,S>>>;
-template <typename S> using alevel3 = ares<64,ares<64,ares<64,ares_down<64,S>>>>;
-template <typename S> using alevel4 = ares<32,ares<32,ares<32,S>>>;
-using encoder_type = loss_metric<fc_no_bias<128,avg_pool_everything<alevel0<alevel1<alevel2<alevel3<alevel4<
-    max_pool<3,3,2,2,relu<affine<con<32,7,7,2,2,input_rgb_image_sized<150>>>>>>>>>>>>>;
-
+#include "fixed_interface.h"
+using foc::cnn_type;
+using foc::encoder_type;
 using RGB = py::array_t<std::uint8_t, py::array::c_style>;
 using Points = std::array<std::array<long,2>,5>;
 
@@ -57,6 +38,8 @@ RGB aligned_chip(const RGB& rgb, const Points& coordinates, bool batch) {
             throw py::value_error("Five bounded fictional points required");
         parts.emplace_back(p[0],p[1]);
     }
+    if (parts[0]==parts[1] || parts[2]==parts[3] || parts[0]==parts[4] || parts[2]==parts[4])
+        throw py::value_error("Distinct five-point geometry required");
     full_object_detection shape(rectangle(0,0,width-1,height-1), parts);
     const auto details = get_face_chip_details(shape,150,0.25);
     array2d<rgb_pixel> chip;
@@ -78,7 +61,7 @@ RGB aligned_chip(const RGB& rgb, const Points& coordinates, bool batch) {
 }
 
 PYBIND11_MODULE(_foc_dlib_native, module) {
-    module.doc() = "Data-free source probe only; no model loading/inference API";
+    module.doc() = "Source-only fixed-component interface; model execution is review-locked";
     module.attr("dlib_version") = FOC_DLIB_VERSION;
 #ifdef DLIB_USE_CUDA
     module.attr("cuda_enabled") = true;
@@ -90,8 +73,9 @@ PYBIND11_MODULE(_foc_dlib_native, module) {
 #else
     module.attr("avx_enabled") = false;
 #endif
-    module.attr("interface_version") = "foc-dlib-source-probe-v1";
+    module.attr("interface_version") = "foc-dlib-closed-interface-v2";
     module.attr("model_execution_api_available") = false;
+    foc::bind_closed_interface(module);
     module.attr("compiled_cnn_type_bytes") = sizeof(cnn_type);
     module.attr("compiled_encoder_type_bytes") = sizeof(encoder_type);
     module.attr("compiled_predictor_type_bytes") = sizeof(shape_predictor);

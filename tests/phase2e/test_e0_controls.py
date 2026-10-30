@@ -122,8 +122,8 @@ def test_source_projection_accepts_reviewed_code_and_notices(path):
 def test_exact_source_inventory_has_no_model_image_or_unreviewed_dependency():
     lock = json.loads(LOCK.read_text())
     rows = validate_lock(lock)
-    assert len(rows) == 1141
-    assert sum(row["bytes"] for row in rows) == 14274490
+    assert len(rows) == 1114
+    assert sum(row["bytes"] for row in rows) == 13108426
     assert all(allowed_path(row["path"]) for row in rows)
 
 

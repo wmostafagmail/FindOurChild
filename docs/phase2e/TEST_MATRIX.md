@@ -51,3 +51,18 @@ The exact collected unit selectors are locked in [e0-required-tests.json](e0-req
 ## Source-policy correction and current blocked status
 
 The initial standard-binding source build did contain an embedded HOG payload inside a header. [SOURCE_POLICY_DISPOSITION.md](e0/SOURCE_POLICY_DISPOSITION.md) supersedes any earlier data-free claim; its green CI result cannot clear A1b. The [minimal replacement profile](e0/MINIMAL_WORKER_REVIEW.md) excludes that payload and broad bindings and has no model execution API. New tests reject the embedded header, known payload sentinel and prototype-as-model-interface substitution, and prove the intake policy denies before reading a review or contacting the network. All named model/image acquisition, native model tests, E1/E2 and 192 new browser executions remain pending; the full Phase 2E feature groups are not passed. The actual collected source-control count is maintained in `e0-required-tests.json`, not inferred from an earlier checkpoint.
+
+## Second A1b review continuation — partial engineering only
+
+Owner architecture continuation approved at3442923; full A1b remains unapproved. Every original119 selector is preserved in the expanded136-control inventory. `test_worker_interface_controls.py` adds17 actual-source closure, encoded-payload, excluded-GUI and approval-denial tests. Full FE-2E groups stay pending.
+
+| Requirement / feature subset | Executable cases and fixtures | Expected result / evidence boundary |
+|---|---|---|
+| FE-2E-02/26 source provenance |17 selectors in `tests/phase2e/test_worker_interface_controls.py`; independent `audit_source.py`; exact1114-file source | Reject extra/missing/changed/binary/symlink/encoded payload. No source-policy exception. Local unit results and final-head source/Git/ZIP receipts in PR#11. |
+| FE-2E-03/05/07/09 typed three-component interface | `INTERFACE-1`–`INTERFACE-32`, generated arrays and authored coordinates in `interface_checks.py` | Valid typed inputs hit review denial; malformed/boundary/path/URL/attribute/env substitution denies; parser/open/inference counters zero. All32 must actually execute before reported passing. |
+| FE-2E-03 integrity boundary | `STREAM-1`–`STREAM-20`, root-owned tiny authored text, synthetic hashes and symlink/hardlink/FIFO/writable/unowned variants | Actual OpenSSL/file-stream behavior, exact size/hash/EOF checks; native executable links no dlib model parser. Does not complete A5 parser qualification. |
+| FE-2E-24/26 isolation/compatibility | `preflight.py` process/cgroup/native-thread/ABI checks; generated chip parity/five preserved negatives; compiler six-symbol/header/source closure | Actual native Linuxx86_64 only; bounded source-only CPU/RSS; exact build/SBOM/notices. Not neural resource/performance evidence. |
+
+Current exact-head execution and sanitized artifact evidence must be independently verified in PR#11. No pending native test, actual recognition case, new UI journey, human review or later acquisition gate is counted as passed by these source-only subsets. See `e0/A1B_INTERFACE_SPEC.md` and `e0/A1B_REVIEW_AND_BLOCKERS.md`.
+
+Two unchanged font declaration headers are required transitively by dlib DNN input/drawing declarations. They are retained as code only; the encoded font implementation remains excluded. `NO_MAKEFILE` is never enabled; compiler-input auditing rejects any excluded implementation. The failed missing-header syntax diagnostic is preserved.
