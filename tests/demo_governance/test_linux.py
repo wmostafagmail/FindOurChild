@@ -40,6 +40,9 @@ def test_dg_w04_independent_cpu_and_wall_limits():
 def test_dg_w05_memory_exhaustion_fails_job():
     r = run(image(), "memory")
     assert r["exit"] in {71, 137} and r["elapsed"] < 15
+    if r["native_metrics"] is not None:
+        assert 0 < r["native_metrics"]["max_child_rss_kib"] <= 65536
+    assert r["limits"]["memory_bytes"] == 134217728
 
 
 def test_dg_w06_descendants_fd_output_and_watchdog_attack():
@@ -49,6 +52,7 @@ def test_dg_w06_descendants_fd_output_and_watchdog_attack():
     assert run(image(), "attack")["exit"] == 0
     assert run(image(), "pids")["exit"] == 74
     assert run(image(), "network")["exit"] == 0
+    assert run(image(), "stdout")["exit"] == 0
 
 
 def test_dg_w07_stable_container_identity_and_unknown_probe_denied():

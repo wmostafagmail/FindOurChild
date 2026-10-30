@@ -35,6 +35,16 @@ int main(int argc, char** argv) {
         close(s);
         return r < 0 ? 0 : 89;
     }
+    if (mode == "stdout") {
+        char bytes[4096]{};
+        constexpr char canary[] = "FOC-SYNTHETIC-PRIVATE-CANARY";
+        memcpy(bytes, canary, sizeof(canary) - 1);
+        for (int i = 0; i < 256; i++) {
+            if (write(STDOUT_FILENO, bytes, sizeof(bytes)) != static_cast<ssize_t>(sizeof(bytes))) return 75;
+            if (write(STDERR_FILENO, bytes, sizeof(bytes)) != static_cast<ssize_t>(sizeof(bytes))) return 75;
+        }
+        return 0;
+    }
     if (mode == "ok") return 0;
     if (mode == "sleep") { sleep(30); return 0; }
     if (mode == "spin") {

@@ -224,6 +224,9 @@ def main():
     capture = io.StringIO()
     pg = None
     try:
+        probe_output = work / "probe-receipts"
+        probe_output.mkdir(mode=0o700)
+        os.environ["FOC_GOVERNANCE_PROBE_EVIDENCE"] = str(probe_output)
         pg, _, image = prepare(work)
         with redirect_stdout(capture), redirect_stderr(capture):
             code = pytest.main(
@@ -238,6 +241,9 @@ def main():
         require(before == source_manifest(), "source_changed")
         enforce(report, required, source)
         restored = recovery(pg)
+        receipts = list(probe_output.glob("*.json"))
+        require(len(receipts) == 14, "exact_probe_receipts")
+        shutil.copytree(probe_output, output / "probe-receipts")
         binaries = {
             str(p.relative_to(work)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted((work / "native").rglob("*"))
@@ -252,6 +258,7 @@ def main():
             "source_manifest": before,
             "source": source,
             "tests": len(required),
+            "probe_receipts": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in receipts},
             "negative_ids": 64,
             "image": image,
             "build_outputs": binaries,
