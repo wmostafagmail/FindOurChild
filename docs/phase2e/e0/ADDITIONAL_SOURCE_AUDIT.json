@@ -168,7 +168,8 @@
   "reviewed_font_payload": {
     "path": "dlib/gui_widgets/fonts.cpp",
     "classification": "licensed_default_font_not_recognition_weights",
-    "compiled_with_gui_disabled": false
+    "compiled_with_gui_disabled": true,
+    "disposition": "Upstream CMake schedules fonts.cpp even with GUI disabled. Current profile excludes its bytes AND target source; the failed native CMake generation exposed the missing build selection and is preserved."
   },
   "remaining_blobs": 1114,
   "remaining_bytes": 13108426,

@@ -23,5 +23,25 @@
     "local-portable-syntax.log",
     "local-python-tls-failure.log",
     "local-docker-build.log"
+  ],
+  "hosted_failed_attempts_preserved": [
+    {
+      "run": 41029509586,
+      "head": "060ba6b6de2ef029b4f03f15f778cdb42f74eba4",
+      "conclusion": "failure",
+      "artifact": 12965137402,
+      "digest": "sha256:99f1ad518ef984cc610161de76859f595a2399a73a767831d536f474129fcf5c",
+      "cause": "upstream CMake schedules excluded fonts.cpp even with GUI disabled",
+      "native_model_tests_executed": 0
+    },
+    {
+      "run": 41029515939,
+      "head": "060ba6b6de2ef029b4f03f15f778cdb42f74eba4",
+      "conclusion": "failure",
+      "artifact": 12964738787,
+      "digest": "sha256:bd5a6b657d429edbc9d3cf520d1c58bfd0c63795ae00875828fec2160d805dd8",
+      "cause": "upstream CMake schedules excluded fonts.cpp even with GUI disabled",
+      "native_model_tests_executed": 0
+    }
   ]
 }

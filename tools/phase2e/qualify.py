@@ -134,6 +134,9 @@ def main():
         if work.is_dir() and not work.is_symlink():
             raw = work / "raw"
             raw.mkdir(exist_ok=True, mode=0o700)
+            original_source_failure = work / 'source-failure.log'
+            if original_source_failure.is_file():
+                shutil.copyfile(original_source_failure, raw / 'source-acquisition.log')
             (raw / "failure.log").write_text(traceback.format_exc())
             output = work / "sanitized"
             output.mkdir(exist_ok=True)

@@ -16,6 +16,7 @@ add_subdirectory(/build/source/dlib dlib_build)
 # (which embeds a compressed stylesheet) from the PROJECT-OWNED build selection.
 get_target_property(FOC_CORE_SOURCES dlib SOURCES)
 list(FILTER FOC_CORE_SOURCES EXCLUDE REGEX "(^|/)data_io/image_dataset_metadata\\.cpp$")
+list(FILTER FOC_CORE_SOURCES EXCLUDE REGEX "(^|/)gui_(widgets|core)/")
 set_property(TARGET dlib PROPERTY SOURCES "${FOC_CORE_SOURCES}")
 pybind11_add_module(_foc_dlib_native NO_EXTRAS source_probe.cpp fixed_interface.cpp execution_guard.cpp model_backend.cpp verified_stream.cpp)
 target_link_libraries(_foc_dlib_native PRIVATE dlib::dlib OpenSSL::Crypto)
