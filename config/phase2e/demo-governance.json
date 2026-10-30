@@ -1,0 +1,13 @@
+{
+  "domain": "FOC-PHASE2E-DEMO-APPROVAL-V2",
+  "policy_sha256": "0ab396ebdbc7e2bdd11f8d4f8fb8ee24791d8f3990b9c3297ce2de2d009d3c8a",
+  "owner_anchor": null,
+  "registry": null,
+  "provisioning_enabled": false,
+  "acquisition_enabled": false,
+  "unpacking_enabled": false,
+  "scanning_enabled": false,
+  "native_parsing_enabled": false,
+  "inference_enabled": false,
+  "operational_enabled": false
+}

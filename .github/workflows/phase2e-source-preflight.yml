@@ -2,7 +2,7 @@ name: Phase 2E source prototype validation
 on:
   pull_request:
   push:
-    branches: ['codex/phase-2e-licensed-recognition']
+    branches: [main, 'codex/phase-2e-licensed-recognition', 'codex/phase-2e-demo-governance']
   workflow_dispatch:
 permissions:
   contents: read

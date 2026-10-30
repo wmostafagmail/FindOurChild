@@ -11,7 +11,11 @@ concurrency:
   group: phase1a-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  phase2e-governance-prerequisite:
+    uses: ./.github/workflows/phase2e-demo-governance.yml
   phase1a-required:
+    needs: [phase2e-governance-prerequisite]
+    if: ${{ always() }}
     runs-on: ubuntu-24.04
     # Full 360-browser /747-Python serial regression; timeout never implies success.
     timeout-minutes: 150
@@ -22,6 +26,10 @@ jobs:
       FOC_E2E_DATA_CLASS: synthetic
       FOC_E2E_ISOLATED: '1'
     steps:
+      - name: Enforce governance prerequisite without a green skip
+        env:
+          GOVERNANCE_RESULT: ${{ needs.phase2e-governance-prerequisite.result }}
+        run: test "$GOVERNANCE_RESULT" = success
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false

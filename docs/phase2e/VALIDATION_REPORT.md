@@ -1,3 +1,15 @@
+> Current engineering update (2026-10-30): demo-governance source-only implementation is authorized on `codex/phase-2e-demo-governance`. See [governance validation](DEMO_GOVERNANCE_VALIDATION_REPORT.md). Earlier planning/approval text below is historical. Actual people, keys, permits, assets and inference remain unprovisioned/disabled; Phase2E is incomplete.
+
+# Current validation scope — governance implementation planning
+
+**Policy design approved, execution/implementation not approved by this checkpoint.** The owner's decision binds the797d940 policy baseline; the [approval record](DEMO_POLICY_DESIGN_APPROVAL.md), [implementation/provisioning checklist](DEMO_GOVERNANCE_IMPLEMENTATION_CHECKLIST.md), [negative-test plan](DEMO_GOVERNANCE_NEGATIVE_TEST_PLAN.md) and [status inventory](DEMO_GOVERNANCE_PLAN_STATUS.json) are documentation-only deliverables.
+
+All64 scenario IDs are pending design entries with no executable selectors or execution evidence. No new application/API/database/native/browser tests, key generation/enrollment, signed permits, artifact acquisition, native parsing or inference is executed by this packet. Documentation links/JSON/inventory and preserved-source checks are recorded separately after execution; they are not functional or model-test passes. The original747/360/36 and136/52 results remain bound to their actual sources/runs; additional192 official TesterArmy executions and real native/provider integration remain pending.
+
+All five executable switches and native denial remain unchanged. Original artifact/operational gates, approved policy bytes, source findings and original failures/evidence are preserved. Binary retention, immutable provisioning/TOCTOU and independently enforced hard worker deadlines remain engineering work, not resolved findings. The1000ms DB p95 target remains missed at1149.158629/1126.882086ms, accepted only as the documented existing demonstration exception. No Phase2E acceptance, merge or Phase2F/3 authority follows. Earlier reports below are retained verbatim as historical validation records.
+
+# Preserved previous validation records
+
 # Phase 2E validation report — demo policy-design checkpoint
 
 Current directive: stop after the **proposed** demo approval-policy amendment. The owner waived independent human A1b security review for the isolated demo only; the original review remains unmet. New A3/A4/A6/A7 role substitutions require owner policy approval and actual human-controlled key enrollment. Neither exists yet. See [matrix](DEMO_APPROVAL_POLICY_PROPOSAL.md), [enrollment](DEMO_KEY_ENROLLMENT_PROCEDURE.md), [threat/negative-test obligations](DEMO_POLICY_THREAT_ASSESSMENT.md) and [design checkpoint report](DEMO_POLICY_DESIGN_REPORT.md).

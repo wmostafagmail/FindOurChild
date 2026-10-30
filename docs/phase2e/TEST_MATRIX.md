@@ -1,3 +1,13 @@
+> Current engineering update (2026-10-30): demo-governance source-only implementation is authorized on `codex/phase-2e-demo-governance`. See [governance validation](DEMO_GOVERNANCE_VALIDATION_REPORT.md). Earlier planning/approval text below is historical. Actual people, keys, permits, assets and inference remain unprovisioned/disabled; Phase2E is incomplete.
+
+# Current planning addendum — detailed governance negative scenarios
+
+The owner-approved797d940 policy design is the baseline for [the implementation/provisioning checklist](DEMO_GOVERNANCE_IMPLEMENTATION_CHECKLIST.md). Existing DEMO-GOV-01–08 groups are now mapped to **64 reserved scenario IDs** in [DEMO_GOVERNANCE_NEGATIVE_TEST_PLAN.md](DEMO_GOVERNANCE_NEGATIVE_TEST_PLAN.md): DG-R01–R16 registry/enrollment, DG-S01–S16 signed records, DG-A01–A16 artifact provisioning, and DG-W01–W16 worker fencing/recovery.
+
+**Every new scenario remains pending implementation/execution.** Exact selectors, fixtures and actual results are absent; [DEMO_GOVERNANCE_PLAN_STATUS.json](DEMO_GOVERNANCE_PLAN_STATUS.json) records empty selector lists and null evidence. These64 designs are not64 collected/passing tests and do not change any required-test inventory or existing coverage. All747 baseline Python/API/PG/RLS/security,360 official browser executions,36 migrations/recovery,136 E0 controls,52 source-only native cases and192 required additional Phase2E official executions retain their actual or pending statuses. Human review/signatures, actual model parsing/inference and operational authority cannot be supplied by synthetic automation. Stop for the next owner decision; no executable tests are implemented here.
+
+# Preserved previous traceability records
+
 # Demo governance design checkpoint — pending test obligations
 
 The [proposed policy](DEMO_APPROVAL_POLICY_PROPOSAL.md) adds future governance groups DEMO-GOV-01–08, defined with negative scenarios and expected outcomes in [DEMO_POLICY_THREAT_ASSESSMENT.md](DEMO_POLICY_THREAT_ASSESSMENT.md). **Design only: executable selectors, fixtures, actual execution evidence and validation status are all pending.** These group labels are not eight executed tests. No old selector/count is removed or relabeled; original747 Python/API/PG/security,360 official browser regressions,36 migrations/recovery,136 E0 and52 source-only native results retain their actual evidence scope. The additional192 Phase2E official browser executions remain pending. Current work implements no new runtime behavior and does not claim any application/native/browser pass.

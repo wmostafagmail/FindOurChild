@@ -96,6 +96,8 @@ def qualify(work):
         assert not inspect["Mounts"] and not restrictions.get("Devices") and not restrictions["Privileged"]
         command(["docker", "cp", container + ":/opt/qualification/evidence/.", str(output)],
                 raw / "copy.log", timeout=30)
+        command(["docker", "cp", container + ":/opt/qualification/build-outputs", str(output / "build-outputs")],
+                raw / "copy-build-outputs.log", timeout=30)
         command(["docker", "start", "--attach", container], raw / "native.log", timeout=60)
         finished, = json.loads(subprocess.check_output(["docker", "inspect", container]))
         assert finished["State"]["ExitCode"] == 0 and not finished["State"]["OOMKilled"]
