@@ -1,3 +1,5 @@
+> Executable governance traceability: [76 exact selectors /64 DG families](governance-required-tests.json), [verified implementation-checkpoint outcomes](DEMO_GOVERNANCE_IMPLEMENTATION_STATUS.json), [remaining provisioning blockers](DEMO_GOVERNANCE_BLOCKERS.md). Historical planning statuses below remain preserved. Later192 model-workflow executions remain pending.
+
 > Current engineering update (2026-10-30): demo-governance source-only implementation is authorized on `codex/phase-2e-demo-governance`. See [governance validation](DEMO_GOVERNANCE_VALIDATION_REPORT.md). Earlier planning/approval text below is historical. Actual people, keys, permits, assets and inference remain unprovisioned/disabled; Phase2E is incomplete.
 
 # Current planning addendum — detailed governance negative scenarios

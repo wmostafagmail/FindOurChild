@@ -70,6 +70,8 @@ def test_positive_atomic_publication_and_no_direct_worker_writes(govdb):
     with pytest.raises(psycopg.errors.InsufficientPrivilege), c.transaction():
         c.execute("UPDATE demo_governance.authority SET enabled=true")
     with pytest.raises(psycopg.errors.InsufficientPrivilege), c.transaction():
+        c.execute("SELECT * FROM demo_governance.authority")
+    with pytest.raises(psycopg.errors.InsufficientPrivilege), c.transaction():
         c.execute("INSERT INTO demo_governance.outbox VALUES(%s)", (str(uuid4()),))
 
 

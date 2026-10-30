@@ -36,7 +36,7 @@ CREATE POLICY job_scope ON demo_governance.jobs USING (
 -- cancellation/revocation remains privileged. No public schema/search_path grants.
 CREATE ROLE foc_demo_fence NOLOGIN NOSUPERUSER NOBYPASSRLS;
 GRANT USAGE ON SCHEMA demo_governance TO foc_demo_fence;
-GRANT SELECT ON demo_governance.authority,demo_governance.jobs TO foc_demo_fence;
+GRANT SELECT ON demo_governance.jobs TO foc_demo_fence;
 REVOKE ALL ON ALL TABLES IN SCHEMA demo_governance FROM PUBLIC;
 CREATE FUNCTION demo_governance.publish(j uuid,t uuid,e bigint,r bigint,i uuid,o uuid,s text)
 RETURNS boolean LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,demo_governance AS $$
