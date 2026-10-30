@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "scope": "demo_approval_policy_design_only",
+  "owner_policy_approval": "pending",
+  "implementation_frozen_at": "66915802c102fd926dffdc17710416fbc2cbd892",
+  "published_prior_review_commit": "70cb0cf5b81186ce03b2bb03f58c49aea756a72d",
+  "original_independent_human_A1b_review": "unmet_owner_waived_for_isolated_demo_only",
+  "roles_appointed_by_this_packet": [],
+  "public_keys_generated_or_enrolled_by_this_packet": [],
+  "permits_issued": [],
+  "source_text_revalidation": [
+    {
+      "source": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md",
+      "bytes": 15318,
+      "expected_sha256": "9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c",
+      "actual_sha256": "9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c",
+      "matches_frozen_grant_text": true,
+      "evidence": "artifacts/raw/phase2e-e0/demo-continuation/9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c.txt",
+      "asset_bodies_downloaded": 0
+    },
+    {
+      "source": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE",
+      "bytes": 6556,
+      "expected_sha256": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+      "actual_sha256": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+      "matches_frozen_grant_text": true,
+      "evidence": "artifacts/raw/phase2e-e0/demo-continuation/6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01.txt",
+      "asset_bodies_downloaded": 0
+    },
+    {
+      "source": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt",
+      "bytes": 1337,
+      "expected_sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "actual_sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "matches_frozen_grant_text": true,
+      "evidence": "artifacts/raw/phase2e-e0/demo-continuation/8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b.txt",
+      "asset_bodies_downloaded": 0
+    },
+    {
+      "source": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md",
+      "bytes": 8892,
+      "expected_sha256": "4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d",
+      "actual_sha256": "4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d",
+      "matches_frozen_grant_text": true,
+      "evidence": "artifacts/raw/phase2e-e0/demo-continuation/4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d.txt",
+      "asset_bodies_downloaded": 0
+    }
+  ],
+  "source_build_dependency_check": {
+    "tool": "pip-audit 2.10.1",
+    "python": "3.13.13",
+    "dependencies": [
+      {
+        "name": "cmake",
+        "version": "3.31.6",
+        "vulns": []
+      },
+      {
+        "name": "numpy",
+        "version": "2.3.3",
+        "vulns": []
+      }
+    ],
+    "known_pypi_advisories_reported": 0,
+    "scope_excludes": "native OS/image/transitive source vulnerability or complete legal/security clearance",
+    "original_report": {
+      "path": "artifacts/raw/phase2e-e0/demo-continuation/build-dependency-audit.json",
+      "sha256": "9c17fa735b3756b6164b03f10f88ec5a10da242e412a8a4d18f0ce29091fc814"
+    }
+  },
+  "executable_policy_unchanged": {
+    "path": "config/phase2e/qualification-policy.json",
+    "sha256": "1e4127a057d50d1a79559cdda4440edffe9c1eb05e580ef7b787ea2c4a130581"
+  },
+  "runtime_flags": {
+    "acquisition_enabled": false,
+    "native_model_loading_enabled": false,
+    "image_decoding_enabled": false,
+    "inference_enabled": false,
+    "operational_enabled": false
+  },
+  "native_guard": "unchanged_compiled_default_deny_unprovisioned_authority",
+  "model_image_bodies_acquired": 0,
+  "model_deserializations": 0,
+  "neural_inference_executions": 0,
+  "new_application_native_browser_suites_executed": false,
+  "new_192_testerarmy_executions": "pending_not_implemented",
+  "database_p95_target_ms": 1000,
+  "database_p95_observations_ms": {
+    "6691580_push": 1149.1586289999987,
+    "6691580_pr": 1126.8820860000233
+  },
+  "database_performance_status": "target_missed_owner_accepted_demo_exception_not_passed",
+  "proposal_test_groups": [
+    {
+      "id": "DEMO-GOV-01",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-02",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-03",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-04",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-05",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-06",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-07",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    },
+    {
+      "id": "DEMO-GOV-08",
+      "selectors": "pending",
+      "execution_evidence": null,
+      "status": "pending"
+    }
+  ],
+  "phase2e_accepted": false,
+  "stop_reason": "Owner directed stop at policy-design checkpoint before implementation, enrollment, permits or acquisition."
+}

@@ -1,0 +1,35 @@
+# Phase 2E demo governance — policy-design checkpoint report
+
+Date:2026-10-30. **Owner policy approval pending; stop at design checkpoint.** The latest owner instruction supersedes continued implementation for now. It permits preparing a separate demo approval amendment, not registering keys, issuing permits, downloading model/image bodies, changing production gates or enabling inference.
+
+## Delivered for owner review
+
+- [Proposed amendment and approval matrix](DEMO_APPROVAL_POLICY_PROPOSAL.md): precise A1b waiver and proposed A3/A4/A6/A7 replacements; owner/technical/fixture signatures; permitted combinations, two-person minimum, blinded review and stage-specific authority.
+- [Human public-key enrollment procedure](DEMO_KEY_ENROLLMENT_PROCEDURE.md): human-owned private keys, authenticated owner bootstrap, possession checks, owner-signed designation, scope/validity, controlled registry provisioning, expiry/revocation/rotation and fail-closed restore.
+- [Threat assessment and future negative-test obligations](DEMO_POLICY_THREAT_ASSESSMENT.md): source/artifact integrity, approval fraud/replay, TOCTOU/native parsing, hard resource deadlines, fixture blinding, dataset/production separation and explicit residual risks. DEMO-GOV-01–08 are pending groups, not executed tests.
+- [Owner A1b waiver record](DEMO_ONLY_REVIEW_EXCEPTION.md), [blocker register](e0/A1B_REVIEW_AND_BLOCKERS.md), updated review/validation entries and pending traceability. The original gates, historical requirements, findings and frozen evidence remain available unchanged in their original commits/files.
+- [Scoped preliminary evidence](DEMO_POLICY_PREFLIGHT_EVIDENCE.json), explicitly separated from implementation/test acceptance.
+
+Frozen implementation remains `66915802c102fd926dffdc17710416fbc2cbd892`; prior published review commit is `70cb0cf5b81186ce03b2bb03f58c49aea756a72d`. Any publication of this packet is another documentation-only commit and must be identified separately in draft PR #11. Its CI results must not be substituted for, or inferred from, the four successful frozen-checkpoint runs.
+
+## Checks actually performed
+
+The four exact publisher license/README text responses matched their retained SHA-256 values. Sources were only the pinned [dlib code grant](https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt), [model README](https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md), [model grant](https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE) and [synthetic-image publisher card](https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md). No model/image body was requested. This confirms text identity, not actual model/image bytes, complete training-data rights, per-image content or permission safety.
+
+`pip-audit 2.10.1` on Python3.13.13 reported no known PyPI advisories for exact source-build pins CMake3.31.6 and NumPy2.3.3. Command: `python -m pip_audit --no-deps --disable-pip -r services/demo_recognition/requirements-build.txt --format json --output <private-report>`. This is a two-package advisory observation, **not** a complete native/OS/SBOM security assessment or a new A1b pass. Original scope-limited reports/text hashes are retained privately under `artifacts/raw/phase2e-e0/demo-continuation/` and indexed in the JSON evidence.
+
+Document links/JSON and source-preservation checks are recorded in a separate design-check receipt after execution. No new application, native, model, database, recovery or browser suite was executed for this documentation-only packet. Existing747 Python/API/real PostgreSQL/RLS/security/integration,360 official TesterArmy executions,36 migrations/recovery,136 E0 and52 source-only native results remain bound to their original actual source/run/artifact identities in the [frozen evidence index](e0/INDEPENDENT_REVIEW_EVIDENCE.json). The additional192 official Phase2E executions and all actual-model integration remain pending. No skipped, mocked or unexecuted model test is reported passed.
+
+## Current restrictions and blockers
+
+All five executable switches remain false: acquisition, native model loading, image decoding, inference and operational activation. Native `model_execution_api_available=false` and the unconditional unprovisioned-authority denial remain intact. Existing policy status text refers to the historical source-only checkpoint; the new governance documents are not executable overrides. No approver has been appointed by this packet, no public key is trusted/enrolled, no private approver key is generated and no signature/permit is issued. All actual model hashes and parsed/inference results remain absent.
+
+Before acquisition: owner approval of this exact policy; actual owner/technical/fixture appointments and permitted combinations; authenticated owner-key bootstrap and explicitly authorized public-key enrollment; complete actual source/dependency/native technical preflight; and signed, bounded acquisition scope. After acquisition, the A3/A4 actual-byte/unpack/scan/A5 load/A6 blinded-fixture chain and final owner A7 execution signature remain mandatory. None is preapproved by policy design.
+
+Required engineering still includes a working trusted fixed-artifact authority/registry, complete binary-output retention, resolved immutable-provisioning/TOCTOU design, independently enforced worker deadline/failure fencing, real decoder/scanner/native qualification, additive provider-v2/storage/API/UI integration and complete source-bound tests. The current six compiled parser/forward methods are not an enabled inference provider. Do not flip a flag to make an incomplete interface appear qualified. Neither the existing branch-protection configuration nor ordinary YAML/green checks prove the proposed human policy is enforced; future implementation and actual-inference CI enforcement require verification.
+
+DB p95 remains **1149.158629ms push /1126.882086ms PR at6691580**, above the original **1000ms** target. These existing misses are owner-accepted demonstration exceptions, **not performance passes**. Historical findings/remediation and Phase3 manual Arabic, actual screen-reader and long-history gates remain open. No future neural performance failure or security defect is waived by that disposition.
+
+## Owner decision requested
+
+Review the exact demo replacements and retained obligations; proposed two-person arrangement and prohibited self-approval; owner bootstrap/key-enrollment/rotation/revocation; proposed key/permit/retention limits; and documented residual risks. Approval of the proposal alone must not provision keys, acquire assets or activate anything. Actual human appointments/enrollment and subsequent narrowly authorized implementation/provisioning are separate next decisions. **Phase2E is incomplete/unaccepted; PR #11 must remain draft/unmerged. No Phase2F/3 or operational child recognition is authorized.**

@@ -1,3 +1,9 @@
+# Demo governance design checkpoint — pending test obligations
+
+The [proposed policy](DEMO_APPROVAL_POLICY_PROPOSAL.md) adds future governance groups DEMO-GOV-01–08, defined with negative scenarios and expected outcomes in [DEMO_POLICY_THREAT_ASSESSMENT.md](DEMO_POLICY_THREAT_ASSESSMENT.md). **Design only: executable selectors, fixtures, actual execution evidence and validation status are all pending.** These group labels are not eight executed tests. No old selector/count is removed or relabeled; original747 Python/API/PG/security,360 official browser regressions,36 migrations/recovery,136 E0 and52 source-only native results retain their actual evidence scope. The additional192 Phase2E official browser executions remain pending. Current work implements no new runtime behavior and does not claim any application/native/browser pass.
+
+# Preserved earlier records
+
 # Phase 2E proposed feature-to-test traceability
 
 Status: **every complete Phase 2E scenario group below remains pending**. An E0 unit-control subset is now executable; see the implementation addendum below and [E0_PROGRESS.md](E0_PROGRESS.md). Reserved scenario IDs are not pytest selectors or completed native/model/API/browser acceptance. During implementation bind each complete group to collected unit/API/real-database/security/native/browser tests, exact commit, command, result and sanitized artifact digest. Preserve [current implemented traceability](../phase2d/TEST_TRACEABILITY.md) and all historical requirements; no planning row counts as a passed baseline test. Suites and exact browser matrix are specified in [TESTING_AND_ACCEPTANCE.md](TESTING_AND_ACCEPTANCE.md).

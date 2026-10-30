@@ -1,4 +1,12 @@
-# Phase 2E validation report — second A1b review checkpoint
+# Phase 2E validation report — demo policy-design checkpoint
+
+Current directive: stop after the **proposed** demo approval-policy amendment. The owner waived independent human A1b security review for the isolated demo only; the original review remains unmet. New A3/A4/A6/A7 role substitutions require owner policy approval and actual human-controlled key enrollment. Neither exists yet. See [matrix](DEMO_APPROVAL_POLICY_PROPOSAL.md), [enrollment](DEMO_KEY_ENROLLMENT_PROCEDURE.md), [threat/negative-test obligations](DEMO_POLICY_THREAT_ASSESSMENT.md) and [design checkpoint report](DEMO_POLICY_DESIGN_REPORT.md).
+
+This continuation changes documentation only. All five executable switches and native execution capability remain false; no approver private key, trusted enrollment, signed permit, model/image body, decompression/decoding, native model parse, inference or application integration was created/executed. Primary text-only permission revalidation matched all four retained hashes; the exact two source-build package pins reported no known PyPI advisories in the scoped check. Those observations do not complete source/native/OS security qualification. No new application, native or browser suite pass is claimed. The original747/360/36 and136/52 evidence remains bound to its actual checkpoints;192 new TesterArmy executions remain unimplemented/pending.
+
+DB p95 exceptions are owner-accepted only for the demonstration stage: frozen6691580 push1149.158629ms / PR1126.882086ms still miss the unchanged1000ms target. Neither performance gate is relabeled passed. Phase2E remains incomplete, draft PR #11 stays unmerged, and no Phase2F/3 is authorized. The records below remain historical and are superseded only for current governance status.
+
+# Preserved second A1b review checkpoint
 
 **The corrected architecture is approved for continued engineering; full A1b and Phase 2E are not accepted.** The owner reviewed PR #11 at `3442923` and explicitly withheld acquisition/deserialization/inference approval. This continuation completes a review-locked source-only interface, with no model/image acquisition, model parsing or neural execution. Stop for the second A1b review. No merge, E1/E2, Phase 2F/3 or operational activation.
 
