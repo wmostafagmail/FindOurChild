@@ -1,0 +1,784 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "scope": "implementation_planning_and_negative_test_design_only",
+  "policy_design": {
+    "status": "approved_by_owner_as_implementation_baseline",
+    "baseline_commit": "797d94053b5c447d7c9956b37faaa73fdf1d5cae",
+    "approved_policy_sha256": "0ab396ebdbc7e2bdd11f8d4f8fb8ee24791d8f3990b9c3297ce2de2d009d3c8a",
+    "decision_record": "docs/phase2e/DEMO_POLICY_DESIGN_APPROVAL.md",
+    "ed25519_signature_supplied": false
+  },
+  "frozen_implementation": "66915802c102fd926dffdc17710416fbc2cbd892",
+  "current_authorized_work": [
+    "approval_record_documentation",
+    "implementation_planning",
+    "negative_test_design",
+    "read_only_document_and_preservation_checks"
+  ],
+  "runtime_implementation_authorized_by_this_decision": false,
+  "separate_owner_actions_required": [
+    "source_only_engineering_and_executable_test_implementation",
+    "actual_reviewer_appointment",
+    "owner_key_bootstrap",
+    "each_actual_public_key_enrollment",
+    "bounded_asset_acquisition_and_qualification_scope",
+    "final_A7_demo_execution",
+    "A8_acceptance_and_any_separate_merge_decision"
+  ],
+  "original_independent_human_A1b_review": "unmet_with_owner_demo_only_waiver",
+  "database_p95": {
+    "target_ms": 1000,
+    "6691580_push_ms": 1149.1586289999987,
+    "6691580_pr_ms": 1126.8820860000233,
+    "target_passed": false,
+    "owner_disposition": "existing_demo_stage_exception_only"
+  },
+  "actual_reviewer_appointments_made_here": [],
+  "actual_keys_enrolled_here": [],
+  "actual_permits_issued_here": [],
+  "actual_model_hashes": [],
+  "model_image_bodies_acquired": 0,
+  "native_model_parsing_executed": false,
+  "neural_inference_executed": false,
+  "runtime_flags": {
+    "acquisition_enabled": false,
+    "native_model_loading_enabled": false,
+    "image_decoding_enabled": false,
+    "inference_enabled": false,
+    "operational_enabled": false
+  },
+  "preserved_baseline_files": {
+    "docs/phase2e/DEMO_APPROVAL_POLICY_PROPOSAL.md": {
+      "sha256": "0ab396ebdbc7e2bdd11f8d4f8fb8ee24791d8f3990b9c3297ce2de2d009d3c8a",
+      "bytes": 15940
+    },
+    "docs/phase2e/DEMO_KEY_ENROLLMENT_PROCEDURE.md": {
+      "sha256": "79492f4fc87a69351982b986009b614b2cd14e81a40e637cff8d91297304f7c4",
+      "bytes": 9102
+    },
+    "docs/phase2e/DEMO_POLICY_THREAT_ASSESSMENT.md": {
+      "sha256": "985d4088101f1730a57a770998d5b0dfcf56ed171e66de8c4c8bd20fa60166aa",
+      "bytes": 9954
+    },
+    "docs/phase2e/ARTIFACT_ACQUISITION_GATES.md": {
+      "sha256": "e0827b4b3fb5279581b7f391d830d3f6ec139e09246eda8b67b674ccf18a776d",
+      "bytes": 8910
+    },
+    "config/phase2e/qualification-policy.json": {
+      "sha256": "1e4127a057d50d1a79559cdda4440edffe9c1eb05e580ef7b787ea2c4a130581",
+      "bytes": 524
+    },
+    "config/phase2e/source-projection.json": {
+      "sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd",
+      "bytes": 165237
+    },
+    "config/phase2e/native-test-inventory.json": {
+      "sha256": "65ce9f206568f8d6dc8c537c889846c7fb5562ae6875ffb931a42458ea2008f3",
+      "bytes": 1186
+    },
+    "docs/phase2e/e0-required-tests.json": {
+      "sha256": "c666fb3693fc5f842e5aca1ddb949a81f5f90cb09a5d4f4e5f49260c146227d8",
+      "bytes": 16288
+    },
+    "tools/phase2e/approval.py": {
+      "sha256": "f0d059344cb0e9078205311e42b0e8066dbce37a0a7ac99ee31c222879d092eb",
+      "bytes": 4144
+    },
+    "tools/phase2e/intake.py": {
+      "sha256": "0bbc25a5b3e5f43bed2d5eb0f47a745f9768df0f5ed2a69b2790ee7603850908",
+      "bytes": 14320
+    },
+    "services/demo_recognition/native/execution_guard.cpp": {
+      "sha256": "5aaa8ff96b5860cd89bf20120beae4c7c1552ce636935071173ba6bf2ed40af6",
+      "bytes": 549
+    },
+    "services/demo_recognition/native/fixed_interface.h": {
+      "sha256": "c85c3b9254515d51934a7758f472a75808383e8262bb401a83364c3e0ea73641",
+      "bytes": 487
+    }
+  },
+  "implementation_work_packages": [
+    {
+      "id": "IMPL-01",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-02",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-03",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-04",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-05",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-06",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-07",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-08",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-09",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-10",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-11",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-12",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-13",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    },
+    {
+      "id": "IMPL-14",
+      "status": "pending_separate_engineering_authorization",
+      "evidence": null
+    }
+  ],
+  "provisioning_checklist": [
+    {
+      "id": "PROV-00",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-01",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-02",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-03",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-04",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-05",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-06",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-07",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-08",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-09",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-10",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    },
+    {
+      "id": "PROV-11",
+      "status": "pending_owner_authorization_and_actual_required_human_evidence",
+      "evidence": null
+    }
+  ],
+  "planned_negative_scenarios": [
+    {
+      "scenario_id": "DG-R01",
+      "fault_fixture_design": "Candidate self-signs an owner bootstrap without out-of-band owner confirmation",
+      "expected_outcome": "No owner anchor/enrollment written; possession alone confers no authority.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R02",
+      "fault_fixture_design": "Owner-approved policy supplied without actual appointment/enrollment authorization",
+      "expected_outcome": "Empty registry remains empty; no automatic principal/default key.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R03",
+      "fault_fixture_design": "Valid possession signature for a different person, key, role, project or enrollment record",
+      "expected_outcome": "Deny exact binding mismatch; no registry/audit-success mutation.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R04",
+      "fault_fixture_design": "Expired or already-consumed challenge; two concurrent consumers",
+      "expected_outcome": "Both stale attempts deny; at most one exact fresh challenge consumed atomically.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R05",
+      "fault_fixture_design": "Non-Ed25519 key, malformed/trailing DER, wrong fingerprint or raw-key hash substituted for DER hash",
+      "expected_outcome": "Reject before installation; canonical key identity remains unchanged.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R06",
+      "fault_fixture_design": "Same public key mapped to different people; one person split into accounts/keys",
+      "expected_outcome": "Reject ambiguous identity; person-level conflicts are not bypassed by key count.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R07",
+      "fault_fixture_design": "O also acts as T/F on the same chain",
+      "expected_outcome": "Reject role combination even with distinct keys/accounts.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R08",
+      "fault_fixture_design": "T approves their own acquisition/build-operator batch",
+      "expected_outcome": "Deny. Separate positive control covers O/P plus a distinct T, not an organizational-independence claim.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R09",
+      "fault_fixture_design": "Dual T/F has seen scores and approves changed fixture labels",
+      "expected_outcome": "New blinded review blocked; unchanged-manifest renewal must reference authentic pre-score evidence without claiming a new blind review.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R10",
+      "fault_fixture_design": "F/P conditional exception used while the same person is also that batch's T",
+      "expected_outcome": "Reject combined conflict; do not generalize the demo F/P exception to all gates.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R11",
+      "fault_fixture_design": "Revoked/expired/not-yet-valid key or role at the moment of registry readback",
+      "expected_outcome": "No active enrollment/permit use; current UTC and status enforced.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R12",
+      "fault_fixture_design": "Registry update for another project/deployment/policy or broader gate scope",
+      "expected_outcome": "Deny scope expansion; original revision/epoch unchanged.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R13",
+      "fault_fixture_design": "Browser/worker/caller attempts registry path, trust-root or ownership override",
+      "expected_outcome": "Deny before file selection/write; runtime remains read-only and fixed-source.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R14",
+      "fault_fixture_design": "Unsigned/partially written/corrupt registry revision; crash between persist and activate",
+      "expected_outcome": "No half-active trust set; atomic old-or-new valid state or unavailable/fail closed.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R15",
+      "fault_fixture_design": "Concurrent revocation/enrollment or restored lower registry epoch",
+      "expected_outcome": "No lost revocation/rollback; independently held current epoch controls activation.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-R16",
+      "fault_fixture_design": "Audit unavailable or test/default key accidentally packaged as production trust",
+      "expected_outcome": "No enrollment/activation; minimized failure evidence, no fallback root.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S01",
+      "fault_fixture_design": "V1/operational/enrollment-challenge domain or unknown V2 kind supplied as execution authority",
+      "expected_outcome": "Reject cross-domain/kind replay; existing v1 verifier remains unchanged.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S02",
+      "fault_fixture_design": "Signature bit flip, bad length/base64, wrong signer key or payload signer field",
+      "expected_outcome": "Fixed minimized signature denial; no downstream action.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S03",
+      "fault_fixture_design": "Correct signature by unknown/revoked/wrong-role or wrong-person key",
+      "expected_outcome": "Signature validity alone does not satisfy authorization; deny current registry mismatch.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S04",
+      "fault_fixture_design": "Duplicate/unknown fields, alternate escaping/order, trailing JSON or noncanonical representation",
+      "expected_outcome": "Reject before gate acceptance; cross-language canonical bytes agree for the valid control.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S05",
+      "fault_fixture_design": "NaN/Infinity, float/bool-integer confusion, unsafe range or invalid timestamp",
+      "expected_outcome": "Reject typed/closed schema; no coercion to a trusted value.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S06",
+      "fault_fixture_design": "Oversized/nested payload or excessive/duplicate predecessor list",
+      "expected_outcome": "Bounded early rejection with measured CPU/RSS; no recursive/unbounded parse.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S07",
+      "fault_fixture_design": "Wrong policy/project/instance/registry epoch/artifact/build/space digest",
+      "expected_outcome": "Exact binding denial; no scope fallback despite otherwise valid signature.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S08",
+      "fault_fixture_design": "Missing/expired/revoked predecessor, dependency cycle or a signed failed technical result",
+      "expected_outcome": "Chain incomplete/failed; owner or T signature cannot turn failure into pass.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S09",
+      "fault_fixture_design": "Future/not-before/expired/overlong record, rollback or uncertain clock",
+      "expected_outcome": "Fail closed; current time/monotonic deadline and validity intersection enforced.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S10",
+      "fault_fixture_design": "A7 lifetime exceeds key, role or any prerequisite; expired permit renewed by editing time",
+      "expected_outcome": "Deny extension; require a genuinely new currently valid authorized record.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S11",
+      "fault_fixture_design": "Reuse record ID with changed command/manifest; exact concurrent replay",
+      "expected_outcome": "Changed replay denied; exact permitted replay cannot duplicate side effects or extend rights.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S12",
+      "fault_fixture_design": "A3/A4/A5 load-only record presented to a forward/inference operation",
+      "expected_outcome": "Deny before model construction/forward call; no inference capability inferred.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S13",
+      "fault_fixture_design": "Valid fixture signature references a changed image/link/split/gallery or later score-informed judgment",
+      "expected_outcome": "Deny stale/blinding binding; preserve original decisions/failures.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S14",
+      "fault_fixture_design": "Enrollment/revocation/acceptance signature used to mint a broader scope or child-release action",
+      "expected_outcome": "Deny action mismatch; demo signatures cannot authorize custody, release or operational matching.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S15",
+      "fault_fixture_design": "Authority revoked/expired during mandatory audit wait or immediately before commit",
+      "expected_outcome": "Recheck and deny atomically; no stale authorization publication.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-S16",
+      "fault_fixture_design": "Valid-looking synthetic test record/key copied into production-equivalent registry/permit path",
+      "expected_outcome": "Deny untrusted project/person/root; test success never establishes a human approval.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A01",
+      "fault_fixture_design": "Missing A1b/A2 authority or unprovisioned component identity",
+      "expected_outcome": "No network/quarantine/key/model open; default denial remains first.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A02",
+      "fault_fixture_design": "Extra/missing/duplicate51-input entry, altered pinned ref, arbitrary URL/path/FD/plugin",
+      "expected_outcome": "Reject closed inventory/transport before acquisition or parser selection.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A03",
+      "fault_fixture_design": "Expected size/Git blob/LFS/compressed SHA-256 mismatch or truncated bytes",
+      "expected_outcome": "Reject exact byte identity; no unpack/parse; retain original failure receipt.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A04",
+      "fault_fixture_design": "Symlink parent/final path, hardlink, FIFO/device/directory, writable/unowned file or parent",
+      "expected_outcome": "Deny trusted-file boundary before snapshot/native parse; no blocking FIFO read.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A05",
+      "fault_fixture_design": "Pathname exchanged after resolution",
+      "expected_outcome": "Selected identity cannot change through a reopen; detect mismatch or use the independently validated held snapshot.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A06",
+      "fault_fixture_design": "Original bytes mutate during bounded snapshot copy",
+      "expected_outcome": "Unstable copy or wrong sealed digest rejected before parser spy; no postparse-only integrity claim.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A07",
+      "fault_fixture_design": "Original changes after sealing; writer attempts to alter/grow/shrink sealed snapshot",
+      "expected_outcome": "Kernel-enforced snapshot remains approved bytes; prohibited writes fail. Any policy-required drift hold is explicit; parser never consumes mutable original.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A08",
+      "fault_fixture_design": "Sealing unsupported, seal call fails, wrong flags or no immutable snapshot",
+      "expected_outcome": "Deny before parser; no buffered/pathname/hash-only fallback.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A09",
+      "fault_fixture_design": "Bzip2 concatenation/trailing/truncated/malformed stream from generated bytes",
+      "expected_outcome": "Reject single-stream/fixed-output rule; no partial output admitted.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A10",
+      "fault_fixture_design": "Generated decompression ratio/output/CPU/RSS/wall limit exceeded",
+      "expected_outcome": "Hard sandbox termination/reaping and failed job; no decompressed artifact approval.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A11",
+      "fault_fixture_design": "Malware scanner unavailable, stale definitions, timeout, dirty result or missing receipt",
+      "expected_outcome": "No clean state or decoder/provider fallback; bounded failure/audit recorded.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A12",
+      "fault_fixture_design": "Synthetic image wrong format/oversized pixels/malformed data or sandboxed decoder crash",
+      "expected_outcome": "Fail decode/lineage safely; no derivative/display/embedding publication.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A13",
+      "fault_fixture_design": "Scan/decoder/source/clean-derivative hash/version changed or permission revoked",
+      "expected_outcome": "Reject lineage/authority before media/model consumption; suppress derived access.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A14",
+      "fault_fixture_design": "Quarantine ciphertext/AAD/tag/key mismatch or unsafe key/quarantine directory relationship",
+      "expected_outcome": "No plaintext admission; no secrets/body in error/report.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A15",
+      "fault_fixture_design": "Registry/space/build/preprocessing mismatch or host supplies an unapproved model/component",
+      "expected_outcome": "Reject despite equal dimension/filename; fixed component/space only.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-A16",
+      "fault_fixture_design": "Missing/tampered wheel/test binary/SBOM/compiler/source evidence, including restored HOG/broad bindings",
+      "expected_outcome": "Qualification incomplete/failed; no actual acquisition/load permit and no receipt-as-binary claim.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W01",
+      "fault_fixture_design": "Attached Docker client dies while helper keeps running",
+      "expected_outcome": "Independent watchdog enforces deadline, kills/reaps job and denies publication. Client exit is not successful completion.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W02",
+      "fault_fixture_design": "Runtime/control-plane API hangs or disappears at deadline",
+      "expected_outcome": "Independent enforcement still terminates the owned job. If unavailable/unproven, isolation gate fails and dependent work stops.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W03",
+      "fault_fixture_design": "Watchdog/supervisor crashes or loses trusted authority state",
+      "expected_outcome": "No new work/publication; independently enforced expiry/termination demonstrated, not assumed from a worker-local timer.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W04",
+      "fault_fixture_design": "CPU-spinning versus sleeping helper exceeds CPU or wall deadline",
+      "expected_outcome": "Distinct hard limits enforced; quota throttling alone does not satisfy wall-time test.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W05",
+      "fault_fixture_design": "Bounded allocation helper hits memory ceiling/OOM",
+      "expected_outcome": "Whole job fenced/terminated, no partial success; actual peak/OOM/exit receipt retained.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W06",
+      "fault_fixture_design": "Descendant changes session/process group or exceeds PID/FD/output/temp limits",
+      "expected_outcome": "No escape from owned isolation/cgroup; complete termination/reaping, no host/socket/network access.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W07",
+      "fault_fixture_design": "PID/container identity reuse or wrong-job kill/cleanup request",
+      "expected_outcome": "Stable identity rejects mis-targeting; unrelated jobs/services remain untouched.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W08",
+      "fault_fixture_design": "Cancellation, old lease or requeue race returns a late synthetic result",
+      "expected_outcome": "Compare-and-swap fence rejects stale worker; one logical completion at most.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W09",
+      "fault_fixture_design": "Key/model/image/case/media/purpose revoked after enqueue/lease",
+      "expected_outcome": "Running job loses publication authority; no cached-grant bypass.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W10",
+      "fault_fixture_design": "Authority/selection/input revision changes during audit wait or transaction",
+      "expected_outcome": "Current-state recheck/transaction guard rejects stale snapshot; no partial outbox/candidate row.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W11",
+      "fault_fixture_design": "Foreign tenant/instance/gallery job or unauthorized raw-vector/model-path request",
+      "expected_outcome": "Actual runtime-role RLS/API denial; hidden rows do not affect visible ranks/counts.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W12",
+      "fault_fixture_design": "Crash between result/audit/outbox updates; required audit fails",
+      "expected_outcome": "Transaction rolls back or remains safely retryable/fenced; no visible unaudited success.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W13",
+      "fault_fixture_design": "Deadline expires between native completion and publication; clock rollback/uncertainty",
+      "expected_outcome": "Output discarded/held; no post-deadline candidate even if helper exited0.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W14",
+      "fault_fixture_design": "Restore old database/registry backup with revoked grants/tombstones and stale activation epoch",
+      "expected_outcome": "Starts inactive; independently current authority reconciled before reads/jobs, no rights resurrection.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W15",
+      "fault_fixture_design": "New UUID/time rerun attempts to replace a rejected unchanged evidence snapshot",
+      "expected_outcome": "Preserve semantic rejection/safeguarding invariants; no identity/custody decision or approval laundering.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    },
+    {
+      "scenario_id": "DG-W16",
+      "fault_fixture_design": "Error/log/trace exposes canary media/token/vector/identity; observer reports success despite missing required case",
+      "expected_outcome": "Sanitization/inventory verifier rejects artifact/gate; raw evidence retained privately, no skipped/mocked inference counted as pass.",
+      "executable_selectors": [],
+      "status": "pending_implementation_and_execution",
+      "execution_evidence": null
+    }
+  ],
+  "planned_scenario_ids": 64,
+  "collected_or_executed_new_tests": 0,
+  "new_test_success_claimed": false,
+  "baseline_counts_retained": {
+    "python_api_database_security": 747,
+    "official_testerarmy_browser": 360,
+    "chromium": 120,
+    "firefox": 120,
+    "webkit": 120,
+    "migrations_and_recovery": 36,
+    "e0_controls": 136,
+    "source_only_native_cases": 52
+  },
+  "additional_phase2e_official_testerarmy_executions": {
+    "required": 192,
+    "status": "pending_not_implemented"
+  },
+  "full_phase2e_accepted": false,
+  "stop": "next_owner_decision_before_implementation_or_provisioning",
+  "publication": {
+    "planning_packet": "local_uncommitted_not_pushed",
+    "remote_PR11_observed": {
+      "url": "https://github.com/wmostafagmail/FindOurChild/pull/11",
+      "state": "closed",
+      "merged": true,
+      "draft": false,
+      "head": "797d94053b5c447d7c9956b37faaa73fdf1d5cae",
+      "merge_commit": "f1de81728efff491c2ecb964104dcd50e9f8a085",
+      "reported_merged_at": "2026-10-30T15:44:16Z"
+    },
+    "assistant_performed_merge": false,
+    "current_main_ci_success_claimed": false,
+    "follow_up_route": "next_owner_decision",
+    "new_pr_created": false
+  }
+}

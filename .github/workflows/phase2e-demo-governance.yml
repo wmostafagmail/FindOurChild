@@ -1,0 +1,39 @@
+name: Phase 2E demo governance source-only validation
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/phase-2e-demo-governance']
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  phase2e-demo-governance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      DO_NOT_TRACK: '1'
+      E2E_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: 0.12.0
+          enable-cache: false
+      - name: Preserve exact dependency lock
+        run: uv sync --locked
+      - name: Governance security and strict inventory
+        run: |
+          .venv/bin/ruff check tools/phase2e/demo_governance tests/demo_governance
+          .venv/bin/python -m tools.phase2e.demo_governance.run_checks
+      - name: Publish data-free source-only evidence and binaries
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase2e-governance-${{ github.sha }}
+          path: artifacts/phase2e-governance/
+          if-no-files-found: error
+          retention-days: 7

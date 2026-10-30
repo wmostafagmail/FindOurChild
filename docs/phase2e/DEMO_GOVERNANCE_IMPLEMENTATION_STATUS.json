@@ -1,0 +1,681 @@
+{
+  "version": 2,
+  "scope": "source_only_governance_engineering_not_actual_provisioning",
+  "implementation_checkpoint": "65b88a64ce12ce2a06ac864124319948ea63ebae",
+  "planning_commit": "4e78844c2c9ccba53920a84f5caf3d6fcd1ad605",
+  "policy_sha256": "0ab396ebdbc7e2bdd11f8d4f8fb8ee24791d8f3990b9c3297ce2de2d009d3c8a",
+  "source_manifest_sha256": "da5d8f5e5fa40efc0c1adea49d94cf99d0919d790a4678a73b9c23fc5bb6b1a7",
+  "push_run": 41097299211,
+  "pr_run": 41097310358,
+  "pr_checkout": "884b5c3ac64edc424357ee3d2ce8b1fb0d070544",
+  "governance_tests": 76,
+  "mandatory_skips": 0,
+  "scenarios": [
+    {
+      "id": "DG-A01",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a01_no_gate_or_identity_before_io",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A02",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a02_closed_51_inventory",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A03",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a03_exact_bytes_size_git_and_sha",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A04",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a04_type_links_and_permissions_before_read",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A05",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a05_no_pathname_reopen",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A06",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a06_copy_mutation_denied_before_parser",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A07",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a07_kernel_seals_prevent_write_grow_shrink",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A08",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a08_sealing_failure_never_falls_back",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A09",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a09_malformed_concatenated_or_truncated_bzip",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A10",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a10_bounded_output_and_ratio",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A11",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a11_scanner_missing_stale_dirty_or_timeout",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A12",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a12_decoder_failure_or_format_and_pixels",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A13",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a13_lineage_or_permission_changed",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A14",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a14_quarantine_aad_tag_and_key",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A15",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a15_space_and_build_not_dimension_or_filename",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-A16",
+      "selector": "tests/demo_governance/test_artifacts.py::test_dg_a16_build_outputs_required_not_receipts",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R01",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r01_self_bootstrap_is_not_authority",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R02",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r02_policy_without_appointments_denies",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R03",
+      "selector": "tests/demo_governance/test_enrollment.py::test_dg_r03_possession_bound_to_exact_enrollment",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R04",
+      "selector": "tests/demo_governance/test_enrollment.py::test_dg_r04_nonce_single_use_concurrent_and_expired",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R05",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r05_algorithms_and_der_fingerprint",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R06",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r06_shared_keys_and_person_aliases",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R07",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r07_owner_cannot_be_reviewer_even_different_key",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R08",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r08_technical_self_operator",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R09",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r09_dual_reviewer_not_blind",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R10",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r10_fixture_operator_also_technical",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R11",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r11_expired_revoked_future_keys",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R12",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r12_wrong_project_instance_or_policy",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R13",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r13_untrusted_path_not_a_registry",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R14",
+      "selector": "tests/demo_governance/test_enrollment.py::test_dg_r14_corrupt_registry_and_audit_crash_atomicity",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R15",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r15_rollback_and_epoch_divergence",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-R16",
+      "selector": "tests/demo_governance/test_registry.py::test_dg_r16_no_trusted_defaults_or_test_root",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S01",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s01_wrong_domain_or_unknown_kind",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S02",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s02_bad_signature_and_payload",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S03",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s03_unknown_revoked_wrong_role",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S04",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s04_duplicates_unknown_trailing_noncanonical",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S05",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s05_unsafe_scalars_and_times",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S06",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s06_wire_depth_list_limits",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S07",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s07_exact_scope_and_epochs",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S08",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s08_dependencies_and_failed_evidence",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S09",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s09_time_and_uncertain_clock",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S10",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s10_no_outliving_prerequisite_or_key",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S11",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s11_modified_replay_digest_denied",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S12",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s12_load_only_is_not_inference",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S13",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s13_changed_fixture_or_informed_review",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S14",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s14_no_custody_release_or_operational_action",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S15",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_s15_expiry_during_audit_wait",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-S16",
+      "selector": "tests/demo_governance/test_records.py::test_dg_s16_test_authority_rejected_in_non_test_registry",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W01",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w01_docker_client_death_does_not_cancel_watchdog",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W02",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w02_no_control_plane_dependency_after_admission",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W03",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w03_supervisor_death_kills_namespace",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W04",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w04_independent_cpu_and_wall_limits",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W05",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w05_memory_exhaustion_fails_job",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W06",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w06_descendants_fd_output_and_watchdog_attack",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W07",
+      "selector": "tests/demo_governance/test_linux.py::test_dg_w07_stable_container_identity_and_unknown_probe_denied",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W08",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w08_cancel_old_token_requeue_and_exact_replay",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W09",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w09_each_live_grant_revocation",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W10",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w10_changed_epoch_or_input_revision",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W11",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w11_foreign_tenant_instance_rls_and_no_vector_or_path_api",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W12",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w12_audit_outage_rolls_back_everything",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W13",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w13_post_audit_deadline_and_untrusted_clock",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W14",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w14_stale_restored_activation_epoch",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W15",
+      "selector": "tests/demo_governance/test_postgres.py::test_dg_w15_new_uuid_cannot_launder_rejected_snapshot",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    },
+    {
+      "id": "DG-W16",
+      "selector": "tests/demo_governance/test_evidence.py::test_dg_w16_inventory_skip_false_pass_and_canary",
+      "status": "passed_on_implementation_checkpoint",
+      "stages": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      }
+    }
+  ],
+  "actual_approvers": [],
+  "actual_keys": [],
+  "actual_permits": [],
+  "actual_model_hashes": [],
+  "assets_acquired": 0,
+  "inference": false,
+  "original_independent_A1b": "unmet_demo_waiver",
+  "database_target_ms": 1000,
+  "database_target_met": false,
+  "phase2e_complete": false,
+  "final_head_evidence": "GitHub PR12 review report and exact-head CI artifacts; this file freezes the named implementation checkpoint only",
+  "full_regression_requirement": {
+    "python": 747,
+    "browser": {
+      "chromium": 120,
+      "firefox": 120,
+      "webkit": 120
+    },
+    "migrations": 36,
+    "e0": 136,
+    "native": 52
+  },
+  "later_additional_model_browser_executions": {
+    "count": 192,
+    "status": "pending_not_executed"
+  }
+}
