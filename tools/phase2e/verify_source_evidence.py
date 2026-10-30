@@ -104,6 +104,16 @@ def main():
                 assert set(build['linked_component_methods']) == {'compiled_parse_cnn', 'compiled_parse_predictor',
                     'compiled_parse_encoder', 'compiled_run_cnn', 'compiled_run_predictor', 'compiled_run_encoder'}
                 assert all(re.fullmatch('[a-f0-9]{64}', d) for d in build['linked_component_methods'].values())
+                symbols = one('/sanitized/component-symbols.txt')
+                assert hashlib.sha256(symbols).hexdigest() == build['component_symbols_sha256']
+                actual_methods = {}
+                for line in symbols.decode().splitlines():
+                    fields = line.split()
+                    assert len(fields) == 3 and fields[1] in {'t', 'T'} and '.' not in fields[2]
+                    match = re.match(r'^_ZN3foc(\d+)(compiled_(?:parse|run)_[a-z]+)E', fields[2])
+                    assert match and int(match[1]) == len(match[2]) and match[2] not in actual_methods
+                    actual_methods[match[2]] = hashlib.sha256(line.encode()).hexdigest()
+                assert actual_methods == build['linked_component_methods']
                 inventory = json.loads(blob('config/phase2e/native-test-inventory.json'))
                 interface = native['closed_interface_tests']
                 streams = native['stream_integrity_tests']

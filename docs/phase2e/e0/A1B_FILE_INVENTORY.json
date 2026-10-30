@@ -33,9 +33,9 @@
     {
       "path": "docs/phase2e/E0_PROGRESS.md",
       "change": "modified",
-      "bytes": 13754,
-      "sha256": "a3b69856a8656b83eca5f9ede82ca3e87716c2ef98717a3d638af660dfb509d8",
-      "git_blob": "c58f5561b1876881e093c483da2246990e91346e"
+      "bytes": 14326,
+      "sha256": "9f352a6371956c37c32ee796e9fb1162e16e6293d163391a8dfdc43432331dc8",
+      "git_blob": "ad3edb34b908466b6d4a74c5fbc90d6039ca91a7"
     },
     {
       "path": "docs/phase2e/TEST_MATRIX.md",
@@ -61,9 +61,9 @@
     {
       "path": "docs/phase2e/e0/A1B_BUILD_INTERFACE_REVIEW.md",
       "change": "added",
-      "bytes": 6077,
-      "sha256": "5572a196679b680402438431a851dc18e5066dd1a61d92eb8f0c31950aad95f0",
-      "git_blob": "d546f5e125ef024d6775e297f6c88b9dabbb5ed0"
+      "bytes": 6439,
+      "sha256": "8628b32207e73f39280d061d71d678c7cd53eafd4c465d09f14704b4121c7729",
+      "git_blob": "851ed3c271af737bc00bed123bcd8f11a4c3db63"
     },
     {
       "path": "docs/phase2e/e0/A1B_INTERFACE_SPEC.md",
@@ -75,9 +75,9 @@
     {
       "path": "docs/phase2e/e0/A1B_LOCAL_EVIDENCE.json",
       "change": "added",
-      "bytes": 1756,
-      "sha256": "784ed1402a94c1c32e89bf884378dd22a52405cf08d3fdbabe1eb8fdef7dec45",
-      "git_blob": "2a26bfb9ef4b7a9f871fa42ebb558e9584319430"
+      "bytes": 2612,
+      "sha256": "a21f4a54e19806648b81058dfc2c041e48dd249506fa2c483e2a7fdc5ee637c6",
+      "git_blob": "9897659e8eea2b3fd7d33f24555f3767110af7a6"
     },
     {
       "path": "docs/phase2e/e0/A1B_REVIEW_AND_BLOCKERS.md",
@@ -236,9 +236,9 @@
     {
       "path": "tools/phase2e/build_manifest.py",
       "change": "modified",
-      "bytes": 6797,
-      "sha256": "dd0a124db16b0075579d32a650bc412fc0ef2bb3bdbf2a9f2c54ab3858fa62ac",
-      "git_blob": "ad1ac777e883e500ebc7f37d7e8754d486b805cf"
+      "bytes": 7404,
+      "sha256": "58bf7f1afffdae55310c8dd943d21e7ac3d42a54b5ba22f9f7c30772e30f662b",
+      "git_blob": "40c888e118e415d0dbf2b3305f196fd2b91e0b7c"
     },
     {
       "path": "tools/phase2e/package_probe.py",
@@ -264,9 +264,9 @@
     {
       "path": "tools/phase2e/verify_source_evidence.py",
       "change": "modified",
-      "bytes": 9971,
-      "sha256": "499d737d9b1565839324406f847ed183fb6ec87ac4831f319f9815c4336c50f2",
-      "git_blob": "e3d684582088e0c1ba1558b8adfeafab2ad16468"
+      "bytes": 10732,
+      "sha256": "9ec351501524980082c93156846163c8db1ca2713711dfd7c1c7d3b5ec8ca943",
+      "git_blob": "82b33841c37a86a6b639ed956c574016d45c8fa9"
     }
   ],
   "self_excluded_to_avoid_recursive_hash": "docs/phase2e/e0/A1B_FILE_INVENTORY.json",

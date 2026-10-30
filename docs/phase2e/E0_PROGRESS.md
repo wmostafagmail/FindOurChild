@@ -65,3 +65,7 @@ The136 E0 controls preserve all119 baseline selectors.52 named new source-only n
 ### Hosted060ba6b source failure and correction
 
 Both native/source runs41029509586(push) and41029515939(PR) failed CMake generation because upstream schedules `gui_widgets/fonts.cpp` even with GUI off. Original full logs and GitHub-digest-verified artifacts are preserved in `artifacts/raw/phase2e-e0/a1b-second-review/`. The project-owned target source selection now excludes GUI implementation sources as well as the unused metadata exporter; the payload is not restored and no pinned upstream byte is patched. No native model test executed. Superseded full regressions are not final-head success evidence. A source-fetch error's original traceback is now copied into uploaded raw diagnostics as well.
+
+### Hosted9beef81 compiled interface / symbol-audit failure
+
+The corrected source selection configured successfully and the full native module compiled/linked. Both source runs41030701070/41030706659 then failed the encoder symbol witness before runtime qualification. Original logs/artifact digests are retained. The audit now requires exact raw Itanium namespace/name-length prefixes and ELF TEXT symbols, with all six actual symbol witnesses exported for an independent stdlib check; no method requirement is removed. Native model parsing/inference remain unexecuted.

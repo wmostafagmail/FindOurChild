@@ -63,14 +63,22 @@ def main():
     for p in Path("/runtime-notices").iterdir():
         (output / p.name).write_bytes(p.read_bytes())
     module, = (root / 'native-build').glob('_foc_dlib_native*.so')
-    symbols = subprocess.check_output(['nm', '-C', '--defined-only', str(module)], text=True)
+    # Avoid demangler recursion/truncation and matches inside nested C++ names.
+    # Exact GNU/Itanium namespace+length prefixes and TEXT symbols are required.
+    symbols = subprocess.check_output(['nm', '--defined-only', str(module)], text=True)
     names = ['compiled_parse_cnn', 'compiled_parse_predictor', 'compiled_parse_encoder',
              'compiled_run_cnn', 'compiled_run_predictor', 'compiled_run_encoder']
     linked = {}
+    witnesses = []
     for name in names:
-        found = [s for s in symbols.splitlines() if 'foc::'+name+'(' in s and ' [clone ' not in s]
+        prefix = '_ZN3foc'+str(len(name))+name+'E'
+        found = [s for s in symbols.splitlines() if len(s.split()) == 3 and s.split()[1] in {'t', 'T'}
+                 and s.split()[2].startswith(prefix) and '.' not in s.split()[2]]
+        print(json.dumps({'component_symbol': name, 'exact_text_matches': len(found)}), flush=True)
         assert len(found) == 1, 'Real component method missing from linked native module: '+name
         linked[name] = hashlib.sha256(found[0].encode()).hexdigest()
+        witnesses.append(found[0])
+    (output / 'component-symbols.txt').write_text('\n'.join(witnesses)+'\n')
     dependency_files = {}
     for dep in (root / 'native-build').rglob('*.o.d'):
         for name in dep.read_text().replace('\\\n', '').split()[1:]:
@@ -97,6 +105,7 @@ def main():
               "source_policy_audit_sha256": digest(output / 'source-policy-audit.json'),
               "compiled_dependencies_sha256": digest(output / 'compiled-dependencies.json'),
               "linked_component_methods": linked,
+              "component_symbols_sha256": digest(output / 'component-symbols.txt'),
               "native_contract_binary_sha256": digest(root / 'native-build/native_contract_tests'),
               "known_embedded_model_headers": 0, "standard_python_bindings_included": False,
               "pretrained_assets_present": False,
