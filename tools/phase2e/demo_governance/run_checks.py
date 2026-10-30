@@ -48,12 +48,29 @@ class Results:
     def __init__(self):
         self.nodes = []
         self.stages = {}
+        self.diagnostics = []
 
     def pytest_collection_modifyitems(self, items):
         self.nodes = [i.nodeid for i in items]
 
     def pytest_runtest_logreport(self, report):
         self.stages.setdefault(report.nodeid, {})[report.when] = report.outcome
+        if report.failed:
+            import re
+
+            match = re.search(r"(?:Denied|IntegrityError): ([a-z_]{1,64})", report.longreprtext)
+            types = re.findall(
+                r"E\s+(?:[a-zA-Z_.]+\.)?([A-Z][A-Za-z]+(?:Error|Exception)):", report.longreprtext
+            )
+            self.diagnostics.append(
+                {
+                    "id": report.nodeid,
+                    "stage": report.when,
+                    "fixed_code": match[1] if match else None,
+                    "error_type": types[-1] if types else "AssertionError",
+                    "private_diagnostic_sha256": hashlib.sha256(report.longreprtext.encode()).hexdigest(),
+                }
+            )
 
 
 def command(args, **kwargs):
@@ -216,7 +233,7 @@ def main():
         report = {"source": source, "exit": int(code), "tests": result.stages}
         (work / "pytest.log").write_text(capture.getvalue())
         (work / "pytest.log").chmod(0o600)
-        (output / "results.json").write_text(json.dumps(sanitized(report), indent=2) + "\n")
+        (output / "results.json").write_text(json.dumps(sanitized(report, required), indent=2) + "\n")
         require(result.nodes == required, "exact_collection")
         require(before == source_manifest(), "source_changed")
         enforce(report, required, source)
@@ -253,6 +270,7 @@ def main():
             "checkout": os.environ.get("GITHUB_SHA"),
             "source": source,
             "error_class": type(error).__name__,
+            "diagnostics": result.diagnostics,
             "tests": result.stages,
             "scope": "source_only_failed_no_assets_no_inference",
         }

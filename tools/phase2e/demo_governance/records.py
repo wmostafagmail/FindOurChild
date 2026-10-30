@@ -142,8 +142,10 @@ def time_value(v):
 
 
 def public_key(encoded):
+    require(type(encoded) is str and len(encoded) == 60, "key_encoding")
     try:
         der = base64.b64decode(encoded, validate=True)
+        require(base64.b64encode(der).decode() == encoded, "key_encoding")
         key = serialization.load_der_public_key(der)
         require(isinstance(key, Ed25519PublicKey), "key_algorithm")
         require(
@@ -157,6 +159,7 @@ def public_key(encoded):
 
 
 def signature_verify(key, signature, message):
+    require(type(signature) is str and len(signature) == 88, "signature_encoding")
     try:
         sig = base64.b64decode(signature, validate=True)
         require(len(sig) == 64 and base64.b64encode(sig).decode() == signature, "signature_encoding")

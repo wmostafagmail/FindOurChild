@@ -4,10 +4,12 @@ A Linux sealed memfd, not a hash of a mutable file, is the parser handoff.
 Unsupported sealing denies. Actual model identities remain unprovisioned.
 """
 
+import ctypes
 import fcntl
 import hashlib
 import json
 import os
+import platform
 import stat
 from contextlib import contextmanager
 from pathlib import Path
@@ -90,10 +92,20 @@ def snapshot_fd(source_fd, *, size, sha256, copy_observer=None):
     host compromise remains outside this boundary.
     """
     require(type(size) is int and 0 < size <= MAX_BYTES and sha(sha256), "snapshot_identity")
-    require(hasattr(os, "memfd_create"), "sealing_unavailable")
+    require(platform.system() == "Linux" and platform.machine() == "x86_64", "sealing_unavailable")
     before = os.fstat(source_fd)
     require(stat.S_ISREG(before.st_mode) and before.st_size == size, "snapshot_size")
-    fd = os.memfd_create("foc-demo-immutable", os.MFD_CLOEXEC | os.MFD_ALLOW_SEALING)
+    # python-build-standalone targets an older glibc baseline and can omit
+    # os.memfd_create even on a supporting kernel. Bind the fixed libc API;
+    # this is the SAME kernel-sealed memfd mechanism, never a mutable fallback.
+    libc = ctypes.CDLL(None, use_errno=True)
+    create = getattr(libc, "memfd_create", None)
+    require(create is not None, "sealing_unavailable")
+    create.argtypes = [ctypes.c_char_p, ctypes.c_uint]
+    create.restype = ctypes.c_int
+    fd = create(b"foc-demo-immutable", 0x0001 | 0x0002)
+    if fd < 0:
+        raise OSError(ctypes.get_errno(), "sealed_snapshot_create_failed")
     try:
         position = 0
         while position < size:
@@ -108,8 +120,8 @@ def snapshot_fd(source_fd, *, size, sha256, copy_observer=None):
             if copy_observer:
                 copy_observer(position)
         require(_identity(before) == _identity(os.fstat(source_fd)), "snapshot_race")
-        fcntl.fcntl(fd, fcntl.F_ADD_SEALS, SEALS)
-        require(fcntl.fcntl(fd, fcntl.F_GET_SEALS) & SEALS == SEALS, "sealing_failed")
+        fcntl.fcntl(fd, getattr(fcntl, "F_ADD_SEALS", 1033), SEALS)
+        require(fcntl.fcntl(fd, getattr(fcntl, "F_GET_SEALS", 1034)) & SEALS == SEALS, "sealing_failed")
         h = hashlib.sha256()
         for position in range(0, size, 65536):
             h.update(os.pread(fd, min(65536, size - position), position))
@@ -210,7 +222,9 @@ def install_snapshot(directory, component, sealed_fd, expected_digest, size):
     Production calls remain unreachable behind disabled_assets().
     """
     require(component in COMPONENTS and sha(expected_digest) and 0 < size <= MAX_BYTES, "install_identity")
-    require(fcntl.fcntl(sealed_fd, fcntl.F_GET_SEALS) & SEALS == SEALS, "immutable_required")
+    require(
+        fcntl.fcntl(sealed_fd, getattr(fcntl, "F_GET_SEALS", 1034)) & SEALS == SEALS, "immutable_required"
+    )
     fd = os.open(directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC)
     staging = ".staging-" + os.urandom(16).hex()
     output = None

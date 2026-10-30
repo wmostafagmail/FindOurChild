@@ -99,7 +99,7 @@ def test_dg_a07_kernel_seals_prevent_write_grow_shrink(tmp_path):
         ]:
             with pytest.raises(OSError):
                 action()
-        assert fcntl.fcntl(fd, fcntl.F_GET_SEALS) & SEALS == SEALS
+        assert fcntl.fcntl(fd, getattr(fcntl, "F_GET_SEALS", 1034)) & SEALS == SEALS
         assert os.pread(fd, 8, 0) == b"original"
 
 
