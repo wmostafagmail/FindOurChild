@@ -1,0 +1,207 @@
+{
+  "scope": "changed-file inventory before the final documentation commit; this inventory excludes itself",
+  "accepted_base": "4082dbf97da3fd1aa55a336b9d7e9caa4e0a8281",
+  "deletions": 0,
+  "files": [
+    {
+      "path": ".github/workflows/phase2e-source-preflight.yml",
+      "bytes": 1862,
+      "sha256": "edaeb95b56925c8a3578ec420d80a354634b6e941c22df6a99d60fa00b5c671d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 353,
+      "sha256": "7afbbc9a187167953ec5acfcfbbe3c10961efda2872ab9c80b389988f6fa6f5d"
+    },
+    {
+      "path": "config/phase2e/build-dependencies.json",
+      "bytes": 1137,
+      "sha256": "0819bf38b9e8db6a9204d29afc1dd54bdcb28e857d198e4bb50d9a086a9efe6c"
+    },
+    {
+      "path": "config/phase2e/qualification-policy.json",
+      "bytes": 558,
+      "sha256": "cc6a2aecccc0f3923b1945ea867c0eda116ff0721378e4c70a1083ae33d1d519"
+    },
+    {
+      "path": "config/phase2e/source-projection.json",
+      "bytes": 169115,
+      "sha256": "94b1f1de04c187b22f775480f4c1cffdce7d661af1b6f2b42da4451bddd99e69"
+    },
+    {
+      "path": "config/phase2e/transport-policy.json",
+      "bytes": 14524,
+      "sha256": "912dcf14c5a5c70ce5d6b895bf7db1bc3373daa06ea9870bfea4046ea492a9d4"
+    },
+    {
+      "path": "docs/phase2e/E0_PROGRESS.md",
+      "bytes": 11614,
+      "sha256": "7d370380a5d1108f4eb75267fada72648e4b2af6737e818d6f344d8dc1e612df"
+    },
+    {
+      "path": "docs/phase2e/TEST_MATRIX.md",
+      "bytes": 16095,
+      "sha256": "c04d76c833bcfff5347b003d9e2683c3a51fa7f21c3a59f9ddb35b2a3346674b"
+    },
+    {
+      "path": "docs/phase2e/VALIDATION_REPORT.md",
+      "bytes": 19238,
+      "sha256": "b03d0c81b1d9761bd4fca08b6efdc713a0ae621cd872c8cd5ede875e1a95f2af"
+    },
+    {
+      "path": "docs/phase2e/e0-required-tests.json",
+      "bytes": 13614,
+      "sha256": "d104046f966544aed78f92b4ec9fc9d6cbe66956094e8d05af4e04a45a424035"
+    },
+    {
+      "path": "docs/phase2e/e0/CI_ATTEMPT_HISTORY.json",
+      "bytes": 11177,
+      "sha256": "cc77d4e790d193be2648c7a1dc97cfded75d6df4d4e7a48c1dd97fdba57b5636"
+    },
+    {
+      "path": "docs/phase2e/e0/CLEAN_SOURCE_PROTOTYPE_VERIFICATION.json",
+      "bytes": 15059,
+      "sha256": "6e0d5113d6b77040cc281dfad54373ca456c5647788621221921cf1c6179258c"
+    },
+    {
+      "path": "docs/phase2e/e0/HISTORICAL_REPORT_SNAPSHOT.md",
+      "bytes": 8344,
+      "sha256": "8046e3d9d93a9a96b1c505062ede089db6b25c4e5c968dadf6ceb9db9340a1b9"
+    },
+    {
+      "path": "docs/phase2e/e0/MAIN_PROTECTION_SNAPSHOT.json",
+      "bytes": 1111,
+      "sha256": "d67f82dfbede2cae2f2eb4b5622439df72ede770eeb7c08ff8d8ad4a8a67aa4e"
+    },
+    {
+      "path": "docs/phase2e/e0/MINIMAL_WORKER_REVIEW.md",
+      "bytes": 4843,
+      "sha256": "552f8e7f2cf2900afc8a9385146406e7d11a23225c6555aff940adeec4cbf3bb"
+    },
+    {
+      "path": "docs/phase2e/e0/SOURCE_POLICY_DISPOSITION.md",
+      "bytes": 2731,
+      "sha256": "575dbead0ba7d2670fcaf62cfe9247458248ef8454068a2ddb0166f7f238979c"
+    },
+    {
+      "path": "docs/phase2e/e0/accepted-main-evidence.json",
+      "bytes": 2274,
+      "sha256": "351eacf6dc4016085f51694967c3a2d83157c1702e679e87e461f2b65e7fbe2c"
+    },
+    {
+      "path": "docs/phase2e/e0/initial-build-advisories.json",
+      "bytes": 14503,
+      "sha256": "f0159cba191fee71458d5b62d71245c9467bf159bd975ea9349ad0d4f2a12af2"
+    },
+    {
+      "path": "docs/phase2e/e0/patched-build-dependency-audit.json",
+      "bytes": 303,
+      "sha256": "88d3e406075cbca9e826c0bc11b3ce1d7e6a533f5a1b9f90c3854a35a9095fb8"
+    },
+    {
+      "path": "docs/phase2e/e0/permission-text-revalidation.json",
+      "bytes": 997,
+      "sha256": "1ded614e4b8195aee19c2b63fa6fb36896b9e28c58584a28c3f600712942372e"
+    },
+    {
+      "path": "docs/phase2e/e0/preservation-before-implementation.json",
+      "bytes": 204,
+      "sha256": "bc9c5ef038de3b6aff653a974f4d629733e4d4630c4464535de0621a24358cb2"
+    },
+    {
+      "path": "docs/phase2e/e0/source-only-qualification-586.json",
+      "bytes": 2835,
+      "sha256": "d29f393d849169773098dc7da0a6722f3b709d45c3237d36591bfbf51caec058"
+    },
+    {
+      "path": "services/demo_recognition/Dockerfile.preflight",
+      "bytes": 1874,
+      "sha256": "a793ab83e5141881e6879b7e2f669ac26932fff724073fa320976fa1083c9b21"
+    },
+    {
+      "path": "services/demo_recognition/native/CMakeLists.txt",
+      "bytes": 1027,
+      "sha256": "c9bcf94c3115acff9bdd4046302aa0bdf554f05daf03cea11ac75d88c4bb7c92"
+    },
+    {
+      "path": "services/demo_recognition/native/source_probe.cpp",
+      "bytes": 5050,
+      "sha256": "13239901fc3c6da1f47b38d222d099e6102ab263a7283488059ab4521776cb0c"
+    },
+    {
+      "path": "services/demo_recognition/preflight.py",
+      "bytes": 5272,
+      "sha256": "f05311d51b9437ae76ef0ff286d85cf24791943b6179ea001d30bf6ea530fd18"
+    },
+    {
+      "path": "services/demo_recognition/requirements-build.txt",
+      "bytes": 261,
+      "sha256": "0b25331cf1ee57c525bc0b2e1454c73718363ab07de5a342004e307a637e13f1"
+    },
+    {
+      "path": "tests/phase2e/test_e0_controls.py",
+      "bytes": 9979,
+      "sha256": "41390235196c2b172829aac83356d1abd94fe2291b4d78020a769ceb1993e8f2"
+    },
+    {
+      "path": "tests/phase2e/test_intake_controls.py",
+      "bytes": 6819,
+      "sha256": "fe2c574872b4a63c0edb470e381709bfae1eaefd14a98eaff88f156e0b82f40f"
+    },
+    {
+      "path": "tools/phase2e/__init__.py",
+      "bytes": 78,
+      "sha256": "bdc79346bca3fae94b4f15c4a7fedee5a6799963da34199cbeaf6fdf9fb0d137"
+    },
+    {
+      "path": "tools/phase2e/approval.py",
+      "bytes": 4144,
+      "sha256": "f0d059344cb0e9078205311e42b0e8066dbce37a0a7ac99ee31c222879d092eb"
+    },
+    {
+      "path": "tools/phase2e/build_manifest.py",
+      "bytes": 4823,
+      "sha256": "fde60a08bb326e3c72160102626c244a0707e2d8f7297a75d4b9a18fe0d41395"
+    },
+    {
+      "path": "tools/phase2e/intake.py",
+      "bytes": 14320,
+      "sha256": "0bbc25a5b3e5f43bed2d5eb0f47a745f9768df0f5ed2a69b2790ee7603850908"
+    },
+    {
+      "path": "tools/phase2e/package_probe.py",
+      "bytes": 2019,
+      "sha256": "85301b5529df0d7c719b3d1697817b865ffe8b540c17bc41cd62e52691feb94e"
+    },
+    {
+      "path": "tools/phase2e/qualify.py",
+      "bytes": 8574,
+      "sha256": "8a82d8a3a0dc38b4ab2949b9d2720be265edf474835fccc8fee7acc72b1ca8ec"
+    },
+    {
+      "path": "tools/phase2e/quarantine.py",
+      "bytes": 3013,
+      "sha256": "6b0ed5201e80838133458ba0e5303cd875d7f3c242a7dcc4af407c0a59b7cead"
+    },
+    {
+      "path": "tools/phase2e/source_projection.py",
+      "bytes": 6673,
+      "sha256": "78b7b3b874f0e5d082c28ab418d37448f9bc7fb4f8b7867127663f76ba3f08a4"
+    },
+    {
+      "path": "tools/phase2e/test_controls.py",
+      "bytes": 2445,
+      "sha256": "94857eb5baa448876c289cf05af11832f669b05dbfe6049e59b1285cda59cae7"
+    },
+    {
+      "path": "tools/phase2e/verify_intake.py",
+      "bytes": 3803,
+      "sha256": "2b2cb4f978d4cb2062f8ac9763096d8673fabb7d2d839baccb608a20b334e5ff"
+    },
+    {
+      "path": "tools/phase2e/verify_source_evidence.py",
+      "bytes": 6858,
+      "sha256": "5bcc2088f73ddb7b54cf2fc7c220467f7893925a4c0f8c7d474dfc554f194c35"
+    }
+  ]
+}

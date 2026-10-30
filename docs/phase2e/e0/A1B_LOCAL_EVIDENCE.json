@@ -1,0 +1,65 @@
+{
+  "scope": "local_source_only_controls_and_portable_syntax_not_native_Linux_qualification",
+  "source_projection_sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd",
+  "actual_source_files_audited": 1114,
+  "actual_source_bytes": 13108426,
+  "portable_Cpp_syntax_units": [
+    "source_probe.cpp",
+    "fixed_interface.cpp",
+    "model_backend.cpp",
+    "execution_guard.cpp"
+  ],
+  "portable_syntax_result": "passed",
+  "portable_syntax_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "e0_python_controls_last_run": 136,
+  "required_prior_selectors_preserved": 119,
+  "new_native_case_inventory": 52,
+  "native_Linux_qualification": "pending_hosted",
+  "model_deserializations": 0,
+  "neural_inference": 0,
+  "independent_human_review": "pending",
+  "A1b_accepted": false,
+  "failures_preserved": [
+    "local-portable-syntax.log",
+    "local-python-tls-failure.log",
+    "local-docker-build.log"
+  ],
+  "hosted_failed_attempts_preserved": [
+    {
+      "run": 41029509586,
+      "head": "060ba6b6de2ef029b4f03f15f778cdb42f74eba4",
+      "conclusion": "failure",
+      "artifact": 12965137402,
+      "digest": "sha256:99f1ad518ef984cc610161de76859f595a2399a73a767831d536f474129fcf5c",
+      "cause": "upstream CMake schedules excluded fonts.cpp even with GUI disabled",
+      "native_model_tests_executed": 0
+    },
+    {
+      "run": 41029515939,
+      "head": "060ba6b6de2ef029b4f03f15f778cdb42f74eba4",
+      "conclusion": "failure",
+      "artifact": 12964738787,
+      "digest": "sha256:bd5a6b657d429edbc9d3cf520d1c58bfd0c63795ae00875828fec2160d805dd8",
+      "cause": "upstream CMake schedules excluded fonts.cpp even with GUI disabled",
+      "native_model_tests_executed": 0
+    },
+    {
+      "run": 41030701070,
+      "head": "9beef816c81fb79f9e92099f17fb636c950a6229",
+      "conclusion": "failure",
+      "artifact": 12965118330,
+      "digest": "sha256:a579db7e18a479f3df135296c15ce16b484a447d46bcc62ed65fde76ac36bf63",
+      "cause": "native compiled/linked, but demangled-symbol witness failed for encoder; ABI/text-symbol audit correction requires rerun",
+      "native_model_tests_executed": 0
+    },
+    {
+      "run": 41030706659,
+      "head": "9beef816c81fb79f9e92099f17fb636c950a6229",
+      "conclusion": "failure",
+      "artifact": 12965985796,
+      "digest": "sha256:20f192a57f44acd67f510fd912f3560b05e1fc8f975a5faeca5663d4f547bafe",
+      "cause": "native compiled/linked, but demangled-symbol witness failed for encoder; ABI/text-symbol audit correction requires rerun",
+      "native_model_tests_executed": 0
+    }
+  ]
+}

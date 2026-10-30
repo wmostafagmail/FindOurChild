@@ -16,6 +16,7 @@
 .coverage
 .runtime/
 artifacts/raw/
+artifacts/phase2e-e0-controls/
 
 # Ignore dependency symlinks used by local verification as well as directories.
 .venv

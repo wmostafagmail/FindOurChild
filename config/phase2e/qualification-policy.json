@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "scope": "private_synthetic_demo_only",
+  "acquisition_enabled": false,
+  "native_model_loading_enabled": false,
+  "image_decoding_enabled": false,
+  "inference_enabled": false,
+  "operational_enabled": false,
+  "status": "A1b_engineering_approved_second_review_pending",
+  "reason": "Owner approved corrected minimal architecture at 3442923 for continued source-only engineering. Full A1b, acquisition, deserialization and inference remain denied pending a second independent review and later gates."
+}

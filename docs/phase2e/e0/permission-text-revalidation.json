@@ -1,0 +1,22 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/README.md",
+    "sha256": "9c6d18a2a83ceebc136997941ec913ccc0548889e24440381bd06d7453b05e3c",
+    "matches_approved_text": true
+  },
+  {
+    "source": "https://raw.githubusercontent.com/davisking/dlib-models/fd81b6308a6a73d4ce08859eb2f4b628a21e27a2/LICENSE",
+    "sha256": "6a1ee543e5282cd9061881edf462e6fdab181f328da71fc2c9a6950a80e94d01",
+    "matches_approved_text": true
+  },
+  {
+    "source": "https://raw.githubusercontent.com/davisking/dlib/2e0b3846b4dcd0953951a9c0172503c666975229/dlib/LICENSE.txt",
+    "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+    "matches_approved_text": true
+  },
+  {
+    "source": "https://huggingface.co/datasets/retowyss/Syn-Vis-v0/raw/100262732989e77f38cd831d70a376a93735006a/README.md",
+    "sha256": "4c36a4d15ed7ddbb6a57ef22fa0848f9a7c52dea7638548cdc876783e9c8146d",
+    "matches_approved_text": true
+  }
+]

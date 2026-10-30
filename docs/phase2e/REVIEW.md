@@ -1,3 +1,11 @@
+# Demo approval-policy design checkpoint — 2026-10-30
+
+**Owner review requested; policy not approved or implemented.** Independent human A1b review remains unmet and is waived only for the isolated demo. Proposed designated technical/blinded-fixture roles and owner final signatures are described in [DEMO_APPROVAL_POLICY_PROPOSAL.md](DEMO_APPROVAL_POLICY_PROPOSAL.md), with [enrollment](DEMO_KEY_ENROLLMENT_PROCEDURE.md), [threat assessment](DEMO_POLICY_THREAT_ASSESSMENT.md) and [evidence/status](DEMO_POLICY_DESIGN_REPORT.md). Technical/fixture reviewers are unappointed; no owner signing key or trusted-key/permit record is enrolled. The proposed matrix preserves mandatory technical gates and person-level separation while removing a proposed external-consultancy dependency; it confers no operational authority.
+
+Stop before provisioning keys, issuing permits, acquiring model/image bodies or enabling inference. Existing source, history, locks, original tests/evidence and production safeguards remain unchanged. Phase2E is not complete/accepted. The previous review records below are retained as historical evidence.
+
+# Preserved earlier records
+
 # Phase 2E specification review packet
 
 Prepared 2026-10-29 for owner review. **Documentation/research only. Phase 2E implementation, acquisition and execution have not begun.** [Phase 2D engineering acceptance](../phase2d/ACCEPTANCE.md) is separately recorded after merged PR #9 and successful required hosted CI on exact main `e168e1361af565c80c8d12f6c729f3b9fcd05376` were independently verified. A green PR-head check was not substituted.

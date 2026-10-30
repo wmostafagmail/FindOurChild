@@ -1,0 +1,316 @@
+{
+  "observation_utc": "2026-10-29T21:43:17.810314+00:00",
+  "scope": "historical snapshots; not final-head validation; subsequent terminal states retained in private history and PR receipt",
+  "attempts": [
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40944940853,
+      "event": "pull_request",
+      "headSha": "f2b793777bbc246d4cc30c537d95ac7a502e1cf6",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40944940853",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12929191959,
+          "digest": "sha256:b78fc94ac816d14a55a1564e4071acab305578f59bf49dc3129e436a1d8956e5"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40944940822,
+      "event": "pull_request",
+      "headSha": "f2b793777bbc246d4cc30c537d95ac7a502e1cf6",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40944940822",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40944838995,
+      "event": "push",
+      "headSha": "f2b793777bbc246d4cc30c537d95ac7a502e1cf6",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40944838995",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12929990265,
+          "digest": "sha256:b88f77bcfec8ce1500e30aca90d350d7226b0cdac3dfdeac5f6503117aba0ed6"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40944839147,
+      "event": "push",
+      "headSha": "f2b793777bbc246d4cc30c537d95ac7a502e1cf6",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40944839147",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40945782645,
+      "event": "pull_request",
+      "headSha": "1fc718214f848d2c8d4d6129bafe9e05fab44b46",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40945782645",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12929306965,
+          "digest": "sha256:69bc679bc4e55715429ba77dd5741faa8c78d155e06bd019d5135a37745acae2"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40945782632,
+      "event": "pull_request",
+      "headSha": "1fc718214f848d2c8d4d6129bafe9e05fab44b46",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40945782632",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12929701532,
+          "digest": "sha256:3b20d285be273151d3a82ff10bc1d79867d64bece80ee22f7c458c2ad93e50bc"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40945772272,
+      "event": "push",
+      "headSha": "1fc718214f848d2c8d4d6129bafe9e05fab44b46",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40945772272",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12929586538,
+          "digest": "sha256:4867c6f51a83f1746aab8293003bdeb59c83b6da220aad04e05a3a94ecb7ab7d"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40945772239,
+      "event": "push",
+      "headSha": "1fc718214f848d2c8d4d6129bafe9e05fab44b46",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40945772239",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12929882248,
+          "digest": "sha256:b76278590a3906e90f8998e4f91e05dd91eebb31e10104a5ae38db722d82e470"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40946997618,
+      "event": "pull_request",
+      "headSha": "24edacc0d80ed21c39ea991bbbcdbe81346b3ae0",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40946997618",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12930371587,
+          "digest": "sha256:fafe20b6998b395b922b64cc0c8e5a59e5b93b36f41febe0f0c89ae87e137ef3"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40946997491,
+      "event": "pull_request",
+      "headSha": "24edacc0d80ed21c39ea991bbbcdbe81346b3ae0",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40946997491",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12930480884,
+          "digest": "sha256:249d506accb9fd59a390e632a947760281176cc71ec11c16bd35600484fac5b3"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40946990403,
+      "event": "push",
+      "headSha": "24edacc0d80ed21c39ea991bbbcdbe81346b3ae0",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40946990403",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12928659579,
+          "digest": "sha256:5d9bd2fa18d0220c8afa7cbc00cd78bc161969f43371a289ce6705694f4a697e"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40946990393,
+      "event": "push",
+      "headSha": "24edacc0d80ed21c39ea991bbbcdbe81346b3ae0",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40946990393",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12930018096,
+          "digest": "sha256:4878f958e293d17c443fc5455ddb8918ea3ef1a6f4b5e7f031e2ef77c1105e9b"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40948545827,
+      "event": "pull_request",
+      "headSha": "586c58d1c380407569779b9b709f7ae924999321",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40948545827",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12934112062,
+          "digest": "sha256:acceeb781549aaa16e8dd7396e164a529b2cb7f4eda773475a8507eab46220ca"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40948545236,
+      "event": "pull_request",
+      "headSha": "586c58d1c380407569779b9b709f7ae924999321",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40948545236",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12930886441,
+          "digest": "sha256:ad1e9117299eeb0949d967af502936e6dedd0b950b2607a455c2025e631d9ec6"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 40948537388,
+      "event": "push",
+      "headSha": "586c58d1c380407569779b9b709f7ae924999321",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40948537388",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12930806635,
+          "digest": "sha256:eb2b95cf6975d33d8612f675583311542c1c642f9adb407d8a4e6153bd5d8910"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40948537411,
+      "event": "push",
+      "headSha": "586c58d1c380407569779b9b709f7ae924999321",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40948537411",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12934355929,
+          "digest": "sha256:420b99e6fcda17e8b09f7f2663d0f6c5897aed3d06a7d1a62fb4c208ab38903d"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "cancelled",
+      "databaseId": 40956703581,
+      "event": "pull_request",
+      "headSha": "8c8adca43874d30ab7cd5d7ac6a5d8be6de47ff7",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40956703581",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12934302527,
+          "digest": "sha256:2b932bfb38d58beca64011e2a370bebc106b75f2f483108e6e47162ac05db10e"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40956703291,
+      "event": "pull_request",
+      "headSha": "8c8adca43874d30ab7cd5d7ac6a5d8be6de47ff7",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40956703291",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12932529238,
+          "digest": "sha256:4b346d0ac9315b15ee8e294a2722eb6fd08cd3beea6bd82acab0dd94086cd977"
+        }
+      ],
+      "local_log_preserved": true
+    },
+    {
+      "conclusion": "",
+      "databaseId": 40956693863,
+      "event": "push",
+      "headSha": "8c8adca43874d30ab7cd5d7ac6a5d8be6de47ff7",
+      "status": "in_progress",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40956693863",
+      "workflowName": "Foundation and synthetic qualification required validation",
+      "artifacts": [
+        {
+          "id": 12932589972,
+          "digest": "sha256:fde0f6dcb7f4885cf03d5985729e8edb3d6368b48312ad2e4a8892c09638d7bd"
+        }
+      ],
+      "local_log_preserved": false
+    },
+    {
+      "conclusion": "failure",
+      "databaseId": 40956693987,
+      "event": "push",
+      "headSha": "8c8adca43874d30ab7cd5d7ac6a5d8be6de47ff7",
+      "status": "completed",
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/40956693987",
+      "workflowName": "Phase 2E data-free native qualification",
+      "artifacts": [
+        {
+          "id": 12934351305,
+          "digest": "sha256:095587dcbefd33c8960a4950d7d5d86fd6564b9dbacd8332bc23461911420eda"
+        }
+      ],
+      "local_log_preserved": true
+    }
+  ]
+}

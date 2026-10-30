@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "prepared_date": "2026-10-30",
+  "scope": "documentation_only_independent_A1b_handoff",
+  "implementation_head": "66915802c102fd926dffdc17710416fbc2cbd892",
+  "implementation_tree": "6f5ca692364a062fb16e3aa6935bf51be60936a4",
+  "pr_merge_checkout": "484a30bd10051944f6b343c33ee802d8ae3252fc",
+  "branch": "codex/phase-2e-licensed-recognition",
+  "pull_request": "https://github.com/wmostafagmail/FindOurChild/pull/11",
+  "pull_request_status_observed": "open_draft_unmerged",
+  "independent_human_review": "pending",
+  "A1b_accepted": false,
+  "owner_decision": "technical_suitability_for_independent_review_only_not_human_signoff",
+  "new_application_or_native_test_execution": false,
+  "read_only_archive_reaudits_passed": 4,
+  "source_projection": {
+    "upstream_commit": "2e0b3846b4dcd0953951a9c0172503c666975229",
+    "upstream_tree": "f7b2ad020a481144c4ccb3c47d24d654bbad2732",
+    "blobs": 1114,
+    "bytes": 13108426,
+    "lock": {
+      "path": "config/phase2e/source-projection.json",
+      "bytes": 165237,
+      "sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd"
+    },
+    "actual_local_projection": "/private/tmp/foc-phase2e-a1b-final-source",
+    "local_reaudit": {
+      "path": "artifacts/raw/phase2e-e0/a1b-second-review/independent-package-local-source-reaudit.json",
+      "bytes": 235212,
+      "sha256": "8c70c9dca4755a46c53dd23150a73825f221afd6bd1124fccd51cbad93e56a78"
+    },
+    "actual_source_hashes_location": "source-policy-audit.json and source-receipt.json in both native/source archives"
+  },
+  "reviewed_committed_build_control_inputs": {
+    ".github/workflows/phase2e-source-preflight.yml": {
+      "bytes": 1875,
+      "sha256": "5cd5c4bb4483839bec06287aded1acd83f1c6c1a08664bfd497fd169f7d5feab"
+    },
+    "config/phase2e/build-dependencies.json": {
+      "bytes": 1137,
+      "sha256": "0819bf38b9e8db6a9204d29afc1dd54bdcb28e857d198e4bb50d9a086a9efe6c"
+    },
+    "config/phase2e/native-test-inventory.json": {
+      "bytes": 1186,
+      "sha256": "65ce9f206568f8d6dc8c537c889846c7fb5562ae6875ffb931a42458ea2008f3"
+    },
+    "config/phase2e/qualification-policy.json": {
+      "bytes": 524,
+      "sha256": "1e4127a057d50d1a79559cdda4440edffe9c1eb05e580ef7b787ea2c4a130581"
+    },
+    "config/phase2e/source-projection.json": {
+      "bytes": 165237,
+      "sha256": "a331b4f115deb82f570c182f9c35720fc948bcf5de3998a4e4ddd84e0ccc4ecd"
+    },
+    "config/phase2e/transport-policy.json": {
+      "bytes": 14524,
+      "sha256": "912dcf14c5a5c70ce5d6b895bf7db1bc3373daa06ea9870bfea4046ea492a9d4"
+    },
+    "docs/phase2e/e0-required-tests.json": {
+      "bytes": 16288,
+      "sha256": "c666fb3693fc5f842e5aca1ddb949a81f5f90cb09a5d4f4e5f49260c146227d8"
+    },
+    "services/demo_recognition/Dockerfile.preflight": {
+      "bytes": 2302,
+      "sha256": "e926e36c1952f6bcd9a6d05b5630246505d516260aaf1b256e3b713c57beff97"
+    },
+    "services/demo_recognition/interface_checks.py": {
+      "bytes": 4366,
+      "sha256": "34c7c07efde9b57693a6fa248061802806ed05b8dccc9d6734e311747f1b1c2c"
+    },
+    "services/demo_recognition/native/CMakeLists.txt": {
+      "bytes": 1947,
+      "sha256": "c13294b048b7cd1b4452cdca6ca9ed5a66ee6e1c58e5d61615ef2a0769c6dd6a"
+    },
+    "services/demo_recognition/native/contract_tests.cpp": {
+      "bytes": 2941,
+      "sha256": "efafb4665df6d728c540c38a3c0e612998c2cbcbb98e3b9369fa8c408a315952"
+    },
+    "services/demo_recognition/native/execution_guard.cpp": {
+      "bytes": 549,
+      "sha256": "5aaa8ff96b5860cd89bf20120beae4c7c1552ce636935071173ba6bf2ed40af6"
+    },
+    "services/demo_recognition/native/fixed_interface.cpp": {
+      "bytes": 7054,
+      "sha256": "9b19801c42fec4978c301285f2f244f4cbcafa3101dd986f3e7f71e100fb26fe"
+    },
+    "services/demo_recognition/native/fixed_interface.h": {
+      "bytes": 487,
+      "sha256": "c85c3b9254515d51934a7758f472a75808383e8262bb401a83364c3e0ea73641"
+    },
+    "services/demo_recognition/native/model_backend.cpp": {
+      "bytes": 1099,
+      "sha256": "a7e51b803df2d8eea0927b2635f11baef3cc431c12c1ec9c14221b6d90e1445c"
+    },
+    "services/demo_recognition/native/model_backend.h": {
+      "bytes": 840,
+      "sha256": "e010bac6b2c0b090dfa179b21e533f258b29cae64dae1a121829947d099e94d4"
+    },
+    "services/demo_recognition/native/model_types.h": {
+      "bytes": 1843,
+      "sha256": "5404a163040f21c2338fa63019346541b16da78c4cff1da2f395c66e4c354e93"
+    },
+    "services/demo_recognition/native/source_probe.cpp": {
+      "bytes": 3714,
+      "sha256": "042b92a355c96e8e1cc9486a9d1211feaad1c0ef67d386d3a928c3ebda74a901"
+    },
+    "services/demo_recognition/native/verified_stream.cpp": {
+      "bytes": 4115,
+      "sha256": "5268b0ffd31d426c4ff1edb06d9dafbe481f2ef5b693988bde2b37307763e26b"
+    },
+    "services/demo_recognition/native/verified_stream.h": {
+      "bytes": 926,
+      "sha256": "569300c0669da930039c1bbe9567b57949702faaf77944349a61394c70271032"
+    },
+    "services/demo_recognition/native_fixtures.py": {
+      "bytes": 642,
+      "sha256": "f68eb6ad85901a8c3683ba4432b032efd9a50f56f19b4cd48de0f5eb8a342760"
+    },
+    "services/demo_recognition/preflight.py": {
+      "bytes": 6568,
+      "sha256": "ac7324a1af315fa7193fc73b2dbf5b1ceb6841a3c009a5e2fd820714a37dd445"
+    },
+    "services/demo_recognition/requirements-build.txt": {
+      "bytes": 261,
+      "sha256": "0b25331cf1ee57c525bc0b2e1454c73718363ab07de5a342004e307a637e13f1"
+    },
+    "tests/phase2e/test_e0_controls.py": {
+      "bytes": 9979,
+      "sha256": "115961761ac86c8248f8b1c9f27655a8438524ff4a5a3be4757f5499d62fb6f0"
+    },
+    "tests/phase2e/test_intake_controls.py": {
+      "bytes": 6819,
+      "sha256": "fe2c574872b4a63c0edb470e381709bfae1eaefd14a98eaff88f156e0b82f40f"
+    },
+    "tests/phase2e/test_worker_interface_controls.py": {
+      "bytes": 3722,
+      "sha256": "b7aebdbe1688b2e0a6904849d0f0546d93b48a6251b798548432628121c20664"
+    },
+    "tools/phase2e/__init__.py": {
+      "bytes": 78,
+      "sha256": "bdc79346bca3fae94b4f15c4a7fedee5a6799963da34199cbeaf6fdf9fb0d137"
+    },
+    "tools/phase2e/approval.py": {
+      "bytes": 4144,
+      "sha256": "f0d059344cb0e9078205311e42b0e8066dbce37a0a7ac99ee31c222879d092eb"
+    },
+    "tools/phase2e/audit_source.py": {
+      "bytes": 2294,
+      "sha256": "8352729403a288a226e77fcc767c7a96dc5d6319f3c20cff9cf36e5f41654225"
+    },
+    "tools/phase2e/build_manifest.py": {
+      "bytes": 7404,
+      "sha256": "58bf7f1afffdae55310c8dd943d21e7ac3d42a54b5ba22f9f7c30772e30f662b"
+    },
+    "tools/phase2e/intake.py": {
+      "bytes": 14320,
+      "sha256": "0bbc25a5b3e5f43bed2d5eb0f47a745f9768df0f5ed2a69b2790ee7603850908"
+    },
+    "tools/phase2e/package_probe.py": {
+      "bytes": 2035,
+      "sha256": "63d157a550d771f8bca62346e73a3f1f7eb1d469b7a55980c43901a25902c6fa"
+    },
+    "tools/phase2e/qualify.py": {
+      "bytes": 9098,
+      "sha256": "a1cb0f82b0f4d6229051ba52156a7a3ab593727efa1347deda44c24587487c65"
+    },
+    "tools/phase2e/quarantine.py": {
+      "bytes": 3013,
+      "sha256": "6b0ed5201e80838133458ba0e5303cd875d7f3c242a7dcc4af407c0a59b7cead"
+    },
+    "tools/phase2e/source_projection.py": {
+      "bytes": 7249,
+      "sha256": "408377426ac199e1cc100dd59f7b1887df43d6c786ad6f383f58fd62cf2cd33e"
+    },
+    "tools/phase2e/test_controls.py": {
+      "bytes": 2445,
+      "sha256": "94857eb5baa448876c289cf05af11832f669b05dbfe6049e59b1285cda59cae7"
+    },
+    "tools/phase2e/verify_intake.py": {
+      "bytes": 3803,
+      "sha256": "2b2cb4f978d4cb2062f8ac9763096d8673fabb7d2d839baccb608a20b334e5ff"
+    },
+    "tools/phase2e/verify_source_evidence.py": {
+      "bytes": 10732,
+      "sha256": "9ec351501524980082c93156846163c8db1ca2713711dfd7c1c7d3b5ec8ca943"
+    }
+  },
+  "linked_component_methods": {
+    "compiled_parse_cnn": "ea3c5c0211edeb390af528d0da0cfbb33d4719bb25ee1b68cd7c61ec89f78def",
+    "compiled_parse_predictor": "819ee2ca14e25f15ac530f7d2842859537407b98d9d736e0ddc69bef31fcb0a6",
+    "compiled_parse_encoder": "ac279e881946260b1effeece29ae52648f8d6df6d78d82fcf9d918d5f9252f92",
+    "compiled_run_cnn": "830bc4861ca7337f80de90cd8d754c31dd5059a2c0dfecc32caaea0543a462cc",
+    "compiled_run_predictor": "57953e6ac1ab48aa28a8d33d975b240c7e36160ba3a672cc6ac99df6929bd4cb",
+    "compiled_run_encoder": "c1c494e0ba4c8b4b7f158fabb312d0d1ce9068c7a290b18686c3f3f0dcf17351"
+  },
+  "software_build_hashes": {
+    "wheel": {
+      "name": "foc_dlib_native-0.2.0-cp313-cp313-linux_x86_64.whl",
+      "bytes": 536955,
+      "sha256": "18d6a9c67d4c3590f82420687e183115b2d40f757e265ddffc3fbc334b1940a3"
+    },
+    "sbom_sha256": "2b33fdfed0d43bbef52f60dd9f3be9f8b0c5378fa1fa9f0d582a1a297abafe76",
+    "cmake_cache_sha256": "501106c4b2b94bd33730ffcaf59de69cd08960aa207708b499f0145437a98c10",
+    "compiled_dependencies_sha256": "fee725542fd96bfb64c5bfde0827573f0f0c69f931da3fd14a31015e3bc1e79b",
+    "component_symbols_sha256": "a68fa401eb1f9f761da0e90de38249c06563d3c590851bb19e4fab70c5483663",
+    "native_contract_binary_sha256": "11a34aed85b99256bae72defe40c8cadbd0786ce012552f0fba2142aead8e50e"
+  },
+  "source_policy_exceptions": [
+    "Two unchanged font declaration headers only; encoded implementation excluded",
+    "Pinned RGB-centering source constants retained with fingerprints; training derivation unresolved",
+    "No universal absence claim for training-related constants or transitive dependency payloads"
+  ],
+  "policy_exception_and_failure_fingerprints": {
+    "path": "docs/phase2e/e0/ADDITIONAL_SOURCE_AUDIT.json",
+    "bytes": 8117,
+    "sha256": "1cc3b9ef69fabd902ca7f8966c266f53c3282f966cd2edb5509b64a41dc34e0f"
+  },
+  "ci_evidence": [
+    {
+      "scope": "push-full",
+      "run_id": 41032039205,
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/41032039205",
+      "feature_head": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "actual_checkout": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12970122592,
+      "github_expires_at": "2026-11-06T10:26:52Z",
+      "archive": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039205.zip",
+        "bytes": 2141619,
+        "sha256": "c2e29f24bd5dd1cb925681261789a7ebbd7c73ca5fc155619140cb6f01a63b21"
+      },
+      "original_run_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039205-run.json",
+        "bytes": 9440,
+        "sha256": "23dcdfdcebc2697183b4e5c90422eafe9f8f51b41f63f2cc957b41e26652c8c2"
+      },
+      "original_artifact_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039205-artifact.json",
+        "bytes": 853,
+        "sha256": "2176878c3ea88aca404f3543730ded6be4fc7152edd2725453e2a3e7a8af886c"
+      },
+      "original_log": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039205-original.log",
+        "bytes": 311558,
+        "sha256": "2c488b6d69e8dce7c17b286698584aa24da2d77106c7f62056a32560db3eb2e5"
+      },
+      "original_verified_proof": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-push-full-proof.json",
+        "bytes": 2272,
+        "sha256": "ebff9eb7af10711143ab0b0f3d0809c5e677fa8b2aba184e7414362de0d52e96"
+      },
+      "read_only_reaudit": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/independent-package-push-full-reaudit.json",
+        "bytes": 2272,
+        "sha256": "ebff9eb7af10711143ab0b0f3d0809c5e677fa8b2aba184e7414362de0d52e96"
+      },
+      "executed_counts": {
+        "python_api_database_security_integration": 747,
+        "official_testerarmy_browser": {
+          "chromium": 120,
+          "firefox": 120,
+          "webkit": 120
+        },
+        "migration_count": 36
+      },
+      "database_p95_ms": 1149.1586289999987,
+      "database_p95_target_ms": 1000,
+      "database_p95_target_met": false
+    },
+    {
+      "scope": "pr-full",
+      "run_id": 41032046900,
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/41032046900",
+      "feature_head": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "actual_checkout": "484a30bd10051944f6b343c33ee802d8ae3252fc",
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12969098904,
+      "github_expires_at": "2026-11-06T10:27:34Z",
+      "archive": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032046900.zip",
+        "bytes": 2141617,
+        "sha256": "929627f4ec2498507b270c0535dddca4b59d7485f849f4fe63e30faa0b769e6b"
+      },
+      "original_run_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032046900-run.json",
+        "bytes": 9448,
+        "sha256": "61308142b24e6fe85841f0dd4383324266bc3daed141b8a3207c0cd0c92469ea"
+      },
+      "original_artifact_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032046900-artifact.json",
+        "bytes": 853,
+        "sha256": "9fa098f2706f27ee194b69e11f65e8bc9891835eef58bb6442527ec59e879b9e"
+      },
+      "original_log": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032046900-original.log",
+        "bytes": 304808,
+        "sha256": "6b64117715c899896a23d70ab264ac6377035c4476b897b60d42a1030f95f685"
+      },
+      "original_verified_proof": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-pr-full-proof.json",
+        "bytes": 2271,
+        "sha256": "50caa7141ce663031130ca3fde0840dc276d009c5e51fe537cf1379706420a21"
+      },
+      "read_only_reaudit": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/independent-package-pr-full-reaudit.json",
+        "bytes": 2271,
+        "sha256": "50caa7141ce663031130ca3fde0840dc276d009c5e51fe537cf1379706420a21"
+      },
+      "executed_counts": {
+        "python_api_database_security_integration": 747,
+        "official_testerarmy_browser": {
+          "chromium": 120,
+          "firefox": 120,
+          "webkit": 120
+        },
+        "migration_count": 36
+      },
+      "database_p95_ms": 1126.8820860000233,
+      "database_p95_target_ms": 1000,
+      "database_p95_target_met": false
+    },
+    {
+      "scope": "push-source",
+      "run_id": 41032039087,
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/41032039087",
+      "feature_head": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "actual_checkout": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12966223103,
+      "github_expires_at": "2026-11-06T09:16:51Z",
+      "archive": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039087.zip",
+        "bytes": 2354043,
+        "sha256": "5563557edef85ec70253b281806f41d2f2ee35022e418ce6007bf057bbf4dd59"
+      },
+      "original_run_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039087-run.json",
+        "bytes": 3783,
+        "sha256": "548fb9ac03da84b7de42d3204d5d1013066fedbf93cd64ccb9cc6d7e71491679"
+      },
+      "original_artifact_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039087-artifact.json",
+        "bytes": 855,
+        "sha256": "b48d4fdd931c68bbfb70a16dee996c4812944a8c41b0ccacff7e55eab2bdd08f"
+      },
+      "original_log": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032039087-original.log",
+        "bytes": 59452,
+        "sha256": "90ad570e6b7f2f409d639e62f8b89541b5a1df700a457ec73634eb76d53f5ed2"
+      },
+      "original_verified_proof": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-push-source-proof.json",
+        "bytes": 21143,
+        "sha256": "603c944d8d14a1e1db698983755d4eeebb3d26215132d36059e7e168848566fa"
+      },
+      "read_only_reaudit": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/independent-package-push-source-reaudit.json",
+        "bytes": 21143,
+        "sha256": "603c944d8d14a1e1db698983755d4eeebb3d26215132d36059e7e168848566fa"
+      },
+      "executed_counts": {
+        "e0_controls": 136,
+        "closed_interface_cases": 32,
+        "benign_integrity_stream_cases": 20,
+        "preserved_transform_input_negatives": 5,
+        "model_open_attempts": 0,
+        "model_deserializations": 0,
+        "inference_attempts": 0
+      },
+      "published_evidence_members": {
+        "_temp/foc-phase2e-source/sanitized/checksums.json": {
+          "bytes": 55050,
+          "sha256": "cff96658d98eebfd90965b5c1f944696c4b0889394f76ab43bf04eb42578bf5f"
+        },
+        "_temp/foc-phase2e-source/sanitized/build-manifest.json": {
+          "bytes": 2460,
+          "sha256": "ab4cb52ccf94a78ce3bf9ce5c01a39db80a0f235aab9a1f09f5dfc9fec61fa06"
+        },
+        "_temp/foc-phase2e-source/sanitized/CMakeCache.txt": {
+          "bytes": 26116,
+          "sha256": "501106c4b2b94bd33730ffcaf59de69cd08960aa207708b499f0145437a98c10"
+        },
+        "_temp/foc-phase2e-source/sanitized/compiled-dependencies.json": {
+          "bytes": 151294,
+          "sha256": "fee725542fd96bfb64c5bfde0827573f0f0c69f931da3fd14a31015e3bc1e79b"
+        },
+        "_temp/foc-phase2e-source/sanitized/component-symbols.txt": {
+          "bytes": 5722,
+          "sha256": "a68fa401eb1f9f761da0e90de38249c06563d3c590851bb19e4fab70c5483663"
+        },
+        "_temp/foc-phase2e-source/sanitized/sbom.cdx.json": {
+          "bytes": 50237,
+          "sha256": "2b33fdfed0d43bbef52f60dd9f3be9f8b0c5378fa1fa9f0d582a1a297abafe76"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-policy-audit.json": {
+          "bytes": 235212,
+          "sha256": "8c70c9dca4755a46c53dd23150a73825f221afd6bd1124fccd51cbad93e56a78"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-receipt.json": {
+          "bytes": 258959,
+          "sha256": "0a54307904d7952aba6f060d1afc4770ae789496a454243a2a0287275ea3cda8"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-only-result.json": {
+          "bytes": 18634,
+          "sha256": "d58eeec0ef61eb0466f3bd19649c4b47bd3ee8bc7af68ff7e4c6a3aa4f871ab4"
+        },
+        "FindOurChild/FindOurChild/artifacts/phase2e-e0-controls/dependency-audit.json": {
+          "bytes": 137,
+          "sha256": "9c17fa735b3756b6164b03f10f88ec5a10da242e412a8a4d18f0ce29091fc814"
+        },
+        "_temp/foc-phase2e-source/raw/build.log": {
+          "bytes": 19905,
+          "sha256": "1a88cf9db9b00be827b00ba02c5d03c98bae23665daec7cd35b0658a1e7d718a"
+        },
+        "_temp/foc-phase2e-source/raw/native.log": {
+          "bytes": 13373,
+          "sha256": "eee720c92503d23e4a3081844ce029f8aebf4dd90c89b8123e6b114de322cc76"
+        }
+      }
+    },
+    {
+      "scope": "pr-source",
+      "run_id": 41032047070,
+      "url": "https://github.com/wmostafagmail/FindOurChild/actions/runs/41032047070",
+      "feature_head": "66915802c102fd926dffdc17710416fbc2cbd892",
+      "actual_checkout": "484a30bd10051944f6b343c33ee802d8ae3252fc",
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12965722958,
+      "github_expires_at": "2026-11-06T09:17:36Z",
+      "archive": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032047070.zip",
+        "bytes": 2354005,
+        "sha256": "f779291f09a7f0e6dcec3a304c57b0498b52d769e5d9d29c584f0f7cbc25659a"
+      },
+      "original_run_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032047070-run.json",
+        "bytes": 3791,
+        "sha256": "1a6169775a3ef1b32ea93aee4e7da27303512682f6557c89234d61f7a82877e2"
+      },
+      "original_artifact_metadata": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032047070-artifact.json",
+        "bytes": 855,
+        "sha256": "e2166feec184667f322d395bc720eac0d71f91e1ae9d9b6a133690ec2b16c64a"
+      },
+      "original_log": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/41032047070-original.log",
+        "bytes": 61365,
+        "sha256": "8d428e89e9ea214ffdbff0e3d5a8ea939661ad55ccd44ecbf01687948e2cab6d"
+      },
+      "original_verified_proof": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-pr-source-proof.json",
+        "bytes": 21142,
+        "sha256": "d23a2b240330f85a438ca1653b25f2b4da522f74a067d8b2d3844741e4ea3c6d"
+      },
+      "read_only_reaudit": {
+        "path": "artifacts/raw/phase2e-e0/a1b-second-review/independent-package-pr-source-reaudit.json",
+        "bytes": 21142,
+        "sha256": "d23a2b240330f85a438ca1653b25f2b4da522f74a067d8b2d3844741e4ea3c6d"
+      },
+      "executed_counts": {
+        "e0_controls": 136,
+        "closed_interface_cases": 32,
+        "benign_integrity_stream_cases": 20,
+        "preserved_transform_input_negatives": 5,
+        "model_open_attempts": 0,
+        "model_deserializations": 0,
+        "inference_attempts": 0
+      },
+      "published_evidence_members": {
+        "_temp/foc-phase2e-source/sanitized/CMakeCache.txt": {
+          "bytes": 26116,
+          "sha256": "501106c4b2b94bd33730ffcaf59de69cd08960aa207708b499f0145437a98c10"
+        },
+        "_temp/foc-phase2e-source/sanitized/build-manifest.json": {
+          "bytes": 2460,
+          "sha256": "ab4cb52ccf94a78ce3bf9ce5c01a39db80a0f235aab9a1f09f5dfc9fec61fa06"
+        },
+        "_temp/foc-phase2e-source/sanitized/checksums.json": {
+          "bytes": 55050,
+          "sha256": "f479cda48f731706d25c56fe390e740655e9d3d0fcbfb5057e2d252226f1f7d9"
+        },
+        "_temp/foc-phase2e-source/sanitized/compiled-dependencies.json": {
+          "bytes": 151294,
+          "sha256": "fee725542fd96bfb64c5bfde0827573f0f0c69f931da3fd14a31015e3bc1e79b"
+        },
+        "_temp/foc-phase2e-source/sanitized/component-symbols.txt": {
+          "bytes": 5722,
+          "sha256": "a68fa401eb1f9f761da0e90de38249c06563d3c590851bb19e4fab70c5483663"
+        },
+        "_temp/foc-phase2e-source/sanitized/sbom.cdx.json": {
+          "bytes": 50237,
+          "sha256": "2b33fdfed0d43bbef52f60dd9f3be9f8b0c5378fa1fa9f0d582a1a297abafe76"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-only-result.json": {
+          "bytes": 18633,
+          "sha256": "3383ef092778b99fe3ce4c32bdf05d924df5668b732d3aa08e1bacd3170dd92d"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-policy-audit.json": {
+          "bytes": 235212,
+          "sha256": "8c70c9dca4755a46c53dd23150a73825f221afd6bd1124fccd51cbad93e56a78"
+        },
+        "_temp/foc-phase2e-source/sanitized/source-receipt.json": {
+          "bytes": 258959,
+          "sha256": "0a54307904d7952aba6f060d1afc4770ae789496a454243a2a0287275ea3cda8"
+        },
+        "FindOurChild/FindOurChild/artifacts/phase2e-e0-controls/dependency-audit.json": {
+          "bytes": 137,
+          "sha256": "9c17fa735b3756b6164b03f10f88ec5a10da242e412a8a4d18f0ce29091fc814"
+        },
+        "_temp/foc-phase2e-source/raw/build.log": {
+          "bytes": 19264,
+          "sha256": "f4630ee4e65d3cd77b7600bf4c2876aec56d9476e1de9e9bc8c7488e3a7b0e1a"
+        },
+        "_temp/foc-phase2e-source/raw/native.log": {
+          "bytes": 13372,
+          "sha256": "60f0890beed00c37162124f7c1a2b75355b1f81560b8542ec212d405fd27d15f"
+        }
+      }
+    }
+  ],
+  "historical_attempt_counts": {
+    "success": 12,
+    "cancelled": 16,
+    "failure": 12
+  },
+  "historical_attempt_ledger": {
+    "path": "artifacts/raw/phase2e-e0/a1b-second-review/final-attempt-ledger-with-log-integrity.json",
+    "bytes": 20907,
+    "sha256": "1d9d5045759edfc125e5b0b47b3e134752ba3acde69e3d35c2ac151c23e0cabd"
+  },
+  "all_40_original_log_hashes_rechecked": true,
+  "original_log_read_limitation": "A File Provider read initially stalled; it completed successfully. All 40 original log digests matched their preserved ledger. No original was deleted or rewritten.",
+  "preserved_tree_receipt": {
+    "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-tree-preservation.json",
+    "bytes": 345,
+    "sha256": "6434622be19072761e3086ed2f4805bfbc5cc98d7b0a64872be5731a50d79d02"
+  },
+  "preserved_check_runs": {
+    "path": "artifacts/raw/phase2e-e0/a1b-second-review/6691580-final-check-runs.json",
+    "bytes": 1029,
+    "sha256": "9217741b1c73b01815dd491b89aab59c3c9f16c400e9c55404166ba78aac041e"
+  },
+  "mandatory_counts_per_full_run": {
+    "python": 747,
+    "official_testerarmy": 360,
+    "chromium": 120,
+    "firefox": 120,
+    "webkit": 120,
+    "migrations": 36
+  },
+  "mandatory_counts_per_source_run": {
+    "e0": 136,
+    "preserved_original_e0": 119,
+    "new_e0": 17,
+    "new_native_cases": 52,
+    "interface": 32,
+    "benign_stream": 20
+  },
+  "source_only_binaries": {
+    "status": "complete_binary_escrow_unresolved",
+    "published_archives_contain_binary_bytes": false,
+    "checked_local_locations_have_exact_head_binaries": false,
+    "preservation_action": "No existing artifacts, images or source deleted or rewritten. Obtain original bytes if available; otherwise a separately labeled source-only rebuild and output retention are required."
+  },
+  "actual_model_artifact_identities": [],
+  "actual_model_hashes": [],
+  "disabled_actions": [
+    "model_and_image_acquisition",
+    "model_and_image_decompression",
+    "native_model_deserialization",
+    "inference",
+    "operational_recognition",
+    "public_biometric_search",
+    "custody_disclosure",
+    "child_release"
+  ],
+  "pending_critical_review_topics": [
+    "independent_human_source_license_security_disposition",
+    "native_parser_allocation_and_crash_boundaries",
+    "privileged_mutation_TOCTOU_and_immutable_provisioning",
+    "trusted_registry_actual_identity_authority_expiry_revocation",
+    "hard_worker_deadline_and_kill_reap_fencing",
+    "complete_original_binary_output_availability"
+  ],
+  "latency_targets_unchanged": true,
+  "phase3_manual_gates": [
+    "Arabic",
+    "actual_screen_reader",
+    "long_history_usability"
+  ],
+  "review_checklist_ids": [
+    "IR-01",
+    "IR-02",
+    "IR-03",
+    "IR-04",
+    "IR-05",
+    "IR-06",
+    "IR-07",
+    "IR-08",
+    "IR-09",
+    "IR-10",
+    "IR-11",
+    "IR-12",
+    "IR-13",
+    "IR-14"
+  ],
+  "all_human_checklist_outcomes": "pending",
+  "stop_before": [
+    "model_image_acquisition",
+    "model_parse_inference",
+    "merge_as_completed_Phase2E",
+    "Phase2F",
+    "Phase3"
+  ]
+}
