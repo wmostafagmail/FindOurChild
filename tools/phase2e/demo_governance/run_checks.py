@@ -37,6 +37,8 @@ def source_manifest():
             "config/phase2e/demo-governance.json",
             "docs/phase2e/governance-required-tests.json",
             ".github/workflows/phase2e-demo-governance.yml",
+            "pyproject.toml",
+            "uv.lock",
         ]
     ]
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
@@ -228,7 +230,8 @@ def main():
         # copy private database files, permits, authority keys or raw logs.
         shutil.copytree(work / "native", output / "source-only-build")
         manifest = {
-            "head": os.environ.get("GITHUB_SHA"),
+            "checkout": os.environ.get("GITHUB_SHA"),
+            "event": os.environ.get("GITHUB_EVENT_NAME"),
             "source_manifest": before,
             "source": source,
             "tests": len(required),
@@ -245,6 +248,28 @@ def main():
         }
         (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         print(json.dumps({"governance_tests": len(required), "mandatory_skips": 0, "inference": False}))
+    except BaseException as error:
+        failure = {
+            "checkout": os.environ.get("GITHUB_SHA"),
+            "source": source,
+            "error_class": type(error).__name__,
+            "tests": result.stages,
+            "scope": "source_only_failed_no_assets_no_inference",
+        }
+        (output / "failure.json").write_text(json.dumps(failure, indent=2) + "\n")
+        print(
+            json.dumps(
+                {
+                    "failed_selectors": [
+                        n
+                        for n in result.nodes
+                        if result.stages.get(n) != {"setup": "passed", "call": "passed", "teardown": "passed"}
+                    ],
+                    "error_class": type(error).__name__,
+                }
+            )
+        )
+        raise
     finally:
         (work / "pytest.log").write_text(capture.getvalue())
         (work / "pytest.log").chmod(0o600)

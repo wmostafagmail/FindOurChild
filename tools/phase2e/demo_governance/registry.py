@@ -209,6 +209,9 @@ class PrivateRegistry:
             c.close()
 
     def authenticate_owner(self, token, now):
+        require(
+            type(token) is str and 0 < len(token) <= 8192 and now.tzinfo is not None, "owner_authentication"
+        )
         try:
             p = jwt.decode(
                 token,
@@ -258,7 +261,11 @@ class PrivateRegistry:
             "enrollment": enrollment,
             "expires": utc(now + timedelta(minutes=5)),
         }
+        from .records import decode
+
+        decode(canonical(payload))
         with self.transaction() as c:
+            require(c.execute("SELECT count(*) FROM challenges").fetchone()[0] < 1024, "challenge_quota")
             c.execute(
                 "INSERT INTO challenges(nonce,payload,expires) VALUES(?,?,?)",
                 (nonce, canonical(payload), payload["expires"]),
@@ -303,6 +310,7 @@ class PrivateRegistry:
                 )
                 owner_key = key
             else:
+                self._verify_history(c, entries, epoch, activation)
                 snapshot = self._snapshot(entries, epoch, activation)
                 snapshot.validate(now)
                 owner = next(x for x in entries if "O" in x["roles"] and not x["revoked"])
@@ -367,6 +375,7 @@ class PrivateRegistry:
                 "SELECT epoch,activation,snapshot FROM state WHERE singleton=1"
             ).fetchone()
             entries = json.loads(raw)
+            self._verify_history(c, entries, epoch, activation)
             snap = self._snapshot(entries, epoch, activation)
             snap.validate(now)
             owner = next(e for e in entries if "O" in e["roles"] and not e["revoked"])
