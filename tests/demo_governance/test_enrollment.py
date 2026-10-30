@@ -44,7 +44,7 @@ class Enrollment:
                 "iat": t,
                 "exp": t + 300,
                 "auth_time": t,
-                "amr": ["mfa"],
+                "amr": ["pwd", "otp"],
             },
             self.oidc,
             algorithm="RS256",
@@ -202,7 +202,29 @@ def test_transactional_records_replay_and_blinding_fence(tmp_path):
     changed = w.sign(p)
     with pytest.raises(Denied):
         e.store.accept(changed, w.records, w.binding, e.now, action="A7")
-    e.store.note_score_access(e.token, "synthetic-reviewer", w.by_kind["A7"], w.records, w.binding, e.now)
+    message = canonical(
+        {
+            "domain": DOMAIN,
+            "kind": "score-access",
+            "policy": POLICY,
+            "person": "synthetic-reviewer",
+            "at": utc(e.now),
+            "permit": w.by_kind["A7"],
+            "epoch": e.epochs[0] + 1,
+        }
+    )
+    signature = base64.b64encode(w.keys["synthetic-owner"].sign(message)).decode()
+    e.epochs[:] = e.store.note_score_access(
+        e.token, "synthetic-reviewer", w.by_kind["A7"], w.records, w.binding, e.now, signature
+    )
+    # Score exposure is an owner-signed monotonic authority revision. Restoring
+    # a pre-score DB at the old registry epoch cannot restore blinding.
+    with e.store.transaction() as c:
+        c.execute("DELETE FROM score_access")
+    with pytest.raises(Denied):
+        e.store.snapshot(e.now)
+    with e.store.transaction() as c:
+        c.execute("INSERT INTO score_access VALUES(?,?)", ("synthetic-reviewer", utc(e.now)))
     p = w.payload("A6")
     p["issued"] = utc(e.now + timedelta(seconds=1))
     p["reviewed"] = p["issued"]

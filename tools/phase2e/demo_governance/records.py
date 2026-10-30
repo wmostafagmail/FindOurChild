@@ -179,7 +179,10 @@ def validate_chain(root, records, registry, binding, now, *, action, clock_trust
     this pure verifier cannot authorize later publication using cached state.
     """
     require(clock_trusted and now.tzinfo is not None, "clock_untrusted")
-    require(action in KINDS and len(records) <= 16, "action_or_chain")
+    require(
+        type(action) is str and action in KINDS and type(records) is dict and len(records) <= 16,
+        "action_or_chain",
+    )
     registry.validate(now)
     require(
         binding["project"] == registry.project and binding["instance"] == registry.instance,
@@ -234,7 +237,9 @@ def validate_chain(root, records, registry, binding, now, *, action, clock_trust
             "evidence",
         )
         require(
-            type(p["predecessors"]) is list and len(set(p["predecessors"])) == len(p["predecessors"]),
+            type(p["predecessors"]) is list
+            and all(sha(x) for x in p["predecessors"])
+            and len(set(p["predecessors"])) == len(p["predecessors"]),
             "predecessors",
         )
         issued, expires, reviewed = map(time_value, [p["issued"], p["expires"], p["reviewed"]])

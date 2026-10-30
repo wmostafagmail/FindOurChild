@@ -225,7 +225,7 @@ class PrivateRegistry:
             require(False, "owner_authentication")
         require(
             p["sub"] == self.anchor["subject"]
-            and "mfa" in p["amr"]
+            and {"pwd", "otp"}.issubset(set(p["amr"]))
             and 0 <= now.timestamp() - p["auth_time"] <= 300,
             "owner_authentication",
         )
@@ -407,6 +407,7 @@ class PrivateRegistry:
         from .records import decode
 
         derived, expected_epoch, expected_activation = [], 0, 1
+        seen_scores = {}
         owner_key = None
         for revision, action, raw, sig, challenge, proof in c.execute("SELECT * FROM changes ORDER BY epoch"):
             expected_epoch += 1
@@ -436,6 +437,14 @@ class PrivateRegistry:
                     )
                     owner_key = key
                 derived.append(dict(e, fingerprint=fp, revoked=False))
+            elif action == "score-access":
+                require(
+                    set(message) == {"domain", "kind", "policy", "person", "at", "permit", "epoch"},
+                    "score_history_fields",
+                )
+                require(any(e["person"] == message["person"] for e in derived), "score_history_person")
+                time_value(message["at"])
+                seen_scores.setdefault(message["person"], message["at"])
             else:
                 require(
                     action == "revocation"
@@ -455,6 +464,10 @@ class PrivateRegistry:
         require(
             (expected_epoch, expected_activation) == (epoch, activation) and derived == entries,
             "unsigned_registry_or_rollback",
+        )
+        require(
+            dict(c.execute("SELECT person,first_seen FROM score_access")) == seen_scores,
+            "unsigned_score_history",
         )
         previous = "0" * 64
         for event, payload, prior, actual in c.execute(
@@ -502,7 +515,7 @@ class PrivateRegistry:
             require((row[0], row[1]) == self.external_epoch(), "authority_changed_during_audit")
             return payload["id"]
 
-    def note_score_access(self, token, person, root, records, binding, now):
+    def note_score_access(self, token, person, root, records, binding, now, owner_signature):
         """Future trusted score projection must call BEFORE releasing any score.
 
         This only records a monotonic blinding fence; it exposes no scores and
@@ -521,9 +534,31 @@ class PrivateRegistry:
             registry.blind_until = earliest or utc(now)
             validate_chain(root, records, registry, binding, now, action="A7")
             require(any(e["person"] == person for e in entries), "unknown_score_viewer")
-            c.execute("INSERT OR IGNORE INTO score_access VALUES(?,?)", (person, utc(now)))
-            self.audit(c, "score_access_fence", {"person": person, "permit": root})
             require((row[0], row[1]) == self.external_epoch(), "authority_changed_during_audit")
+            owner = next(e for e in entries if "O" in e["roles"] and not e["revoked"])
+            message = canonical(
+                {
+                    "domain": DOMAIN,
+                    "kind": "score-access",
+                    "policy": POLICY,
+                    "person": person,
+                    "at": utc(now),
+                    "permit": root,
+                    "epoch": row[0] + 1,
+                }
+            )
+            signature_verify(public_key(owner["der"])[0], owner_signature, message)
+            c.execute(
+                "INSERT INTO changes VALUES(?,?,?,?,NULL,NULL)",
+                (row[0] + 1, "score-access", message, owner_signature),
+            )
+            c.execute("INSERT OR IGNORE INTO score_access VALUES(?,?)", (person, utc(now)))
+            c.execute("UPDATE state SET epoch=? WHERE singleton=1", (row[0] + 1,))
+            self.audit(c, "score_access_fence", {"person": person, "permit": root, "epoch": row[0] + 1})
+        # Deny further reads/publication until the independently held epoch is
+        # installed. This also prevents pre-score backup restoration at the
+        # same epoch. Existing A7 authority needs fresh owner review/renewal.
+        return row[0] + 1, row[1]
 
 
 def configured_registry():

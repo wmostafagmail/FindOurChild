@@ -28,7 +28,7 @@ Hosted execution results are generated on the exact checked-out revision, not in
 
 ## Failed attempts retained
 
-Private local attempt logs under `artifacts/raw/governance-local/` retain initial failures and repairs: unknown-action test-helper dispatch, RFC8032 vector transcription, test clock construction across a second boundary, missing enrollment-scope fields during development, and lint/import corrections. These were engineering defects corrected before final execution, not waived mandatory checks. No dependent asset work occurred. Failed hosted attempts, if any, remain available in GitHub and are recorded in the final review report rather than overwritten or relabeled.
+Private local attempt logs under `artifacts/raw/governance-local/` retain initial failures and repairs: unknown-action test-helper dispatch, RFC8032 vector transcription, test clock construction across a second boundary, missing enrollment-scope fields during development, lint/import corrections, the hosted standalone-Python sealed-memory binding, an overbroad artifact-name scan, and a positive fixture under unsafe hosted /opt ancestry. The latter moved to protected /var/lib; ownership/sealing rules remain unchanged. These were engineering defects corrected before final execution, not waived mandatory checks. No dependent asset work occurred. Failed hosted attempts, if any, remain available in GitHub and are recorded in the final review report rather than overwritten or relabeled.
 
 ## Limits and owner checkpoint
 

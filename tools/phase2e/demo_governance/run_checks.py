@@ -92,7 +92,7 @@ def prepare(work):
             command(["docker", "cp", cid + ":" + path, str(native / name)])
     finally:
         command(["docker", "rm", cid])
-    rooted = Path("/opt/foc-governance-synthetic-") / secrets.token_hex(8)
+    rooted = Path("/var/lib/foc-governance-synthetic") / secrets.token_hex(8)
     # Disposable, root-owned benign files exercise the actual deployed path
     # boundary; no relaxed-owner shortcut is accepted as a positive test.
     command(
@@ -298,7 +298,7 @@ def main():
                     "sudo",
                     sys.executable,
                     "-c",
-                    "import shutil,sys; from pathlib import Path; p=Path(sys.argv[1]); assert p.parent == Path('/opt/foc-governance-synthetic-'); shutil.rmtree(p)",
+                    "import shutil,sys; from pathlib import Path; p=Path(sys.argv[1]); assert p.parent == Path('/var/lib/foc-governance-synthetic'); shutil.rmtree(p)",
                     rooted,
                 ]
             )
