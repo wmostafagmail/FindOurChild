@@ -74,7 +74,9 @@ def main():
     dependency_files = {}
     for dep in (root / 'native-build').rglob('*.o.d'):
         for name in dep.read_text().replace('\\\n', '').split()[1:]:
-            path = Path(name)
+            # GCC depfiles retain ../ include spelling. Audit canonical actual
+            # files against the lock instead of rejecting equivalent spellings.
+            path = Path(name).resolve()
             if path.is_file():
                 key = str(path)
                 if key.startswith('/build/source/'):

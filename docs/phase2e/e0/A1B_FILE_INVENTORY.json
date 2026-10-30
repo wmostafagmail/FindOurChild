@@ -236,9 +236,9 @@
     {
       "path": "tools/phase2e/build_manifest.py",
       "change": "modified",
-      "bytes": 6628,
-      "sha256": "f4b20750223a3a20bb3cdfe2aff56caa90eb9afe9a561c2c59427769d54b8ccf",
-      "git_blob": "a5cced2da9ac8feaa01a0617e7eb63ecc200b009"
+      "bytes": 6797,
+      "sha256": "dd0a124db16b0075579d32a650bc412fc0ef2bb3bdbf2a9f2c54ab3858fa62ac",
+      "git_blob": "ad1ac777e883e500ebc7f37d7e8754d486b805cf"
     },
     {
       "path": "tools/phase2e/package_probe.py",
