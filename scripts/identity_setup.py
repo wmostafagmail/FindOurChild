@@ -144,6 +144,12 @@ OWNER_V3_USERS = [
     for journey in range(1, 7)
 ]
 EXTRA_USERS += OWNER_V3_USERS
+EXTRA_USERS += [
+    f"synthetic-v3-nonowner-{b}-{locale}-{width}"
+    for b in ["chromium", "firefox", "webkit"]
+    for locale in ["ar-EG", "en-GB"]
+    for width in [320, 360, 390, 1280]
+]
 
 
 def users():

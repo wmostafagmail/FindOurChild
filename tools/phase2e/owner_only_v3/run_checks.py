@@ -28,10 +28,12 @@ def sources():
     paths += [ROOT / p for p in ["services/api/foc_api/owner_only_demo.py", "services/api/foc_api/main.py",
                                 "e2e.owner-only-v3.config.ts", ".github/workflows/phase2e-owner-only-v3.yml",
                                 ".github/workflows/phase1a.yml", "tsconfig.e2e.json", "scripts/identity_setup.py",
+                                "scripts/owner_v3_test_fault.py",
                                 "apps/web/app/[locale]/demo-authorization/page.tsx",
                                 "apps/web/app/[locale]/demo-authorization/panel.tsx",
                                 "apps/web/app/demo-authorization/[...path]/route.ts",
                                 "apps/web/proxy.ts", "apps/web/app/style.css",
+                                "tools/verify_owner_v3_evidence.py",
                                 "pyproject.toml", "uv.lock", "package-lock.json"]]
     return {str(p.relative_to(ROOT)): sha(p.read_bytes()) for p in sorted(paths)}
 
@@ -104,11 +106,18 @@ def main():
         require(len(probes) == 15, "v3_native_probe_inventory")
         shutil.copytree(work / "probe-receipts", output / "probe-receipts")
         shutil.copytree(work / "native", output / "source-only-build")
+        build_outputs = {str(p.relative_to(work / "native")): sha(p.read_bytes())
+                         for p in sorted((work / "native").rglob("*")) if p.is_file()}
         (output / "manifest.json").write_text(json.dumps({"checkout": os.environ.get("GITHUB_SHA"),
+            "checkout_tree": command(["git", "rev-parse", "HEAD^{tree}"]).decode().strip(),
             "event": os.environ.get("GITHUB_EVENT_NAME"), "source_digest": source, "source_manifest": before,
             "design_checkpoint": "51c29c0e39424db243f30ce4d6d5ee8900ee122f", "python_tests": len(required),
             "scenario_designs": 96, "python_scenarios": 90, "browser_designs_pending_separate_run": 6,
             "native_probe_receipts": 15, "image": image, "recovery": restored,
+            "build_outputs": build_outputs,
+            "probe_receipts": {p.name: sha(p.read_bytes()) for p in probes},
+            "payload_sha256": {str(p.relative_to(output)): sha(p.read_bytes())
+                               for p in sorted(output.rglob("*")) if p.is_file()},
             "documentation_checks": documentation,
             "actual_owner_provisioning": False, "actual_authorizations": 0, "assets": 0, "inference": False,
             "database_p95_target_ms": 1000, "performance_gate": "unresolved_owner_demo_exception"}, indent=2) + "\n")

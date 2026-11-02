@@ -19,9 +19,13 @@ class Checkpoint:
                 "checkpoint_parent")
         self.fd = os.open("owner-only-v3.checkpoints", os.O_RDWR | os.O_NOFOLLOW | os.O_CLOEXEC | os.O_NONBLOCK,
                           dir_fd=directory_fd)
-        row = os.fstat(self.fd)
-        require(stat.S_ISREG(row.st_mode) and row.st_uid == owner and row.st_nlink == 1
-                and row.st_mode & 0o077 == 0, "checkpoint_file")
+        try:
+            row = os.fstat(self.fd)
+            require(stat.S_ISREG(row.st_mode) and row.st_uid == owner and row.st_nlink == 1
+                    and row.st_mode & 0o077 == 0, "checkpoint_file")
+        except BaseException:
+            os.close(self.fd)
+            raise
 
     @contextmanager
     def locked(self):

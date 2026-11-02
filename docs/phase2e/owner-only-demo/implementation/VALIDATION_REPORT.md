@@ -44,3 +44,46 @@ published as sanitized execution evidence. Subsequent hosted failures and repair
 must be added with run IDs and source identities. No earlier failure is erased
 or reclassified as a pass. Synthetic engineering does not establish image rights,
 model compatibility, neural inference, independent blinding or identification accuracy.
+
+## Initial hosted checkpoint and subsequent review
+
+PR head `8d82e8ac34899792392080321e70308a7fbff52d` passed the V3 hosted run
+[41534881277](https://github.com/wmostafagmail/FindOurChild/actions/runs/41534881277).
+Artifact `13183118502` has ZIP SHA-256
+`7d413a446f5da7c9db64783554161269b0a0c5e532260d54a945cb169bdd2614`.
+It contains 98 passing selectors, 15 actual non-neural isolation receipts,
+compiled benign source outputs, and an inactive restore with three forced-RLS
+relations. This includes unit tests/doubles alongside actual database/native tests;
+it is not 98 real network-authentication tests or neural qualification.
+
+The PR checkout was GitHub's merge candidate
+`8fa6bbbb5a041dc7dce80a2e544b1457197a964a`; its source tree
+`6786186e665a720b16aabfe84388e1f79632b48c` was independently verified equal to
+the exact head tree. Source-manifest digest:
+`f14414d94f3e17c45abf0b2e5e8b2e77d2ecaba238ad2fc5350d2f0277dda81c`.
+Private backup SHA-256:
+`6eaec299293a61bea9963193609246de3fa1975184dfbf376b971b6a56ed73c4`.
+
+Additional review probes then reproduced two failures despite that passing
+inventory: V3-FIX-01 and V3-FIX-02, retained verbatim as data-free failure evidence.
+Both were repaired with additional assertions inside the existing mandatory
+selectors. A focused local repair run passed four selected cases; all other
+94 selectors were deselected in that focused run and are not counted as passed
+there. The protected checkpoint constructor also now closes rejected file
+descriptors, with an eight-attempt leak-negative test. Actual build-output hashes
+are included in subsequent V3 manifests. Existing targets and controls are unchanged.
+
+A source integration check identified the existing realm's exact API+BFF audience
+set and pinned it explicitly, with duplicate/foreign/type negatives. Browser
+journeys were strengthened for real nonowner MFA denial, concurrent confirmation,
+simulated permanent history and actual session expiry. Final hosted validation
+on the subsequent repair head is **pending**; the initial success is not final
+acceptance and the 144 browser executions are not yet claimed passed.
+
+On 2026-11-03, stale local FileProvider reads and expired temporary dependency
+files blocked Git/validation tooling. Locked dependencies were restored without
+changing manifests. Original saved source files were preserved privately under
+`.runtime/owner-v3-file-preservation/`, and identical verified snapshot bytes
+were rematerialized. Git objects were strictly verified in a complete temporary
+mirror before import; the source branch advanced normally, without history rewrite.
+No application failure was reclassified as an environment pass.

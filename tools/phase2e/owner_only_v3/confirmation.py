@@ -76,6 +76,8 @@ class Confirmation:
             require(draft is not None and draft["session"] == session.session_digest
                     and draft["authentication_event"] == session.authentication_event_id, "confirmation_session")
             record = draft["record"]
+            require(record["owner"]["authenticated_at"] == utc(session.authenticated_at),
+                    "confirmation_authentication_time")
             require(hmac.compare_digest(sha(body["nonce"].encode()), record["confirmation"]["nonce_sha256"])
                     and hmac.compare_digest(body["reviewed_draft_sha256"], reviewed_digest(record)), "confirmation_digest")
             prior = tx.get("authorization", record["record_id"])

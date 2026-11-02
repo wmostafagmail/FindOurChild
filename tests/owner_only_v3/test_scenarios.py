@@ -113,6 +113,11 @@ def test_scenario(case, tmp_path, monkeypatch):
         denied(lambda: env.engine.confirm(wrong, env.body))
         denied(lambda: env.engine.confirm(env.session, dict(env.body, reviewed_draft_sha256="f" * 64)))
         denied(lambda: env.engine.confirm(env.session, dict(env.body, nonce="wrong")))
+        env.prepared()
+        env.clock.value += 1
+        # A new MFA time cannot consume a reviewed draft even if an IdP reuses its SID.
+        denied(lambda: env.engine.confirm(replace(env.session, authenticated_at=env.session.authenticated_at + 1),
+                                          env.body))
     elif case in {"OD3-R04", "OD3-P02"}:
         env.prepared()
         with ThreadPoolExecutor(2) as pool:
@@ -135,6 +140,13 @@ def test_scenario(case, tmp_path, monkeypatch):
         denied(lambda: authenticate_token(jwt.encode(env.claims, b"untrusted-synthetic-secret-only-32", algorithm="HS256"),
                                          binding, env.session_token, time.time(), lambda *_: True))
         denied(lambda: authenticate_token(token + "x", binding, env.session_token, time.time(), lambda *_: True))
+        # The existing realm pins exactly API+BFF audiences for introspection; no arbitrary additions.
+        audience_binding = replace(env.binding, token_audiences=(env.binding.audience, "synthetic-bff"))
+        assert claims_session(dict(env.claims, aud=[env.binding.audience, "synthetic-bff"]), audience_binding,
+                              env.session_token, env.clock.now(), lambda *_: True)
+        for aud in [[env.binding.audience, "foreign"], [env.binding.audience, env.binding.audience], [True]]:
+            denied(lambda aud=aud: claims_session(dict(env.claims, aud=aud), audience_binding,
+                                                  env.session_token, env.clock.now(), lambda *_: True))
     elif case == "OD3-R07":
         denied(lambda: env.engine.confirm(env.session, dict(env.body, reviewer="invented-reviewer")))
     elif case in {"OD3-R08", "OD3-S08", "OD3-X08", "OD3-X09"}:
@@ -311,6 +323,20 @@ def test_scenario(case, tmp_path, monkeypatch):
         getattr(old, names[int(case[-2:]) - 1])()
     elif case in {"OD3-W08", "OD3-W09"}:
         fence, token, inputs = lease(env)
+        if case == "OD3-W08":
+            from tools.phase2e.owner_only_v3.store import Transaction
+
+            fence.publish(token, env.session, inputs, digest("benign-result"))
+            if hosted:
+                monkeypatch.setattr(Transaction, "audit", lambda *_: require(False, "duplicate_outbox_forbidden"))
+            else:
+                env.store.audit_hook = lambda _: require(False, "duplicate_outbox_forbidden")
+            fence.publish(token, env.session, inputs, digest("benign-result"))
+            denied(lambda: fence.publish(token, env.session, inputs, digest("changed-result")))
+            # Restore audit before the distinct cancellation event.
+            monkeypatch.undo()
+            if not hosted:
+                env.store.audit_hook = None
         fence.cancel(env.session, token.job)
         denied(lambda: fence.publish(token, env.session, inputs, digest("late")))
     elif case == "OD3-W11":

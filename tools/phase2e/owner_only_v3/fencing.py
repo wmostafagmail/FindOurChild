@@ -75,11 +75,15 @@ class Fencing:
     def publish(self, token, session, inputs, result_digest, *, revision=1):
         with self.confirmation.tx() as tx:
             self.validate(token, session, inputs, job=token.job, action=token.action, revision=revision, tx=tx)
+            result = {"result_digest": result_digest, "lease_digest": digest(vars(token))}
+            prior = tx.get("receipt", "result:" + token.job)
+            require(prior is None or prior == result, "publication_replay_conflict")
+            if prior is not None:
+                return  # Current valid exact retry: no new result, audit event or outbox delivery.
             tx.audit("result_publication_requested", result_digest)
             # Explicit second check AFTER a potentially blocking audit operation.
             self.validate(token, session, inputs, job=token.job, action=token.action, revision=revision, tx=tx)
-            tx.put("receipt", "result:" + token.job, {"result_digest": result_digest,
-                                                       "lease_digest": digest(vars(token))})
+            tx.put("receipt", "result:" + token.job, result)
 
     def cancel(self, session, job):
         self.confirmation.current(session, self.confirmation.clock.now())

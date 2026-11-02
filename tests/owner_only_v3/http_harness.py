@@ -33,11 +33,22 @@ class SyntheticInstances:
         self.backends = {}
         for name in OWNER_V3_USERS:
             principal, instance, tenant = fixture_id(name), str(uuid4()), str(uuid4())
-            binding = Binding(config["issuer"], "foc-api", principal, principal, key)
+            binding = Binding(config["issuer"], "foc-api", principal, principal, key,
+                              token_audiences=("foc-api", "foc-bff"))
             store = postgres_store(instance, tenant, SHARED_CHECKPOINT)
             engine = Confirmation(store, template(binding, instance, tenant), Clock(), lambda _: False)
             engine.fixture_plan = fixture_plan()
             self.backends[principal] = OwnerBackend(binding, engine)
+        # Explicit simulated exposure fixture. No photograph/model is acquired or called.
+        from tools.phase2e.owner_only_v3.fixtures import freeze, validate_plan
+        from tools.phase2e.owner_only_v3.records import canonical, digest
+
+        first = next(iter(self.backends.values())).engine
+        plan = validate_plan(canonical(first.fixture_plan))
+        derivatives = {row["image_ref"]: digest("generated-browser-fixture:" + row["image_ref"])
+                       for row in plan["images"]}
+        with first.tx() as tx:
+            freeze(tx, plan, derivatives)
 
     def resolve(self, request, principal, session):
         if principal not in self.backends:

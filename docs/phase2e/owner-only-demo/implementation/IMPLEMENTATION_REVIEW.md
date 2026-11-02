@@ -101,3 +101,43 @@ checkout and source-manifest digest; pending/failed/canceled checks are not pass
 
 This review describes implemented source, not completed hosted validation.
 See `VALIDATION_REPORT.md` and final PR source-bound evidence for actual results.
+
+## Initial-checkpoint review repairs
+
+At `8d82e8a`, 98 hosted V3 tests passed, but additional source-only adversarial
+probes found V3-FIX-01 (changed MFA timestamp accepted with unchanged session/SID)
+and V3-FIX-02 (an identical publication retry emitted a second audit/outbox event).
+The original reproductions are preserved in `review-findings-before-repair.json`.
+Confirmation now also binds the exact reviewed MFA timestamp. Valid exact result
+retries retain the original result without another event; changed retries deny.
+The existing OD3-R03/X04/W08 selectors enforce these variants.
+
+Integration review also found that the existing pinned realm intentionally emits
+exactly `foc-api` and `foc-bff` token audiences for API and BFF introspection. V3
+now accepts only an explicitly pinned, typed, duplicate-free exact audience set;
+it rejects unknown additions and keeps the authorization record's selected service
+audience `foc-api`. Nothing is inferred from browser claims or unverified tokens.
+No realm, V2 validator or operational audience policy is changed.
+
+The browser suite uses actual Keycloak, API handlers, sessions/CSRF, private
+PostgreSQL and a clearly identified injected in-process external-checkpoint fixture.
+The real protected checkpoint-file boundary is exercised separately in required
+source tests; it is not claimed as a deployed private checkpoint service. The
+browser fixture's permanent-history seed uses generated derivative digests only,
+explicitly simulating exposure without any image/model call. Nonowner MFA denial,
+concurrent confirmations, and real database session expiry are required journeys.
+
+## Independent artifact replay tool
+
+`tools/verify_owner_v3_evidence.py METADATA_JSON ZIP HEAD_SHA python|browser`
+imports no application validator. It checks the authenticated GitHub archive
+digest, head metadata, exact checkout tree, complete source inventory against
+committed Git blobs, every payload digest, exact test inventory, real benign
+probe/build identities or all 144 browser targets/traces/signed-out PNGs. It
+reports engineering evidence only. The existing full-regression verifier remains
+unchanged and independently verifies the separate 747/360/36 artifact.
+
+Both V3 manifests now retain per-payload checksums and the actual checkout tree.
+The source-only manifest also retains each actual probe and compiled output hash.
+The GitHub artifact digest protects the manifest itself without a circular hash.
+No archived test output is a human approval, asset permit or accuracy result.

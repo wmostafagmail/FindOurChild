@@ -27,7 +27,7 @@ jobs:
         run: uv sync --locked
       - name: V3 strict source records PostgreSQL and native isolation
         run: |
-          .venv/bin/ruff check tools/phase2e/owner_only_v3 tests/owner_only_v3
+          .venv/bin/ruff check tools/phase2e/owner_only_v3 tests/owner_only_v3 tools/verify_owner_v3_evidence.py
           .venv/bin/python -m tools.phase2e.owner_only_v3.check_source
           .venv/bin/python -m tools.phase2e.owner_only_v3.run_checks
       - name: Publish only data-free source-bound evidence

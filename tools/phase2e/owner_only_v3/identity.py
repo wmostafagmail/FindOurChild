@@ -15,6 +15,7 @@ class Binding:
     subject: str
     principal: str
     public_key: bytes
+    token_audiences: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -36,7 +37,16 @@ def claims_session(claims, binding, session, now, live):
         require(type(claims.get(key)) is int, "owner_claim_type")
     require(type(claims.get("amr")) is list and all(type(v) is str for v in claims["amr"])
             and {"pwd", "otp"}.issubset(claims["amr"]), "owner_mfa")
-    require(claims.get("iss") == binding.issuer and claims.get("aud") == binding.audience
+    aud = claims.get("aud")
+    if type(aud) is str:
+        audiences = (aud,)
+    else:
+        require(type(aud) is list and 0 < len(aud) <= 4 and all(type(v) is str for v in aud)
+                and len(aud) == len(set(aud)), "owner_audience_type")
+        audiences = tuple(sorted(aud))
+    expected = tuple(sorted(binding.token_audiences or (binding.audience,)))
+    require(binding.audience in expected and audiences == expected, "owner_audience_binding")
+    require(claims.get("iss") == binding.issuer
             and claims.get("sub") == binding.subject, "owner_binding")
     require(0 <= now - claims["auth_time"] <= 300 and claims["auth_time"] <= claims["iat"] <= now
             < claims["exp"], "owner_freshness")

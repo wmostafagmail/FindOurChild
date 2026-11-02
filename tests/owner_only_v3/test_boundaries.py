@@ -39,6 +39,13 @@ def test_real_checkpoint_file_append_freeze_corruption_and_no_bootstrap(tmp_path
     row["chain"] = digest(row)
     path = parent / "owner-only-v3.checkpoints"
     path.write_bytes(canonical(row) + b"\n")
+    path.chmod(0o644)
+    # Invalid provisioning must close the rejected FD rather than exhaust the service.
+    fd_dir = "/proc/self/fd" if os.path.isdir("/proc/self/fd") else "/dev/fd"
+    before = len(os.listdir(fd_dir))
+    for _ in range(8):
+        denied(lambda: Checkpoint(fd, owner=os.getuid()))
+    assert len(os.listdir(fd_dir)) == before
     path.chmod(0o600)
     checkpoint = Checkpoint(fd, owner=os.getuid())
     try:

@@ -129,9 +129,15 @@ def main():
             sanitize(report, expected, source, output)
             require(result.returncode == 0 and sources() == before, "browser_exit_or_source")
         (output / "manifest.json").write_text(json.dumps({"checkout": os.environ.get("GITHUB_SHA"),
+            "checkout_tree": command(["git", "rev-parse", "HEAD^{tree}"]).decode().strip(),
             "event": os.environ.get("GITHUB_EVENT_NAME"), "source_digest": source, "source_manifest": before,
             "official_framework": "e2e@0.21.3 + @e2e-dev/web@0.15.3", "executions": 144,
-            "test_double_backend": False, "real_private_postgres": True, "real_keycloak": True,
+            "real_api_handlers": True, "real_private_postgres": True, "real_keycloak": True,
+            "checkpoint_fixture": "in_process_synthetic_external_authority_adapter",
+            "checkpoint_file_boundary": "separate_required_real_file_tests",
+            "fixture_exposure": "explicit_generated_digest_simulation_no_image_calls",
+            "payload_sha256": {str(p.relative_to(output)): sha(p.read_bytes())
+                               for p in sorted(output.rglob("*")) if p.is_file()},
             "synthetic_principals_only": True, "real_owner_provisioned": False, "assets": 0, "inference": False}, indent=2) + "\n")
         print(json.dumps({"official_v3_browser_passed": 144, "per_browser": 48, "mandatory_skips": 0}))
     except BaseException as error:
