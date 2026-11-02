@@ -13,8 +13,10 @@ concurrency:
 jobs:
   phase2e-governance-prerequisite:
     uses: ./.github/workflows/phase2e-demo-governance.yml
+  phase2e-owner-only-v3-prerequisite:
+    uses: ./.github/workflows/phase2e-owner-only-v3.yml
   phase1a-required:
-    needs: [phase2e-governance-prerequisite]
+    needs: [phase2e-governance-prerequisite, phase2e-owner-only-v3-prerequisite]
     if: ${{ always() }}
     runs-on: ubuntu-24.04
     # Full 360-browser /747-Python serial regression; timeout never implies success.
@@ -29,7 +31,10 @@ jobs:
       - name: Enforce governance prerequisite without a green skip
         env:
           GOVERNANCE_RESULT: ${{ needs.phase2e-governance-prerequisite.result }}
-        run: test "$GOVERNANCE_RESULT" = success
+          V3_RESULT: ${{ needs.phase2e-owner-only-v3-prerequisite.result }}
+        run: |
+          test "$GOVERNANCE_RESULT" = success
+          test "$V3_RESULT" = success
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
@@ -107,7 +112,7 @@ jobs:
           node scripts/ci_tls_policy.mjs
       - name: Start actual web service
         run: |
-          npm run start > artifacts/raw/web.log 2>&1 &
+          FOC_OWNER_ONLY_API_URL=http://127.0.0.1:8001 npm run start > artifacts/raw/web.log 2>&1 &
           PATH="$PATH" node scripts/tls.mjs > artifacts/raw/tls.log 2>&1 &
           .venv/bin/python -m scripts.wait_services
       - name: TesterArmy browser regression
@@ -124,6 +129,9 @@ jobs:
       - name: Real synthetic investigation BFF and authorization regression
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.workflow_test synthetic_workflow_http
+      - name: Official TesterArmy owner-only V3 three-browser regression
+        if: ${{ !cancelled() }}
+        run: .venv/bin/python -m tools.phase2e.owner_only_v3.browser_checks
       - name: Collect API-process and combined regression coverage
         if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.coverage_finish
@@ -141,3 +149,11 @@ jobs:
       - name: Stop disposable services
         if: always()
         run: .venv/bin/python -m scripts.dev stop
+      - name: Publish sanitized V3 browser assertions traces and signed-out shells
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase2e-owner-only-v3-browser-${{ github.sha }}
+          path: artifacts/phase2e-owner-only-v3-browser/
+          if-no-files-found: error
+          retention-days: 7

@@ -135,6 +135,16 @@ def workflow_person_name(name):
 
 EXTRA_USERS += WORKFLOW_USERS
 
+# Disposable, separate accounts per V3 journey retain real IdP TOTP replay controls.
+OWNER_V3_USERS = [
+    f"synthetic-owner-v3-{b}-{locale}-{width}-{journey:02}"
+    for b in ["chromium", "firefox", "webkit"]
+    for locale in ["ar-EG", "en-GB"]
+    for width in [320, 360, 390, 1280]
+    for journey in range(1, 7)
+]
+EXTRA_USERS += OWNER_V3_USERS
+
 
 def users():
     return (

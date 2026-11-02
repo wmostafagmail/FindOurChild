@@ -1,0 +1,1037 @@
+{
+  "design_checkpoint": "51c29c0e39424db243f30ce4d6d5ee8900ee122f",
+  "cases": [
+    {
+      "case_id": "OD3-R01",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R02",
+      "affected_components": [
+        "C08",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R03",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C02"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R04",
+      "affected_components": [
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R05",
+      "affected_components": [
+        "C01"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R06",
+      "affected_components": [
+        "C01",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R07",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R08",
+      "affected_components": [
+        "C06",
+        "C08",
+        "C13"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R09",
+      "affected_components": [
+        "C07",
+        "C04",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R09]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R10",
+      "affected_components": [
+        "C17",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R10]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R11",
+      "affected_components": [
+        "C01",
+        "C09",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R11]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R12",
+      "affected_components": [
+        "C02",
+        "C05",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R12]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R13",
+      "affected_components": [
+        "C04",
+        "C05",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R13]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R14",
+      "affected_components": [
+        "C04",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R14]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R15",
+      "affected_components": [
+        "C04",
+        "C07",
+        "C09",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R15]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-R16",
+      "affected_components": [
+        "C04",
+        "C16",
+        "C01"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-R16]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S01",
+      "affected_components": [
+        "C02",
+        "C08",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S02",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S03",
+      "affected_components": [
+        "C01",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S04",
+      "affected_components": [
+        "C02"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S05",
+      "affected_components": [
+        "C02",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S06",
+      "affected_components": [
+        "C02",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S07",
+      "affected_components": [
+        "C02",
+        "C05",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S08",
+      "affected_components": [
+        "C06",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S09",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S09]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S10",
+      "affected_components": [
+        "C06",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S10]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S11",
+      "affected_components": [
+        "C02",
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S11]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S12",
+      "affected_components": [
+        "C08",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S12]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S13",
+      "affected_components": [
+        "C07",
+        "C05"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S13]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S14",
+      "affected_components": [
+        "C08",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S14]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S15",
+      "affected_components": [
+        "C09",
+        "C10",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S15]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-S16",
+      "affected_components": [
+        "C01",
+        "C04",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-S16]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A01",
+      "affected_components": [
+        "C08",
+        "C05",
+        "C13"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A02",
+      "affected_components": [
+        "C05",
+        "C13"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A03",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A04",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A05",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A06",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A07",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A08",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A09",
+      "affected_components": [
+        "C13",
+        "C15"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A09]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A10",
+      "affected_components": [
+        "C13",
+        "C15",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A10]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A11",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A11]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A12",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A12]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A13",
+      "affected_components": [
+        "C13",
+        "C05",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A13]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A14",
+      "affected_components": [
+        "C13",
+        "C04"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A14]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A15",
+      "affected_components": [
+        "C05",
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A15]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-A16",
+      "affected_components": [
+        "C06",
+        "C14",
+        "C16"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-A16]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W01",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W02",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W03",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W04",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W05",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W06",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W07",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W08",
+      "affected_components": [
+        "C09",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W09",
+      "affected_components": [
+        "C01",
+        "C09",
+        "C17",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W09]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W10",
+      "affected_components": [
+        "C09",
+        "C07",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W10]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W11",
+      "affected_components": [
+        "C17",
+        "C10",
+        "C11"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W11]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W12",
+      "affected_components": [
+        "C04",
+        "C09",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W12]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W13",
+      "affected_components": [
+        "C09",
+        "C15",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W13]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W14",
+      "affected_components": [
+        "C04",
+        "C07",
+        "C09",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W14]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W15",
+      "affected_components": [
+        "C07",
+        "C09",
+        "C10",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W15]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-W16",
+      "affected_components": [
+        "C16",
+        "C11",
+        "C12"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-W16]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X01",
+      "affected_components": [
+        "C01"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X02",
+      "affected_components": [
+        "C01",
+        "C02"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X03",
+      "affected_components": [
+        "C01",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X04",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X05",
+      "affected_components": [
+        "C12",
+        "C03"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X06",
+      "affected_components": [
+        "C08",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X07",
+      "affected_components": [
+        "C08",
+        "C04",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X08",
+      "affected_components": [
+        "C06",
+        "C08"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X09",
+      "affected_components": [
+        "C06",
+        "C13",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X09]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X10",
+      "affected_components": [
+        "C07",
+        "C08",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X10]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X11",
+      "affected_components": [
+        "C07",
+        "C10",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X11]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X12",
+      "affected_components": [
+        "C07",
+        "C04",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X12]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X13",
+      "affected_components": [
+        "C07",
+        "C13",
+        "C16"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X13]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X14",
+      "affected_components": [
+        "C17",
+        "C09",
+        "C11"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X14]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X15",
+      "affected_components": [
+        "C05",
+        "C08",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X15]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X16",
+      "affected_components": [
+        "C16",
+        "C11",
+        "C12"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X16]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X17",
+      "affected_components": [
+        "C15",
+        "C16",
+        "C06"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X17]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-X18",
+      "affected_components": [
+        "C02",
+        "C08",
+        "C14"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-X18]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P01",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C08",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P01]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P02",
+      "affected_components": [
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P02]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P03",
+      "affected_components": [
+        "C05",
+        "C06",
+        "C08",
+        "C13"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P03]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P04",
+      "affected_components": [
+        "C12",
+        "C03"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P04]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P05",
+      "affected_components": [
+        "C07",
+        "C16"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P05]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P06",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C04",
+        "C07",
+        "C09"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P06]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P07",
+      "affected_components": [
+        "C04",
+        "C09",
+        "C10",
+        "C15"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P07]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-P08",
+      "affected_components": [
+        "C17",
+        "C09",
+        "C11"
+      ],
+      "selector": "tests/owner_only_v3/test_scenarios.py::test_scenario[OD3-P08]",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B01",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11",
+        "C12"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B01",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B02",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11",
+        "C12",
+        "C17"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B02",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B03",
+      "affected_components": [
+        "C02",
+        "C03",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B03",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B04",
+      "affected_components": [
+        "C05",
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B04",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B05",
+      "affected_components": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C15"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B05",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    },
+    {
+      "case_id": "OD3-B06",
+      "affected_components": [
+        "C17",
+        "C08",
+        "C11",
+        "C12",
+        "C16"
+      ],
+      "selector": "tests/owner_only_v3_browser/owner.e2e.ts::OD3-B06",
+      "status": "pending_hosted_execution",
+      "evidence": []
+    }
+  ]
+}
