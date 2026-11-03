@@ -2,6 +2,7 @@
   "scope": "generated_private_readiness_no_actual_owner_no_assets_no_inference",
   "python": [
     "tests/demo_deployment/test_integration.py::test_real_tls_startup_and_nonowner_denial",
+    "tests/demo_deployment/test_integration.py::test_actual_private_service_profiles",
     "tests/demo_deployment/test_integration.py::test_real_owner_mfa_immutable_enrollment_and_proof_replay",
     "tests/demo_deployment/test_integration.py::test_real_producer_registration_private_key_and_revocation",
     "tests/demo_deployment/test_integration.py::test_real_csrf_closed_surface_and_no_artifact_routes",

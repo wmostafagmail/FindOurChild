@@ -35,10 +35,9 @@ def topology(config, *, source, root):
            'command': ['python', '-m', 'uvicorn', 'services.demo_deployment.app:app', '--factory',
                        '--host', '0.0.0.0', '--port', '8443', '--ssl-certfile', '/run/tls/cert.pem',
                        '--ssl-keyfile', '/run/tls/key.pem', '--no-access-log', '--log-level', 'critical'],
-           'ports': ['127.0.0.1:' + str(__import__('urllib.parse', fromlist=['urlsplit']).urlsplit(config['origin']).port or 443) + ':8443'],
+           'ports': ['127.0.0.1:9443:8443'],
            'volumes': api_volumes, 'tmpfs': ['/tmp:rw,nosuid,nodev,noexec,size=8m'],
            'networks': ['edge', 'control', 'identity'], 'depends_on': {'db': {'condition': 'service_healthy'}}}
-    idp_port = __import__('urllib.parse', fromlist=['urlsplit']).urlsplit(config['issuer']).port or 443
     idp = {**common, 'image': 'foc-private-idp:' + config['source_sha'],
         'build': {'context': str(source), 'dockerfile': 'deployment/private-demo/Keycloak.Dockerfile'}, 'user': '1000:1000', 'mem_limit': '1g', 'memswap_limit': '1g',
         'cpus': 2, 'entrypoint': ['/bin/bash', '/run/entrypoint.sh'],
@@ -46,7 +45,7 @@ def topology(config, *, source, root):
                         'KC_DB': 'postgres', 'KC_DB_URL': 'jdbc:postgresql://idp-db:5432/keycloak',
                         'KC_DB_USERNAME': 'keycloak', 'KC_HTTP_ENABLED': 'true',
                         'KC_HTTPS_CERTIFICATE_FILE': '/run/tls/cert.pem', 'KC_HTTPS_CERTIFICATE_KEY_FILE': '/run/tls/key.pem'},
-        'ports': [f'127.0.0.1:{idp_port}:8443'],
+        'ports': ['127.0.0.1:9444:8443'],
         'volumes': [mount('idp/entrypoint.sh', '/run/entrypoint.sh'), mount('idp/secrets.json', '/run/idp-secrets.json'),
                     mount('idp/keycloak.conf', '/opt/keycloak/conf/keycloak.conf'),
                     mount('idp/realm.json', '/opt/keycloak/data/import/realm.json'),

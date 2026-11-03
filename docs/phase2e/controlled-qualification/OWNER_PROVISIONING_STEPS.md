@@ -1,3 +1,7 @@
+# Historical b9e161f4 checkpoint — retained evidence
+
+The following is the original pre-implementation owner-boundary packet. For the subsequently authorized executable Step 2 adapter, use [PRIVATE_DEPLOYMENT_GUIDE.md](PRIVATE_DEPLOYMENT_GUIDE.md). Its earlier missing-adapter statements describe b9e161f4 and do not mean the current source is documentation-only. No actual owner has been provisioned.
+
 # Secure real-owner provisioning and confirmation steps
 
 **STOP boundary:** no real owner has authenticated or been enrolled. The current

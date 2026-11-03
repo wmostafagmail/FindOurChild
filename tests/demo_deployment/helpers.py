@@ -1,3 +1,4 @@
+import hashlib
 import html
 import json
 import re
@@ -20,6 +21,11 @@ def command(*args, data=None, timeout=60):
         # Raw outputs remain private; exceptions contain no DSN/token/secret.
         Path('artifacts/raw/deployment').mkdir(parents=True, exist_ok=True)
         Path('artifacts/raw/deployment/last-command.log').write_bytes(p.stdout + p.stderr)
+        raw=p.stdout+p.stderr
+        codes=re.findall(rb'(?:Denied|PermissionError|OperationalError|InvalidTextRepresentation|UndefinedTable|SyntaxError|AssertionError): ([a-z_]{1,64})(?:\r?\n|$)',raw)
+        diagnostic={'command':args[0],'exit':p.returncode,'private_sha256':hashlib.sha256(raw).hexdigest(),
+                    'fixed_codes':[v.decode() for v in codes]}
+        print(json.dumps({'private_command_failure':diagnostic}))
         raise RuntimeError('Private deployment test command failed; diagnostic retained privately')
     return p.stdout
 

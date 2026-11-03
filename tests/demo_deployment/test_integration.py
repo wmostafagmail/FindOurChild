@@ -36,6 +36,27 @@ def test_real_tls_startup_and_nonowner_denial():
     finally:c.close()
 
 
+def test_actual_private_service_profiles():
+    for name, uid, memory in [('api','10001:10001',268435456),('idp','1000:1000',1073741824),
+                              ('db','999:999',536870912),('idp-db','999:999',536870912)]:
+        cid=compose('ps','-q',name).decode().strip()
+        info=json.loads(command('docker','inspect',cid))[0]
+        h=info['HostConfig']
+        assert info['State']['Running'] and info['Config']['User']==uid
+        assert h['ReadonlyRootfs'] and not h['Privileged'] and h['CapDrop']==['ALL']
+        assert 'no-new-privileges:true' in h['SecurityOpt'] and h['Memory']==h['MemorySwap']==memory
+        assert not h.get('Devices') and h['PidsLimit']==128
+        if name in ['db','idp-db']:
+            assert not h['PortBindings']
+            for network in info['NetworkSettings']['Networks']:
+                assert json.loads(command('docker','network','inspect',network))[0]['Internal'] is True
+        else:
+            assert all(p['HostIp']=='127.0.0.1' for rows in h['PortBindings'].values() for p in rows)
+        if name=='api':
+            assert all('admin' not in m['Destination'] and 'docker.sock' not in m['Destination'] for m in info['Mounts'])
+            assert next(m for m in info['Mounts'] if m['Destination'].endswith('/runtime'))['RW'] is False
+
+
 def test_real_owner_mfa_immutable_enrollment_and_proof_replay(authenticated):
     c=authenticated
     assert c.get(BASE+'/owner/session').json()['mfa_verified'] is True

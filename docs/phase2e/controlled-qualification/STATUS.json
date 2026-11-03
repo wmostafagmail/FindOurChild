@@ -37,6 +37,6 @@
   "queue_performance": "separate unresolved planning-target miss; no new waiver assumed",
   "next_required_owner_action": "Choose private demonstration deployment and real IdP account/MFA; configure identity/client secrets through a protected channel, not chat or Git.",
   "implementation": "separate_private_readiness_adapter_no_campaign_or_assets",
-  "private_readiness_selectors": 67,
+  "private_readiness_selectors": 68,
   "new_official_browser_executions": 24
 }

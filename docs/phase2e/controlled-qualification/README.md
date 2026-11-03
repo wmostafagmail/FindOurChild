@@ -12,7 +12,11 @@ This packet stops **before real owner binding/enrollment**, as explicitly requir
 by Step 2 when owner action cannot be completed autonomously. It is not an A5
 qualification report, an active campaign, an approval record or consent.
 
-## What exists and what does not
+## Current Step 2 readiness implementation
+
+After the historical documentation checkpoint `b9e161f4`, the owner authorized source-only deployment readiness. The separate `services/demo_deployment` adapter and pinned `deployment/private-demo` topology implement local TTY-only provisioning, actual OIDC/MFA verification, private SQL storage, external epoch/proof recovery, technical-producer registration and benign immutable storage. They expose no campaign or asset-execution capability. See [PRIVATE_DEPLOYMENT_GUIDE.md](PRIVATE_DEPLOYMENT_GUIDE.md), [DEPLOYMENT_TRACEABILITY.md](DEPLOYMENT_TRACEABILITY.md) and [DEPLOYMENT_VALIDATION.md](DEPLOYMENT_VALIDATION.md) for the current executable setup and pending hosted results. Real hosting and owner enrollment remain unavailable.
+
+## Historical checkpoint — what existed at b9e161f4
 
 Merged D1–D4 provides source-only identity, confirmation, private PostgreSQL,
 checkpoint, receipt, fixture and fencing primitives. Hosted synthetic tests are
@@ -54,9 +58,7 @@ and internal lease thirty seconds. Renewals cannot mutate the selected plan.
 
 ## Validation and preserved limits
 
-This branch adds documentation and evidence only. No application or deployment
-test is newly claimed passed. Structural documentation checks must distinguish
-the successful exact-main workflow from this branch's own hosted CI.
+The original b9e161f4 packet added documentation only. Current Step 2 adds source-only readiness code and generated-service tests, with hosted execution tracked separately in DEPLOYMENT_VALIDATION.md. No real owner provisioning or A5 qualification is claimed. DOCUMENTATION_CHECKS.json and OWNER_PROVISIONING_STEPS.md retain the historical checkpoint claims; the current operator guide supersedes their unimplemented-adapter instructions.
 All 747 original Python/API/database/security/integration tests, 360 original
 official TesterArmy executions, 98 V3 tests, 144 owner-browser executions,
 76 V2 tests, 136 E0 controls, 52 source-only native cases, 36 application

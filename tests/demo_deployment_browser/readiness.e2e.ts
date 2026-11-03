@@ -3,6 +3,7 @@ import {expect,secrets} from 'e2e';
 import {createRequire} from 'node:module';
 const {source:axeSource}=createRequire(import.meta.url)('axe-core') as {source:string};
 test('DR-B01-real-private-readiness-without-campaign',async({app,browser,screen})=>{
+ await app.open('/owner/en');
  const ar=await browser.evaluate(()=>navigator.language==='ar-EG');
  const locale=ar?'ar':'en';
  await app.open('/owner/'+locale);

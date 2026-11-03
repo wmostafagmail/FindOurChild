@@ -40,7 +40,7 @@ def sources():
 
 def main():
     assert os.environ.get('GITHUB_ACTIONS') == 'true' and sys.platform == 'linux'
-    OUT.mkdir(parents=True, exist_ok=True);PRIVATE.mkdir(parents=True, exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=False);PRIVATE.mkdir(parents=True, exist_ok=False)
     rawdir = ROOT/'artifacts/raw/deployment';rawdir.mkdir(parents=True, exist_ok=True)
     rawdir.chmod(0o700)
     before=sources();required=json.loads((ROOT/'docs/phase2e/deployment-required-tests.json').read_text())
@@ -53,6 +53,7 @@ def main():
     (PRIVATE/'plan.json').write_text(json.dumps(plan));(PRIVATE/'plan.json').chmod(0o600)
     compose_path=plan['directory']+'/compose.json'
     logs=io.StringIO();result=Results();context={'compose':str(PRIVATE/'compose.json')}
+    phase='fixture_preparation'
     try:
         command('sudo','-E',sys.executable,'-m','tests.demo_deployment.fixture',str(PRIVATE/'plan.json'))
         command('sudo','cp',compose_path,str(PRIVATE/'compose.json'))
@@ -61,9 +62,12 @@ def main():
         def compose(*args,timeout=600):
             return command('docker','compose','-f',context['compose'],*args,timeout=timeout)
         # Full build logs stay private, and no secret enters build args/context.
+        phase='locked_image_build'
         (rawdir/'build.log').write_bytes(compose('build','api','idp','worker',timeout=1200))
+        phase='private_database_initialization'
         compose('up','-d','--wait','db','idp-db',timeout=120)
         admin('from services.demo_deployment.cli import init_db;init_db()')
+        phase='actual_idp_tls_startup'
         compose('up','-d','idp')
         transport=httpx.Client(verify=ssl.create_default_context(cafile=str(ROOT/'.runtime/tls/cert.pem')),
                                trust_env=False,timeout=5)
@@ -87,6 +91,7 @@ def main():
         pin={'issuer':'https://127.0.0.1:9444/realms/foc-private-demo','spki_sha256':fingerprints,'expires_at':int(time.time())+3600}
         admin('import sys,json;from services.demo_deployment.protected import ROOT,create_private;'
               'create_private(ROOT/"runtime/idp-pin.json",json.loads(sys.stdin.read()),owner=10001)',data=json.dumps(pin).encode())
+        phase='actual_readiness_tls_startup'
         compose('up','-d','api')
         deadline=time.monotonic()+60
         while True:
@@ -98,10 +103,13 @@ def main():
         api_image=compose('images','-q','api').decode().strip();worker_image='foc-private-benign-worker:'+head
         def image_id(image):return json.loads(command('docker','inspect',image))[0]['Id']
         context.update(api_image=image_id(api_image),worker_image=image_id(worker_image),
+            idp_image=image_id(compose('images','-q','idp').decode().strip()),
+            db_image=image_id(compose('images','-q','db').decode().strip()),
             source_digest=hashlib.sha256(json.dumps(before,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
             producer_tool_digest=hashlib.sha256((ROOT/'services/demo_deployment/producers.py').read_bytes()).hexdigest())
         (PRIVATE/'context.json').write_text(json.dumps(context))
         probe_dir=rawdir/'worker-probes';probe_dir.mkdir();os.environ['FOC_GOVERNANCE_PROBE_EVIDENCE']=str(probe_dir)
+        phase='actual_private_storage_authorization_recovery_and_worker_tests'
         with redirect_stdout(logs),redirect_stderr(logs):
             code=pytest.main(['--confcutdir=tests/demo_deployment','tests/demo_deployment','-q','--tb=short'],plugins=[result])
         assert result.nodes==required['python'] and len(result.nodes)==len(set(result.nodes))
@@ -109,6 +117,7 @@ def main():
         (OUT/'python-results.json').write_text(json.dumps({'tests':result.stages,'mandatory_skips':0,'real_owner_provisioned':False},indent=2)+'\n')
         browser_env={**sanitize_environment(os.environ),'GITHUB_ACTIONS':'true','E2E_TELEMETRY_DISABLED':'1','DO_NOT_TRACK':'1',
                      'FOC_E2E_DATA_CLASS':'synthetic','FOC_E2E_ISOLATED':'1'}
+        phase='official_three_browser_readiness'
         browser=subprocess.run(['./node_modules/.bin/e2e','run','--config','e2e.deployment.config.ts','--retries','0','--no-cache'],
                                cwd=ROOT,env=browser_env,capture_output=True,timeout=2400,check=False)
         (rawdir/'browser.log').write_bytes(browser.stdout+browser.stderr)
@@ -143,18 +152,25 @@ def main():
             'runtime':'actual_TLS_Keycloak_private_PostgreSQL_checkpoint_and_benign_Linux_worker',
             'performance_gate':'unchanged_database_demo_exception_queue_separate',
             'payload_sha256':{str(p.relative_to(OUT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.rglob('*') if p.is_file()}},indent=2)+'\n')
-        print(json.dumps({'deployment_python_passed':len(result.nodes),'official_new_browser_passed':24,'real_owner_provisioned':False,'assets':0,'inference':False}))
     except BaseException as error:
-        (OUT/'failure.json').write_text(json.dumps({'checkout':head,'error_class':type(error).__name__,'source_manifest':before,
+        (OUT/'failure.json').write_text(json.dumps({'checkout':head,'error_class':type(error).__name__,'phase':phase,'source_manifest':before,
             'tests':result.stages,'diagnostics':result.diagnostics,'scope':'generated_source_only_no_real_owner_no_assets_no_inference'},indent=2)+'\n')
-        print(json.dumps({'deployment_failed':True,'error_class':type(error).__name__,'diagnostics':result.diagnostics}))
+        print(json.dumps({'deployment_failed':True,'phase':phase,'error_class':type(error).__name__,'diagnostics':result.diagnostics}))
         raise
     finally:
         (rawdir/'pytest.log').write_text(logs.getvalue());(rawdir/'pytest.log').chmod(0o600)
-        if Path(context['compose']).exists():
-            try:command('docker','compose','-f',context['compose'],'down','--remove-orphans',timeout=90)
-            except RuntimeError:pass
-        release.unlink(missing_ok=True)
+        prior_error=sys.exc_info()[0]
+        try:
+            if Path(context['compose']).exists():
+                command('docker','compose','-f',context['compose'],'down','--remove-orphans',timeout=90)
+        except RuntimeError:
+            (OUT/'cleanup-failure.json').write_text(json.dumps({'cleanup_passed':False,'checkout':head})+'\n')
+            if prior_error is None:raise
+        finally:
+            release.unlink(missing_ok=True)
+    manifest=json.loads((OUT/'manifest.json').read_text());manifest['containers_disposed']=True
+    (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    print(json.dumps({'deployment_python_passed':len(result.nodes),'official_new_browser_passed':24,'real_owner_provisioned':False,'assets':0,'inference':False,'containers_disposed':True}))
 
 
 if __name__=='__main__':main()
