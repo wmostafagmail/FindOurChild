@@ -1,0 +1,78 @@
+name: Phase 2E private deployment readiness
+on:
+  workflow_call:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase2e-deployment-readiness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    env:
+      E2E_TELEMETRY_DISABLED: '1'
+      DO_NOT_TRACK: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      FOC_E2E_DATA_CLASS: synthetic
+      FOC_E2E_ISOLATED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.18.0
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: 0.12.0
+          enable-cache: false
+      - name: Locked dependencies
+        run: |
+          test "$(npm --version)" = 11.16.0
+          uv sync --locked
+          npm ci --ignore-scripts
+      - name: Source-only static validation
+        run: |
+          .venv/bin/ruff check services/demo_deployment tests/demo_deployment scripts/deployment_validate.py scripts/deployment_credentials.py
+          npm run typecheck
+      - name: Configure bounded Ubuntu package downloads
+        run: |
+          test "$GITHUB_ACTIONS" = true
+          test "$RUNNER_OS" = Linux
+          sudo python3 - <<'PYAPT'
+          from pathlib import Path
+          for name in ["/etc/apt/sources.list", "/etc/apt/sources.list.d/ubuntu.sources"]:
+              path = Path(name)
+              if not path.exists():
+                  continue
+              original = path.read_text()
+              updated = original.replace("http://azure.archive.ubuntu.com/ubuntu", "https://archive.ubuntu.com/ubuntu").replace("https://azure.archive.ubuntu.com/ubuntu", "https://archive.ubuntu.com/ubuntu")
+              if updated != original:
+                  path.write_text(updated)
+          Path("/etc/apt/apt.conf.d/99foc-ci-network").write_text('Acquire::http::Timeout "30";\nAcquire::https::Timeout "30";\nAcquire::Retries "2";\n')
+          print("Ubuntu primary archive configured; suites, components and signing keys retained")
+          PYAPT
+      - name: Install pinned browser engines
+        run: ./node_modules/.bin/e2e-web install chromium firefox webkit --with-deps
+      - name: Configure ephemeral runner TLS trust
+        run: |
+          .venv/bin/python -m scripts.tls_setup
+          openssl verify -x509_strict -CAfile .runtime/tls/cert.pem .runtime/tls/server.pem
+          sudo cp .runtime/tls/cert.pem /usr/local/share/ca-certificates/foc-synthetic.crt
+          sudo update-ca-certificates
+          sudo apt-get update -qq
+          sudo apt-get install -y libnss3-tools
+          mkdir -p "$HOME/.pki/nssdb"
+          certutil -N --empty-password -d "sql:$HOME/.pki/nssdb"
+          certutil -A -d "sql:$HOME/.pki/nssdb" -n foc-synthetic -t 'C,,' -i .runtime/tls/cert.pem
+          node scripts/ci_tls_policy.mjs
+      - name: Actual private HTTPS IdP database recovery worker and official browser validation
+        run: .venv/bin/python -m scripts.deployment_validate
+      - name: Publish data-free source-bound readiness evidence only
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase2e-deployment-readiness-${{ github.sha }}
+          path: artifacts/phase2e-deployment-readiness/
+          if-no-files-found: error
+          retention-days: 7

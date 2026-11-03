@@ -25,3 +25,6 @@ artifacts/phase2e-e0-controls/
 artifacts/phase2e-owner-only-v3/
 artifacts/phase2e-owner-only-v3-browser/
 artifacts/phase2e-owner-only-v3-preflight/
+
+.e2e-deployment-readiness/
+artifacts/phase2e-deployment-readiness/

@@ -17,8 +17,10 @@ jobs:
     uses: ./.github/workflows/phase2e-owner-only-v3.yml
   phase2e-owner-identity-prerequisite:
     uses: ./.github/workflows/phase2e-owner-identity-preflight.yml
+  phase2e-deployment-readiness-prerequisite:
+    uses: ./.github/workflows/phase2e-deployment-readiness.yml
   phase1a-required:
-    needs: [phase2e-governance-prerequisite, phase2e-owner-only-v3-prerequisite, phase2e-owner-identity-prerequisite]
+    needs: [phase2e-governance-prerequisite, phase2e-owner-only-v3-prerequisite, phase2e-owner-identity-prerequisite, phase2e-deployment-readiness-prerequisite]
     if: ${{ always() }}
     runs-on: ubuntu-24.04
     # Full 360-browser /747-Python serial regression; timeout never implies success.
@@ -34,8 +36,10 @@ jobs:
         env:
           GOVERNANCE_RESULT: ${{ needs.phase2e-governance-prerequisite.result }}
           V3_RESULT: ${{ needs.phase2e-owner-only-v3-prerequisite.result }}
+          DEPLOYMENT_RESULT: ${{ needs.phase2e-deployment-readiness-prerequisite.result }}
           IDENTITY_PREFLIGHT_RESULT: ${{ needs.phase2e-owner-identity-prerequisite.result }}
         run: |
+          test "$DEPLOYMENT_RESULT" = success
           test "$GOVERNANCE_RESULT" = success
           test "$V3_RESULT" = success
           test "$IDENTITY_PREFLIGHT_RESULT" = success

@@ -18,6 +18,8 @@
     "e2e.config.ts",
     "tests/browser/**/*.ts",
     "e2e.owner-only-v3.config.ts",
-    "tests/owner_only_v3_browser/**/*.ts"
+    "tests/owner_only_v3_browser/**/*.ts",
+    "e2e.deployment.config.ts",
+    "tests/demo_deployment_browser/**/*.ts"
   ]
 }

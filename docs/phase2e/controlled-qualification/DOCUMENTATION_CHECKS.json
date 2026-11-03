@@ -1,0 +1,33 @@
+{
+  "scope": "documentation_consistency_only_not_deployment_or_A5_validation",
+  "exact_main_run_verified": true,
+  "base_sha": "d6bb3cf869db9b578216295c5499fe93e32656f4",
+  "relative_links_resolved": 6,
+  "frozen_catalog_models": 3,
+  "frozen_catalog_images": 48,
+  "frozen_catalog_groups": 24,
+  "proposal_bytes_unchanged": true,
+  "existing_tracked_changes": 0,
+  "runtime_flags_still_false": [
+    "provisioning_enabled",
+    "acquisition_enabled",
+    "unpacking_enabled",
+    "scanning_enabled",
+    "native_parsing_enabled",
+    "inference_enabled",
+    "operational_enabled"
+  ],
+  "owner_anchor_null": true,
+  "registry_null": true,
+  "new_application_tests_executed": 0,
+  "deployment_tests_passed": 0,
+  "qualification_tests_passed": 0,
+  "actual_assets_acquired": 0,
+  "actual_inference": false,
+  "packet_sha256": {
+    "docs/phase2e/controlled-qualification/OWNER_PROVISIONING_STEPS.md": "5a5362d85d45f315fa2fa0000deeba78331f5aa269c7a52867441aabe68c82ec",
+    "docs/phase2e/controlled-qualification/README.md": "d9d4bdf232720888f223698dac17f792ce1f369b1da9c25e2948d6f94db9d203",
+    "docs/phase2e/controlled-qualification/STATUS.json": "dc162b5d52aee23656f19ebb02166377dc8d9dccc8bc7d8dab6fa618133e5189",
+    "docs/phase2e/controlled-qualification/exact-main-ci.json": "cc6824fc45d805a3cab9673508f342587913ca6884c26f6bb4aeb278d95d2d5b"
+  }
+}
