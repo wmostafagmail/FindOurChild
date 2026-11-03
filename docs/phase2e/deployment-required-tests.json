@@ -68,7 +68,16 @@
     "tests/demo_deployment/test_unit.py::test_private_http_closed_surface[oversized]",
     "tests/demo_deployment/test_unit.py::test_private_http_closed_surface[campaign]",
     "tests/demo_deployment/test_unit.py::test_private_http_closed_surface[model]",
-    "tests/demo_deployment/test_unit.py::test_private_http_closed_surface[public_search]"
+    "tests/demo_deployment/test_unit.py::test_private_http_closed_surface[public_search]",
+    "tests/demo_deployment/test_unit.py::test_immutable_build_release_identity[positive]",
+    "tests/demo_deployment/test_unit.py::test_immutable_build_release_identity[stale]",
+    "tests/demo_deployment/test_unit.py::test_immutable_build_release_identity[unknown]",
+    "tests/demo_deployment/test_unit.py::test_immutable_build_release_identity[missing]",
+    "tests/demo_deployment/test_unit.py::test_invalid_registration_does_not_mutate_external_checkpoint[unknown]",
+    "tests/demo_deployment/test_unit.py::test_invalid_registration_does_not_mutate_external_checkpoint[key]",
+    "tests/demo_deployment/test_unit.py::test_invalid_registration_does_not_mutate_external_checkpoint[evidence]",
+    "tests/demo_deployment/test_unit.py::test_invalid_registration_does_not_mutate_external_checkpoint[limits]",
+    "tests/demo_deployment/test_unit.py::test_invalid_registration_does_not_mutate_external_checkpoint[hash]"
   ],
   "browser_titles": [
     "DR-B01-real-private-readiness-without-campaign"

@@ -199,3 +199,33 @@ def test_private_http_closed_surface(case):
         if case=='cross_origin':headers['origin']='https://foreign.invalid'
         r=client.post('/owner/enrollment-proof',headers=headers,content=b'x'*5000 if case=='oversized' else b'{}')
     assert r.status_code==403
+
+
+@pytest.mark.parametrize('scenario', ['positive','stale','unknown','missing'])
+def test_immutable_build_release_identity(scenario):
+    from services.demo_deployment.runtime import release_bound
+    c=config();release={'source_sha':c['source_sha']}
+    if scenario=='stale':release['source_sha']='b'*40
+    if scenario=='unknown':release['activate']=True
+    if scenario=='missing':release={}
+    if scenario=='positive':release_bound(c,release)
+    else:
+        with pytest.raises(Denied,match='deployment_build_identity'):release_bound(c,release)
+
+
+@pytest.mark.parametrize('scenario',['unknown','key','evidence','limits','hash'])
+def test_invalid_registration_does_not_mutate_external_checkpoint(tmp_path,scenario):
+    cp,fd,c=checkpoint(tmp_path)
+    p={'public_key':base64.b64encode(b'p'*32).decode(),'source':'a'*64,'build':'b'*64,'tool':'c'*64,
+       'evidence_class':'actual_isolated_measurement','resource_limits':[3000,2000,67108864],'stages':['source']}
+    if scenario=='unknown':p['approved']=True
+    if scenario=='key':p['public_key']='invalid'
+    if scenario=='evidence':p['evidence_class']='generated_fixture'
+    if scenario=='limits':p['resource_limits']=[300000,200000,6710886400]
+    if scenario=='hash':p['source']='not-a-measured-hash'
+    before=cp.current('producer-registry:'+c['instance'])
+    try:
+        with pytest.raises((Denied,ValueError)):
+            append_registry(fd,cp,c,'source',p,revoked=False,expires=int(time.time())+60,epochs=(1,1))
+        assert cp.current('producer-registry:'+c['instance'])==before and os.fstat(fd).st_size==0
+    finally:os.close(fd);cp.close()

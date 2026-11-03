@@ -11,6 +11,18 @@ REGISTRY = 'FOC-DEPLOYMENT-TECHNICAL-PRODUCERS-V1'
 STAGES = {'source', 'quarantine', 'bytes', 'processed', 'load'}
 
 
+def validate_producer(p):
+    require(type(p) is dict and set(p) == {'public_key', 'source', 'build', 'tool', 'evidence_class', 'resource_limits', 'stages'}
+            and p['evidence_class'] == 'actual_isolated_measurement'
+            and type(p['stages']) is list and p['stages'] and all(type(v) is str for v in p['stages'])
+            and len(p['stages']) == len(set(p['stages'])) and set(p['stages']) <= STAGES, 'producer_scope')
+    for field in ['source', 'build', 'tool']:
+        require(type(p[field]) is str and len(p[field]) == 64
+                and all(c in '0123456789abcdef' for c in p[field]), 'producer_digest')
+    require(p['resource_limits'] == [3000, 2000, 67108864], 'readiness_profile_only')
+    require(type(p['public_key']) is str and len(base64.b64decode(p['public_key'], validate=True)) == 32, 'producer_key')
+
+
 def read_registry(fd, checkpoint, config):
     st = os.fstat(fd)
     require(stat.S_ISREG(st.st_mode) and 0 <= st.st_size <= 65536 and st.st_nlink == 1 and st.st_mode & 0o077 == 0, 'registry_file')
@@ -27,14 +39,7 @@ def read_registry(fd, checkpoint, config):
                 and type(row['expires']) is int and type(row['epoch']) is list and len(row['epoch']) == 2,
                 'registry_closed')
         p = row['producer']
-        require(set(p) == {'public_key', 'source', 'build', 'tool', 'evidence_class', 'resource_limits', 'stages'}
-                and p['evidence_class'] == 'actual_isolated_measurement'
-                and type(p['stages']) is list and set(p['stages']) <= STAGES and p['stages'], 'producer_scope')
-        for field in ['source', 'build', 'tool']:
-            require(type(p[field]) is str and len(p[field]) == 64
-                    and all(c in '0123456789abcdef' for c in p[field]), 'producer_digest')
-        require(p['resource_limits'] == [3000, 2000, 67108864], 'readiness_profile_only')
-        require(len(base64.b64decode(p['public_key'], validate=True)) == 32, 'producer_key')
+        validate_producer(p)
         previous = row['chain']
         rows[row['name']] = row
     expected = checkpoint.current('producer-registry:' + config['instance'])
@@ -64,6 +69,8 @@ class Producers:
 
 def append_registry(fd, checkpoint, config, name, producer, *, revoked, expires, epochs):
     """Invoked only inside a root-admin transaction after a consumed real-owner proof."""
+    validate_producer(producer)
+    require(name in producer['stages'], 'producer_stage_binding')
     rows, old = read_registry(fd, checkpoint, config)
     require(name in STAGES and type(revoked) is bool and type(expires) is int
             and 0 < expires - time.time() <= 86400 and tuple(epochs) == old[:2], 'producer_registration')
