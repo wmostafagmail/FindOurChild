@@ -19,7 +19,7 @@ import httpx
 import uvicorn
 
 from scripts.artifacts import clean_png
-from scripts.dev import environment
+from scripts.dev import environment, sanitize_environment
 from scripts.workflow_http_environment import private_sql_bridge
 from tools.phase2e.demo_governance.run_checks import command
 
@@ -117,7 +117,7 @@ def main():
             run_dir = ROOT / ".e2e-owner-only-v3"
             if run_dir.exists():
                 shutil.move(str(run_dir), str(work / "prior-attempt"))
-            env = {**os.environ, "E2E_TELEMETRY_DISABLED": "1", "DO_NOT_TRACK": "1"}
+            env = {**sanitize_environment(os.environ), "E2E_TELEMETRY_DISABLED": "1", "DO_NOT_TRACK": "1"}
             for key in list(env):
                 if key.endswith(("_TOKEN", "_SECRET", "_PASSWORD", "_KEY")) or key.startswith(("AWS_", "OPENAI_", "ANTHROPIC_")):
                     env.pop(key)
@@ -136,6 +136,7 @@ def main():
             "checkpoint_fixture": "in_process_synthetic_external_authority_adapter",
             "checkpoint_file_boundary": "separate_required_real_file_tests",
             "fixture_exposure": "explicit_generated_digest_simulation_no_image_calls",
+            "private_database_credentials_in_e2e_environment": False,
             "payload_sha256": {str(p.relative_to(output)): sha(p.read_bytes())
                                for p in sorted(output.rglob("*")) if p.is_file()},
             "synthetic_principals_only": True, "real_owner_provisioned": False, "assets": 0, "inference": False}, indent=2) + "\n")

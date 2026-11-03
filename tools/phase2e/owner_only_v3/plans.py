@@ -36,3 +36,17 @@ def inventory(rows):
 def source_identity():
     weights, data = catalog()
     return digest({"weights": weights, "dataset": data})
+
+
+def execution_inputs(record):
+    """Closed campaign input identity, derived only from the protected authorization.
+
+    Future individual artifact selection must additionally resolve the closed
+    catalog/registry. No arbitrary photograph, pathname, URL or caller plan is a
+    substitute for this campaign binding.
+    """
+    scope = record["scope"]
+    return {"campaign": digest(record), "source": digest(record["source"]),
+            "models": scope["model_plan_sha256"], "images": scope["image_plan_sha256"],
+            "fixtures": scope["fixture_plan_sha256"], "processing": scope["processing_plan_sha256"],
+            "resources": scope["resource_profile_sha256"], "rights": scope["rights_disposition_sha256"]}

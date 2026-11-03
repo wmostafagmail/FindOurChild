@@ -14,6 +14,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 
 from tools.phase2e.demo_governance.artifacts import SEALS
 
+from .plans import execution_inputs
 from .records import canonical, decode, digest, require
 
 RECEIPT_DOMAIN = "FOC-PHASE2E-DEMO-TECHNICAL-MEASUREMENT-V3"
@@ -30,6 +31,8 @@ class Producer:
     build: str
     tool: str
     evidence_class: str
+    # Qualified benign-child profile only; a future neural profile needs separate qualification.
+    resource_limits: tuple[int, int, int] = (3000, 2000, 67108864)
 
 
 class Verifier:
@@ -65,6 +68,8 @@ class Verifier:
         require(type(row["limits"]) is dict and set(row["limits"]) == {"wall_ms", "cpu_ms", "rss_bytes",
                 "wall_limit_ms", "cpu_limit_ms", "memory_limit_bytes"}, "receipt_limits")
         limits = row["limits"]
+        require((limits["wall_limit_ms"], limits["cpu_limit_ms"], limits["memory_limit_bytes"])
+                == trusted.resource_limits, "receipt_resource_profile")
         require(all(type(v) is int and v > 0 for v in limits.values())
                 and limits["wall_ms"] <= limits["wall_limit_ms"]
                 and limits["cpu_ms"] <= limits["cpu_limit_ms"]
@@ -129,19 +134,30 @@ class Ingestor:
         self.confirmation, self.verifier = confirmation, verifier
 
     def accept(self, raw, signature, session, record_id, job, expected_inputs, sealed_outputs):
-        measured = measure_sealed_outputs(sealed_outputs)
-        now = self.confirmation.clock.now()
-        row = self.verifier.verify(raw, signature, expected_job=job, expected_inputs=expected_inputs,
-                                   measured_outputs=measured, now=now)
         with self.confirmation.tx() as tx:
-            self.confirmation.authorization(tx, record_id, session)
+            record, _ = self.confirmation.authorization(tx, record_id, session)
+            require(expected_inputs == execution_inputs(record), "receipt_campaign_inputs")
+            now = self.confirmation.clock.now()
+            candidate = decode(raw)
+            require(type(candidate) is dict and type(candidate.get("stage")) is str
+                    and candidate["stage"] in DEPENDENCIES and type(candidate.get("dependencies")) is dict
+                    and set(candidate["dependencies"]) == set(DEPENDENCIES[candidate["stage"]]), "receipt_stage_closed")
             parents = {}
-            for name in DEPENDENCIES[row["stage"]]:
+            for name in DEPENDENCIES[candidate["stage"]]:
                 prior = tx.get("receipt", job + ":" + name)
-                require(prior is not None, "receipt_parent_missing")
+                require(prior is not None and prior["job"] == job and prior["inputs"] == expected_inputs
+                        and prior["stage"] == name and now < prior["expires_at"], "receipt_parent_missing_or_stale")
                 parents[name] = prior
-                require(row["dependencies"][name] == digest(prior), "receipt_parent_digest")
+                require(candidate["dependencies"][name] == digest(prior), "receipt_parent_digest")
+            measured = measure_sealed_outputs(sealed_outputs)
+            row = self.verifier.verify(raw, signature, expected_job=job, expected_inputs=expected_inputs,
+                                       measured_outputs=measured, now=self.confirmation.clock.now())
+            require(all(self.confirmation.clock.now() < prior["expires_at"] for prior in parents.values()),
+                    "receipt_parent_expired_during_measurement")
             tx.put("receipt", job + ":" + row["stage"], row)
             tx.audit("technical_receipt_ingested", digest(row))
             self.confirmation.authorization(tx, record_id, session)
+            now = self.confirmation.clock.now()
+            require(now < row["expires_at"] and all(now < prior["expires_at"] for prior in parents.values()),
+                    "receipt_expired_before_commit")
         return digest(row)

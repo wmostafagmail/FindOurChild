@@ -17,7 +17,7 @@ class Dispatcher:
             self.fencing.validate(token, session, inputs, job=job, action=action, revision=revision, tx=tx)
 
     def execute(self, token, session, inputs, *, job, action, revision=1):
-        self.check(token, session, inputs, job=job, action=action, revision=revision)
+        self.technical_admission(token, session, inputs, job=job, action=action, revision=revision)
         # A valid intent or a configuration flag cannot create approved providers.
         # Separate acquisition, parser and inference provisioning are not authorized.
         require(False, "v3_actual_execution_not_authorized")

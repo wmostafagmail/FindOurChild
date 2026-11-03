@@ -91,9 +91,11 @@ def test_private_api_default_denial_csrf_and_closed_confirmation(monkeypatch):
     assert client.post("/demo-authorization/confirm", content=canonical(body)).status_code == 403
 
 
-def test_receipt_actual_sealed_measurement_and_unsealed_denial(tmp_path):
+def test_receipt_actual_sealed_measurement_and_unsealed_denial(tmp_path, monkeypatch):
+    from tools.phase2e.owner_only_v3 import receipts
+    from tools.phase2e.owner_only_v3.plans import execution_inputs
     from tools.phase2e.owner_only_v3.processing import snapshot_fd
-    from tools.phase2e.owner_only_v3.receipts import measure_sealed_outputs
+    from tools.phase2e.owner_only_v3.receipts import Ingestor, Verifier, measure_sealed_outputs
 
     path = tmp_path / "benign-buffer"
     path.write_bytes(b"actual-generated-buffer")
@@ -102,6 +104,29 @@ def test_receipt_actual_sealed_measurement_and_unsealed_denial(tmp_path):
             measure_sealed_outputs({"buffer": source.fileno()})
         with snapshot_fd(source.fileno(), size=path.stat().st_size, sha256=sha(path.read_bytes())) as sealed:
             assert measure_sealed_outputs({"buffer": sealed}) == {"buffer": sha(path.read_bytes())}
+            env = Environment(postgres=False)
+            monkeypatch.setattr(receipts, "measure_sealed_outputs", lambda *_: pytest.fail("unauthorized byte read"))
+            denied(lambda: Ingestor(env.engine, Verifier({})).accept(b"{}", b"", env.session, str(uuid4()),
+                                                                   str(uuid4()), {}, {"buffer": sealed}))
+            monkeypatch.undo()
+            env.authorized()
+            key, row, producer, _ = valid_receipt()
+            row["inputs"] = execution_inputs(env.draft["record"])
+            row["outputs"] = {"buffer": sha(path.read_bytes())}
+            env.clock.value = row["finished_at"]
+            service = Ingestor(env.engine, Verifier({row["producer"]: producer}, engineering=True))
+            assert service.accept(canonical(row), key.sign(canonical(row)), env.session, env.body["record_id"],
+                                  row["job"], row["inputs"], {"buffer": sealed}) == digest(row)
+            from tools.phase2e.owner_only_v3.dispatcher import Dispatcher
+            from tools.phase2e.owner_only_v3.fencing import Fencing
+
+            fence = Fencing(env.engine, lambda *_: True)
+            token = fence.issue(env.session, env.body["record_id"], "acquire_quarantine", row["inputs"], job=row["job"],
+                                receipt_expiry=row["expires_at"], hard_deadline=env.clock.now() + 30)
+            controller = Dispatcher(fence)
+            assert controller.technical_admission(token, env.session, row["inputs"], job=row["job"],
+                                                  action="acquire_quarantine")["execution_available"] is False
+            denied(lambda: controller.execute(token, env.session, row["inputs"], job=row["job"], action="acquire_quarantine"))
 
 
 def test_receipt_dag_expiry_exit_and_provenance():

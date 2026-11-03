@@ -87,3 +87,27 @@ changing manifests. Original saved source files were preserved privately under
 were rematerialized. Git objects were strictly verified in a complete temporary
 mirror before import; the source branch advanced normally, without history rewrite.
 No application failure was reclassified as an environment pass.
+
+## Controller environment hardening
+
+The V3 controller initially inherited synthetic private database DSNs in the
+TesterArmy child environment because their names do not end in `_PASSWORD`.
+No credential exposure in a public artifact or external-model request was
+observed; the isolated credentials were still unnecessarily forwarded. The
+controller now uses the existing strict application environment allowlist,
+retaining only public synthetic-loopback/preflight flags. OD3-W16/X16 assert
+that admin/runtime DSNs and tokens are stripped. The closed CI-only expiry
+fixture reads its existing private synthetic state file rather than inheriting
+those credentials through the browser runner. Final exact-head validation must
+include this additional hardening; no previous pass is promoted to that head.
+
+Source review also strengthened internal campaign-input and resource-ceiling
+bindings before final validation. Earlier source-only admission interfaces
+accepted generic privileged-caller input maps and compared measurements only
+against reported ceilings; they had no enabled actual-asset consumer. The
+source-only interfaces now derive exact campaign digests from protected scope,
+check authority before reading sealed bytes, and require pinned producer limit
+ceilings. The same frozen selectors gained negative variants and an actual
+generated-buffer receipt-ingestion control. This is a documented source-review
+finding; no executed real-asset exploitation, human assessment or inference is
+claimed. Subsequent CI must execute all 98 selectors and 144 browser cases again.

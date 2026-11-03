@@ -24,7 +24,7 @@ from tools.phase2e.owner_only_v3 import fixtures, processing
 from tools.phase2e.owner_only_v3.dispatcher import Dispatcher, select_policy
 from tools.phase2e.owner_only_v3.fencing import Fencing
 from tools.phase2e.owner_only_v3.identity import authenticate_token, claims_session
-from tools.phase2e.owner_only_v3.plans import catalog, inventory
+from tools.phase2e.owner_only_v3.plans import catalog, execution_inputs, inventory
 from tools.phase2e.owner_only_v3.receipts import RECEIPT_DOMAIN, Producer, Verifier, chain
 from tools.phase2e.owner_only_v3.records import (
     DESIGN,
@@ -58,10 +58,11 @@ def frozen(env, plan=None):
 
 def lease(env, **kwargs):
     fence = Fencing(env.engine, lambda *_: env.grants)
+    inputs = execution_inputs(env.draft["record"])
     token = fence.issue(env.session, env.body["record_id"], kwargs.get("action", "verify_bytes"),
-                        {"plan": digest(fixture_plan())}, job=str(uuid4()),
+                        inputs, job=str(uuid4()),
                         receipt_expiry=env.clock.now() + 60, hard_deadline=env.clock.now() + 60)
-    return fence, token, {"plan": digest(fixture_plan())}
+    return fence, token, inputs
 
 
 def valid_receipt():
@@ -261,6 +262,8 @@ def test_scenario(case, tmp_path, monkeypatch):
         denied(lambda: Dispatcher(fence).check(token, env.session, inputs, job=token.job,
                                               action="private_image_inference"))
         denied(lambda: select_policy("public_biometric_search"))
+        denied(lambda: fence.issue(env.session, env.body["record_id"], "verify_bytes", {"url": "https://foreign.invalid"},
+                                   job=str(uuid4()), receipt_expiry=env.clock.now() + 30, hard_deadline=env.clock.now() + 30))
     elif case in {"OD3-S15", "OD3-W10"}:
         fence, token, inputs = lease(env)
         from tools.phase2e.owner_only_v3.store import Transaction
@@ -350,10 +353,16 @@ def test_scenario(case, tmp_path, monkeypatch):
             denied(lambda: Dispatcher(fence).check(replace(token, tenant=str(uuid4())), env.session, inputs,
                                                   job=token.job, action=token.action))
     elif case in {"OD3-W16", "OD3-X16"}:
+        from scripts.dev import sanitize_environment
         from tools.phase2e.owner_only_v3.evidence import enforce_inventory, public_report
 
         denied(lambda: public_report({"token": "private"}))
         denied(lambda: enforce_inventory([], CASES, {}))
+        safe = sanitize_environment({"FOC_DATABASE_ADMIN_URL": "synthetic-secret-dsn",
+                                     "FOC_V3_TEST_DATABASE_URL": "synthetic-private-dsn",
+                                     "GITHUB_TOKEN": "synthetic-token", "FOC_E2E_ISOLATED": "1",
+                                     "FOC_E2E_DATA_CLASS": "synthetic", "DO_NOT_TRACK": "1"})
+        assert safe == {"FOC_E2E_ISOLATED": "1", "FOC_E2E_DATA_CLASS": "synthetic", "DO_NOT_TRACK": "1"}
     elif case in {"OD3-X05", "OD3-P04"}:
         wrong = copy.deepcopy(record)
         wrong["owner"]["subject"] += "\u202e"
@@ -377,6 +386,9 @@ def test_scenario(case, tmp_path, monkeypatch):
         assert record["exceptions"]["database_p95_target_ms"] == 1000
         _, row, _, verify = valid_receipt()
         row["limits"]["wall_ms"] = 3001
+        denied(lambda: verify(row))
+        row["limits"]["wall_ms"] = 1
+        row["limits"]["wall_limit_ms"] = 3001
         denied(lambda: verify(row))
     elif case == "OD3-P01":
         assert validate(canonical(record), env.clock.now())["domain"] == DOMAIN

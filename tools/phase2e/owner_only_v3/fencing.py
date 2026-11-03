@@ -5,6 +5,7 @@ import secrets
 import time
 from dataclasses import dataclass
 
+from .plans import execution_inputs
 from .records import canonical, digest, require, sha
 
 
@@ -35,10 +36,11 @@ class Fencing:
 
     def issue(self, session, record_id, action, inputs, *, job, receipt_expiry, hard_deadline, revision=1):
         now = self.confirmation.clock.now()
-        require(self.live_grants(session, action, inputs) is True, "current_grants")
         with self.confirmation.tx() as tx:
             record, end = self.confirmation.authorization(tx, record_id, session)
+            require(inputs == execution_inputs(record), "closed_campaign_inputs")
             require(action in record["scope"]["actions"], "action_scope")
+            require(self.live_grants(session, action, inputs) is True, "current_grants")
             expiry = min(now + 30, end, receipt_expiry, hard_deadline)
             require(now < expiry, "capability_expired")
             dep = record["deployment"]
@@ -59,6 +61,7 @@ class Fencing:
         require(hmac.compare_digest(self._mac(fields), token.mac), "capability_mac")
         now = self.confirmation.clock.now()
         record, _ = self.confirmation.authorization(tx, token.record_id, session)
+        require(inputs == execution_inputs(record), "closed_campaign_inputs")
         dep = record["deployment"]
         require(token.job == job and token.action == action and token.revision == revision
                 and token.inputs_sha256 == digest(inputs) and action in record["scope"]["actions"]

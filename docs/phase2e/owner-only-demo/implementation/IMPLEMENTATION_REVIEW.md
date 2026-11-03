@@ -141,3 +141,17 @@ Both V3 manifests now retain per-payload checksums and the actual checkout tree.
 The source-only manifest also retains each actual probe and compiled output hash.
 The GitHub artifact digest protects the manifest itself without a circular hash.
 No archived test output is a human approval, asset permit or accuracy result.
+
+## Closed campaign and resource-profile bindings
+
+Further source review identified that generic internal input maps and self-reported
+limit ceilings needed explicit binding even though actual effects remain disabled.
+Capabilities and receipt ingestion now require the same closed eight-digest
+campaign identity derived from the protected authorization (campaign/source/models/
+images/fixtures/processing/resources/rights). No arbitrary URL, pathname or caller
+plan can replace it. Authority is checked before any sealed output is consumed.
+Receipt limit ceilings must equal the pinned technical producer's qualified
+non-neural child profile, rather than merely contain its reported measurement.
+OD3-S12/X15/X17 and the sealed-output ingestion selector exercise these checks.
+A future neural profile and individual artifact-selection adapter still require
+separate actual-asset qualification/provisioning; this is not neural readiness.
