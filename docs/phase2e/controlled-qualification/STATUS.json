@@ -8,7 +8,7 @@
   "qualification_checkpoint": "not_reached",
   "current_boundary": "D5_real_owner_identity_and_protected_deployment_inputs_required",
   "branch": "codex/phase-2e-controlled-qualification",
-  "documentation_only": true,
+  "documentation_only": false,
   "environment_deployed": false,
   "real_owner_authenticated": false,
   "real_owner_binding": null,
@@ -30,10 +30,13 @@
   "current_license_reverification": "pending_after_owner_deployment_boundary; historical evidence preserved",
   "campaign_scope": "not_issued; no real deployment identity/resource profile/retention selection or current license evidence is available",
   "owner_confirmation": "not_requested_or_fabricated",
-  "real_tests_on_this_branch": "not_executed; documentation-only checks recorded separately",
+  "real_tests_on_this_branch": "52 local unit cases passed; Linux service integration and all regressions pending exact-head hosted CI",
   "required_regression": "all existing inventories retained; new exact-head hosted CI must be reported separately",
   "database_p95_target_ms": 1000,
   "database_performance": "unresolved_owner_accepted_demo_exception",
   "queue_performance": "separate unresolved planning-target miss; no new waiver assumed",
-  "next_required_owner_action": "Choose private demonstration deployment and real IdP account/MFA; configure identity/client secrets through a protected channel, not chat or Git."
+  "next_required_owner_action": "Choose private demonstration deployment and real IdP account/MFA; configure identity/client secrets through a protected channel, not chat or Git.",
+  "implementation": "separate_private_readiness_adapter_no_campaign_or_assets",
+  "private_readiness_selectors": 67,
+  "new_official_browser_executions": 24
 }
