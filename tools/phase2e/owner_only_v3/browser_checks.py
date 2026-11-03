@@ -121,13 +121,17 @@ def main():
             client, headers = real_login("synthetic-owner-v3-smoke")
             try:
                 response = client.get("https://127.0.0.1:3443/demo-authorization/status", headers=headers)
+                with httpx.Client(trust_env=False, timeout=15) as direct:
+                    direct_status = direct.get("http://127.0.0.1:8001/demo-authorization/status", headers=headers).status_code
                 diagnostic = {"checkout": os.environ.get("GITHUB_SHA"), "source_digest": source,
                               "http_status": response.status_code, "claim_shape": safe_claim_shape(),
+                              "direct_api_http_status": direct_status,
                               "fixed_denial_codes": application.state.owner_only_v3_backend.denial_codes,
                               "scope": "one_synthetic_real_identity_api_probe_not_browser_validation",
                               "official_browser_executions_counted": 0, "assets": 0, "inference": False}
                 (output / "identity-preflight.json").write_text(json.dumps(diagnostic, indent=2) + "\n")
-                require(response.status_code == 200, "actual_owner_identity_integration_preflight")
+                require(response.status_code == 200 and direct_status == 200,
+                        "actual_owner_identity_integration_preflight")
             finally:
                 client.post("https://127.0.0.1:3443/identity/logout", headers=headers)
                 client.close()
