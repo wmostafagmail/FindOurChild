@@ -105,8 +105,8 @@ def main():
                           FOC_IDP_UPSTREAM="http://127.0.0.1:8080/realms/foc-synthetic")
         with private_sql_bridge():
             sys.path.insert(0, str(ROOT / "services/api"))
-            from tests.owner_only_v3.http_harness import app, safe_claim_shape
             from tests.identity.helpers import real_login
+            from tests.owner_only_v3.http_harness import app, safe_claim_shape
 
             application = app()
             server = uvicorn.Server(uvicorn.Config(application, host="127.0.0.1", port=8001, log_level="critical", access_log=False))

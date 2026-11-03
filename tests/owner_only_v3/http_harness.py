@@ -73,8 +73,9 @@ def safe_claim_shape():
     Unverified decoding is ONLY a diagnostic shape report, never authentication.
     Actual admission still uses the normal pinned signature/MFA/live-status verifier.
     """
-    from cryptography.fernet import Fernet
     from uuid import UUID
+
+    from cryptography.fernet import Fernet
 
     with psycopg.connect(os.environ["FOC_DATABASE_ADMIN_URL"]) as conn:
         require(conn.execute("SELECT data_class FROM platform.environment").fetchone() == ("synthetic",),
