@@ -28,6 +28,7 @@ def sources():
     paths += [ROOT / p for p in ["services/api/foc_api/owner_only_demo.py", "services/api/foc_api/main.py",
                                 "e2e.owner-only-v3.config.ts", ".github/workflows/phase2e-owner-only-v3.yml",
                                 ".github/workflows/phase1a.yml", "tsconfig.e2e.json", "scripts/identity_setup.py",
+                                ".github/workflows/phase2e-owner-identity-preflight.yml",
                                 "scripts/owner_v3_test_fault.py",
                                 "apps/web/app/[locale]/demo-authorization/page.tsx",
                                 "apps/web/app/[locale]/demo-authorization/panel.tsx",

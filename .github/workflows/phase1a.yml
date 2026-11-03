@@ -15,8 +15,10 @@ jobs:
     uses: ./.github/workflows/phase2e-demo-governance.yml
   phase2e-owner-only-v3-prerequisite:
     uses: ./.github/workflows/phase2e-owner-only-v3.yml
+  phase2e-owner-identity-prerequisite:
+    uses: ./.github/workflows/phase2e-owner-identity-preflight.yml
   phase1a-required:
-    needs: [phase2e-governance-prerequisite, phase2e-owner-only-v3-prerequisite]
+    needs: [phase2e-governance-prerequisite, phase2e-owner-only-v3-prerequisite, phase2e-owner-identity-prerequisite]
     if: ${{ always() }}
     runs-on: ubuntu-24.04
     # Full 360-browser /747-Python serial regression; timeout never implies success.
@@ -32,9 +34,11 @@ jobs:
         env:
           GOVERNANCE_RESULT: ${{ needs.phase2e-governance-prerequisite.result }}
           V3_RESULT: ${{ needs.phase2e-owner-only-v3-prerequisite.result }}
+          IDENTITY_PREFLIGHT_RESULT: ${{ needs.phase2e-owner-identity-prerequisite.result }}
         run: |
           test "$GOVERNANCE_RESULT" = success
           test "$V3_RESULT" = success
+          test "$IDENTITY_PREFLIGHT_RESULT" = success
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
@@ -116,6 +120,7 @@ jobs:
           PATH="$PATH" node scripts/tls.mjs > artifacts/raw/tls.log 2>&1 &
           .venv/bin/python -m scripts.wait_services
       - name: TesterArmy browser regression
+        if: ${{ !cancelled() }}
         run: .venv/bin/python -m scripts.dev browser
       - name: Real Keycloak identity and authorization regression
         if: ${{ !cancelled() }}

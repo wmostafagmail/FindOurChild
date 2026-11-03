@@ -71,10 +71,12 @@ def sanitize(report, expected, source, output):
 
 def main():
     require(os.environ.get("GITHUB_ACTIONS") == "true", "hosted_engineering_only")
+    require(sys.argv[1:] in ([], ["--preflight-only"]), "closed_runner_arguments")
+    preflight_only = sys.argv[1:] == ["--preflight-only"]
     expected = json.loads((ROOT / "docs/phase2e/owner-only-demo/implementation/required-tests.json").read_bytes())
     before, pg, server, thread = sources(), None, None, None
     source = digest(before)
-    output = ROOT / "artifacts/phase2e-owner-only-v3-browser"
+    output = ROOT / ("artifacts/phase2e-owner-only-v3-preflight" if preflight_only else "artifacts/phase2e-owner-only-v3-browser")
     output.mkdir(parents=True, exist_ok=True)
     work = ROOT / "artifacts/raw/owner-only-v3-browser" / str(time.time_ns())
     work.mkdir(parents=True, mode=0o700)
@@ -103,9 +105,11 @@ def main():
                           FOC_IDP_UPSTREAM="http://127.0.0.1:8080/realms/foc-synthetic")
         with private_sql_bridge():
             sys.path.insert(0, str(ROOT / "services/api"))
-            from tests.owner_only_v3.http_harness import app
+            from tests.owner_only_v3.http_harness import app, safe_claim_shape
+            from tests.identity.helpers import real_login
 
-            server = uvicorn.Server(uvicorn.Config(app(), host="127.0.0.1", port=8001, log_level="critical", access_log=False))
+            application = app()
+            server = uvicorn.Server(uvicorn.Config(application, host="127.0.0.1", port=8001, log_level="critical", access_log=False))
             thread = threading.Thread(target=server.run, daemon=True)
             thread.start()
             until = time.monotonic() + 30
@@ -114,6 +118,22 @@ def main():
                 time.sleep(.1)
             with httpx.Client(trust_env=False) as client:
                 require(client.get("http://127.0.0.1:8001/demo-authorization/status").status_code == 401, "real_api_closed")
+            client, headers = real_login("synthetic-owner-v3-smoke")
+            try:
+                response = client.get("https://127.0.0.1:3443/demo-authorization/status", headers=headers)
+                diagnostic = {"checkout": os.environ.get("GITHUB_SHA"), "source_digest": source,
+                              "http_status": response.status_code, "claim_shape": safe_claim_shape(),
+                              "fixed_denial_codes": application.state.owner_only_v3_backend.denial_codes,
+                              "scope": "one_synthetic_real_identity_api_probe_not_browser_validation",
+                              "official_browser_executions_counted": 0, "assets": 0, "inference": False}
+                (output / "identity-preflight.json").write_text(json.dumps(diagnostic, indent=2) + "\n")
+                require(response.status_code == 200, "actual_owner_identity_integration_preflight")
+            finally:
+                client.post("https://127.0.0.1:3443/identity/logout", headers=headers)
+                client.close()
+            if preflight_only:
+                print(json.dumps({"identity_api_preflight": "passed", "official_browser_executions": 0}))
+                return
             run_dir = ROOT / ".e2e-owner-only-v3"
             if run_dir.exists():
                 shutil.move(str(run_dir), str(work / "prior-attempt"))

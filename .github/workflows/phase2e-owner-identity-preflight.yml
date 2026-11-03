@@ -1,0 +1,61 @@
+name: Phase 2E real synthetic owner identity preflight
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/phase-2e-owner-only-demo-policy']
+  workflow_call:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phase2e-owner-identity-preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      E2E_TELEMETRY_DISABLED: '1'
+      DO_NOT_TRACK: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      FOC_E2E_DATA_CLASS: synthetic
+      FOC_E2E_ISOLATED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.18.0
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: 0.12.0
+          enable-cache: false
+      - name: Locked dependencies
+        run: |
+          test "$(npm --version)" = 11.16.0
+          uv sync --locked
+          npm ci --ignore-scripts
+      - name: Actual synthetic application database and identity services
+        run: |
+          mkdir -p artifacts/raw
+          .venv/bin/python -m scripts.dev init
+          .venv/bin/python -m scripts.dev db > artifacts/raw/preflight-provision.log 2>&1
+          .venv/bin/python -m scripts.dev api
+          npm run build
+          .venv/bin/python -m scripts.tls_setup
+          openssl verify -x509_strict -CAfile .runtime/tls/cert.pem .runtime/tls/server.pem
+          FOC_OWNER_ONLY_API_URL=http://127.0.0.1:8001 npm run start > artifacts/raw/preflight-web.log 2>&1 &
+          node scripts/tls.mjs > artifacts/raw/preflight-tls.log 2>&1 &
+          .venv/bin/python -m scripts.wait_services
+      - name: One real synthetic MFA BFF API probe — not browser-suite validation
+        run: .venv/bin/python -m tools.phase2e.owner_only_v3.browser_checks --preflight-only
+      - name: Publish fixed-code diagnostics only
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase2e-owner-identity-preflight-${{ github.sha }}
+          path: artifacts/phase2e-owner-only-v3-preflight/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Stop disposable services
+        if: always()
+        run: .venv/bin/python -m scripts.dev stop

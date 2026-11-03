@@ -143,6 +143,7 @@ OWNER_V3_USERS = [
     for width in [320, 360, 390, 1280]
     for journey in range(1, 7)
 ]
+OWNER_V3_USERS += ["synthetic-owner-v3-smoke"]
 EXTRA_USERS += OWNER_V3_USERS
 EXTRA_USERS += [
     f"synthetic-v3-nonowner-{b}-{locale}-{width}"

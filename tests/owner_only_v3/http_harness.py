@@ -24,6 +24,7 @@ from tools.phase2e.owner_only_v3.records import require
 
 class SyntheticInstances:
     def __init__(self):
+        self.denial_codes = {}
         config = identity.configuration()
         jwks = identity.idp("/protocol/openid-connect/certs")["keys"]
         keys = [k for k in jwks if k.get("kty") == "RSA" and k.get("use") == "sig"]
@@ -53,7 +54,54 @@ class SyntheticInstances:
     def resolve(self, request, principal, session):
         if principal not in self.backends:
             raise HTTPException(403, "OWNER_REQUIRED")
-        return self.backends[principal].resolve(request, principal, session)
+        from tools.phase2e.owner_only_v3.records import Denied
+
+        try:
+            return self.backends[principal].resolve(request, principal, session)
+        except Denied as exc:
+            allowed = {"owner_principal", "owner_session_current", "owner_unprovisioned", "owner_algorithm",
+                       "owner_signature", "owner_session", "owner_claim_type", "owner_mfa", "owner_audience_type",
+                       "owner_audience_binding", "owner_binding", "owner_freshness", "owner_event", "owner_live_status"}
+            code = str(exc) if str(exc) in allowed else "other_owner_denial"
+            self.denial_codes[code] = self.denial_codes.get(code, 0) + 1
+            raise
+
+
+def safe_claim_shape():
+    """CI-only diagnostics from a synthetic session; never emits token, owner subject, SID or secrets.
+
+    Unverified decoding is ONLY a diagnostic shape report, never authentication.
+    Actual admission still uses the normal pinned signature/MFA/live-status verifier.
+    """
+    from cryptography.fernet import Fernet
+    from uuid import UUID
+
+    with psycopg.connect(os.environ["FOC_DATABASE_ADMIN_URL"]) as conn:
+        require(conn.execute("SELECT data_class FROM platform.environment").fetchone() == ("synthetic",),
+                "synthetic_claim_diagnostics_only")
+        row = conn.execute("SELECT encrypted_token FROM platform.identity_sessions WHERE principal_id=%s "
+                           "AND revoked_at IS NULL ORDER BY expires_at DESC LIMIT 1",
+                           (fixture_id("synthetic-owner-v3-smoke"),)).fetchone()
+    require(row is not None, "smoke_session_missing")
+    token = Fernet(os.environ["FOC_SESSION_KEY"].encode()).decrypt(row[0].encode(), ttl=1800).decode()
+    claims = jwt.decode(token, options={"verify_signature": False})
+    audiences = claims.get("aud")
+    audiences = [audiences] if type(audiences) is str else audiences
+    safe_audiences = [v if type(v) is str and v in {"foc-api", "foc-bff", "account"} else "other"
+                      for v in audiences] if type(audiences) is list else []
+    sid_uuid = False
+    try:
+        sid_uuid = str(UUID(claims.get("sid", ""))) == claims.get("sid")
+    except (ValueError, TypeError, AttributeError):
+        pass
+    return {"synthetic_only": True, "audience_type": type(claims.get("aud")).__name__,
+            "public_service_audiences": sorted(safe_audiences), "sid_present": "sid" in claims,
+            "sid_is_uuid": sid_uuid, "auth_time_integer": type(claims.get("auth_time")) is int,
+            "iat_integer": type(claims.get("iat")) is int, "exp_integer": type(claims.get("exp")) is int,
+            "subject_matches_synthetic_fixture": claims.get("sub") == fixture_id("synthetic-owner-v3-smoke"),
+            "amr_list": type(claims.get("amr")) is list,
+            "password_and_otp": type(claims.get("amr")) is list
+            and all(type(v) is str for v in claims["amr"]) and {"pwd", "otp"}.issubset(claims["amr"])}
 
 
 def app():

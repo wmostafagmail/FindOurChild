@@ -111,3 +111,29 @@ ceilings. The same frozen selectors gained negative variants and an actual
 generated-buffer receipt-ingestion control. This is a documented source-review
 finding; no executed real-asset exploitation, human assessment or inference is
 claimed. Subsequent CI must execute all 98 selectors and 144 browser cases again.
+
+## First complete owner-browser failure — preserved
+
+Required run [41537023884](https://github.com/wmostafagmail/FindOurChild/actions/runs/41537023884)
+on `18d53a6` failed specifically at the new owner-browser step. The sanitized
+owner artifact `13195211423` (SHA-256
+`5142deaecdd4bc5708d3ee976ffe6c940869204f865d4f14917916200ccb1386`)
+records **0/144 passed** across Chromium/Firefox/WebKit, with zero published
+screenshots. Its first failure occurs at the owner-ready assertion after actual
+MFA login. Browser launch and MFA completed; no missing binary is counted as a pass.
+
+The separate original-regression artifact is `13193873423`, ZIP SHA-256
+`a39c8d7a9d9d6212c5a6b25af6c90034da346f543bfb8ff1bb6520630d8e4645`.
+It must be independently verified before claiming its 747/360/36 inventory.
+Overall required CI remains failed regardless of any passing component artifact.
+The raw workflow log and both original archives are retained privately in `.runtime/`.
+
+A separate actual synthetic MFA/BFF/API preflight is added as a mandatory
+prerequisite so identity incompatibility can be diagnosed before the long browser
+regression. It records only fixed denial codes and claim-shape booleans/public
+service audience names, never tokens, session IDs, subjects or credentials.
+Unverified token decoding is diagnostic only and cannot authorize anything.
+Its one HTTP probe counts as **zero official browser executions**. The complete
+144 official tests remain mandatory and unchanged in count; missing/failed
+preflight or suites block the required check. No identity pin is relaxed based
+on an assumption; the failure remains unresolved pending observed diagnostics.
