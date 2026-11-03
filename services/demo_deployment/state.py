@@ -170,12 +170,14 @@ class State:
             row = conn.execute('SELECT enabled,activation_epoch,authority_epoch FROM owner_only_demo.authority '
                                'WHERE instance=%s AND tenant=%s',
                                (self.config['instance'], self.config['tenant'])).fetchone()
+            campaigns=conn.execute("SELECT count(*) FROM owner_only_demo.journal WHERE kind='authorization'").fetchone()[0]
         require(row is not None and row[0] is True, 'deployment_inactive')
+        require(campaigns==0,'unexpected_campaign_in_readiness_store')
         store = Store(self.private['runtime_url'], self.config['instance'], self.config['tenant'], self.checkpoint)
         with store.transaction(row[1], row[2]) as tx:
             tx.audit('deployment_readiness_read', digest(self.config))
             require(self.live(session), 'owner_session_revoked_during_audit')
         return {'readiness_only': True, 'owner_binding_verified': True, 'owner_event': owner.authentication_event_id,
-                'activation_epoch': row[1], 'authority_epoch': row[2], 'campaign_authorizations': 0,
+                'activation_epoch': row[1], 'authority_epoch': row[2], 'campaign_authorizations': campaigns,
                 'acquisition_enabled': False, 'unpacking_enabled': False, 'model_parsing_enabled': False,
                 'inference_enabled': False, 'operational_enabled': False}

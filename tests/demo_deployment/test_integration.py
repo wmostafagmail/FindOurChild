@@ -108,6 +108,7 @@ def test_real_forced_rls_runtime_cannot_enable_or_rewrite_history():
           '\nwith s.connect() as c:\n'
           ' assert c.execute("SELECT count(*) FROM pg_class WHERE relnamespace IN '
           '(\'owner_only_demo\'::regnamespace,\'owner_deployment\'::regnamespace) AND relrowsecurity AND relforcerowsecurity").fetchone()[0]==6\n'
+          ' assert c.execute("SELECT count(*) FROM owner_only_demo.journal WHERE kind=\'authorization\'").fetchone()[0]==0\n'
           ' try:c.execute("UPDATE owner_only_demo.authority SET enabled=true")\n'
           ' except __import__("psycopg").errors.InsufficientPrivilege:c.rollback()\n'
           ' else:raise AssertionError("runtime enabled authority")\n'

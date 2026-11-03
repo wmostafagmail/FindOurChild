@@ -42,7 +42,7 @@ def build(state):
         except (psycopg.Error, OSError):
             response = JSONResponse({'code': 'DEPLOYMENT_UNAVAILABLE'}, status_code=503)
         response.headers.update({'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer',
-            'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; form-action 'self'; frame-ancestors 'none'",
+            'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'",
             'Strict-Transport-Security': 'max-age=31536000', 'X-Frame-Options': 'DENY'})
         return response
 

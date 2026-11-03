@@ -183,6 +183,7 @@ def test_private_http_closed_surface(case):
         r=client.get('/owner/'+case);assert r.status_code==200
         assert ('dir="rtl"' if case=='ar' else 'dir="ltr"') in r.text
         assert "frame-ancestors 'none'" in r.headers['content-security-policy'] and 'no-store' in r.headers['cache-control']
+        assert "connect-src 'self'" in r.headers['content-security-policy']
         assert 'generated-unit-subject' not in r.text
         return
     client.cookies.set(SESSION,'s'*43)
