@@ -1,0 +1,40 @@
+name: Phase 2E owner-only V3 source-only validation
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/phase-2e-owner-only-demo-policy']
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  phase2e-owner-only-v3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      DO_NOT_TRACK: '1'
+      E2E_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: 0.12.0
+          enable-cache: false
+      - name: Preserve exact dependency lock
+        run: uv sync --locked
+      - name: V3 strict source records PostgreSQL and native isolation
+        run: |
+          .venv/bin/ruff check tools/phase2e/owner_only_v3 tests/owner_only_v3 tools/verify_owner_v3_evidence.py
+          .venv/bin/python -m tools.phase2e.owner_only_v3.check_source
+          .venv/bin/python -m tools.phase2e.owner_only_v3.run_checks
+      - name: Publish only data-free source-bound evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: phase2e-owner-only-v3-${{ github.sha }}
+          path: artifacts/phase2e-owner-only-v3/
+          if-no-files-found: error
+          retention-days: 7

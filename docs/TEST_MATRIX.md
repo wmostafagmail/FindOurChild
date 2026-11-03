@@ -3959,3 +3959,22 @@ Per-case scenarios, commands, expected outcomes, phase applicability and evidenc
 
 
 Phase 2D final review adds explicit exact selectors and records broader unexecuted variants in `phase2d/traceability.json` (`remaining_validation`). A passing executable inventory is not a claim that every clause of every broad scenario has been exercised.
+
+## Owner-only V3 D1–D4 source-only engineering
+
+The approved design checkpoint is `51c29c0e39424db243f30ce4d6d5ee8900ee122f`.
+All 96 designs map to frozen executable selectors and original component obligations
+in [V3 implementation traceability](phase2e/owner-only-demo/implementation/TRACEABILITY.json).
+The [strict inventory](phase2e/owner-only-demo/implementation/required-tests.json)
+requires 90 scenario executions plus eight additional Python boundary/integration
+tests, and six official TesterArmy journeys on 24 targets (144 executions).
+The original 747 application tests and 360 official browser executions remain
+separate; nothing is removed or counted twice as a new baseline test.
+
+Status at source checkpoint: **pending exact-head hosted validation**. Local unit
+results use explicitly untrusted doubles and do not establish real PostgreSQL,
+actual model loading, image processing or identification accuracy. See the
+[source checkpoint report](phase2e/owner-only-demo/implementation/VALIDATION_REPORT.md).
+No real owner, campaign authorization, artifact acquisition or neural inference
+is provisioned. Every mandatory setup/call/teardown and browser result must pass;
+no missing, skipped or canceled result counts as validation.

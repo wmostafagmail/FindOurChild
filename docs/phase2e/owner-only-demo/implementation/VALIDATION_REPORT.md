@@ -1,0 +1,220 @@
+# V3 source-only validation checkpoint
+
+Design checkpoint: `51c29c0e39424db243f30ce4d6d5ee8900ee122f`.
+This report is written before the first implementation CI push. Final hosted
+results must be verified against the subsequent exact implementation head and
+published in the draft PR/evidence package. Nothing pending here is a pass.
+
+| Check | Actual checkpoint result |
+|---|---|
+| Local source unit scenarios | 78 passed, 12 explicitly deselected Linux/infrastructure cases; unit doubles only, not complete validation |
+| Focused first-run/domain/renewal rerun | 3 passed after repair |
+| Additional local boundary tests | 4 passed, 4 infrastructure cases deselected; not a real-PostgreSQL or full API validation claim |
+| Locked TypeScript source-copy checks | Web and E2E compiler checks passed with pinned temporary dependencies |
+| Locked dependency install | 74 packages installed from original lock, 0 npm audit findings reported by install |
+| Ruff source checks | Passed before source checkpoint; rerun in hosted CI |
+| 98 V3 Python tests, actual PostgreSQL/native/recovery | Pending hosted execution |
+| 144 new official TesterArmy browser executions | Pending hosted execution |
+| Original 747 Python/API/security/RLS, 360 official browsers, 36 migrations/recovery | Pending exact-head regression |
+| Original 76 V2 governance, 136 E0, 52 source-only native | Pending exact-head regression |
+| Independent human A1b review | Unmet, original demo waiver retained |
+| Database p95 performance | Unresolved owner-accepted demo exception; target remains 1,000 ms |
+| Actual owner provisioning/authorizations, assets, neural inference | None; disabled |
+| Full Phase 2E acceptance | Incomplete; no automatic merge |
+
+## Failure and repair history
+
+1. First local collection failed on a missing closing list bracket in the new
+   scenario inventory. Corrected the source; no test was removed.
+2. First focused run: 9 passed, 3 failed. The failures exposed the fixture catalog
+   `sealed_demo_test` versus schema `evaluation` label mismatch, and a test using
+   JSON-object digest on raw bytes in the V1/V2 rejection control. The synthetic
+   fixture label mapping is explicit; the frozen design is unchanged. The V2
+   rejection test now calls the actual V2 chain verifier with a raw-byte digest.
+   All three focused tests subsequently passed.
+3. Initial root type-check could not locate `tsc` because local dependencies were
+   incomplete. Installed the exact existing lock into a temporary directory and
+   compiled exact source copies. An attempted compile before copying completed
+   failed dependency resolution; sequential reruns passed for both configurations.
+4. Ruff found syntax/import/sorting/loop-capture/explicit subprocess-check issues;
+   corrected those without relaxing lint or test gates.
+
+Private local logs are retained under `/private/tmp/foc-v3-*.log` and are not
+published as sanitized execution evidence. Subsequent hosted failures and repairs
+must be added with run IDs and source identities. No earlier failure is erased
+or reclassified as a pass. Synthetic engineering does not establish image rights,
+model compatibility, neural inference, independent blinding or identification accuracy.
+
+## Initial hosted checkpoint and subsequent review
+
+PR head `8d82e8ac34899792392080321e70308a7fbff52d` passed the V3 hosted run
+[41534881277](https://github.com/wmostafagmail/FindOurChild/actions/runs/41534881277).
+Artifact `13183118502` has ZIP SHA-256
+`7d413a446f5da7c9db64783554161269b0a0c5e532260d54a945cb169bdd2614`.
+It contains 98 passing selectors, 15 actual non-neural isolation receipts,
+compiled benign source outputs, and an inactive restore with three forced-RLS
+relations. This includes unit tests/doubles alongside actual database/native tests;
+it is not 98 real network-authentication tests or neural qualification.
+
+The PR checkout was GitHub's merge candidate
+`8fa6bbbb5a041dc7dce80a2e544b1457197a964a`; its source tree
+`6786186e665a720b16aabfe84388e1f79632b48c` was independently verified equal to
+the exact head tree. Source-manifest digest:
+`f14414d94f3e17c45abf0b2e5e8b2e77d2ecaba238ad2fc5350d2f0277dda81c`.
+Private backup SHA-256:
+`6eaec299293a61bea9963193609246de3fa1975184dfbf376b971b6a56ed73c4`.
+
+Additional review probes then reproduced two failures despite that passing
+inventory: V3-FIX-01 and V3-FIX-02, retained verbatim as data-free failure evidence.
+Both were repaired with additional assertions inside the existing mandatory
+selectors. A focused local repair run passed four selected cases; all other
+94 selectors were deselected in that focused run and are not counted as passed
+there. The protected checkpoint constructor also now closes rejected file
+descriptors, with an eight-attempt leak-negative test. Actual build-output hashes
+are included in subsequent V3 manifests. Existing targets and controls are unchanged.
+
+A source integration check identified the existing realm's exact API+BFF audience
+set and pinned it explicitly, with duplicate/foreign/type negatives. Browser
+journeys were strengthened for real nonowner MFA denial, concurrent confirmation,
+simulated permanent history and actual session expiry. Final hosted validation
+on the subsequent repair head is **pending**; the initial success is not final
+acceptance and the 144 browser executions are not yet claimed passed.
+
+On 2026-11-03, stale local FileProvider reads and expired temporary dependency
+files blocked Git/validation tooling. Locked dependencies were restored without
+changing manifests. Original saved source files were preserved privately under
+`.runtime/owner-v3-file-preservation/`, and identical verified snapshot bytes
+were rematerialized. Git objects were strictly verified in a complete temporary
+mirror before import; the source branch advanced normally, without history rewrite.
+No application failure was reclassified as an environment pass.
+
+## Controller environment hardening
+
+The V3 controller initially inherited synthetic private database DSNs in the
+TesterArmy child environment because their names do not end in `_PASSWORD`.
+No credential exposure in a public artifact or external-model request was
+observed; the isolated credentials were still unnecessarily forwarded. The
+controller now uses the existing strict application environment allowlist,
+retaining only public synthetic-loopback/preflight flags. OD3-W16/X16 assert
+that admin/runtime DSNs and tokens are stripped. The closed CI-only expiry
+fixture reads its existing private synthetic state file rather than inheriting
+those credentials through the browser runner. Final exact-head validation must
+include this additional hardening; no previous pass is promoted to that head.
+
+Source review also strengthened internal campaign-input and resource-ceiling
+bindings before final validation. Earlier source-only admission interfaces
+accepted generic privileged-caller input maps and compared measurements only
+against reported ceilings; they had no enabled actual-asset consumer. The
+source-only interfaces now derive exact campaign digests from protected scope,
+check authority before reading sealed bytes, and require pinned producer limit
+ceilings. The same frozen selectors gained negative variants and an actual
+generated-buffer receipt-ingestion control. This is a documented source-review
+finding; no executed real-asset exploitation, human assessment or inference is
+claimed. Subsequent CI must execute all 98 selectors and 144 browser cases again.
+
+## First complete owner-browser failure — preserved
+
+Required run [41537023884](https://github.com/wmostafagmail/FindOurChild/actions/runs/41537023884)
+on `18d53a6` failed specifically at the new owner-browser step. The sanitized
+owner artifact `13195211423` (SHA-256
+`5142deaecdd4bc5708d3ee976ffe6c940869204f865d4f14917916200ccb1386`)
+records **0/144 passed** across Chromium/Firefox/WebKit, with zero published
+screenshots. Its first failure occurs at the owner-ready assertion after actual
+MFA login. Browser launch and MFA completed; no missing binary is counted as a pass.
+
+The separate original-regression artifact is `13193873423`, ZIP SHA-256
+`a39c8d7a9d9d6212c5a6b25af6c90034da346f543bfb8ff1bb6520630d8e4645`.
+It must be independently verified before claiming its 747/360/36 inventory.
+Overall required CI remains failed regardless of any passing component artifact.
+The raw workflow log and both original archives are retained privately in `.runtime/`.
+
+A separate actual synthetic MFA/BFF/API preflight is added as a mandatory
+prerequisite so identity incompatibility can be diagnosed before the long browser
+regression. It records only fixed denial codes and claim-shape booleans/public
+service audience names, never tokens, session IDs, subjects or credentials.
+Unverified token decoding is diagnostic only and cannot authorize anything.
+Its one HTTP probe counts as **zero official browser executions**. The complete
+144 official tests remain mandatory and unchanged in count; missing/failed
+preflight or suites block the required check. No identity pin is relaxed based
+on an assumption; the failure remains unresolved pending observed diagnostics.
+
+The first standalone preflight run `41595454675` at `0764f03` failed before
+owner verification: the synthetic IdP signing-key endpoint was unavailable
+while the realm import was still starting. Artifact `13212306066` is retained
+with SHA-256 `cc7d11c4a5b8b02a12eef98f62bf63e027918d1c09cfd6fa8e5d61d6d3f9e7bc`.
+A bounded 180-second wait now requires actual discovery with the exact pinned
+issuer and a live JWKS response. No fallback key, MFA relaxation or successful
+validation is inferred from API health or a readiness timeout. This startup
+readiness bound is separate from the unchanged database 1,000 ms planning target
+and the fixed non-neural worker limits. Identity/browser failure remains open
+until the authenticated preflight and full official browser suite actually pass.
+
+## Observed opaque OIDC session-ID compatibility repair
+
+The real synthetic MFA preflight on `0b5f35fcf9217ef4119a52a5dccc34ed6bfdcc39`
+(run [41596838510](https://github.com/wmostafagmail/FindOurChild/actions/runs/41596838510))
+returned HTTP 403 through both the BFF and direct API. Safe diagnostic output
+confirmed the exact two pinned API/BFF audiences, integer time claims, matching
+synthetic subject, and password/OTP authentication. Both calls denied with
+`owner_event`: the actual signed `sid` was present but was not a UUID.
+Artifact `13212980757`, ZIP SHA-256
+`cd1e25d6f8c6e5ed9c6f562ea0629188723009a27a51e3eaed3a3eadb622c1d2`,
+and the original failure log are preserved privately. This probe counts as zero
+official browser executions; the failed required check is not a pass.
+
+V3 had incorrectly required the opaque OIDC session ID to use UUID syntax.
+The [official OIDC definition](https://openid.net/specs/openid-connect-backchannel-1_0.html#BCSupport)
+defines its contents as opaque to the relying party. The repair accepts a
+bounded, nonempty printable ASCII string only after the existing pinned
+RS256/issuer/subject/audience/fresh-MFA checks. It derives a server-only
+UUID-format correlation ID from the verified context, MFA time and platform
+session digest. This ID is neither an approval nor a bearer capability. Live
+IdP/platform-session validation, confirmation binding, CSRF and all acquisition
+and execution locks remain mandatory. No session ID or token is published.
+
+OD3-R05 now covers an actual RSA-signed opaque-ID token, tampering/algorithm
+denials, live-session rejection, stable correlation and separation between
+platform sessions. OD3-S09/X01/X02 reject missing, typed, oversized and control-
+character IDs. The frozen 98-selector and 144-browser inventories are unchanged.
+Eight focused selectors passed locally; 82 others were explicitly deselected
+in that focused command. Final exact-source hosted identity and full regression
+validation remain pending at this checkpoint.
+
+## First full post-SID-repair browser result — incomplete acceptance
+
+At `e418918032851ac6e03765f70e5beedd7c7841e6`, required PR run
+[41598464625](https://github.com/wmostafagmail/FindOurChild/actions/runs/41598464625)
+passed all preceding stages but failed the new owner suite: **74 passed, 70 failed
+out of 144**, with Chromium 24, Firefox 27 and WebKit 23 passes.
+Original artifact `13217950609` (ZIP SHA-256
+`92a65f8a7746b53c450caba05da96c1f9ec7739246898a23da833c17ebc5cf75`)
+independently verified all **747 Python, 360 official browser and 36 migration/
+recovery** results against this exact Git source. This does not turn the failed
+overall workflow into a pass. Owner artifact `13217965934`, SHA-256
+`6100ce11b0fa05394ccca1ba9fc6fcc64a349b33d3d179237420c4d8ea7ff339`,
+and the original job log are preserved privately.
+
+Two patterns were observed: 46 failures at the prepared-state assertion and all
+24 B02 journeys at the second-person login callback assertion. A real-clock
+local source probe reproduced `authority_time` denials (7 of 100 attempts):
+formatting fractional issuance to microseconds can round it ahead of the same
+validation clock. Issuance now floors to whole UTC seconds, and expiry is exactly
+14,400 seconds from that conservative instant. No clock tolerance is added; the
+actual lifetime is never extended. Four deterministic fractional-time controls
+now confirm successfully while future/expired/excess-lifetime denials remain.
+The repaired real-clock diagnostic passed 100/100; this diagnostic is not a
+replacement for hosted or browser validation.
+
+B02 omitted the explicitly documented provider sign-out before switching users.
+Application logout deliberately retains the IdP SSO session. The corrected
+journey uses the existing provider sign-out confirmation, already exercised in
+the original investigation browser suite, then performs the second full MFA
+login. No identity, TOTP replay, freshness or session check is weakened. All six
+journeys and 144 target executions remain mandatory, with zero retries.
+
+The mandatory HTTP preflight now also exercises 16 prepare/confirm/revoke cycles
+against the actual private PostgreSQL API under one fictional test identity.
+These create synthetic engineering records only, never real owner campaign
+authority. They count as zero official browser executions, acquire no assets,
+and require actual execution to remain unavailable. The next source checkpoint
+must repeat the complete hosted regression; the 74 passes are not promoted.

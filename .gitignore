@@ -21,3 +21,7 @@ artifacts/phase2e-e0-controls/
 # Ignore dependency symlinks used by local verification as well as directories.
 .venv
 **/node_modules
+.e2e-owner-only-v3/
+artifacts/phase2e-owner-only-v3/
+artifacts/phase2e-owner-only-v3-browser/
+artifacts/phase2e-owner-only-v3-preflight/

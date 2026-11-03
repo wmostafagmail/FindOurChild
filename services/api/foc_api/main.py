@@ -24,6 +24,9 @@ def create_app(settings: Settings | None = None):
     from .identity import router
 
     app.include_router(router)
+    from .owner_only_demo import router as owner_only_router
+
+    app.include_router(owner_only_router)
     from .reporting import router as reporting_router
 
     # Prefer concrete routes over generic action paths.

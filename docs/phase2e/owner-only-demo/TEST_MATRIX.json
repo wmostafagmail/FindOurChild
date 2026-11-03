@@ -1,0 +1,3262 @@
+{
+  "status": "design_only_all_v3_cases_pending",
+  "baseline_commit": "2bc7c555291b6e21920fed9be58e195aaafb4c9c",
+  "legacy_selectors_preserved": [
+    "tests/demo_governance/test_artifacts.py::test_dg_a01_no_gate_or_identity_before_io",
+    "tests/demo_governance/test_artifacts.py::test_dg_a02_closed_51_inventory",
+    "tests/demo_governance/test_artifacts.py::test_dg_a03_exact_bytes_size_git_and_sha",
+    "tests/demo_governance/test_artifacts.py::test_dg_a04_type_links_and_permissions_before_read",
+    "tests/demo_governance/test_artifacts.py::test_dg_a05_no_pathname_reopen",
+    "tests/demo_governance/test_artifacts.py::test_dg_a06_copy_mutation_denied_before_parser",
+    "tests/demo_governance/test_artifacts.py::test_dg_a07_kernel_seals_prevent_write_grow_shrink",
+    "tests/demo_governance/test_artifacts.py::test_dg_a08_sealing_failure_never_falls_back",
+    "tests/demo_governance/test_artifacts.py::test_dg_a09_malformed_concatenated_or_truncated_bzip",
+    "tests/demo_governance/test_artifacts.py::test_dg_a10_bounded_output_and_ratio",
+    "tests/demo_governance/test_artifacts.py::test_dg_a14_quarantine_aad_tag_and_key",
+    "tests/demo_governance/test_artifacts.py::test_dg_a15_space_and_build_not_dimension_or_filename",
+    "tests/demo_governance/test_artifacts.py::test_dg_a16_build_outputs_required_not_receipts",
+    "tests/demo_governance/test_artifacts.py::test_actual_trusted_file_boundary_positive",
+    "tests/demo_governance/test_artifacts.py::test_dg_a11_scanner_missing_stale_dirty_or_timeout",
+    "tests/demo_governance/test_artifacts.py::test_dg_a12_decoder_failure_or_format_and_pixels",
+    "tests/demo_governance/test_artifacts.py::test_dg_a13_lineage_or_permission_changed",
+    "tests/demo_governance/test_artifacts.py::test_atomic_no_replace_provisioning_from_benign_sealed_bytes",
+    "tests/demo_governance/test_enrollment.py::test_authenticated_bootstrap_then_two_human_fixture_positive",
+    "tests/demo_governance/test_enrollment.py::test_dg_r03_possession_bound_to_exact_enrollment",
+    "tests/demo_governance/test_enrollment.py::test_dg_r04_nonce_single_use_concurrent_and_expired",
+    "tests/demo_governance/test_enrollment.py::test_dg_r14_corrupt_registry_and_audit_crash_atomicity",
+    "tests/demo_governance/test_enrollment.py::test_revocation_and_restore_fail_closed",
+    "tests/demo_governance/test_enrollment.py::test_transactional_records_replay_and_blinding_fence",
+    "tests/demo_governance/test_enrollment.py::test_unsigned_registry_edit_and_audit_tamper_rejected",
+    "tests/demo_governance/test_evidence.py::test_dg_w16_inventory_skip_false_pass_and_canary",
+    "tests/demo_governance/test_linux.py::test_dg_w01_docker_client_death_does_not_cancel_watchdog",
+    "tests/demo_governance/test_linux.py::test_dg_w02_no_control_plane_dependency_after_admission",
+    "tests/demo_governance/test_linux.py::test_dg_w03_supervisor_death_kills_namespace",
+    "tests/demo_governance/test_linux.py::test_dg_w04_independent_cpu_and_wall_limits",
+    "tests/demo_governance/test_linux.py::test_dg_w05_memory_exhaustion_fails_job",
+    "tests/demo_governance/test_linux.py::test_dg_w06_descendants_fd_output_and_watchdog_attack",
+    "tests/demo_governance/test_linux.py::test_dg_w07_stable_container_identity_and_unknown_probe_denied",
+    "tests/demo_governance/test_postgres.py::test_positive_atomic_publication_and_no_direct_worker_writes",
+    "tests/demo_governance/test_postgres.py::test_dg_w08_cancel_old_token_requeue_and_exact_replay",
+    "tests/demo_governance/test_postgres.py::test_dg_w09_each_live_grant_revocation",
+    "tests/demo_governance/test_postgres.py::test_dg_w10_changed_epoch_or_input_revision",
+    "tests/demo_governance/test_postgres.py::test_dg_w11_foreign_tenant_instance_rls_and_no_vector_or_path_api",
+    "tests/demo_governance/test_postgres.py::test_dg_w12_audit_outage_rolls_back_everything",
+    "tests/demo_governance/test_postgres.py::test_dg_w13_post_audit_deadline_and_untrusted_clock",
+    "tests/demo_governance/test_postgres.py::test_dg_s15_expiry_during_audit_wait",
+    "tests/demo_governance/test_postgres.py::test_dg_w14_stale_restored_activation_epoch",
+    "tests/demo_governance/test_postgres.py::test_dg_w15_new_uuid_cannot_launder_rejected_snapshot",
+    "tests/demo_governance/test_postgres.py::test_concurrent_publication_exactly_once",
+    "tests/demo_governance/test_postgres.py::test_schema_is_separate_no_operational_tables",
+    "tests/demo_governance/test_records.py::test_complete_chain_positive_and_distinct_actions",
+    "tests/demo_governance/test_records.py::test_dg_s01_wrong_domain_or_unknown_kind",
+    "tests/demo_governance/test_records.py::test_dg_s02_bad_signature_and_payload",
+    "tests/demo_governance/test_records.py::test_dg_s03_unknown_revoked_wrong_role",
+    "tests/demo_governance/test_records.py::test_dg_s04_duplicates_unknown_trailing_noncanonical",
+    "tests/demo_governance/test_records.py::test_dg_s05_unsafe_scalars_and_times",
+    "tests/demo_governance/test_records.py::test_dg_s06_wire_depth_list_limits",
+    "tests/demo_governance/test_records.py::test_dg_s07_exact_scope_and_epochs",
+    "tests/demo_governance/test_records.py::test_dg_s08_dependencies_and_failed_evidence",
+    "tests/demo_governance/test_records.py::test_dg_s09_time_and_uncertain_clock",
+    "tests/demo_governance/test_records.py::test_dg_s10_no_outliving_prerequisite_or_key",
+    "tests/demo_governance/test_records.py::test_dg_s11_modified_replay_digest_denied",
+    "tests/demo_governance/test_records.py::test_dg_s12_load_only_is_not_inference",
+    "tests/demo_governance/test_records.py::test_dg_s13_changed_fixture_or_informed_review",
+    "tests/demo_governance/test_records.py::test_dg_s14_no_custody_release_or_operational_action",
+    "tests/demo_governance/test_records.py::test_dg_s16_test_authority_rejected_in_non_test_registry",
+    "tests/demo_governance/test_records.py::test_fixed_canonical_vector_and_ed25519_rfc8032_vector",
+    "tests/demo_governance/test_registry.py::test_dg_r01_self_bootstrap_is_not_authority",
+    "tests/demo_governance/test_registry.py::test_dg_r02_policy_without_appointments_denies",
+    "tests/demo_governance/test_registry.py::test_dg_r05_algorithms_and_der_fingerprint",
+    "tests/demo_governance/test_registry.py::test_dg_r06_shared_keys_and_person_aliases",
+    "tests/demo_governance/test_registry.py::test_dg_r07_owner_cannot_be_reviewer_even_different_key",
+    "tests/demo_governance/test_registry.py::test_dg_r08_technical_self_operator",
+    "tests/demo_governance/test_registry.py::test_dg_r09_dual_reviewer_not_blind",
+    "tests/demo_governance/test_registry.py::test_dg_r10_fixture_operator_also_technical",
+    "tests/demo_governance/test_registry.py::test_dg_r11_expired_revoked_future_keys",
+    "tests/demo_governance/test_registry.py::test_dg_r12_wrong_project_instance_or_policy",
+    "tests/demo_governance/test_registry.py::test_dg_r13_untrusted_path_not_a_registry",
+    "tests/demo_governance/test_registry.py::test_dg_r15_rollback_and_epoch_divergence",
+    "tests/demo_governance/test_registry.py::test_dg_r16_no_trusted_defaults_or_test_root",
+    "tests/demo_governance/test_registry.py::test_frozen_48_fixture_linkages_and_post_score_changes"
+  ],
+  "legacy_scenarios_preserved": {
+    "DG-A01": "tests/demo_governance/test_artifacts.py::test_dg_a01_no_gate_or_identity_before_io",
+    "DG-A02": "tests/demo_governance/test_artifacts.py::test_dg_a02_closed_51_inventory",
+    "DG-A03": "tests/demo_governance/test_artifacts.py::test_dg_a03_exact_bytes_size_git_and_sha",
+    "DG-A04": "tests/demo_governance/test_artifacts.py::test_dg_a04_type_links_and_permissions_before_read",
+    "DG-A05": "tests/demo_governance/test_artifacts.py::test_dg_a05_no_pathname_reopen",
+    "DG-A06": "tests/demo_governance/test_artifacts.py::test_dg_a06_copy_mutation_denied_before_parser",
+    "DG-A07": "tests/demo_governance/test_artifacts.py::test_dg_a07_kernel_seals_prevent_write_grow_shrink",
+    "DG-A08": "tests/demo_governance/test_artifacts.py::test_dg_a08_sealing_failure_never_falls_back",
+    "DG-A09": "tests/demo_governance/test_artifacts.py::test_dg_a09_malformed_concatenated_or_truncated_bzip",
+    "DG-A10": "tests/demo_governance/test_artifacts.py::test_dg_a10_bounded_output_and_ratio",
+    "DG-A14": "tests/demo_governance/test_artifacts.py::test_dg_a14_quarantine_aad_tag_and_key",
+    "DG-A15": "tests/demo_governance/test_artifacts.py::test_dg_a15_space_and_build_not_dimension_or_filename",
+    "DG-A16": "tests/demo_governance/test_artifacts.py::test_dg_a16_build_outputs_required_not_receipts",
+    "DG-A11": "tests/demo_governance/test_artifacts.py::test_dg_a11_scanner_missing_stale_dirty_or_timeout",
+    "DG-A12": "tests/demo_governance/test_artifacts.py::test_dg_a12_decoder_failure_or_format_and_pixels",
+    "DG-A13": "tests/demo_governance/test_artifacts.py::test_dg_a13_lineage_or_permission_changed",
+    "DG-R03": "tests/demo_governance/test_enrollment.py::test_dg_r03_possession_bound_to_exact_enrollment",
+    "DG-R04": "tests/demo_governance/test_enrollment.py::test_dg_r04_nonce_single_use_concurrent_and_expired",
+    "DG-R14": "tests/demo_governance/test_enrollment.py::test_dg_r14_corrupt_registry_and_audit_crash_atomicity",
+    "DG-W16": "tests/demo_governance/test_evidence.py::test_dg_w16_inventory_skip_false_pass_and_canary",
+    "DG-W01": "tests/demo_governance/test_linux.py::test_dg_w01_docker_client_death_does_not_cancel_watchdog",
+    "DG-W02": "tests/demo_governance/test_linux.py::test_dg_w02_no_control_plane_dependency_after_admission",
+    "DG-W03": "tests/demo_governance/test_linux.py::test_dg_w03_supervisor_death_kills_namespace",
+    "DG-W04": "tests/demo_governance/test_linux.py::test_dg_w04_independent_cpu_and_wall_limits",
+    "DG-W05": "tests/demo_governance/test_linux.py::test_dg_w05_memory_exhaustion_fails_job",
+    "DG-W06": "tests/demo_governance/test_linux.py::test_dg_w06_descendants_fd_output_and_watchdog_attack",
+    "DG-W07": "tests/demo_governance/test_linux.py::test_dg_w07_stable_container_identity_and_unknown_probe_denied",
+    "DG-W08": "tests/demo_governance/test_postgres.py::test_dg_w08_cancel_old_token_requeue_and_exact_replay",
+    "DG-W09": "tests/demo_governance/test_postgres.py::test_dg_w09_each_live_grant_revocation",
+    "DG-W10": "tests/demo_governance/test_postgres.py::test_dg_w10_changed_epoch_or_input_revision",
+    "DG-W11": "tests/demo_governance/test_postgres.py::test_dg_w11_foreign_tenant_instance_rls_and_no_vector_or_path_api",
+    "DG-W12": "tests/demo_governance/test_postgres.py::test_dg_w12_audit_outage_rolls_back_everything",
+    "DG-W13": "tests/demo_governance/test_postgres.py::test_dg_w13_post_audit_deadline_and_untrusted_clock",
+    "DG-S15": "tests/demo_governance/test_postgres.py::test_dg_s15_expiry_during_audit_wait",
+    "DG-W14": "tests/demo_governance/test_postgres.py::test_dg_w14_stale_restored_activation_epoch",
+    "DG-W15": "tests/demo_governance/test_postgres.py::test_dg_w15_new_uuid_cannot_launder_rejected_snapshot",
+    "DG-S01": "tests/demo_governance/test_records.py::test_dg_s01_wrong_domain_or_unknown_kind",
+    "DG-S02": "tests/demo_governance/test_records.py::test_dg_s02_bad_signature_and_payload",
+    "DG-S03": "tests/demo_governance/test_records.py::test_dg_s03_unknown_revoked_wrong_role",
+    "DG-S04": "tests/demo_governance/test_records.py::test_dg_s04_duplicates_unknown_trailing_noncanonical",
+    "DG-S05": "tests/demo_governance/test_records.py::test_dg_s05_unsafe_scalars_and_times",
+    "DG-S06": "tests/demo_governance/test_records.py::test_dg_s06_wire_depth_list_limits",
+    "DG-S07": "tests/demo_governance/test_records.py::test_dg_s07_exact_scope_and_epochs",
+    "DG-S08": "tests/demo_governance/test_records.py::test_dg_s08_dependencies_and_failed_evidence",
+    "DG-S09": "tests/demo_governance/test_records.py::test_dg_s09_time_and_uncertain_clock",
+    "DG-S10": "tests/demo_governance/test_records.py::test_dg_s10_no_outliving_prerequisite_or_key",
+    "DG-S11": "tests/demo_governance/test_records.py::test_dg_s11_modified_replay_digest_denied",
+    "DG-S12": "tests/demo_governance/test_records.py::test_dg_s12_load_only_is_not_inference",
+    "DG-S13": "tests/demo_governance/test_records.py::test_dg_s13_changed_fixture_or_informed_review",
+    "DG-S14": "tests/demo_governance/test_records.py::test_dg_s14_no_custody_release_or_operational_action",
+    "DG-S16": "tests/demo_governance/test_records.py::test_dg_s16_test_authority_rejected_in_non_test_registry",
+    "DG-R01": "tests/demo_governance/test_registry.py::test_dg_r01_self_bootstrap_is_not_authority",
+    "DG-R02": "tests/demo_governance/test_registry.py::test_dg_r02_policy_without_appointments_denies",
+    "DG-R05": "tests/demo_governance/test_registry.py::test_dg_r05_algorithms_and_der_fingerprint",
+    "DG-R06": "tests/demo_governance/test_registry.py::test_dg_r06_shared_keys_and_person_aliases",
+    "DG-R07": "tests/demo_governance/test_registry.py::test_dg_r07_owner_cannot_be_reviewer_even_different_key",
+    "DG-R08": "tests/demo_governance/test_registry.py::test_dg_r08_technical_self_operator",
+    "DG-R09": "tests/demo_governance/test_registry.py::test_dg_r09_dual_reviewer_not_blind",
+    "DG-R10": "tests/demo_governance/test_registry.py::test_dg_r10_fixture_operator_also_technical",
+    "DG-R11": "tests/demo_governance/test_registry.py::test_dg_r11_expired_revoked_future_keys",
+    "DG-R12": "tests/demo_governance/test_registry.py::test_dg_r12_wrong_project_instance_or_policy",
+    "DG-R13": "tests/demo_governance/test_registry.py::test_dg_r13_untrusted_path_not_a_registry",
+    "DG-R15": "tests/demo_governance/test_registry.py::test_dg_r15_rollback_and_epoch_divergence",
+    "DG-R16": "tests/demo_governance/test_registry.py::test_dg_r16_no_trusted_defaults_or_test_root"
+  },
+  "planned_counts": {
+    "mapped_negative_families": 64,
+    "additional_negative_families": 18,
+    "positive_integration_families": 8,
+    "new_official_browser_journeys": 6,
+    "planned_browser_targets_per_journey": 24,
+    "new_planned_browser_executions": 144,
+    "exact_new_nonbrowser_selector_count": null
+  },
+  "browser_matrix": {
+    "framework": "TesterArmy/e2e",
+    "framework_version": "0.21.3",
+    "web_engine_version": "0.15.3",
+    "engines": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "locales": [
+      "ar-EG",
+      "en-GB"
+    ],
+    "widths": [
+      320,
+      360,
+      390,
+      1280
+    ],
+    "deterministic_assertions": true,
+    "synthetic_only": true,
+    "telemetry_disabled": true
+  },
+  "cases": [
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R01",
+      "category": "negative",
+      "legacy_case": "DG-R01",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r01_self_bootstrap_is_not_authority",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Caller self-asserts owner bootstrap or confirmation",
+      "security_authorization": "Reject before store activation; pinned owner binding and real fresh MFA required",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject before store activation; pinned owner binding and real fresh MFA required",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C04"
+      ],
+      "component_obligation": "Reject before store activation; pinned owner binding and real fresh MFA required"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R02",
+      "category": "negative",
+      "legacy_case": "DG-R02",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r02_policy_without_appointments_denies",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Policy approval/schema validity presented as an execution authorization",
+      "security_authorization": "Keep empty/default stores and acquisition/inference closed; no authorization side effects",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Keep empty/default stores and acquisition/inference closed; no authorization side effects",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C04"
+      ],
+      "component_obligation": "Keep empty/default stores and acquisition/inference closed; no authorization side effects"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R03",
+      "category": "negative",
+      "legacy_case": "DG-R03",
+      "legacy_selector": "tests/demo_governance/test_enrollment.py::test_dg_r03_possession_bound_to_exact_enrollment",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Owner confirmation/challenge belongs to another subject, session or digest",
+      "security_authorization": "Reject exact owner/session/scope mismatch; nonce not transferable",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject exact owner/session/scope mismatch; nonce not transferable",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C02"
+      ],
+      "component_obligation": "Reject exact owner/session/scope mismatch; nonce not transferable"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R04",
+      "category": "negative",
+      "legacy_case": "DG-R04",
+      "legacy_selector": "tests/demo_governance/test_enrollment.py::test_dg_r04_nonce_single_use_concurrent_and_expired",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Expired/reused nonce or concurrent confirmation consumers",
+      "security_authorization": "Reject stale/rebound request; at most one atomic confirmation and no duplicated work",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject stale/rebound request; at most one atomic confirmation and no duplicated work",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "component_obligation": "Reject stale/rebound request; at most one atomic confirmation and no duplicated work"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R05",
+      "category": "negative",
+      "legacy_case": "DG-R05",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r05_algorithms_and_der_fingerprint",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Untrusted IdP key, non-RS256 algorithm, key substitution or malformed cryptographic material",
+      "security_authorization": "Reject owner authentication; no V2 human-key enrollment prerequisite invented for V3",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject owner authentication; no V2 human-key enrollment prerequisite invented for V3",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01"
+      ],
+      "component_obligation": "Reject owner authentication; no V2 human-key enrollment prerequisite invented for V3"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R06",
+      "category": "negative",
+      "legacy_case": "DG-R06",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r06_shared_keys_and_person_aliases",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Another account, service or principal alias claims the owner identity",
+      "security_authorization": "Require exact pinned issuer/audience/subject and current owner mapping; no account-count proxy",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Require exact pinned issuer/audience/subject and current owner mapping; no account-count proxy",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C04"
+      ],
+      "component_obligation": "Require exact pinned issuer/audience/subject and current owner mapping; no account-count proxy"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R07",
+      "category": "negative",
+      "legacy_case": "DG-R07",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r07_owner_cannot_be_reviewer_even_different_key",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Caller fabricates T/F identities or treats one owner as three attestors",
+      "security_authorization": "Reject unknown roles/reviewer attestations; one real owner/operator is permitted only by V3",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject unknown roles/reviewer attestations; one real owner/operator is permitted only by V3",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C08"
+      ],
+      "component_obligation": "Reject unknown roles/reviewer attestations; one real owner/operator is permitted only by V3"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R08",
+      "category": "negative",
+      "legacy_case": "DG-R08",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r08_technical_self_operator",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Owner/operator supplies their own technical passed=true declaration",
+      "security_authorization": "Deny untrusted measurement; owner/operator combination itself is allowed in V3",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Deny untrusted measurement; owner/operator combination itself is allowed in V3",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C08",
+        "C13"
+      ],
+      "component_obligation": "Deny untrusted measurement; owner/operator combination itself is allowed in V3"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R09",
+      "category": "negative",
+      "legacy_case": "DG-R09",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r09_dual_reviewer_not_blind",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Changed pair/metadata is backdated after first image inference or known score exposure",
+      "security_authorization": "Reject changed fixture; require authentic original seal/history; preserve DG-FIX-01 negative and unchanged-renewal control",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Reject changed fixture; require authentic original seal/history; preserve DG-FIX-01 negative and unchanged-renewal control",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C04",
+        "C10"
+      ],
+      "component_obligation": "Reject changed fixture; require authentic original seal/history; preserve DG-FIX-01 negative and unchanged-renewal control"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R10",
+      "category": "negative",
+      "legacy_case": "DG-R10",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r10_fixture_operator_also_technical",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Owner-only demo authority is used to bypass existing case/safeguarding reviewer separation",
+      "security_authorization": "Deny application approval override; original independent safeguarding rules remain intact",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Deny application approval override; original independent safeguarding rules remain intact",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C17",
+        "C09"
+      ],
+      "component_obligation": "Deny application approval override; original independent safeguarding rules remain intact"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R11",
+      "category": "negative",
+      "legacy_case": "DG-R11",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r11_expired_revoked_future_keys",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Owner status/session or scope is expired, revoked or not yet valid",
+      "security_authorization": "No admission, sensitive read or publication using stale authority",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "No admission, sensitive read or publication using stale authority",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C09",
+        "C04"
+      ],
+      "component_obligation": "No admission, sensitive read or publication using stale authority"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R12",
+      "category": "negative",
+      "legacy_case": "DG-R12",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r12_wrong_project_instance_or_policy",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Wrong project, deployment, policy namespace or broader action scope",
+      "security_authorization": "Deny; no V2-to-V3 fallback or operational-policy change",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Deny; no V2-to-V3 fallback or operational-policy change",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C05",
+        "C08"
+      ],
+      "component_obligation": "Deny; no V2-to-V3 fallback or operational-policy change"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R13",
+      "category": "negative",
+      "legacy_case": "DG-R13",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r13_untrusted_path_not_a_registry",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Browser/worker supplies store path, trusted root or deployment owner binding",
+      "security_authorization": "Deny before path selection; privileged fixed deployment configuration only",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Deny before path selection; privileged fixed deployment configuration only",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C05",
+        "C08"
+      ],
+      "component_obligation": "Deny before path selection; privileged fixed deployment configuration only"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R14",
+      "category": "negative",
+      "legacy_case": "DG-R14",
+      "legacy_selector": "tests/demo_governance/test_enrollment.py::test_dg_r14_corrupt_registry_and_audit_crash_atomicity",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Tampered/partial authorization journal, draft commit or audit transaction crashes",
+      "security_authorization": "Atomic valid old/new state or inactive denial; no half-active record",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Atomic valid old/new state or inactive denial; no half-active record",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C10"
+      ],
+      "component_obligation": "Atomic valid old/new state or inactive denial; no half-active record"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R15",
+      "category": "negative",
+      "legacy_case": "DG-R15",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r15_rollback_and_epoch_divergence",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Concurrent revocation or restored older epoch/first-run ledger",
+      "security_authorization": "Do not lose revocation/tombstones; require externally current checkpoint before activation",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "Do not lose revocation/tombstones; require externally current checkpoint before activation",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C07",
+        "C09",
+        "C10"
+      ],
+      "component_obligation": "Do not lose revocation/tombstones; require externally current checkpoint before activation"
+    },
+    {
+      "feature_id": "V3-R",
+      "case_id": "OD3-R16",
+      "category": "negative",
+      "legacy_case": "DG-R16",
+      "legacy_selector": "tests/demo_governance/test_registry.py::test_dg_r16_no_trusted_defaults_or_test_root",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Audit unavailable or test/default owner packaged as real authority",
+      "security_authorization": "No activation/confirmation; no trusted default or silent audit-success fallback",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H: test-only pinned owner/other staff/service; fresh/stale MFA, private journal and session/CSRF challenges",
+      "layers": [
+        "unit",
+        "auth_contract",
+        "security",
+        "persistence"
+      ],
+      "expected_outcome": "No activation/confirmation; no trusted default or silent audit-success fallback",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C16",
+        "C01"
+      ],
+      "component_obligation": "No activation/confirmation; no trusted default or silent audit-success fallback"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S01",
+      "category": "negative",
+      "legacy_case": "DG-S01",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s01_wrong_domain_or_unknown_kind",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "V1/V2 signed permit or challenge submitted to V3; V3 submitted to older verifiers",
+      "security_authorization": "Reject cross-domain use; every older validator retains its semantics",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject cross-domain use; every older validator retains its semantics",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C08",
+        "C17"
+      ],
+      "component_obligation": "Reject cross-domain use; every older validator retains its semantics"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S02",
+      "category": "negative",
+      "legacy_case": "DG-S02",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s02_bad_signature_and_payload",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Authorization body/draft digest or owner token signature is corrupted",
+      "security_authorization": "Reject authentication/confirmation mismatch before downstream IO",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject authentication/confirmation mismatch before downstream IO",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C03"
+      ],
+      "component_obligation": "Reject authentication/confirmation mismatch before downstream IO"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S03",
+      "category": "negative",
+      "legacy_case": "DG-S03",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s03_unknown_revoked_wrong_role",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Cryptographically valid staff/service token has wrong owner/audience/issuer",
+      "security_authorization": "Deny despite valid signature or MFA; no sole-owner scope inferred",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Deny despite valid signature or MFA; no sole-owner scope inferred",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C08"
+      ],
+      "component_obligation": "Deny despite valid signature or MFA; no sole-owner scope inferred"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S04",
+      "category": "negative",
+      "legacy_case": "DG-S04",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s04_duplicates_unknown_trailing_noncanonical",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Duplicate/unknown fields, noncanonical order/escaping, trailing JSON",
+      "security_authorization": "Reject bounded closed wire format before authorization commit",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject bounded closed wire format before authorization commit",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02"
+      ],
+      "component_obligation": "Reject bounded closed wire format before authorization commit"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S05",
+      "category": "negative",
+      "legacy_case": "DG-S05",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s05_unsafe_scalars_and_times",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "NaN/float/boolean-integer confusion, unsafe range or invalid UTC values",
+      "security_authorization": "Typed early rejection; no coercion to trusted rights/time",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Typed early rejection; no coercion to trusted rights/time",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C09"
+      ],
+      "component_obligation": "Typed early rejection; no coercion to trusted rights/time"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S06",
+      "category": "negative",
+      "legacy_case": "DG-S06",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s06_wire_depth_list_limits",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Oversized/deep record, excessive action list or recursively linked receipt graph",
+      "security_authorization": "Bounded rejection; measure parser CPU/memory, no unbounded walk",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Bounded rejection; measure parser CPU/memory, no unbounded walk",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C06"
+      ],
+      "component_obligation": "Bounded rejection; measure parser CPU/memory, no unbounded walk"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S07",
+      "category": "negative",
+      "legacy_case": "DG-S07",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s07_exact_scope_and_epochs",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Policy, build, space, fixture, deployment or authority epoch differs",
+      "security_authorization": "Reject exact binding mismatch despite otherwise valid owner consent",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject exact binding mismatch despite otherwise valid owner consent",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C05",
+        "C08"
+      ],
+      "component_obligation": "Reject exact binding mismatch despite otherwise valid owner consent"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S08",
+      "category": "negative",
+      "legacy_case": "DG-S08",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s08_dependencies_and_failed_evidence",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Required receipt missing/expired/failed/forged or chain cyclic",
+      "security_authorization": "Hold dependent stage; owner consent cannot replace actual technical evidence",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Hold dependent stage; owner consent cannot replace actual technical evidence",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C08"
+      ],
+      "component_obligation": "Hold dependent stage; owner consent cannot replace actual technical evidence"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S09",
+      "category": "negative",
+      "legacy_case": "DG-S09",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s09_time_and_uncertain_clock",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Future/expired/overlong scope, UTC rollback or uncertainty",
+      "security_authorization": "Fail closed; enforce maximum four-hour authority and monotonic execution deadline",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Fail closed; enforce maximum four-hour authority and monotonic execution deadline",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C02",
+        "C09"
+      ],
+      "component_obligation": "Fail closed; enforce maximum four-hour authority and monotonic execution deadline"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S10",
+      "category": "negative",
+      "legacy_case": "DG-S10",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s10_no_outliving_prerequisite_or_key",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Scope/capability outlives current rights, session, epoch, scanner receipt or hard deadline",
+      "security_authorization": "Use validity intersection; renewal requires fresh explicit owner action",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Use validity intersection; renewal requires fresh explicit owner action",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C09"
+      ],
+      "component_obligation": "Use validity intersection; renewal requires fresh explicit owner action"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S11",
+      "category": "negative",
+      "legacy_case": "DG-S11",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s11_modified_replay_digest_denied",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Record ID/digest replay changes action/inputs or races exact duplicate",
+      "security_authorization": "Changed reuse denied; exact idempotence cannot extend expiry or duplicate side effects",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Changed reuse denied; exact idempotence cannot extend expiry or duplicate side effects",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "component_obligation": "Changed reuse denied; exact idempotence cannot extend expiry or duplicate side effects"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S12",
+      "category": "negative",
+      "legacy_case": "DG-S12",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s12_load_only_is_not_inference",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Load-only or quarantine-only action used for any image-model execution",
+      "security_authorization": "Deny before native image call; inference is an explicit distinct action",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Deny before native image call; inference is an explicit distinct action",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C14"
+      ],
+      "component_obligation": "Deny before native image call; inference is an explicit distinct action"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S13",
+      "category": "negative",
+      "legacy_case": "DG-S13",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s13_changed_fixture_or_informed_review",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Fixture/image/group/split/gallery changes after seal or score-informed judgment",
+      "security_authorization": "Reject and retain original; no new blind-review assertion",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject and retain original; no new blind-review assertion",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C05"
+      ],
+      "component_obligation": "Reject and retain original; no new blind-review assertion"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S14",
+      "category": "negative",
+      "legacy_case": "DG-S14",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s14_no_custody_release_or_operational_action",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Login, service receipt or demo authorization used for enrollment, custody/release or operational action",
+      "security_authorization": "Reject action widening; approval evidence is not general application authority",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Reject action widening; approval evidence is not general application authority",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C17"
+      ],
+      "component_obligation": "Reject action widening; approval evidence is not general application authority"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S15",
+      "category": "negative",
+      "legacy_case": "DG-S15",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_s15_expiry_during_audit_wait",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Revocation/expiry occurs during audit wait or immediately before commit/read",
+      "security_authorization": "Recheck current authority and grants; atomic denial with no partial publication",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Recheck current authority and grants; atomic denial with no partial publication",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C09",
+        "C10",
+        "C04"
+      ],
+      "component_obligation": "Recheck current authority and grants; atomic denial with no partial publication"
+    },
+    {
+      "feature_id": "V3-S",
+      "case_id": "OD3-S16",
+      "category": "negative",
+      "legacy_case": "DG-S16",
+      "legacy_selector": "tests/demo_governance/test_records.py::test_dg_s16_test_authority_rejected_in_non_test_registry",
+      "legacy_disposition": "retain V2 unchanged; new V3 authority semantics",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Untrusted synthetic test owner/record/receipt copied into real demo store",
+      "security_authorization": "Deny real trust admission; no test-generated human identity or approval claim",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "H,J: bounded wire records and synthetic trusted/untrusted stage receipts; no actual permits",
+      "layers": [
+        "unit",
+        "api_contract",
+        "security",
+        "integration"
+      ],
+      "expected_outcome": "Deny real trust admission; no test-generated human identity or approval claim",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C04",
+        "C06"
+      ],
+      "component_obligation": "Deny real trust admission; no test-generated human identity or approval claim"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A01",
+      "category": "negative",
+      "legacy_case": "DG-A01",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a01_no_gate_or_identity_before_io",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Missing owner authority, source qualification or fixed component identity",
+      "security_authorization": "No network/quarantine/model open; default denial precedes IO",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "No network/quarantine/model open; default denial precedes IO",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C05",
+        "C13"
+      ],
+      "component_obligation": "No network/quarantine/model open; default denial precedes IO"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A02",
+      "category": "negative",
+      "legacy_case": "DG-A02",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a02_closed_51_inventory",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Missing/extra/duplicate source among exact three models/48 images; arbitrary URL/path",
+      "security_authorization": "Reject inventory before acquisition; counts alone do not prove membership",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject inventory before acquisition; counts alone do not prove membership",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C05",
+        "C13"
+      ],
+      "component_obligation": "Reject inventory before acquisition; counts alone do not prove membership"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A03",
+      "category": "negative",
+      "legacy_case": "DG-A03",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a03_exact_bytes_size_git_and_sha",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Size/Git blob/LFS/compressed SHA-256 mismatch or truncated body",
+      "security_authorization": "Reject before unpack/parser; record actual failure, no fabricated hash",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject before unpack/parser; record actual failure, no fabricated hash",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "component_obligation": "Reject before unpack/parser; record actual failure, no fabricated hash"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A04",
+      "category": "negative",
+      "legacy_case": "DG-A04",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a04_type_links_and_permissions_before_read",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Symlink parent/final path, hardlink, FIFO/device/directory, wrong ownership or writable ancestry",
+      "security_authorization": "Reject before blocking read/native admission; positive trusted-root control required",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject before blocking read/native admission; positive trusted-root control required",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Reject before blocking read/native admission; positive trusted-root control required"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A05",
+      "category": "negative",
+      "legacy_case": "DG-A05",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a05_no_pathname_reopen",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Path exchanged after validation or reopened for native load",
+      "security_authorization": "No mutable-path reopen; only validated immutable snapshot reaches parser",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "No mutable-path reopen; only validated immutable snapshot reaches parser",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "No mutable-path reopen; only validated immutable snapshot reaches parser"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A06",
+      "category": "negative",
+      "legacy_case": "DG-A06",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a06_copy_mutation_denied_before_parser",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Source bytes mutate while bounded snapshot is copied",
+      "security_authorization": "Reject unstable/wrong sealed digest before parser call; no postparse-only defense",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject unstable/wrong sealed digest before parser call; no postparse-only defense",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Reject unstable/wrong sealed digest before parser call; no postparse-only defense"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A07",
+      "category": "negative",
+      "legacy_case": "DG-A07",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a07_kernel_seals_prevent_write_grow_shrink",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Original changes after sealing or writer attempts shrink/grow/write",
+      "security_authorization": "Kernel-enforced approved snapshot remains immutable; actual prohibited writes fail",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Kernel-enforced approved snapshot remains immutable; actual prohibited writes fail",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Kernel-enforced approved snapshot remains immutable; actual prohibited writes fail"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A08",
+      "category": "negative",
+      "legacy_case": "DG-A08",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a08_sealing_failure_never_falls_back",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Sealing unsupported, fails or misses required locks",
+      "security_authorization": "Fail before parser; no mutable buffer/hash-only fallback",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Fail before parser; no mutable buffer/hash-only fallback",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Fail before parser; no mutable buffer/hash-only fallback"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A09",
+      "category": "negative",
+      "legacy_case": "DG-A09",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a09_malformed_concatenated_or_truncated_bzip",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Malformed/truncated/concatenated/trailing bzip2 stream",
+      "security_authorization": "Reject single-stream fixed-output contract; no partial output admitted",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject single-stream fixed-output contract; no partial output admitted",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C15"
+      ],
+      "component_obligation": "Reject single-stream fixed-output contract; no partial output admitted"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A10",
+      "category": "negative",
+      "legacy_case": "DG-A10",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a10_bounded_output_and_ratio",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Expansion, output, CPU, address-space, memory, wall or temp ceiling exceeded",
+      "security_authorization": "Hard termination/reaping; no automatic bound increase or clean receipt",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Hard termination/reaping; no automatic bound increase or clean receipt",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C15",
+        "C06"
+      ],
+      "component_obligation": "Hard termination/reaping; no automatic bound increase or clean receipt"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A11",
+      "category": "negative",
+      "legacy_case": "DG-A11",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a11_scanner_missing_stale_dirty_or_timeout",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Scanner missing/stale/dirty/timeout or synthetic scan receipt substituted",
+      "security_authorization": "No clean state or downstream decode/load; actual fresh scanner evidence required",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "No clean state or downstream decode/load; actual fresh scanner evidence required",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "component_obligation": "No clean state or downstream decode/load; actual fresh scanner evidence required"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A12",
+      "category": "negative",
+      "legacy_case": "DG-A12",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a12_decoder_failure_or_format_and_pixels",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Wrong image format/oversized pixels/malformed data or sandbox decoder crash",
+      "security_authorization": "No clean derivative/display/embedding; retain failure and all selection accounting",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "No clean derivative/display/embedding; retain failure and all selection accounting",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C06"
+      ],
+      "component_obligation": "No clean derivative/display/embedding; retain failure and all selection accounting"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A13",
+      "category": "negative",
+      "legacy_case": "DG-A13",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a13_lineage_or_permission_changed",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Source, scan/tool, derivative hash/lineage or current permission changes",
+      "security_authorization": "Reject before consumption; suppress derived reads/results and fence queued work",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject before consumption; suppress derived reads/results and fence queued work",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C05",
+        "C09"
+      ],
+      "component_obligation": "Reject before consumption; suppress derived reads/results and fence queued work"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A14",
+      "category": "negative",
+      "legacy_case": "DG-A14",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a14_quarantine_aad_tag_and_key",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Quarantine ciphertext/tag/AAD/key or private directory relationship invalid",
+      "security_authorization": "No plaintext admission or secret/body leakage in errors",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "No plaintext admission or secret/body leakage in errors",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C13",
+        "C04"
+      ],
+      "component_obligation": "No plaintext admission or secret/body leakage in errors"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A15",
+      "category": "negative",
+      "legacy_case": "DG-A15",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a15_space_and_build_not_dimension_or_filename",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Wrong component/build/space/preprocessing despite matching dimensions or filename",
+      "security_authorization": "Reject closed component identity and incompatible vector space",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Reject closed component identity and incompatible vector space",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C05",
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Reject closed component identity and incompatible vector space"
+    },
+    {
+      "feature_id": "V3-A",
+      "case_id": "OD3-A16",
+      "category": "negative",
+      "legacy_case": "DG-A16",
+      "legacy_selector": "tests/demo_governance/test_artifacts.py::test_dg_a16_build_outputs_required_not_receipts",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Missing/tampered compiler/SBOM/source/wheel/binary evidence or excluded HOG/broad binding restored",
+      "security_authorization": "Qualification incomplete; no acquisition/native action; receipt cannot substitute for actual build bytes",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "M: frozen metadata, generated benign bytes/compressed streams, trusted-root sealed FD and scanner/decoder fault receipts",
+      "layers": [
+        "unit",
+        "filesystem",
+        "native_boundary",
+        "security"
+      ],
+      "expected_outcome": "Qualification incomplete; no acquisition/native action; receipt cannot substitute for actual build bytes",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C14",
+        "C16"
+      ],
+      "component_obligation": "Qualification incomplete; no acquisition/native action; receipt cannot substitute for actual build bytes"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W01",
+      "category": "negative",
+      "legacy_case": "DG-W01",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w01_docker_client_death_does_not_cancel_watchdog",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Attached container client dies while owned helper runs",
+      "security_authorization": "Independent watchdog enforces bounded termination/reaping; no client-exit success claim",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Independent watchdog enforces bounded termination/reaping; no client-exit success claim",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "Independent watchdog enforces bounded termination/reaping; no client-exit success claim"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W02",
+      "category": "negative",
+      "legacy_case": "DG-W02",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w02_no_control_plane_dependency_after_admission",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Control-plane/runtime API unavailable or stalled after admission",
+      "security_authorization": "No new leases; independent hard bounds remain and output publication denies",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "No new leases; independent hard bounds remain and output publication denies",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "No new leases; independent hard bounds remain and output publication denies"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W03",
+      "category": "negative",
+      "legacy_case": "DG-W03",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w03_supervisor_death_kills_namespace",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Supervisor/watchdog dies or trusted authority checkpoint is lost",
+      "security_authorization": "Kernel/process isolation terminates or fences job; no authority fallback",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Kernel/process isolation terminates or fences job; no authority fallback",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "Kernel/process isolation terminates or fences job; no authority fallback"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W04",
+      "category": "negative",
+      "legacy_case": "DG-W04",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w04_independent_cpu_and_wall_limits",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Sleeping or CPU-spinning helper exceeds distinct CPU/wall limits",
+      "security_authorization": "Enforce actual hard limits; quota throttling is not a deadline",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Enforce actual hard limits; quota throttling is not a deadline",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "Enforce actual hard limits; quota throttling is not a deadline"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W05",
+      "category": "negative",
+      "legacy_case": "DG-W05",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w05_memory_exhaustion_fails_job",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Allocation reaches configured memory/address-space/cgroup ceiling",
+      "security_authorization": "Whole job failure/fence; actual exit/OOM/RSS evidence, not partial success",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Whole job failure/fence; actual exit/OOM/RSS evidence, not partial success",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "Whole job failure/fence; actual exit/OOM/RSS evidence, not partial success"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W06",
+      "category": "negative",
+      "legacy_case": "DG-W06",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w06_descendants_fd_output_and_watchdog_attack",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Descendant changes session/group or exhausts PID/FD/output/temp budgets",
+      "security_authorization": "No namespace/resource escape; terminate/reap owned tree without host access",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "No namespace/resource escape; terminate/reap owned tree without host access",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "No namespace/resource escape; terminate/reap owned tree without host access"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W07",
+      "category": "negative",
+      "legacy_case": "DG-W07",
+      "legacy_selector": "tests/demo_governance/test_linux.py::test_dg_w07_stable_container_identity_and_unknown_probe_denied",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Container/PID identity reused or caller asks cleanup of another job",
+      "security_authorization": "Stable identity denies wrong target; unrelated services untouched",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Stable identity denies wrong target; unrelated services untouched",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C09"
+      ],
+      "component_obligation": "Stable identity denies wrong target; unrelated services untouched"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W08",
+      "category": "negative",
+      "legacy_case": "DG-W08",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w08_cancel_old_token_requeue_and_exact_replay",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Cancellation, old lease or requeue races late result",
+      "security_authorization": "Current token/revision CAS rejects stale result; at most one logical completion",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Current token/revision CAS rejects stale result; at most one logical completion",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C09",
+        "C10"
+      ],
+      "component_obligation": "Current token/revision CAS rejects stale result; at most one logical completion"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W09",
+      "category": "negative",
+      "legacy_case": "DG-W09",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w09_each_live_grant_revocation",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Owner/session/model/image/case/media/purpose revoked after enqueue",
+      "security_authorization": "Fence current and queued work, new projections and sensitive reads",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Fence current and queued work, new projections and sensitive reads",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C09",
+        "C17",
+        "C10"
+      ],
+      "component_obligation": "Fence current and queued work, new projections and sensitive reads"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W10",
+      "category": "negative",
+      "legacy_case": "DG-W10",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w10_changed_epoch_or_input_revision",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Authority/input/fixture revision changes while audit/transaction waits",
+      "security_authorization": "Reconcile current identity/epoch/first-run state before native call and publication",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Reconcile current identity/epoch/first-run state before native call and publication",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C09",
+        "C07",
+        "C10"
+      ],
+      "component_obligation": "Reconcile current identity/epoch/first-run state before native call and publication"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W11",
+      "category": "negative",
+      "legacy_case": "DG-W11",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w11_foreign_tenant_instance_rls_and_no_vector_or_path_api",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Foreign NGO/instance/gallery or unauthorized model/vector/path request",
+      "security_authorization": "Real API/runtime-role RLS denial; hidden rows do not affect visible rankings/counts",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Real API/runtime-role RLS denial; hidden rows do not affect visible rankings/counts",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C17",
+        "C10",
+        "C11"
+      ],
+      "component_obligation": "Real API/runtime-role RLS denial; hidden rows do not affect visible rankings/counts"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W12",
+      "category": "negative",
+      "legacy_case": "DG-W12",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w12_audit_outage_rolls_back_everything",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Crash between audit/result/outbox or audit service fails",
+      "security_authorization": "Atomic rollback or safely fenced retry; no unaudited visible success",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Atomic rollback or safely fenced retry; no unaudited visible success",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C09",
+        "C10"
+      ],
+      "component_obligation": "Atomic rollback or safely fenced retry; no unaudited visible success"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W13",
+      "category": "negative",
+      "legacy_case": "DG-W13",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w13_post_audit_deadline_and_untrusted_clock",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Deadline/authority lease expires after helper exit but before publish; clock untrusted",
+      "security_authorization": "Discard/hold output despite zero exit; current trusted authorization required",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Discard/hold output despite zero exit; current trusted authorization required",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C09",
+        "C15",
+        "C10"
+      ],
+      "component_obligation": "Discard/hold output despite zero exit; current trusted authorization required"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W14",
+      "category": "negative",
+      "legacy_case": "DG-W14",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w14_stale_restored_activation_epoch",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Old database/authorization backup restores revoked rights or old fixture history",
+      "security_authorization": "Start inactive; reconcile external epochs/tombstones before reads/jobs",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Start inactive; reconcile external epochs/tombstones before reads/jobs",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C07",
+        "C09",
+        "C10"
+      ],
+      "component_obligation": "Start inactive; reconcile external epochs/tombstones before reads/jobs"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W15",
+      "category": "negative",
+      "legacy_case": "DG-W15",
+      "legacy_selector": "tests/demo_governance/test_postgres.py::test_dg_w15_new_uuid_cannot_launder_rejected_snapshot",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "New UUID/time/authorization rerun attempts to launder rejected snapshot or alter fixture",
+      "security_authorization": "Preserve semantic rejection and first-run lineage; no identity/custody decisions",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Preserve semantic rejection and first-run lineage; no identity/custody decisions",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C09",
+        "C10",
+        "C17"
+      ],
+      "component_obligation": "Preserve semantic rejection and first-run lineage; no identity/custody decisions"
+    },
+    {
+      "feature_id": "V3-W",
+      "case_id": "OD3-W16",
+      "category": "negative",
+      "legacy_case": "DG-W16",
+      "legacy_selector": "tests/demo_governance/test_evidence.py::test_dg_w16_inventory_skip_false_pass_and_canary",
+      "legacy_disposition": "retain V2 unchanged; extend same boundary for V3",
+      "positive_control": "Identical synthetic setup with valid sole-owner scope/current dependencies and only this injected fault removed; allowed operation limited to benign harness",
+      "negative_scenario": "Log/trace/screenshot leaks secret/media/vector/owner identity or omits mandatory case",
+      "security_authorization": "Block artifact/gate; retain private original; no skipped/mock result counted as passed",
+      "edge_cases": "Concurrent/stale/typed variants; assert denial at intended boundary, not unrelated fixture failure",
+      "fixtures": "J,G: bounded non-neural process/container helpers and real isolated PostgreSQL/two-tenant grants with fault injection",
+      "layers": [
+        "integration",
+        "real_postgresql_rls",
+        "recovery",
+        "process_isolation",
+        "security"
+      ],
+      "expected_outcome": "Block artifact/gate; retain private original; no skipped/mock result counted as passed",
+      "observable_evidence": "Exact collected selector/stages, source/input hashes, minimized error, audit and network/parser/publication side-effect counters; actual receipts where applicable",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C16",
+        "C11",
+        "C12"
+      ],
+      "component_obligation": "Block artifact/gate; retain private original; no skipped/mock result counted as passed"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X01",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "MFA auth_time is stale while iat is fresh",
+      "security_authorization": "Reject; newly issued access token is not fresh MFA",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Reject; newly issued access token is not fresh MFA",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01"
+      ],
+      "component_obligation": "Reject; newly issued access token is not fresh MFA"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X02",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Malformed amr or claims, wrong algorithm/issuer/audience or future auth_time",
+      "security_authorization": "Strict typed authentication denial, no coercion/fallback",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Strict typed authentication denial, no coercion/fallback",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C02"
+      ],
+      "component_obligation": "Strict typed authentication denial, no coercion/fallback"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X03",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "IdP session/account disabled with otherwise unexpired JWT",
+      "security_authorization": "Deny admission/read/publication on live-status failure or unavailability",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Deny admission/read/publication on live-status failure or unavailability",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C09"
+      ],
+      "component_obligation": "Deny admission/read/publication on live-status failure or unavailability"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X04",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Cross-origin/login-CSRF, wrong-session/stale nonce, changed reviewed digest or GET confirmation",
+      "security_authorization": "No durable authorization or capability; proper same-session explicit POST positive",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "No durable authorization or capability; proper same-session explicit POST positive",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11"
+      ],
+      "component_obligation": "No durable authorization or capability; proper same-session explicit POST positive"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X05",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "RTL/bidi/long text hides actual identity/action/digest or confirmation differs from displayed summary",
+      "security_authorization": "Safe full bilingual scope disclosure and exact digest binding; no obscured-action success",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Safe full bilingual scope disclosure and exact digest binding; no obscured-action success",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C12",
+        "C03"
+      ],
+      "component_obligation": "Safe full bilingual scope disclosure and exact digest binding; no obscured-action success"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X06",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Browser selects weaker policy or V2 denial is caught and retried as V3",
+      "security_authorization": "Reject; only privileged fixed deployment policy selection",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Reject; only privileged fixed deployment policy selection",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C17"
+      ],
+      "component_obligation": "Reject; only privileged fixed deployment policy selection"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X07",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "V3 credentials/store/epoch used in operational/research or foreign demo namespace",
+      "security_authorization": "Reject across deployments; no shared DB/realm/store authority",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Reject across deployments; no shared DB/realm/store authority",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C08",
+        "C04",
+        "C17"
+      ],
+      "component_obligation": "Reject across deployments; no shared DB/realm/store authority"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X08",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Untrusted producer posts passed=true or receipt from wrong source/build/job/tool",
+      "security_authorization": "Reject provenance and incomplete actual evidence before next stage",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Reject provenance and incomplete actual evidence before next stage",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C08"
+      ],
+      "component_obligation": "Reject provenance and incomplete actual evidence before next stage"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X09",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Canned receipt substitutes for actual scanner, decoder or native parser execution",
+      "security_authorization": "Required actual qualification stays pending/failed, no model capability",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Required actual qualification stays pending/failed, no model capability",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C06",
+        "C13",
+        "C14"
+      ],
+      "component_obligation": "Required actual qualification stays pending/failed, no model capability"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X10",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Detection-only diagnostic attempts image call before durable fixture seal",
+      "security_authorization": "No model-image call until atomic first-run commitment; parser/admission spy zero",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "No model-image call until atomic first-run commitment; parser/admission spy zero",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C08",
+        "C14"
+      ],
+      "component_obligation": "No model-image call until atomic first-run commitment; parser/admission spy zero"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X11",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Two workers race different fixture plans at first model-image call",
+      "security_authorization": "At most identical authorized plan admitted; changed plan rejected before native call",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "At most identical authorized plan admitted; changed plan rejected before native call",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C10",
+        "C14"
+      ],
+      "component_obligation": "At most identical authorized plan admitted; changed plan rejected before native call"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X12",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "New UUID/session/lease/owner authorization or restored checkpoint resets prior exposure",
+      "security_authorization": "Permanent lineage/tombstone denies reset; original DG-FIX-01 evidence retained",
+      "edge_cases": "Change only pairing/split/model-space/instance/epoch used in a faulty lookup key; stable project-wide image-lineage lookup must still find original tombstone. Also test source/content aliases and restored checkpoints.",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Permanent lineage/tombstone denies reset; original DG-FIX-01 evidence retained",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C04",
+        "C09"
+      ],
+      "component_obligation": "Permanent lineage/tombstone denies reset; original DG-FIX-01 evidence retained"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X13",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "No-face/error/dirty selected image dropped, replaced or removed from denominator",
+      "security_authorization": "Retain all48 outcomes; hold/abort technical failure; no score-informed substitution",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Retain all48 outcomes; hold/abort technical failure; no score-informed substitution",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C13",
+        "C16"
+      ],
+      "component_obligation": "Retain all48 outcomes; hold/abort technical failure; no score-informed substitution"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X14",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Owner/admin lacks current case/media/purpose or tries same-person safeguarding conclusion",
+      "security_authorization": "Deny access/conclusion; original NGO review constraints unchanged",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Deny access/conclusion; original NGO review constraints unchanged",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C17",
+        "C09",
+        "C11"
+      ],
+      "component_obligation": "Deny access/conclusion; original NGO review constraints unchanged"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X15",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Arbitrary photograph/model, online fallback, public/reporter biometric or custody request",
+      "security_authorization": "Deny before affected IO, provider execution or application state change",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Deny before affected IO, provider execution or application state change",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C05",
+        "C08",
+        "C17"
+      ],
+      "component_obligation": "Deny before affected IO, provider execution or application state change"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X16",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Public report includes tokens, private owner subject, images/chips/vectors or missing required test",
+      "security_authorization": "Sanitizer/inventory gate blocks release; raw evidence remains private",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Sanitizer/inventory gate blocks release; raw evidence remains private",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C16",
+        "C11",
+        "C12"
+      ],
+      "component_obligation": "Sanitizer/inventory gate blocks release; raw evidence remains private"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X17",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "DB exception used to relax1,000ms target, native hard bounds or missing tests",
+      "security_authorization": "Preserve target/measurements; technical and native failures remain blocking",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "Preserve target/measurements; technical and native failures remain blocking",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C15",
+        "C16",
+        "C06"
+      ],
+      "component_obligation": "Preserve target/measurements; technical and native failures remain blocking"
+    },
+    {
+      "feature_id": "V3-OWNER-LIFECYCLE",
+      "case_id": "OD3-X18",
+      "category": "negative",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional V3 scenario; removes no old selector",
+      "positive_control": "Exact synthetic request with intended boundary satisfied; no real-human enrollment, actual assets or inference",
+      "negative_scenario": "Design/schema approval or configuration toggle used as actual owner execution record",
+      "security_authorization": "No bootstrap, enrollment, acquisition, unpack/scan/load/inference; protected default denial",
+      "edge_cases": "Concurrency, expiry, malformed values and unavailable current-state variants as relevant",
+      "fixtures": "H,M,J,G; generated/test-only evidence, two fictional NGOs and actual isolated services/DB where appropriate",
+      "layers": [
+        "unit",
+        "api",
+        "security",
+        "integration",
+        "real_postgresql_rls",
+        "browser_as_mapped"
+      ],
+      "expected_outcome": "No bootstrap, enrollment, acquisition, unpack/scan/load/inference; protected default denial",
+      "observable_evidence": "Intended denial code and no unauthorized IO/parser/publication; exact-source audit/result artifact",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C08",
+        "C14"
+      ],
+      "component_obligation": "No bootstrap, enrollment, acquisition, unpack/scan/load/inference; protected default denial"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P01",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "One synthetic authenticated owner also operates the bounded tools",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "V3 sole-owner scope accepted for benign action; V2 owner-as-reviewer still denied; no human signing ceremony",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C08",
+        "C17"
+      ],
+      "component_obligation": "V3 sole-owner scope accepted for benign action; V2 owner-as-reviewer still denied; no human signing ceremony"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P02",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Same-session canonical confirmation and exact concurrent duplicate",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "One immutable record/nonce consumption, idempotent response, no extra work or extended lifetime",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C03",
+        "C04",
+        "C10"
+      ],
+      "component_obligation": "One immutable record/nonce consumption, idempotent response, no extra work or extended lifetime"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P03",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Trusted synthetic receipt chain with no actual models",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "Only authorized generated-buffer transitions advance; missing stage and untrusted pass flags still deny; not neural evidence",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C05",
+        "C06",
+        "C08",
+        "C13"
+      ],
+      "component_obligation": "Only authorized generated-buffer transitions advance; missing stage and untrusted pass flags still deny; not neural evidence"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P04",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Owner scope display in Arabic/English with keyboard/focus and digest agreement",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "Correct complete readable scope at all planned widths; explicit confirmation only",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C12",
+        "C03"
+      ],
+      "component_obligation": "Correct complete readable scope at all planned widths; explicit confirmation only"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P05",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "All selected metadata/48 outcomes and no-face/failure states retained",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "No replacement; actual failures distinct from no-result; score-access history does not demand new human stage permits",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C07",
+        "C16"
+      ],
+      "component_obligation": "No replacement; actual failures distinct from no-result; score-access history does not demand new human stage permits"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P06",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Fresh identical-scope renewal after expiry",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "New explicit owner confirmation, original authentic fixture/first-run history preserved; no changed pairing or renewed blind-review claim",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C04",
+        "C07",
+        "C09"
+      ],
+      "component_obligation": "New explicit owner confirmation, original authentic fixture/first-run history preserved; no changed pairing or renewed blind-review claim"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P07",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Cancellation/revocation and private inactive restore",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "Current work/reads fenced, epoch reconciled before reopening, no stale success",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C04",
+        "C09",
+        "C10",
+        "C15"
+      ],
+      "component_obligation": "Current work/reads fenced, epoch reconciled before reopening, no stale success"
+    },
+    {
+      "feature_id": "V3-POSITIVE",
+      "case_id": "OD3-P08",
+      "category": "positive_integration",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; retain every original positive selector",
+      "positive_control": "Existing NGO investigative/safeguarding flow remains separate",
+      "negative_scenario": "Matched unauthorized/changed/stale request must deny at the corresponding boundary",
+      "security_authorization": "No synthetic test identity/receipt enters real trust; all technical and application limits remain",
+      "edge_cases": "Exact replay, lifecycle boundary and failure/rollback variants",
+      "fixtures": "H,M,J,G; synthetic-only scope, generated benign files, actual isolated services/DB",
+      "layers": [
+        "unit",
+        "api",
+        "integration",
+        "security",
+        "recovery"
+      ],
+      "expected_outcome": "Authorized review works; owner scope grants no case access or independent-sensitive-conclusion bypass",
+      "observable_evidence": "Collected selectors, real side effects/counters and sanitized source-bound receipts",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C17",
+        "C09",
+        "C11"
+      ],
+      "component_obligation": "Authorized review works; owner scope grants no case access or independent-sensitive-conclusion bypass"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B01",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "Owner MFA, complete scoped summary and one explicit synthetic confirmation",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "Valid owner sees exact reviewed scope and produces one bounded synthetic authorization; no model execution",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11",
+        "C12"
+      ],
+      "component_obligation": "Valid owner sees exact reviewed scope and produces one bounded synthetic authorization; no model execution"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B02",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "Nonowner/reporter/service, missing MFA/expired session and CSRF denials",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "Actual BFF/API denial; no authority side effects or secret leakage",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C01",
+        "C03",
+        "C11",
+        "C12",
+        "C17"
+      ],
+      "component_obligation": "Actual BFF/API denial; no authority side effects or secret leakage"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B03",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "Changed digest, double-click/concurrent replay and cross-session confirmation",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "One exact canonical record at most; changed/rebound scope denied",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C02",
+        "C03",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "component_obligation": "One exact canonical record at most; changed/rebound scope denied"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B04",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "Frozen48-image metadata,24 pairings, uncertainty and first-run history",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "Generated metadata shown honestly; simulated first-run fence denies edit/new-ID reset; no real photographs/model",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C05",
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "component_obligation": "Generated metadata shown honestly; simulated first-run fence denies edit/new-ID reset; no real photographs/model"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B05",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "Cancel/expire/revoke while synthetic worker/result/audit wait runs",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "Late result and stale page denied, recoverable status/accessible failure; no stale publication",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C15"
+      ],
+      "component_obligation": "Late result and stale page denied, recoverable status/accessible failure; no stale publication"
+    },
+    {
+      "feature_id": "V3-OWNER-UI",
+      "case_id": "OD3-B06",
+      "category": "official_browser_journey",
+      "legacy_case": null,
+      "legacy_selector": null,
+      "legacy_disposition": "additional; does not replace360 original or192 model-workflow executions",
+      "positive_control": "NGO/case/purpose separation, no operational actions, safe error/privacy rendering",
+      "negative_scenario": "Corresponding unauthorized/stale/failure path in same journey",
+      "security_authorization": "Actual BFF and backend grants; no mock pass or external real-child testing model",
+      "edge_cases": "Arabic/English, RTL, keyboard/focus/axe and320/360/390/1280 responsive targets",
+      "fixtures": "H,M,J,G; fictional cases/generated media and actual app/backend/isolated PostgreSQL",
+      "layers": [
+        "official_testerarmy",
+        "api",
+        "accessibility",
+        "responsive"
+      ],
+      "expected_outcome": "Authorized scope does not grant case rights; public/foreign/custody paths denied; bilingual responsive accessibility assertions",
+      "observable_evidence": "Deterministic assertions, exact browser/locale/viewport target, sanitized trace/screenshot and backend effects",
+      "selectors": [],
+      "execution_evidence": [],
+      "validation_status": "pending_implementation_and_execution",
+      "affected_components": [
+        "C17",
+        "C08",
+        "C11",
+        "C12",
+        "C16"
+      ],
+      "component_obligation": "Authorized scope does not grant case rights; public/foreign/custody paths denied; bilingual responsive accessibility assertions"
+    }
+  ],
+  "component_catalog": {
+    "C01": {
+      "name": "Owner identity / MFA adapter",
+      "planned_surface": "tools/phase2e/owner_only_v3/identity.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/registry.py",
+        "services/api/foc_api/identity.py"
+      ],
+      "responsibility": "Pinned real owner, typed fresh MFA, live session/account status; no self-asserted owner",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C02": {
+      "name": "Closed V3 intent codec",
+      "planned_surface": "tools/phase2e/owner_only_v3/records.py",
+      "existing_boundaries": [],
+      "responsibility": "Canonical bounded records, exact scope/domain/build/time; draft schemas are documentation only",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C03": {
+      "name": "Reviewed digest and confirmation",
+      "planned_surface": "tools/phase2e/owner_only_v3/confirmation.py",
+      "existing_boundaries": [],
+      "responsibility": "Session/CSRF/origin, five-minute nonce, explicit owner consent and exact replay idempotence",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C04": {
+      "name": "Private authorization / audit journal",
+      "planned_surface": "tools/phase2e/owner_only_v3/store.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/registry.py"
+      ],
+      "responsibility": "Immutable owner records, protected binding, revocation/epochs, audit and external checkpoint reconciliation",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C05": {
+      "name": "Closed source / scope plan resolver",
+      "planned_surface": "tools/phase2e/owner_only_v3/plans.py",
+      "existing_boundaries": [
+        "docs/planning/demo/DEMO_ASSET_PROPOSAL.json"
+      ],
+      "responsibility": "Exact3/48 membership, license/provenance plans, space/build/input and processing limits",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C06": {
+      "name": "Trusted technical receipt state machine",
+      "planned_surface": "tools/phase2e/owner_only_v3/receipts.py",
+      "existing_boundaries": [],
+      "responsibility": "Authenticated actual measurements and full gate dependencies; no caller-supplied successful approvals",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C07": {
+      "name": "Fixture lineage and first-run freeze",
+      "planned_surface": "tools/phase2e/owner_only_v3/fixtures.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/fixtures.py"
+      ],
+      "responsibility": "Stable project-wide lookup, immutable48/24 selection, uncertainty, failure denominators and DG-FIX-01 regression",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C08": {
+      "name": "Privileged V3 dispatcher / capability admission",
+      "planned_surface": "tools/phase2e/owner_only_v3/dispatcher.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/registry.py"
+      ],
+      "responsibility": "No policy fallback or flag activation; exact actions, protected owner state and successful technical conjunction",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C09": {
+      "name": "Live lifecycle / lease / publication fence",
+      "planned_surface": "tools/phase2e/owner_only_v3/fencing.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/fencing.py"
+      ],
+      "responsibility": "Revocation, expiry, cancellation, short leases, current grants and atomic post-audit checks",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C10": {
+      "name": "Private DB migrations and transactional API",
+      "planned_surface": "database/owner_only_demo/0001_authority.sql",
+      "existing_boundaries": [
+        "database/demo_governance/0001_control_plane.sql"
+      ],
+      "responsibility": "Proposed separate private schema, forced RLS, CAS/first-run history, audit/outbox and inactive restore; no old SQL edits",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C11": {
+      "name": "Authenticated owner BFF/API",
+      "planned_surface": "services/api/foc_api/owner_only_demo.py",
+      "existing_boundaries": [
+        "services/api/foc_api/identity.py",
+        "services/api/foc_api/synthetic_workflow.py"
+      ],
+      "responsibility": "Proposed prepare/confirm/revoke/status endpoints with existing session/MFA/case boundaries; none exists now",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C12": {
+      "name": "Bilingual owner UI and route adapter",
+      "planned_surface": "apps/web/app/[locale]/demo-authorization/page.tsx",
+      "existing_boundaries": [
+        "apps/web/app/[locale]/identity/page.tsx",
+        "apps/web/app/[locale]/identity/session.tsx",
+        "apps/web/app/identity/[...path]/route.ts"
+      ],
+      "responsibility": "Proposed owner interface/BFF route, RTL, keyboard/focus/accessibility/responsive, clear scope/error and synthetic labels",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C13": {
+      "name": "Closed acquisition / immutable artifact / processing boundary",
+      "planned_surface": "tools/phase2e/owner_only_v3/processing.py",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/artifacts.py",
+        "tools/phase2e/intake.py"
+      ],
+      "responsibility": "Retain sealed FD/no-replace/trusted-path mechanisms; actual scanner/decoder/asset integration later, no body acquisition now",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C14": {
+      "name": "Native fixed-component qualification boundary",
+      "planned_surface": "no V3 native implementation approved",
+      "existing_boundaries": [
+        "services/demo_recognition/native/execution_guard.cpp",
+        "services/demo_recognition/native/fixed_interface.cpp",
+        "services/demo_recognition/native/verified_stream.cpp"
+      ],
+      "responsibility": "Existing unconditional denial preserved; future actual parser integration requires explicit review, measured byte manifests and qualification",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C15": {
+      "name": "Independent worker supervisor / isolation",
+      "planned_surface": "future V3 job adapter; retain current hard supervisor",
+      "existing_boundaries": [
+        "services/demo_governance/supervisor.cpp",
+        "services/demo_governance/synthetic_probe.cpp",
+        "tools/phase2e/demo_governance/isolation.py"
+      ],
+      "responsibility": "Hard process/namespace/cgroup/deadline controls, stable identities and actual failure receipts; synthetic helper is not neural qualification",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C16": {
+      "name": "Strict evidence / regression / report integration",
+      "planned_surface": "tools/phase2e/owner_only_v3/evidence.py; tests/owner_only_v3/",
+      "existing_boundaries": [
+        "tools/phase2e/demo_governance/evidence.py",
+        "tools/phase2e/demo_governance/run_checks.py",
+        "docs/phase2e/governance-required-tests.json"
+      ],
+      "responsibility": "Proposed exact new selectors, all old regressions, no skips, source/binary/archive integrity and sanitized output",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    },
+    "C17": {
+      "name": "Unchanged case / safeguarding / operational boundary",
+      "planned_surface": "no weakening or replacement proposed",
+      "existing_boundaries": [
+        "services/api/foc_api/identity.py",
+        "services/api/foc_api/synthetic_workflow.py",
+        "tools/phase2e/approval.py",
+        "config/qualification-models.json"
+      ],
+      "responsibility": "Tenant/case/purpose/RLS, reviewer separation, no public/operational recognition, no custody/release; older policy semantics retained",
+      "implementation_status": "not_implemented_in_this_packet; existing_boundaries_retained"
+    }
+  },
+  "component_mapping_status": "all96_scenarios_mapped_to_planned_or_retained_boundaries; no V3 implementation"
+}

@@ -1,0 +1,312 @@
+{
+  "status": "proposed_design_only_owner_review_pending",
+  "date_cairo": "2026-10-31",
+  "accepted_governance_main": "2bc7c555291b6e21920fed9be58e195aaafb4c9c",
+  "accepted_implementation": "9075f77b62b879c2910ad0a9042193fb054309eb",
+  "proposal_branch": "codex/phase-2e-owner-only-demo-policy",
+  "publication_authorized": true,
+  "publication_scope": "documentation_commit_push_draft_pr_only",
+  "proposal_commit_reference": "Resolve exact source via Git history and draft PR head; no self-referential hash embedded",
+  "implementation_authorized": false,
+  "policy_approval_issued": false,
+  "actual_owner_authorizations_issued": 0,
+  "human_keys_enrolled": 0,
+  "assets_acquired": 0,
+  "model_parsing_executed": false,
+  "neural_inference_executed": false,
+  "runtime_or_original_test_files_modified": false,
+  "full_phase2e_accepted": false,
+  "phase2f_or_phase3_started": false,
+  "proposed_domain": "FOC-PHASE2E-DEMO-OWNER-AUTHORIZATION-V3",
+  "policy_bundle_sha256": "1a136c3914a1b6213757172984459d0036031567905e1a77e82b9abe68948df7",
+  "bundle_definition": "SHA-256 of UTF-8 sorted compact JSON mapping of relative file names to SHA-256; excludes this status file to avoid self-reference",
+  "files_sha256": {
+    "AUTHORIZATION_CONTRACT.md": "7df7dcd5562b0fffe285cd137a126fcaf779f2890e541863d0e43bc784191536",
+    "IMPLEMENTATION_PLAN.md": "a3f3b6a31da70b78a761fa667e9b5b245a86b2949ce22e19b9b9e652e443ab7b",
+    "POLICY_AMENDMENT.md": "2ee244a3c4e5aabaa9933b9c265e362bc43a4478fae1d5a99d1ba963ae540c98",
+    "README.md": "b14c6781fc563583cf6ad8a921f5945779099e5f9cd0e973b485447be6847b5a",
+    "TEST_MATRIX.json": "2bb216855a5f9cfd7c46279401d3f0ddd569df189ecacd7150b1a951d26553e6",
+    "TEST_MATRIX.md": "ab183df6cbe3ef77455cf5ba638b45de3a13c07ce7f5d83ee4de439fe7d29ee8",
+    "THREAT_ASSESSMENT.md": "3b5d38bac3af22a95eeb583d89cd34ad06cd849215b6d2b968a19ae173958d9e",
+    "authorization-record.schema.json": "71bf66665ba17572714d7c7451c17ac657d8c9e45eeaff5368ee34fba126376c",
+    "fixture-plan.schema.json": "775e9b3a2c297c685668018422eea202ec52b93b8fc0aeccfa01a1cd15a7e80a"
+  },
+  "documentation_checks": {
+    "status": "passed",
+    "checked_at_utc": "2026-10-31T08:39:36.057283+00:00",
+    "jsonschema_version": "4.26.0",
+    "valid_draft202012_schemas": 2,
+    "legacy_selectors_preserved": 76,
+    "legacy_scenario_families_mapped": 64,
+    "new_pending_design_cases": 96,
+    "scenario_component_mappings_verified": 96,
+    "planned_or_retained_components": 17,
+    "v2_record_kinds_compared": 12,
+    "present_unconditional_execution_barriers_verified": 2,
+    "new_executable_tests": 0,
+    "new_application_tests_executed": 0,
+    "relative_links_checked": 22,
+    "accepted_files_verified_unchanged": 59
+  },
+  "preserved_accepted_files": [
+    {
+      "path": ".github/workflows/phase1a.yml",
+      "sha256": "56b336048d0fbbc1b2d93f9b77cb9556af4a3e7402a0115b76013d5054e43e8c"
+    },
+    {
+      "path": ".github/workflows/phase2e-demo-governance.yml",
+      "sha256": "97e75fcafa88abdea0adda6ab735fe74308bbd401f01e5fb73a193c471d3ec76"
+    },
+    {
+      "path": ".github/workflows/phase2e-source-preflight.yml",
+      "sha256": "96ce2fc29d13d63cee6dfede8805d0d1034f2b0bb695203fa23b57137e71eb7d"
+    },
+    {
+      "path": "config/phase2e/demo-governance.json",
+      "sha256": "4e205bfff73d23c1cc247b0fbb43bc5c6c7b16bca2fd3d59724de138e905f5ac"
+    },
+    {
+      "path": "config/qualification-models.json",
+      "sha256": "95f31bde51bb956d1010f490dbf96eb26bf63c7a074cbca8decab24bd4f73c3b"
+    },
+    {
+      "path": "database/demo_governance/0001_control_plane.sql",
+      "sha256": "b0b8e923ab1e24dfdb1ca3634d1e030a616733209d2af747367094a2f03d4cee"
+    },
+    {
+      "path": "docs/phase2e/DEMO_APPROVAL_POLICY_PROPOSAL.md",
+      "sha256": "0ab396ebdbc7e2bdd11f8d4f8fb8ee24791d8f3990b9c3297ce2de2d009d3c8a"
+    },
+    {
+      "path": "docs/phase2e/DEMO_GOVERNANCE_IMPLEMENTATION_CHECKLIST.md",
+      "sha256": "c0b589657ade0183c154c273eeb64333639d4c9624dd547dadf9b1baa35aa618"
+    },
+    {
+      "path": "docs/phase2e/DEMO_GOVERNANCE_NEGATIVE_TEST_PLAN.md",
+      "sha256": "7929e2666c4b05988a035b6b119fe487606774da2b5ccf993f4e401430104db2"
+    },
+    {
+      "path": "docs/phase2e/DEMO_GOVERNANCE_PLAN_STATUS.json",
+      "sha256": "33c8f39419c39ce7996b51bb285f99114b9be4ce434efdb99cd3d39db10f2950"
+    },
+    {
+      "path": "docs/phase2e/DEMO_POLICY_DESIGN_APPROVAL.md",
+      "sha256": "830abb2b5fa4f6458e5f6e530b5a74f62560db4aa85c096b91a84916c01047e5"
+    },
+    {
+      "path": "docs/phase2e/DEMO_POLICY_THREAT_ASSESSMENT.md",
+      "sha256": "985d4088101f1730a57a770998d5b0dfcf56ed171e66de8c4c8bd20fa60166aa"
+    },
+    {
+      "path": "docs/phase2e/TEST_MATRIX.md",
+      "sha256": "a946adf52c1bd433905d6cca5fdd510be7703ac17c80ea3b0eb214f21c568c16"
+    },
+    {
+      "path": "docs/phase2e/governance-required-tests.json",
+      "sha256": "969f1ecd772f565e34434df913070eb01d647ad396175996eac3a487184aeb18"
+    },
+    {
+      "path": "docs/planning/demo/DEMO_ASSET_PROPOSAL.json",
+      "sha256": "15764ebc11994cf469a2b13d43653255b44a32c771194994c21d99c12cda502d"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "7991f50bd233efa82d6195e999891a8106019fb005c73e5c072ba9bbf5c578ff"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "3fa40214077708a37a66209c3e7fb1c71a91922b7b15c3defbbcfb30043dffef"
+    },
+    {
+      "path": "services/demo_governance/Dockerfile",
+      "sha256": "562c2801e42ddb78444cfd9a108b560eaf892a6c35ec595feb1c18862715301d"
+    },
+    {
+      "path": "services/demo_governance/supervisor.cpp",
+      "sha256": "e635aa150c424ef05658e61b0cca7ca8a6d2ffdf3c621909824f9f73b515480c"
+    },
+    {
+      "path": "services/demo_governance/synthetic_probe.cpp",
+      "sha256": "6746a2f9b63388238f812ce52a582ce82b07580ff312edf62d0163405fee2479"
+    },
+    {
+      "path": "services/demo_recognition/Dockerfile.preflight",
+      "sha256": "88627f132635701847f578c513c247767f6da4c776ca65432ddc7577919102f6"
+    },
+    {
+      "path": "services/demo_recognition/interface_checks.py",
+      "sha256": "34c7c07efde9b57693a6fa248061802806ed05b8dccc9d6734e311747f1b1c2c"
+    },
+    {
+      "path": "services/demo_recognition/native/CMakeLists.txt",
+      "sha256": "c13294b048b7cd1b4452cdca6ca9ed5a66ee6e1c58e5d61615ef2a0769c6dd6a"
+    },
+    {
+      "path": "services/demo_recognition/native/contract_tests.cpp",
+      "sha256": "efafb4665df6d728c540c38a3c0e612998c2cbcbb98e3b9369fa8c408a315952"
+    },
+    {
+      "path": "services/demo_recognition/native/execution_guard.cpp",
+      "sha256": "5aaa8ff96b5860cd89bf20120beae4c7c1552ce636935071173ba6bf2ed40af6"
+    },
+    {
+      "path": "services/demo_recognition/native/fixed_interface.cpp",
+      "sha256": "9b19801c42fec4978c301285f2f244f4cbcafa3101dd986f3e7f71e100fb26fe"
+    },
+    {
+      "path": "services/demo_recognition/native/fixed_interface.h",
+      "sha256": "c85c3b9254515d51934a7758f472a75808383e8262bb401a83364c3e0ea73641"
+    },
+    {
+      "path": "services/demo_recognition/native/model_backend.cpp",
+      "sha256": "a7e51b803df2d8eea0927b2635f11baef3cc431c12c1ec9c14221b6d90e1445c"
+    },
+    {
+      "path": "services/demo_recognition/native/model_backend.h",
+      "sha256": "e010bac6b2c0b090dfa179b21e533f258b29cae64dae1a121829947d099e94d4"
+    },
+    {
+      "path": "services/demo_recognition/native/model_types.h",
+      "sha256": "5404a163040f21c2338fa63019346541b16da78c4cff1da2f395c66e4c354e93"
+    },
+    {
+      "path": "services/demo_recognition/native/source_probe.cpp",
+      "sha256": "042b92a355c96e8e1cc9486a9d1211feaad1c0ef67d386d3a928c3ebda74a901"
+    },
+    {
+      "path": "services/demo_recognition/native/verified_stream.cpp",
+      "sha256": "5268b0ffd31d426c4ff1edb06d9dafbe481f2ef5b693988bde2b37307763e26b"
+    },
+    {
+      "path": "services/demo_recognition/native/verified_stream.h",
+      "sha256": "569300c0669da930039c1bbe9567b57949702faaf77944349a61394c70271032"
+    },
+    {
+      "path": "services/demo_recognition/native_fixtures.py",
+      "sha256": "f68eb6ad85901a8c3683ba4432b032efd9a50f56f19b4cd48de0f5eb8a342760"
+    },
+    {
+      "path": "services/demo_recognition/preflight.py",
+      "sha256": "ac7324a1af315fa7193fc73b2dbf5b1ceb6841a3c009a5e2fd820714a37dd445"
+    },
+    {
+      "path": "services/demo_recognition/requirements-build.txt",
+      "sha256": "0b25331cf1ee57c525bc0b2e1454c73718363ab07de5a342004e307a637e13f1"
+    },
+    {
+      "path": "tests/demo_governance/helpers.py",
+      "sha256": "1660e5c4f3452bdbd18fee080781829f41a5f8e6724746ec13d7df04cfb159a0"
+    },
+    {
+      "path": "tests/demo_governance/test_artifacts.py",
+      "sha256": "af5fffc029ee50c9c48085141f8bda34deb8e647f2694c7c9a47b9b0afe7d918"
+    },
+    {
+      "path": "tests/demo_governance/test_enrollment.py",
+      "sha256": "c2c37ea8a62078828941c49c01a53530c4d76458b307849ed3496998a1b328e4"
+    },
+    {
+      "path": "tests/demo_governance/test_evidence.py",
+      "sha256": "7abb1484e206720afe8526f5d65a8bbc44bf80c611020f14545bff70f81fe8ba"
+    },
+    {
+      "path": "tests/demo_governance/test_linux.py",
+      "sha256": "96669a6fd6f1f40f9f55a6faf282d9ff7a6a2991f0491565f12638293aab4f7f"
+    },
+    {
+      "path": "tests/demo_governance/test_postgres.py",
+      "sha256": "5b6a23bd2ca1b2db0362d273a1950781b5094126bb1999a00a6826bed6e54583"
+    },
+    {
+      "path": "tests/demo_governance/test_records.py",
+      "sha256": "23991e80e6f1f3d86ca6c3201e3d01247289449542071b94eff0e1fb881abd84"
+    },
+    {
+      "path": "tests/demo_governance/test_registry.py",
+      "sha256": "2fa78d243401f04a069d546040dbdaf6dd216a4e818570929a388695a52d46aa"
+    },
+    {
+      "path": "tests/phase2e/test_e0_controls.py",
+      "sha256": "115961761ac86c8248f8b1c9f27655a8438524ff4a5a3be4757f5499d62fb6f0"
+    },
+    {
+      "path": "tests/phase2e/test_intake_controls.py",
+      "sha256": "fe2c574872b4a63c0edb470e381709bfae1eaefd14a98eaff88f156e0b82f40f"
+    },
+    {
+      "path": "tests/phase2e/test_worker_interface_controls.py",
+      "sha256": "b7aebdbe1688b2e0a6904849d0f0546d93b48a6251b798548432628121c20664"
+    },
+    {
+      "path": "tools/phase2e/approval.py",
+      "sha256": "f0d059344cb0e9078205311e42b0e8066dbce37a0a7ac99ee31c222879d092eb"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/__init__.py",
+      "sha256": "07ed1b0eacc342bbd6da0d392e5c6b7e0ccb504d4a2d545d35e79de0d950a600"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/artifacts.py",
+      "sha256": "6becac97745980fd04537e0eac7416eff6c8dbb085b7e8b128abc5b979cf6f97"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/evidence.py",
+      "sha256": "1631d00a674e6e69ce2c78683c8ee72e18cfd2891e19cb4d4e24b9eb2c62f701"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/fencing.py",
+      "sha256": "5a28c4703b8b94d5d76dee08e9cd38540d80ce303cce5ed826894b23855431ef"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/fixtures.py",
+      "sha256": "7e075a556c01833f093889174b59940dc74bd70b1f33fbda8c568bbe2ca3f5d1"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/isolation.py",
+      "sha256": "ba8b10e38d09d80bdca2e75e037b4da29080b92fb302997ca0b4745d3d570b6b"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/records.py",
+      "sha256": "818cbe4557322789c924443d25488dcc783b8acb618e037cc0e59ab681891718"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/registry.py",
+      "sha256": "4ef757773f0f45ee266dd30723d29af38d3f84f8e733c95f8c5897fdb2348458"
+    },
+    {
+      "path": "tools/phase2e/demo_governance/run_checks.py",
+      "sha256": "f20cd6a6ae2f8031a357f53f6c70c951a114cffeaaf134e28f6293624b4ae81b"
+    },
+    {
+      "path": "tools/phase2e/intake.py",
+      "sha256": "0bbc25a5b3e5f43bed2d5eb0f47a745f9768df0f5ed2a69b2790ee7603850908"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "b65e6540dc21a6d630addd9d20d47266c3d626bb0f64c576cc808dae42998004"
+    }
+  ],
+  "proposed_tests": {
+    "mapped_negative_families": 64,
+    "additional_negative_families": 18,
+    "positive_integration_families": 8,
+    "new_official_browser_journeys": 6,
+    "planned_browser_targets_per_journey": 24,
+    "new_planned_browser_executions": 144,
+    "exact_new_nonbrowser_selector_count": null
+  },
+  "performance": {
+    "original_database_p95_target_ms": 1000,
+    "owner_accepted_demo_exception": true,
+    "performance_gate_resolved": false,
+    "accepted_main_p95_ms": 680.841914,
+    "historical_implementation_push_p95_ms": 1102.589825
+  },
+  "remaining_approvals": [
+    "Owner review of this exact design bundle",
+    "Separate source-only implementation scope",
+    "Separate protected deployment/provisioning scope",
+    "Actual fresh MFA owner confirmation of exact bounded campaign after required prerequisites",
+    "All actual technical gates before their dependent actions"
+  ]
+}

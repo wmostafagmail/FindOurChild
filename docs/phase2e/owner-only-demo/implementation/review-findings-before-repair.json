@@ -1,0 +1,18 @@
+{
+  "source_commit": "8d82e8ac34899792392080321e70308a7fbff52d",
+  "scope": "source_only_synthetic_additional_adversarial_probes",
+  "actual_assets": 0,
+  "actual_inference": false,
+  "findings": [
+    {
+      "id": "V3-FIX-01",
+      "expected": "deny_changed_authentication_time_same_session_and_sid",
+      "actual_accepted": true
+    },
+    {
+      "id": "V3-FIX-02",
+      "expected_publication_events": 1,
+      "actual_publication_events": 2
+    }
+  ]
+}

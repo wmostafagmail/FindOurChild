@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:foc:design-only:fixture-plan-v3:1",
+  "title": "PROPOSED immutable fictional fixture plan; no image bodies or reviewed plan issued",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_class",
+    "source_repository",
+    "source_commit",
+    "source_plan_sha256",
+    "model_plan_sha256",
+    "evaluation_plan_sha256",
+    "preprocessing_contract_sha256",
+    "metadata_version",
+    "prior_score_exposure",
+    "freeze_before",
+    "failure_policy",
+    "images",
+    "pairings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "data_class": {
+      "const": "synthetic_demo_only"
+    },
+    "source_repository": {
+      "const": "retowyss/Syn-Vis-v0"
+    },
+    "source_commit": {
+      "const": "100262732989e77f38cd831d70a376a93735006a"
+    },
+    "source_plan_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "model_plan_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "evaluation_plan_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "preprocessing_contract_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "metadata_version": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "prior_score_exposure": {
+      "enum": [
+        "unknown",
+        "declared_none",
+        "declared_prior_exposure"
+      ]
+    },
+    "freeze_before": {
+      "const": "any_model_image_call"
+    },
+    "failure_policy": {
+      "const": "retain_all_selected_outcomes_no_substitution"
+    },
+    "images": {
+      "type": "array",
+      "minItems": 48,
+      "maxItems": 48,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "image_ref",
+          "expected_git_pointer_blob",
+          "expected_lfs_sha256",
+          "expected_bytes",
+          "fictional_group",
+          "intended_use",
+          "partition",
+          "enrollment",
+          "provenance_note",
+          "capture_date",
+          "capture_age_months",
+          "uncertainty_note"
+        ],
+        "properties": {
+          "image_ref": {
+            "type": "string",
+            "pattern": "^images/(base|headshot)/[0-9]{3}-[0-9]{4}\\.png$"
+          },
+          "expected_git_pointer_blob": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "expected_lfs_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "expected_bytes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 33554432
+          },
+          "fictional_group": {
+            "type": "string",
+            "pattern": "^demo-[0-9]{3}$"
+          },
+          "intended_use": {
+            "enum": [
+              "query",
+              "gallery",
+              "both"
+            ]
+          },
+          "partition": {
+            "enum": [
+              "calibration",
+              "evaluation"
+            ]
+          },
+          "enrollment": {
+            "enum": [
+              "enrolled",
+              "absent_gallery"
+            ]
+          },
+          "provenance_note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "capture_date": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "lower",
+              "upper",
+              "basis"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "exact",
+                  "interval"
+                ]
+              },
+              "lower": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "upper": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "basis": {
+                "enum": [
+                  "publisher_metadata",
+                  "owner_declared_fictional",
+                  "not_known"
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "unknown"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "lower": {
+                      "type": "null"
+                    },
+                    "upper": {
+                      "type": "null"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "lower": {
+                      "not": {
+                        "type": "null"
+                      }
+                    },
+                    "upper": {
+                      "not": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "capture_age_months": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "lower",
+              "upper",
+              "basis"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "unknown",
+                  "exact",
+                  "interval"
+                ]
+              },
+              "lower": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 216
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "upper": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 216
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "basis": {
+                "enum": [
+                  "publisher_metadata",
+                  "owner_declared_fictional",
+                  "not_known"
+                ]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "unknown"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "lower": {
+                      "type": "null"
+                    },
+                    "upper": {
+                      "type": "null"
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "lower": {
+                      "not": {
+                        "type": "null"
+                      }
+                    },
+                    "upper": {
+                      "not": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "uncertainty_note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    },
+    "pairings": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "fictional_group",
+          "left_image_ref",
+          "right_image_ref",
+          "relationship",
+          "basis_note"
+        ],
+        "properties": {
+          "fictional_group": {
+            "type": "string",
+            "pattern": "^demo-[0-9]{3}$"
+          },
+          "left_image_ref": {
+            "type": "string",
+            "pattern": "^images/(base|headshot)/[0-9]{3}-[0-9]{4}\\.png$"
+          },
+          "right_image_ref": {
+            "type": "string",
+            "pattern": "^images/(base|headshot)/[0-9]{3}-[0-9]{4}\\.png$"
+          },
+          "relationship": {
+            "const": "fictional_publisher_link_no_biological_identity_claim"
+          },
+          "basis_note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        }
+      }
+    }
+  }
+}

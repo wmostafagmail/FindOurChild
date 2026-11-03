@@ -1,0 +1,57 @@
+"""Resolve a closed catalog before any IO. This module never downloads asset bodies."""
+
+import json
+
+from .records import ROOT, digest, require
+
+PROPOSAL = ROOT / "docs/planning/demo/DEMO_ASSET_PROPOSAL.json"
+
+
+def catalog():
+    proposal = json.loads(PROPOSAL.read_bytes())
+    return proposal["weights"], proposal["dataset"]
+
+
+def inventory(rows):
+    weights, data = catalog()
+    expected = {v["path"]: v for v in weights["files"]}
+    expected.update({p["path"]: p for g in data["groups"] for p in g["photos"]})
+    require(type(rows) is list and len(rows) == 51, "inventory_size")
+    actual = {}
+    for row in rows:
+        require(type(row) is dict and set(row) == {"ref", "source_commit", "source_blob", "bytes"},
+                "inventory_closed")
+        ref = row["ref"]
+        require(ref in expected and ref not in actual, "inventory_membership")
+        source = expected[ref]
+        image = ref.startswith("images/")
+        require(row["source_commit"] == (data if image else weights)["commit"]
+                and row["source_blob"] == source.get("git_pointer_blob", source.get("sha"))
+                and type(row["bytes"]) is int and row["bytes"] == source.get("bytes", source.get("size")),
+                "inventory_identity")
+        actual[ref] = row
+    return actual
+
+
+def source_identity():
+    weights, data = catalog()
+    return digest({"weights": weights, "dataset": data})
+
+
+def resource_profile_digest(limits):
+    return digest({"profile": "foc-source-only-child-v1", "wall_limit_ms": limits[0],
+                   "cpu_limit_ms": limits[1], "memory_limit_bytes": limits[2]})
+
+
+def execution_inputs(record):
+    """Closed campaign input identity, derived only from the protected authorization.
+
+    Future individual artifact selection must additionally resolve the closed
+    catalog/registry. No arbitrary photograph, pathname, URL or caller plan is a
+    substitute for this campaign binding.
+    """
+    scope = record["scope"]
+    return {"campaign": digest(record), "source": digest(record["source"]),
+            "models": scope["model_plan_sha256"], "images": scope["image_plan_sha256"],
+            "fixtures": scope["fixture_plan_sha256"], "processing": scope["processing_plan_sha256"],
+            "resources": scope["resource_profile_sha256"], "rights": scope["rights_disposition_sha256"]}
