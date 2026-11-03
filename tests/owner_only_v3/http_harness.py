@@ -5,6 +5,7 @@ No test principal or key is enrolled in a real registry or deployed authority.
 """
 
 import os
+import time
 from uuid import uuid4
 
 import jwt
@@ -112,6 +113,19 @@ def app():
     with psycopg.connect(os.environ["FOC_DATABASE_ADMIN_URL"]) as conn:
         require(conn.execute("SELECT data_class FROM platform.environment").fetchone() == ("synthetic",),
                 "synthetic_application_database")
+    # API health does not prove the asynchronously imported Keycloak realm is ready.
+    # Wait for the actual pinned discovery/JWKS endpoints; never accept a fallback key.
+    deadline = time.monotonic() + 180
+    while True:
+        try:
+            discovery = identity.idp("/.well-known/openid-configuration")
+            keys = identity.idp("/protocol/openid-connect/certs")
+            require(discovery.get("issuer") == identity.configuration()["issuer"]
+                    and type(keys.get("keys")) is list and bool(keys["keys"]), "pinned_idp_discovery")
+            break
+        except HTTPException:
+            require(time.monotonic() < deadline, "synthetic_idp_readiness_timeout")
+            time.sleep(.5)
     result = create_app()
     result.state.owner_only_v3_backend = SyntheticInstances()
     return result

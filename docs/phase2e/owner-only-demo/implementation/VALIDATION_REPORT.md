@@ -137,3 +137,14 @@ Its one HTTP probe counts as **zero official browser executions**. The complete
 144 official tests remain mandatory and unchanged in count; missing/failed
 preflight or suites block the required check. No identity pin is relaxed based
 on an assumption; the failure remains unresolved pending observed diagnostics.
+
+The first standalone preflight run `41595454675` at `0764f03` failed before
+owner verification: the synthetic IdP signing-key endpoint was unavailable
+while the realm import was still starting. Artifact `13212306066` is retained
+with SHA-256 `cc7d11c4a5b8b02a12eef98f62bf63e027918d1c09cfd6fa8e5d61d6d3f9e7bc`.
+A bounded 180-second wait now requires actual discovery with the exact pinned
+issuer and a live JWKS response. No fallback key, MFA relaxation or successful
+validation is inferred from API health or a readiness timeout. This startup
+readiness bound is separate from the unchanged database 1,000 ms planning target
+and the fixed non-neural worker limits. Identity/browser failure remains open
+until the authenticated preflight and full official browser suite actually pass.
