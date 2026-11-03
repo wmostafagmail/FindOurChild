@@ -155,3 +155,9 @@ non-neural child profile, rather than merely contain its reported measurement.
 OD3-S12/X15/X17 and the sealed-output ingestion selector exercise these checks.
 A future neural profile and individual artifact-selection adapter still require
 separate actual-asset qualification/provisioning; this is not neural readiness.
+
+The campaign's resource-profile digest is also checked against the actual
+trusted producer's pinned wall/CPU/child-memory tuple, so matching a reported
+ceiling cannot substitute for the owner's exact profile. The generated test
+campaign explicitly selects the existing benign 3,000 ms / 2,000 ms / 64 MiB
+child profile. No neural profile is supplied or automatically widened.

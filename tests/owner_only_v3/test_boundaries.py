@@ -134,6 +134,8 @@ def test_receipt_dag_expiry_exit_and_provenance():
     for key, value in [("exit_code", 1), ("build", "f" * 64), ("tool", "f" * 64),
                        ("expires_at", int(time.time()) - 1), ("dependencies", {"source": "f" * 64})]:
         denied(lambda key=key, value=value: verify(dict(row, **{key: value})))
+    row["inputs"]["resources"] = "f" * 64
+    denied(lambda: verify(row))
 
 
 def test_real_postgres_immutability_epoch_checkpoint_and_append_only():

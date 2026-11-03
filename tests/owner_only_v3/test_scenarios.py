@@ -24,7 +24,7 @@ from tools.phase2e.owner_only_v3 import fixtures, processing
 from tools.phase2e.owner_only_v3.dispatcher import Dispatcher, select_policy
 from tools.phase2e.owner_only_v3.fencing import Fencing
 from tools.phase2e.owner_only_v3.identity import authenticate_token, claims_session
-from tools.phase2e.owner_only_v3.plans import catalog, execution_inputs, inventory
+from tools.phase2e.owner_only_v3.plans import catalog, execution_inputs, inventory, resource_profile_digest
 from tools.phase2e.owner_only_v3.receipts import RECEIPT_DOMAIN, Producer, Verifier, chain
 from tools.phase2e.owner_only_v3.records import (
     DESIGN,
@@ -70,7 +70,8 @@ def valid_receipt():
     now = int(time.time())
     row = {"domain": RECEIPT_DOMAIN, "producer": "synthetic-measurement", "source": digest("source"),
            "build": digest("build"), "tool": digest("tool"), "job": str(uuid4()), "stage": "source",
-           "evidence_class": "engineering_generated_buffer", "inputs": {"source": digest("source")},
+           "evidence_class": "engineering_generated_buffer", "inputs": {"source": digest("source"),
+           "resources": resource_profile_digest((3000, 2000, 67108864))},
            "outputs": {"buffer": digest("actual-generated-buffer")}, "limits": {"wall_ms": 1, "cpu_ms": 1,
            "rss_bytes": 4096, "wall_limit_ms": 3000, "cpu_limit_ms": 2000, "memory_limit_bytes": 67108864},
            "exit_code": 0, "started_at": now - 1, "finished_at": now, "expires_at": now + 60,

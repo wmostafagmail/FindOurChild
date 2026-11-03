@@ -11,7 +11,7 @@ from psycopg.types.json import Jsonb
 
 from tools.phase2e.owner_only_v3.confirmation import Confirmation
 from tools.phase2e.owner_only_v3.identity import Binding, claims_session
-from tools.phase2e.owner_only_v3.plans import catalog
+from tools.phase2e.owner_only_v3.plans import catalog, resource_profile_digest
 from tools.phase2e.owner_only_v3.records import ACTIONS, DESIGN, DOMAIN, POLICY, digest, require
 from tools.phase2e.owner_only_v3.store import Store
 
@@ -59,6 +59,7 @@ def template(binding, instance, tenant):
     scope = {k: v["const"] for k, v in props["scope"]["properties"].items() if "const" in v}
     scope.update({k: digest("synthetic:" + k) for k in props["scope"]["properties"] if k.endswith("sha256")})
     scope["fixture_plan_sha256"] = digest(plan)
+    scope["resource_profile_sha256"] = resource_profile_digest((3000, 2000, 67108864))
     scope["actions"] = sorted(ACTIONS)
     return {"domain": DOMAIN, "schema_version": 1, "record_id": str(uuid4()), "policy_digest": POLICY,
             "project": "find-our-child", "decision": "authorize_bounded_isolated_demo",

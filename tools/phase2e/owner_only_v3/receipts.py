@@ -14,7 +14,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 
 from tools.phase2e.demo_governance.artifacts import SEALS
 
-from .plans import execution_inputs
+from .plans import execution_inputs, resource_profile_digest
 from .records import canonical, decode, digest, require
 
 RECEIPT_DOMAIN = "FOC-PHASE2E-DEMO-TECHNICAL-MEASUREMENT-V3"
@@ -60,6 +60,8 @@ class Verifier:
         require(self._engineering or row["evidence_class"] == "actual_isolated_measurement", "receipt_test_substitution")
         require(row["job"] == expected_job and row["inputs"] == expected_inputs
                 and row["outputs"] == measured_outputs, "receipt_measurement")
+        require(row["inputs"].get("resources") == resource_profile_digest(trusted.resource_limits),
+                "receipt_campaign_resource_profile")
         require(type(row["exit_code"]) is int and row["exit_code"] == 0, "receipt_failure")
         for field in ["started_at", "finished_at", "expires_at"]:
             require(type(row[field]) is int, "receipt_time_type")

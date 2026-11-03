@@ -38,6 +38,11 @@ def source_identity():
     return digest({"weights": weights, "dataset": data})
 
 
+def resource_profile_digest(limits):
+    return digest({"profile": "foc-source-only-child-v1", "wall_limit_ms": limits[0],
+                   "cpu_limit_ms": limits[1], "memory_limit_bytes": limits[2]})
+
+
 def execution_inputs(record):
     """Closed campaign input identity, derived only from the protected authorization.
 
