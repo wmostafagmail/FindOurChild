@@ -11,7 +11,15 @@ from fastapi.testclient import TestClient
 from tests.owner_only_v3.helpers import Environment
 from tests.owner_only_v3.test_scenarios import denied, lease, valid_receipt
 from tools.phase2e.owner_only_v3.checkpoint import Checkpoint
-from tools.phase2e.owner_only_v3.records import Denied, canonical, digest, reviewed_digest, sha, validate
+from tools.phase2e.owner_only_v3.records import (
+    Denied,
+    canonical,
+    digest,
+    instant,
+    reviewed_digest,
+    sha,
+    validate,
+)
 
 
 def test_four_hour_and_confirmation_digest_bounds():
@@ -24,6 +32,17 @@ def test_four_hour_and_confirmation_digest_bounds():
         wrong["confirmation"]["reviewed_draft_sha256"] = reviewed_digest(wrong)
         denied(lambda wrong=wrong: validate(canonical(wrong), env.clock.now()))
     assert digest(row) != reviewed_digest(row)
+    # The prior implementation rounded some legitimate fractional instants into
+    # the future. Exercise exact bad fractions without clock jitter or retries.
+    for fraction in [0.0000003, 0.0000007, 0.1234567, 0.9999997]:
+        fractional = Environment(postgres=False)
+        fractional.clock.value += fraction
+        draft = fractional.prepared()
+        times = draft["record"]["time"]
+        issued, end = instant(times["issued_at"]), instant(times["expires_at"])
+        assert issued <= fractional.clock.now() < end <= fractional.clock.now() + 14400
+        assert end - issued == 14400
+        assert fractional.engine.confirm(fractional.session, fractional.body)["execution_available"] is False
 
 
 def test_real_checkpoint_file_append_freeze_corruption_and_no_bootstrap(tmp_path):

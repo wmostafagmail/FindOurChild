@@ -179,3 +179,42 @@ character IDs. The frozen 98-selector and 144-browser inventories are unchanged.
 Eight focused selectors passed locally; 82 others were explicitly deselected
 in that focused command. Final exact-source hosted identity and full regression
 validation remain pending at this checkpoint.
+
+## First full post-SID-repair browser result — incomplete acceptance
+
+At `e418918032851ac6e03765f70e5beedd7c7841e6`, required PR run
+[41598464625](https://github.com/wmostafagmail/FindOurChild/actions/runs/41598464625)
+passed all preceding stages but failed the new owner suite: **74 passed, 70 failed
+out of 144**, with Chromium 24, Firefox 27 and WebKit 23 passes.
+Original artifact `13217950609` (ZIP SHA-256
+`92a65f8a7746b53c450caba05da96c1f9ec7739246898a23da833c17ebc5cf75`)
+independently verified all **747 Python, 360 official browser and 36 migration/
+recovery** results against this exact Git source. This does not turn the failed
+overall workflow into a pass. Owner artifact `13217965934`, SHA-256
+`6100ce11b0fa05394ccca1ba9fc6fcc64a349b33d3d179237420c4d8ea7ff339`,
+and the original job log are preserved privately.
+
+Two patterns were observed: 46 failures at the prepared-state assertion and all
+24 B02 journeys at the second-person login callback assertion. A real-clock
+local source probe reproduced `authority_time` denials (7 of 100 attempts):
+formatting fractional issuance to microseconds can round it ahead of the same
+validation clock. Issuance now floors to whole UTC seconds, and expiry is exactly
+14,400 seconds from that conservative instant. No clock tolerance is added; the
+actual lifetime is never extended. Four deterministic fractional-time controls
+now confirm successfully while future/expired/excess-lifetime denials remain.
+The repaired real-clock diagnostic passed 100/100; this diagnostic is not a
+replacement for hosted or browser validation.
+
+B02 omitted the explicitly documented provider sign-out before switching users.
+Application logout deliberately retains the IdP SSO session. The corrected
+journey uses the existing provider sign-out confirmation, already exercised in
+the original investigation browser suite, then performs the second full MFA
+login. No identity, TOTP replay, freshness or session check is weakened. All six
+journeys and 144 target executions remain mandatory, with zero retries.
+
+The mandatory HTTP preflight now also exercises 16 prepare/confirm/revoke cycles
+against the actual private PostgreSQL API under one fictional test identity.
+These create synthetic engineering records only, never real owner campaign
+authority. They count as zero official browser executions, acquire no assets,
+and require actual execution to remain unavailable. The next source checkpoint
+must repeat the complete hosted regression; the 74 passes are not promoted.

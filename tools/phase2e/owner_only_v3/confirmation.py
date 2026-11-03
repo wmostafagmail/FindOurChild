@@ -4,6 +4,7 @@ import copy
 import hmac
 import secrets
 import time
+from math import floor
 from threading import Lock
 from uuid import uuid4
 
@@ -52,7 +53,10 @@ class Confirmation:
         record["record_id"] = str(uuid4())
         record["owner"].update(authentication_event_id=session.authentication_event_id,
                                authenticated_at=utc(session.authenticated_at))
-        record["time"] = {"issued_at": utc(now), "not_before": utc(now), "expires_at": utc(now + 14400),
+        # Floor server issuance to whole UTC seconds. Formatting a fractional clock
+        # can round into the future; never add a tolerance or extend the four-hour cap.
+        issued = floor(now)
+        record["time"] = {"issued_at": utc(issued), "not_before": utc(issued), "expires_at": utc(issued + 14400),
                           "lifetime_seconds": 14400}
         record["confirmation"] = {"event_id": str(uuid4()), "nonce_sha256": sha(nonce.encode())}
         record["confirmation"]["reviewed_draft_sha256"] = reviewed_digest(record)

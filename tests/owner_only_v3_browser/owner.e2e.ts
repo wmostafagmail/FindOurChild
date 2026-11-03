@@ -27,6 +27,16 @@ for(let journey=1;journey<=6;journey++) {
         return (await fetch('/identity/logout',{method:'POST',headers:{'X-CSRF-Token':csrf}})).status;})).toBe(200);
       await app.open('/en/demo-authorization');
       await expect(screen.getByTestId('owner-panel')).toHaveAttribute('data-state','denied');
+      // App sign-out deliberately preserves IdP SSO. Use the existing explicit
+      // provider sign-out before switching synthetic people; never relax MFA.
+      await app.open('/en/identity');
+      await expect(screen.getByTestId('identity-state')).toHaveAttribute('data-state','signed_out');
+      await screen.getByTestId('provider-sign-out').click();
+      await expect(browser.locator('#kc-logout')).toBeVisible();
+      await browser.locator('#kc-logout').click();
+      await expect(browser.locator('#kc-info-message')).toBeVisible();
+      await app.open('/en/demo-authorization');
+      await expect(screen.getByTestId('owner-panel')).toHaveAttribute('data-state','denied');
     }
     await screen.getByRole('link','Sign in with fresh MFA').click();
     await browser.locator('#username').fill(`synthetic-owner-v3-${target}-${String(journey).padStart(2,'0')}`);

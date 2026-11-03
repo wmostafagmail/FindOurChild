@@ -172,3 +172,14 @@ authorization credential. All signature, exact audience, MFA freshness, current
 session and explicit-consent checks remain enforced. See the validation report
 for the original 403 evidence and signed-token regression. No real owner is
 provisioned and no asset/inference gate is enabled by this repair.
+
+### Conservative issuance precision and account switching
+
+Server-generated issuance uses whole UTC seconds rounded downward. Exact four-
+hour expiry is computed from that instant; strict future-time and lifetime checks
+remain unchanged. This avoids microsecond formatting rounding issuance ahead of
+the observed clock. The source-only HTTP preflight validates real synthetic
+prepare/confirm/revoke writes, in addition to authenticated status. B02 performs
+the existing explicit provider sign-out before a second person's fresh MFA;
+application-only logout is not incorrectly treated as IdP logout. These repairs
+retain the frozen 98/144 inventories and all original authentication controls.

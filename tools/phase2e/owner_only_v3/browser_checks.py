@@ -23,7 +23,7 @@ from scripts.dev import environment, sanitize_environment
 from scripts.workflow_http_environment import private_sql_bridge
 from tools.phase2e.demo_governance.run_checks import command
 
-from .records import ROOT, digest, require, sha
+from .records import ROOT, canonical, digest, require, sha
 from .run_checks import private_database, sources
 
 
@@ -132,6 +132,26 @@ def main():
                 (output / "identity-preflight.json").write_text(json.dumps(diagnostic, indent=2) + "\n")
                 require(response.status_code == 200 and direct_status == 200,
                         "actual_owner_identity_integration_preflight")
+                # Source-only synthetic confirmations, never a real owner permit.
+                # Validate the actual write lifecycle before the long browser run.
+                mutation_headers = {**headers, "content-type": "application/json"}
+                for cycle in range(16):
+                    prepared = client.post("https://127.0.0.1:3443/demo-authorization/prepare",
+                                           headers=mutation_headers, content=b"{}")
+                    require(prepared.status_code == 200, "actual_synthetic_prepare_preflight")
+                    draft = prepared.json()
+                    record_id = draft["record"]["record_id"]
+                    confirmed = client.post("https://127.0.0.1:3443/demo-authorization/confirm", headers=mutation_headers,
+                        content=canonical({"record_id": record_id, "nonce": draft["nonce"],
+                            "reviewed_draft_sha256": draft["record"]["confirmation"]["reviewed_draft_sha256"]}))
+                    require(confirmed.status_code == 200 and confirmed.json()["execution_available"] is False,
+                            "actual_synthetic_confirm_preflight")
+                    revoked = client.post("https://127.0.0.1:3443/demo-authorization/revoke", headers=mutation_headers,
+                                          content=canonical({"record_id": record_id}))
+                    require(revoked.status_code == 200 and revoked.json()["execution_available"] is False,
+                            "actual_synthetic_revoke_preflight")
+                diagnostic["source_only_synthetic_confirmation_cycles"] = cycle + 1
+                (output / "identity-preflight.json").write_text(json.dumps(diagnostic, indent=2) + "\n")
             finally:
                 client.post("https://127.0.0.1:3443/identity/logout", headers=headers)
                 client.close()
