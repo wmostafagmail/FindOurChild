@@ -1,11 +1,11 @@
 """Pinned owner, strict claims and live session status. Never trusts a caller owner claim."""
 
 from dataclasses import dataclass
-from uuid import UUID
+from uuid import NAMESPACE_URL, uuid5
 
 import jwt
 
-from .records import Denied, require, sha
+from .records import Denied, digest, require, sha
 
 
 @dataclass(frozen=True)
@@ -50,15 +50,20 @@ def claims_session(claims, binding, session, now, live):
             and claims.get("sub") == binding.subject, "owner_binding")
     require(0 <= now - claims["auth_time"] <= 300 and claims["auth_time"] <= claims["iat"] <= now
             < claims["exp"], "owner_freshness")
-    try:
-        event = str(UUID(claims["sid"]))
-        require(event == claims["sid"], "owner_event")
-    except (ValueError, TypeError, KeyError, AttributeError):
-        raise Denied("owner_event") from None
+    # OIDC sid is opaque, not a UUID. Never coerce it into a person/event identity.
+    sid = claims.get("sid")
+    require(type(sid) is str and 0 < len(sid) <= 256 and sid.isascii()
+            and all(33 <= ord(c) <= 126 for c in sid), "owner_event")
+    session_digest = sha(session.encode())
+    # Correlation identifier only, not an approval or bearer capability. The actual
+    # trust comes from the pinned signature, MFA, live session and explicit consent.
+    material = {"issuer": binding.issuer, "audiences": list(expected), "subject": binding.subject,
+                "sid": sid, "auth_time": claims["auth_time"], "session_sha256": session_digest}
+    event = str(uuid5(NAMESPACE_URL, "foc-phase2e-v3-authentication-event/" + digest(material)))
     # The privileged adapter must introspect the token AND check the local current session/account.
     require(live(binding, session) is True, "owner_live_status")
     return OwnerSession(binding.issuer, binding.audience, binding.subject, binding.principal,
-                        event, claims["auth_time"], claims["exp"], sha(session.encode()))
+                        event, claims["auth_time"], claims["exp"], session_digest)
 
 
 def authenticate_token(token, binding, session, now, live):

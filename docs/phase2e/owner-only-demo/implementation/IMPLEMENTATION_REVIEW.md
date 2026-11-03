@@ -161,3 +161,14 @@ trusted producer's pinned wall/CPU/child-memory tuple, so matching a reported
 ceiling cannot substitute for the owner's exact profile. The generated test
 campaign explicitly selects the existing benign 3,000 ms / 2,000 ms / 64 MiB
 child profile. No neural profile is supplied or automatically widened.
+
+### OIDC session identifier compatibility
+
+Actual synthetic hosted MFA exposed an invalid UUID assumption for the signed
+OIDC `sid`. The interface retains a bounded opaque session identifier internally
+and derives a UUID-format event correlation from pinned verified identity,
+authentication time and the platform-session digest. The event is not an
+authorization credential. All signature, exact audience, MFA freshness, current
+session and explicit-consent checks remain enforced. See the validation report
+for the original 403 evidence and signed-token regression. No real owner is
+provisioned and no asset/inference gate is enabled by this repair.

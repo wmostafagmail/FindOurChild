@@ -149,6 +149,20 @@ def test_scenario(case, tmp_path, monkeypatch):
         for aud in [[env.binding.audience, "foreign"], [env.binding.audience, env.binding.audience], [True]]:
             denied(lambda aud=aud: claims_session(dict(env.claims, aud=aud), audience_binding,
                                                   env.session_token, env.clock.now(), lambda *_: True))
+        signed_opaque = jwt.encode(dict(env.claims, sid="verified-opaque-oidc-session_not-a-uuid"),
+                                  private, algorithm="RS256")
+        assert authenticate_token(signed_opaque, binding, env.session_token, time.time(), lambda *_: True)
+        denied(lambda: authenticate_token(signed_opaque, binding, env.session_token, time.time(), lambda *_: False))
+        opaque = claims_session(dict(env.claims, sid="verified-opaque-oidc-session_not-a-uuid"), env.binding,
+                                env.session_token, env.clock.now(), lambda *_: True)
+        from uuid import UUID
+
+        assert str(UUID(opaque.authentication_event_id)) == opaque.authentication_event_id
+        assert claims_session(dict(env.claims, sid="verified-opaque-oidc-session_not-a-uuid"), env.binding,
+                              env.session_token, env.clock.now(), lambda *_: True) == opaque
+        other_session = claims_session(dict(env.claims, sid="verified-opaque-oidc-session_not-a-uuid"), env.binding,
+                                       env.session_token + "different", env.clock.now(), lambda *_: True)
+        assert other_session.authentication_event_id != opaque.authentication_event_id
     elif case == "OD3-R07":
         denied(lambda: env.engine.confirm(env.session, dict(env.body, reviewer="invented-reviewer")))
     elif case in {"OD3-R08", "OD3-S08", "OD3-X08", "OD3-X09"}:
@@ -248,7 +262,8 @@ def test_scenario(case, tmp_path, monkeypatch):
         assert time.monotonic() - start < 1
     elif case in {"OD3-S09", "OD3-X01", "OD3-X02"}:
         for changes in [{"auth_time": env.clock.now() - 301}, {"auth_time": env.clock.now() + 1},
-                        {"auth_time": True}, {"amr": "pwd,otp"}, {"amr": ["pwd", ["otp"]]}]:
+                        {"auth_time": True}, {"amr": "pwd,otp"}, {"amr": ["pwd", ["otp"]]},
+                        {"sid": None}, {"sid": True}, {"sid": ""}, {"sid": "x" * 257}, {"sid": "bad\nSID"}]:
             denied(lambda changes=changes: claims_session(dict(env.claims, **changes), env.binding, env.session_token,
                                           env.clock.now(), lambda *_: True))
     elif case in {"OD3-S10", "OD3-W13"}:

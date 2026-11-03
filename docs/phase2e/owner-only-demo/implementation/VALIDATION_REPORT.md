@@ -148,3 +148,34 @@ validation is inferred from API health or a readiness timeout. This startup
 readiness bound is separate from the unchanged database 1,000 ms planning target
 and the fixed non-neural worker limits. Identity/browser failure remains open
 until the authenticated preflight and full official browser suite actually pass.
+
+## Observed opaque OIDC session-ID compatibility repair
+
+The real synthetic MFA preflight on `0b5f35fcf9217ef4119a52a5dccc34ed6bfdcc39`
+(run [41596838510](https://github.com/wmostafagmail/FindOurChild/actions/runs/41596838510))
+returned HTTP 403 through both the BFF and direct API. Safe diagnostic output
+confirmed the exact two pinned API/BFF audiences, integer time claims, matching
+synthetic subject, and password/OTP authentication. Both calls denied with
+`owner_event`: the actual signed `sid` was present but was not a UUID.
+Artifact `13212980757`, ZIP SHA-256
+`cd1e25d6f8c6e5ed9c6f562ea0629188723009a27a51e3eaed3a3eadb622c1d2`,
+and the original failure log are preserved privately. This probe counts as zero
+official browser executions; the failed required check is not a pass.
+
+V3 had incorrectly required the opaque OIDC session ID to use UUID syntax.
+The [official OIDC definition](https://openid.net/specs/openid-connect-backchannel-1_0.html#BCSupport)
+defines its contents as opaque to the relying party. The repair accepts a
+bounded, nonempty printable ASCII string only after the existing pinned
+RS256/issuer/subject/audience/fresh-MFA checks. It derives a server-only
+UUID-format correlation ID from the verified context, MFA time and platform
+session digest. This ID is neither an approval nor a bearer capability. Live
+IdP/platform-session validation, confirmation binding, CSRF and all acquisition
+and execution locks remain mandatory. No session ID or token is published.
+
+OD3-R05 now covers an actual RSA-signed opaque-ID token, tampering/algorithm
+denials, live-session rejection, stable correlation and separation between
+platform sessions. OD3-S09/X01/X02 reject missing, typed, oversized and control-
+character IDs. The frozen 98-selector and 144-browser inventories are unchanged.
+Eight focused selectors passed locally; 82 others were explicitly deselected
+in that focused command. Final exact-source hosted identity and full regression
+validation remain pending at this checkpoint.
